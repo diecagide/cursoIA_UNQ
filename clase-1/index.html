@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clase 1 — Introducción a la IA Generativa | La imaginación al poder</title>
+<meta name="description" content="Clase 1 del curso La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria. Docente: Diego Cagide.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+<div class="layout">
+
+  <!-- =====================================================================
+       MENÚ DE NAVEGACIÓN
+       Los textos de acá son los títulos que aparecen en el menú lateral.
+       Si cambiás un título de sección más abajo, actualizá también el
+       texto acá (el link href="#..." no hace falta tocarlo).
+       Los <li class="nav-group"> con una lista adentro son los bloques que
+       tienen subtemas — no hace falta tocar esa anidación, solo el texto.
+       ===================================================================== -->
+  <nav class="site-nav" id="siteNav">
+    <p class="site-nav__course">La imaginación al poder</p>
+    <p class="site-nav__course-sub">IA generativa y procesos creativos para la enseñanza universitaria</p>
+    <p class="site-nav__docente">Docente: Diego Cagide</p>
+
+    <div class="site-nav__divider"></div>
+
+    <p class="site-nav__class-label">Clase 1</p>
+    <p class="site-nav__title">Introducción a la IA Generativa</p>
+
+    <!-- Grupo 1: introducción a la clase (sin etiqueta) -->
+    <ul class="nav-list">
+      <li><a href="#bienvenida">Bienvenida</a></li>
+      <li><a href="#por-que-curso">¿Por qué este curso?</a></li>
+    </ul>
+
+    <div class="site-nav__divider"></div>
+    <p class="site-nav__section-label">Bloques del curso</p>
+
+    <!-- Grupo 2: los bloques de contenido propiamente dichos -->
+    <ul class="nav-list nav-list--blocks">
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-a"><span class="nav-bullet"></span>Bloque A · IA generativa</a>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-b"><span class="nav-bullet"></span>Bloque B · Modelos y plataformas</a>
+        <ul class="nav-subgroup">
+          <li><a href="#caja-negra">La caja negra: el modelo</a></li>
+          <li><a href="#la-plataforma">¿Y la plataforma?</a></li>
+          <li><a href="#gpt-chat">El caso de ChatGPT</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-c"><span class="nav-bullet"></span>Bloque C · Usos generales</a>
+        <ul class="nav-subgroup">
+          <li><a href="#paradoja">La paradoja del conocimiento</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-d"><span class="nav-bullet"></span>Bloque D · Alcances y límites</a>
+        <ul class="nav-subgroup">
+          <li><a href="#panorama">Quién hace qué</a></li>
+          <li><a href="#privados-abiertos">Privados vs. código abierto</a></li>
+          <li><a href="#limites">Los límites</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="site-nav__divider"></div>
+
+    <!-- Grupo 3: cierre -->
+    <ul class="nav-list">
+      <li><a href="#cierre">Cierre y para llevar al aula</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <header class="class-header">
+        <p class="class-header__eyebrow">Clase 1</p>
+        <h1>Introducción a la IA Generativa</h1>
+        <p class="class-header__course">La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria — Docente: Diego Cagide</p>
+      </header>
+
+      <!-- =================================================================
+           SECCIÓN: Bienvenida
+           ================================================================= -->
+      <section class="block" id="bienvenida">
+        <h2>Bienvenida</h2>
+
+        <!-- EDITAR AQUÍ: texto de bienvenida -->
+        <p class="lead">¡Hola a todos y todas! Les doy la bienvenida a "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria", un curso diseñado para acompañarles a pensar la inteligencia artificial generativa desde un lugar activo, crítico y, sobre todo, creativo.</p>
+
+        <p>La idea que le da nombre al curso es también su punto de partida: la imaginación es una dimensión esencialmente humana, y nuestro objetivo acá no es reemplazarla por un algoritmo, sino aprender a integrar estas herramientas en nuestros procesos creativos sin cederles ese lugar. Nos interesa pensar la IA generativa como una asistente de trabajo —capaz de acompañar, de proponer, de agilizar tareas— pero nunca como una máquina que decide por nosotros qué queremos decir o mostrar.</p>
+
+        <p>Este curso está pensado para docentes de las cuatro unidades académicas de la universidad que quieran conocer estas herramientas, incorporarlas a su propia práctica de enseñanza, y acompañar a sus estudiantes en un uso estratégico y creativo de la IA generativa. No importa si ya la usan a diario o si es la primera vez que se acercan al tema: la propuesta está armada para que cada uno pueda avanzar a su propio ritmo.</p>
+
+        <!-- IMAGEN 1: reemplazá el archivo images/01-imagen-curso.jpg por tu imagen (mismo nombre de archivo) -->
+        <div class="img-placeholder">
+          <img src="images/01-imagen-curso.jpg" alt="Imagen representativa del curso" onerror="this.style.display='none'; this.closest('.img-placeholder').classList.remove('has-image');" onload="this.closest('.img-placeholder').classList.add('has-image');">
+          <span class="img-placeholder__icon">🖼️</span>
+          <p class="img-placeholder__label">Imagen representativa del curso</p>
+          <p class="img-placeholder__hint">Se completa reemplazando images/01-imagen-curso.jpg</p>
+        </div>
+
+        <p>A lo largo de cinco clases vamos a recorrer un camino que va de lo más general a lo más específico. En esta primera clase nos detenemos en los modelos y las plataformas que existen hoy, usos y cuestiones generales. En la Clase 2 nos metemos de lleno con la escritura de prompts y la producción de texto. En las Clases 3 y 4, con imagen, video y otros formatos. Y en la Clase 5 hacemos una síntesis e integramos varios modelos en un mismo proceso de producción.</p>
+
+        <p>Cada clase combina una instancia teórica —la que están leyendo ahora mismo— con una instancia práctica, donde van a poder poner en juego lo que fuimos viendo con ejercicios concretos, pensados también como recursos que puedan después llevar a sus propias aulas. Va a haber, además, un foro para intercambiar dudas, ideas y experiencias con el resto del grupo.</p>
+
+        <p>No hace falta ningún conocimiento técnico previo para este curso: alcanza con las ganas de experimentar, de probar, de equivocarse, y de ir construyendo una mirada propia sobre las posibilidades y los límites de estas herramientas. Empecemos.</p>
+        <!-- FIN EDITAR: bienvenida -->
+      </section>
+
+      <!-- =================================================================
+           SECCIÓN: Maldita IA — ¿por qué un curso de capacitación?
+           ================================================================= -->
+      <section class="block" id="por-que-curso">
+        <h2>Maldita IA: ¿por qué un curso de capacitación?</h2>
+
+        <!-- EDITAR AQUÍ -->
+        <p>Si la IA generativa te "genera" distancia, dolor de panza, malestar inconmensurable o te parece que es una piedra en el zapato, te comparto algunas razones que fui pensando por las que puede ser útil conocer un poco de este mundo.</p>
+        <!-- FIN EDITAR -->
+
+        <!-- Estas tres tarjetas son el "recurso con diseño específico" marcado en verde en el documento original -->
+        <div class="reasons">
+          <div class="reason-card">
+            <h3>1) Conocer al monstruo</h3>
+            <p>Me parece importante conocer al monstruo que viene a trastocarlo todo en nuestras disciplinas, que amenaza con quedarse con nuestro trabajo y con dominar el mundo. No es una preocupación al aire: muchos proyectos ya se están realizando integralmente con estas tecnologías, los flujos de producción están cambiando, buena parte de la publicidad que vemos en redes sociales, tv, vía pública ya se hace con IA. Pienso que conocer esa transformación del mundo actual nos puede ayudar a comprender las nuevas maneras de crear y a repensar nuestras prácticas docentes.</p>
+          </div>
+          <div class="reason-card">
+            <h3>2) Conocer las utilidades</h3>
+            <p>¿Hay algo de esta galaxia que pueda resultarme útil para mi área disciplinar? ¿Hay algo útil para transmitirle a los estudiantes que pueda aportarle soluciones en su camino por construir su voz propia?</p>
+            <p>Hay herramientas y usos de IA que difícilmente generen dudas: pienso, por ejemplo, en algunas funciones de Photoshop para borrar elementos de una imagen, las posibilidades que brinda Nano Banana (el modelo de generación de imágenes de Gemini) para creación y producción de referencias visuales, la síntesis y traducción de textos, la consulta sobre herramientas puntuales de software, etc.</p>
+            <p>Pero ¿está bien hacer un proyecto audiovisual con personas, elementos, música y voces, todo creado con IA? Mi respuesta es que no, y de hecho estoy en la vereda de enfrente de ese modo de uso. Principalmente porque estoy a favor de que la situación de creación tiene que incluir cabeza y cuerpo, y en ese caso todo se reduce a la cabeza (escribir prompts no es cuerpo).</p>
+          </div>
+          <div class="reason-card">
+            <h3>3) Conocerla para no usarla</h3>
+            <p>Como diría el señor Miyagi en Karate Kid: aprendemos karate para no tener que usarlo. La idea de comprender estas tecnologías no es necesariamente someterse a su uso porque los tiempos que corren nos dicen que hay que hacerlo, sino que, en esa misma comprensión, podamos reivindicar con mayor firmeza las modalidades en las que venimos trabajando.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE A
+           ================================================================= -->
+      <section class="block" id="bloque-a">
+        <h2>Bloque A — De qué hablamos cuando hablamos de IA generativa</h2>
+
+        <!-- EDITAR AQUÍ -->
+        <p>La inteligencia artificial no es una novedad del último tiempo. Si pensamos en las publicidades que nos aparecen en las redes sociales, en las propuestas de contenido que recibimos habitualmente en plataformas de streaming, o en esa sensación tan instalada de que "internet nos escucha" porque nos ofrece justo aquello de lo que veníamos hablando, podemos identificar un comportamiento digital que hasta hace no mucho solíamos llamar (y seguimos haciéndolo) "el algoritmo". Y si utilizo ese término como sujeto de una oración bimembre podría reconocer, sin escandalizarme, que "el algoritmo me persigue". Pero ese algoritmo no es otra cosa que sistemas computacionales entrenados con datos: análisis de datos masivos, identificación de patrones de comportamiento, y oferta de contenidos o productos a partir de esa identificación. Meta, Google, Netflix o Spotify son ejemplos concretos de esto: cada una, a su manera, usa este tipo de inteligencia artificial —no generativa— para decidir qué publicidad, qué serie o qué canción nos va a aparecer a continuación. Estos son los elementos centrales de la inteligencia artificial.</p>
+
+        <p>El término "inteligencia artificial" tampoco es nuevo: lo usó por primera vez Alan Turing —matemático, lógico y filósofo británico (1912-1954)— hace ya más de setenta años. Turing propuso un experimento mental muy simple para pensar si una máquina podía "pensar": una persona conversa, sin verlo, con un interlocutor que puede ser otra persona o una máquina, y si no logra distinguir cuál es cuál, esa máquina pasa la prueba. Eso significa, ni más ni menos, que esa máquina tiene inteligencia artificial. <em>(La película Ex Machina juega justamente con esta idea.)</em> Ese ejercicio se conoció como el test de Turing, y todavía hoy sigue siendo una referencia cuando se habla de IA.</p>
+        <!-- FIN EDITAR -->
+
+        <!-- RECURSO INTERACTIVO: reemplazar por el embed de Genially cuando esté listo (ver README) -->
+        <div class="interactive-placeholder">
+          <span class="interactive-placeholder__icon">🔗</span>
+          <p class="interactive-placeholder__label">Recurso interactivo: línea de tiempo del desarrollo de la IA</p>
+          <p class="interactive-placeholder__hint">Acá va el recurso elaborado en Genially. Cuando esté publicado, pegá el &lt;iframe&gt; de Genially justo debajo de esta línea (ver README.md) y borrá estas 3 líneas de "pendiente".</p>
+          <!-- PEGAR ACÁ EL <iframe ...>...</iframe> QUE TE DA GENIALLY EN "COMPARTIR → INSERTAR" -->
+        </div>
+
+        <!-- EDITAR AQUÍ -->
+        <p>Entonces, si el término tiene más de setenta años, ¿por qué empezamos a hablar de IA en la vida cotidiana recién en los últimos tiempos? Lo que en realidad es reciente es la aparición de la <strong>IA generativa</strong>. OpenAI lanzó ChatGPT a fines de 2022, un poco antes de que ganáramos la tercera estrella. Ese lanzamiento es, para buena parte de la sociedad, el punto de quiebre: el momento en que la IA dejó de ser un algoritmo que operaba de manera invisible, para convertirse en una caja negra a la que le podemos pedir cosas y que puede generarlas (texto, imágenes, audio, video). Por supuesto, la IA generativa no nace ahí: ya existían modelos como Dall-E (OpenAI) para generar imágenes.</p>
+
+        <p>Entonces, una cosa es la IA que analiza y clasifica datos para tomar decisiones automatizadas (la que arma nuestro feed, la que nos sugiere una serie), y otra cosa es la IA generativa, capaz de producir algo nuevo. Ese salto es el que instaló a la IA en el centro de las conversaciones sobre creatividad, autoría y trabajo intelectual, y su uso tan masificado en distintas disciplinas y en el ámbito de la educación es lo que motiva este curso.</p>
+        <!-- FIN EDITAR -->
+
+        <!-- IMAGEN 2 -->
+        <div class="img-placeholder">
+          <img src="images/02-imagen-modelos-ia.jpg" alt="Imagen representativa: modelos de IA" onerror="this.style.display='none'; this.closest('.img-placeholder').classList.remove('has-image');" onload="this.closest('.img-placeholder').classList.add('has-image');">
+          <span class="img-placeholder__icon">🖼️</span>
+          <p class="img-placeholder__label">Imagen representativa: modelos de IA</p>
+          <p class="img-placeholder__hint">Se completa reemplazando images/02-imagen-modelos-ia.jpg</p>
+        </div>
+
+        <!-- EDITAR AQUÍ -->
+        <p>Un modelo generativo no "sabe", no "piensa" y, sobre todo, no "imagina". Lo que hace es identificar cuál es la continuación estadísticamente más probable a partir de una enorme cantidad de datos con los que fue entrenado. No hay ahí una intención, un deseo ni una búsqueda propia, hay patrones: patrones gramaticales, patrones de estilo de escritura, patrones de formato, etc.</p>
+
+        <p>Y esto nos lleva a una pregunta: cuando le pedimos a la IA que genere algo, ¿ese resultado es de nuestra autoría, no lo es, o lo es a medias? Pensemos un ejemplo concreto. Supongamos que necesitamos un flyer para difundir un evento o un producto. Si le pedimos a la IA, sin más, "haceme un flyer para este evento", y usamos tal cual lo que nos devuelve, ¿somos los diseñadores de esa pieza? Es una situación muy distinta a si, en cambio, le damos un esquema propio: cómo queremos distribuir los elementos, dónde van las cajas de texto, qué jerarquía tiene que tener la información, qué paleta de colores, qué tipografía. En ese segundo caso, la IA está resolviendo una ejecución que nosotros dirigimos de principio a fin; en el primero, es la IA la que está tomando casi todas las decisiones de diseño por nosotros.</p>
+        <!-- FIN EDITAR -->
+
+        <!-- IMAGEN 3 -->
+        <div class="img-placeholder">
+          <img src="images/03-imagen-flyer-ia.jpg" alt="Imagen de flyer típico creado con IA" onerror="this.style.display='none'; this.closest('.img-placeholder').classList.remove('has-image');" onload="this.closest('.img-placeholder').classList.add('has-image');">
+          <span class="img-placeholder__icon">🖼️</span>
+          <p class="img-placeholder__label">Imagen de flyer típico creado con IA</p>
+          <p class="img-placeholder__hint">Se completa reemplazando images/03-imagen-flyer-ia.jpg</p>
+        </div>
+
+        <!-- EDITAR AQUÍ -->
+        <p>Ahí aparece la idea que atraviesa todo el curso: si no aportamos mirada, criterio, historia propia en el proceso, lo que obtenemos puede generar fascinación, incluso deslumbrar, pero va a responder a diseños más o menos hegemónicos —a lo que ya se repitió miles de veces y el modelo aprendió a reproducir muy bien— y no a nuestra voz autoral. Esto no significa desconocer que nuestra manera de crear también está atravesada por estilos, artistas y autores, y que podemos reconocernos en esa influencia. Pero es justamente por eso que la voz propia es lo que necesitamos construir, valorar y cuidar en tiempos de IA generativa: no partimos de cero, pero a partir de esas influencias hay una mirada que solo nosotros podemos aportar. La imaginación —la nuestra, no la del algoritmo— es lo que puede guiar ese resultado hacia algo propio.</p>
+        <!-- FIN EDITAR -->
+      </section>
+
+      <!-- =================================================================
+           BLOQUE B
+           ================================================================= -->
+      <section class="block" id="bloque-b">
+        <h2>Bloque B — Modelos y plataformas</h2>
+
+        <h3 id="caja-negra">La caja negra: ¿qué es un modelo?</h3>
+        <!-- EDITAR AQUÍ -->
+        <p>Cuando le pedimos a la IA que haga algo y presionamos Enter, la IA empieza a trabajar. Pero, ¿qué es lo que está haciendo exactamente en esos segundos? Para la mayoría de nosotros, lo que sucede ahí adentro es un misterio: escribimos algo, aparece un resultado, y en el medio, la nada. Esa caja negra es lo que se conoce como el <strong>modelo</strong>.</p>
+        <!-- FIN EDITAR -->
+
+        <!-- IMAGEN 4 -->
+        <div class="img-placeholder">
+          <img src="images/04-imagen-modelo.jpg" alt="Imagen representativa de modelo" onerror="this.style.display='none'; this.closest('.img-placeholder').classList.remove('has-image');" onload="this.closest('.img-placeholder').classList.add('has-image');">
+          <span class="img-placeholder__icon">🖼️</span>
+          <p class="img-placeholder__label">Imagen representativa: de modelo</p>
+          <p class="img-placeholder__hint">Se completa reemplazando images/04-imagen-modelo.jpg</p>
+        </div>
+
+        <!-- EDITAR AQUÍ -->
+        <p>Es habitual usar los términos "modelo" y "plataforma" como si fueran sinónimos, y en realidad refieren a cosas distintas. El modelo es el algoritmo, el sistema computacional, la red neuronal entrenada que efectivamente genera el contenido. Por eso se lo suele llamar "caja negra": aunque sabemos qué entra (nuestro pedido) y qué sale (el resultado), lo que ocurre en el medio es extremadamente complejo y difícil de comprender incluso para quienes lo desarrollan. Hay modelos de lenguaje (los que solemos llamar LLM, Large Language Model), modelos de generación de imagen, de video, de audio, y también modelos multimodales, capaces de trabajar con más de un formato a la vez.</p>
+        <!-- FIN EDITAR -->
+
+        <h3 id="la-plataforma">¿Y la plataforma?</h3>
+        <!-- EDITAR AQUÍ -->
+        <p>Ahora bien, a ese modelo casi nunca accedemos de manera directa: necesitamos un medio, una interfaz que nos permita comunicarnos con él escribiendo una instrucción o ingresando algún tipo de información de entrada. Ese medio es la <strong>plataforma</strong>.</p>
+        <!-- FIN EDITAR -->
+
+        <!-- IMAGEN 5 -->
+        <div class="img-placeholder">
+          <img src="images/05-imagen-plataformas.jpg" alt="Imagen representativa de plataformas" onerror="this.style.display='none'; this.closest('.img-placeholder').classList.remove('has-image');" onload="this.closest('.img-placeholder').classList.add('has-image');">
+          <span class="img-placeholder__icon">🖼️</span>
+          <p class="img-placeholder__label">Imagen representativa de plataformas</p>
+          <p class="img-placeholder__hint">Se completa reemplazando images/05-imagen-plataformas.jpg</p>
+        </div>
+
+        <!-- EDITAR AQUÍ -->
+        <p>Habitualmente tiene un sistema de chat —el casillero donde escribimos nuestro prompt— y otras herramientas asociadas: historial de conversaciones, opciones para subir archivos, ajustes de configuración, y en algunos casos la posibilidad de elegir entre distintos modelos disponibles. Acá aparece algo que suele confundirse: la relación entre modelo y plataforma no es de uno a uno. Una misma plataforma puede darnos acceso a varios modelos distintos, y un mismo modelo puede estar disponible desde plataformas diferentes, cada una con su propia interfaz y sus propias funcionalidades agregadas.</p>
+
+        <p>Por ejemplo, <strong>Claude</strong> de Anthropic es un modelo conversacional similar a ChatGPT en su modo de uso: se accede a través de un chat, y desde esa misma plataforma se puede elegir entre varios modelos de Claude, cada uno con un comportamiento distinto —unos priorizan la velocidad y el costo, otros un razonamiento más profundo para tareas complejas—.</p>
+
+        <p><strong>Adobe Firefly</strong>, por su parte, es la plataforma de IA generativa de Adobe, y es un buen ejemplo de plataforma que da acceso a modelos de varios orígenes: además de sus propios modelos Firefly, desde ahí también se puede acceder a Nano Banana (de Google), a modelos de OpenAI o de Google Imagen, entre otros. Todos conviven dentro de una misma interfaz, aunque cada uno sea un modelo distinto, desarrollado por una empresa distinta.</p>
+        <!-- FIN EDITAR -->
+
+        <h3 id="gpt-chat">El famoso caso del GPT y su Chat</h3>
+        <!-- EDITAR AQUÍ -->
+        <p>Ya que lo nombramos tantas veces, quiero detenerme en el nombre de la IA más popular: "ChatGPT", porque ahí adentro están, literalmente, las dos capas que acabamos de distinguir. "Chat" es el medio: la interfaz conversacional, el sistema de input que nos permite escribirle al modelo y recibir una respuesta, es decir, la plataforma. "GPT" es el modelo, y la sigla resume bastante bien cómo funciona: <strong>G</strong>enerative (generativo, porque produce contenido nuevo), <strong>P</strong>re-trained (preentrenado, porque antes de que nosotros lo usemos ya fue entrenado con una enorme cantidad de datos, y no aprende "en vivo" de nuestra conversación) y <strong>T</strong>ransformer, que es el nombre de la arquitectura —el tipo de algoritmo— sobre la que está construido, y que resultó ser especialmente eficaz para procesar lenguaje.</p>
+        <!-- FIN EDITAR -->
+
+        <!-- IMAGEN 6 -->
+        <div class="img-placeholder">
+          <img src="images/06-imagen-modelos-gpt.jpg" alt="Imagen representativa de los distintos modelos GPT" onerror="this.style.display='none'; this.closest('.img-placeholder').classList.remove('has-image');" onload="this.closest('.img-placeholder').classList.add('has-image');">
+          <span class="img-placeholder__icon">🖼️</span>
+          <p class="img-placeholder__label">Imagen representativa de los distintos modelos GPT</p>
+          <p class="img-placeholder__hint">Se completa reemplazando images/06-imagen-modelos-gpt.jpg</p>
+        </div>
+
+        <!-- EDITAR AQUÍ -->
+        <p>Antes de seguir, vale la pena tener un panorama más amplio de la variedad de modelos que existen según el tipo de contenido que producen. Además de los modelos de texto (los LLM) y los de imagen, hay modelos de video, modelos de música capaces de componer una canción completa —letra, voz e instrumentación— a partir de una descripción (como Suno o Udio), modelos de voz que clonan o generan voces (como ElevenLabs), modelos pensados específicamente para mezclar o masterizar audio, modelos que arman presentaciones o diapositivas de manera automática a partir de un texto o una idea (como Gamma), asistentes de programación basados en IA (como GitHub Copilot). Y la lista sigue creciendo: cada tanto aparece un modelo nuevo, pensado para una tarea todavía más específica.</p>
+        <!-- FIN EDITAR -->
+      </section>
+
+      <!-- =================================================================
+           BLOQUE C
+           ================================================================= -->
+      <section class="block" id="bloque-c">
+        <h2>Bloque C — Usos generales de la IA generativa</h2>
+
+        <!-- EDITAR AQUÍ -->
+        <p>Ya sé que le puedo pedir a la IA que me escriba un texto, que me arme un meme, que me saque las ojeras de una foto, que me redacte un mail, que me resuelva en segundos algo que a mano me llevaría media tarde. Esos usos ya los tenemos bastante incorporados, y no hace falta que nos detengamos en ellos. Lo que sí vale la pena es pensar, un poco más allá de la lista de trucos, en qué usos son saludables para la práctica de nuestros estudiantes en el ámbito académico.</p>
+
+        <p>En línea con esto, les comparto la <em>Guía de uso de IA generativa para estudiantes</em> de la UNQ, escrita por Linda López, que propone una serie de pautas y orientaciones en el uso de la IA.</p>
+        <!-- FIN EDITAR -->
+
+        <div class="callout">
+          <p class="callout__label">Lectura obligatoria</p>
+          <p>Guía de uso de IA generativa para estudiantes — UNQ</p>
+          <a class="btn" href="https://dsc.unq.edu.ar/guia-ia/" target="_blank" rel="noopener">Ver la guía →</a>
+        </div>
+
+        <!-- EDITAR AQUÍ -->
+        <p><strong>En el terreno del texto</strong>, la guía explicita los usos admisibles e inadmisibles de la IA en el ámbito académico (sección 7. Buenas prácticas para trabajos y evaluaciones).</p>
+        <!-- FIN EDITAR -->
+
+        <div class="comparison">
+          <div class="comparison__col comparison__col--ok">
+            <h4>Usos generalmente admisibles</h4>
+            <ul>
+              <li>Aclarar conceptos</li>
+              <li>Organizar un plan de estudio</li>
+              <li>Pedir preguntas de práctica</li>
+              <li>Revisar gramática o claridad</li>
+              <li>Solicitar ejemplos o analogías</li>
+            </ul>
+          </div>
+          <div class="comparison__col comparison__col--no">
+            <h4>Usos inadmisibles</h4>
+            <ul>
+              <li>Entregar como propio un texto generado por IA</li>
+              <li>Inventar citas o bibliografía</li>
+              <li>Resolver evaluaciones no autorizadas con ayuda de IA</li>
+              <li>Subir datos personales o materiales sensibles</li>
+              <li>Usar IA para simular lectura que no se realizó</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- EDITAR AQUÍ -->
+        <p><strong>En el terreno de la imagen, el video y el audio</strong>, les comparto algunos usos posibles:</p>
+        <!-- FIN EDITAR -->
+
+        <ul class="tips-list">
+          <li>Acompañar la ideación y el prototipado, explorando variaciones sobre una misma idea antes de decidir un rumbo definitivo.</li>
+          <li>Generar referencias visuales personalizadas, como complemento de búsqueda en repositorios de imágenes.</li>
+          <li>Modificar o adaptar materiales existentes: cambiar un fondo, extender una imagen, ajustar un color.</li>
+          <li>Mejorar la resolución de piezas gráficas y audiovisuales.</li>
+          <li>Agilizar la producción de piezas de comunicación, como flyers, videos cortos o piezas para redes.</li>
+        </ul>
+
+        <h3 id="paradoja">La paradoja del conocimiento</h3>
+        <!-- EDITAR AQUÍ -->
+        <p>Para usar la IA con criterio hace falta, paradójicamente, saber algo del tema en el que se la está usando —aunque sea un poco. Es paradójico porque muchas veces recurrimos a estas herramientas justamente para explorar algo que todavía no conocemos del todo. Pero cuanto menos sabemos sobre un tema, más difícil se vuelve validar lo que la IA nos devuelve, y más fácil resulta que se nos filtre una alucinación (lo vemos con más detalle un poco más adelante).</p>
+
+        <p>Esto no es exclusivo de ningún campo. Quien está produciendo un texto académico y utiliza la IA para clarificar conceptos que utilizará como insumo para su escritura, necesita validar si lo que generó la IA es correcto o es una construcción verosímil pero falsa. Quien va a producir una imagen necesita alguna noción de composición, color o encuadre para poder dirigir el proceso y evaluar el resultado con criterio propio, más allá de si "le gusta" o no a simple vista. El saber disciplinar, lejos de quedar afuera del uso de la IA, es la condición que nos permite usarla con criterio propio en lugar de delegar en ella nuestras decisiones.</p>
+
+        <p>Volveremos sobre este punto en las siguientes clases.</p>
+        <!-- FIN EDITAR -->
+      </section>
+
+      <!-- =================================================================
+           BLOQUE D
+           ================================================================= -->
+      <section class="block" id="bloque-d">
+        <h2>Bloque D — Características, posibilidades y limitaciones de los modelos actuales</h2>
+
+        <h3 id="panorama">Un panorama de quién hace qué</h3>
+        <!-- EDITAR AQUÍ -->
+        <p>El campo de la IA generativa cambia todo el tiempo, así que este panorama es apenas una fotografía del presente —es muy probable que para cuando terminemos el curso ya haya novedades que hoy ni mencionamos. Aun así, sirve tener un mapa general de quiénes son los actores principales hoy:</p>
+        <!-- FIN EDITAR -->
+
+        <!-- Cada logo vive en images/logos/. Los de OpenAI y Adobe se muestran como
+             sigla de color de marca porque esas dos empresas no tienen su logo
+             disponible en el banco de íconos libres que usamos (ver README). -->
+        <div class="company-grid">
+          <div class="company-card">
+            <div class="company-card__head">
+              <span class="company-logo company-logo--text" style="--logo-color:#10A37F">OA</span>
+              <h4><a href="https://openai.com" target="_blank" rel="noopener">OpenAI ↗</a></h4>
+            </div>
+            <p>Es la empresa que popularizó todo esto con el lanzamiento de ChatGPT. Su familia de modelos GPT se usa principalmente para texto, pero la empresa también desarrolla modelos de generación de imagen y de video (Sora).</p>
+          </div>
+          <div class="company-card">
+            <div class="company-card__head">
+              <span class="company-logo" style="--logo-color:#191919">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>Anthropic</title><path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/></svg>
+              </span>
+              <h4><a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic ↗</a></h4>
+            </div>
+            <p>Desarrolla Claude, otro modelo conversacional de texto, conocido especialmente por su capacidad de sostener conversaciones largas y complejas. Cuando se habla de la "seguridad" de Claude, en general se está hablando también de una preocupación explícita por la ética: cómo lograr que las respuestas del modelo sean confiables, cómo evitar usos dañinos, y cómo ser transparentes respecto de sus propios límites.</p>
+          </div>
+          <div class="company-card">
+            <div class="company-card__head">
+              <span class="company-logo" style="--logo-color:#4285F4">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>Google</title><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+              </span>
+              <h4><a href="https://gemini.google.com" target="_blank" rel="noopener">Google ↗</a></h4>
+            </div>
+            <p>Desarrolla Gemini, su familia de modelos, que integra capacidades de texto, imagen y video (a través de Veo), y que además está profundamente integrada en el ecosistema de productos de la empresa: aparece en el buscador, en Gmail, en Google Docs, en el celular.</p>
+          </div>
+          <div class="company-card">
+            <div class="company-card__head">
+              <span class="company-logo" style="--logo-color:#0467DF">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>Meta</title><path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg>
+              </span>
+              <h4><a href="https://ai.meta.com" target="_blank" rel="noopener">Meta ↗</a></h4>
+            </div>
+            <p>La empresa de Facebook, Instagram y WhatsApp apuesta fuerte por el código abierto con su familia de modelos Llama, que cualquier persona con el conocimiento técnico necesario puede descargar y ejecutar por su cuenta. Además, integró un asistente de IA directamente en sus redes sociales y en WhatsApp.</p>
+          </div>
+          <div class="company-card">
+            <div class="company-card__head">
+              <span class="company-logo" style="--logo-color:#5786FE">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>DeepSeek</title><path d="M23.748 4.651c-.254-.124-.364.113-.512.233-.051.04-.094.09-.137.137-.372.397-.806.657-1.373.626-.829-.046-1.537.214-2.163.848-.133-.782-.575-1.248-1.247-1.548-.352-.155-.708-.311-.955-.65-.172-.24-.219-.509-.305-.774-.055-.16-.11-.323-.293-.35-.2-.031-.278.136-.356.276-.313.572-.434 1.202-.422 1.84.027 1.436.633 2.58 1.838 3.393.137.094.172.187.129.323-.082.28-.18.553-.266.833-.055.179-.137.218-.328.14a5.5 5.5 0 0 1-1.737-1.179c-.857-.828-1.631-1.743-2.597-2.46a12 12 0 0 0-.689-.47c-.985-.957.13-1.743.387-1.836.27-.098.094-.433-.778-.428-.872.003-1.67.295-2.687.685a3 3 0 0 1-.465.136 9.6 9.6 0 0 0-2.883-.101c-1.885.21-3.39 1.1-4.497 2.622C.082 8.776-.231 10.854.152 13.02c.403 2.284 1.568 4.175 3.36 5.653 1.857 1.533 3.997 2.284 6.438 2.14 1.482-.085 3.132-.284 4.994-1.86.47.234.962.328 1.78.398.629.058 1.235-.031 1.705-.129.735-.155.684-.836.418-.961-2.155-1.004-1.682-.595-2.112-.926 1.095-1.295 2.768-3.598 3.284-6.733.05-.346.115-.834.108-1.114-.004-.171.035-.238.23-.257a4.2 4.2 0 0 0 1.545-.475c1.397-.763 1.96-2.016 2.093-3.517.02-.23-.004-.467-.247-.588M11.58 18.168c-2.088-1.642-3.101-2.183-3.52-2.16-.39.024-.32.472-.234.763.09.288.207.487.371.74.114.167.192.416-.113.603-.673.416-1.842-.14-1.897-.168-1.361-.801-2.5-1.86-3.301-3.306-.775-1.393-1.225-2.888-1.299-4.482-.02-.385.094-.522.477-.592a4.7 4.7 0 0 1 1.53-.038c2.131.311 3.946 1.264 5.467 2.774.868.86 1.525 1.887 2.202 2.89.72 1.066 1.494 2.082 2.48 2.915.348.291.626.513.892.677-.802.09-2.14.109-3.055-.615zm1.001-6.44a.306.306 0 0 1 .415-.287.3.3 0 0 1 .113.074.3.3 0 0 1 .086.214c0 .17-.136.307-.308.307a.303.303 0 0 1-.306-.307m3.11 1.596c-.2.081-.4.151-.591.16a1.25 1.25 0 0 1-.798-.254c-.274-.23-.47-.358-.551-.758a1.7 1.7 0 0 1 .015-.588c.07-.327-.007-.537-.238-.727-.188-.156-.426-.199-.689-.199a.6.6 0 0 1-.254-.078.253.253 0 0 1-.114-.358 1 1 0 0 1 .192-.21c.356-.202.767-.136 1.146.016.352.144.618.408 1.001.782.392.451.462.576.685.915.176.264.336.536.446.848.066.194-.02.353-.25.45"/></svg>
+              </span>
+              <h4><a href="https://www.deepseek.com" target="_blank" rel="noopener">DeepSeek ↗</a></h4>
+            </div>
+            <p>Es una empresa china que en poco tiempo se instaló como una alternativa relevante, particularmente por ofrecer modelos de muy buen rendimiento con un costo de desarrollo y de uso bastante más bajo que el de sus competidores, y varios de ellos de código abierto.</p>
+          </div>
+          <div class="company-card">
+            <div class="company-card__head">
+              <span class="company-logo company-logo--text" style="--logo-color:#FA0F00">Ad</span>
+              <h4><a href="https://www.adobe.com/products/firefly.html" target="_blank" rel="noopener">Adobe ↗</a></h4>
+            </div>
+            <p>Aunque no es una empresa dedicada exclusivamente a desarrollar modelos de IA, integró estas capacidades en todo su ecosistema de productos creativos: Firefly es su modelo de generación de imagen, y Adobe Sensei es el núcleo de inteligencia artificial que atraviesa transversalmente aplicaciones como Photoshop, Premiere o Illustrator, apareciendo en forma de funciones puntuales dentro de cada programa (selección automática de objetos, generación de relleno, subtitulado automático, entre otras).</p>
+          </div>
+        </div>
+
+        <!-- EDITAR AQUÍ -->
+        <p>Este último caso —el de Adobe— muestra algo interesante: no siempre la IA aparece como una plataforma independiente a la que accedemos directamente. Muchas veces está integrada, como un núcleo transversal, dentro de herramientas que ya usamos y que ni siquiera identificamos primero como "de IA". Algo parecido sucede con el ecosistema de Google, donde un mismo modelo puede aparecer embebido en productos muy distintos entre sí.</p>
+
+        <p>Algo más para tener en cuenta: en foros especializados y en estudios comparativos suele discutirse qué modelo conviene para cada tipo de tarea, y las respuestas cambian todo el tiempo —lo que hoy se recomienda para programación puede no ser lo mismo dentro de unos meses. Aun así, sirve saber que esa pregunta existe y que tiene sentido hacérsela: para escritura y redacción general, ChatGPT y Claude suelen mencionarse como los más sólidos; para programación, Claude aparece con frecuencia como referencia; para tareas donde el costo es una limitación real, DeepSeek suele recomendarse por su buena relación entre rendimiento y precio; y para imagen, la comparación depende mucho de si se busca fotorrealismo, ilustración o edición precisa, algo que vamos a retomar con más detalle en la Clase 3. Ninguna de estas recomendaciones es definitiva: son un punto de partida para orientarse, no una tabla fija.</p>
+        <!-- FIN EDITAR -->
+
+        <h3 id="privados-abiertos">Modelos privados vs. código abierto</h3>
+        <!-- EDITAR AQUÍ -->
+        <p>Seguramente ya escucharon hablar de la palabra <strong>tokens</strong>. Son, en criollo, los créditos con los que se mide el uso de un modelo privado: cada palabra que escribimos y cada palabra que el modelo nos devuelve consume una cierta cantidad de tokens, y la mayoría de las plataformas cobra —o limita el uso gratuito— en función de esa cantidad.</p>
+
+        <p>En términos prácticos, un modelo propietario está controlado por una empresa, que define sus condiciones de uso, sus planes (cierta cantidad de interacciones gratuitas o su modalidad paga) y qué se hace con los datos que le entregamos: cuando escribimos un prompt, esa información queda en manos de esa empresa. La gran mayoría de las herramientas que mencionamos hasta acá —ChatGPT, Claude, Gemini— son propietarias.</p>
+        <!-- FIN EDITAR -->
+
+        <!-- IMAGEN 7 -->
+        <div class="img-placeholder">
+          <img src="images/07-iconos-modelos-privados.jpg" alt="Íconos de modelos privados" onerror="this.style.display='none'; this.closest('.img-placeholder').classList.remove('has-image');" onload="this.closest('.img-placeholder').classList.add('has-image');">
+          <span class="img-placeholder__icon">🖼️</span>
+          <p class="img-placeholder__label">Íconos de modelos privados</p>
+          <p class="img-placeholder__hint">Se completa reemplazando images/07-iconos-modelos-privados.jpg</p>
+        </div>
+
+        <!-- EDITAR AQUÍ -->
+        <p>Un modelo abierto, en cambio, publica los archivos necesarios para utilizarlo, lo que permite que cualquier persona con los conocimientos técnicos necesarios pueda descargarlo, modificarlo y ejecutarlo en su propia computadora, sin depender de una empresa ni de una conexión a internet. Esto brinda un mayor control sobre nuestros datos y sobre el funcionamiento del modelo, aunque requiere un conocimiento técnico mayor para poder aprovecharlo.</p>
+
+        <p>Un ejemplo concreto es <strong>ComfyUI</strong>, una interfaz gratuita y de código abierto que permite armar, de manera visual, flujos de trabajo con modelos abiertos de generación de imagen y video (como Stable Diffusion), conectando distintos "bloques" de procesamiento como si fueran piezas de un circuito. No es una herramienta pensada para un uso cotidiano y sencillo —tiene una curva de aprendizaje bastante más alta que la de escribir un prompt en un chat— pero es un buen ejemplo de hasta dónde puede llegar el control que ofrece el mundo del código abierto para quien esté dispuesto a invertir tiempo en aprenderlo.</p>
+        <!-- FIN EDITAR -->
+
+        <!-- IMAGEN 8 -->
+        <div class="img-placeholder">
+          <img src="images/08-iconos-modelos-abiertos.jpg" alt="Íconos de modelos open source" onerror="this.style.display='none'; this.closest('.img-placeholder').classList.remove('has-image');" onload="this.closest('.img-placeholder').classList.add('has-image');">
+          <span class="img-placeholder__icon">🖼️</span>
+          <p class="img-placeholder__label">Íconos de modelos open source</p>
+          <p class="img-placeholder__hint">Se completa reemplazando images/08-iconos-modelos-abiertos.jpg</p>
+        </div>
+
+        <!-- EDITAR AQUÍ -->
+        <p>Ninguna de las dos opciones es mejor en abstracto: la elección depende de la tarea, del presupuesto y de cuánto control necesitamos sobre nuestra información. Hoy conviven modelos y plataformas de ambos tipos, con usos que se solapan bastante entre sí.</p>
+        <!-- FIN EDITAR -->
+
+        <h3 id="limites">Los límites: cuando el resultado no es tan confiable como parece</h3>
+        <!-- EDITAR AQUÍ -->
+        <p>Una de las particularidades de estas herramientas es que siempre responden. No suelen decir "no sé", y si lo hacen, el texto se completa con un puñado de sugerencias e información que en muchos casos no tiene nada que ver con lo pedido. Y no solo eso: responden con un nivel de seguridad, de coherencia en el tono, en el formato, en la estructura del texto, que genera la sensación de que lo que estamos leyendo es la verdad. Esa verosimilitud es uno de los rasgos más engañosos de la IA generativa, y una razón más para sostener siempre una lectura crítica sobre lo que nos devuelve.</p>
+
+        <p>Dos límites concretos se desprenden de esto:</p>
+
+        <p>Las <strong>alucinaciones</strong> son los casos en los que un modelo genera información que suena verdadera pero que en realidad es falsa o directamente inventada. Esto es consecuencia de cómo funcionan estos modelos, que generan la continuación más probable de un texto y no necesariamente la más verdadera.</p>
+        <!-- FIN EDITAR -->
+
+        <p><strong>Algunos ejemplos frecuentes:</strong></p>
+        <ul class="example-list">
+          <li>Citar autores, títulos o fuentes que directamente no existen.</li>
+          <li>Inventar datos técnicos —fechas, cifras, especificaciones— con total seguridad.</li>
+          <li>Afirmar hechos históricos o biográficos parcial o totalmente falsos.</li>
+          <li>Combinar información real proveniente de distintas fuentes de una manera que termina siendo incorrecta.</li>
+        </ul>
+
+        <!-- EDITAR AQUÍ -->
+        <p>Los <strong>sesgos</strong> aparecen porque los modelos se entrenan con enormes cantidades de datos producidos por personas, y esos datos arrastran las asimetrías y los estereotipos que ya existen en el mundo del que fueron extraídos.</p>
+        <!-- FIN EDITAR -->
+
+        <p><strong>Algunos ejemplos frecuentes:</strong></p>
+        <ul class="example-list">
+          <li>Representar por defecto ciertas profesiones con un género determinado.</li>
+          <li>Priorizar autores, perspectivas o referencias de determinadas regiones o tradiciones por sobre otras.</li>
+          <li>Asociar ciertos estilos, estéticas o formas de hablar a determinados grupos sociales.</li>
+          <li>Ofrecer resultados menos precisos para lenguas, nombres o contextos culturales poco representados en los datos de entrenamiento.</li>
+        </ul>
+
+        <!-- EDITAR AQUÍ -->
+        <p>Ninguno de estos límites invalida el uso de la IA en el aula. Simplemente recuerda que el resultado que obtenemos siempre necesita pasar por una lectura crítica propia, y que esa lectura crítica es un trabajo que le corresponde a la persona, no al algoritmo.</p>
+        <!-- FIN EDITAR -->
+      </section>
+
+      <!-- =================================================================
+           CIERRE
+           ================================================================= -->
+      <section class="block" id="cierre">
+        <h2>Cierre y para llevar al aula</h2>
+
+        <!-- EDITAR AQUÍ -->
+        <p>Si llegaste hasta acá significa que terminaste la clase 1. Ya sabés qué diferencia hay entre un modelo y una plataforma, qué compañías y qué modelos conviven hoy, qué significa que un modelo sea propietario o de código abierto, y cuáles son algunos de sus límites.</p>
+
+        <p>Por último, te comparto algunas ideas o sugerencias para la práctica docente:</p>
+        <!-- FIN EDITAR -->
+
+        <ul class="practice-list">
+          <li><strong>Establecer acuerdos de uso.</strong> Puede ser interesante delimitar en qué etapas de la cursada o del proceso de producción puede utilizarse la IA y en cuáles no.</li>
+          <li><strong>Sugerir modelos y plataformas.</strong> Presentar algunas herramientas y explicar sus principales diferencias puede ayudar a orientar a los estudiantes y evitar que el uso de la IA quede librado únicamente a la exploración individual.</li>
+          <li><strong>Incorporar instancias orales.</strong> Pedir a los estudiantes que puedan contar qué hicieron, qué herramientas utilizaron y por qué tomaron determinadas decisiones. Esto permite conocer mejor el proceso de trabajo, ver cuánto se apropiaron de los contenidos y de la terminología de la disciplina.</li>
+        </ul>
+
+        <div class="next-class">
+          <p class="next-class__label">En la próxima clase</p>
+          <!-- EDITAR AQUÍ -->
+          <p>Nos centramos en modelos de texto y gramática del prompt. Retomaremos los "usos" y discutiremos algunos criterios de validación de las generaciones. ¡Un abrazo y a farmear aura!</p>
+          <!-- FIN EDITAR -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+CÓMO AGREGAR LAS IMÁGENES DE LA CLASE 1
+========================================
+
+Mientras esta carpeta no tenga una imagen con el nombre exacto que
+aparece abajo, la página va a mostrar automáticamente un recuadro
+punteado que dice "pendiente" en su lugar. No hay que tocar ningún
+código: alcanza con subir el archivo con el mismo nombre.
+
+Cómo subirla desde GitHub (sin instalar nada):
+1. Entrá a la carpeta "images" del repositorio en github.com
+2. Botón "Add file" → "Upload files"
+3. Arrastrá tu imagen y ANTES de confirmar, renombrala exactamente
+   como corresponde (ver lista abajo — respetá minúsculas y guiones)
+4. Confirmá el cambio ("Commit changes")
+5. Esperá 1-2 minutos y refrescá la página publicada
+
+Tamaño recomendado: entre 1200 y 1600 px de ancho, formato .jpg o .png
+(si usás .png, cambiá también la extensión en el archivo index.html
+donde dice el nombre de esa imagen, o simplemente convertila a .jpg).
+
+Imágenes que pide la Clase 1:
+
+01-imagen-curso.jpg
+   → Imagen representativa del curso (sección Bienvenida)
+
+02-imagen-modelos-ia.jpg
+   → Imagen representativa: modelos de IA (Bloque A)
+
+03-imagen-flyer-ia.jpg
+   → Ejemplo de flyer típico creado con IA (Bloque A)
+
+04-imagen-modelo.jpg
+   → Imagen representativa de "modelo" / caja negra (Bloque B)
+
+05-imagen-plataformas.jpg
+   → Imagen representativa de plataformas (Bloque B)
+
+06-imagen-modelos-gpt.jpg
+   → Imagen representativa de los distintos modelos GPT (Bloque B)
+
+07-iconos-modelos-privados.jpg
+   → Íconos de modelos privados: ChatGPT, Claude, Gemini, etc. (Bloque D)
+
+08-iconos-modelos-abiertos.jpg
+   → Íconos de modelos open source: Llama, DeepSeek, Stable Diffusion, etc. (Bloque D)
+
+El recurso interactivo de Genially (línea de tiempo de la IA, en el
+Bloque A) NO es una imagen: se agrega distinto. Ver instrucciones en
+el README.md de la carpeta principal.
