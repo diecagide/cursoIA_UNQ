@@ -317,19 +317,29 @@ section.block:first-of-type {
 .img-placeholder img {
   border-radius: 8px;
   margin: 0 auto 12px;
-  max-height: 320px;
 }
 
-/* Cuando la imagen real ya fue puesta, esta clase la muestra sin el marco de "pendiente" */
+/* Cuando la imagen real ya fue puesta, esta clase la muestra sin el marco de "pendiente":
+   la imagen ocupa el 100% del ancho del recuadro y el recuadro se recorta a la altura
+   real de la imagen (sin recorte ni límite de altura fijo). */
 .img-placeholder.has-image {
   border-style: solid;
   border-color: var(--color-border);
   background: transparent;
   padding: 0;
   color: inherit;
+  overflow: hidden;
 }
 .img-placeholder.has-image .img-placeholder__hint,
-.img-placeholder.has-image .img-placeholder__icon { display: none; }
+.img-placeholder.has-image .img-placeholder__icon,
+.img-placeholder.has-image .img-placeholder__label { display: none; }
+
+.img-placeholder.has-image img {
+  width: 100%;
+  display: block;
+  margin: 0;
+  border-radius: 0;
+}
 
 /* ---------- Recurso interactivo (Genially, etc.) ---------- */
 
