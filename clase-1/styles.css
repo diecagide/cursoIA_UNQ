@@ -11,7 +11,10 @@
   --color-text-muted: #5b6270;
   --color-primary: #2e3a59;      /* azul profundo — títulos del contenido */
   --color-primary-light: #eef1f7;
-  --color-sidebar: #0e6e70;      /* turquesa — barra lateral y su botón mobile */
+  --color-sidebar: #2e3a59;      /* fallback sólido (navegadores muy viejos) */
+  --color-sidebar-start: #2e3a59; /* violeta — arriba del degradé de la barra lateral */
+  --color-sidebar-end: #c2255c;   /* rosa magenta — abajo del degradé de la barra lateral */
+  --gradient-sidebar: linear-gradient(180deg, var(--color-sidebar-start) 0%, var(--color-sidebar-end) 100%);
   --color-accent: #d9704f;       /* terracota — acentos, links, botones */
   --color-accent-light: #fbeae3;
   --color-ok: #3e7a5e;           /* verde — usos admisibles */
@@ -67,6 +70,7 @@ a:hover { color: var(--color-primary); }
   border-radius: 50%;
   border: none;
   background: var(--color-sidebar);
+  background: var(--gradient-sidebar);
   color: #fff;
   font-size: 1.3rem;
   cursor: pointer;
@@ -77,6 +81,7 @@ a:hover { color: var(--color-primary); }
   width: var(--nav-width);
   flex-shrink: 0;
   background: var(--color-sidebar);
+  background: var(--gradient-sidebar);
   color: #f4f5f8;
   padding: 32px 24px;
   position: sticky;
@@ -327,6 +332,13 @@ section.block:first-of-type {
 .img-placeholder.has-image .img-placeholder__icon { display: none; }
 
 /* ---------- Recurso interactivo (Genially, etc.) ---------- */
+
+.interactive-title {
+  color: var(--color-primary);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 28px 0 10px;
+}
 
 .interactive-placeholder {
   border: 2px dashed var(--color-accent);
