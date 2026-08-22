@@ -16,7 +16,7 @@ Esto es lo ÚNICO que necesitás tocar para cambiar el texto de la clase.
 ## bienvenida_1
 ¡Hola a todos y todas! Les doy la bienvenida a "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria", un curso diseñado para acompañarles a pensar la inteligencia artificial generativa desde un lugar activo, crítico y, sobre todo, creativo.
 
-La idea que le da nombre al curso es también su punto de partida: la imaginación es una dimensión esencialmente humana, y nuestro objetivo acá no es reemplazarla por un algoritmo, sino aprender a integrar estas herramientas en nuestros procesos creativos sin cederles ese lugar. Nos interesa pensar la IA generativa como una asistente de trabajo —capaz de acompañar, de proponer, de agilizar tareas— pero nunca como una máquina que decide por nosotros qué queremos decir o mostrar.
+La idea que le da nombre al curso es también su punto de partida: la imaginación es una dimensión esencialmente humana, y nuestro objetivo acá no es reemplazarla por un algoritmo, sino aprender a integrar estas herramientas en nuestros procesos creativos y nuestras prácticas de enseñanza sin cederles ese lugar. Nos interesa pensar la IA generativa como una asistente de trabajo —capaz de acompañar, de proponer, de agilizar tareas— pero nunca como una máquina que decide por nosotros qué queremos decir o mostrar.
 
 Este curso está pensado para docentes de las cuatro unidades académicas de la universidad que quieran conocer estas herramientas, incorporarlas a su propia práctica de enseñanza, y acompañar a sus estudiantes en un uso estratégico y creativo de la IA generativa. No importa si ya la usan a diario o si es la primera vez que se acercan al tema: la propuesta está armada para que cada uno pueda avanzar a su propio ritmo.
 
@@ -84,7 +84,7 @@ Ya que lo nombramos tantas veces, quiero detenerme en el nombre de la IA más po
 Antes de seguir, vale la pena tener un panorama más amplio de la variedad de modelos que existen según el tipo de contenido que producen. Además de los modelos de texto (los LLM) y los de imagen, hay modelos de video, modelos de música capaces de componer una canción completa —letra, voz e instrumentación— a partir de una descripción (como Suno o Udio), modelos de voz que clonan o generan voces (como ElevenLabs), modelos pensados específicamente para mezclar o masterizar audio, modelos que arman presentaciones o diapositivas de manera automática a partir de un texto o una idea (como Gamma), asistentes de programación basados en IA (como GitHub Copilot). Y la lista sigue creciendo: cada tanto aparece un modelo nuevo, pensado para una tarea todavía más específica.
 
 ## usosgenerales_1
-Ya sé que le puedo pedir a la IA que me escriba un texto, que me arme un meme, que me saque las ojeras de una foto, que me redacte un mail, que me resuelva en segundos algo que a mano me llevaría media tarde. Esos usos ya los tenemos bastante incorporados, y no hace falta que nos detengamos en ellos. Lo que sí vale la pena es pensar, un poco más allá de la lista de trucos, en qué usos son saludables para la práctica de nuestros estudiantes en el ámbito académico.
+Ya sé que le puedo pedir a la IA que me escriba un texto, que me arme un meme, que me saque las ojeras de una foto, que me redacte un mail, que me resuelva en segundos algo que a mano me llevaría media tarde. Esos usos ya los tenemos bastante incorporados, y no hace falta que nos detengamos en ellos. Lo que sí vale la pena es pensar, un poco más allá de la lista de trucos, en qué usos son recomendables para la práctica de nuestros estudiantes en el ámbito académico.
 
 En línea con esto, les comparto la *Guía de uso de IA generativa para estudiantes* de la UNQ, escrita por Linda López, que propone una serie de pautas y orientaciones en el uso de la IA.
 
@@ -95,7 +95,7 @@ En línea con esto, les comparto la *Guía de uso de IA generativa para estudian
 **En el terreno de la imagen, el video y el audio**, les comparto algunos usos posibles:
 
 ## paradoja
-Para usar la IA con criterio hace falta, paradójicamente, saber algo del tema en el que se la está usando —aunque sea un poco. Es paradójico porque muchas veces recurrimos a estas herramientas justamente para explorar algo que todavía no conocemos del todo. Pero cuanto menos sabemos sobre un tema, más difícil se vuelve validar lo que la IA nos devuelve, y más fácil resulta que se nos filtre una alucinación (lo vemos con más detalle un poco más adelante).
+Algo importante para compartir con nuestras y nuestros estudiantes es que, para usar la IA con criterio hace falta, paradójicamente, saber algo del tema en el que se la está usando, aunque sea un poco. Es paradójico porque muchas veces recurrimos a estas herramientas justamente para explorar algo que todavía no conocemos del todo. Pero cuanto menos sabemos sobre un tema, más difícil se vuelve validar lo que la IA nos devuelve, y más fácil resulta que se nos filtre una alucinación (lo vemos con más detalle un poco más adelante).
 
 Esto no es exclusivo de ningún campo. Quien está produciendo un texto académico y utiliza la IA para clarificar conceptos que utilizará como insumo para su escritura, necesita validar si lo que generó la IA es correcto o es una construcción verosímil pero falsa. Quien va a producir una imagen necesita alguna noción de composición, color o encuadre para poder dirigir el proceso y evaluar el resultado con criterio propio, más allá de si "le gusta" o no a simple vista. El saber disciplinar, lejos de quedar afuera del uso de la IA, es la condición que nos permite usarla con criterio propio en lugar de delegar en ella nuestras decisiones.
 
@@ -159,4 +159,5 @@ Si llegaste hasta acá significa que terminaste la clase 1. Ya sabés qué difer
 Por último, te comparto algunas ideas o sugerencias para la práctica docente:
 
 ## proxima_clase
-Nos centramos en modelos de texto y gramática del prompt. Retomaremos los "usos" y discutiremos algunos criterios de validación de las generaciones. ¡Un abrazo y a farmear aura!
+Nos centraremos en modelos de texto y gramática del prompt. Retomaremos los "usos" y discutiremos algunos criterios de validación de las generaciones.
+¡Un abrazo y a farmear aura!
