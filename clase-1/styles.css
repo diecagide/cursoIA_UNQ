@@ -566,7 +566,7 @@ section.block:first-of-type {
   font-size: .85rem;
   color: var(--color-text-muted);
   font-style: italic;
-  text-align: center;
+  text-align: left;
 }
 
 .img-caption:empty { display: none; margin: 0; }
