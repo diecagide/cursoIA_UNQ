@@ -38,11 +38,25 @@ Imágenes que pide la Clase 1:
 06-imagen-modelos-gpt.jpg
    → Imagen representativa de los distintos modelos GPT (Bloque B)
 
-07-iconos-modelos-privados.jpg
-   → Íconos de modelos privados: ChatGPT, Claude, Gemini, etc. (Bloque D)
+Nota: los íconos de ChatGPT/Claude/Gemini/Meta/Copilot y de DeepSeek/
+Stable Diffusion/Flux (Bloque D, "Modelos privados vs. código abierto")
+ya NO son imágenes para subir acá — ahora son botones con logo que
+llevan directo a cada herramienta, y están armados en el código
+(index.html). No hace falta subir nada para esa sección.
 
-08-iconos-modelos-abiertos.jpg
-   → Íconos de modelos open source: Llama, DeepSeek, Stable Diffusion, etc. (Bloque D)
+Imagen opcional (Bloque D, apartado plegable "Para ampliar: un caso
+interesante: ComfyUI"):
+
+comfyui-ejemplo.jpg
+   → Opcional. Una captura de un flujo de trabajo armado en ComfyUI.
+     Si no la subís, esa parte simplemente no muestra imagen (no rompe
+     nada ni queda un recuadro roto).
+
+Epígrafes opcionales debajo de las imágenes 01 a 06:
+Si querés aclarar con qué modelo generaste alguna imagen (y opcionalmente
+el prompt que usaste), no se hace acá — se escribe en contenido.txt, en
+las etiquetas "## imagen1_caption", "## imagen2_caption", etc. Son
+opcionales: si las dejás vacías no se muestra nada debajo de la imagen.
 
 El recurso interactivo de Genially (línea de tiempo de la IA, en el
 Bloque A) NO es una imagen: se agrega distinto. Ver instrucciones en
