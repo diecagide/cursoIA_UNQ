@@ -43,7 +43,7 @@ Este curso está pensado para docentes de las cuatro unidades académicas de la 
 
 ## imagen1_caption
 Imagen generada en Adobe Firefly
-Modelo: Nano Banana
+Modelo: Nano Banana pro
 Prompt: Un banner de temática IA para un curso de Inteligencia Artificial para docentes universitarios de Artes, Ciencias Sociales, Economía y Ciencia y Tecnología. Debe representar en distintos recuadros las distintas unidades académicas, de manera sobria y representativa. La IA debe estar presente como elemento común entre todas las áreas. Que no tenga textos ni agregados típicos de una infografía.
 
 ## bienvenida_2
