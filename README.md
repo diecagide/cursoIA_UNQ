@@ -92,13 +92,20 @@ Todo el texto de la clase vive en un solo archivo simple:
    línea como `## bienvenida_1`. Esa línea es el "nombre" del bloque
    — **no la toques ni la borres** — y debajo está el texto real, que
    sí podés editar libremente.
-4. Para separar párrafos dentro de un mismo bloque, dejá una línea en
-   blanco entre uno y otro.
-5. Podés usar:
+4. Para separar en **párrafos** (con más separación visual) dentro de
+   un mismo bloque, dejá una línea en blanco entre uno y otro.
+5. Para pasar de renglón sin que sea un párrafo nuevo (como cuando en
+   Word apretás Enter una sola vez), simplemente apretá Enter una vez:
+   no hace falta dejar línea en blanco. Se va a ver como dos renglones
+   pegados, en vez de uno solo corrido.
+6. Podés usar:
    - `**texto**` para **negrita**
    - `*texto*` para *cursiva*
    - `[texto](https://...)` para un link
-6. Abajo de todo hay un botón verde "Commit changes" — con eso
+   - `![texto opcional](images/archivo.jpg)` para insertar una imagen
+     suelta dentro del texto (subí el archivo a la carpeta `images/`
+     de esa clase, igual que las demás imágenes)
+7. Abajo de todo hay un botón verde "Commit changes" — con eso
    guardás. El sitio publicado se actualiza solo, en 1-2 minutos
    (mismo link de siempre).
 
@@ -150,6 +157,12 @@ Para agregarla:
 
 Si preferís usar `.png` en vez de `.jpg`, avisame y te ajusto el
 archivo `index.html` para que apunte a esa extensión.
+
+**Epígrafe opcional debajo de una imagen:** las 6 imágenes numeradas de
+la Clase 1 tienen, en `contenido.txt`, una etiqueta opcional justo
+después (por ejemplo `## imagen1_caption`) para aclarar con qué modelo
+se generó esa imagen y, si querés, el prompt usado. Si la dejás vacía
+no se muestra nada debajo de la imagen.
 
 ---
 
