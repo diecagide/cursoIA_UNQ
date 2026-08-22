@@ -288,6 +288,12 @@ section.block:first-of-type {
   margin: 36px 0 12px;
 }
 
+.block h4 {
+  color: var(--color-primary);
+  font-size: 1.02rem;
+  margin: 28px 0 10px;
+}
+
 .block p { margin: 0 0 24px; }
 
 .block ul, .block ol { margin: 0 0 18px; padding-left: 22px; }
@@ -498,6 +504,72 @@ section.block:first-of-type {
 .highlight-box p:last-child { margin-bottom: 0; }
 .highlight-box a { color: #fff; text-decoration: underline; }
 .highlight-box strong { color: #fff; }
+
+/* ---------- Recuadro claro para subsecciones (alucinaciones / sesgos) ---------- */
+/* Mismo espíritu que .comparison__col--ok/--no (tono claro), pero neutro,
+   para englobar una subsección completa sin la fuerza del degradé de
+   .highlight-box. Las listas .example-list que quedan adentro conservan
+   su propio recuadro blanco. */
+
+.subsection-highlight {
+  background: var(--color-accent-light);
+  border-radius: 12px;
+  padding: 24px 24px 4px;
+  margin: 20px 0 28px;
+}
+
+.subsection-highlight > *:last-child { margin-bottom: 24px; }
+
+/* ---------- Contenido plegable / "para ampliar" ---------- */
+
+.expandable {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+  margin: 20px 0 28px;
+  overflow: hidden;
+}
+
+.expandable summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 16px 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+}
+
+.expandable summary::-webkit-details-marker { display: none; }
+
+.expandable summary::before {
+  content: "▸";
+  color: var(--color-accent);
+  display: inline-block;
+  flex-shrink: 0;
+  transition: transform .15s ease;
+}
+
+.expandable[open] summary::before { transform: rotate(90deg); }
+
+.expandable__body { padding: 0 20px 20px; }
+.expandable__body p:last-child { margin-bottom: 0; }
+.expandable__body .img-placeholder:last-child { margin-bottom: 0; }
+
+/* ---------- Epígrafe opcional debajo de una imagen ---------- */
+
+.img-caption {
+  margin: -20px 0 28px;
+  padding: 0 6px;
+  font-size: .85rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  text-align: center;
+}
+
+.img-caption:empty { display: none; margin: 0; }
 
 /* ---------- Botones de íconos con link (modelos privados / código abierto) ---------- */
 

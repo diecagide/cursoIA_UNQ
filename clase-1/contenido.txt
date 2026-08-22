@@ -6,11 +6,32 @@ Esto es lo ÚNICO que necesitás tocar para cambiar el texto de la clase.
 - Cada bloque de texto empieza con una línea "## algo" (una etiqueta).
   NO toques esa línea, es lo que le dice a la página dónde va cada texto.
 - Debajo de cada etiqueta escribís el texto, como si fuera un mail.
-- Para separar en párrafos, dejá una línea en blanco entre uno y otro.
+- Para separar en PÁRRAFOS (con más separación visual), dejá una línea
+  en blanco entre uno y otro.
+- Para pasar de renglón SIN que sea un párrafo nuevo (como cuando en
+  Word apretás Enter una sola vez), simplemente apretá Enter una vez:
+  no hace falta dejar línea en blanco. Ejemplo:
+
+    Primera línea.
+    Segunda línea, pegada a la anterior.
+
+  Eso se va a ver como dos renglones separados, pero más cerca entre sí
+  que si fueran dos párrafos distintos.
 - Si querés una palabra en NEGRITA, escribila entre dos asteriscos:
   **así**. Para CURSIVA, un asterisco solo: *así*.
+- Para agregar una IMAGEN suelta dentro de un texto (además de las que
+  ya están armadas en la página), escribí:
+  ![texto opcional](images/nombre-del-archivo.jpg)
+  Por ejemplo: ![](images/mi-foto.jpg) — subí el archivo a la carpeta
+  images/ igual que hacés con las demás imágenes de la clase.
 - No hace falta que toques nada más — ni comillas triangulares (< >),
   ni nada raro. Guardás ("Commit changes") y listo.
+
+- Debajo de cada una de las 6 imágenes numeradas hay una etiqueta
+  "## imagenN_caption" (por ejemplo ## imagen1_caption). Es OPCIONAL:
+  si la dejás vacía no se muestra nada. Si querés aclarar con qué
+  modelo se generó esa imagen (y opcionalmente el prompt), escribilo
+  ahí abajo, por ejemplo: "Generada con Midjourney. Prompt: ...".
 ========================================================================
 
 ## bienvenida_1
@@ -19,6 +40,8 @@ Esto es lo ÚNICO que necesitás tocar para cambiar el texto de la clase.
 La idea que le da nombre al curso es también su punto de partida: la imaginación es una dimensión esencialmente humana, y nuestro objetivo acá no es reemplazarla por un algoritmo, sino aprender a integrar estas herramientas en nuestros procesos creativos y nuestras prácticas de enseñanza sin cederles ese lugar. Nos interesa pensar la IA generativa como una asistente de trabajo —capaz de acompañar, de proponer, de agilizar tareas— pero nunca como una máquina que decide por nosotros qué queremos decir o mostrar.
 
 Este curso está pensado para docentes de las cuatro unidades académicas de la universidad que quieran conocer estas herramientas, incorporarlas a su propia práctica de enseñanza, y acompañar a sus estudiantes en un uso estratégico y creativo de la IA generativa. No importa si ya la usan a diario o si es la primera vez que se acercan al tema: la propuesta está armada para que cada uno pueda avanzar a su propio ritmo.
+
+## imagen1_caption
 
 ## bienvenida_2
 A lo largo de cinco clases vamos a recorrer un camino que va de lo más general a lo más específico. En esta primera clase nos detenemos en los modelos y las plataformas que existen hoy, usos y cuestiones generales. En la Clase 2 nos metemos de lleno con la escritura de prompts y la producción de texto. En las Clases 3 y 4, con imagen, video y otros formatos. Y en la Clase 5 hacemos una síntesis e integramos varios modelos en un mismo proceso de producción.
@@ -53,10 +76,14 @@ Entonces, si el término tiene más de setenta años, ¿por qué empezamos a hab
 
 Entonces, una cosa es la IA que analiza y clasifica datos para tomar decisiones automatizadas (la que arma nuestro feed, la que nos sugiere una serie), y otra cosa es la IA generativa, capaz de producir algo nuevo. Ese salto es el que instaló a la IA en el centro de las conversaciones sobre creatividad, autoría y trabajo intelectual, y su uso tan masificado en distintas disciplinas y en el ámbito de la educación es lo que motiva este curso.
 
+## imagen2_caption
+
 ## bloquea_3
 Un modelo generativo no "sabe", no "piensa" y, sobre todo, no "imagina". Lo que hace es identificar cuál es la continuación estadísticamente más probable a partir de una enorme cantidad de datos con los que fue entrenado. No hay ahí una intención, un deseo ni una búsqueda propia, hay patrones: patrones gramaticales, patrones de estilo de escritura, patrones de formato, etc.
 
 Y esto nos lleva a una pregunta: cuando le pedimos a la IA que genere algo, ¿ese resultado es de nuestra autoría, no lo es, o lo es a medias? Pensemos un ejemplo concreto. Supongamos que necesitamos un flyer para difundir un evento o un producto. Si le pedimos a la IA, sin más, "haceme un flyer para este evento", y usamos tal cual lo que nos devuelve, ¿somos los diseñadores de esa pieza? Es una situación muy distinta a si, en cambio, le damos un esquema propio: cómo queremos distribuir los elementos, dónde van las cajas de texto, qué jerarquía tiene que tener la información, qué paleta de colores, qué tipografía. En ese segundo caso, la IA está resolviendo una ejecución que nosotros dirigimos de principio a fin; en el primero, es la IA la que está tomando casi todas las decisiones de diseño por nosotros.
+
+## imagen3_caption
 
 ## bloquea_4
 Ahí aparece la idea que atraviesa todo el curso: si no aportamos mirada, criterio, historia propia en el proceso, lo que obtenemos puede generar fascinación, incluso deslumbrar, pero va a responder a diseños más o menos hegemónicos —a lo que ya se repitió miles de veces y el modelo aprendió a reproducir muy bien— y no a nuestra voz autoral. Esto no significa desconocer que nuestra manera de crear también está atravesada por estilos, artistas y autores, y que podemos reconocernos en esa influencia. Pero es justamente por eso que la voz propia es lo que necesitamos construir, valorar y cuidar en tiempos de IA generativa: no partimos de cero, pero a partir de esas influencias hay una mirada que solo nosotros podemos aportar. La imaginación —la nuestra, no la del algoritmo— es lo que puede guiar ese resultado hacia algo propio.
@@ -64,11 +91,15 @@ Ahí aparece la idea que atraviesa todo el curso: si no aportamos mirada, criter
 ## cajanegra_1
 Cuando le pedimos a la IA que haga algo y presionamos Enter, la IA empieza a trabajar. Pero, ¿qué es lo que está haciendo exactamente en esos segundos? Para la mayoría de nosotros, lo que sucede ahí adentro es un misterio: escribimos algo, aparece un resultado, y en el medio, la nada. Esa caja negra es lo que se conoce como el **modelo**.
 
+## imagen4_caption
+
 ## cajanegra_2
 Es habitual usar los términos "modelo" y "plataforma" como si fueran sinónimos, y en realidad refieren a cosas distintas. El modelo es el algoritmo, el sistema computacional, la red neuronal entrenada que efectivamente genera el contenido. Por eso se lo suele llamar "caja negra": aunque sabemos qué entra (nuestro pedido) y qué sale (el resultado), lo que ocurre en el medio es extremadamente complejo y difícil de comprender incluso para quienes lo desarrollan. Hay modelos de lenguaje (los que solemos llamar LLM, Large Language Model), modelos de generación de imagen, de video, de audio, y también modelos multimodales, capaces de trabajar con más de un formato a la vez.
 
 ## laplataforma_1
 Ahora bien, a ese modelo casi nunca accedemos de manera directa: necesitamos un medio, una interfaz que nos permita comunicarnos con él escribiendo una instrucción o ingresando algún tipo de información de entrada. Ese medio es la **plataforma**.
+
+## imagen5_caption
 
 ## laplataforma_2
 Habitualmente tiene un sistema de chat —el casillero donde escribimos nuestro prompt— y otras herramientas asociadas: historial de conversaciones, opciones para subir archivos, ajustes de configuración, y en algunos casos la posibilidad de elegir entre distintos modelos disponibles. Acá aparece algo que suele confundirse: la relación entre modelo y plataforma no es de uno a uno. Una misma plataforma puede darnos acceso a varios modelos distintos, y un mismo modelo puede estar disponible desde plataformas diferentes, cada una con su propia interfaz y sus propias funcionalidades agregadas.
@@ -79,6 +110,8 @@ Por ejemplo, **Claude** de Anthropic es un modelo conversacional similar a ChatG
 
 ## gptchat_1
 Ya que lo nombramos tantas veces, quiero detenerme en el nombre de la IA más popular: "ChatGPT", porque ahí adentro están, literalmente, las dos capas que acabamos de distinguir. "Chat" es el medio: la interfaz conversacional, el sistema de input que nos permite escribirle al modelo y recibir una respuesta, es decir, la plataforma. "GPT" es el modelo, y la sigla resume bastante bien cómo funciona: **G**enerative (generativo, porque produce contenido nuevo), **P**re-trained (preentrenado, porque antes de que nosotros lo usemos ya fue entrenado con una enorme cantidad de datos, y no aprende "en vivo" de nuestra conversación) y **T**ransformer, que es el nombre de la arquitectura —el tipo de algoritmo— sobre la que está construido, y que resultó ser especialmente eficaz para procesar lenguaje.
+
+## imagen6_caption
 
 ## gptchat_2
 Antes de seguir, vale la pena tener un panorama más amplio de la variedad de modelos que existen según el tipo de contenido que producen. Además de los modelos de texto (los LLM) y los de imagen, hay modelos de video, modelos de música capaces de componer una canción completa —letra, voz e instrumentación— a partir de una descripción (como Suno o Udio), modelos de voz que clonan o generan voces (como ElevenLabs), modelos pensados específicamente para mezclar o masterizar audio, modelos que arman presentaciones o diapositivas de manera automática a partir de un texto o una idea (como Gamma), asistentes de programación basados en IA (como GitHub Copilot). Y la lista sigue creciendo: cada tanto aparece un modelo nuevo, pensado para una tarea todavía más específica.
@@ -133,11 +166,13 @@ En términos prácticos, un modelo propietario está controlado por una empresa,
 ## privados_2
 Un modelo abierto, en cambio, publica los archivos necesarios para utilizarlo, lo que permite que cualquier persona con los conocimientos técnicos necesarios pueda descargarlo, modificarlo y ejecutarlo en su propia computadora, sin depender de una empresa ni de una conexión a internet. Esto brinda un mayor control sobre nuestros datos y sobre el funcionamiento del modelo, aunque requiere un conocimiento técnico mayor para poder aprovecharlo.
 
-Un ejemplo concreto es **ComfyUI**, una interfaz gratuita y de código abierto que permite armar, de manera visual, flujos de trabajo con modelos abiertos de generación de imagen y video (como Stable Diffusion), conectando distintos "bloques" de procesamiento como si fueran piezas de un circuito. No es una herramienta pensada para un uso cotidiano y sencillo —tiene una curva de aprendizaje bastante más alta que la de escribir un prompt en un chat— pero es un buen ejemplo de hasta dónde puede llegar el control que ofrece el mundo del código abierto para quien esté dispuesto a invertir tiempo en aprenderlo.
+## comfyui
+Un caso interesante es **ComfyUI**, una interfaz gratuita y de código abierto que permite armar, de manera visual, flujos de trabajo con modelos abiertos de generación de imagen y video (como Stable Diffusion), conectando distintos "bloques" de procesamiento como si fueran piezas de un circuito. No es una herramienta pensada para un uso cotidiano y sencillo —tiene una curva de aprendizaje bastante más alta que la de escribir un prompt en un chat— pero es un buen ejemplo de hasta dónde puede llegar el control que ofrece el mundo del código abierto para quien esté dispuesto a invertir tiempo en aprenderlo.
 
 ## privados_3
 Ninguna de las dos opciones es mejor en abstracto: la elección depende de la tarea, del presupuesto y de cuánto control necesitamos sobre nuestra información. Hoy conviven modelos y plataformas de ambos tipos, con usos que se solapan bastante entre sí.
 
+## cual_es_mejor
 **Algo más para tener en cuenta**: en foros especializados y en distintos estudios comparativos se discute qué modelo conviene más para cada tipo de tarea, y las respuestas cambian todo el tiempo. Lo que hoy se destaca para programación puede no ser lo mismo dentro de unos meses. Aun así, sirve saber que esta comparación existe y que vale la pena hacerse la pregunta según lo que necesitamos hacer. Para **escritura** y **redacción general**, ChatGPT y Claude suelen aparecer entre las opciones mejor valoradas; para **programación**, Claude es una de las alternativas que pisa más fuerte; cuando el costo es un factor importante, DeepSeek entra en escena por su rendimiento y precio; y en **generación de imágenes**, la elección depende mucho del tipo de resultado que se busque, por ejemplo, fotorrealismo, ilustración o edición. Esto último lo vamos a retomar con más detalle en la Clase 3. En cualquier caso, ninguna de estas recomendaciones es definitiva: lo mejor es que cada uno haga sus propias pruebas y evalúe qué modelo le da mejores resultados según sus búsquedas y necesidades.
 
 ## limites_1
@@ -145,6 +180,7 @@ Una de las particularidades de estas herramientas es que siempre responden. No s
 
 Dos límites concretos se desprenden de esto:
 
+## alucinaciones_intro
 Las **alucinaciones** son los casos en los que un modelo genera información que suena verdadera pero que en realidad es falsa o directamente inventada. Esto es consecuencia de cómo funcionan estos modelos, que generan la continuación más probable de un texto y no necesariamente la más verdadera.
 
 ## sesgos_intro

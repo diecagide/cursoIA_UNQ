@@ -104,6 +104,8 @@
           <span class="img-placeholder__icon">🖼️</span>
           <p class="img-placeholder__hint">Se completa reemplazando images/01-imagen-curso.jpg</p>
         </div>
+        <!-- Epígrafe opcional debajo de la imagen 1 (se edita en contenido.txt, clave imagen1_caption). Si se deja vacío, no se muestra nada. -->
+        <p class="img-caption" data-key="imagen1_caption"></p>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="bienvenida_2"></div>
@@ -162,6 +164,8 @@
           <span class="img-placeholder__icon">🖼️</span>
           <p class="img-placeholder__hint">Se completa reemplazando images/02-imagen-modelos-ia.jpg</p>
         </div>
+        <!-- Epígrafe opcional debajo de la imagen 2 (contenido.txt, clave imagen2_caption) -->
+        <p class="img-caption" data-key="imagen2_caption"></p>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="bloquea_3"></div>
@@ -172,6 +176,8 @@
           <span class="img-placeholder__icon">🖼️</span>
           <p class="img-placeholder__hint">Se completa reemplazando images/03-imagen-flyer-ia.jpg</p>
         </div>
+        <!-- Epígrafe opcional debajo de la imagen 3 (contenido.txt, clave imagen3_caption) -->
+        <p class="img-caption" data-key="imagen3_caption"></p>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="bloquea_4"></div>
@@ -193,6 +199,8 @@
           <span class="img-placeholder__icon">🖼️</span>
           <p class="img-placeholder__hint">Se completa reemplazando images/04-imagen-modelo.jpg</p>
         </div>
+        <!-- Epígrafe opcional debajo de la imagen 4 (contenido.txt, clave imagen4_caption) -->
+        <p class="img-caption" data-key="imagen4_caption"></p>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="cajanegra_2"></p>
@@ -207,6 +215,8 @@
           <span class="img-placeholder__icon">🖼️</span>
           <p class="img-placeholder__hint">Se completa reemplazando images/05-imagen-plataformas.jpg</p>
         </div>
+        <!-- Epígrafe opcional debajo de la imagen 5 (contenido.txt, clave imagen5_caption) -->
+        <p class="img-caption" data-key="imagen5_caption"></p>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="laplataforma_2"></div>
@@ -221,6 +231,8 @@
           <span class="img-placeholder__icon">🖼️</span>
           <p class="img-placeholder__hint">Se completa reemplazando images/06-imagen-modelos-gpt.jpg</p>
         </div>
+        <!-- Epígrafe opcional debajo de la imagen 6 (contenido.txt, clave imagen6_caption) -->
+        <p class="img-caption" data-key="imagen6_caption"></p>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="gptchat_2"></p>
@@ -404,31 +416,61 @@
           </a>
         </div>
 
+        <!-- Contenido opcional / "para ampliar": no es central en la clase, por eso
+             va colapsado. El texto se edita en contenido.txt (clave comfyui), y la
+             imagen (opcional) se agrega reemplazando images/comfyui-ejemplo.jpg -->
+        <details class="expandable">
+          <summary>Para ampliar: un caso interesante: ComfyUI</summary>
+          <div class="expandable__body">
+            <p data-key="comfyui"></p>
+            <div class="img-placeholder">
+              <img src="images/comfyui-ejemplo.jpg" alt="Ejemplo de flujo de trabajo armado en ComfyUI" onerror="this.style.display='none'; this.closest('.img-placeholder').classList.remove('has-image');" onload="this.closest('.img-placeholder').classList.add('has-image');">
+              <span class="img-placeholder__icon">🖼️</span>
+              <p class="img-placeholder__hint">Opcional: se completa reemplazando images/comfyui-ejemplo.jpg</p>
+            </div>
+          </div>
+        </details>
+
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="privados_3"></p>
+
+        <h4>¿Cuál es mejor?</h4>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="cual_es_mejor"></p>
 
         <h3 id="limites">Los límites: cuando el resultado no es tan confiable como parece</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="limites_1"></div>
 
-        <p><strong>Algunos ejemplos frecuentes:</strong></p>
-        <ul class="example-list">
-          <li>Citar autores, títulos o fuentes que directamente no existen.</li>
-          <li>Inventar datos técnicos —fechas, cifras, especificaciones— con total seguridad.</li>
-          <li>Afirmar hechos históricos o biográficos parcial o totalmente falsos.</li>
-          <li>Combinar información real proveniente de distintas fuentes de una manera que termina siendo incorrecta.</li>
-        </ul>
+        <!-- Recuadro claro que engloba toda la subsección de alucinaciones,
+             incluyendo la lista de ejemplos (que mantiene su propio recuadro blanco) -->
+        <div class="subsection-highlight">
+          <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+          <p data-key="alucinaciones_intro"></p>
 
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="sesgos_intro"></p>
+          <p><strong>Algunos ejemplos frecuentes:</strong></p>
+          <ul class="example-list">
+            <li>Citar autores, títulos o fuentes que directamente no existen.</li>
+            <li>Inventar datos técnicos —fechas, cifras, especificaciones— con total seguridad.</li>
+            <li>Afirmar hechos históricos o biográficos parcial o totalmente falsos.</li>
+            <li>Combinar información real proveniente de distintas fuentes de una manera que termina siendo incorrecta.</li>
+          </ul>
+        </div>
 
-        <p><strong>Algunos ejemplos frecuentes:</strong></p>
-        <ul class="example-list">
-          <li>Representar por defecto ciertas profesiones con un género determinado.</li>
-          <li>Priorizar autores, perspectivas o referencias de determinadas regiones o tradiciones por sobre otras.</li>
-          <li>Asociar ciertos estilos, estéticas o formas de hablar a determinados grupos sociales.</li>
-          <li>Ofrecer resultados menos precisos para lenguas, nombres o contextos culturales poco representados en los datos de entrenamiento.</li>
-        </ul>
+        <!-- Recuadro claro que engloba toda la subsección de sesgos,
+             incluyendo la lista de ejemplos (que mantiene su propio recuadro blanco) -->
+        <div class="subsection-highlight">
+          <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+          <p data-key="sesgos_intro"></p>
+
+          <p><strong>Algunos ejemplos frecuentes:</strong></p>
+          <ul class="example-list">
+            <li>Representar por defecto ciertas profesiones con un género determinado.</li>
+            <li>Priorizar autores, perspectivas o referencias de determinadas regiones o tradiciones por sobre otras.</li>
+            <li>Asociar ciertos estilos, estéticas o formas de hablar a determinados grupos sociales.</li>
+            <li>Ofrecer resultados menos precisos para lenguas, nombres o contextos culturales poco representados en los datos de entrenamiento.</li>
+          </ul>
+        </div>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="limites_cierre"></p>

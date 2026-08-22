@@ -13,12 +13,19 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;');
 }
 
-// Convierte un texto plano con **negrita**, *cursiva* y [link](url) a HTML.
+// Convierte un texto plano con **negrita**, *cursiva*, [link](url),
+// ![imagen](ruta) y saltos de línea sueltos (Enter simple) a HTML.
 function renderInline(text) {
   var html = escapeHtml(text);
+  // Imagen: ![texto alternativo](images/archivo.jpg) — el "texto alternativo"
+  // es opcional y solo se usa para accesibilidad, no se ve en la página.
+  html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" loading="lazy">');
   html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
   html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  // Un solo Enter (sin línea en blanco) se muestra como salto de línea,
+  // no como continuación pegada del mismo renglón.
+  html = html.replace(/\n/g, '<br>');
   return html;
 }
 
@@ -62,8 +69,10 @@ function applyContent(data) {
     var paragraphs = raw.split(/\n\s*\n+/).map(function (p) { return p.trim(); }).filter(Boolean);
 
     if (el.tagName === 'P') {
-      // Un solo párrafo esperado; si por error hay más de uno, se unen.
-      el.innerHTML = renderInline(paragraphs.join(' '));
+      // Un solo párrafo esperado; si por error (o a propósito) hay más de
+      // uno separado por línea en blanco, se muestran como párrafos
+      // distintos (salto de línea doble) en vez de pegarse en un renglón.
+      el.innerHTML = paragraphs.map(renderInline).join('<br><br>');
     } else {
       el.innerHTML = '';
       paragraphs.forEach(function (p, i) {
