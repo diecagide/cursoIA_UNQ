@@ -239,12 +239,19 @@ a:hover { color: var(--color-primary); }
   margin-bottom: 40px;
 }
 
+/* El nombre del curso va primero, arriba de todo el encabezado */
+.class-header__course {
+  margin: 0 0 16px;
+  font-size: .92rem;
+  color: var(--color-text-muted);
+}
+
 .class-header__eyebrow {
   color: var(--color-accent);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .08em;
-  font-size: .82rem;
+  font-size: 1rem;
   margin: 0 0 10px;
 }
 
@@ -254,12 +261,6 @@ a:hover { color: var(--color-primary); }
   line-height: 1.25;
   color: var(--color-primary);
   margin: 0;
-}
-
-.class-header__course {
-  margin: 14px 0 0;
-  font-size: .92rem;
-  color: var(--color-text-muted);
 }
 
 section.block {
@@ -391,6 +392,14 @@ section.block:first-of-type {
   margin: 0 0 8px;
   font-size: 1.05rem;
   color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reason-card__icon {
+  font-size: 1.2rem;
+  line-height: 1;
 }
 
 .reason-card p { margin: 0 0 10px; font-size: .96rem; }
@@ -464,6 +473,96 @@ section.block:first-of-type {
 
 .comparison__col--ok li::before { content: "✓"; position: absolute; left: 0; color: var(--color-ok); font-weight: 700; }
 .comparison__col--no li::before { content: "✕"; position: absolute; left: 0; color: var(--color-no); font-weight: 700; }
+
+/* ---------- Caja destacada: la paradoja del conocimiento ---------- */
+/* Uno de los momentos más importantes del curso: se destaca con el mismo
+   degradé violeta→magenta de la barra lateral y texto blanco. */
+
+.highlight-box {
+  background: var(--gradient-sidebar);
+  color: #fff;
+  border-radius: 16px;
+  padding: 32px 28px;
+  margin: 36px 0 28px;
+  box-shadow: 0 10px 28px rgba(46,58,89,.28);
+  scroll-margin-top: 24px;
+}
+
+.content-inner .highlight-box h3 {
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  margin: 0 0 14px;
+}
+
+.highlight-box p:last-child { margin-bottom: 0; }
+.highlight-box a { color: #fff; text-decoration: underline; }
+.highlight-box strong { color: #fff; }
+
+/* ---------- Botones de íconos con link (modelos privados / código abierto) ---------- */
+
+.icon-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0 28px;
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 10px 16px 10px 10px;
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: .92rem;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.icon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+  border-color: var(--icon-btn-color, var(--color-accent));
+  color: var(--color-primary);
+}
+
+.icon-btn__logo {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--icon-btn-color, var(--color-primary));
+}
+
+.icon-btn__logo svg { width: 18px; height: 18px; }
+
+/* Logos que pasó Diego: mismo tamaño de exhibición para los 8, sin
+   importar la forma/proporción original de cada isotipo. */
+.icon-btn__logo img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
+.icon-btn__logo--text {
+  background: var(--icon-btn-color, var(--color-primary));
+  color: #fff;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: .64rem;
+  letter-spacing: .01em;
+  border-color: transparent;
+}
 
 /* ---------- Grilla de empresas (Bloque D) ---------- */
 
@@ -581,6 +680,27 @@ section.block:first-of-type {
   margin-bottom: 12px;
 }
 .practice-list strong { color: var(--color-primary); }
+
+/* Tres tarjetas de cierre con color propio (fríos) y letra blanca para
+   que se destaquen como recomendaciones prácticas concretas. */
+.practice-list li.practice-list__item--violet {
+  background: #5b3fa0;
+  border-color: transparent;
+  color: #fff;
+}
+.practice-list li.practice-list__item--magenta {
+  background: #c2255c;
+  border-color: transparent;
+  color: #fff;
+}
+.practice-list li.practice-list__item--teal {
+  background: #0e6e70;
+  border-color: transparent;
+  color: #fff;
+}
+.practice-list li.practice-list__item--violet strong,
+.practice-list li.practice-list__item--magenta strong,
+.practice-list li.practice-list__item--teal strong { color: #fff; }
 
 .next-class {
   margin-top: 40px;

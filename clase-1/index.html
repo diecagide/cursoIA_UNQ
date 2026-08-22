@@ -84,9 +84,9 @@
     <div class="content-inner">
 
       <header class="class-header">
+        <p class="class-header__course">La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria — Docente: Diego Cagide</p>
         <p class="class-header__eyebrow">Clase 1</p>
         <h1>Introducción a la IA Generativa</h1>
-        <p class="class-header__course">La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria — Docente: Diego Cagide</p>
       </header>
 
       <!-- =================================================================
@@ -122,15 +122,15 @@
              Los títulos quedan fijos acá; el texto de cada una se edita en contenido.txt -->
         <div class="reasons">
           <div class="reason-card">
-            <h3>1) Conocer al monstruo</h3>
+            <h3><span class="reason-card__icon" aria-hidden="true">👹</span> 1) Conocer al monstruo</h3>
             <p data-key="razon1"></p>
           </div>
           <div class="reason-card">
-            <h3>2) Conocer las utilidades</h3>
+            <h3><span class="reason-card__icon" aria-hidden="true">🛠️</span> 2) Conocer las utilidades</h3>
             <div class="content-block" data-key="razon2"></div>
           </div>
           <div class="reason-card">
-            <h3>3) Conocerla para no usarla</h3>
+            <h3><span class="reason-card__icon" aria-hidden="true">🙏</span> 3) Conocerla para no usarla</h3>
             <p data-key="razon3"></p>
           </div>
         </div>
@@ -278,9 +278,12 @@
           <li>Agilizar la producción de piezas de comunicación, como flyers, videos cortos o piezas para redes.</li>
         </ul>
 
-        <h3 id="paradoja">La paradoja del conocimiento</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="paradoja"></div>
+        <!-- Recuadro destacado: uno de los momentos más importantes del curso -->
+        <div class="highlight-box" id="paradoja">
+          <h3>La paradoja del conocimiento</h3>
+          <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+          <div class="content-block" data-key="paradoja"></div>
+        </div>
       </section>
 
       <!-- =================================================================
@@ -356,21 +359,49 @@
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="privados_1"></div>
 
-        <!-- IMAGEN 7 -->
-        <div class="img-placeholder">
-          <img src="images/07-iconos-modelos-privados.jpg" alt="Íconos de modelos privados" onerror="this.style.display='none'; this.closest('.img-placeholder').classList.remove('has-image');" onload="this.closest('.img-placeholder').classList.add('has-image');">
-          <span class="img-placeholder__icon">🖼️</span>
-          <p class="img-placeholder__hint">Se completa reemplazando images/07-iconos-modelos-privados.jpg</p>
+        <!-- Botones con los íconos de los modelos/plataformas privados, cada uno linkea a la herramienta.
+             Los logos son los que pasó Diego (images/logos/), recortados y parejos en tamaño. -->
+        <div class="icon-links">
+          <a class="icon-btn" href="https://chatgpt.com/" target="_blank" rel="noopener" style="--icon-btn-color:#10A37F">
+            <span class="icon-btn__logo"><img src="images/logos/chatgpt.png" alt="ChatGPT" loading="lazy"></span>
+            ChatGPT
+          </a>
+          <a class="icon-btn" href="https://claude.ai/new" target="_blank" rel="noopener" style="--icon-btn-color:#D97757">
+            <span class="icon-btn__logo"><img src="images/logos/claude.png" alt="Claude" loading="lazy"></span>
+            Claude
+          </a>
+          <a class="icon-btn" href="https://gemini.google.com/app" target="_blank" rel="noopener" style="--icon-btn-color:#8E75B2">
+            <span class="icon-btn__logo"><img src="images/logos/gemini.png" alt="Gemini" loading="lazy"></span>
+            Gemini
+          </a>
+          <a class="icon-btn" href="https://www.meta.ai/" target="_blank" rel="noopener" style="--icon-btn-color:#0467DF">
+            <span class="icon-btn__logo"><img src="images/logos/meta.png" alt="Meta AI" loading="lazy"></span>
+            Meta AI
+          </a>
+          <a class="icon-btn" href="https://copilot.cloud.microsoft/" target="_blank" rel="noopener" style="--icon-btn-color:#0078D4">
+            <span class="icon-btn__logo"><img src="images/logos/copilot.png" alt="Copilot" loading="lazy"></span>
+            Copilot
+          </a>
         </div>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="privados_2"></div>
 
-        <!-- IMAGEN 8 -->
-        <div class="img-placeholder">
-          <img src="images/08-iconos-modelos-abiertos.jpg" alt="Íconos de modelos open source" onerror="this.style.display='none'; this.closest('.img-placeholder').classList.remove('has-image');" onload="this.closest('.img-placeholder').classList.add('has-image');">
-          <span class="img-placeholder__icon">🖼️</span>
-          <p class="img-placeholder__hint">Se completa reemplazando images/08-iconos-modelos-abiertos.jpg</p>
+        <!-- Botones con los íconos de los modelos de código abierto, cada uno linkea a la herramienta.
+             Los logos son los que pasó Diego (images/logos/), recortados y parejos en tamaño. -->
+        <div class="icon-links">
+          <a class="icon-btn" href="https://chat.deepseek.com/" target="_blank" rel="noopener" style="--icon-btn-color:#5786FE">
+            <span class="icon-btn__logo"><img src="images/logos/deepseek.png" alt="DeepSeek" loading="lazy"></span>
+            DeepSeek
+          </a>
+          <a class="icon-btn" href="https://stability.ai/" target="_blank" rel="noopener" style="--icon-btn-color:#1861DF">
+            <span class="icon-btn__logo"><img src="images/logos/stablediffusion.png" alt="Stable Diffusion" loading="lazy"></span>
+            Stable Diffusion
+          </a>
+          <a class="icon-btn" href="https://blackforestlabs.ai/" target="_blank" rel="noopener" style="--icon-btn-color:#111111">
+            <span class="icon-btn__logo"><img src="images/logos/flux.png" alt="Flux" loading="lazy"></span>
+            Flux
+          </a>
         </div>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
@@ -413,9 +444,9 @@
         <div class="content-block" data-key="cierre_1"></div>
 
         <ul class="practice-list">
-          <li><strong>Establecer acuerdos de uso.</strong> Puede ser interesante delimitar en qué etapas de la cursada o del proceso de producción puede utilizarse la IA y en cuáles no.</li>
-          <li><strong>Sugerir modelos y plataformas.</strong> Presentar algunas herramientas y explicar sus principales diferencias puede ayudar a orientar a los estudiantes y evitar que el uso de la IA quede librado únicamente a la exploración individual.</li>
-          <li><strong>Incorporar instancias orales.</strong> Pedir a los estudiantes que puedan contar qué hicieron, qué herramientas utilizaron y por qué tomaron determinadas decisiones. Esto permite conocer mejor el proceso de trabajo, ver cuánto se apropiaron de los contenidos y de la terminología de la disciplina.</li>
+          <li class="practice-list__item--violet"><strong>Establecer acuerdos de uso.</strong> Puede ser interesante delimitar en qué etapas de la cursada o del proceso de producción puede utilizarse la IA y en cuáles no.</li>
+          <li class="practice-list__item--magenta"><strong>Sugerir modelos y plataformas.</strong> Presentar algunas herramientas y explicar sus principales diferencias puede ayudar a orientar a los estudiantes y evitar que el uso de la IA quede librado únicamente a la exploración individual.</li>
+          <li class="practice-list__item--teal"><strong>Incorporar instancias orales.</strong> Pedir a los estudiantes que puedan contar qué hicieron, qué herramientas utilizaron y por qué tomaron determinadas decisiones. Esto permite conocer mejor el proceso de trabajo, ver cuánto se apropiaron de los contenidos y de la terminología de la disciplina.</li>
         </ul>
 
         <div class="next-class">
