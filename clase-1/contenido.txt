@@ -42,6 +42,9 @@ La idea que le da nombre al curso es también su punto de partida: la imaginaci�
 Este curso está pensado para docentes de las cuatro unidades académicas de la universidad que quieran conocer estas herramientas, incorporarlas a su propia práctica de enseñanza, y acompañar a sus estudiantes en un uso estratégico y creativo de la IA generativa. No importa si ya la usan a diario o si es la primera vez que se acercan al tema: la propuesta está armada para que cada uno pueda avanzar a su propio ritmo.
 
 ## imagen1_caption
+Imagen generada en Adobe Firefly
+Modelo: Nano Banana
+Prompt: Un banner de temática IA para un curso de Inteligencia Artificial para docentes universitarios de Artes, Ciencias Sociales, Economía y Ciencia y Tecnología. Debe representar en distintos recuadros las distintas unidades académicas, de manera sobria y representativa. La IA debe estar presente como elemento común entre todas las áreas. Que no tenga textos ni agregados típicos de una infografía.
 
 ## bienvenida_2
 A lo largo de cinco clases vamos a recorrer un camino que va de lo más general a lo más específico. En esta primera clase nos detenemos en los modelos y las plataformas que existen hoy, usos y cuestiones generales. En la Clase 2 nos metemos de lleno con la escritura de prompts y la producción de texto. En las Clases 3 y 4, con imagen, video y otros formatos. Y en la Clase 5 hacemos una síntesis e integramos varios modelos en un mismo proceso de producción.
