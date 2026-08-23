@@ -12,8 +12,8 @@ subiendo archivos desde la propia web de GitHub, sin instalar nada.
 Links de cada clase (una vez publicado, ver paso 1):
 
 - Clase 1: `https://diecagide.github.io/cursoIA_UNQ/clase-1/`
-- Clase 2: `https://diecagide.github.io/cursoIA_UNQ/clase-2/` (cuando esté)
-- Clase 3, 4, 5: mismo patrón, cambiando el número.
+- Clase 2: `https://diecagide.github.io/cursoIA_UNQ/clase-2/`
+- Clase 3, 4, 5: mismo patrón, cambiando el número (cuando estén).
 
 ---
 
@@ -102,6 +102,15 @@ Todo el texto de la clase vive en un solo archivo simple:
    - `**texto**` para **negrita**
    - `*texto*` para *cursiva*
    - `[texto](https://...)` para un link
+   - Una LISTA con viñetas: si todos los renglones de un párrafo
+     empiezan con `- ` (guion + espacio), se muestran como una lista
+     en vez de texto corrido:
+
+     ```
+     - Primer punto.
+     - Segundo punto.
+     ```
+
    - Para una IMAGEN, ver la sección 4 más abajo — es la misma lógica
      en cualquier bloque de texto, no solo para las imágenes "fijas".
 7. Abajo de todo hay un botón verde "Commit changes" — con eso
@@ -178,36 +187,47 @@ orientación, no hace falta mantenerlo actualizado a mano.
 
 ---
 
-## 5. Agregar el recurso interactivo de Genially
+## 5. Agregar un recurso interactivo (Genially, un video de YouTube, etc.)
 
-En el Bloque A de la Clase 1 hay un recuadro que marca dónde va la
-línea de tiempo hecha en Genially. Cuando la tengas lista:
+Algunos bloques tienen un recuadro punteado que marca dónde va un
+recurso interactivo — la línea de tiempo de Genially en la Clase 1, o
+un video de YouTube en la Clase 2. Se agrega igual en los dos casos:
 
-1. En Genially, usá la opción "Compartir" → "Insertar" (embed) y
-   copiá el código que te da, que va a tener esta forma:
+1. En Genially usá "Compartir" → "Insertar" (embed); en YouTube usá el
+   botón "Compartir" → "Insertar" debajo del video. En los dos casos
+   te va a dar un código parecido a este:
 
    ```html
-   <div style="width:100%;"><iframe src="https://view.genially.com/XXXXXXX" ...></iframe></div>
+   <iframe src="https://www.youtube.com/embed/XXXXXXX" ...></iframe>
    ```
 
-2. En `clase-1/index.html`, buscá el comentario que dice:
+2. En el `index.html` de la clase correspondiente, buscá el comentario
+   que dice:
 
    `<!-- PEGAR ACÁ EL <iframe ...>...</iframe> QUE TE DA GENIALLY -->`
 
-3. Pegá el código de Genially justo debajo de ese comentario.
-4. Borrá (o dejá, como prefieras) las 3 líneas de "pendiente" que
-   están arriba (el ícono 🔗 y los dos textos de aviso).
-5. Commit changes.
+   o, para un video:
+
+   `<!-- PEGAR ACÁ EL <iframe ...>...</iframe> QUE TE DA YOUTUBE -->`
+
+3. Pegá el código justo debajo de ese comentario, y borrá las líneas
+   de "pendiente" que están arriba (el ícono y los dos textos de
+   aviso) — a diferencia de las imágenes, acá sí hay que borrarlas a
+   mano para que no queden mezcladas con el video.
+4. Commit changes.
 
 ---
 
-## 6. Cuando armemos la Clase 2 (y siguientes)
+## 6. Cuando armemos la Clase 3 (y siguientes)
 
-Va a sumarse una carpeta `clase-2/` nueva, con la misma estructura que
-`clase-1/` (su propio `index.html`, y copias de `styles.css` y
-`script.js` para que funcione de forma independiente). El link va a
-ser `https://diecagide.github.io/cursoIA_UNQ/clase-2/`, siguiendo el
-mismo patrón.
+Va a sumarse una carpeta `clase-3/` nueva, con la misma estructura que
+`clase-1/` y `clase-2/` (su propio `index.html`, y copias de
+`styles.css` y `script.js` para que funcione de forma independiente).
+El link va a ser `https://diecagide.github.io/cursoIA_UNQ/clase-3/`,
+siguiendo el mismo patrón. Cada clase tiene, además, un tono levemente
+distinto en el degradé de la barra lateral para distinguirse de un
+vistazo — no hace falta hacer nada para eso, ya viene armado en
+`styles.css`.
 
 ---
 
@@ -216,12 +236,14 @@ mismo patrón.
 ```
 cursoIA_UNQ/
 ├── README.md              este archivo
-└── clase-1/
-    ├── index.html          esqueleto de la clase (no hace falta tocarlo)
-    ├── contenido.txt        todo el texto de la clase (esto sí se edita)
-    ├── styles.css           diseño visual (no hace falta tocarlo)
-    ├── script.js             menú, scroll y carga de contenido.txt (no hace falta tocarlo)
-    └── images/
-        ├── LEEME.txt          lista de referencia de las imágenes que usa la clase
-        └── (acá van tus imágenes)
+├── clase-1/
+│   ├── index.html          esqueleto de la clase (no hace falta tocarlo)
+│   ├── contenido.txt        todo el texto de la clase (esto sí se edita)
+│   ├── styles.css           diseño visual (no hace falta tocarlo)
+│   ├── script.js             menú, scroll y carga de contenido.txt (no hace falta tocarlo)
+│   └── images/
+│       ├── LEEME.txt          lista de referencia de las imágenes que usa la clase
+│       └── (acá van tus imágenes)
+└── clase-2/                misma estructura que clase-1/
+    └── (ídem)
 ```
