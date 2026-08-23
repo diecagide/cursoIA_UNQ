@@ -110,78 +110,174 @@
         <h2>Bloque A — ¿Qué son los LLM?</h2>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="bloquea_intro" data-lead="true"></div>
+        <div class="content-block" data-key="bloquea_intro"></div>
 
         <h3 id="panorama-llms">Un panorama de LLMs</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="panorama_llms_1"></p>
 
         <!-- Cuadro comparativo de plataformas: contenido fijo en index.html
-             (no se edita desde contenido.txt). Si querés actualizar una
-             celda, se edita directo acá. -->
-        <div class="table-wrap">
-          <table class="comparison-table">
-            <thead>
-              <tr>
-                <th>Plataforma</th>
-                <th>Desarrollador</th>
-                <th>Tipo de asistente</th>
-                <th>Funciones principales</th>
-                <th>Por qué conviene conocerla</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>ChatGPT</td>
-                <td>OpenAI</td>
-                <td>Conversacional generalista</td>
-                <td>Redacción, análisis de documentos, programación, generación de imágenes</td>
-                <td>Es el punto de entrada más extendido; tiene un ecosistema amplio de GPTs personalizados</td>
-              </tr>
-              <tr>
-                <td>Claude</td>
-                <td>Anthropic</td>
-                <td>Conversacional orientado a texto extenso</td>
-                <td>Redacción y edición de textos largos, análisis de documentos, programación</td>
-                <td>Sostiene coherencia en documentos y conversaciones extensas, con buen seguimiento de instrucciones complejas</td>
-              </tr>
-              <tr>
-                <td>Gemini</td>
-                <td>Google</td>
-                <td>Multimodal integrado</td>
-                <td>Comprensión de texto, imagen, audio y video; búsqueda en tiempo real</td>
-                <td>Integración nativa con Gmail, Docs, Drive y el buscador de Google</td>
-              </tr>
-              <tr>
-                <td>Copilot</td>
-                <td>Microsoft</td>
-                <td>Asistente de productividad</td>
-                <td>Redacción de documentos, resumen de correos, análisis en Excel, generación de presentaciones</td>
-                <td>Integración directa con Word, Excel, Outlook y Teams</td>
-              </tr>
-              <tr>
-                <td>Meta AI</td>
-                <td>Meta</td>
-                <td>Conversacional integrado a redes sociales</td>
-                <td>Búsqueda, generación de texto e imágenes, conversación</td>
-                <td>Está disponible dentro de WhatsApp, Instagram y Facebook, sin necesidad de otra aplicación</td>
-              </tr>
-              <tr>
-                <td>Perplexity</td>
-                <td>Perplexity AI</td>
-                <td>Motor de búsqueda conversacional</td>
-                <td>Respuestas con citas y enlaces a fuentes, búsqueda académica</td>
-                <td>Cada respuesta muestra de dónde sacó la información, lo que facilita validarla</td>
-              </tr>
-              <tr>
-                <td>DeepSeek</td>
-                <td>DeepSeek</td>
-                <td>Conversacional de código abierto</td>
-                <td>Redacción, programación, razonamiento</td>
-                <td>Rendimiento competitivo con un costo de uso más bajo; varios modelos de código abierto</td>
-              </tr>
-            </tbody>
-          </table>
+             (no se edita desde contenido.txt). Armado como tarjetas (no
+             tabla) para que no dependa de un ancho fijo. Si querés
+             actualizar un dato, se edita directo acá. Los logos son los
+             mismos archivos que ya usa la Clase 1 (images/logos/);
+             Perplexity no tiene logo disponible en el banco de íconos
+             libres que usamos, así que lleva una placa con su color de
+             marca, igual que se hizo con OpenAI/Adobe en la Clase 1. -->
+        <div class="platform-cards">
+          <div class="platform-card" style="--platform-color:#10A37F">
+            <div class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/chatgpt.png" alt="ChatGPT" loading="lazy"></span>
+              <div>
+                <h4 class="platform-card__name"><a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT ↗</a></h4>
+                <p class="platform-card__dev">OpenAI</p>
+              </div>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Tipo de asistente</p>
+              <p>Conversacional generalista</p>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Funciones principales</p>
+              <p>Redacción, análisis de documentos, programación, generación de imágenes</p>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Por qué conviene conocerla</p>
+              <p>Es el punto de entrada más extendido; tiene un ecosistema amplio de GPTs personalizados</p>
+            </div>
+          </div>
+
+          <div class="platform-card" style="--platform-color:#D97757">
+            <div class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/claude.png" alt="Claude" loading="lazy"></span>
+              <div>
+                <h4 class="platform-card__name"><a href="https://claude.ai/new" target="_blank" rel="noopener">Claude ↗</a></h4>
+                <p class="platform-card__dev">Anthropic</p>
+              </div>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Tipo de asistente</p>
+              <p>Conversacional orientado a texto extenso</p>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Funciones principales</p>
+              <p>Redacción y edición de textos largos, análisis de documentos, programación</p>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Por qué conviene conocerla</p>
+              <p>Sostiene coherencia en documentos y conversaciones extensas, con buen seguimiento de instrucciones complejas</p>
+            </div>
+          </div>
+
+          <div class="platform-card" style="--platform-color:#8E75B2">
+            <div class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/gemini.png" alt="Gemini" loading="lazy"></span>
+              <div>
+                <h4 class="platform-card__name"><a href="https://gemini.google.com/app" target="_blank" rel="noopener">Gemini ↗</a></h4>
+                <p class="platform-card__dev">Google</p>
+              </div>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Tipo de asistente</p>
+              <p>Multimodal integrado</p>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Funciones principales</p>
+              <p>Comprensión de texto, imagen, audio y video; búsqueda en tiempo real</p>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Por qué conviene conocerla</p>
+              <p>Integración nativa con Gmail, Docs, Drive y el buscador de Google</p>
+            </div>
+          </div>
+
+          <div class="platform-card" style="--platform-color:#0078D4">
+            <div class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/copilot.png" alt="Copilot" loading="lazy"></span>
+              <div>
+                <h4 class="platform-card__name"><a href="https://copilot.cloud.microsoft/" target="_blank" rel="noopener">Copilot ↗</a></h4>
+                <p class="platform-card__dev">Microsoft</p>
+              </div>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Tipo de asistente</p>
+              <p>Asistente de productividad</p>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Funciones principales</p>
+              <p>Redacción de documentos, resumen de correos, análisis en Excel, generación de presentaciones</p>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Por qué conviene conocerla</p>
+              <p>Integración directa con Word, Excel, Outlook y Teams</p>
+            </div>
+          </div>
+
+          <div class="platform-card" style="--platform-color:#0467DF">
+            <div class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/meta.png" alt="Meta AI" loading="lazy"></span>
+              <div>
+                <h4 class="platform-card__name"><a href="https://www.meta.ai/" target="_blank" rel="noopener">Meta AI ↗</a></h4>
+                <p class="platform-card__dev">Meta</p>
+              </div>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Tipo de asistente</p>
+              <p>Conversacional integrado a redes sociales</p>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Funciones principales</p>
+              <p>Búsqueda, generación de texto e imágenes, conversación</p>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Por qué conviene conocerla</p>
+              <p>Está disponible dentro de WhatsApp, Instagram y Facebook, sin necesidad de otra aplicación</p>
+            </div>
+          </div>
+
+          <div class="platform-card" style="--platform-color:#21808D">
+            <div class="platform-card__head">
+              <span class="platform-card__logo platform-card__logo--text">Px</span>
+              <div>
+                <h4 class="platform-card__name"><a href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity ↗</a></h4>
+                <p class="platform-card__dev">Perplexity AI</p>
+              </div>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Tipo de asistente</p>
+              <p>Motor de búsqueda conversacional</p>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Funciones principales</p>
+              <p>Respuestas con citas y enlaces a fuentes, búsqueda académica</p>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Por qué conviene conocerla</p>
+              <p>Cada respuesta muestra de dónde sacó la información, lo que facilita validarla</p>
+            </div>
+          </div>
+
+          <div class="platform-card" style="--platform-color:#5786FE">
+            <div class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/deepseek.png" alt="DeepSeek" loading="lazy"></span>
+              <div>
+                <h4 class="platform-card__name"><a href="https://chat.deepseek.com/" target="_blank" rel="noopener">DeepSeek ↗</a></h4>
+                <p class="platform-card__dev">DeepSeek</p>
+              </div>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Tipo de asistente</p>
+              <p>Conversacional de código abierto</p>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Funciones principales</p>
+              <p>Redacción, programación, razonamiento</p>
+            </div>
+            <div class="platform-card__row">
+              <p class="platform-card__label">Por qué conviene conocerla</p>
+              <p>Rendimiento competitivo con un costo de uso más bajo; varios modelos de código abierto</p>
+            </div>
+          </div>
         </div>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
@@ -212,7 +308,7 @@
         <h2>Bloque B — El prompt: gramática y estructura</h2>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="bloqueb_1" data-lead="true"></div>
+        <div class="content-block" data-key="bloqueb_1"></div>
 
         <!-- "Cuadro con distintos colores con los seis elementos": la
              estructura y el color de cada tarjeta son fijos acá (icono +
@@ -318,19 +414,19 @@
 
         <h3>Usos generales: trabajo con textos</h3>
 
-        <h4>1) Producir texto</h4>
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">1</span> Producir texto</h4>
         <!-- El texto de esta sección (incluida la lista) se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="producir_texto"></div>
 
-        <h4>2) Estructurar la información y generar archivos</h4>
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">2</span> Estructurar la información y generar archivos</h4>
         <!-- El texto de esta sección (incluida la lista) se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="estructurar_info"></div>
 
-        <h4>3) Traducir</h4>
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">3</span> Traducir</h4>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="traducir"></div>
 
-        <h4>4) Trabajar sobre archivos adjuntos</h4>
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">4</span> Trabajar sobre archivos adjuntos</h4>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="archivos_intro"></p>
 
@@ -356,7 +452,7 @@
         <!-- El texto de esta sección (incluida la lista) se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="otros_archivos_2"></div>
 
-        <h4>5) Revisar lecturas complementarias</h4>
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">5</span> Revisar lecturas complementarias</h4>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="revisar_lecturas"></p>
 
@@ -408,9 +504,11 @@
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="bloquee_1"></p>
 
-        <h3 id="legitimidad"><span aria-hidden="true">✅</span> Legitimidad</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="legitimidad_1"></p>
+        <div class="subsection-highlight">
+          <h3 id="legitimidad"><span aria-hidden="true">✅</span> Legitimidad</h3>
+          <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+          <p data-key="legitimidad_1"></p>
+        </div>
 
         <p class="mini-heading">Estrategias para validar la información de IA</p>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
@@ -470,9 +568,11 @@
           <!-- PEGAR ACÁ EL <iframe ...>...</iframe> QUE TE DA YOUTUBE -->
         </div>
 
-        <h3 id="voz-propia"><span aria-hidden="true">🗣️</span> Voz propia</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="voz_propia_1"></div>
+        <div class="subsection-highlight">
+          <h3 id="voz-propia"><span aria-hidden="true">🗣️</span> Voz propia</h3>
+          <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+          <div class="content-block" data-key="voz_propia_1"></div>
+        </div>
 
         <p class="mini-heading">Estrategias para validar la voz propia</p>
         <!-- El texto de esta sección (la lista) se edita en contenido.txt (no acá) -->
