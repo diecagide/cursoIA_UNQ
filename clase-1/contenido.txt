@@ -53,6 +53,8 @@ Cada clase combina una instancia teórica —la que están leyendo ahora mismo�
 
 No hace falta ningún conocimiento técnico previo para este curso: alcanza con las ganas de experimentar, de probar, de equivocarse, y de ir construyendo una mirada propia sobre las posibilidades y los límites de estas herramientas. Empecemos.
 
+
+
 ## porque_intro
 Si la IA generativa te "genera" distancia, dolor de panza, malestar inconmensurable o te parece que es una piedra en el zapato, te comparto algunas razones que fui pensando por las que puede ser útil conocer un poco de este mundo.
 
@@ -80,8 +82,7 @@ Entonces, si el término tiene más de setenta años, ¿por qué empezamos a hab
 Entonces, una cosa es la IA que analiza y clasifica datos para tomar decisiones automatizadas (la que arma nuestro feed, la que nos sugiere una serie), y otra cosa es la IA generativa, capaz de producir algo nuevo. Ese salto es el que instaló a la IA en el centro de las conversaciones sobre creatividad, autoría y trabajo intelectual, y su uso tan masificado en distintas disciplinas y en el ámbito de la educación es lo que motiva este curso.
 
 ## imagen2_caption
-Imagen generada en Adobe Firefly
-Modelo: Nano Banana pro
+Modelo: Nano Banana pro (Gemini)
 Prompt: Un banner para el mismo curso, destinado al apartado de Modelos y Plataformas. Debe tener los logos de GPT, Gemini y Meta. No debe tener textos. Quiero que tenga una estética de acuarelas coloridas, combinada con render 3D.
 
 ## bloquea_3
@@ -90,8 +91,7 @@ Un modelo generativo no "sabe", no "piensa" y, sobre todo, no "imagina". Lo que 
 Y esto nos lleva a una pregunta: cuando le pedimos a la IA que genere algo, ¿ese resultado es de nuestra autoría, no lo es, o lo es a medias? Pensemos un ejemplo concreto. Supongamos que necesitamos un flyer para difundir un evento o un producto. Si le pedimos a la IA, sin más, "haceme un flyer para este evento", y usamos tal cual lo que nos devuelve, ¿somos los diseñadores de esa pieza? Es una situación muy distinta a si, en cambio, le damos un esquema propio: cómo queremos distribuir los elementos, dónde van las cajas de texto, qué jerarquía tiene que tener la información, qué paleta de colores, qué tipografía. En ese segundo caso, la IA está resolviendo una ejecución que nosotros dirigimos de principio a fin; en el primero, es la IA la que está tomando casi todas las decisiones de diseño por nosotros.
 
 ## imagen3_caption
-Imagen generada en Adobe Firefly
-Modelo: GPT Image 2
+Modelo: GPT Image 2 (Gemini)
 Prompt: Una infografía típica de IA que explique "Cómo Farmear Aura". Debe ser surrealista, cómica y contener muchos elementos ilógicos. Debe incluir textos explicativos.
 
 ## bloquea_4
@@ -101,8 +101,7 @@ Ahí aparece la idea que atraviesa todo el curso: si no aportamos mirada, criter
 Cuando le pedimos a la IA que haga algo y presionamos Enter, la IA empieza a trabajar. Pero, ¿qué es lo que está haciendo exactamente en esos segundos? Para la mayoría de nosotros, lo que sucede ahí adentro es un misterio: escribimos algo, aparece un resultado, y en el medio, la nada. Esa caja negra es lo que se conoce como el **modelo**.
 
 ## imagen4_caption
-Imagen generada en Adobe Firefly
-Modelo: GPT Image 2
+Modelo: GPT Image 2 (CharGPT)
 Prompt: Una representación visual de la caja negra de IA, mostrando claramente una entrada, la caja negra y la salida generada por el modelo de IA. Estética cinematográfica, con iluminación cuidada y foco selectivo. Sin texto ni flechas. La entrada se encuentra a la izquierda y debe ser visualmente más simple. La salida debe ser visualmente más compleja, rica y elaborada que la entrada. Composición en perspectiva, con sensación de profundidad.
 
 ## cajanegra_2
@@ -112,8 +111,7 @@ Es habitual usar los términos "modelo" y "plataforma" como si fueran sinónimos
 Ahora bien, a ese modelo casi nunca accedemos de manera directa: necesitamos un medio, una interfaz que nos permita comunicarnos con él escribiendo una instrucción o ingresando algún tipo de información de entrada. Ese medio es la **plataforma**.
 
 ## imagen5_caption
-Imagen generada en Adobe Firefly
-Modelo: GPT Image 2
+Modelo: Flux.2
 Prompt: Un banner que muestre una interfaz típica de IA, con el casillero para ingresar el prompt, etc. Estética cinematográfica.
 
 ## laplataforma_2
