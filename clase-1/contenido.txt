@@ -53,7 +53,7 @@ Cada clase combina una instancia teórica —la que están leyendo ahora mismo�
 
 No hace falta ningún conocimiento técnico previo para este curso: alcanza con las ganas de experimentar, de probar, de equivocarse, y de ir construyendo una mirada propia sobre las posibilidades y los límites de estas herramientas. Empecemos.
 
-
+![](images/09-imagen.jpg)
 
 ## porque_intro
 Si la IA generativa te "genera" distancia, dolor de panza, malestar inconmensurable o te parece que es una piedra en el zapato, te comparto algunas razones que fui pensando por las que puede ser útil conocer un poco de este mundo.
