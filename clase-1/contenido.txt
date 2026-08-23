@@ -112,7 +112,7 @@ Ahora bien, a ese modelo casi nunca accedemos de manera directa: necesitamos un 
 
 ## imagen5_caption
 Modelo: Flux.2
-Prompt: Un banner que muestre una interfaz típica de IA, con el casillero para ingresar el prompt, etc. Estética cinematográfica.
+Prompt: Un banner que muestre una interfaz típica de IA, con el casillero para escribir el prompt y algunos elementos habituales de este tipo de interfaz. Fondo oscuro y estética cinematográfica. Arriba del casillero debe aparecer el único texto de la imagen: “¿Cómo va Scaloni?”. Sin ningún otro texto. Composición simple, moderna y realista.
 
 ## laplataforma_2
 Habitualmente tiene un sistema de chat —el casillero donde escribimos nuestro prompt— y otras herramientas asociadas: historial de conversaciones, opciones para subir archivos, ajustes de configuración, y en algunos casos la posibilidad de elegir entre distintos modelos disponibles. Acá aparece algo que suele confundirse: la relación entre modelo y plataforma no es de uno a uno. Una misma plataforma puede darnos acceso a varios modelos distintos, y un mismo modelo puede estar disponible desde plataformas diferentes, cada una con su propia interfaz y sus propias funcionalidades agregadas.
