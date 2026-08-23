@@ -112,172 +112,203 @@
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="bloquea_intro"></div>
 
+        <!-- Recuadro "¿Sabías que?" — el texto de adentro se edita en
+             contenido.txt (clave bloquea_tokenizer), el recuadro en sí
+             (ícono, título) es fijo acá. -->
+        <div class="fact-box">
+          <p class="fact-box__label"><span aria-hidden="true">💡</span> ¿Sabías que?</p>
+          <div class="content-block" data-key="bloquea_tokenizer"></div>
+        </div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="bloquea_intro_cont"></div>
+
         <h3 id="panorama-llms">Un panorama de LLMs</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="panorama_llms_1"></p>
 
         <!-- Cuadro comparativo de plataformas: contenido fijo en index.html
-             (no se edita desde contenido.txt). Armado como tarjetas (no
-             tabla) para que no dependa de un ancho fijo. Si querés
+             (no se edita desde contenido.txt). Cada plataforma es un
+             <details>/<summary> — funciona como acordeón sin necesitar
+             JavaScript: colapsado se ve el logo + nombre, y al hacer clic
+             se expande mostrando las características. Si querés
              actualizar un dato, se edita directo acá. Los logos son los
-             mismos archivos que ya usa la Clase 1 (images/logos/);
-             Perplexity no tiene logo disponible en el banco de íconos
-             libres que usamos, así que lleva una placa con su color de
-             marca, igual que se hizo con OpenAI/Adobe en la Clase 1. -->
+             mismos archivos que ya usa la Clase 1 (images/logos/). -->
         <div class="platform-cards">
-          <div class="platform-card" style="--platform-color:#10A37F">
-            <div class="platform-card__head">
+          <details class="platform-card" style="--platform-color:#10A37F">
+            <summary class="platform-card__head">
               <span class="platform-card__logo"><img src="images/logos/chatgpt.png" alt="ChatGPT" loading="lazy"></span>
-              <div>
+              <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT ↗</a></h4>
                 <p class="platform-card__dev">OpenAI</p>
               </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+                <div class="platform-card__row">
+                <p class="platform-card__label">Tipo de asistente</p>
+                <p>Conversacional generalista</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Funciones principales</p>
+                <p>Redacción, análisis de documentos, programación, generación de imágenes</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Por qué conviene conocerla</p>
+                <p>Es el punto de entrada más extendido; tiene un ecosistema amplio de GPTs personalizados</p>
+              </div>
             </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Tipo de asistente</p>
-              <p>Conversacional generalista</p>
-            </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Funciones principales</p>
-              <p>Redacción, análisis de documentos, programación, generación de imágenes</p>
-            </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Por qué conviene conocerla</p>
-              <p>Es el punto de entrada más extendido; tiene un ecosistema amplio de GPTs personalizados</p>
-            </div>
-          </div>
+          </details>
 
-          <div class="platform-card" style="--platform-color:#D97757">
-            <div class="platform-card__head">
+          <details class="platform-card" style="--platform-color:#D97757">
+            <summary class="platform-card__head">
               <span class="platform-card__logo"><img src="images/logos/claude.png" alt="Claude" loading="lazy"></span>
-              <div>
+              <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://claude.ai/new" target="_blank" rel="noopener">Claude ↗</a></h4>
                 <p class="platform-card__dev">Anthropic</p>
               </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+                <div class="platform-card__row">
+                <p class="platform-card__label">Tipo de asistente</p>
+                <p>Conversacional orientado a texto extenso</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Funciones principales</p>
+                <p>Redacción y edición de textos largos, análisis de documentos, programación</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Por qué conviene conocerla</p>
+                <p>Sostiene coherencia en documentos y conversaciones extensas, con buen seguimiento de instrucciones complejas</p>
+              </div>
             </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Tipo de asistente</p>
-              <p>Conversacional orientado a texto extenso</p>
-            </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Funciones principales</p>
-              <p>Redacción y edición de textos largos, análisis de documentos, programación</p>
-            </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Por qué conviene conocerla</p>
-              <p>Sostiene coherencia en documentos y conversaciones extensas, con buen seguimiento de instrucciones complejas</p>
-            </div>
-          </div>
+          </details>
 
-          <div class="platform-card" style="--platform-color:#8E75B2">
-            <div class="platform-card__head">
+          <details class="platform-card" style="--platform-color:#8E75B2">
+            <summary class="platform-card__head">
               <span class="platform-card__logo"><img src="images/logos/gemini.png" alt="Gemini" loading="lazy"></span>
-              <div>
+              <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://gemini.google.com/app" target="_blank" rel="noopener">Gemini ↗</a></h4>
                 <p class="platform-card__dev">Google</p>
               </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+                <div class="platform-card__row">
+                <p class="platform-card__label">Tipo de asistente</p>
+                <p>Multimodal integrado</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Funciones principales</p>
+                <p>Comprensión de texto, imagen, audio y video; búsqueda en tiempo real</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Por qué conviene conocerla</p>
+                <p>Integración nativa con Gmail, Docs, Drive y el buscador de Google</p>
+              </div>
             </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Tipo de asistente</p>
-              <p>Multimodal integrado</p>
-            </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Funciones principales</p>
-              <p>Comprensión de texto, imagen, audio y video; búsqueda en tiempo real</p>
-            </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Por qué conviene conocerla</p>
-              <p>Integración nativa con Gmail, Docs, Drive y el buscador de Google</p>
-            </div>
-          </div>
+          </details>
 
-          <div class="platform-card" style="--platform-color:#0078D4">
-            <div class="platform-card__head">
+          <details class="platform-card" style="--platform-color:#0078D4">
+            <summary class="platform-card__head">
               <span class="platform-card__logo"><img src="images/logos/copilot.png" alt="Copilot" loading="lazy"></span>
-              <div>
+              <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://copilot.cloud.microsoft/" target="_blank" rel="noopener">Copilot ↗</a></h4>
                 <p class="platform-card__dev">Microsoft</p>
               </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+                <div class="platform-card__row">
+                <p class="platform-card__label">Tipo de asistente</p>
+                <p>Asistente de productividad</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Funciones principales</p>
+                <p>Redacción de documentos, resumen de correos, análisis en Excel, generación de presentaciones</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Por qué conviene conocerla</p>
+                <p>Integración directa con Word, Excel, Outlook y Teams</p>
+              </div>
             </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Tipo de asistente</p>
-              <p>Asistente de productividad</p>
-            </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Funciones principales</p>
-              <p>Redacción de documentos, resumen de correos, análisis en Excel, generación de presentaciones</p>
-            </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Por qué conviene conocerla</p>
-              <p>Integración directa con Word, Excel, Outlook y Teams</p>
-            </div>
-          </div>
+          </details>
 
-          <div class="platform-card" style="--platform-color:#0467DF">
-            <div class="platform-card__head">
+          <details class="platform-card" style="--platform-color:#0467DF">
+            <summary class="platform-card__head">
               <span class="platform-card__logo"><img src="images/logos/meta.png" alt="Meta AI" loading="lazy"></span>
-              <div>
+              <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://www.meta.ai/" target="_blank" rel="noopener">Meta AI ↗</a></h4>
                 <p class="platform-card__dev">Meta</p>
               </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+                <div class="platform-card__row">
+                <p class="platform-card__label">Tipo de asistente</p>
+                <p>Conversacional integrado a redes sociales</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Funciones principales</p>
+                <p>Búsqueda, generación de texto e imágenes, conversación</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Por qué conviene conocerla</p>
+                <p>Está disponible dentro de WhatsApp, Instagram y Facebook, sin necesidad de otra aplicación</p>
+              </div>
             </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Tipo de asistente</p>
-              <p>Conversacional integrado a redes sociales</p>
-            </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Funciones principales</p>
-              <p>Búsqueda, generación de texto e imágenes, conversación</p>
-            </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Por qué conviene conocerla</p>
-              <p>Está disponible dentro de WhatsApp, Instagram y Facebook, sin necesidad de otra aplicación</p>
-            </div>
-          </div>
+          </details>
 
-          <div class="platform-card" style="--platform-color:#21808D">
-            <div class="platform-card__head">
-              <span class="platform-card__logo platform-card__logo--text">Px</span>
-              <div>
+          <details class="platform-card" style="--platform-color:#21808D">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/perplexity.png" alt="Perplexity" loading="lazy"></span>
+              <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity ↗</a></h4>
                 <p class="platform-card__dev">Perplexity AI</p>
               </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+                <div class="platform-card__row">
+                <p class="platform-card__label">Tipo de asistente</p>
+                <p>Motor de búsqueda conversacional</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Funciones principales</p>
+                <p>Respuestas con citas y enlaces a fuentes, búsqueda académica</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Por qué conviene conocerla</p>
+                <p>Cada respuesta muestra de dónde sacó la información, lo que facilita validarla</p>
+              </div>
             </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Tipo de asistente</p>
-              <p>Motor de búsqueda conversacional</p>
-            </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Funciones principales</p>
-              <p>Respuestas con citas y enlaces a fuentes, búsqueda académica</p>
-            </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Por qué conviene conocerla</p>
-              <p>Cada respuesta muestra de dónde sacó la información, lo que facilita validarla</p>
-            </div>
-          </div>
+          </details>
 
-          <div class="platform-card" style="--platform-color:#5786FE">
-            <div class="platform-card__head">
+          <details class="platform-card" style="--platform-color:#5786FE">
+            <summary class="platform-card__head">
               <span class="platform-card__logo"><img src="images/logos/deepseek.png" alt="DeepSeek" loading="lazy"></span>
-              <div>
+              <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://chat.deepseek.com/" target="_blank" rel="noopener">DeepSeek ↗</a></h4>
                 <p class="platform-card__dev">DeepSeek</p>
               </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+                <div class="platform-card__row">
+                <p class="platform-card__label">Tipo de asistente</p>
+                <p>Conversacional de código abierto</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Funciones principales</p>
+                <p>Redacción, programación, razonamiento</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Por qué conviene conocerla</p>
+                <p>Rendimiento competitivo con un costo de uso más bajo; varios modelos de código abierto</p>
+              </div>
             </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Tipo de asistente</p>
-              <p>Conversacional de código abierto</p>
-            </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Funciones principales</p>
-              <p>Redacción, programación, razonamiento</p>
-            </div>
-            <div class="platform-card__row">
-              <p class="platform-card__label">Por qué conviene conocerla</p>
-              <p>Rendimiento competitivo con un costo de uso más bajo; varios modelos de código abierto</p>
-            </div>
-          </div>
+          </details>
         </div>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->

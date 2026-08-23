@@ -63,10 +63,14 @@ Un LLM es un modelo entrenado para comprender y generar lenguaje humano en forma
 
 Cuando escribimos un prompt, el modelo no entiende lo que le pedimos, al menos no como lo entendemos nosotros. Lo que hace es calcular, palabra por palabra, cuál es la continuación más probable de eso que escribimos. Algo parecido al teclado predictivo del celular, que nos sugiere cómo seguir la frase, pero a otra escala: en vez de mirar nuestros últimos mensajes, mira patrones de millones de textos; y en vez de tirar una palabra suelta, encadena una atrás de otra hasta armar la respuesta completa, lógica, verosímil… ¿Verdadera?
 
+
+## bloquea_tokenizer
 Para ser precisos: no predice palabras enteras sino tokens, que pueden ser fragmentos de palabras o signos de puntuación. Pero la lógica es la misma: ver qué sigue, agregarlo, volver a calcular.
 
-Si querés ver cómo se descompone un texto en tokens, podés pegarlo en el [Tokenizer](https://platform.openai.com/tokenizer), una herramienta gratuita de OpenAI.
+Se puede medir cuántos tokens consumen las palabras que escribimos a través del [Tokenizer](https://platform.openai.com/tokenizer), una herramienta gratuita de OpenAI: pegás un texto y te muestra en qué tokens se descompone.
 
+
+## bloquea_intro_cont
 Y acá está la explicación de por qué un modelo responde mejor que otro: cuantos más textos haya visto durante el entrenamiento, cuantos más patrones haya identificado —gramaticales, de estilo, de formato—, más fino va a ser al predecir esa continuidad textual. Cuanta más información le demos nosotros en el prompt, mejor va a poder ajustar esa predicción a lo que realmente estamos buscando.
 
 Ahora bien, que un LLM prediga la palabra más probable no significa que la elija al azar. Predecir con criterio estadístico, entrenado sobre patrones reales de lenguaje, es lo que le permite producir textos coherentes, con gramática correcta y un estilo reconocible. Pero también es el escenario adecuado para la aparición de una alucinación.
