@@ -53,7 +53,7 @@ Cada clase combina una instancia teórica —la que están leyendo ahora mismo�
 No hace falta ningún conocimiento técnico previo para este curso: alcanza con las ganas de experimentar, de probar, de equivocarse, y de ir construyendo una mirada propia sobre las posibilidades y los límites de estas herramientas. Empecemos.
 
 ![](images/09-imagen.jpg)
-Imagene compuesta en Adobe Photoshop a partir de dos generaciones de IA
+Imagen compuesta en Adobe Photoshop a partir de dos generaciones de IA
 Imagen superior:
 Modelo: GPT Image 2
 Prompt: Un Banner con los íconos reales de ChatGPT, Claude, Gemini, MEta, Copilot
