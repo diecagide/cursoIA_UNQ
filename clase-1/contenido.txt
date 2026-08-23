@@ -42,7 +42,6 @@ La idea que le da nombre al curso es también su punto de partida: la imaginaci�
 Este curso está pensado para docentes de las cuatro unidades académicas de la universidad que quieran conocer estas herramientas, incorporarlas a su propia práctica de enseñanza, y acompañar a sus estudiantes en un uso estratégico y creativo de la IA generativa. No importa si ya la usan a diario o si es la primera vez que se acercan al tema: la propuesta está armada para que cada uno pueda avanzar a su propio ritmo.
 
 ## imagen1_caption
-Imagen generada en Adobe Firefly
 Modelo: Nano Banana pro
 Prompt: Un banner de temática IA para un curso de Inteligencia Artificial para docentes universitarios de Artes, Ciencias Sociales, Economía y Ciencia y Tecnología. Debe representar en distintos recuadros las distintas unidades académicas, de manera sobria y representativa. La IA debe estar presente como elemento común entre todas las áreas. Que no tenga textos ni agregados típicos de una infografía.
 
@@ -54,6 +53,14 @@ Cada clase combina una instancia teórica —la que están leyendo ahora mismo�
 No hace falta ningún conocimiento técnico previo para este curso: alcanza con las ganas de experimentar, de probar, de equivocarse, y de ir construyendo una mirada propia sobre las posibilidades y los límites de estas herramientas. Empecemos.
 
 ![](images/09-imagen.jpg)
+Imagene compuesta en Adobe Photoshop a partir de dos generaciones de IA
+Imagen superior:
+Modelo: GPT Image 2
+Prompt: Un Banner con los íconos reales de ChatGPT, Claude, Gemini, MEta, Copilot
+------
+Imagen inferior:
+Modelo: Nano Banana pro
+Prompt: Plano detalle de la mano de un monje escribiendo en un libro medieval con una pluma antigua. En la punta de la pluma, un pequeño elemento electrónico evidencia un contexto futurista. Al fondo, desenfocado, un monasterio medieval. Estética hiperrealista y cinematográfica, luz cálida de atardecer.
 
 ## porque_intro
 Si la IA generativa te "genera" distancia, dolor de panza, malestar inconmensurable o te parece que es una piedra en el zapato, te comparto algunas razones que fui pensando por las que puede ser útil conocer un poco de este mundo.
@@ -111,6 +118,7 @@ Es habitual usar los términos "modelo" y "plataforma" como si fueran sinónimos
 Ahora bien, a ese modelo casi nunca accedemos de manera directa: necesitamos un medio, una interfaz que nos permita comunicarnos con él escribiendo una instrucción o ingresando algún tipo de información de entrada. Ese medio es la **plataforma**.
 
 ## imagen5_caption
+Imagen compuesta en Adobe Photoshop. La imagen superior fue generada con IA y las tres imágenes inferiores son capturas de pantalla.
 Modelo: Flux.2
 Prompt: Un banner que muestre una interfaz típica de IA, con el casillero para escribir el prompt y algunos elementos habituales de este tipo de interfaz. Fondo oscuro y estética cinematográfica. Arriba del casillero debe aparecer el único texto de la imagen: “¿Cómo va Scaloni?”. Sin ningún otro texto. Composición simple, moderna y realista.
 
