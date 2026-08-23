@@ -162,22 +162,22 @@ Volveremos sobre este punto en las siguientes clases.
 El campo de la IA generativa cambia todo el tiempo, así que este panorama es apenas una fotografía del presente —es muy probable que para cuando terminemos el curso ya haya novedades que hoy ni mencionamos. Aun así, sirve tener un mapa general de quiénes son los actores principales hoy:
 
 ## company_openai
-Es la empresa que popularizó todo esto con el lanzamiento de ChatGPT. Su familia de modelos GPT se usa principalmente para texto, pero la empresa también desarrolla modelos de generación de imagen y de video (Sora).
+Es la empresa que popularizó todo esto con el lanzamiento de ChatGPT. Su familia de modelos GPT se usa principalmente para trabajar con texto, pero la empresa también desarrolla modelos con capacidades de generación y comprensión de imágenes, audio y video, como Sora para la generación de video.
 
 ## company_anthropic
-Desarrolla Claude, otro modelo conversacional de texto, conocido especialmente por su capacidad de sostener conversaciones largas y complejas. Cuando se habla de la "seguridad" de Claude, en general se está hablando también de una preocupación explícita por la ética: cómo lograr que las respuestas del modelo sean confiables, cómo evitar usos dañinos, y cómo ser transparentes respecto de sus propios límites.
+Desarrolla Claude, otro modelo conversacional de texto, conocido especialmente por su capacidad de sostener conversaciones largas y complejas. Desde sus orígenes, Anthropic puso especial énfasis en la "seguridad" de sus modelos, entendida también como una preocupación por la ética: cómo lograr que las respuestas sean confiables, cómo evitar usos dañinos y cómo hacer más transparentes los límites del modelo.
 
 ## company_google
-Desarrolla Gemini, su familia de modelos, que integra capacidades de texto, imagen y video (a través de Veo), y que además está profundamente integrada en el ecosistema de productos de la empresa: aparece en el buscador, en Gmail, en Google Docs, en el celular.
+Desarrolla Gemini, su familia de modelos, que integra capacidades de texto, imagen y video, a través de modelos como Veo, y que además está profundamente integrada en el ecosistema de productos de la empresa: aparece en el buscador, en Gmail, en Google Docs y en el celular.
 
 ## company_meta
-La empresa de Facebook, Instagram y WhatsApp apuesta fuerte por el código abierto con su familia de modelos Llama, que cualquier persona con el conocimiento técnico necesario puede descargar y ejecutar por su cuenta. Además, integró un asistente de IA directamente en sus redes sociales y en WhatsApp.
+La empresa detrás de Facebook, Instagram y WhatsApp apuesta fuerte por el código abierto con su familia de modelos Llama, que cualquier persona con los conocimientos técnicos necesarios puede descargar y ejecutar por su cuenta. Además, integró un asistente de IA directamente en sus redes sociales y en WhatsApp.
 
 ## company_deepseek
-Es una empresa china que en poco tiempo se instaló como una alternativa relevante, particularmente por ofrecer modelos de muy buen rendimiento con un costo de desarrollo y de uso bastante más bajo que el de sus competidores, y varios de ellos de código abierto.
+Es una empresa china que en poco tiempo se instaló como una alternativa relevante, particularmente por ofrecer modelos de muy buen rendimiento con costos de desarrollo y de uso más bajos que los de algunos de sus competidores. Además, varios de sus modelos pueden descargarse y ejecutarse por cuenta propia.
 
 ## company_adobe
-Aunque no es una empresa dedicada exclusivamente a desarrollar modelos de IA, integró estas capacidades en todo su ecosistema de productos creativos: Firefly es su modelo de generación de imagen, y Adobe Sensei es el núcleo de inteligencia artificial que atraviesa transversalmente aplicaciones como Photoshop, Premiere o Illustrator, apareciendo en forma de funciones puntuales dentro de cada programa (selección automática de objetos, generación de relleno, subtitulado automático, entre otras).
+Aunque no es una empresa dedicada exclusivamente a desarrollar modelos de IA, integró estas capacidades en todo su ecosistema de productos creativos. Firefly es su familia de modelos de generación de contenidos, y Adobe también incorporó funciones de inteligencia artificial en aplicaciones como Photoshop, Premiere o Illustrator, apareciendo en forma de herramientas puntuales dentro de cada programa: selección automática de objetos, generación de relleno, subtitulado automático, entre otras.
 
 ## panorama_cierre
 Este último caso —el de Adobe— muestra algo interesante: no siempre la IA aparece como una plataforma independiente a la que accedemos directamente. Muchas veces está integrada, como un núcleo transversal, dentro de herramientas que ya usamos y que ni siquiera identificamos primero como "de IA". Algo parecido sucede con el ecosistema de Google, donde un mismo modelo puede aparecer embebido en productos muy distintos entre sí.
