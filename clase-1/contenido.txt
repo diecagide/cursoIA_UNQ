@@ -74,8 +74,10 @@ No hace falta ningún conocimiento técnico previo para este curso: alcanza con 
 
 ![Collage compuesto](images/09-imagen.jpg)
 Imagen compuesta en Adobe Photoshop a partir de dos generaciones de IA.
-Imagen superior — Modelo: GPT Image 2. Prompt: Un banner con los íconos reales de ChatGPT, Claude, Gemini, Meta, Copilot.
-Imagen inferior — Modelo: Nano Banana pro. Prompt: Plano detalle de la mano de un monje escribiendo en un libro medieval con una pluma antigua. En la punta de la pluma, un pequeño elemento electrónico evidencia un contexto futurista. Al fondo, desenfocado, un monasterio medieval. Estética hiperrealista y cinematográfica, luz cálida de atardecer.
+Imagen superior — Modelo: GPT Image 2.
+Prompt: Un banner con los íconos reales de ChatGPT, Claude, Gemini, Meta, Copilot.
+Imagen inferior — Modelo: Nano Banana pro.
+Prompt: Plano detalle de la mano de un monje escribiendo en un libro medieval con una pluma antigua. En la punta de la pluma, un pequeño elemento electrónico evidencia un contexto futurista. Al fondo, desenfocado, un monasterio medieval. Estética hiperrealista y cinematográfica, luz cálida de atardecer.
 
 ## porque_intro
 Si la IA generativa te "genera" distancia, dolor de panza, malestar inconmensurable o te parece que es una piedra en el zapato, te comparto algunas razones que fui pensando por las que puede ser útil conocer un poco de este mundo.
