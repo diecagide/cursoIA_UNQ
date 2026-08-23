@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es" data-clase="2">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clase 2 — Gramática del prompt y producción textual | La imaginación al poder</title>
+<meta name="description" content="Clase 2 del curso La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria. Docente: Diego Cagide.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+<div class="layout">
+
+  <!-- =====================================================================
+       MENÚ DE NAVEGACIÓN
+       Los textos de acá son los títulos que aparecen en el menú lateral.
+       Si cambiás un título de sección más abajo, actualizá también el
+       texto acá (el link href="#..." no hace falta tocarlo).
+       Los <li class="nav-group"> con una lista adentro son los bloques que
+       tienen subtemas — no hace falta tocar esa anidación, solo el texto.
+       ===================================================================== -->
+  <nav class="site-nav" id="siteNav">
+    <p class="site-nav__course">La imaginación al poder</p>
+    <p class="site-nav__course-sub">IA generativa y procesos creativos para la enseñanza universitaria</p>
+    <p class="site-nav__docente">Docente: Diego Cagide</p>
+
+    <div class="site-nav__divider"></div>
+
+    <p class="site-nav__class-label">Clase 2</p>
+    <p class="site-nav__title">Gramática del prompt y producción textual</p>
+
+    <!-- Grupo 1: introducción a la clase (sin etiqueta) -->
+    <ul class="nav-list">
+      <li><a href="#bienvenida">Bienvenida</a></li>
+    </ul>
+
+    <div class="site-nav__divider"></div>
+    <p class="site-nav__section-label">Bloques de la Clase 2</p>
+
+    <!-- Grupo 2: los bloques de contenido propiamente dichos -->
+    <ul class="nav-list nav-list--blocks">
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-a"><span class="nav-bullet"></span>Bloque A · ¿Qué son los LLM?</a>
+        <ul class="nav-subgroup">
+          <li><a href="#panorama-llms">Un panorama de LLMs</a></li>
+          <li><a href="#que-pueden-hacer">¿Qué pueden hacer?</a></li>
+          <li><a href="#la-interfaz">La interfaz</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-b"><span class="nav-bullet"></span>Bloque B · Gramática del prompt</a>
+        <ul class="nav-subgroup">
+          <li><a href="#prompt-simple">Prompt simple</a></li>
+          <li><a href="#prompt-medio">Prompt medio</a></li>
+          <li><a href="#prompt-complejo">Prompt complejo</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-c"><span class="nav-bullet"></span>Bloque C · Usos generales</a>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-d"><span class="nav-bullet"></span>Bloque D · Asistente de lectura</a>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-e"><span class="nav-bullet"></span>Bloque E · Validación</a>
+        <ul class="nav-subgroup">
+          <li><a href="#legitimidad">Legitimidad</a></li>
+          <li><a href="#voz-propia">Voz propia</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="site-nav__divider"></div>
+
+    <!-- Grupo 3: cierre -->
+    <ul class="nav-list">
+      <li><a href="#cierre">Cierre</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <header class="class-header">
+        <p class="class-header__course">La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria — Docente: Diego Cagide</p>
+        <p class="class-header__eyebrow">Clase 2</p>
+        <h1>Gramática del prompt y producción textual</h1>
+      </header>
+
+      <!-- =================================================================
+           SECCIÓN: Bienvenida
+           ================================================================= -->
+      <section class="block" id="bienvenida">
+        <h2>Bienvenida</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="bienvenida_1" data-lead="true"></div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE A
+           ================================================================= -->
+      <section class="block" id="bloque-a">
+        <h2>Bloque A — ¿Qué son los LLM?</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="bloquea_intro" data-lead="true"></div>
+
+        <h3 id="panorama-llms">Un panorama de LLMs</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="panorama_llms_1"></p>
+
+        <!-- Cuadro comparativo de plataformas: contenido fijo en index.html
+             (no se edita desde contenido.txt). Si querés actualizar una
+             celda, se edita directo acá. -->
+        <div class="table-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Plataforma</th>
+                <th>Desarrollador</th>
+                <th>Tipo de asistente</th>
+                <th>Funciones principales</th>
+                <th>Por qué conviene conocerla</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ChatGPT</td>
+                <td>OpenAI</td>
+                <td>Conversacional generalista</td>
+                <td>Redacción, análisis de documentos, programación, generación de imágenes</td>
+                <td>Es el punto de entrada más extendido; tiene un ecosistema amplio de GPTs personalizados</td>
+              </tr>
+              <tr>
+                <td>Claude</td>
+                <td>Anthropic</td>
+                <td>Conversacional orientado a texto extenso</td>
+                <td>Redacción y edición de textos largos, análisis de documentos, programación</td>
+                <td>Sostiene coherencia en documentos y conversaciones extensas, con buen seguimiento de instrucciones complejas</td>
+              </tr>
+              <tr>
+                <td>Gemini</td>
+                <td>Google</td>
+                <td>Multimodal integrado</td>
+                <td>Comprensión de texto, imagen, audio y video; búsqueda en tiempo real</td>
+                <td>Integración nativa con Gmail, Docs, Drive y el buscador de Google</td>
+              </tr>
+              <tr>
+                <td>Copilot</td>
+                <td>Microsoft</td>
+                <td>Asistente de productividad</td>
+                <td>Redacción de documentos, resumen de correos, análisis en Excel, generación de presentaciones</td>
+                <td>Integración directa con Word, Excel, Outlook y Teams</td>
+              </tr>
+              <tr>
+                <td>Meta AI</td>
+                <td>Meta</td>
+                <td>Conversacional integrado a redes sociales</td>
+                <td>Búsqueda, generación de texto e imágenes, conversación</td>
+                <td>Está disponible dentro de WhatsApp, Instagram y Facebook, sin necesidad de otra aplicación</td>
+              </tr>
+              <tr>
+                <td>Perplexity</td>
+                <td>Perplexity AI</td>
+                <td>Motor de búsqueda conversacional</td>
+                <td>Respuestas con citas y enlaces a fuentes, búsqueda académica</td>
+                <td>Cada respuesta muestra de dónde sacó la información, lo que facilita validarla</td>
+              </tr>
+              <tr>
+                <td>DeepSeek</td>
+                <td>DeepSeek</td>
+                <td>Conversacional de código abierto</td>
+                <td>Redacción, programación, razonamiento</td>
+                <td>Rendimiento competitivo con un costo de uso más bajo; varios modelos de código abierto</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="panorama_llms_2"></p>
+
+        <h3 id="que-pueden-hacer">¿Qué pueden hacer?</h3>
+        <!-- El texto de esta sección (incluida la lista) se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="que_pueden_hacer"></div>
+
+        <h3 id="la-interfaz">La interfaz</h3>
+        <!-- El texto de esta sección (incluida la lista) se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="la_interfaz"></div>
+
+        <!-- VIDEO: reemplazar por el embed de YouTube cuando esté listo -->
+        <h3 class="interactive-title">Video: así es la interfaz de un LLM</h3>
+        <div class="interactive-placeholder">
+          <span class="interactive-placeholder__icon" aria-hidden="true">🎬</span>
+          <p class="interactive-placeholder__label">Video pendiente</p>
+          <p class="interactive-placeholder__hint">Pegá acá el &lt;iframe&gt; que te da YouTube en "Compartir → Insertar"</p>
+          <!-- PEGAR ACÁ EL <iframe ...>...</iframe> QUE TE DA YOUTUBE -->
+        </div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE B
+           ================================================================= -->
+      <section class="block" id="bloque-b">
+        <h2>Bloque B — El prompt: gramática y estructura</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="bloqueb_1" data-lead="true"></div>
+
+        <!-- "Cuadro con distintos colores con los seis elementos": la
+             estructura y el color de cada tarjeta son fijos acá (icono +
+             --element-color); el texto de cada una se edita en
+             contenido.txt. -->
+        <div class="elements-grid">
+          <div class="element-card" style="--element-color:#b5502e">
+            <h4><span class="element-card__icon" aria-hidden="true">🎭</span> Rol</h4>
+            <p data-key="elemento_rol"></p>
+          </div>
+          <div class="element-card" style="--element-color:#2e6e8e">
+            <h4><span class="element-card__icon" aria-hidden="true">🧭</span> Contexto</h4>
+            <p data-key="elemento_contexto"></p>
+          </div>
+          <div class="element-card" style="--element-color:#3e7a5e">
+            <h4><span class="element-card__icon" aria-hidden="true">⚡</span> Acción + objeto</h4>
+            <p data-key="elemento_accion"></p>
+          </div>
+          <div class="element-card" style="--element-color:#a3216b">
+            <h4><span class="element-card__icon" aria-hidden="true">🎯</span> Focalización</h4>
+            <p data-key="elemento_focalizacion"></p>
+          </div>
+          <div class="element-card" style="--element-color:#6a3fa0">
+            <h4><span class="element-card__icon" aria-hidden="true">🚧</span> Restricciones</h4>
+            <p data-key="elemento_restricciones"></p>
+          </div>
+          <div class="element-card" style="--element-color:#1f7a6c">
+            <h4><span class="element-card__icon" aria-hidden="true">📐</span> Formato de salida</h4>
+            <p data-key="elemento_formato"></p>
+          </div>
+        </div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="bloqueb_2"></p>
+
+        <h3 id="prompt-simple">Prompt simple</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="simple_1"></p>
+
+        <p class="prompt-formula" data-key="formula_simple"></p>
+
+        <div class="prompt-example">
+          <p class="prompt-example__label">Ejemplo</p>
+          <p data-key="simple_ej1"></p>
+        </div>
+        <div class="prompt-example">
+          <p class="prompt-example__label">Ejemplo</p>
+          <p data-key="simple_ej2"></p>
+        </div>
+        <div class="prompt-example">
+          <p class="prompt-example__label">Ejemplo</p>
+          <p data-key="simple_ej3"></p>
+        </div>
+        <p class="prompt-breakdown" data-key="simple_breakdown"></p>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="simple_2"></p>
+
+        <h3 id="prompt-medio">Prompt medio</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="medio_1"></p>
+
+        <p class="prompt-formula" data-key="formula_medio"></p>
+
+        <div class="prompt-example">
+          <p class="prompt-example__label">Ejemplo</p>
+          <p data-key="medio_ej1"></p>
+        </div>
+        <p class="prompt-breakdown" data-key="medio_breakdown"></p>
+
+        <h3 id="prompt-complejo">Prompt complejo</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="complejo_1"></p>
+
+        <p class="prompt-formula" data-key="formula_complejo"></p>
+
+        <h4>Ejemplo 1</h4>
+        <div class="prompt-example">
+          <p class="prompt-example__label">Ejemplo</p>
+          <p data-key="complejo_ej1"></p>
+        </div>
+        <p class="prompt-breakdown" data-key="complejo_breakdown1"></p>
+
+        <h4>Ejemplo 2</h4>
+        <!-- Ejemplo con varios "campos" (Rol/Contexto/Tarea/...) y una
+             lista adentro: usa content-block, que soporta varios párrafos
+             y listas con viñetas dentro de la misma clave. -->
+        <div class="prompt-example">
+          <p class="prompt-example__label">Ejemplo</p>
+          <div class="content-block" data-key="complejo_ej2"></div>
+        </div>
+        <p class="prompt-breakdown" data-key="complejo_breakdown2"></p>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE C
+           ================================================================= -->
+      <section class="block" id="bloque-c">
+        <h2>Bloque C — Usos posibles para el aula, parte 1: usos generales</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="bloquec_1"></p>
+
+        <h3>Usos generales: trabajo con textos</h3>
+
+        <h4>1) Producir texto</h4>
+        <!-- El texto de esta sección (incluida la lista) se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="producir_texto"></div>
+
+        <h4>2) Estructurar la información y generar archivos</h4>
+        <!-- El texto de esta sección (incluida la lista) se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="estructurar_info"></div>
+
+        <h4>3) Traducir</h4>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="traducir"></div>
+
+        <h4>4) Trabajar sobre archivos adjuntos</h4>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="archivos_intro"></p>
+
+        <p class="mini-heading">Archivos de texto</p>
+        <!-- El texto de esta sección (incluida la lista) se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="archivos_texto"></div>
+
+        <div class="warning-box">
+          <p class="warning-box__label">⚠️ ¡Cuidado!</p>
+          <p data-key="cuidado_lectura"></p>
+        </div>
+
+        <p class="mini-heading">Otros archivos</p>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="otros_archivos_1"></div>
+
+        <div class="prompt-example">
+          <p class="prompt-example__label">Ejemplo</p>
+          <p data-key="otros_archivos_ej"></p>
+        </div>
+        <p class="prompt-breakdown" data-key="otros_archivos_breakdown"></p>
+
+        <!-- El texto de esta sección (incluida la lista) se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="otros_archivos_2"></div>
+
+        <h4>5) Revisar lecturas complementarias</h4>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="revisar_lecturas"></p>
+
+        <div class="prompt-example">
+          <p class="prompt-example__label">Ejemplo</p>
+          <p data-key="revisar_lecturas_ej"></p>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE D
+           ================================================================= -->
+      <section class="block" id="bloque-d">
+        <h2>Bloque D — Usos posibles para el aula, parte 2: la IA como asistente de lectura e investigación</h2>
+
+        <h3>Reponer lo que el texto no desarrolla</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="reponer_1"></div>
+
+        <!-- El texto de esta sección (incluida la lista) se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="reponer_2"></div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="reponer_3"></p>
+
+        <div class="academic-quote">
+          <p data-key="roselli_quote"></p>
+        </div>
+        <p class="academic-quote__source">— Roselli, N. D., "La construcción sociocognitiva entre iguales", capítulo 1 (conclusiones)</p>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="reponer_4"></div>
+
+        <!-- El texto de esta sección (incluida la lista) se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="reponer_5"></div>
+
+        <div class="prompt-example">
+          <p class="prompt-example__label">Ejemplo</p>
+          <p data-key="reponer_ej_final"></p>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE E
+           ================================================================= -->
+      <section class="block" id="bloque-e">
+        <h2>Bloque E — Estrategias de validación</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="bloquee_1"></p>
+
+        <h3 id="legitimidad"><span aria-hidden="true">✅</span> Legitimidad</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="legitimidad_1"></p>
+
+        <p class="mini-heading">Estrategias para validar la información de IA</p>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="sift_intro"></div>
+
+        <!-- Método SIFT: la letra de cada paso es fija (S/I/F/T); el
+             texto de cada uno se edita en contenido.txt. -->
+        <ul class="sift-list">
+          <li class="sift-step">
+            <span class="sift-step__letter" aria-hidden="true">S</span>
+            <p data-key="sift_s"></p>
+          </li>
+          <li class="sift-step">
+            <span class="sift-step__letter" aria-hidden="true">I</span>
+            <p data-key="sift_i"></p>
+          </li>
+          <li class="sift-step">
+            <span class="sift-step__letter" aria-hidden="true">F</span>
+            <p data-key="sift_f"></p>
+          </li>
+          <li class="sift-step">
+            <span class="sift-step__letter" aria-hidden="true">T</span>
+            <p data-key="sift_t"></p>
+          </li>
+        </ul>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="sift_closing"></p>
+
+        <p class="mini-heading">Lectura lateral</p>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="lectura_lateral"></div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="practicas_intro"></p>
+
+        <!-- El texto de esta sección (la lista) se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="practicas_list"></div>
+
+        <div class="callout">
+          <p class="callout__label">Herramienta</p>
+          <p><strong>NotebookLM</strong></p>
+          <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+          <p data-key="notebooklm_desc"></p>
+          <a class="btn" href="https://notebooklm.google.com/" target="_blank" rel="noopener">Ir a NotebookLM →</a>
+        </div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="notebooklm_video_intro"></p>
+
+        <!-- VIDEO: reemplazar por el embed de YouTube cuando esté listo -->
+        <h3 class="interactive-title">Video: cómo funciona NotebookLM</h3>
+        <div class="interactive-placeholder">
+          <span class="interactive-placeholder__icon" aria-hidden="true">🎬</span>
+          <p class="interactive-placeholder__label">Video pendiente</p>
+          <p class="interactive-placeholder__hint">Pegá acá el &lt;iframe&gt; que te da YouTube en "Compartir → Insertar"</p>
+          <!-- PEGAR ACÁ EL <iframe ...>...</iframe> QUE TE DA YOUTUBE -->
+        </div>
+
+        <h3 id="voz-propia"><span aria-hidden="true">🗣️</span> Voz propia</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="voz_propia_1"></div>
+
+        <p class="mini-heading">Estrategias para validar la voz propia</p>
+        <!-- El texto de esta sección (la lista) se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="voz_propia_list"></div>
+      </section>
+
+      <!-- =================================================================
+           CIERRE
+           ================================================================= -->
+      <section class="block" id="cierre">
+        <h2>Cierre</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="cierre_1"></div>
+
+        <div class="next-class">
+          <p class="next-class__label">En la próxima clase</p>
+          <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+          <p data-key="proxima_clase"></p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

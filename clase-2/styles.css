@@ -1,0 +1,1055 @@
+/* =========================================================================
+   Estilos generales del curso — este mismo archivo se copia sin cambios
+   en clase-1/, clase-2/, etc. No hace falta tocarlo para editar textos o
+   imágenes: eso se hace en index.html y en la carpeta /images de cada
+   clase. Para que cada clase se distinga con un tono propio del degradé
+   de la barra lateral sin dejar de ser el mismo archivo, el color varía
+   según el atributo data-clase="N" del <html> de cada index.html — ver
+   "Variante de color por clase" al final de este archivo.
+   ========================================================================= */
+
+:root {
+  --color-bg: #faf9f6;
+  --color-surface: #ffffff;
+  --color-text: #23262b;
+  --color-text-muted: #5b6270;
+  --color-primary: #2e3a59;      /* azul profundo — títulos del contenido */
+  --color-primary-light: #eef1f7;
+  --color-sidebar: #2e3a59;      /* fallback sólido (navegadores muy viejos) */
+  --color-sidebar-start: #2e3a59; /* violeta — arriba del degradé de la barra lateral */
+  --color-sidebar-end: #c2255c;   /* rosa magenta — abajo del degradé de la barra lateral */
+  --gradient-sidebar: linear-gradient(180deg, var(--color-sidebar-start) 0%, var(--color-sidebar-end) 100%);
+  --color-accent: #d9704f;       /* terracota — acentos, links, botones */
+  --color-accent-light: #fbeae3;
+  --color-ok: #3e7a5e;           /* verde — usos admisibles */
+  --color-ok-light: #e9f4ee;
+  --color-no: #b34747;           /* rojo — usos inadmisibles */
+  --color-no-light: #fbeaea;
+  --color-border: #e4e2dc;
+  --color-placeholder-bg: #fff9e9;
+  --color-placeholder-border: #e8cf7d;
+
+  --font-serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --nav-width: 280px;
+  --max-content-width: 680px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.75;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--color-accent); }
+a:hover { color: var(--color-primary); }
+
+/* ---------- Layout general: menú lateral + contenido ---------- */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ---------- Menú de navegación ---------- */
+
+.nav-toggle {
+  display: none;
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 60;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-sidebar);
+  background: var(--gradient-sidebar);
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+
+.site-nav {
+  width: var(--nav-width);
+  flex-shrink: 0;
+  background: var(--color-sidebar);
+  background: var(--gradient-sidebar);
+  color: #f4f5f8;
+  padding: 32px 24px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.site-nav__course {
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #fff;
+  font-weight: 700;
+  margin: 0 0 5px;
+}
+
+.site-nav__course-sub {
+  font-size: .78rem;
+  line-height: 1.4;
+  color: #b9c1d6;
+  margin: 0 0 10px;
+}
+
+.site-nav__docente {
+  font-size: .78rem;
+  color: #8f9ac2;
+  margin: 0;
+  font-style: italic;
+}
+
+.site-nav__divider {
+  height: 1px;
+  background: rgba(255,255,255,.15);
+  margin: 18px 0 16px;
+}
+
+.site-nav__class-label {
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 0 0 4px;
+}
+
+.site-nav__title {
+  font-size: 1.2rem;
+  margin: 0 0 26px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #fff;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ítems de primer nivel: más separados entre sí para que cada bloque
+   se distinga como un grupo propio */
+.nav-list > li { margin-bottom: 10px; }
+.nav-list > li:last-child { margin-bottom: 0; }
+.nav-list { margin-bottom: 0; }
+.nav-list + .site-nav__divider { margin-top: 22px; }
+
+/* Etiqueta que encabeza el grupo de Bloques, para que se note que es
+   el contenido propiamente dicho del curso */
+.site-nav__section-label {
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 700;
+  color: #8fd6d3;
+  margin: 0 0 12px;
+}
+
+/* Circulito antes de cada título de Bloque, tipo viñeta de Word */
+.site-nav a.nav-group__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-bullet {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .85;
+}
+
+.site-nav a {
+  display: block;
+  padding: 9px 12px;
+  border-radius: 8px;
+  color: #d7dbe8;
+  text-decoration: none;
+  font-size: .93rem;
+  font-weight: 600;
+  transition: background .15s ease, color .15s ease;
+}
+
+.site-nav a:hover { background: rgba(255,255,255,.08); color: #fff; }
+
+.site-nav a.is-active {
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Subtemas: indentados y con una línea vertical que los liga visualmente
+   a su bloque, en tipografía más chica y liviana para marcar que son
+   un nivel secundario del menú */
+.nav-subgroup {
+  margin: 2px 0 0 21px !important;
+  padding-left: 12px !important;
+  border-left: 2px solid rgba(255,255,255,.16);
+}
+
+.nav-subgroup li { margin-bottom: 1px; }
+
+.nav-subgroup a {
+  font-size: .85rem;
+  font-weight: 400;
+  color: #b9c1d6;
+  padding: 6px 10px;
+}
+
+.nav-subgroup a:hover { color: #fff; }
+
+.nav-subgroup a.is-active {
+  background: rgba(217,112,79,.25);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---------- Contenido principal ---------- */
+
+.content {
+  flex: 1;
+  min-width: 0;
+  padding: 56px 32px 100px;
+}
+
+.content-inner {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+}
+
+.class-header {
+  margin-bottom: 40px;
+}
+
+/* El nombre del curso va primero, arriba de todo el encabezado */
+.class-header__course {
+  margin: 0 0 16px;
+  font-size: .92rem;
+  color: var(--color-text-muted);
+}
+
+.class-header__eyebrow {
+  color: var(--color-accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 1rem;
+  margin: 0 0 10px;
+}
+
+.class-header h1 {
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  line-height: 1.25;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+section.block {
+  padding-top: 48px;
+  margin-top: 8px;
+  border-top: 1px solid var(--color-border);
+  scroll-margin-top: 24px;
+}
+
+section.block:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.block h2 {
+  font-family: var(--font-serif);
+  color: var(--color-primary);
+  font-size: 1.6rem;
+  margin: 0 0 20px;
+}
+
+.block h3 {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  margin: 36px 0 12px;
+}
+
+.block h4 {
+  color: var(--color-primary);
+  font-size: 1.02rem;
+  margin: 28px 0 10px;
+}
+
+.block p { margin: 0 0 24px; }
+
+.block ul, .block ol { margin: 0 0 18px; padding-left: 22px; }
+.block li { margin-bottom: 8px; }
+
+.lead {
+  font-size: 1.18rem;
+  color: var(--color-text);
+}
+
+
+/* ---------- Placeholder de imagen (amarillo del docx) ---------- */
+
+.img-placeholder {
+  border: 2px dashed var(--color-placeholder-border);
+  background: var(--color-placeholder-bg);
+  border-radius: 12px;
+  padding: 28px 20px;
+  text-align: center;
+  margin: 12px 0 28px;
+  color: #7a6a2e;
+}
+
+.img-placeholder__icon { font-size: 1.6rem; display: block; margin-bottom: 8px; }
+.img-placeholder__label { font-weight: 600; margin: 0 0 4px; }
+.img-placeholder__hint { font-size: .82rem; margin: 0; color: #8a7a3d; }
+
+.img-placeholder img {
+  border-radius: 8px;
+  margin: 0 auto 12px;
+}
+
+/* Cuando la imagen real ya fue puesta, esta clase la muestra sin el marco de "pendiente":
+   la imagen ocupa el 100% del ancho del recuadro y el recuadro se recorta a la altura
+   real de la imagen (sin recorte ni límite de altura fijo). */
+.img-placeholder.has-image {
+  border-style: solid;
+  border-color: var(--color-border);
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  overflow: hidden;
+}
+.img-placeholder.has-image .img-placeholder__hint,
+.img-placeholder.has-image .img-placeholder__icon,
+.img-placeholder.has-image .img-placeholder__label { display: none; }
+
+.img-placeholder.has-image img {
+  width: 100%;
+  display: block;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* ---------- Recurso interactivo (Genially, etc.) ---------- */
+
+.interactive-title {
+  color: var(--color-primary);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 28px 0 10px;
+}
+
+.interactive-placeholder {
+  border: 2px dashed var(--color-accent);
+  background: var(--color-accent-light);
+  border-radius: 12px;
+  padding: 28px 20px;
+  text-align: center;
+  margin: 12px 0 28px;
+  color: #8a4324;
+}
+
+.interactive-placeholder__icon { font-size: 1.6rem; display: block; margin-bottom: 8px; }
+.interactive-placeholder__label { font-weight: 600; margin: 0 0 4px; }
+.interactive-placeholder__hint { font-size: .82rem; margin: 0; }
+
+.interactive-placeholder iframe {
+  width: 100%;
+  min-height: 420px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* ---------- Tarjetas de razones (bloque "Maldita IA") ---------- */
+
+.reasons {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0 8px;
+}
+
+.reason-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+
+.reason-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reason-card__icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.reason-card p { margin: 0 0 10px; font-size: .96rem; }
+.reason-card p:last-child { margin-bottom: 0; }
+
+/* ---------- Callout de lectura obligatoria / recursos destacados ---------- */
+
+.callout {
+  background: var(--color-primary-light);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 20px 0 28px;
+}
+
+.callout__label {
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 8px;
+}
+
+.callout p { margin: 0 0 12px; }
+.callout p:last-child { margin-bottom: 0; }
+
+.btn {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .92rem;
+}
+.btn:hover { background: var(--color-primary); color: #fff; }
+
+/* ---------- Comparación admisible / inadmisible ---------- */
+
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0 28px;
+}
+
+.comparison__col {
+  border-radius: 12px;
+  padding: 20px 22px;
+}
+
+.comparison__col--ok { background: var(--color-ok-light); }
+.comparison__col--no { background: var(--color-no-light); }
+
+.comparison__col h4 {
+  margin: 0 0 12px;
+  font-size: .98rem;
+}
+
+.comparison__col--ok h4 { color: var(--color-ok); }
+.comparison__col--no h4 { color: var(--color-no); }
+
+.comparison__col ul { margin: 0; padding-left: 0; list-style: none; }
+.comparison__col li {
+  padding-left: 24px;
+  position: relative;
+  font-size: .93rem;
+  margin-bottom: 10px;
+}
+
+.comparison__col--ok li::before { content: "✓"; position: absolute; left: 0; color: var(--color-ok); font-weight: 700; }
+.comparison__col--no li::before { content: "✕"; position: absolute; left: 0; color: var(--color-no); font-weight: 700; }
+
+/* ---------- Caja destacada: la paradoja del conocimiento ---------- */
+/* Uno de los momentos más importantes del curso: se destaca con el mismo
+   degradé violeta→magenta de la barra lateral y texto blanco. */
+
+.highlight-box {
+  background: var(--gradient-sidebar);
+  color: #fff;
+  border-radius: 16px;
+  padding: 32px 28px;
+  margin: 36px 0 28px;
+  box-shadow: 0 10px 28px rgba(46,58,89,.28);
+  scroll-margin-top: 24px;
+}
+
+.content-inner .highlight-box h3 {
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  margin: 0 0 14px;
+}
+
+.highlight-box p:last-child { margin-bottom: 0; }
+.highlight-box a { color: #fff; text-decoration: underline; }
+.highlight-box strong { color: #fff; }
+
+/* ---------- Recuadro claro para subsecciones (alucinaciones / sesgos) ---------- */
+/* Mismo espíritu que .comparison__col--ok/--no (tono claro), pero neutro,
+   para englobar una subsección completa sin la fuerza del degradé de
+   .highlight-box. Las listas .example-list que quedan adentro conservan
+   su propio recuadro blanco. */
+
+.subsection-highlight {
+  background: var(--color-accent-light);
+  border-radius: 12px;
+  padding: 24px 24px 4px;
+  margin: 20px 0 28px;
+}
+
+.subsection-highlight > *:last-child { margin-bottom: 24px; }
+
+/* ---------- Contenido plegable / "para ampliar" ---------- */
+
+.expandable {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+  margin: 20px 0 28px;
+  overflow: hidden;
+}
+
+.expandable summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 16px 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+}
+
+.expandable summary::-webkit-details-marker { display: none; }
+
+.expandable summary::before {
+  content: "▸";
+  color: var(--color-accent);
+  display: inline-block;
+  flex-shrink: 0;
+  transition: transform .15s ease;
+}
+
+.expandable[open] summary::before { transform: rotate(90deg); }
+
+.expandable__body { padding: 0 20px 20px; }
+.expandable__body p:last-child { margin-bottom: 0; }
+.expandable__body .img-placeholder:last-child { margin-bottom: 0; }
+
+/* ---------- Epígrafe opcional debajo de una imagen ---------- */
+
+.img-caption {
+  margin: -20px 0 28px;
+  padding: 0 6px;
+  font-size: .85rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  text-align: left;
+}
+
+.img-caption:empty { display: none; margin: 0; }
+
+/* Imagen suelta insertada en medio de una oración (no en su propio
+   párrafo) — caso poco común; el habitual, con recuadro de "pendiente"
+   y epígrafe, lo maneja .img-placeholder + .img-caption de arriba. */
+.content-img {
+  border-radius: 8px;
+  margin: 20px 0 4px;
+}
+
+.content-img:last-child { margin-bottom: 0; }
+
+/* ---------- Botones de íconos con link (modelos privados / código abierto) ---------- */
+
+.icon-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0 28px;
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 10px 16px 10px 10px;
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: .92rem;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.icon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+  border-color: var(--icon-btn-color, var(--color-accent));
+  color: var(--color-primary);
+}
+
+.icon-btn__logo {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--icon-btn-color, var(--color-primary));
+}
+
+.icon-btn__logo svg { width: 18px; height: 18px; }
+
+/* Logos que pasó Diego: mismo tamaño de exhibición para los 8, sin
+   importar la forma/proporción original de cada isotipo. */
+.icon-btn__logo img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
+.icon-btn__logo--text {
+  background: var(--icon-btn-color, var(--color-primary));
+  color: #fff;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: .64rem;
+  letter-spacing: .01em;
+  border-color: transparent;
+}
+
+/* ---------- Grilla de empresas (Bloque D) ---------- */
+
+.company-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0 28px;
+}
+
+.company-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+
+.company-card__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.company-card h4 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: .98rem;
+}
+
+.company-card h4 a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.company-card h4 a:hover { color: var(--color-accent); }
+
+.company-logo {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--logo-color, var(--color-primary));
+}
+
+.company-logo svg { width: 20px; height: 20px; }
+
+.company-logo--text {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .01em;
+}
+
+.company-card p { margin: 0; font-size: .88rem; color: var(--color-text-muted); }
+
+/* ---------- Listas de ejemplos (alucinaciones / sesgos) ---------- */
+
+.example-list {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin: 12px 0 28px;
+  list-style: none;
+}
+
+.example-list li {
+  padding-left: 22px;
+  position: relative;
+}
+
+.example-list li::before {
+  content: "⚠";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+}
+
+.tips-list {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin: 12px 0 28px;
+  list-style: none;
+}
+
+.tips-list li {
+  padding-left: 22px;
+  position: relative;
+}
+
+.tips-list li::before {
+  content: "＋";
+  position: absolute;
+  left: 0;
+  color: var(--color-ok);
+  font-weight: 700;
+}
+
+/* ---------- Cierre / recomendaciones prácticas ---------- */
+
+.practice-list { padding-left: 0; list-style: none; }
+.practice-list li {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+}
+.practice-list strong { color: var(--color-primary); }
+
+/* Tres tarjetas de cierre con color propio (fríos) y letra blanca para
+   que se destaquen como recomendaciones prácticas concretas. */
+.practice-list li.practice-list__item--violet {
+  background: #5b3fa0;
+  border-color: transparent;
+  color: #fff;
+}
+.practice-list li.practice-list__item--magenta {
+  background: #c2255c;
+  border-color: transparent;
+  color: #fff;
+}
+.practice-list li.practice-list__item--teal {
+  background: #0e6e70;
+  border-color: transparent;
+  color: #fff;
+}
+.practice-list li.practice-list__item--violet strong,
+.practice-list li.practice-list__item--magenta strong,
+.practice-list li.practice-list__item--teal strong { color: #fff; }
+
+.next-class {
+  margin-top: 40px;
+  padding: 22px 24px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 12px;
+}
+.next-class p { margin: 0; }
+.next-class__label {
+  text-transform: uppercase;
+  font-size: .75rem;
+  letter-spacing: .06em;
+  color: #b9c1d6;
+  margin: 0 0 6px;
+}
+
+/* ---------- Lista con viñetas generada desde contenido.txt ---------- */
+/* La genera script.js cuando todos los renglones de un párrafo empiezan
+   con "- ". Hereda el estilo general de .block ul (viñeta, espaciado). */
+
+.content-list { margin: 0 0 24px; }
+.content-list:last-child { margin-bottom: 0; }
+
+/* ---------- Subtítulo liviano dentro de un bloque ---------- */
+/* Para rótulos cortos que están un escalón por debajo de un <h4>
+   ("Archivos de texto", "Lectura lateral", etc.) — texto fijo en
+   index.html, no se edita en contenido.txt. */
+
+.mini-heading {
+  font-weight: 700;
+  font-style: italic;
+  color: var(--color-primary);
+  margin: 24px 0 10px;
+}
+
+/* ---------- Tabla comparativa (ej.: plataformas de IA) ---------- */
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 20px 0 28px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .87rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.comparison-table thead th {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.comparison-table tbody tr:last-child td { border-bottom: none; }
+.comparison-table tbody tr:nth-child(even) { background: rgba(46,58,89,.025); }
+
+.comparison-table td:first-child {
+  font-weight: 700;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+/* ---------- Cuadro de elementos con color (gramática del prompt) ---------- */
+/* Cada tarjeta usa --element-color (color propio) para el borde y el
+   ícono, definido inline en index.html — así el "cuadro con distintos
+   colores" queda armado sin tocar el CSS. */
+
+.elements-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0 28px;
+}
+
+.element-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--element-color, var(--color-accent));
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+
+.element-card h4 {
+  margin: 0 0 6px;
+  font-size: .98rem;
+  color: var(--element-color, var(--color-primary));
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.element-card__icon { font-size: 1.05rem; line-height: 1; }
+
+.element-card p { margin: 0; font-size: .9rem; color: var(--color-text); }
+
+/* ---------- Fórmula de un prompt ---------- */
+
+.prompt-formula {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: .92rem;
+  text-align: center;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 0 0 20px;
+}
+
+/* ---------- Ejemplo de prompt (cita editable) ---------- */
+
+.prompt-example {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 0 0 6px;
+}
+
+.prompt-example__label {
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin: 0 0 8px;
+}
+
+.prompt-example p, .prompt-example ul { font-style: italic; color: var(--color-text); }
+.prompt-example p:last-child, .prompt-example ul:last-child { margin-bottom: 0; }
+
+/* ---------- Análisis / desglose de un prompt de ejemplo ---------- */
+
+.prompt-breakdown {
+  font-size: .88rem;
+  color: var(--color-text-muted);
+  margin: 10px 0 28px;
+}
+
+/* ---------- Aviso ("¡Cuidado!") ---------- */
+
+.warning-box {
+  background: var(--color-no-light);
+  border-left: 4px solid var(--color-no);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 12px 0 28px;
+}
+
+.warning-box__label {
+  font-weight: 700;
+  color: var(--color-no);
+  margin: 0 0 6px;
+}
+
+.warning-box p:last-child { margin-bottom: 0; }
+
+/* ---------- Cita académica (párrafo de un texto citado) ---------- */
+
+.academic-quote {
+  border-left: 4px solid var(--color-primary);
+  background: var(--color-primary-light);
+  border-radius: 0 10px 10px 0;
+  padding: 16px 22px;
+  margin: 12px 0 6px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-primary);
+}
+
+.academic-quote p:last-child { margin-bottom: 0; }
+
+.academic-quote__source {
+  font-size: .85rem;
+  font-style: normal;
+  color: var(--color-text-muted);
+  margin: 8px 0 28px;
+}
+
+/* ---------- Pasos (método SIFT y similares) ---------- */
+
+.sift-list {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sift-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.sift-step__letter {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gradient-sidebar);
+  color: #fff;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sift-step p { margin: 0; font-size: .96rem; }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+  .comparison { grid-template-columns: 1fr; }
+  .company-grid { grid-template-columns: 1fr; }
+  .elements-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .nav-toggle { display: block; }
+
+  .site-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform .2s ease;
+    z-index: 50;
+    box-shadow: 4px 0 24px rgba(0,0,0,.2);
+  }
+
+  .site-nav.is-open { transform: translateX(0); }
+
+  .content { padding: 90px 20px 80px; }
+
+  .class-header h1 { font-size: 1.6rem; }
+}
+
+/* ---------- Variante de color por clase ---------- */
+/* Mismo archivo para todas las clases: el degradé de la barra lateral
+   (y, con él, la caja destacada tipo .highlight-box y el círculo de
+   .sift-step__letter, que lo reutilizan) cambia levemente de tono según
+   el atributo data-clase="N" del <html> de cada index.html, para que
+   cada clase se identifique de un vistazo sin dejar de pertenecer a la
+   misma paleta. Clase 1 usa el degradé por defecto de arriba (azul →
+   magenta); para sumar una clase nueva, agregá una línea siguiendo el
+   mismo patrón. */
+
+:root[data-clase="2"] { --color-sidebar-end: #6a3fa0; } /* azul → violeta */

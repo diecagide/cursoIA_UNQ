@@ -1,0 +1,383 @@
+======================================================================
+CÓMO EDITAR ESTE ARCHIVO
+======================================================================
+
+TEXTO
+-----
+Cada bloque de texto empieza con una línea "## algunaClave" — esa línea
+no se toca ni se borra, pero todo lo que está debajo sí se puede editar
+libremente.
+
+- Para separar en PÁRRAFOS (con más separación visual), dejá una línea
+  en blanco entre uno y otro.
+- Para pasar de renglón sin que sea un párrafo nuevo (como Enter simple
+  en Word), escribí un solo Enter, sin línea en blanco.
+- Podés usar **negrita**, *cursiva* y [texto](https://enlace).
+- Si TODOS los renglones de un párrafo empiezan con "- " (guion +
+  espacio), ese párrafo se muestra como una lista con viñetas en vez de
+  texto corrido. Ejemplo:
+
+    - Primer punto.
+    - Segundo punto, también con **negrita** si hace falta.
+
+IMÁGENES
+--------
+Se agregan como su propio párrafo (línea en blanco antes y después):
+
+    ![texto alternativo opcional](images/nombre-del-archivo.jpg)
+
+Si querés un epígrafe debajo (modelo usado, prompt, etc.), escribilo
+pegado en el renglón siguiente, sin dejar línea en blanco. Más detalle
+en el README de la carpeta principal. Diego: todavía no hay imágenes
+cargadas en esta clase — las vas a ir sumando con esta misma lógica.
+
+======================================================================
+
+
+## bienvenida_1
+Bienvenidas y bienvenidos a la segunda clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En la primera clase vimos la diferencia entre un modelo y una plataforma, algunos usos generales de la IA generativa, sus características y limitaciones, y qué diferencia a un modelo privado de uno de código abierto.
+
+Hoy nos metemos con el texto. De todos los formatos que puede generar la IA, este es el que más ruido hace dentro de la universidad, y por una razón bastante concreta: puede resolver un trabajo práctico entero en cuestión de segundos. Y si le damos un texto propio como referencia, puede hacerlo imitando nuestra manera de escribir.
+
+Ahí aparecen dos preguntas distintas, que van a atravesar toda la clase. La primera es sobre la información: ¿lo que dice es cierto?, ¿esa fuente existe? La segunda es sobre la escritura: ¿ese texto tiene algo del estudiante que lo entregó, o es una voz de nadie? Son dos validaciones diferentes, y las dos nos toca acompañarlas.
+
+La idea de esta clase es que podamos:
+
+- Conocer algunos de los LLM más populares que existen hoy y sus características principales.
+- Conocer técnicas eficaces de redacción de prompts.
+- Indagar sobre los usos posibles de la IA en el ámbito académico.
+- Reflexionar sobre algunas estrategias de validación.
+
+Arranquemos por entender un poco mejor cómo funcionan los modelos con los que vamos a trabajar.
+
+
+## bloquea_intro
+En la primera clase ya nombramos a los LLM (Large Language Model, o modelo de lenguaje grande) como el tipo de modelo detrás de plataformas como ChatGPT, Claude o Gemini. Ahora intentaremos entender qué hace un LLM cuando le escribimos algo.
+
+Un LLM es un modelo entrenado para comprender y generar lenguaje humano en forma de texto. Dos cosas definen cómo funciona:
+
+- Se entrenó con enormes volúmenes de texto —páginas web, libros, artículos, foros, posteos de redes, códigos— y de ahí sacó los patrones del lenguaje: significados, gramática, contexto, estilo, etc.
+- No está programado con conocimientos explícitos, sino que aprendió a predecir cuál será la palabra siguiente en una oración.
+
+¿De dónde salió exactamente todo ese texto? No está del todo claro. En los primeros modelos las empresas daban algunos detalles —OpenAI publicó las proporciones que usó para GPT-3—, pero con los modelos actuales dejaron de hacerlo. Sabemos que hay mucha web, libros digitalizados, foros, enciclopedias colaborativas, código. No sabemos en qué proporción, en qué idiomas ni de qué regiones. Y eso importa, porque es el terreno donde crecen los sesgos de los que hablamos en la clase anterior. Algo que sí está medido: estos modelos rinden mejor en inglés que en cualquier otro idioma, y esa diferencia aparece en las respuestas.
+
+Cuando escribimos un prompt, el modelo no entiende lo que le pedimos, al menos no como lo entendemos nosotros. Lo que hace es calcular, palabra por palabra, cuál es la continuación más probable de eso que escribimos. Algo parecido al teclado predictivo del celular, que nos sugiere cómo seguir la frase, pero a otra escala: en vez de mirar nuestros últimos mensajes, mira patrones de millones de textos; y en vez de tirar una palabra suelta, encadena una atrás de otra hasta armar la respuesta completa, lógica, verosímil… ¿Verdadera?
+
+Para ser precisos: no predice palabras enteras sino tokens, que pueden ser fragmentos de palabras o signos de puntuación. Pero la lógica es la misma: ver qué sigue, agregarlo, volver a calcular.
+
+Si querés ver cómo se descompone un texto en tokens, podés pegarlo en el [Tokenizer](https://platform.openai.com/tokenizer), una herramienta gratuita de OpenAI.
+
+Y acá está la explicación de por qué un modelo responde mejor que otro: cuantos más textos haya visto durante el entrenamiento, cuantos más patrones haya identificado —gramaticales, de estilo, de formato—, más fino va a ser al predecir esa continuidad textual. Cuanta más información le demos nosotros en el prompt, mejor va a poder ajustar esa predicción a lo que realmente estamos buscando.
+
+Ahora bien, que un LLM prediga la palabra más probable no significa que la elija al azar. Predecir con criterio estadístico, entrenado sobre patrones reales de lenguaje, es lo que le permite producir textos coherentes, con gramática correcta y un estilo reconocible. Pero también es el escenario adecuado para la aparición de una alucinación.
+
+
+## panorama_llms_1
+Ya nombramos algunas plataformas en la primera clase. Antes de avanzar con la escritura de prompts, les comparto un cuadro comparativo con las plataformas más usadas hoy.
+
+
+## panorama_llms_2
+Vale la pena detenerse en Perplexity, porque no es un chatbot generalista como los demás: está pensada como un motor de búsqueda conversacional, y cada respuesta que da viene acompañada de los enlaces a las fuentes que usó para construirla. Esto no la vuelve infalible, también puede citar mal o interpretar una fuente de manera forzada, pero facilita bastante la primera validación de la que hablamos en la bienvenida: la de la información. Es una plataforma que conviene tener a mano justamente para esa tarea.
+
+
+## que_pueden_hacer
+En general, estas plataformas hacen las siguientes cosas:
+
+- **Redactar texto en distintos formatos**: un correo, un informe, un guion, una consigna, un resumen.
+- **Escribir código** en cualquier lenguaje de programación, explicarlo o corregir errores.
+- **Trabajar con archivos que le damos**: artículos, imágenes, tablas, audio. Podemos subir uno o varios y pedirle que los analice, los compare o extraiga información de ellos.
+- **Buscar en internet**: la mayoría ya puede consultar páginas en tiempo real, más allá de lo que aprendió durante el entrenamiento.
+- **Analizar datos**: hacer cálculos sobre una planilla, cruzar columnas, generar un gráfico.
+- **Traducir** entre idiomas, y también entre registros: pasar un texto técnico a uno divulgativo, o al revés.
+- **Transcribir audio y hablar**: pasar una grabación a texto, o mantener una conversación por voz.
+- **Generar imágenes**, aunque no todas las plataformas lo hacen ni todas lo hacen igual de bien. De esto nos ocupamos en la próxima clase.
+
+
+## la_interfaz
+Todas estas plataformas comparten una interfaz bastante parecida que incluye los siguientes elementos:
+
+- un casillero de chat donde escribimos el prompt,
+- un historial de conversaciones anteriores,
+- la opción de adjuntar archivos —PDFs, imágenes, planillas— para que el modelo trabaje sobre ellos,
+- un selector para elegir entre distintos modelos disponibles,
+- alguna forma de memoria que permite que el modelo recuerde información de conversaciones anteriores sin que se la repitamos cada vez.
+
+
+## bloqueb_1
+Ya usamos la palabra prompt varias veces a lo largo del curso. Definámoslo con precisión: **un prompt es la instrucción o pregunta que le damos a un LLM para obtener una respuesta.**
+
+Si bien un prompt puede escribirse de manera rústica y torpe, con errores y problemas en la redacción, y lo más probable es que el modelo entienda igual qué le estamos pidiendo, hay algunas reglas que hacen que esa interacción sea más eficaz y que la respuesta se ajuste mejor a lo que buscamos:
+
+
+## elemento_rol
+Decirle al modelo desde qué lugar tiene que responder —"Eres un asistente para…"—, en vez de dejarlo actuar de manera genérica. Un rol bien definido orienta el tono y el criterio con el que arma la respuesta.
+
+## elemento_contexto
+Contarle para qué se necesita el texto o en qué situación se enmarca el pedido, en vez de tirar la instrucción sin más. Ese marco es lo que le permite ajustar la respuesta a lo que realmente hace falta, y no a una explicación genérica.
+
+## elemento_accion
+Un verbo en imperativo —explicá, analizá, compará, resumí, redactá— seguido de aquello sobre lo que tiene que operar. Un prompt que arranca con una acción clara orienta mejor al modelo que una pregunta vaga.
+
+## elemento_focalizacion
+Precisar qué aspecto puntual del tema tiene que desarrollar, en vez de dejarlo abierto a cualquier ángulo posible.
+
+## elemento_restricciones
+Aclarar qué evitar o qué priorizar en la respuesta —el tono, el destinatario, la extensión, una época o un recorte bibliográfico determinado.
+
+## elemento_formato
+Si el resultado tiene que ser un párrafo, una lista, una tabla, un guion, o una cantidad determinada de oraciones por punto.
+
+
+## bloqueb_2
+Estas "reglas" pueden utilizarse para redactar prompts en distintos niveles de complejidad, según lo que necesitemos. Podemos pensarlos en tres niveles: simple, medio y complejo.
+
+
+## simple_1
+Un prompt simple es una instrucción directa, sin contexto ni delimitaciones, sobre un objeto de estudio que queda explícito en el propio pedido. Se arma con la fórmula:
+
+## formula_simple
+[acción + objeto] + [focalización]
+
+## simple_ej1
+"Explica el fenómeno de la fotosíntesis."
+
+## simple_ej2
+"Resume los aportes de Vygotsky a la teoría del aprendizaje."
+
+## simple_ej3
+"Menciona las características principales del expresionismo alemán en el cine."
+
+## simple_breakdown
+→ En los tres casos la acción y el objeto van juntos al arranque: explica el fenómeno, resume los aportes, menciona las características. La focalización, en cambio, es opcional: el primer ejemplo no la tiene —el pedido queda abierto a cualquier aspecto de la fotosíntesis—, mientras que en los otros dos acota el recorte: a la teoría del aprendizaje, en el cine.
+
+## simple_2
+El prompt simple puede ser un buen punto de partida, pero tiene un límite: al no darle más información al modelo, es habitual que la respuesta sea genérica o enciclopédica, la primera aproximación que cualquiera podría encontrar en una búsqueda rápida.
+
+
+## medio_1
+Un prompt medio suma contexto y formato de salida a la estructura anterior. Ya no le pedimos al modelo que resuelva en el aire, sino que lo ubicamos: para quién es el texto, con qué objetivo, y en qué formato lo necesitamos.
+
+## formula_medio
+[contexto] + [acción + objeto] + [focalización] + [formato de salida]
+
+## medio_ej1
+"Estoy escribiendo un trabajo sobre las políticas de vivienda en Argentina y necesito ubicar las distintas posturas que existen sobre el tema. Compara tres posiciones centrales del debate, enfocándote en qué rol le asigna cada una al Estado. Presentalo en una tabla con tres columnas: postura, argumento central y principales referentes."
+
+## medio_breakdown
+→ Contexto (está escribiendo un trabajo y necesita mapear el debate), acción y objeto (comparar las posiciones principales), focalización (el rol asignado al Estado) y formato de salida (tabla de tres columnas).
+
+
+## complejo_1
+El prompt complejo agrega dos elementos más: restricciones (qué evitar, qué priorizar) y, cuando hace falta, un rol para el modelo y ejemplos que orienten el estilo de la respuesta. Esto último se conoce como few-shot: darle al modelo un fragmento de nuestra propia escritura para que la respuesta se acerque más a nuestra voz que a un estilo genérico. Un prompt complejo puede escribirse como un párrafo continuo, o puede organizarse con una lista de pedidos cuando son varios los puntos que necesitamos cubrir. Van dos ejemplos, uno de cada formato.
+
+## formula_complejo
+[rol] + [contexto] + [acción + objeto] + [focalización] + [restricciones] + [formato de salida]
+
+## complejo_ej1
+"Actuá como especialista en arte contemporáneo y arte generativo. Estoy explorando cómo las prácticas de arte generativo se relacionan con algunas transformaciones recientes del arte contemporáneo y quiero tener un panorama que me permita profundizar en el tema. Analizá la tendencia del arte generativo y su desarrollo dentro de las prácticas artísticas contemporáneas, haciendo foco en cómo el uso de algoritmos, reglas y sistemas modifica las nociones de autoría, proceso y obra. Tomá como referencia el desarrollo de estas prácticas desde 2020 hasta la actualidad y mencioná algunos artistas o proyectos relevantes. Evitá centrar el análisis exclusivamente en la inteligencia artificial y considerá otras formas de generación basadas en algoritmos, datos, azar o sistemas de reglas. Utilizá un lenguaje claro y accesible, pero manteniendo precisión conceptual. Organizá la respuesta en cuatro párrafos y no cierres el texto con una conclusión general: dejá planteadas algunas preguntas o tensiones que puedan servir como punto de partida para profundizar el análisis."
+
+## complejo_breakdown1
+→ Rol (especialista en arte contemporáneo y arte generativo), contexto (está explorando el tema y busca un panorama para profundizar), acción y objeto (analizar la tendencia del arte generativo y su desarrollo), focalización (cómo los algoritmos y sistemas modifican las nociones de autoría, proceso y obra), restricciones (desde 2020 en adelante, sin reducir el análisis a la inteligencia artificial, lenguaje accesible con precisión conceptual) y formato de salida (cuatro párrafos, sin conclusión de cierre, con preguntas abiertas).
+
+## complejo_ej2
+**Rol:** Sos especialista en arte contemporáneo y teoría del arte.
+
+**Contexto:** Estoy trabajando sobre la autoría en el arte generativo y quiero profundizar una idea que me interesa desarrollar: que la autoría de una obra no depende únicamente de quién establece previamente las reglas del sistema, sino también de la ejecución concreta de la obra y del cuerpo que participa en ese proceso. Todavía no tengo desarrollado el argumento y quiero explorar sus posibilidades antes de formularlo.
+
+**Tarea:** Ayudame a ampliar y poner en tensión esta idea.
+
+"Focalizá el análisis en:
+
+- qué preguntas se abren cuando pensamos la autoría desde la ejecución y la dimensión corporal;
+- qué conceptos permiten distinguir entre concebir, programar, ejecutar y experimentar una obra;
+- qué autores, prácticas artísticas o ejemplos podrían ayudarme a desarrollar esta perspectiva;
+- qué tensiones o contradicciones internas podría tener esta posición.
+
+**Evitá:** desarrollar una tesis completa, sacar conclusiones por mí o decirme cuál debería ser mi posición. Tampoco reduzcas la dimensión corporal a la presencia física del artista: explorá qué otras dimensiones del cuerpo podrían estar involucradas en el proceso artístico.
+
+Formato de salida: organizá la respuesta en cuatro apartados, correspondientes a los cuatro puntos anteriores: Preguntas para explorar, Conceptos en juego, Autores y prácticas, y Tensiones. Presentá cada idea en no más de dos oraciones, de modo que funcionen como puntos de partida para mi propia investigación."
+
+## complejo_breakdown2
+→ Rol (especialista en arte contemporáneo y teoría del arte), contexto (está desarrollando una idea propia sobre autoría y quiere explorarla antes de formularla), acción y objeto (ampliar y poner en tensión esa idea), focalización (cuatro entradas: preguntas, conceptos, referencias y tensiones), restricciones (que no desarrolle una tesis ni cierre por él, y que no reduzca lo corporal a la presencia física) y formato de salida (cuatro apartados, dos oraciones por idea).
+
+
+## bloquec_1
+En la primera clase presentamos la Guía de uso de IA generativa para estudiantes de la UNQ y su distinción entre usos admisibles e inadmisibles. Ahora que sabemos cómo funciona un LLM (masomeno) y cómo se escribe un prompt, podemos bajar eso a pedidos concretos. Vamos a ver dos grupos: los usos generales, que tienen que ver con producir y trabajar sobre textos, y un uso más específico, el de la IA como asistente de lectura e investigación.
+
+
+## producir_texto
+Sobre la producción, un LLM puede hacer varias cosas:
+
+- **Generación**: producir un texto nuevo a partir de una consigna, como un borrador, un ejemplo o una guía. "Redactá tres posibles consignas de trabajo final sobre este tema, de dificultad creciente."
+- **Reformulación**: reescribir un texto existente cambiando el registro, el tono o el destinatario. "Reformulá este párrafo para que lo entienda alguien sin formación previa en el tema."
+- **Síntesis**: condensar un texto extenso en sus ideas centrales. "Sintetizá los argumentos centrales de este texto en un párrafo de diez líneas."
+- **Revisión**: corregir gramática, claridad o coherencia de algo ya escrito. "Revisá la claridad y la cohesión de este párrafo, sin cambiar su sentido."
+
+
+## estructurar_info
+Lo que el modelo devuelve no tiene por qué ser necesariamente un texto en prosa. Cuando definimos el formato de salida en el prompt, se abren varias posibilidades:
+
+- **Formatos de salida**: tablas, esquemas, líneas de tiempo, cuadros sinópticos, infografías, etc. Estas son otras maneras de organizar la información que permiten, por ejemplo y entre otras cosas, producir recursos didácticos complementarios.
+- **Entregar archivos descargables**: un documento de Word, una planilla de Excel, una presentación, un PDF, un gráfico. No todas las plataformas lo hacen ni todas de la misma manera (en algunas depende del plan contratado), así que conviene probar qué permite cada una antes de recomendarla en clase.
+
+
+## traducir
+Los LLM traducen con un nivel de aproximación muy alto, y no solo entre las lenguas más habituales: inglés, ruso, chino, vietnamita, o la que sea. Esto abre bibliografía que de otro modo queda afuera del alcance de los estudiantes, y permite trabajar con fuentes en su idioma original.
+
+**Importante:** la calidad no es pareja en todos los idiomas, y baja en aquellos que tuvieron menos presencia en el entrenamiento, algo que ya mencionamos cuando hablamos de los datos con los que se entrenaron estos modelos.
+
+
+## archivos_intro
+Cuando adjuntamos un archivo, el modelo sigue utilizando lo que aprendió durante su entrenamiento, pero además focaliza sobre la información que nosotros le proporcionamos en ese archivo.
+
+## archivos_texto
+Con uno o varios documentos adjuntos, en Word o en PDF, podemos pedirle:
+
+- que ubique dónde el autor desarrolla determinado tema,
+- que clarifique conceptos,
+- que compare cómo dos autores abordan un mismo problema,
+- que arme una ficha de lectura que después el estudiante complete y corrija.
+
+## cuidado_lectura
+Estos pedidos nunca deben sustituir a la lectura, sino todo lo contrario. Son pedidos que deben ser complementarios al propio proceso de lectura.
+
+## otros_archivos_1
+Muchos de estos modelos son multimodales, es decir que admiten imágenes, audio, video, planillas de datos, etc.
+
+Un estudiante que tiene que analizar una obra artística puede subir la imagen y proponer este punto de partida:
+
+## otros_archivos_ej
+"Te adjunto la foto de una pintura que tengo que analizar para un trabajo. Decime a qué movimiento pertenece y en qué te basás para afirmarlo, qué características formales de la obra lo confirman, y dame otras tres obras del mismo movimiento que me sirvan para comparar."
+
+## otros_archivos_breakdown
+→ El "en qué te basás para afirmarlo" es importante ya que le pedimos al modelo que exponga el razonamiento que realizó, el paso a paso de ese razonamiento, y el estudiante puede evaluar si se sostiene.
+
+## otros_archivos_2
+Con los otros formatos pasa algo parecido. Se puede subir:
+
+- la grabación de una entrevista y pedir la desgrabación para después trabajarla,
+- una planilla con datos de una encuesta y pedir que los cruce y grafique,
+- una imagen de un texto manuscrito y pedir que lo transcriba.
+
+Acá conviene probar antes de recomendar: no todas las plataformas aceptan los mismos formatos, y el audio y el video están disponibles en menos lugares que la imagen.
+
+
+## revisar_lecturas
+Pensemos en un estudiante que está produciendo un trabajo de investigación, que ya leyó la bibliografía obligatoria y tiene, además, un vasto corpus de bibliografía ampliatoria que podría resultarle útil pero que aún no lo sabe. Antes de meterse con doscientas páginas sin saber si le van a servir, puede adjuntar esos textos y hacer las preguntas adecuadas:
+
+## revisar_lecturas_ej
+"Estoy escribiendo un trabajo sobre la relación entre memoria y espacio urbano, y ya tengo el marco teórico a partir de los textos de la materia. Te adjunto otros cuatro textos que me recomendaron pero que todavía no leí. Para cada uno decime qué aporta que no esté ya en mi marco teórico, qué capítulo o apartado sería el más pertinente para mi tema, y si alguno directamente no sirve para este trabajo, decímelo. No me resumas los textos completos."
+
+
+## reponer_1
+Leer un texto académico no es recibir información de manera pasiva: es reconstruir un sentido a partir de lo que el texto ofrece, lo que ya sabemos y lo que el docente aporta como guía. En ese proceso, la IA puede sumar como fuente de reposición.
+
+## reponer_2
+Al leer es habitual encontrarse con corrientes, autores o marcos teóricos que el texto menciona sin desarrollar, dando por sentado que el lector ya los conoce. Ahí un LLM sirve para tres tareas:
+
+- **Reponer información ausente**: completar lo que el texto menciona pero no explica.
+- **Reconstruir redes de articulación**: identificar con quién dialoga o discute el texto, qué posiciones están en tensión.
+- **Detectar y clarificar conceptos**: aportar ejemplos o aplicaciones concretas que ayuden a entender una noción abstracta.
+
+## reponer_3
+Tomemos de ejemplo el siguiente párrafo, perteneciente a las conclusiones del capítulo 1 del texto "La construcción sociocognitiva entre iguales", de Roselli:
+
+## roselli_quote
+Justo es reconocer que el recorrido teórico que hemos hecho se refirió fundamentalmente a las corrientes neo-piagetianas y neo-vygotskianas de fuerte desarrollo europeo (aunque no exclusivamente). El gran cúmulo de investigaciones norteamericanas que hay en la materia [de las que las conocidas revisiones de Johnson y Johnson (1978, 1992), Slavin (1980) y Webb (1984) dan cuenta] son en su mayoría intentos descriptivo-correlacionales que no consideran a los factores propiamente cognitivos o no analizan el proceso de construcción cognitiva.
+
+## reponer_4
+En este caso, el texto menciona las corrientes neo-piagetianas y neo-vygotskianas sin desarrollarlas. Una reacción posible sería pedirle al modelo una definición: "¿Qué es la corriente neo-piagetiana?". Y eso devuelve exactamente lo que devolvería una búsqueda rápida: una explicación general, desconectada de las tensiones y los debates que le interesan al texto.
+
+## reponer_5
+En lugar de preguntar por una definición aislada, las preguntas podrían orientarse hacia:
+
+- ¿Qué discusiones se han dado en torno a la corriente neo-piagetiana?
+- ¿Qué puntos en común presentan las corrientes neo-piagetianas y neo-vygotskianas?
+- ¿Qué otras corrientes contemporáneas dialogan o discuten con ellas?
+- ¿Cómo se han aplicado las ideas neo-piagetianas en investigaciones recientes?
+- ¿De qué manera las perspectivas neo-vygotskianas influyen en las prácticas educativas actuales?
+- ¿Qué autores actuales revisan o actualizan las propuestas de Piaget y Vygotsky desde una mirada contemporánea?
+
+Llevado a un prompt complejo, con todos los elementos que vimos en el Bloque B:
+
+## reponer_ej_final
+"Estoy trabajando con un texto académico que menciona las corrientes neo-piagetianas y neo-vygotskianas, pero no desarrolla sus debates centrales. Explicá cuáles son las principales discusiones que se dieron en torno a estas corrientes, destacando qué puntos tienen en común y en qué aspectos se diferencian. Enfocate en su lugar dentro de los debates sobre el aprendizaje colaborativo. Proporcioná la respuesta en formato de lista con tres debates centrales y un párrafo de síntesis final. Si es posible, incluí referencias a autores posteriores a 2010 que trabajen sobre estas corrientes."
+
+
+## bloquee_1
+Para acompañar a un estudiante en una interacción útil, reflexiva, transparente y enriquecedora con estas herramientas, les comparto las dos dimensiones que considero relevantes para realizar ese proceso: **legitimidad** y **voz propia**.
+
+
+## legitimidad_1
+Las plataformas de IA pueden equivocarse, y de hecho lo hacen con bastante frecuencia. Pensemos un ejemplo cercano a la producción audiovisual: si le pedimos a la IA que nos diga qué configuración de cámara y de luz se usaba habitualmente en el cine de los años '70 para lograr determinado clima visual, o qué diferencia técnica hay entre dos formatos de exportación de video, puede devolvernos una respuesta que suena firme y precisa, pero que mezcle datos reales con afirmaciones inventadas. Esa información —como cualquier otra— necesita pasar por un proceso de validación: contrastarla con fuentes propias de la disciplina, y también con nuestra experiencia como docentes.
+
+
+## sift_intro
+Uno de los métodos que más se está usando para verificar información —tanto la que devuelve la IA como la que circula en redes— es el SIFT, desarrollado por Mike Caulfield, investigador estadounidense especializado en alfabetización digital. Caulfield trabajó como director de aprendizaje híbrido en la Washington State University Vancouver y hoy está vinculado al Center for an Informed Public de la Universidad de Washington. Escribió *Web Literacy for Student Fact-Checkers* y, junto a Sam Wineburg, *Verified*. Sus módulos de SIFT se usan en más de cien universidades y escuelas secundarias de Estados Unidos y Canadá, y en los últimos años varias bibliotecas universitarias —entre ellas las de University of British Columbia, University of Calgary y University of California Merced— lo adaptaron específicamente para evaluar respuestas de IA generativa.
+
+La lógica del método es que la verificación tiene que ser rápida: no se trata de investigar durante horas, sino de hacer en un minuto los chequeos que evitan dar por cierto algo que no lo es. Son cuatro pasos:
+
+
+## sift_s
+**S – Stop (Detenerse)**: no uses el texto de la IA de inmediato. Asumí que la respuesta es un borrador que requiere verificación obligatoria.
+
+## sift_i
+**I – Investigate the source (Investigar la fuente)**: como la IA no es la fuente primaria, indagá qué bases de datos o sesgos de entrenamiento tiene ese modelo específico.
+
+## sift_f
+**F – Find better coverage (Encontrar mejor cobertura)**: buscá el dato en Google Académico, bases de datos científicas o libros, para comprobar si expertos humanos validan lo que afirma la IA.
+
+## sift_t
+**T – Trace back to the original context (Rastrear el contexto original)**: si la IA te proporciona una cita o un enlace, buscalo directamente. Verificá si el autor real dijo exactamente eso o si la IA sacó las palabras de contexto.
+
+## sift_closing
+Sobre el último paso, que en el caso de la IA es el más importante: cuando el modelo cita un artículo, no alcanza con verificar que el artículo exista. Hay que abrirlo y confirmar que efectivamente diga lo que la IA afirma que dice. El caso más común no es la cita completamente inventada, sino la cita real atribuida a un contenido que no tiene.
+
+
+## lectura_lateral
+La lectura lateral (*lateral reading*) es una técnica de verificación que consiste en salir inmediatamente de la página que estamos leyendo para investigar su credibilidad en otras pestañas del navegador.
+
+En lugar de leer el artículo de arriba a abajo, abrimos pestañas adicionales para buscar qué dicen fuentes externas, expertos y bases de datos independientes sobre el autor, el sitio web o la noticia.
+
+
+## practicas_intro
+Además de estos dos métodos, hay algunas prácticas que conviene incorporar:
+
+## practicas_list
+- Pedir las fuentes explícitamente y verificar una por una. Las citas y la bibliografía inventadas son el caso de alucinación más habitual en el ámbito académico.
+- Usar plataformas que citan sus fuentes con enlace, como Perplexity, cuando lo que se busca es información verificable.
+- Calibrar el modelo antes de confiar: hacerle primero una pregunta sobre algo que uno domina, para ver cómo se comporta en ese terreno.
+- Pedirle que explicite en qué se basa y qué nivel de certeza tiene, en lugar de aceptar la afirmación pelada.
+- Contrastar: pedirle el contraargumento de lo que acaba de decir, o hacer la misma pregunta en otro modelo y comparar.
+- Acotar el corpus: usar herramientas como NotebookLM, que responden solo sobre los archivos que le cargamos.
+
+
+## notebooklm_desc
+Es una plataforma gratuita de Google, distinta de Gemini, pensada para trabajar con fuentes propias: se le suben documentos, artículos o videos y funciona como un cuaderno de investigación, donde podemos hacer preguntas, pedir resúmenes o generar un resumen en audio parecido a un podcast. Lo que la distingue es que responde únicamente en base al material que le cargamos, y cita el pasaje del que sacó cada respuesta, así que verificarla es cuestión de ir a la fuente.
+
+## notebooklm_video_intro
+En el siguiente video vamos a ver cómo funciona:
+
+
+## voz_propia_1
+Es fundamental que un estudiante pueda construir su propia voz. Lo que entrega al final —un texto, una imagen, un proyecto— tiene que poder reconocerse como suyo: su pensamiento, su mirada, su manera particular de decir las cosas. No como una reproducción más o menos disimulada de lo que generó una herramienta. Por eso conviene, antes incluso de empezar a interactuar con la IA, que el estudiante pueda explicitar qué está buscando y por qué recurre a esta herramienta en particular para buscarlo. La voz propia no aparece de manera espontánea: se construye, y ese proceso de construcción es lo más valioso que un docente puede acompañar.
+
+El contenido final debe reflejar el pensamiento, la mirada y la voz del estudiante, no ser una reproducción de lo generado por la IA. En este sentido, es importante volver a hacer énfasis en el punto de partida, es decir explicitar qué información estoy buscando, para qué y por qué la busco en plataformas de IA, antes de comenzar la interacción.
+
+Es importante que los estudiantes construyan una mirada crítica que les permita analizar si el resultado de la interacción se ajusta a su mirada de aquello que fue consultado.
+
+## voz_propia_list
+- **Evaluar el proceso, no solo el producto.** Entregas por etapas: un mapa conceptual inicial, un borrador, la versión final con justificación de los cambios.
+- **Instancias orales breves.** No un examen, sino preguntas sobre las decisiones tomadas: por qué eligió ese recorte, por qué descartó tal autor, qué le costó más. Quien construyó el trabajo puede responder eso; quien lo pegó, no.
+- **Anexo de transparencia.** Si se usó IA, que se documente: qué prompts usó, qué le devolvió el modelo, qué hizo con eso y por qué.
+- **La IA como objeto de auditoría.** Darles una salida generada por IA para que la critiquen: que detecten las alucinaciones, verifiquen las fuentes, señalen los sesgos. Se evalúa el juicio disciplinar, que es justamente lo que no se puede delegar.
+- **Acordar las reglas desde el principio.** Como mencioné en la clase 1, delimitar en qué etapas de la cursada o del proceso de producción puede utilizarse la IA y en cuáles no.
+
+
+## cierre_1
+Y con esto llegamos al final de la segunda clase. Vimos qué hace un LLM cuando le escribimos algo —predecir, palabra por palabra, la continuación más probable—, recorrimos las plataformas más usadas hoy y qué sabe hacer cada una, y nos metimos con la gramática del prompt: el rol, el contexto, la acción, la focalización, las restricciones y el formato de salida, y cómo se combinan en prompts simples, medios y complejos.
+
+Después pasamos a los usos: producir y transformar textos, trabajar sobre archivos propios, revisar bibliografía antes de leerla, y usar la IA como asistente de lectura para reponer aquello que un texto menciona pero no desarrolla. Y cerramos con las dos validaciones que venimos sosteniendo desde el principio: la legitimidad de la información, con el método SIFT y la lectura lateral como herramientas concretas, y la voz propia, que no se detecta con software sino que se acompaña con estrategias pedagógicas.
+
+## proxima_clase
+En la próxima clase pasamos de la palabra a la imagen: vamos a ver algunos de los modelos de generación de imágenes más populares y cómo cambia la escritura de prompts cuando lo que queremos producir es visual. Nos vemos ahí.

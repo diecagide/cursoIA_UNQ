@@ -1,0 +1,35 @@
+CÓMO AGREGAR IMÁGENES A LA CLASE 2
+========================================
+
+Las imágenes de esta clase se administran desde contenido.txt (ver las
+instrucciones al principio de ese archivo). Todavía no hay ninguna
+cargada — se van a ir sumando con esta lógica:
+
+En el bloque de texto donde quieras que aparezca, escribís una línea
+así:
+
+    ![texto alternativo opcional](images/nombre-del-archivo.jpg)
+
+Y subís el archivo con ESE mismo nombre a esta carpeta "images".
+Mientras no lo subas, la página muestra automáticamente un recuadro de
+"pendiente" en su lugar — no rompe nada. Podés además agregar un
+epígrafe (modelo usado, prompt, etc.) escribiéndolo pegado debajo de
+esa línea, sin dejar renglón en blanco en el medio.
+
+Cómo subir un archivo a esta carpeta desde GitHub (sin instalar nada):
+1. Entrá a la carpeta "images" de clase-2 en el repositorio en github.com
+2. Botón "Add file" → "Upload files"
+3. Arrastrá tu imagen y ANTES de confirmar, renombrala exactamente
+   como la escribiste en contenido.txt (respetá minúsculas y guiones)
+4. Confirmá el cambio ("Commit changes")
+5. Esperá 1-2 minutos y refrescá la página publicada
+
+Tamaño recomendado: entre 1200 y 1600 px de ancho, formato .jpg o .png.
+
+Nota: el cuadro comparativo de plataformas (ChatGPT, Claude, Gemini,
+etc.) es una tabla de texto armada directo en index.html — no lleva
+imágenes ni logos.
+
+Los dos recuadros de video (uno en el Bloque A, otro en el Bloque E)
+tampoco son imágenes: se agregan pegando el código que da YouTube. Ver
+instrucciones en el README.md de la carpeta principal.
