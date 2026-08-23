@@ -102,9 +102,8 @@ Todo el texto de la clase vive en un solo archivo simple:
    - `**texto**` para **negrita**
    - `*texto*` para *cursiva*
    - `[texto](https://...)` para un link
-   - `![texto opcional](images/archivo.jpg)` para insertar una imagen
-     suelta dentro del texto (subí el archivo a la carpeta `images/`
-     de esa clase, igual que las demás imágenes)
+   - Para una IMAGEN, ver la sección 4 más abajo — es la misma lógica
+     en cualquier bloque de texto, no solo para las imágenes "fijas".
 7. Abajo de todo hay un botón verde "Commit changes" — con eso
    guardás. El sitio publicado se actualiza solo, en 1-2 minutos
    (mismo link de siempre).
@@ -139,30 +138,43 @@ visible para los estudiantes). Si eso pasa, deshacé el cambio desde
 
 ## 4. Agregar o cambiar una imagen
 
-Cada clase tiene una carpeta `images/` con un archivo `LEEME.txt` que
-lista exactamente qué nombre de archivo espera cada imagen (por
-ejemplo `01-imagen-curso.jpg`). Mientras no subas la imagen, la página
-muestra automáticamente un recuadro punteado de "pendiente" en su
-lugar — no rompe nada.
+Todas las imágenes de una clase (las que ya tiene y cualquiera nueva
+que quieras sumar) se manejan desde `contenido.txt` — **no hay que
+tocar `index.html` para esto**. Es una sola forma de hacerlo, en
+cualquier bloque de texto:
 
-Para agregarla:
+1. Entrá a `clase-1/contenido.txt` en GitHub, botón del lápiz (✏️).
+2. En el bloque (`## algo`) donde quieras que aparezca la imagen,
+   agregala en su propio párrafo (con línea en blanco antes y después):
 
-1. Entrá a la carpeta `clase-1/images` en GitHub.
-2. "Add file" → "Upload files".
-3. Subí tu imagen y **renombrala exactamente** como indica el
-   `LEEME.txt` de esa carpeta (respetando mayúsculas/minúsculas y la
-   extensión `.jpg`).
-4. Commit changes. En un par de minutos la imagen va a reemplazar al
-   recuadro punteado automáticamente — no hace falta tocar el HTML.
+   ```
+   ![texto alternativo opcional](images/nombre-del-archivo.jpg)
+   ```
 
-Si preferís usar `.png` en vez de `.jpg`, avisame y te ajusto el
-archivo `index.html` para que apunte a esa extensión.
+3. Si querés un epígrafe debajo (modelo usado, prompt, lo que sea),
+   escribilo pegado en el renglón siguiente, sin dejar línea en blanco:
 
-**Epígrafe opcional debajo de una imagen:** las 6 imágenes numeradas de
-la Clase 1 tienen, en `contenido.txt`, una etiqueta opcional justo
-después (por ejemplo `## imagen1_caption`) para aclarar con qué modelo
-se generó esa imagen y, si querés, el prompt usado. Si la dejás vacía
-no se muestra nada debajo de la imagen.
+   ```
+   ![texto alternativo opcional](images/nombre-del-archivo.jpg)
+   Modelo: el que hayas usado
+   Prompt: el que hayas usado — podés escribir con comillas, paréntesis
+   o lo que haga falta, sin problema.
+   ```
+
+   El epígrafe es opcional: si no escribís nada debajo, no se muestra.
+4. Subí el archivo de imagen a `clase-1/images/` con **ese mismo
+   nombre** ("Add file" → "Upload files"). Tamaño recomendado: entre
+   1200 y 1600 px de ancho, formato `.jpg` o `.png`.
+5. Commit changes en los dos archivos que hayas tocado.
+
+Mientras el archivo de imagen no esté subido, la página muestra
+automáticamente un recuadro punteado de "pendiente" en su lugar — no
+rompe nada, y podés ir escribiendo el texto antes de tener la imagen
+lista.
+
+La carpeta `images/` de cada clase tiene además un `LEEME.txt` con una
+lista de referencia de qué imágenes usa esa clase — es solo para tu
+orientación, no hace falta mantenerlo actualizado a mano.
 
 ---
 
@@ -210,6 +222,6 @@ cursoIA_UNQ/
     ├── styles.css           diseño visual (no hace falta tocarlo)
     ├── script.js             menú, scroll y carga de contenido.txt (no hace falta tocarlo)
     └── images/
-        ├── LEEME.txt          lista de imágenes que faltan y sus nombres
+        ├── LEEME.txt          lista de referencia de las imágenes que usa la clase
         └── (acá van tus imágenes)
 ```
