@@ -1,8 +1,12 @@
 ========================================================================
 CÓMO EDITAR ESTE ARCHIVO
 ========================================================================
-Esto es lo ÚNICO que necesitás tocar para cambiar el texto de la clase.
+Esto es lo ÚNICO que necesitás tocar para cambiar el texto Y las
+imágenes de la clase. Es la misma lógica para todas las clases del
+curso, así que vale la pena leer esto una vez con calma.
 
+TEXTO
+------------------------------------------------------------------------
 - Cada bloque de texto empieza con una línea "## algo" (una etiqueta).
   NO toques esa línea, es lo que le dice a la página dónde va cada texto.
 - Debajo de cada etiqueta escribís el texto, como si fuera un mail.
@@ -19,19 +23,35 @@ Esto es lo ÚNICO que necesitás tocar para cambiar el texto de la clase.
   que si fueran dos párrafos distintos.
 - Si querés una palabra en NEGRITA, escribila entre dos asteriscos:
   **así**. Para CURSIVA, un asterisco solo: *así*.
-- Para agregar una IMAGEN suelta dentro de un texto (además de las que
-  ya están armadas en la página), escribí:
-  ![texto opcional](images/nombre-del-archivo.jpg)
-  Por ejemplo: ![](images/mi-foto.jpg) — subí el archivo a la carpeta
-  images/ igual que hacés con las demás imágenes de la clase.
 - No hace falta que toques nada más — ni comillas triangulares (< >),
   ni nada raro. Guardás ("Commit changes") y listo.
 
-- Debajo de cada una de las 6 imágenes numeradas hay una etiqueta
-  "## imagenN_caption" (por ejemplo ## imagen1_caption). Es OPCIONAL:
-  si la dejás vacía no se muestra nada. Si querés aclarar con qué
-  modelo se generó esa imagen (y opcionalmente el prompt), escribilo
-  ahí abajo, por ejemplo: "Generada con Midjourney. Prompt: ...".
+IMÁGENES (una sola forma de hacerlo, en cualquier bloque de texto)
+------------------------------------------------------------------------
+- Para agregar una imagen, escribila en SU PROPIO párrafo (con línea
+  en blanco antes y después de ella):
+
+    ![texto alternativo opcional](images/nombre-del-archivo.jpg)
+
+  Con esa sola línea ya alcanza. Mientras no subas el archivo a la
+  carpeta images/, se muestra automáticamente un recuadro de
+  "pendiente" en su lugar — no rompe nada.
+
+- Si además querés un EPÍGRAFE debajo (por ejemplo, con qué modelo se
+  generó esa imagen y el prompt usado), escribilo pegado en el o los
+  renglones siguientes, SIN dejar línea en blanco en el medio:
+
+    ![texto alternativo opcional](images/nombre-del-archivo.jpg)
+    Modelo: el que hayas usado
+    Prompt: el que hayas usado — acá podés escribir con comillas,
+    paréntesis o lo que haga falta, sin preocuparte por nada especial.
+
+  El epígrafe es opcional: si no escribís nada debajo de la línea de
+  la imagen, no se muestra ningún epígrafe.
+
+- Esta es la única forma de agregar imágenes — no hay ya diferencia
+  entre "las imágenes fijas de la clase" y "imágenes sueltas": todas
+  se agregan igual, donde quieras, con el mismo resultado visual.
 ========================================================================
 
 ## bienvenida_1
@@ -41,7 +61,7 @@ La idea que le da nombre al curso es también su punto de partida: la imaginaci�
 
 Este curso está pensado para docentes de las cuatro unidades académicas de la universidad que quieran conocer estas herramientas, incorporarlas a su propia práctica de enseñanza, y acompañar a sus estudiantes en un uso estratégico y creativo de la IA generativa. No importa si ya la usan a diario o si es la primera vez que se acercan al tema: la propuesta está armada para que cada uno pueda avanzar a su propio ritmo.
 
-## imagen1_caption
+![Banner del curso](images/01-imagen-curso.jpg)
 Modelo: Nano Banana pro
 Prompt: Un banner de temática IA para un curso de Inteligencia Artificial para docentes universitarios de Artes, Ciencias Sociales, Economía y Ciencia y Tecnología. Debe representar en distintos recuadros las distintas unidades académicas, de manera sobria y representativa. La IA debe estar presente como elemento común entre todas las áreas. Que no tenga textos ni agregados típicos de una infografía.
 
@@ -52,15 +72,10 @@ Cada clase combina una instancia teórica —la que están leyendo ahora mismo�
 
 No hace falta ningún conocimiento técnico previo para este curso: alcanza con las ganas de experimentar, de probar, de equivocarse, y de ir construyendo una mirada propia sobre las posibilidades y los límites de estas herramientas. Empecemos.
 
-![](images/09-imagen.jpg)
-Imagen compuesta en Adobe Photoshop a partir de dos generaciones de IA
-Imagen superior:
-Modelo: GPT Image 2
-Prompt: Un Banner con los íconos reales de ChatGPT, Claude, Gemini, MEta, Copilot
-------
-Imagen inferior:
-Modelo: Nano Banana pro
-Prompt: Plano detalle de la mano de un monje escribiendo en un libro medieval con una pluma antigua. En la punta de la pluma, un pequeño elemento electrónico evidencia un contexto futurista. Al fondo, desenfocado, un monasterio medieval. Estética hiperrealista y cinematográfica, luz cálida de atardecer.
+![Collage compuesto](images/09-imagen.jpg)
+Imagen compuesta en Adobe Photoshop a partir de dos generaciones de IA.
+Imagen superior — Modelo: GPT Image 2. Prompt: Un banner con los íconos reales de ChatGPT, Claude, Gemini, Meta, Copilot.
+Imagen inferior — Modelo: Nano Banana pro. Prompt: Plano detalle de la mano de un monje escribiendo en un libro medieval con una pluma antigua. En la punta de la pluma, un pequeño elemento electrónico evidencia un contexto futurista. Al fondo, desenfocado, un monasterio medieval. Estética hiperrealista y cinematográfica, luz cálida de atardecer.
 
 ## porque_intro
 Si la IA generativa te "genera" distancia, dolor de panza, malestar inconmensurable o te parece que es una piedra en el zapato, te comparto algunas razones que fui pensando por las que puede ser útil conocer un poco de este mundo.
@@ -88,7 +103,7 @@ Entonces, si el término tiene más de setenta años, ¿por qué empezamos a hab
 
 Entonces, una cosa es la IA que analiza y clasifica datos para tomar decisiones automatizadas (la que arma nuestro feed, la que nos sugiere una serie), y otra cosa es la IA generativa, capaz de producir algo nuevo. Ese salto es el que instaló a la IA en el centro de las conversaciones sobre creatividad, autoría y trabajo intelectual, y su uso tan masificado en distintas disciplinas y en el ámbito de la educación es lo que motiva este curso.
 
-## imagen2_caption
+![Banner de modelos y plataformas](images/02-imagen-modelos-ia.jpg)
 Modelo: Nano Banana pro (Gemini)
 Prompt: Un banner para el mismo curso, destinado al apartado de Modelos y Plataformas. Debe tener los logos de GPT, Gemini y Meta. No debe tener textos. Quiero que tenga una estética de acuarelas coloridas, combinada con render 3D.
 
@@ -97,7 +112,7 @@ Un modelo generativo no "sabe", no "piensa" y, sobre todo, no "imagina". Lo que 
 
 Y esto nos lleva a una pregunta: cuando le pedimos a la IA que genere algo, ¿ese resultado es de nuestra autoría, no lo es, o lo es a medias? Pensemos un ejemplo concreto. Supongamos que necesitamos un flyer para difundir un evento o un producto. Si le pedimos a la IA, sin más, "haceme un flyer para este evento", y usamos tal cual lo que nos devuelve, ¿somos los diseñadores de esa pieza? Es una situación muy distinta a si, en cambio, le damos un esquema propio: cómo queremos distribuir los elementos, dónde van las cajas de texto, qué jerarquía tiene que tener la información, qué paleta de colores, qué tipografía. En ese segundo caso, la IA está resolviendo una ejecución que nosotros dirigimos de principio a fin; en el primero, es la IA la que está tomando casi todas las decisiones de diseño por nosotros.
 
-## imagen3_caption
+![Infografía sobre farmear aura](images/03-imagen-flyer-ia.jpg)
 Modelo: GPT Image 2 (Gemini)
 Prompt: Una infografía típica de IA que explique "Cómo Farmear Aura". Debe ser surrealista, cómica y contener muchos elementos ilógicos. Debe incluir textos explicativos.
 
@@ -107,8 +122,8 @@ Ahí aparece la idea que atraviesa todo el curso: si no aportamos mirada, criter
 ## cajanegra_1
 Cuando le pedimos a la IA que haga algo y presionamos Enter, la IA empieza a trabajar. Pero, ¿qué es lo que está haciendo exactamente en esos segundos? Para la mayoría de nosotros, lo que sucede ahí adentro es un misterio: escribimos algo, aparece un resultado, y en el medio, la nada. Esa caja negra es lo que se conoce como el **modelo**.
 
-## imagen4_caption
-Modelo: GPT Image 2 (CharGPT)
+![Entrada y salida de la caja negra](images/04-imagen-modelo.jpg)
+Modelo: GPT Image 2 (ChatGPT)
 Prompt: Una representación visual de la caja negra de IA, mostrando claramente una entrada, la caja negra y la salida generada por el modelo de IA. Estética cinematográfica, con iluminación cuidada y foco selectivo. Sin texto ni flechas. La entrada se encuentra a la izquierda y debe ser visualmente más simple. La salida debe ser visualmente más compleja, rica y elaborada que la entrada. Composición en perspectiva, con sensación de profundidad.
 
 ## cajanegra_2
@@ -117,12 +132,12 @@ Es habitual usar los términos "modelo" y "plataforma" como si fueran sinónimos
 ## laplataforma_1
 Ahora bien, a ese modelo casi nunca accedemos de manera directa: necesitamos un medio, una interfaz que nos permita comunicarnos con él escribiendo una instrucción o ingresando algún tipo de información de entrada. Ese medio es la **plataforma**.
 
-## imagen5_caption
+## laplataforma_2
+![Interfaz típica de IA](images/05-imagen-plataformas.jpg)
 Imagen compuesta en Adobe Photoshop. La imagen superior fue generada con IA y las tres imágenes inferiores son capturas de pantalla.
 Modelo: Flux.2
-Prompt: Un banner que muestre una interfaz típica de IA, con el casillero para escribir el prompt y algunos elementos habituales de este tipo de interfaz. Fondo oscuro y estética cinematográfica. Arriba del casillero debe aparecer el único texto de la imagen: “¿Cómo va Scaloni?”. Sin ningún otro texto. Composición simple, moderna y realista.
+Prompt: Un banner que muestre una interfaz típica de IA, con el casillero para escribir el prompt y algunos elementos habituales de este tipo de interfaz. Fondo oscuro y estética cinematográfica. Arriba del casillero debe aparecer el único texto de la imagen: "¿Cómo va Scaloni?". Sin ningún otro texto. Composición simple, moderna y realista.
 
-## laplataforma_2
 Habitualmente tiene un sistema de chat —el casillero donde escribimos nuestro prompt— y otras herramientas asociadas: historial de conversaciones, opciones para subir archivos, ajustes de configuración, y en algunos casos la posibilidad de elegir entre distintos modelos disponibles. Acá aparece algo que suele confundirse: la relación entre modelo y plataforma no es de uno a uno. Una misma plataforma puede darnos acceso a varios modelos distintos, y un mismo modelo puede estar disponible desde plataformas diferentes, cada una con su propia interfaz y sus propias funcionalidades agregadas.
 
 Por ejemplo, **Claude** de Anthropic es un modelo conversacional similar a ChatGPT en su modo de uso: se accede a través de un chat, y desde esa misma plataforma se puede elegir entre varios modelos de Claude, cada uno con un comportamiento distinto —unos priorizan la velocidad y el costo, otros un razonamiento más profundo para tareas complejas—.
@@ -132,10 +147,10 @@ Por ejemplo, **Claude** de Anthropic es un modelo conversacional similar a ChatG
 ## gptchat_1
 Ya que lo nombramos tantas veces, quiero detenerme en el nombre de la IA más popular: "ChatGPT", porque ahí adentro están, literalmente, las dos capas que acabamos de distinguir. "Chat" es el medio: la interfaz conversacional, el sistema de input que nos permite escribirle al modelo y recibir una respuesta, es decir, la plataforma. "GPT" es el modelo, y la sigla resume bastante bien cómo funciona: **G**enerative (generativo, porque produce contenido nuevo), **P**re-trained (preentrenado, porque antes de que nosotros lo usemos ya fue entrenado con una enorme cantidad de datos, y no aprende "en vivo" de nuestra conversación) y **T**ransformer, que es el nombre de la arquitectura —el tipo de algoritmo— sobre la que está construido, y que resultó ser especialmente eficaz para procesar lenguaje.
 
-## imagen6_caption
-Imagen generada en Adobe Firefly
+![Evolución de los GPTs](images/06-imagen-modelos-gpt.jpg)
+Imagen generada en Adobe Firefly.
 Modelo: GPT Image 2
-Prompt: Un banner horizontal que represente la evolución de los GPTs, desde los primeros modelos hasta los modelos actuales, con elementos de la representación de la evolución de Darwin. Estética tradicional y tecnológica, con tonos violetas, azules y verdes. Incluir una línea de tiempo en la parte inferior con las distintas etapas y textos explicativos. Título superior: “LA EVOLUCIÓN DE LOS GPTS”. Adjunto los logos.
+Prompt: Un banner horizontal que represente la evolución de los GPTs, desde los primeros modelos hasta los modelos actuales, con elementos de la representación de la evolución de Darwin. Estética tradicional y tecnológica, con tonos violetas, azules y verdes. Incluir una línea de tiempo en la parte inferior con las distintas etapas y textos explicativos. Título superior: "LA EVOLUCIÓN DE LOS GPTS". Adjunto los logos.
 
 ## gptchat_2
 Antes de seguir, vale la pena tener un panorama más amplio de la variedad de modelos que existen según el tipo de contenido que producen. Además de los modelos de texto (los LLM) y los de imagen, hay modelos de video, modelos de música capaces de componer una canción completa —letra, voz e instrumentación— a partir de una descripción (como Suno o Udio), modelos de voz que clonan o generan voces (como ElevenLabs), modelos pensados específicamente para mezclar o masterizar audio, modelos que arman presentaciones o diapositivas de manera automática a partir de un texto o una idea (como Gamma), asistentes de programación basados en IA (como GitHub Copilot). Y la lista sigue creciendo: cada tanto aparece un modelo nuevo, pensado para una tarea todavía más específica.
@@ -192,6 +207,8 @@ Un modelo abierto, en cambio, publica los archivos necesarios para utilizarlo, l
 
 ## comfyui
 Un caso interesante es **ComfyUI**, una interfaz gratuita y de código abierto que permite armar, de manera visual, flujos de trabajo con modelos abiertos de generación de imagen y video (como Stable Diffusion), conectando distintos "bloques" de procesamiento como si fueran piezas de un circuito. No es una herramienta pensada para un uso cotidiano y sencillo —tiene una curva de aprendizaje bastante más alta que la de escribir un prompt en un chat— pero es un buen ejemplo de hasta dónde puede llegar el control que ofrece el mundo del código abierto para quien esté dispuesto a invertir tiempo en aprenderlo.
+
+![Ejemplo de flujo de trabajo en ComfyUI](images/comfyui-ejemplo.jpg)
 
 ## privados_3
 Ninguna de las dos opciones es mejor en abstracto: la elección depende de la tarea, del presupuesto y de cuánto control necesitamos sobre nuestra información. Hoy conviven modelos y plataformas de ambos tipos, con usos que se solapan bastante entre sí.

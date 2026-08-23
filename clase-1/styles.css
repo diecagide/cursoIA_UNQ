@@ -571,6 +571,16 @@ section.block:first-of-type {
 
 .img-caption:empty { display: none; margin: 0; }
 
+/* Imagen suelta insertada en medio de una oración (no en su propio
+   párrafo) — caso poco común; el habitual, con recuadro de "pendiente"
+   y epígrafe, lo maneja .img-placeholder + .img-caption de arriba. */
+.content-img {
+  border-radius: 8px;
+  margin: 20px 0 4px;
+}
+
+.content-img:last-child { margin-bottom: 0; }
+
 /* ---------- Botones de íconos con link (modelos privados / código abierto) ---------- */
 
 .icon-links {
