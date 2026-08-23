@@ -127,7 +127,7 @@ Ya que lo nombramos tantas veces, quiero detenerme en el nombre de la IA más po
 ## imagen6_caption
 Imagen generada en Adobe Firefly
 Modelo: GPT Image 2
-Prompt: Un Banner que muestre la evolución de los GPts. Sin texto. Adjunto los logos.
+Prompt: Un banner horizontal que represente la evolución de los GPTs, desde los primeros modelos hasta los modelos actuales, con elementos de la representación de la evolución de Darwin. Estética tradicional y tecnológica, con tonos violetas, azules y verdes. Incluir una línea de tiempo en la parte inferior con las distintas etapas y textos explicativos. Título superior: “LA EVOLUCIÓN DE LOS GPTS”. Adjunto los logos.
 
 ## gptchat_2
 Antes de seguir, vale la pena tener un panorama más amplio de la variedad de modelos que existen según el tipo de contenido que producen. Además de los modelos de texto (los LLM) y los de imagen, hay modelos de video, modelos de música capaces de componer una canción completa —letra, voz e instrumentación— a partir de una descripción (como Suno o Udio), modelos de voz que clonan o generan voces (como ElevenLabs), modelos pensados específicamente para mezclar o masterizar audio, modelos que arman presentaciones o diapositivas de manera automática a partir de un texto o una idea (como Gamma), asistentes de programación basados en IA (como GitHub Copilot). Y la lista sigue creciendo: cada tanto aparece un modelo nuevo, pensado para una tarea todavía más específica.
