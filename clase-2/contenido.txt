@@ -329,7 +329,7 @@ La lógica del método es que la verificación tiene que ser rápida: no se trat
 **I – Investigate the source (Investigar la fuente)**: como la IA no es la fuente primaria, indagá qué bases de datos o sesgos de entrenamiento tiene ese modelo específico.
 
 ## sift_f
-**F – Find better coverage (Encontrar mejor cobertura)**: buscá el dato en Google Académico, bases de datos científicas o libros, para comprobar si expertos humanos validan lo que afirma la IA.
+**F – Find better coverage (Encontrar mejor cobertura)**: buscá el dato en [Google Académico] (https://scholar.google.com/), bases de datos científicas o libros, para comprobar si expertos humanos validan lo que afirma la IA.
 
 ## sift_t
 **T – Trace back to the original context (Rastrear el contexto original)**: si la IA te proporciona una cita o un enlace, buscalo directamente. Verificá si el autor real dijo exactamente eso o si la IA sacó las palabras de contexto.
