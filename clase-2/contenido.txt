@@ -35,15 +35,15 @@ cargadas en esta clase — las vas a ir sumando con esta misma lógica.
 
 
 ## bienvenida_1
-Bienvenidas y bienvenidos a la segunda clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En la primera clase vimos la diferencia entre un modelo y una plataforma, algunos usos generales de la IA generativa, sus características y limitaciones, y qué diferencia a un modelo privado de uno de código abierto.
+Bienvenidas y bienvenidos a la segunda clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En la primera clase vimos la diferencia entre un modelo y una plataforma, algunos usos generales, características y limitaciones generales.
 
-Hoy nos metemos con el texto. De todos los formatos que puede generar la IA, este es el que más ruido hace dentro de la universidad, y por una razón bastante concreta: puede resolver un trabajo práctico entero en cuestión de segundos. Y si le damos un texto propio como referencia, puede hacerlo imitando nuestra manera de escribir.
+En esta clase nos metemos de lleno en el terreno del texto. Hay algo que ya sabemos y es que, de todos los formatos que genera la IA, este es el que puede presntar mayores desafíos dentro de la universidad: puede generar un documento extenso (trabajo práctico, escrito académico, proyecto de investigación, etc.) con la extensión, estructura, conclusiones y bibliografìa en cuestión de segundos.
 
-Ahí aparecen dos preguntas distintas, que van a atravesar toda la clase. La primera es sobre la información: ¿lo que dice es cierto?, ¿esa fuente existe? La segunda es sobre la escritura: ¿ese texto tiene algo del estudiante que lo entregó, o es una voz de nadie? Son dos validaciones diferentes, y las dos nos toca acompañarlas.
+Esa posibilidad puede necesitar un acompañamiento que involucre dos procesos de validación distintos: por un lado, el de **validar la información que la IA nos entrega**: ¿es correcta? ¿la fuente existe? Por otro lado, el de **validar la voz propia del estudiante**, es decir, si el texto que produce responde a la subjetividad de quien lo pidió: ¿refleja su manera de pensar y de escribir, o es una voz genérica y despoblada de toda subjetividad?
 
-La idea de esta clase es que podamos:
+A partir de esto, la idea de clase 2 es que podamos:
 
-- Conocer algunos de los LLM más populares que existen hoy y sus características principales.
+- Conocer algunos de los modelos de texto más populares que existen hoy y sus características principales.
 - Conocer técnicas eficaces de redacción de prompts.
 - Indagar sobre los usos posibles de la IA en el ámbito académico.
 - Reflexionar sobre algunas estrategias de validación.
@@ -61,9 +61,9 @@ Un LLM es un modelo entrenado para comprender y generar lenguaje humano en forma
 
 ¿De dónde salió exactamente todo ese texto? No está del todo claro. En los primeros modelos las empresas daban algunos detalles —OpenAI publicó las proporciones que usó para GPT-3—, pero con los modelos actuales dejaron de hacerlo. Sabemos que hay mucha web, libros digitalizados, foros, enciclopedias colaborativas, código. No sabemos en qué proporción, en qué idiomas ni de qué regiones. Y eso importa, porque es el terreno donde crecen los sesgos de los que hablamos en la clase anterior. Algo que sí está medido: estos modelos rinden mejor en inglés que en cualquier otro idioma, y esa diferencia aparece en las respuestas.
 
-Cuando escribimos un prompt, el modelo no entiende lo que le pedimos, al menos no como lo entendemos nosotros. Lo que hace es calcular, palabra por palabra, cuál es la continuación más probable de eso que escribimos. Algo parecido al teclado predictivo del celular, que nos sugiere cómo seguir la frase, pero a otra escala: en vez de mirar nuestros últimos mensajes, mira patrones de millones de textos; y en vez de tirar una palabra suelta, encadena una atrás de otra hasta armar la respuesta completa, lógica, verosímil… ¿Verdadera?
+Cuando escribimos un prompt, el modelo no entiende lo que le pedimos como lo entendemos nosotros. Lo que hace es calcular, palabra por palabra, cuál es la continuación más probable de eso que escribimos. Algo parecido al teclado predictivo del celular, que nos sugiere cómo seguir la frase, pero a otra escala: mira patrones de millones de textos; y en vez de tirar una palabra suelta, encadena una atrás de otra hasta armar la respuesta completa, lógica, verosímil… ¿Verdadera?
 
-Para ser precisos: no predice palabras enteras sino tokens, que pueden ser fragmentos de palabras o signos de puntuación. Pero la lógica es la misma: ver qué sigue, agregarlo, volver a calcular.
+Para ser precisos: no predice palabras enteras sino tokens (hablamos de ellos la clase anterior), que pueden ser fragmentos de palabras o signos de puntuación.
 
 
 ## bloquea_tokenizer
@@ -71,17 +71,17 @@ Se puede medir cuántos tokens consumen las palabras que escribimos a través de
 
 
 ## bloquea_intro_cont
-Y acá está la explicación de por qué un modelo responde mejor que otro: cuantos más textos haya visto durante el entrenamiento, cuantos más patrones haya identificado —gramaticales, de estilo, de formato—, más fino va a ser al predecir esa continuidad textual. Cuanta más información le demos nosotros en el prompt, mejor va a poder ajustar esa predicción a lo que realmente estamos buscando.
+Cuantos más textos haya visto durante el entrenamiento, cuantos más patrones haya identificado —gramaticales, de estilo, de formato—, más fino va a ser al predecir esa continuidad textual. Y cuanta más información le demos nosotros en el prompt, mejor va a poder ajustar esa predicción a lo que realmente estamos buscando.
 
-Ahora bien, que un LLM prediga la palabra más probable no significa que la elija al azar. Predecir con criterio estadístico, entrenado sobre patrones reales de lenguaje, es lo que le permite producir textos coherentes, con gramática correcta y un estilo reconocible. Pero también es el escenario adecuado para la aparición de una alucinación.
+Esa predicción estadìstica del modelo es lo que le permite producir textos coherentes, con gramática correcta y un estilo reconocible. Pero también es el escenario adecuado para la aparición de una alucinación.
 
 
 ## panorama_llms_1
-Ya nombramos algunas plataformas en la primera clase. Antes de avanzar con la escritura de prompts, les comparto un cuadro comparativo con las plataformas más usadas hoy.
+Ya nombramos algunas plataformas en la primera clase. Antes de avanzar con la escritura de prompts, les comparto una comparativa de las plataformas más usadas hoy (inluye links).
 
 
 ## panorama_llms_2
-Vale la pena detenerse en Perplexity, porque no es un chatbot generalista como los demás: está pensada como un motor de búsqueda conversacional, y cada respuesta que da viene acompañada de los enlaces a las fuentes que usó para construirla. Esto no la vuelve infalible, también puede citar mal o interpretar una fuente de manera forzada, pero facilita bastante la primera validación de la que hablamos en la bienvenida: la de la información. Es una plataforma que conviene tener a mano justamente para esa tarea.
+Vale la pena detenerse en Perplexity, porque no es un chatbot generalista como los demás: está pensada como un motor de búsqueda conversacional, y cada respuesta que da viene acompañada de los enlaces a las fuentes que usó para construirla. Esto no la vuelve infalible, también puede citar mal o interpretar una fuente de manera forzada, pero facilita bastante la primera validación de la que hablamos en la bienvenida: la de la información.
 
 
 ## que_pueden_hacer
@@ -212,7 +212,7 @@ En la primera clase presentamos la Guía de uso de IA generativa para estudiante
 ## producir_texto
 Sobre la producción, un LLM puede hacer varias cosas:
 
-- **Generación**: producir un texto nuevo a partir de una consigna, como un borrador, un ejemplo o una guía. "Redactá tres posibles consignas de trabajo final sobre este tema, de dificultad creciente."
+- **Generación**: producir un texto nuevo, como un borrador o un primer acercamiento a un tema. "Escribí un párrafo breve que desarrolle esta idea: [tu idea suelta].
 - **Reformulación**: reescribir un texto existente cambiando el registro, el tono o el destinatario. "Reformulá este párrafo para que lo entienda alguien sin formación previa en el tema."
 - **Síntesis**: condensar un texto extenso en sus ideas centrales. "Sintetizá los argumentos centrales de este texto en un párrafo de diez líneas."
 - **Revisión**: corregir gramática, claridad o coherencia de algo ya escrito. "Revisá la claridad y la cohesión de este párrafo, sin cambiar su sentido."
@@ -226,7 +226,7 @@ Lo que el modelo devuelve no tiene por qué ser necesariamente un texto en prosa
 
 
 ## traducir
-Los LLM traducen con un nivel de aproximación muy alto, y no solo entre las lenguas más habituales: inglés, ruso, chino, vietnamita, o la que sea. Esto abre bibliografía que de otro modo queda afuera del alcance de los estudiantes, y permite trabajar con fuentes en su idioma original.
+Los LLM traducen con un nivel de aproximación muy alto (inglés, ruso, chino, vietnamita, o la que sea). Esto abre bibliografía que de otro modo queda afuera del alcance de los estudiantes, y permite trabajar con fuentes en su idioma original.
 
 **Importante:** la calidad no es pareja en todos los idiomas, y baja en aquellos que tuvieron menos presencia en el entrenamiento, algo que ya mencionamos cuando hablamos de los datos con los que se entrenaron estos modelos.
 
@@ -364,24 +364,22 @@ En el siguiente video vamos a ver cómo funciona:
 
 
 ## voz_propia_1
-Es fundamental que un estudiante pueda construir su propia voz. Lo que entrega al final —un texto, una imagen, un proyecto— tiene que poder reconocerse como suyo: su pensamiento, su mirada, su manera particular de decir las cosas. No como una reproducción más o menos disimulada de lo que generó una herramienta. Por eso conviene, antes incluso de empezar a interactuar con la IA, que el estudiante pueda explicitar qué está buscando y por qué recurre a esta herramienta en particular para buscarlo. La voz propia no aparece de manera espontánea: se construye, y ese proceso de construcción es lo más valioso que un docente puede acompañar.
+Es fundamental que un estudiante pueda construir su propia voz. Lo que entrega al final, sea un texto, una imagen, un video, tiene que poder reconocerse como suyo: su pensamiento, su mirada, su manera particular de decir las cosas y no como una reproducción más o menos disimulada de lo que generó una herramienta. Por eso conviene, antes incluso de empezar a interactuar con la IA, que el estudiante pueda explicitar qué está buscando y por qué recurre a esta herramienta en particular para buscarlo.
 
-El contenido final debe reflejar el pensamiento, la mirada y la voz del estudiante, no ser una reproducción de lo generado por la IA. En este sentido, es importante volver a hacer énfasis en el punto de partida, es decir explicitar qué información estoy buscando, para qué y por qué la busco en plataformas de IA, antes de comenzar la interacción.
-
-Es importante que los estudiantes construyan una mirada crítica que les permita analizar si el resultado de la interacción se ajusta a su mirada de aquello que fue consultado.
+Es importante que los estudiantes construyan una mirada crítica que les permita analizar si el resultado de la interacción se ajusta a su mirada o si a la inversa, están adaptando su mirada a lo que les entregó la IA.
 
 ## voz_propia_list
 - **Evaluar el proceso, no solo el producto.** Entregas por etapas: un mapa conceptual inicial, un borrador, la versión final con justificación de los cambios.
-- **Instancias orales breves.** No un examen, sino preguntas sobre las decisiones tomadas: por qué eligió ese recorte, por qué descartó tal autor, qué le costó más. Quien construyó el trabajo puede responder eso; quien lo pegó, no.
+- **Instancias orales breves.** Preguntas sobre las decisiones tomadas: por qué eligió ese recorte, por qué descartó tal autor, qué le costó más.
 - **Anexo de transparencia.** Si se usó IA, que se documente: qué prompts usó, qué le devolvió el modelo, qué hizo con eso y por qué.
 - **La IA como objeto de auditoría.** Darles una salida generada por IA para que la critiquen: que detecten las alucinaciones, verifiquen las fuentes, señalen los sesgos. Se evalúa el juicio disciplinar, que es justamente lo que no se puede delegar.
 - **Acordar las reglas desde el principio.** Como mencioné en la clase 1, delimitar en qué etapas de la cursada o del proceso de producción puede utilizarse la IA y en cuáles no.
 
 
 ## cierre_1
-Y con esto llegamos al final de la segunda clase. Vimos qué hace un LLM cuando le escribimos algo —predecir, palabra por palabra, la continuación más probable—, recorrimos las plataformas más usadas hoy y qué sabe hacer cada una, y nos metimos con la gramática del prompt: el rol, el contexto, la acción, la focalización, las restricciones y el formato de salida, y cómo se combinan en prompts simples, medios y complejos.
+Y con esto llegamos al final de la segunda clase. Vimos qué hace un LLM cuando le escribimos algo, recorrimos las plataformas más usadas hoy y qué sabe hacer cada una, y nos metimos con la gramática del prompt: el rol, el contexto, la acción, la focalización, las restricciones y el formato de salida, y cómo se combinan en prompts simples, medios y complejos.
 
 Después pasamos a los usos: producir y transformar textos, trabajar sobre archivos propios, revisar bibliografía antes de leerla, y usar la IA como asistente de lectura para reponer aquello que un texto menciona pero no desarrolla. Y cerramos con las dos validaciones que venimos sosteniendo desde el principio: la legitimidad de la información, con el método SIFT y la lectura lateral como herramientas concretas, y la voz propia, que no se detecta con software sino que se acompaña con estrategias pedagógicas.
 
 ## proxima_clase
-En la próxima clase pasamos de la palabra a la imagen: vamos a ver algunos de los modelos de generación de imágenes más populares y cómo cambia la escritura de prompts cuando lo que queremos producir es visual. Nos vemos ahí.
+En la próxima clase nos centraremos en Imagen: vamos a ver algunos de los modelos de generación más populares, gramática del prompt en imagen y analizaremos sus posibles usos y posibilidades ¡Nos vemos!
