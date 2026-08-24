@@ -37,7 +37,7 @@ cargadas en esta clase — las vas a ir sumando con esta misma lógica.
 ## bienvenida_1
 Bienvenidas y bienvenidos a la segunda clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En la primera clase vimos la diferencia entre un modelo y una plataforma, algunos usos generales, características y limitaciones generales.
 
-En esta clase nos metemos de lleno en el terreno del texto. Hay algo que ya sabemos y es que, de todos los formatos que genera la IA, este es el que puede presntar mayores desafíos dentro de la universidad: puede generar un documento extenso (trabajo práctico, escrito académico, proyecto de investigación, etc.) con la extensión, estructura, conclusiones y bibliografìa en cuestión de segundos.
+En esta clase nos metemos de lleno en el terreno del texto. Hay algo que ya sabemos y es que, de todos los formatos que genera la IA, este es el que puede presentar mayores desafíos dentro de la universidad: puede generar un documento extenso (trabajo práctico, escrito académico, proyecto de investigación, etc.) con la extensión que le indique, estructura específica, conclusiones y bibliografía en cuestión de segundos.
 
 Esa posibilidad puede necesitar un acompañamiento que involucre dos procesos de validación distintos: por un lado, el de **validar la información que la IA nos entrega**: ¿es correcta? ¿la fuente existe? Por otro lado, el de **validar la voz propia del estudiante**, es decir, si el texto que produce responde a la subjetividad de quien lo pidió: ¿refleja su manera de pensar y de escribir, o es una voz genérica y despoblada de toda subjetividad?
 
