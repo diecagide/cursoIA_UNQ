@@ -1043,16 +1043,21 @@ section.block:first-of-type {
 .element-card p { margin: 0; font-size: .9rem; color: var(--color-text); }
 
 /* ---------- Fórmula de un prompt ---------- */
+/* Mismo degradé violeta→magenta que .highlight-box ("la paradoja del
+   conocimiento"), para que la fórmula de cada nivel de prompt se
+   destaque bien del resto del texto. */
 
 .prompt-formula {
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-  font-size: .92rem;
+  font-size: .95rem;
+  font-weight: 700;
   text-align: center;
-  color: var(--color-primary);
-  background: var(--color-primary-light);
+  color: #fff;
+  background: var(--gradient-sidebar);
   border-radius: 10px;
-  padding: 14px 18px;
+  padding: 16px 18px;
   margin: 0 0 20px;
+  box-shadow: 0 6px 18px rgba(46,58,89,.22);
 }
 
 /* ---------- Ejemplo de prompt (cita editable) ---------- */
