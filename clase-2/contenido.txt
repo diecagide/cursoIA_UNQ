@@ -41,7 +41,7 @@ En esta clase nos metemos de lleno en el terreno del texto. Hay algo que ya sabe
 
 Esa posibilidad puede necesitar un acompañamiento que involucre dos procesos de validación distintos: por un lado, el de **validar la información que la IA nos entrega**: ¿es correcta? ¿la fuente existe? Por otro lado, el de **validar la voz propia del estudiante**, es decir, si el texto que produce responde a la subjetividad de quien lo pidió: ¿refleja su manera de pensar y de escribir, o es una voz genérica y despoblada de toda subjetividad?
 
-A partir de esto, la idea de clase 2 es que podamos:
+A partir de esto, la idea de la clase 2 es que podamos:
 
 - Conocer algunos de los modelos de texto más populares que existen hoy y sus características principales.
 - Conocer técnicas eficaces de redacción de prompts.
@@ -61,7 +61,7 @@ Un LLM es un modelo entrenado para comprender y generar lenguaje humano en forma
 
 ¿De dónde salió exactamente todo ese texto? No está del todo claro. En los primeros modelos las empresas daban algunos detalles —OpenAI publicó las proporciones que usó para GPT-3—, pero con los modelos actuales dejaron de hacerlo. Sabemos que hay mucha web, libros digitalizados, foros, enciclopedias colaborativas, código. No sabemos en qué proporción, en qué idiomas ni de qué regiones. Y eso importa, porque es el terreno donde crecen los sesgos de los que hablamos en la clase anterior. Algo que sí está medido: estos modelos rinden mejor en inglés que en cualquier otro idioma, y esa diferencia aparece en las respuestas.
 
-Cuando escribimos un prompt, el modelo no entiende lo que le pedimos como lo entendemos nosotros. Lo que hace es calcular, palabra por palabra, cuál es la continuación más probable de eso que escribimos. Algo parecido al teclado predictivo del celular, que nos sugiere cómo seguir la frase, pero a otra escala: mira patrones de millones de textos; y en vez de tirar una palabra suelta, encadena una atrás de otra hasta armar la respuesta completa, lógica, verosímil… ¿Verdadera?
+Cuando escribimos un prompt, el modelo no entiende lo que le pedimos como lo entendemos nosotros. Lo que hace es calcular, palabra por palabra, cuál es la continuación más probable de eso que escribimos. Algo parecido al teclado predictivo del celular, que nos sugiere cómo seguir la frase, pero a otra escala: mira patrones de millones de textos; y en vez de tirar una palabra suelta, encadena una atrás de otra hasta armar la respuesta completa, lógica, verosímil… ¿Validada?
 
 Para ser precisos: no predice palabras enteras sino tokens (hablamos de ellos la clase anterior), que pueden ser fragmentos de palabras o signos de puntuación.
 
@@ -202,7 +202,7 @@ El prompt complejo agrega dos elementos más: restricciones (qué evitar, qué p
 Formato de salida: organizá la respuesta en cuatro apartados, correspondientes a los cuatro puntos anteriores: Preguntas para explorar, Conceptos en juego, Autores y prácticas, y Tensiones. Presentá cada idea en no más de dos oraciones, de modo que funcionen como puntos de partida para mi propia investigación."
 
 ## complejo_breakdown2
-→ Rol (especialista en arte contemporáneo y teoría del arte), contexto (está desarrollando una idea propia sobre autoría y quiere explorarla antes de formularla), acción y objeto (ampliar y poner en tensión esa idea), focalización (cuatro entradas: preguntas, conceptos, referencias y tensiones), restricciones (que no desarrolle una tesis ni cierre por él, y que no reduzca lo corporal a la presencia física) y formato de salida (cuatro apartados, dos oraciones por idea).
+→ Rol (especialista en arte contemporáneo y teoría del arte), contexto (está desarrollando una idea propia sobre autoría y quiere explorarla antes de formularla), acción y objeto (ampliar y poner en tensión esa idea), focalización (cuatro entradas: preguntas, conceptos, referencias y tensiones), restricciones (que no desarrolle una tesis ni cierre por él, y que no reduzca lo corporal a la presencia física) y formato de salida.
 
 
 ## bloquec_1
@@ -226,7 +226,7 @@ Lo que el modelo devuelve no tiene por qué ser necesariamente un texto en prosa
 
 
 ## traducir
-Los LLM traducen con un nivel de aproximación muy alto (inglés, ruso, chino, vietnamita, o la que sea). Esto abre bibliografía que de otro modo queda afuera del alcance de los estudiantes, y permite trabajar con fuentes en su idioma original.
+Los LLM traducen con un nivel de aproximación muy alto (inglés, ruso, chino, vietnamita, o la lengua que sea). Esto abre bibliografía que de otro modo queda afuera del alcance de los estudiantes, y permite trabajar con fuentes en su idioma original.
 
 **Importante:** la calidad no es pareja en todos los idiomas, y baja en aquellos que tuvieron menos presencia en el entrenamiento, algo que ya mencionamos cuando hablamos de los datos con los que se entrenaron estos modelos.
 
@@ -270,7 +270,7 @@ Acá conviene probar antes de recomendar: no todas las plataformas aceptan los m
 Pensemos en un estudiante que está produciendo un trabajo de investigación, que ya leyó la bibliografía obligatoria y tiene, además, un vasto corpus de bibliografía ampliatoria que podría resultarle útil pero que aún no lo sabe. Antes de meterse con doscientas páginas sin saber si le van a servir, puede adjuntar esos textos y hacer las preguntas adecuadas:
 
 ## revisar_lecturas_ej
-"Estoy escribiendo un trabajo sobre la relación entre memoria y espacio urbano, y ya tengo el marco teórico a partir de los textos de la materia. Te adjunto otros cuatro textos que me recomendaron pero que todavía no leí. Para cada uno decime qué aporta que no esté ya en mi marco teórico, qué capítulo o apartado sería el más pertinente para mi tema, y si alguno directamente no sirve para este trabajo, decímelo. No me resumas los textos completos."
+"Estoy escribiendo un trabajo sobre la relación entre memoria y espacio urbano, y ya tengo el marco teórico a partir de los textos de la materia. Te adjunto otros cuatro textos que me recomendaron pero que todavía no leí. Para cada uno decime qué aporta que no esté ya en mi marco teórico, qué capítulo o apartado sería el más pertinente para mi tema, y si alguno  no aporta información para este trabajo, mencionalo. No me resumas los textos completos."
 
 
 ## reponer_1
@@ -309,7 +309,7 @@ Llevado a un prompt complejo, con todos los elementos que vimos en el Bloque B:
 
 
 ## bloquee_1
-Para acompañar a un estudiante en una interacción útil, reflexiva, transparente y enriquecedora con estas herramientas, les comparto las dos dimensiones que considero relevantes para realizar ese proceso: **legitimidad** y **voz propia**.
+Para acompañar a un estudiante en una interacción útil, reflexiva y enriquecedora con estas herramientas, les comparto las dos dimensiones que considero relevantes para realizar ese proceso: **legitimidad** y **voz propia**.
 
 
 ## legitimidad_1
@@ -319,7 +319,7 @@ Las plataformas de IA pueden equivocarse, y de hecho lo hacen con bastante frecu
 ## sift_intro
 Uno de los métodos que más se está usando para verificar información —tanto la que devuelve la IA como la que circula en redes— es el SIFT, desarrollado por Mike Caulfield, investigador estadounidense especializado en alfabetización digital. Caulfield trabajó como director de aprendizaje híbrido en la Washington State University Vancouver y hoy está vinculado al Center for an Informed Public de la Universidad de Washington. Escribió *Web Literacy for Student Fact-Checkers* y, junto a Sam Wineburg, *Verified*. Sus módulos de SIFT se usan en más de cien universidades y escuelas secundarias de Estados Unidos y Canadá, y en los últimos años varias bibliotecas universitarias —entre ellas las de University of British Columbia, University of Calgary y University of California Merced— lo adaptaron específicamente para evaluar respuestas de IA generativa.
 
-La lógica del método es que la verificación tiene que ser rápida: no se trata de investigar durante horas, sino de hacer en un minuto los chequeos que evitan dar por cierto algo que no lo es. Son cuatro pasos:
+La lógica del método es que la verificación tiene que ser rápida: no se trata de investigar durante horas, sino de hacer en poco tiempo los chequeos que evitan dar por cierto algo que no lo es. Son cuatro pasos:
 
 
 ## sift_s
@@ -351,7 +351,7 @@ Además de estos dos métodos, hay algunas prácticas que conviene incorporar:
 - Pedir las fuentes explícitamente y verificar una por una. Las citas y la bibliografía inventadas son el caso de alucinación más habitual en el ámbito académico.
 - Usar plataformas que citan sus fuentes con enlace, como Perplexity, cuando lo que se busca es información verificable.
 - Calibrar el modelo antes de confiar: hacerle primero una pregunta sobre algo que uno domina, para ver cómo se comporta en ese terreno.
-- Pedirle que explicite en qué se basa y qué nivel de certeza tiene, en lugar de aceptar la afirmación pelada.
+- Pedirle que explicite en qué se basa y qué nivel de certeza tiene, en lugar de aceptar la afirmación como se presenta.
 - Contrastar: pedirle el contraargumento de lo que acaba de decir, o hacer la misma pregunta en otro modelo y comparar.
 - Acotar el corpus: usar herramientas como NotebookLM, que responden solo sobre los archivos que le cargamos.
 
@@ -364,7 +364,7 @@ En el siguiente video vamos a ver cómo funciona:
 
 
 ## voz_propia_1
-Es fundamental que un estudiante pueda construir su propia voz. Lo que entrega al final, sea un texto, una imagen, un video, tiene que poder reconocerse como suyo: su pensamiento, su mirada, su manera particular de decir las cosas y no como una reproducción más o menos disimulada de lo que generó una herramienta. Por eso conviene, antes incluso de empezar a interactuar con la IA, que el estudiante pueda explicitar qué está buscando y por qué recurre a esta herramienta en particular para buscarlo.
+Es fundamental que profundicemos con nuestros estudiantes la importancia de que puedan construir su propia voz. Lo que entrega al final, sea un texto, una imagen, un video, tiene que poder reconocerse como suyo: su pensamiento, su mirada, su manera particular de decir las cosas y no como una reproducción más o menos disimulada de lo que generó una herramienta. Una estrategia posible en nuestros intercambios con los y las estudianrtes es que puedan explicitar qué están buscando y por qué recurren a esta herramienta en particular para hacerlo.
 
 Es importante que los estudiantes construyan una mirada crítica que les permita analizar si el resultado de la interacción se ajusta a su mirada o si a la inversa, están adaptando su mirada a lo que les entregó la IA.
 
