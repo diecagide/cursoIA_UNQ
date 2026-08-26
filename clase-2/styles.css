@@ -1209,8 +1209,8 @@ section.block:first-of-type {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.1em;
-  height: 1.1em;
+  width: 1.3em;
+  height: 1.3em;
   cursor: pointer;
   list-style: none;
   color: var(--color-accent);
@@ -1220,7 +1220,13 @@ section.block:first-of-type {
 .note__trigger::-webkit-details-marker { display: none; }
 .note__trigger::marker { content: ""; }
 
-.note__trigger span { transition: transform .15s ease; display: inline-block; }
+.note__trigger span {
+  transition: transform .15s ease;
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1;
+}
 .note__popover[open] .note__trigger span { transform: rotate(90deg); }
 
 .note__body {
