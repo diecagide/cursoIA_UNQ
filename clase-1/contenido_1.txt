@@ -1,0 +1,242 @@
+========================================================================
+CÓMO EDITAR ESTE ARCHIVO
+========================================================================
+Esto es lo ÚNICO que necesitás tocar para cambiar el texto Y las
+imágenes de la clase. Es la misma lógica para todas las clases del
+curso, así que vale la pena leer esto una vez con calma.
+
+TEXTO
+------------------------------------------------------------------------
+- Cada bloque de texto empieza con una línea "## algo" (una etiqueta).
+  NO toques esa línea, es lo que le dice a la página dónde va cada texto.
+- Debajo de cada etiqueta escribís el texto, como si fuera un mail.
+- Para separar en PÁRRAFOS (con más separación visual), dejá una línea
+  en blanco entre uno y otro.
+- Para pasar de renglón SIN que sea un párrafo nuevo (como cuando en
+  Word apretás Enter una sola vez), simplemente apretá Enter una vez:
+  no hace falta dejar línea en blanco. Ejemplo:
+
+    Primera línea.
+    Segunda línea, pegada a la anterior.
+
+  Eso se va a ver como dos renglones separados, pero más cerca entre sí
+  que si fueran dos párrafos distintos.
+- Si querés una palabra en NEGRITA, escribila entre dos asteriscos:
+  **así**. Para CURSIVA, un asterisco solo: *así*.
+- No hace falta que toques nada más — ni comillas triangulares (< >),
+  ni nada raro. Guardás ("Commit changes") y listo.
+
+IMÁGENES (una sola forma de hacerlo, en cualquier bloque de texto)
+------------------------------------------------------------------------
+- Para agregar una imagen, escribila en SU PROPIO párrafo (con línea
+  en blanco antes y después de ella):
+
+    ![texto alternativo opcional](images/nombre-del-archivo.jpg)
+
+  Con esa sola línea ya alcanza. Mientras no subas el archivo a la
+  carpeta images/, se muestra automáticamente un recuadro de
+  "pendiente" en su lugar — no rompe nada.
+
+- Si además querés un EPÍGRAFE debajo (por ejemplo, con qué modelo se
+  generó esa imagen y el prompt usado), escribilo pegado en el o los
+  renglones siguientes, SIN dejar línea en blanco en el medio:
+
+    ![texto alternativo opcional](images/nombre-del-archivo.jpg)
+    Modelo: el que hayas usado
+    Prompt: el que hayas usado — acá podés escribir con comillas,
+    paréntesis o lo que haga falta, sin preocuparte por nada especial.
+
+  El epígrafe es opcional: si no escribís nada debajo de la línea de
+  la imagen, no se muestra ningún epígrafe.
+
+- Esta es la única forma de agregar imágenes — no hay ya diferencia
+  entre "las imágenes fijas de la clase" y "imágenes sueltas": todas
+  se agregan igual, donde quieras, con el mismo resultado visual.
+========================================================================
+
+## bienvenida_1
+¡Hola a todos y todas! Les doy la bienvenida a "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria", un curso diseñado para acompañarles a pensar la inteligencia artificial generativa desde un lugar activo, crítico y, sobre todo, creativo.
+
+La idea que le da nombre al curso es también su punto de partida: la imaginación es una dimensión esencialmente humana, y nuestro objetivo acá no es reemplazarla por un algoritmo, sino aprender a integrar estas herramientas en nuestros procesos creativos y nuestras prácticas de enseñanza sin cederles ese lugar. Nos interesa pensar la IA generativa como una asistente de trabajo —capaz de acompañar, de proponer, de agilizar tareas— pero nunca como una máquina que decide por nosotros qué queremos decir o mostrar.
+
+Este curso está pensado para docentes de las cuatro unidades académicas de la universidad que quieran conocer estas herramientas, incorporarlas a su propia práctica de enseñanza, y acompañar a sus estudiantes en un uso estratégico y creativo de la IA generativa. No importa si ya la usan a diario o si es la primera vez que se acercan al tema: la propuesta está armada para que cada uno pueda avanzar a su propio ritmo.
+
+![Banner del curso](images/01-imagen-curso.jpg)
+Modelo: Nano Banana pro
+Prompt: Un banner de temática IA para un curso de Inteligencia Artificial para docentes universitarios de Artes, Ciencias Sociales, Economía y Ciencia y Tecnología. Debe representar en distintos recuadros las distintas unidades académicas, de manera sobria y representativa. La IA debe estar presente como elemento común entre todas las áreas. Que no tenga textos ni agregados típicos de una infografía.
+
+## bienvenida_2
+A lo largo de cinco clases vamos a recorrer un camino que va de lo más general a lo más específico. En esta primera clase nos detenemos en los modelos y las plataformas que existen hoy, usos y cuestiones generales. En la Clase 2 nos metemos de lleno con la escritura de prompts y la producción de texto. En las Clases 3 y 4, con imagen, video y otros formatos. Y en la Clase 5 hacemos una síntesis e integramos varios modelos en un mismo proceso de producción.
+
+Cada clase combina una instancia teórica —la que están leyendo ahora mismo— con una instancia práctica, donde van a poder poner en juego lo que fuimos viendo con ejercicios concretos, pensados también como recursos que puedan después llevar a sus propias aulas. Va a haber, además, un foro para intercambiar dudas, ideas y experiencias con el resto del grupo.
+
+No hace falta ningún conocimiento técnico previo para este curso: alcanza con las ganas de experimentar, de probar, de equivocarse, y de ir construyendo una mirada propia sobre las posibilidades y los límites de estas herramientas. Empecemos.
+
+![Collage compuesto](images/09-imagen.jpg)
+Imagen compuesta en Adobe Photoshop a partir de dos generaciones de IA.
+Imagen superior — Modelo: GPT Image 2.
+Prompt: Un banner con los íconos reales de ChatGPT, Claude, Gemini, Meta, Copilot.
+Imagen inferior — Modelo: Nano Banana pro.
+Prompt: Plano detalle de la mano de un monje escribiendo en un libro medieval con una pluma antigua. En la punta de la pluma, un pequeño elemento electrónico evidencia un contexto futurista. Al fondo, desenfocado, un monasterio medieval. Estética hiperrealista y cinematográfica, luz cálida de atardecer.
+
+## porque_intro
+Si la IA generativa te "genera" distancia, dolor de panza, malestar inconmensurable o te parece que es una piedra en el zapato, te comparto algunas razones que fui pensando por las que puede ser útil conocer un poco de este mundo.
+
+## razon1
+Me parece importante conocer al monstruo que viene a trastocarlo todo en nuestras disciplinas, que amenaza con quedarse con nuestro trabajo y con dominar el mundo. No es una preocupación al aire: muchos proyectos ya se están realizando integralmente con estas tecnologías, los flujos de producción están cambiando, buena parte de la publicidad que vemos en redes sociales, tv, vía pública ya se hace con IA. Pienso que conocer esa transformación del mundo actual nos puede ayudar a comprender las nuevas maneras de crear y a repensar nuestras prácticas docentes.
+
+## razon2
+¿Hay algo de esta galaxia que pueda resultarme útil para mi área disciplinar? ¿Hay algo útil para transmitirle a los estudiantes que pueda aportarle soluciones en su camino por construir su voz propia?
+
+Hay herramientas y usos de IA que difícilmente generen dudas: pienso, por ejemplo, en algunas funciones de Photoshop para borrar elementos de una imagen, las posibilidades que brinda Nano Banana (el modelo de generación de imágenes de Gemini) para creación y producción de referencias visuales, la síntesis y traducción de textos, la consulta sobre herramientas puntuales de software, etc.
+
+Pero ¿está bien hacer un proyecto audiovisual con personas, elementos, música y voces, todo creado con IA? Mi respuesta es que no, y de hecho estoy en la vereda de enfrente de ese modo de uso. Principalmente porque estoy a favor de que la situación de creación tiene que incluir cabeza y cuerpo, y en ese caso todo se reduce a la cabeza (escribir prompts no es cuerpo).
+
+## razon3
+Como diría el señor Miyagi en Karate Kid: aprendemos karate para no tener que usarlo. La idea de comprender estas tecnologías no es necesariamente someterse a su uso porque los tiempos que corren nos dicen que hay que hacerlo, sino que, en esa misma comprensión, podamos reivindicar con mayor firmeza las modalidades en las que venimos trabajando.
+
+## bloquea_1
+La inteligencia artificial no es una novedad del último tiempo. Si pensamos en las publicidades que nos aparecen en las redes sociales, en las propuestas de contenido que recibimos habitualmente en plataformas de streaming, o en esa sensación tan instalada de que "internet nos escucha" porque nos ofrece justo aquello de lo que veníamos hablando, podemos identificar un comportamiento digital que hasta hace no mucho solíamos llamar (y seguimos haciéndolo) "el algoritmo". Y si utilizo ese término como sujeto de una oración bimembre podría reconocer, sin escandalizarme, que "el algoritmo me persigue". Pero ese algoritmo no es otra cosa que sistemas computacionales entrenados con datos: análisis de datos masivos, identificación de patrones de comportamiento, y oferta de contenidos o productos a partir de esa identificación. Meta, Google, Netflix o Spotify son ejemplos concretos de esto: cada una, a su manera, usa este tipo de inteligencia artificial —no generativa— para decidir qué publicidad, qué serie o qué canción nos va a aparecer a continuación. Estos son los elementos centrales de la inteligencia artificial.
+
+El término "inteligencia artificial" tampoco es nuevo: lo usó por primera vez Alan Turing —matemático, lógico y filósofo británico (1912-1954)— hace ya más de setenta años. Turing propuso un experimento mental muy simple para pensar si una máquina podía "pensar": una persona conversa, sin verlo, con un interlocutor que puede ser otra persona o una máquina, y si no logra distinguir cuál es cuál, esa máquina pasa la prueba. Eso significa, ni más ni menos, que esa máquina tiene inteligencia artificial. *(La película Ex Machina juega justamente con esta idea.)* Ese ejercicio se conoció como el test de Turing, y todavía hoy sigue siendo una referencia cuando se habla de IA.
+
+## bloquea_2
+Entonces, si el término tiene más de setenta años, ¿por qué empezamos a hablar de IA en la vida cotidiana recién en los últimos tiempos? Lo que en realidad es reciente es la aparición de la **IA generativa**. OpenAI lanzó ChatGPT a fines de 2022, un poco antes de que ganáramos la tercera estrella. Ese lanzamiento es, para buena parte de la sociedad, el punto de quiebre: el momento en que la IA dejó de ser un algoritmo que operaba de manera invisible, para convertirse en una caja negra a la que le podemos pedir cosas y que puede generarlas (texto, imágenes, audio, video). Por supuesto, la IA generativa no nace ahí: ya existían modelos como Dall-E (OpenAI) para generar imágenes.
+
+Entonces, una cosa es la IA que analiza y clasifica datos para tomar decisiones automatizadas (la que arma nuestro feed, la que nos sugiere una serie), y otra cosa es la IA generativa, capaz de producir algo nuevo. Ese salto es el que instaló a la IA en el centro de las conversaciones sobre creatividad, autoría y trabajo intelectual, y su uso tan masificado en distintas disciplinas y en el ámbito de la educación es lo que motiva este curso.
+
+![Banner de modelos y plataformas](images/02-imagen-modelos-ia.jpg)
+Modelo: Nano Banana pro (Gemini)
+Prompt: Un banner para el mismo curso, destinado al apartado de Modelos y Plataformas. Debe tener los logos de GPT, Gemini y Meta. No debe tener textos. Quiero que tenga una estética de acuarelas coloridas, combinada con render 3D.
+
+## bloquea_3
+Un modelo generativo no "sabe", no "piensa" y, sobre todo, no "imagina". Lo que hace es identificar cuál es la continuación estadísticamente más probable a partir de una enorme cantidad de datos con los que fue entrenado. No hay ahí una intención, un deseo ni una búsqueda propia, hay patrones: patrones gramaticales, patrones de estilo de escritura, patrones de formato, etc.
+
+Y esto nos lleva a una pregunta: cuando le pedimos a la IA que genere algo, ¿ese resultado es de nuestra autoría, no lo es, o lo es a medias? Pensemos un ejemplo concreto. Supongamos que necesitamos un flyer para difundir un evento o un producto. Si le pedimos a la IA, sin más, "haceme un flyer para este evento", y usamos tal cual lo que nos devuelve, ¿somos los diseñadores de esa pieza? Es una situación muy distinta a si, en cambio, le damos un esquema propio: cómo queremos distribuir los elementos, dónde van las cajas de texto, qué jerarquía tiene que tener la información, qué paleta de colores, qué tipografía. En ese segundo caso, la IA está resolviendo una ejecución que nosotros dirigimos de principio a fin; en el primero, es la IA la que está tomando casi todas las decisiones de diseño por nosotros.
+
+![Infografía sobre farmear aura](images/03-imagen-flyer-ia.jpg)
+Modelo: GPT Image 2 (Gemini)
+Prompt: Una infografía típica de IA que explique "Cómo Farmear Aura". Debe ser surrealista, cómica y contener muchos elementos ilógicos. Debe incluir textos explicativos.
+
+## bloquea_4
+Ahí aparece la idea que atraviesa todo el curso: si no aportamos mirada, criterio, historia propia en el proceso, lo que obtenemos puede generar fascinación, incluso deslumbrar, pero va a responder a diseños más o menos hegemónicos —a lo que ya se repitió miles de veces y el modelo aprendió a reproducir muy bien— y no a nuestra voz autoral. Esto no significa desconocer que nuestra manera de crear también está atravesada por estilos, artistas y autores, -que son los que aprendimos y enseñamos en la universidad- y que podemos reconocernos en esa influencia y esos saberes. Pero es justamente por eso que la voz propia es lo que necesitamos construir, valorar y cuidar en tiempos de IA generativa: no partimos de cero, pero a partir de esas influencias hay una mirada que solo nosotros podemos aportar. La imaginación y todo lo que aprendimos en la universidad es lo que puede guiar ese resultado hacia algo propio.
+
+## cajanegra_1
+Cuando le pedimos a la IA que haga algo y presionamos Enter, la IA empieza a trabajar. Pero, ¿qué es lo que está haciendo exactamente en esos segundos? Para la mayoría de nosotros, lo que sucede ahí adentro es un misterio: escribimos algo, aparece un resultado, y en el medio, la nada. Esa caja negra es lo que se conoce como el **modelo**.
+
+![Entrada y salida de la caja negra](images/04-imagen-modelo.jpg)
+Modelo: GPT Image 2 (ChatGPT)
+Prompt: Una representación visual de la caja negra de IA, mostrando claramente una entrada, la caja negra y la salida generada por el modelo de IA. Estética cinematográfica, con iluminación cuidada y foco selectivo. Sin texto ni flechas. La entrada se encuentra a la izquierda y debe ser visualmente más simple. La salida debe ser visualmente más compleja, rica y elaborada que la entrada. Composición en perspectiva, con sensación de profundidad.
+
+## cajanegra_2
+Es habitual usar los términos "modelo" y "plataforma" como si fueran sinónimos, y en realidad refieren a cosas distintas. El modelo es el algoritmo, el sistema computacional, la red neuronal entrenada que efectivamente genera el contenido. Por eso se lo suele llamar "caja negra": aunque sabemos qué entra (nuestro pedido) y qué sale (el resultado), lo que ocurre en el medio es extremadamente complejo y difícil de comprender incluso para quienes lo desarrollan. Hay modelos de lenguaje (los que solemos llamar LLM, Large Language Model), modelos de generación de imagen, de video, de audio, y también modelos multimodales, capaces de trabajar con más de un formato a la vez.
+
+## laplataforma_1
+Ahora bien, a ese modelo casi nunca accedemos de manera directa: necesitamos un medio, una interfaz que nos permita comunicarnos con él escribiendo una instrucción o ingresando algún tipo de información de entrada. Ese medio es la **plataforma**.
+
+## laplataforma_2
+![Interfaz típica de IA](images/05-imagen-plataformas.jpg)
+Imagen compuesta en Adobe Photoshop. La imagen superior fue generada con IA y las tres imágenes inferiores son capturas de pantalla.
+Modelo: Flux.2
+Prompt: Un banner que muestre una interfaz típica de IA, con el casillero para escribir el prompt y algunos elementos habituales de este tipo de interfaz. Fondo oscuro y estética cinematográfica. Arriba del casillero debe aparecer el único texto de la imagen: "¿Cómo va Scaloni?". Sin ningún otro texto. Composición simple, moderna y realista.
+
+Habitualmente tiene un sistema de chat —el casillero donde escribimos nuestro prompt— y otras herramientas asociadas: historial de conversaciones, opciones para subir archivos, ajustes de configuración, y en algunos casos la posibilidad de elegir entre distintos modelos disponibles. Acá aparece algo que suele confundirse: la relación entre modelo y plataforma no es de uno a uno. Una misma plataforma puede darnos acceso a varios modelos distintos, y un mismo modelo puede estar disponible desde plataformas diferentes, cada una con su propia interfaz y sus propias funcionalidades agregadas.
+
+Por ejemplo, **Claude** de Anthropic es un modelo conversacional similar a ChatGPT en su modo de uso: se accede a través de un chat, y desde esa misma plataforma se puede elegir entre varios modelos de Claude, cada uno con un comportamiento distinto —unos priorizan la velocidad y el costo, otros un razonamiento más profundo para tareas complejas—.
+
+**Adobe Firefly**, por su parte, es la plataforma de IA generativa de Adobe, y es un buen ejemplo de plataforma que da acceso a modelos de varios orígenes: además de sus propios modelos Firefly, desde ahí también se puede acceder a Nano Banana (de Google), a modelos de OpenAI o de Google Imagen, entre otros. Todos conviven dentro de una misma interfaz, aunque cada uno sea un modelo distinto, desarrollado por una empresa distinta.
+
+## gptchat_1
+Ya que lo nombramos tantas veces, quiero detenerme en el nombre de la IA más popular: "ChatGPT", porque ahí adentro están, literalmente, las dos capas que acabamos de distinguir. "Chat" es el medio: la interfaz conversacional, el sistema de input que nos permite escribirle al modelo y recibir una respuesta, es decir, la plataforma. "GPT" es el modelo, y la sigla resume bastante bien cómo funciona: **G**enerative (generativo, porque produce contenido nuevo), **P**re-trained (preentrenado, porque antes de que nosotros lo usemos ya fue entrenado con una enorme cantidad de datos, y no aprende "en vivo" de nuestra conversación) y **T**ransformer, que es el nombre de la arquitectura —el tipo de algoritmo— sobre la que está construido, y que resultó ser especialmente eficaz para procesar lenguaje.
+
+![Evolución de los GPTs](images/06-imagen-modelos-gpt.jpg)
+Imagen generada en Adobe Firefly.
+Modelo: GPT Image 2
+Prompt: Un banner horizontal que represente la evolución de los GPTs, desde los primeros modelos hasta los modelos actuales, con elementos de la representación de la evolución de Darwin. Estética tradicional y tecnológica, con tonos violetas, azules y verdes. Incluir una línea de tiempo en la parte inferior con las distintas etapas y textos explicativos. Título superior: "LA EVOLUCIÓN DE LOS GPTS". Adjunto los logos.
+
+## gptchat_2
+Antes de seguir, vale la pena tener un panorama más amplio de la variedad de modelos que existen según el tipo de contenido que producen. Además de los modelos de texto (los LLM) y los de imagen, hay modelos de video, modelos de música capaces de componer una canción completa —letra, voz e instrumentación— a partir de una descripción (como Suno o Udio), modelos de voz que clonan o generan voces (como ElevenLabs), modelos pensados específicamente para mezclar o masterizar audio, modelos que arman presentaciones o diapositivas de manera automática a partir de un texto o una idea (como Gamma), asistentes de programación basados en IA (como GitHub Copilot). Y la lista sigue creciendo: cada tanto aparece un modelo nuevo, pensado para una tarea todavía más específica.
+
+## usosgenerales_1
+Ya sé que le puedo pedir a la IA que me escriba un texto, que me arme un meme, que me saque las ojeras de una foto, que me redacte un mail, que me resuelva en segundos algo que a mano me llevaría media tarde. Esos usos ya los tenemos bastante incorporados, y no hace falta que nos detengamos en ellos. Lo que sí vale la pena es pensar, un poco más allá de la lista de trucos, en qué usos son recomendables para la práctica de nuestros estudiantes en el ámbito académico.
+
+En línea con esto, les comparto la *Guía de uso de IA generativa para estudiantes* de la UNQ, escrita por Linda López, que propone una serie de pautas y orientaciones en el uso de la IA.
+
+## usosgenerales_2
+**En el terreno del texto**, la guía explicita los usos admisibles e inadmisibles de la IA en el ámbito académico (sección 7. Buenas prácticas para trabajos y evaluaciones).
+
+## usosgenerales_3
+**En el terreno de la imagen, el video y el audio**, les comparto algunos usos posibles:
+
+## paradoja
+Algo importante para compartir con nuestras y nuestros estudiantes es que, para usar la IA con criterio hace falta, paradójicamente, saber algo del tema en el que se la está usando, aunque sea un poco. Es paradójico porque muchas veces recurrimos a estas herramientas justamente para explorar algo que todavía no conocemos del todo. Pero cuanto menos sabemos sobre un tema, más difícil se vuelve validar lo que la IA nos devuelve, y más fácil resulta que se nos filtre una alucinación (lo vemos con más detalle un poco más adelante).
+
+Esto no es exclusivo de ningún campo. Quien está produciendo un texto académico y utiliza la IA para clarificar conceptos que utilizará como insumo para su escritura, necesita validar si lo que generó la IA es correcto o es una construcción verosímil pero falsa. Quien va a producir una imagen necesita alguna noción de composición, color o encuadre para poder dirigir el proceso y evaluar el resultado con criterio propio, más allá de si "le gusta" o no a simple vista. El saber disciplinar, lejos de quedar afuera del uso de la IA, es la condición que nos permite usarla con criterio propio en lugar de delegar en ella nuestras decisiones.
+
+Volveremos sobre este punto en las siguientes clases.
+
+## panorama_intro
+El campo de la IA generativa cambia todo el tiempo, así que este panorama es apenas una fotografía del presente —es muy probable que para cuando terminemos el curso ya haya novedades que hoy ni mencionamos. Aun así, sirve tener un mapa general de quiénes son los actores principales hoy:
+
+## company_openai
+Es la empresa que popularizó todo esto con el lanzamiento de ChatGPT. Su familia de modelos GPT se usa principalmente para trabajar con texto, pero la empresa también desarrolla modelos con capacidades de generación y comprensión de imágenes y audio. Su modelo de generación de video, Sora, dejó de estar disponible durante 2026.
+
+## company_anthropic
+Desarrolla Claude, otro modelo conversacional de texto, conocido especialmente por su capacidad de sostener conversaciones largas y complejas. Desde sus orígenes, Anthropic puso especial énfasis en la "seguridad" de sus modelos, entendida también como una preocupación por la ética: cómo lograr que las respuestas sean confiables, cómo evitar usos dañinos y cómo hacer más transparentes los límites del modelo.
+
+## company_google
+Desarrolla Gemini, su familia de modelos, que integra capacidades de texto, imagen y video, a través de modelos como Veo, y que además está profundamente integrada en el ecosistema de productos de la empresa: aparece en el buscador, en Gmail, en Google Docs y en el celular.
+
+## company_meta
+La empresa detrás de Facebook, Instagram y WhatsApp viene apostando por el código abierto con su familia de modelos Llama, aunque en 2026 empezó a combinar esa estrategia con modelos cerrados: su nueva familia, Muse, incluye modelos abiertos que cualquier persona con los conocimientos técnicos necesarios puede descargar y ejecutar por su cuenta, junto con otros disponibles solo a través de sus propias apps. Además, integró un asistente de IA directamente en sus redes sociales y en WhatsApp.
+
+## company_deepseek
+Es una empresa china que en poco tiempo se instaló como una alternativa relevante, particularmente por ofrecer modelos de muy buen rendimiento con costos de desarrollo y de uso más bajos que los de algunos de sus competidores. Además, varios de sus modelos pueden descargarse y ejecutarse por cuenta propia.
+
+## company_adobe
+Aunque no es una empresa dedicada exclusivamente a desarrollar modelos de IA, integró estas capacidades en todo su ecosistema de productos creativos. Firefly es su familia de modelos de generación de contenidos, y Adobe también incorporó funciones de inteligencia artificial en aplicaciones como Photoshop, Premiere o Illustrator, apareciendo en forma de herramientas puntuales dentro de cada programa: selección automática de objetos, generación de relleno, subtitulado automático, entre otras.
+
+## panorama_cierre
+Este último caso —el de Adobe— muestra algo interesante: no siempre la IA aparece como una plataforma independiente a la que accedemos directamente. Muchas veces está integrada, como un núcleo transversal, dentro de herramientas que ya usamos y que ni siquiera identificamos primero como "de IA". Algo parecido sucede con el ecosistema de Google, donde un mismo modelo puede aparecer embebido en productos muy distintos entre sí.
+
+## privados_1
+Seguramente ya escucharon hablar de la palabra **tokens**. Son, en criollo, los créditos con los que se mide el uso de un modelo privado: cada palabra que escribimos y cada palabra que el modelo nos devuelve consume una cierta cantidad de tokens, y la mayoría de las plataformas cobra —o limita el uso gratuito— en función de esa cantidad.
+
+En términos prácticos, un modelo propietario está controlado por una empresa, que define sus condiciones de uso, sus planes (cierta cantidad de interacciones gratuitas o su modalidad paga) y qué se hace con los datos que le entregamos: cuando escribimos un prompt, esa información queda en manos de esa empresa. La gran mayoría de las herramientas que mencionamos hasta acá —ChatGPT, Claude, Gemini— son propietarias.
+
+## privados_2
+Un modelo abierto, en cambio, publica los archivos necesarios para utilizarlo, lo que permite que cualquier persona con los conocimientos técnicos necesarios pueda descargarlo, modificarlo y ejecutarlo en su propia computadora, sin depender de una empresa ni de una conexión a internet. Esto brinda un mayor control sobre nuestros datos y sobre el funcionamiento del modelo, aunque requiere un conocimiento técnico mayor para poder aprovecharlo.
+
+## comfyui
+Un caso interesante es **ComfyUI**, una interfaz gratuita y de código abierto que permite armar, de manera visual, flujos de trabajo con modelos abiertos de generación de imagen y video (como Stable Diffusion), conectando distintos "bloques" de procesamiento como si fueran piezas de un circuito. No es una herramienta pensada para un uso cotidiano y sencillo —tiene una curva de aprendizaje bastante más alta que la de escribir un prompt en un chat— pero es un buen ejemplo de hasta dónde puede llegar el control que ofrece el mundo del código abierto para quien esté dispuesto a invertir tiempo en aprenderlo.
+
+![Ejemplo de flujo de trabajo en ComfyUI](images/comfyui-ejemplo.jpg)
+
+## privados_3
+Ninguna de las dos opciones es mejor en abstracto: la elección depende de la tarea, del presupuesto y de cuánto control necesitamos sobre nuestra información. Hoy conviven modelos y plataformas de ambos tipos, con usos que se solapan bastante entre sí.
+
+## cual_es_mejor
+**Algo más para tener en cuenta**: en foros especializados y en distintos estudios comparativos se discute qué modelo conviene más para cada tipo de tarea, y las respuestas cambian todo el tiempo. Lo que hoy se destaca para programación puede no ser lo mismo dentro de unos meses. Aun así, sirve saber que esta comparación existe y que vale la pena hacerse la pregunta según lo que necesitamos hacer. Para **escritura** y **redacción general**, ChatGPT y Claude suelen aparecer entre las opciones mejor valoradas; para **programación**, Claude es una de las alternativas que pisa más fuerte; cuando el costo es un factor importante, DeepSeek entra en escena por su rendimiento y precio; y en **generación de imágenes**, la elección depende mucho del tipo de resultado que se busque, por ejemplo, fotorrealismo, ilustración o edición. Esto último lo vamos a retomar con más detalle en la Clase 3. En cualquier caso, ninguna de estas recomendaciones es definitiva: lo mejor es que cada uno haga sus propias pruebas y evalúe qué modelo le da mejores resultados según sus búsquedas y necesidades.
+
+## limites_1
+Una de las particularidades de estas herramientas es que siempre responden. No suelen decir "no sé", y si lo hacen, el texto se completa con un puñado de sugerencias e información que en muchos casos no tiene nada que ver con lo pedido. Y no solo eso: responden con un nivel de seguridad, de coherencia en el tono, en el formato, en la estructura del texto, que genera la sensación de que lo que estamos leyendo es la verdad. Esa verosimilitud es uno de los rasgos más engañosos de la IA generativa, y una razón más para sostener siempre una lectura crítica sobre lo que nos devuelve.
+
+Dos límites concretos se desprenden de esto:
+
+## alucinaciones_intro
+Las **alucinaciones** son los casos en los que un modelo genera información que suena verdadera pero que en realidad es falsa o directamente inventada. Esto es consecuencia de cómo funcionan estos modelos, que generan la continuación más probable de un texto y no necesariamente la más verdadera.
+
+## sesgos_intro
+Los **sesgos** aparecen porque los modelos se entrenan con enormes cantidades de datos producidos por personas, y esos datos arrastran las asimetrías y los estereotipos que ya existen en el mundo del que fueron extraídos.
+
+## limites_cierre
+Ninguno de estos límites invalida el uso de la IA en el aula. Simplemente recuerda que el resultado que obtenemos siempre necesita pasar por una lectura crítica propia, y que esa lectura crítica es un trabajo que le corresponde a la persona, no al algoritmo.
+
+## cierre_1
+Si llegaste hasta acá significa que terminaste la clase 1. Ya sabés qué diferencia hay entre un modelo y una plataforma, qué compañías y qué modelos conviven hoy, qué significa que un modelo sea propietario o de código abierto, y cuáles son algunos de sus límites.
+
+Por último, te comparto algunas ideas o sugerencias para la práctica docente:
+
+## proxima_clase
+Nos centraremos en modelos de texto y gramática del prompt. Retomaremos los "usos" y discutiremos algunos criterios de validación de las generaciones.
+¡Un abrazo y a farmear aura!
