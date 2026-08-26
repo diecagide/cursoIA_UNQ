@@ -59,8 +59,14 @@ Un LLM es un modelo entrenado para comprender y generar lenguaje humano en forma
 - Se entrenó con enormes volúmenes de texto —páginas web, libros, artículos, foros, posteos de redes, códigos— y de ahí sacó los patrones del lenguaje: significados, gramática, contexto, estilo, etc.
 - No está programado con conocimientos explícitos, sino que aprendió a predecir cuál será la palabra siguiente en una oración.
 
-¿De dónde salió exactamente todo ese texto? No está del todo claro. En los primeros modelos las empresas daban algunos detalles —OpenAI publicó las proporciones que usó para GPT-3—, pero con los modelos actuales dejaron de hacerlo. Sabemos que hay mucha web, libros digitalizados, foros, enciclopedias colaborativas, código. No sabemos en qué proporción, en qué idiomas ni de qué regiones. Y eso importa, porque es el terreno donde crecen los sesgos de los que hablamos en la clase anterior. Algo que sí está medido: estos modelos rinden mejor en inglés que en cualquier otro idioma, y esa diferencia aparece en las respuestas.
+¿De dónde salió exactamente todo ese texto? No está del todo claro. En los primeros modelos las empresas daban algunos detalles —OpenAI publicó las proporciones que usó para GPT-3—, pero con los modelos actuales dejaron de hacerlo. Sabemos que hay mucha web, libros digitalizados, foros, enciclopedias colaborativas, código.
 
+
+## bloquea_sesgo_datos
+No sabemos en qué proporción, en qué idiomas ni de qué regiones. Y eso importa, porque es el terreno donde crecen los sesgos de los que hablamos en la clase anterior. Algo que sí está medido: estos modelos rinden mejor en inglés que en cualquier otro idioma, y esa diferencia aparece en las respuestas.
+
+
+## bloquea_intro_2
 Cuando escribimos un prompt, el modelo no entiende lo que le pedimos como lo entendemos nosotros. Lo que hace es calcular, palabra por palabra, cuál es la continuación más probable de eso que escribimos. Algo parecido al teclado predictivo del celular, que nos sugiere cómo seguir la frase, pero a otra escala: mira patrones de millones de textos; y en vez de tirar una palabra suelta, encadena una atrás de otra hasta armar la respuesta completa, lógica, verosímil… ¿Validada?
 
 Para ser precisos: no predice palabras enteras sino tokens (hablamos de ellos la clase anterior), que pueden ser fragmentos de palabras o signos de puntuación.
