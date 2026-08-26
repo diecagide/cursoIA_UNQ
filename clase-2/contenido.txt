@@ -323,7 +323,7 @@ Las plataformas de IA pueden equivocarse, y de hecho lo hacen con bastante frecu
 
 
 ## sift_intro
-Uno de los métodos que más se está usando para verificar información —tanto la que devuelve la IA como la que circula en redes— es el SIFT, desarrollado por Mike Caulfield, investigador estadounidense especializado en alfabetización digital. Caulfield trabajó como director de aprendizaje híbrido en la Washington State University Vancouver y hoy está vinculado al Center for an Informed Public de la Universidad de Washington. Escribió *Web Literacy for Student Fact-Checkers* y, junto a Sam Wineburg, *Verified*. Sus módulos de SIFT se usan en más de cien universidades y escuelas secundarias de Estados Unidos y Canadá, y en los últimos años varias bibliotecas universitarias —entre ellas las de University of British Columbia, University of Calgary y University of California Merced— lo adaptaron específicamente para evaluar respuestas de IA generativa.
+Uno de los métodos que más se usa hoy para verificar lo que devuelve la IA es el SIFT, desarrollado por ^[Mike Caulfield](Investigador estadounidense especializado en alfabetización digital. Trabajó como director de aprendizaje híbrido y en red en la Washington State University Vancouver, y hoy es faculty member del Center for an Informed Public de la Universidad de Washington. Escribió *Web Literacy for Student Fact-Checkers* y, junto con Sam Wineburg, *Verified*, publicado en 2023.). Caulfield lo publicó en 2019, pensado en ese momento para verificar noticias y otro tipo de contenido que circulaba en internet —todavía no existían los chatbots de IA generativa—. Con la llegada de herramientas como ChatGPT, distintas bibliotecas universitarias empezaron a adaptarlo también para evaluar las respuestas de la IA.
 
 La lógica del método es que la verificación tiene que ser rápida: no se trata de investigar durante horas, sino de hacer en poco tiempo los chequeos que evitan dar por cierto algo que no lo es. Son cuatro pasos:
 
@@ -342,6 +342,10 @@ La lógica del método es que la verificación tiene que ser rápida: no se trat
 
 ## sift_closing
 Sobre el último paso, que en el caso de la IA es el más importante: cuando el modelo cita un artículo, no alcanza con verificar que el artículo exista. Hay que abrirlo y confirmar que efectivamente diga lo que la IA afirma que dice. El caso más común no es la cita completamente inventada, sino la cita real atribuida a un contenido que no tiene.
+
+
+## sift_universidades
+Algunas de esas bibliotecas son las de la University of British Columbia, Queen's University, Southern New Hampshire University e Iowa State University.
 
 
 ## lectura_lateral
