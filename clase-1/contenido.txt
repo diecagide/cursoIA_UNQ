@@ -179,7 +179,7 @@ Volveremos sobre este punto en las siguientes clases.
 El campo de la IA generativa cambia todo el tiempo, así que este panorama es apenas una fotografía del presente —es muy probable que para cuando terminemos el curso ya haya novedades que hoy ni mencionamos. Aun así, sirve tener un mapa general de quiénes son los actores principales hoy:
 
 ## company_openai
-Es la empresa que popularizó todo esto con el lanzamiento de ChatGPT. Su familia de modelos GPT se usa principalmente para trabajar con texto, pero la empresa también desarrolla modelos con capacidades de generación y comprensión de imágenes, audio y video, como Sora para la generación de video.
+Es la empresa que popularizó todo esto con el lanzamiento de ChatGPT. Su familia de modelos GPT se usa principalmente para trabajar con texto, pero la empresa también desarrolla modelos con capacidades de generación y comprensión de imágenes y audio. Su modelo de generación de video, Sora, dejó de estar disponible durante 2026.
 
 ## company_anthropic
 Desarrolla Claude, otro modelo conversacional de texto, conocido especialmente por su capacidad de sostener conversaciones largas y complejas. Desde sus orígenes, Anthropic puso especial énfasis en la "seguridad" de sus modelos, entendida también como una preocupación por la ética: cómo lograr que las respuestas sean confiables, cómo evitar usos dañinos y cómo hacer más transparentes los límites del modelo.
@@ -188,7 +188,7 @@ Desarrolla Claude, otro modelo conversacional de texto, conocido especialmente p
 Desarrolla Gemini, su familia de modelos, que integra capacidades de texto, imagen y video, a través de modelos como Veo, y que además está profundamente integrada en el ecosistema de productos de la empresa: aparece en el buscador, en Gmail, en Google Docs y en el celular.
 
 ## company_meta
-La empresa detrás de Facebook, Instagram y WhatsApp apuesta fuerte por el código abierto con su familia de modelos Llama, que cualquier persona con los conocimientos técnicos necesarios puede descargar y ejecutar por su cuenta. Además, integró un asistente de IA directamente en sus redes sociales y en WhatsApp.
+La empresa detrás de Facebook, Instagram y WhatsApp viene apostando por el código abierto con su familia de modelos Llama, aunque en 2026 empezó a combinar esa estrategia con modelos cerrados: su nueva familia, Muse, incluye modelos abiertos que cualquier persona con los conocimientos técnicos necesarios puede descargar y ejecutar por su cuenta, junto con otros disponibles solo a través de sus propias apps. Además, integró un asistente de IA directamente en sus redes sociales y en WhatsApp.
 
 ## company_deepseek
 Es una empresa china que en poco tiempo se instaló como una alternativa relevante, particularmente por ofrecer modelos de muy buen rendimiento con costos de desarrollo y de uso más bajos que los de algunos de sus competidores. Además, varios de sus modelos pueden descargarse y ejecutarse por cuenta propia.
