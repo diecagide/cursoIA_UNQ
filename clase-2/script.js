@@ -33,6 +33,19 @@
 
    Cada renglón (Enter simple, sin línea en blanco) es un ítem distinto
    de la lista.
+
+   NOTA EMERGENTE (pastilla con triangulito, para biografías o definiciones
+   cortas sin cortar la lectura del párrafo):
+   Dentro de cualquier bloque de texto, escribí:
+
+     ^[Mike Caulfield](Investigador estadounidense especializado en
+     alfabetización digital...)
+
+   Eso muestra "Mike Caulfield" seguido de un triangulito (▸); al tocarlo
+   se despliega el texto entre paréntesis como una tarjeta emergente. El
+   texto de la nota admite **negrita** y *cursiva* igual que el resto,
+   pero OJO: no puede contener un paréntesis de cierre ")" — si lo
+   necesitás, reformulá la frase para evitarlo.
    ========================================================================= */
 
 /* ---------- 1. Cargar y aplicar el texto de contenido.txt ---------- */
@@ -56,12 +69,30 @@ function escapeAttr(str) {
 // un párrafo ENTERO (el caso normal para agregar una imagen), no pasa
 // por acá — la maneja renderImageBlock() más abajo, que además arma el
 // recuadro de "pendiente" y el epígrafe opcional.
-function renderInline(text) {
-  var html = escapeHtml(text);
-  html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img class="content-img" src="$2" alt="$1" loading="lazy">');
+// Aplica negrita, cursiva, notas emergentes y links sobre un texto que ya
+// pasó por escapeHtml (por eso está separada de renderInline: así una nota
+// emergente puede llamarse a sí misma sobre su propio contenido sin volver
+// a escapar entidades ya escapadas).
+function applyInlineMarks(html) {
+  // Nota emergente (pastilla con triangulito): va ANTES que el link común
+  // de más abajo porque comparte la misma sintaxis de corchetes + paréntesis
+  // — la diferencia es el "^" pegado adelante.
+  //   ^[Texto que se muestra](contenido de la nota)
+  html = html.replace(/\^\[([^\]]+)\]\(([^)]+)\)/g, function (match, label, note) {
+    return '<span class="note">' + label +
+      '<details class="note__popover"><summary class="note__trigger" aria-label="Ver más"><span aria-hidden="true">▸</span></summary>' +
+      '<div class="note__body">' + applyInlineMarks(note.trim()) + '</div></details></span>';
+  });
   html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
   html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  return html;
+}
+
+function renderInline(text) {
+  var html = escapeHtml(text);
+  html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img class="content-img" src="$2" alt="$1" loading="lazy">');
+  html = applyInlineMarks(html);
   // Un solo Enter (sin línea en blanco) se muestra como salto de línea,
   // no como continuación pegada del mismo renglón.
   html = html.replace(/\n/g, '<br>');
