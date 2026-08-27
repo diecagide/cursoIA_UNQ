@@ -311,13 +311,20 @@ section.block:first-of-type {
 
 /* ---------- Placeholder de imagen (amarillo del docx) ---------- */
 
+/* Contenedor de imagen + rótulo opcional: el espacio antes/después del
+   conjunto se maneja acá (no en .img-placeholder ni en .img-caption por
+   separado), para que la imagen y su rótulo queden siempre pegados. */
+.img-block {
+  margin: 12px 0 28px;
+}
+
 .img-placeholder {
   border: 2px dashed var(--color-placeholder-border);
   background: var(--color-placeholder-bg);
   border-radius: 12px;
   padding: 28px 20px;
   text-align: center;
-  margin: 12px 0 28px;
+  margin: 0;
   color: #7a6a2e;
 }
 
@@ -560,12 +567,12 @@ section.block:first-of-type {
 
 .expandable__body { padding: 0 20px 20px; }
 .expandable__body p:last-child { margin-bottom: 0; }
-.expandable__body .img-placeholder:last-child { margin-bottom: 0; }
+.expandable__body .img-block:last-child { margin-bottom: 0; }
 
 /* ---------- Epígrafe opcional debajo de una imagen ---------- */
 
 .img-caption {
-  margin: -28px 0 28px;
+  margin: 8px 0 0;
   padding: 0 6px;
   font-size: .85rem;
   color: var(--color-text-muted);
