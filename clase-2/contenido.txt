@@ -38,6 +38,8 @@ cargadas en esta clase — las vas a ir sumando con esta misma lógica.
 Bienvenidas y bienvenidos a la segunda clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En la primera clase vimos la diferencia entre un modelo y una plataforma, algunos usos generales, características y limitaciones generales.
 
 ![](images/clase2_01_bienvenida.jpg)
+Modelo: Nano Banana Pro (Gemini 3)
+Prompt: Un cuaderno universitario abierto con escritura manuscrita, tachaduras y correcciones. Todo el cuaderno y su entorno tienen una estética de cómic contemporáneo tipo pop Spider-Verse: colores vibrantes, tramas gráficas y contrastes fuertes. Desde las páginas surgen sutilmente fragmentos de texto y elementos digitales que se integran con el fondo, representando la IA aplicada al texto. Primer plano nítido, fondo desenfocado, iluminación dramática. Debe tener un texto que diga IA TEXTO. 
 
 En esta clase nos metemos de lleno en el terreno del texto. Hay algo que ya sabemos y es que, de todos los formatos que genera la IA, este es el que puede presentar mayores desafíos dentro de la universidad: puede generar un documento extenso (trabajo práctico, escrito académico, proyecto de investigación, etc.) con la extensión que le indique, estructura específica, conclusiones y bibliografía en cuestión de segundos.
 
@@ -70,7 +72,8 @@ No sabemos en qué proporción, en qué idiomas ni de qué regiones. Y eso impor
 
 ## bloquea_sesgo_imagen
 ![](images/clase2_02_modelos.jpg)
-
+Modelo: Nano Banana Pro (Gemini 3)
+Prompt: Una representación de un modelo LLM de IA, “alimentado” con millones de textos. Estilo historieta cómica, cartoon, colorido y dinámico.
 
 ## bloquea_intro_2
 Cuando escribimos un prompt, el modelo no entiende lo que le pedimos como lo entendemos nosotros. Lo que hace es calcular, palabra por palabra, cuál es la continuación más probable de eso que escribimos. Algo parecido al teclado predictivo del celular, que nos sugiere cómo seguir la frase, pero a otra escala: mira patrones de millones de textos; y en vez de tirar una palabra suelta, encadena una atrás de otra hasta armar la respuesta completa, lógica, verosímil… ¿Validada?
@@ -221,6 +224,8 @@ Formato de salida: organizá la respuesta en cuatro apartados, correspondientes 
 En la primera clase presentamos la Guía de uso de IA generativa para estudiantes de la UNQ y su distinción entre usos admisibles e inadmisibles. Ahora que sabemos cómo funciona un LLM (masomeno) y cómo se escribe un prompt, podemos bajar eso a pedidos concretos. Vamos a ver dos grupos: los usos generales, que tienen que ver con producir y trabajar sobre textos, y un uso más específico, el de la IA como asistente de lectura e investigación.
 
 ![](images/clase2_03_usos1.jpg)
+Modelo: Nano Banana Pro (Gemini 3)
+Prompt: Una representación de los posibles usos de la IA: producir texto, estructurar información, generar archivos, traducir, trabajar sobre archivos adjuntos y revisar lecturas complementarias. Todo representado como pinturas rupestres en una caverna antigua, sin texto ni personas. Estilo cartón pintado, tipo maqueta con render 3D, incorporando piedras de cartón y otros elementos que enriquezcan la puesta en escena.
 
 ## producir_texto
 Sobre la producción, un LLM puede hacer varias cosas:
@@ -355,6 +360,8 @@ Sobre el último paso, que en el caso de la IA es el más importante: cuando el 
 Con la llegada de herramientas como ChatGPT, distintas bibliotecas universitarias empezaron a adaptar el método también para evaluar las respuestas de la IA. Algunas de esas bibliotecas son las de la University of British Columbia, Queen's University, Southern New Hampshire University e Iowa State University.
 
 ![](images/clase2_05_chequeo.jpg)
+Modelo: Nano Banana Pro (Gemini 3)
+Prompt: Una escena de escritorio de investigación con libros, documentos, anotaciones y una computadora con una interfaz de IA, combinando tecnología contemporánea con objetos y materiales de estética retro. Estética futurista y vintage a la vez, novedosa y sofisticada, con iluminación dramática, composición cinematográfica y una atmósfera ligeramente misteriosa. Sin textos ni títulos.
 
 ## lectura_lateral
 La lectura lateral (*lateral reading*) es una técnica de verificación que consiste en salir inmediatamente de la página que estamos leyendo para investigar su credibilidad en otras pestañas del navegador.
@@ -389,6 +396,8 @@ Es importante que los estudiantes construyan una mirada crítica que les permita
 
 ## voz_propia_imagen
 ![](images/clase2_06_vozpropia.jpg)
+Modelo: Nano Banana Pro (Gemini 3)
+Prompt: Una playa de arena húmeda, con varias huellas de pasos que atraviesan la superficie. Una de ellas se diferencia claramente de las demás, combinando la forma de una pluma con una huella dactilar. Luz natural, textura detallada de la arena, profundidad de campo y composición poética. Sin textos.
 
 
 ## voz_propia_list
