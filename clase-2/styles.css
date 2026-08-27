@@ -565,7 +565,7 @@ section.block:first-of-type {
 /* ---------- Epígrafe opcional debajo de una imagen ---------- */
 
 .img-caption {
-  margin: -20px 0 28px;
+  margin: -28px 0 28px;
   padding: 0 6px;
   font-size: .85rem;
   color: var(--color-text-muted);
