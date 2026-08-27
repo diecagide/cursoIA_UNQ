@@ -62,7 +62,10 @@ function renderInline(text) {
 function renderImageBlock(alt, src, caption) {
   var safeAlt = escapeAttr(alt);
   var safeSrc = escapeAttr(src);
-  var html = '<div class="img-placeholder">' +
+  // Imagen y rótulo van dentro de un mismo contenedor (.img-block) para que
+  // el espacio entre ambos sea siempre el mismo, sin depender de que los
+  // márgenes de dos elementos separados "colapsen" bien.
+  var html = '<div class="img-block"><div class="img-placeholder">' +
     '<img src="' + safeSrc + '" alt="' + safeAlt + '" loading="lazy" ' +
     'onerror="this.style.display=\'none\'; this.closest(\'.img-placeholder\').classList.remove(\'has-image\');" ' +
     'onload="this.closest(\'.img-placeholder\').classList.add(\'has-image\');">' +
@@ -72,6 +75,7 @@ function renderImageBlock(alt, src, caption) {
   if (caption && caption.trim()) {
     html += '<p class="img-caption">' + renderInline(caption.trim()) + '</p>';
   }
+  html += '</div>';
   return html;
 }
 
