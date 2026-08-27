@@ -67,7 +67,10 @@ Un LLM es un modelo entrenado para comprender y generar lenguaje humano en forma
 ## bloquea_sesgo_datos
 No sabemos en qué proporción, en qué idiomas ni de qué regiones. Y eso importa, porque es el terreno donde crecen los sesgos de los que hablamos en la clase anterior. Algo que sí está medido: estos modelos rinden mejor en inglés que en cualquier otro idioma, y esa diferencia aparece en las respuestas.
 
+
+## bloquea_sesgo_imagen
 ![](images/clase2_02_modelos.jpg)
+
 
 ## bloquea_intro_2
 Cuando escribimos un prompt, el modelo no entiende lo que le pedimos como lo entendemos nosotros. Lo que hace es calcular, palabra por palabra, cuál es la continuación más probable de eso que escribimos. Algo parecido al teclado predictivo del celular, que nos sugiere cómo seguir la frase, pero a otra escala: mira patrones de millones de textos; y en vez de tirar una palabra suelta, encadena una atrás de otra hasta armar la respuesta completa, lógica, verosímil… ¿Validada?
@@ -383,7 +386,10 @@ Es fundamental que profundicemos con nuestros estudiantes la importancia de que 
 
 Es importante que los estudiantes construyan una mirada crítica que les permita analizar si el resultado de la interacción se ajusta a su mirada o si a la inversa, están adaptando su mirada a lo que les entregó la IA.
 
+
+## voz_propia_imagen
 ![](images/clase2_06_vozpropia.jpg)
+
 
 ## voz_propia_list
 - **Evaluar el proceso, no solo el producto.** Entregas por etapas: un mapa conceptual inicial, un borrador, la versión final con justificación de los cambios.
