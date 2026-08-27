@@ -37,6 +37,8 @@ cargadas en esta clase — las vas a ir sumando con esta misma lógica.
 ## bienvenida_1
 Bienvenidas y bienvenidos a la segunda clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En la primera clase vimos la diferencia entre un modelo y una plataforma, algunos usos generales, características y limitaciones generales.
 
+![](images/clase2_01_bienvenida.jpg)
+
 En esta clase nos metemos de lleno en el terreno del texto. Hay algo que ya sabemos y es que, de todos los formatos que genera la IA, este es el que puede presentar mayores desafíos dentro de la universidad: puede generar un documento extenso (trabajo práctico, escrito académico, proyecto de investigación, etc.) con la extensión que le indique, estructura específica, conclusiones y bibliografía en cuestión de segundos.
 
 Esa posibilidad puede necesitar un acompañamiento que involucre dos procesos de validación distintos: por un lado, el de **validar la información que la IA nos entrega**: ¿es correcta? ¿la fuente existe? Por otro lado, el de **validar la voz propia del estudiante**, es decir, si el texto que produce responde a la subjetividad de quien lo pidió: ¿refleja su manera de pensar y de escribir, o es una voz genérica y despoblada de toda subjetividad?
@@ -65,6 +67,7 @@ Un LLM es un modelo entrenado para comprender y generar lenguaje humano en forma
 ## bloquea_sesgo_datos
 No sabemos en qué proporción, en qué idiomas ni de qué regiones. Y eso importa, porque es el terreno donde crecen los sesgos de los que hablamos en la clase anterior. Algo que sí está medido: estos modelos rinden mejor en inglés que en cualquier otro idioma, y esa diferencia aparece en las respuestas.
 
+![](images/clase2_02_modelos.jpg)
 
 ## bloquea_intro_2
 Cuando escribimos un prompt, el modelo no entiende lo que le pedimos como lo entendemos nosotros. Lo que hace es calcular, palabra por palabra, cuál es la continuación más probable de eso que escribimos. Algo parecido al teclado predictivo del celular, que nos sugiere cómo seguir la frase, pero a otra escala: mira patrones de millones de textos; y en vez de tirar una palabra suelta, encadena una atrás de otra hasta armar la respuesta completa, lógica, verosímil… ¿Validada?
@@ -214,6 +217,7 @@ Formato de salida: organizá la respuesta en cuatro apartados, correspondientes 
 ## bloquec_1
 En la primera clase presentamos la Guía de uso de IA generativa para estudiantes de la UNQ y su distinción entre usos admisibles e inadmisibles. Ahora que sabemos cómo funciona un LLM (masomeno) y cómo se escribe un prompt, podemos bajar eso a pedidos concretos. Vamos a ver dos grupos: los usos generales, que tienen que ver con producir y trabajar sobre textos, y un uso más específico, el de la IA como asistente de lectura e investigación.
 
+![](images/clase2_03_usos1.jpg)
 
 ## producir_texto
 Sobre la producción, un LLM puede hacer varias cosas:
@@ -347,6 +351,7 @@ Sobre el último paso, que en el caso de la IA es el más importante: cuando el 
 ## sift_universidades
 Con la llegada de herramientas como ChatGPT, distintas bibliotecas universitarias empezaron a adaptar el método también para evaluar las respuestas de la IA. Algunas de esas bibliotecas son las de la University of British Columbia, Queen's University, Southern New Hampshire University e Iowa State University.
 
+![](images/clase2_05_chequeo.jpg)
 
 ## lectura_lateral
 La lectura lateral (*lateral reading*) es una técnica de verificación que consiste en salir inmediatamente de la página que estamos leyendo para investigar su credibilidad en otras pestañas del navegador.
@@ -377,6 +382,8 @@ En el siguiente video vamos a ver cómo funciona:
 Es fundamental que profundicemos con nuestros estudiantes la importancia de que puedan construir su propia voz. Lo que entrega al final, sea un texto, una imagen, un video, tiene que poder reconocerse como suyo: su pensamiento, su mirada, su manera particular de decir las cosas y no como una reproducción más o menos disimulada de lo que generó una herramienta. Una estrategia posible en nuestros intercambios con los y las estudianrtes es que puedan explicitar qué están buscando y por qué recurren a esta herramienta en particular para hacerlo.
 
 Es importante que los estudiantes construyan una mirada crítica que les permita analizar si el resultado de la interacción se ajusta a su mirada o si a la inversa, están adaptando su mirada a lo que les entregó la IA.
+
+![](images/clase2_06_vozpropia.jpg)
 
 ## voz_propia_list
 - **Evaluar el proceso, no solo el producto.** Entregas por etapas: un mapa conceptual inicial, un borrador, la versión final con justificación de los cambios.
