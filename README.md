@@ -113,6 +113,7 @@ Todo el texto de la clase vive en un solo archivo simple:
 
    - Para una IMAGEN, ver la sección 4 más abajo — es la misma lógica
      en cualquier bloque de texto, no solo para las imágenes "fijas".
+   - Para un VIDEO de YouTube, ver la sección 5a más abajo.
 7. Abajo de todo hay un botón verde "Commit changes" — con eso
    guardás. El sitio publicado se actualiza solo, en 1-2 minutos
    (mismo link de siempre).
@@ -187,18 +188,48 @@ orientación, no hace falta mantenerlo actualizado a mano.
 
 ---
 
-## 5. Agregar un recurso interactivo (Genially, un video de YouTube, etc.)
+## 5. Agregar un video de YouTube o un recurso de Genially
 
-Algunos bloques tienen un recuadro punteado que marca dónde va un
-recurso interactivo — la línea de tiempo de Genially en la Clase 1, o
-un video de YouTube en la Clase 2. Se agrega igual en los dos casos:
+### 5a. Video de YouTube (desde `contenido.txt`, sin tocar HTML)
 
-1. En Genially usá "Compartir" → "Insertar" (embed); en YouTube usá el
-   botón "Compartir" → "Insertar" debajo del video. En los dos casos
-   te va a dar un código parecido a este:
+Los videos de YouTube se agregan igual que una imagen: como su propio
+párrafo en `contenido.txt` (línea en blanco antes y después):
+
+```
+@video[Título del video](link de YouTube)
+```
+
+Podés pegar cualquier link que te dé YouTube — el de "Compartir", el
+de la barra de direcciones al mirar el video, o el de "Insertar" — no
+hace falta el código `<iframe>`, alcanza con el link normal. El texto
+entre corchetes es el título que se va a mostrar arriba del video.
+
+Mientras dejes `@video[]()` (sin título ni link), se muestra
+automáticamente un recuadro de "Video pendiente" — no rompe nada,
+podés escribir el resto de la clase primero y sumar el video después.
+Si en algún momento el link no se reconoce como de YouTube, el
+recuadro también te lo avisa.
+
+Ejemplo real (así quedó el video de la Clase 2 en "La interfaz"):
+
+```
+@video[Interfaz de un LLM y Proyectos | ChatGPT - Gemini - Claude](https://youtu.be/fU2HXrjnk6Q)
+```
+
+Con eso alcanza: no hace falta tocar `index.html` para agregar,
+cambiar o titular un video.
+
+### 5b. Genially (sí requiere pegar código en `index.html`)
+
+La línea de tiempo de Genially, en la Clase 1, es un caso aparte
+(no es de YouTube) y se sigue agregando pegando código directo en el
+`index.html`:
+
+1. En Genially, usá "Compartir" → "Insertar" (embed). Te va a dar un
+   código parecido a este:
 
    ```html
-   <iframe src="https://www.youtube.com/embed/XXXXXXX" ...></iframe>
+   <iframe src="https://view.genially.com/XXXXXXX" ...></iframe>
    ```
 
 2. En el `index.html` de la clase correspondiente, buscá el comentario
@@ -206,14 +237,11 @@ un video de YouTube en la Clase 2. Se agrega igual en los dos casos:
 
    `<!-- PEGAR ACÁ EL <iframe ...>...</iframe> QUE TE DA GENIALLY -->`
 
-   o, para un video:
-
-   `<!-- PEGAR ACÁ EL <iframe ...>...</iframe> QUE TE DA YOUTUBE -->`
-
 3. Pegá el código justo debajo de ese comentario, y borrá las líneas
    de "pendiente" que están arriba (el ícono y los dos textos de
-   aviso) — a diferencia de las imágenes, acá sí hay que borrarlas a
-   mano para que no queden mezcladas con el video.
+   aviso) — a diferencia de las imágenes y los videos de YouTube, acá
+   sí hay que borrarlas a mano para que no queden mezcladas con el
+   recurso.
 4. Commit changes.
 
 ---
