@@ -395,7 +395,7 @@ Además de estos dos métodos, hay algunas prácticas que conviene incorporar:
 - Calibrar el modelo antes de confiar: hacerle primero una pregunta sobre algo que uno domina, para ver cómo se comporta en ese terreno.
 - Pedirle que explicite en qué se basa y qué nivel de certeza tiene, en lugar de aceptar la afirmación como se presenta.
 - Contrastar: pedirle el contraargumento de lo que acaba de decir, o hacer la misma pregunta en otro modelo y comparar.
-- Acotar el corpus: usar herramientas como NotebookLM, que responden solo sobre los archivos que le cargamos.
+- Acotar el corpus: usar herramientas como Gemini Notebook, que responden solo sobre los archivos que le cargamos.
 
 
 ## notebooklm_desc
