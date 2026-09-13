@@ -46,6 +46,19 @@
    texto de la nota admite **negrita** y *cursiva* igual que el resto,
    pero OJO: no puede contener un paréntesis de cierre ")" — si lo
    necesitás, reformulá la frase para evitarlo.
+
+   VIDEO DE YOUTUBE (una sola forma de hacerlo, para todas las clases):
+   Dentro de cualquier bloque de texto, en su propio párrafo (con línea
+   en blanco antes y después), escribí:
+
+     @video[Título del video](https://link-que-copiaste-de-youtube)
+
+   El link puede ser cualquiera de los que da YouTube (el de "Compartir",
+   el de la barra de direcciones, o el de "Insertar") — no hace falta el
+   código <iframe>, alcanza con pegar el link normal. Mientras no
+   completes el título y el link, se muestra un recuadro de "pendiente"
+   (como con las imágenes). Si el link no se reconoce como de YouTube, se
+   avisa en el recuadro en vez de romper la página.
    ========================================================================= */
 
 /* ---------- 1. Cargar y aplicar el texto de contenido.txt ---------- */
@@ -128,6 +141,64 @@ function renderImageBlock(alt, src, caption) {
 // la ruta de la imagen del texto del epígrafe.
 var SOLO_IMAGE_RE = /^!\[([^\]]*)\]\(([^)\s]+)\)[ \t]*\n?([\s\S]*)$/;
 
+// Si un párrafo entero es "@video[Título](link)", esta expresión separa el
+// título del link (ver documentación arriba). Título y/o link pueden venir
+// vacíos: eso es lo que pasa antes de que Diego cargue el video real.
+var VIDEO_RE = /^@video\[([^\]]*)\]\(([^)]*)\)\s*$/;
+
+// Saca el ID de un video de YouTube de cualquiera de los formatos de link
+// que da YouTube (compartir, barra de direcciones, insertar, shorts).
+function extractYouTubeId(url) {
+  var patterns = [
+    /youtu\.be\/([A-Za-z0-9_-]{6,})/,
+    /youtube\.com\/watch\?[^#]*[?&]v=([A-Za-z0-9_-]{6,})/,
+    /youtube\.com\/embed\/([A-Za-z0-9_-]{6,})/,
+    /youtube\.com\/shorts\/([A-Za-z0-9_-]{6,})/
+  ];
+  for (var i = 0; i < patterns.length; i++) {
+    var m = url.match(patterns[i]);
+    if (m) return m[1];
+  }
+  return null;
+}
+
+// Arma el bloque completo de un video: el título (si hay) como
+// .interactive-title y el iframe de YouTube adentro de
+// .interactive-placeholder, con el mismo look que el resto de los
+// recuadros "pendiente" mientras no se cargó título+link o el link no se
+// reconoce.
+function renderVideoBlock(title, url) {
+  var safeTitle = (title || '').trim();
+  var safeUrl = (url || '').trim();
+
+  if (!safeTitle && !safeUrl) {
+    return '<div class="interactive-placeholder">' +
+      '<span class="interactive-placeholder__icon" aria-hidden="true">🎬</span>' +
+      '<p class="interactive-placeholder__label">Video pendiente</p>' +
+      '<p class="interactive-placeholder__hint">Reemplazá esta línea por @video[Título del video](link de YouTube)</p>' +
+      '</div>';
+  }
+
+  var videoId = safeUrl ? extractYouTubeId(safeUrl) : null;
+  if (!videoId) {
+    console.warn('[contenido.txt] No se reconoce como link de YouTube: "' + safeUrl + '"');
+    return '<div class="interactive-placeholder">' +
+      '<span class="interactive-placeholder__icon" aria-hidden="true">⚠️</span>' +
+      '<p class="interactive-placeholder__label">No se reconoce ese link de YouTube</p>' +
+      '<p class="interactive-placeholder__hint">Revisá que sea un link completo, por ejemplo https://youtu.be/... o https://www.youtube.com/watch?v=...</p>' +
+      '</div>';
+  }
+
+  var titleHtml = safeTitle ? '<h3 class="interactive-title">Video: ' + escapeHtml(safeTitle) + '</h3>' : '';
+  var iframeTitle = escapeAttr(safeTitle || 'Video de YouTube');
+  return titleHtml +
+    '<div class="interactive-placeholder has-video">' +
+    '<iframe src="https://www.youtube.com/embed/' + videoId + '" title="' + iframeTitle + '" ' +
+    'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+    'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' +
+    '</div>';
+}
+
 // Si TODOS los renglones no vacíos de un párrafo empiezan con "- ", se
 // arma una lista con viñetas en vez de un párrafo corrido (ver
 // documentación arriba).
@@ -194,7 +265,10 @@ function applyContent(data) {
       el.innerHTML = '';
       paragraphs.forEach(function (p, i) {
         var soloImage = p.match(SOLO_IMAGE_RE);
-        if (soloImage) {
+        var video = p.match(VIDEO_RE);
+        if (video) {
+          el.insertAdjacentHTML('beforeend', renderVideoBlock(video[1], video[2]));
+        } else if (soloImage) {
           el.insertAdjacentHTML('beforeend', renderImageBlock(soloImage[1], soloImage[2], soloImage[3]));
         } else if (isListChunk(p)) {
           el.insertAdjacentHTML('beforeend', renderListBlock(p));

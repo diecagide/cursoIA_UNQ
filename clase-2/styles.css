@@ -382,11 +382,25 @@ section.block:first-of-type {
 .interactive-placeholder__label { font-weight: 600; margin: 0 0 4px; }
 .interactive-placeholder__hint { font-size: .82rem; margin: 0; }
 
-.interactive-placeholder iframe {
+/* Cuando ya hay un video real (generado por @video[Título](link) en
+   contenido.txt), se saca el marco de "pendiente" — mismo criterio que
+   .img-placeholder.has-image con las imágenes. */
+.interactive-placeholder.has-video {
+  border-style: solid;
+  border-color: var(--color-border);
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.interactive-placeholder.has-video iframe {
   width: 100%;
-  min-height: 420px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: 0;
   border: none;
   border-radius: 8px;
+  display: block;
 }
 
 /* ---------- Tarjetas de razones (bloque "Maldita IA") ---------- */

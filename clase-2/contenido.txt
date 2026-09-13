@@ -31,6 +31,19 @@ pegado en el renglón siguiente, sin dejar línea en blanco. Más detalle
 en el README de la carpeta principal. Diego: todavía no hay imágenes
 cargadas en esta clase — las vas a ir sumando con esta misma lógica.
 
+VIDEOS DE YOUTUBE
+-----------------
+También como su propio párrafo (línea en blanco antes y después):
+
+    @video[Título del video](link de YouTube)
+
+Podés pegar cualquier link que te dé YouTube (el de "Compartir", el de
+la barra de direcciones, o el de "Insertar") — no hace falta el código
+<iframe>, alcanza con el link normal. Mientras el título y el link
+estén vacíos (@video[]()) se muestra un recuadro de "pendiente". Si el
+link no se reconoce como de YouTube, se avisa en el recuadro en vez de
+romper la página.
+
 ======================================================================
 
 
@@ -120,6 +133,10 @@ Todas estas plataformas comparten una interfaz bastante parecida que incluye los
 - la opción de adjuntar archivos —PDFs, imágenes, planillas— para que el modelo trabaje sobre ellos,
 - un selector para elegir entre distintos modelos disponibles,
 - alguna forma de memoria que permite que el modelo recuerde información de conversaciones anteriores sin que se la repitamos cada vez.
+
+
+## video_interfaz
+@video[Interfaz de un LLM y Proyectos | ChatGPT - Gemini - Claude](https://youtu.be/fU2HXrjnk6Q)
 
 
 ## bloqueb_1
@@ -386,6 +403,10 @@ Es una plataforma gratuita de Google, distinta de Gemini, pensada para trabajar 
 
 ## notebooklm_video_intro
 En el siguiente video vamos a ver cómo funciona:
+
+
+## video_notebooklm
+@video[]()
 
 
 ## voz_propia_1
