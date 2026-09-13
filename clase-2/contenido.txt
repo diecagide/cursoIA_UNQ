@@ -169,7 +169,7 @@ Estas "reglas" pueden utilizarse para redactar prompts en distintos niveles de c
 
 
 ## simple_1
-Un prompt simple es una instrucción directa, sin contexto ni delimitaciones, sobre un objeto (un tema, una tarea, una idea) que queda explícito en el propio pedido. Se arma con la fórmula:
+Un prompt simple es una instrucción directa, sin contexto ni delimitaciones, sobre un objeto (un tema, un concepto, una idea) que queda explícito en el propio pedido. Se arma con la fórmula:
 
 ## formula_simple
 [acción + objeto] + [focalización]
