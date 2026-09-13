@@ -204,7 +204,7 @@ function renderVideoBlock(title, url) {
     'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
     'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' +
     '</div>' +
-    '<p class="video-quality-tip">💡 Si el video se ve borroso, tocá el ⚙️ (abajo a la derecha, dentro del video) y elegí 1080p o la calidad más alta disponible — YouTube no deja fijar eso desde acá. Con la cuenta de Google iniciada, después lo recuerda solo para los próximos videos.</p>';
+    '<p class="video-quality-tip">💡 Arriba a la derecha del video están los íconos de subtítulos (CC) y de configuración (⚙️). Si se ve borroso, tocá ⚙️ y elegí 1080p o la calidad más alta disponible; desde CC podés activar o desactivar los subtítulos.</p>';
 }
 
 // Si TODOS los renglones no vacíos de un párrafo empiezan con "- ", se
