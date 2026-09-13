@@ -393,6 +393,18 @@ section.block:first-of-type {
   color: inherit;
 }
 
+/* Aviso chico debajo del video real, mismo estilo que el epígrafe de
+   una imagen (.img-caption): explica por qué a veces arranca en baja
+   resolución (lo decide YouTube, no esta página) y cómo arreglarlo. */
+.video-quality-tip {
+  margin: 8px 0 0;
+  padding: 0 6px;
+  font-size: .82rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  text-align: left;
+}
+
 .interactive-placeholder.has-video iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
