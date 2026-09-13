@@ -219,6 +219,17 @@ Ejemplo real (así quedó el video de la Clase 2 en "La interfaz"):
 Con eso alcanza: no hace falta tocar `index.html` para agregar,
 cambiar o titular un video.
 
+**Sobre la calidad/resolución del video:** con qué nitidez arranca un
+video (360p, 720p, 1080p...) lo decide YouTube automáticamente según
+la conexión de quien lo mira en ese momento — no es algo que se pueda
+fijar desde esta página ni desde ningún link, YouTube dejó de permitir
+forzarlo hace años. Por eso, debajo de cada video ya aparece
+automáticamente un avisito para el estudiante explicándole que puede
+tocar el ⚙️ del video y elegir la calidad más alta a mano (y que si
+está con su cuenta de Google iniciada, YouTube se lo va a recordar
+para los próximos videos). No hay que hacer nada para que aparezca:
+viene con el sistema de video.
+
 ### 5b. Genially (sí requiere pegar código en `index.html`)
 
 La línea de tiempo de Genially, en la Clase 1, es un caso aparte
