@@ -57,17 +57,13 @@ IMÁGENES (una sola forma de hacerlo, en cualquier bloque de texto)
 ## bienvenida_1
 ¡Hola a todos y todas! Les doy la bienvenida a "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria", un curso diseñado para acompañarles a pensar la inteligencia artificial generativa desde un lugar activo, crítico y, sobre todo, creativo.
 
-![Banner del curso](images/01-imagen-curso.jpg)
-Modelo: Nano Banana pro
-Prompt: Un banner de temática IA para un curso de Inteligencia Artificial para docentes universitarios de Artes, Ciencias Sociales, Economía y Ciencia y Tecnología. Debe representar en distintos recuadros las distintas unidades académicas, de manera sobria y representativa. La IA debe estar presente como elemento común entre todas las áreas. Que no tenga textos ni agregados típicos de una infografía.
-
 La idea que le da nombre al curso es también su punto de partida: la imaginación es una dimensión esencialmente humana, y nuestro objetivo acá no es reemplazarla por un algoritmo, sino aprender a integrar estas herramientas en nuestros procesos creativos y nuestras prácticas de enseñanza sin cederles ese lugar. Nos interesa pensar la IA generativa como una asistente de trabajo —capaz de acompañar, de proponer, de agilizar tareas— pero nunca como una máquina que decide por nosotros qué queremos decir o mostrar.
 
 Este curso está pensado para docentes de las cuatro unidades académicas de la universidad que quieran conocer estas herramientas, incorporarlas a su propia práctica de enseñanza, y acompañar a sus estudiantes en un uso estratégico y creativo de la IA generativa. No importa si ya la usan a diario o si es la primera vez que se acercan al tema: la propuesta está armada para que cada uno pueda avanzar a su propio ritmo.
 
-![Collage compuesto](images/09-imagen.jpg)
-Modelo: Nano Banana pro (Gemini)
-Prompt: Plano detalle de la mano de un monje escribiendo en un libro medieval con una pluma antigua. En la punta de la pluma, un pequeño elemento electrónico evidencia un contexto futurista. Al fondo, desenfocado, un monasterio medieval. Estética hiperrealista y cinematográfica, luz cálida de atardecer.
+![Banner del curso](images/01-imagen-curso.jpg)
+Modelo: Nano Banana pro
+Prompt: Un banner de temática IA para un curso de Inteligencia Artificial para docentes universitarios de Artes, Ciencias Sociales, Economía y Ciencia y Tecnología. Debe representar en distintos recuadros las distintas unidades académicas, de manera sobria y representativa. La IA debe estar presente como elemento común entre todas las áreas. Que no tenga textos ni agregados típicos de una infografía.
 
 ## bienvenida_2
 A lo largo de cinco clases vamos a recorrer un camino que va de lo más general a lo más específico. En esta primera clase nos detenemos en los modelos y las plataformas que existen hoy, usos y cuestiones generales. En la Clase 2 nos metemos de lleno con la escritura de prompts y la producción de texto. En las Clases 3 y 4, con imagen, video y otros formatos. Y en la Clase 5 hacemos una síntesis e integramos varios modelos en un mismo proceso de producción.
@@ -75,6 +71,11 @@ A lo largo de cinco clases vamos a recorrer un camino que va de lo más general 
 Cada clase combina una instancia teórica —la que están leyendo ahora mismo— con una instancia práctica, donde van a poder poner en juego lo que fuimos viendo con ejercicios concretos, pensados también como recursos que puedan después llevar a sus propias aulas. Va a haber, además, un foro para intercambiar dudas, ideas y experiencias con el resto del grupo.
 
 No hace falta ningún conocimiento técnico previo para este curso: alcanza con las ganas de experimentar, de probar, de equivocarse, y de ir construyendo una mirada propia sobre las posibilidades y los límites de estas herramientas. Empecemos.
+
+![Collage compuesto](images/09-imagen.jpg)
+Imagen compuesta en Adobe Photoshop a partir de dos generaciones de IA.
+Imagen superior — Modelo: GPT Image 2. Prompt: Un banner con los íconos reales de ChatGPT, Claude, Gemini, Meta, Copilot.
+Imagen inferior — Modelo: Nano Banana pro. Prompt: Plano detalle de la mano de un monje escribiendo en un libro medieval con una pluma antigua. En la punta de la pluma, un pequeño elemento electrónico evidencia un contexto futurista. Al fondo, desenfocado, un monasterio medieval. Estética hiperrealista y cinematográfica, luz cálida de atardecer.
 
 ## porque_intro
 Si la IA generativa te "genera" distancia, dolor de panza, malestar inconmensurable o te parece que es una piedra en el zapato, te comparto algunas razones que fui pensando por las que puede ser útil conocer un poco de este mundo.
@@ -116,7 +117,7 @@ Modelo: GPT Image 2 (Gemini)
 Prompt: Una infografía típica de IA que explique "Cómo Farmear Aura". Debe ser surrealista, cómica y contener muchos elementos ilógicos. Debe incluir textos explicativos.
 
 ## bloquea_4
-Ahí aparece la idea que atraviesa todo el curso: si no aportamos mirada, criterio, historia propia en el proceso, lo que obtenemos puede generar fascinación, incluso deslumbrar, pero va a responder a diseños más o menos hegemónicos —a lo que ya se repitió miles de veces y el modelo aprendió a reproducir muy bien— y no a nuestra voz autoral. Esto no significa desconocer que nuestra manera de crear también está atravesada por estilos, artistas y autores, -que son los que aprendimos y enseñamos en la universidad- y que podemos reconocernos en esa influencia y esos saberes. Pero es justamente por eso que la voz propia es lo que necesitamos construir, valorar y cuidar en tiempos de IA generativa: no partimos de cero, pero a partir de esas influencias hay una mirada que solo nosotros podemos aportar. La imaginación y todo lo que aprendimos en la universidad es lo que puede guiar ese resultado hacia algo propio.
+Ahí aparece la idea que atraviesa todo el curso: si no aportamos mirada, criterio, historia propia en el proceso, lo que obtenemos puede generar fascinación, incluso deslumbrar, pero va a responder a diseños más o menos hegemónicos —a lo que ya se repitió miles de veces y el modelo aprendió a reproducir muy bien— y no a nuestra voz autoral. Esto no significa desconocer que nuestra manera de crear también está atravesada por estilos, artistas y autores, y que podemos reconocernos en esa influencia. Pero es justamente por eso que la voz propia es lo que necesitamos construir, valorar y cuidar en tiempos de IA generativa: no partimos de cero, pero a partir de esas influencias hay una mirada que solo nosotros podemos aportar. La imaginación —la nuestra, no la del algoritmo— es lo que puede guiar ese resultado hacia algo propio.
 
 ## cajanegra_1
 Cuando le pedimos a la IA que haga algo y presionamos Enter, la IA empieza a trabajar. Pero, ¿qué es lo que está haciendo exactamente en esos segundos? Para la mayoría de nosotros, lo que sucede ahí adentro es un misterio: escribimos algo, aparece un resultado, y en el medio, la nada. Esa caja negra es lo que se conoce como el **modelo**.
@@ -176,7 +177,7 @@ Volveremos sobre este punto en las siguientes clases.
 El campo de la IA generativa cambia todo el tiempo, así que este panorama es apenas una fotografía del presente —es muy probable que para cuando terminemos el curso ya haya novedades que hoy ni mencionamos. Aun así, sirve tener un mapa general de quiénes son los actores principales hoy:
 
 ## company_openai
-Es la empresa que popularizó todo esto con el lanzamiento de ChatGPT. Su familia de modelos GPT se usa principalmente para trabajar con texto, pero la empresa también desarrolla modelos con capacidades de generación y comprensión de imágenes y audio. Su modelo de generación de video, Sora, dejó de estar disponible durante 2026.
+Es la empresa que popularizó todo esto con el lanzamiento de ChatGPT. Su familia de modelos GPT se usa principalmente para trabajar con texto, pero la empresa también desarrolla modelos con capacidades de generación y comprensión de imágenes, audio y video, como Sora para la generación de video.
 
 ## company_anthropic
 Desarrolla Claude, otro modelo conversacional de texto, conocido especialmente por su capacidad de sostener conversaciones largas y complejas. Desde sus orígenes, Anthropic puso especial énfasis en la "seguridad" de sus modelos, entendida también como una preocupación por la ética: cómo lograr que las respuestas sean confiables, cómo evitar usos dañinos y cómo hacer más transparentes los límites del modelo.
@@ -185,7 +186,7 @@ Desarrolla Claude, otro modelo conversacional de texto, conocido especialmente p
 Desarrolla Gemini, su familia de modelos, que integra capacidades de texto, imagen y video, a través de modelos como Veo, y que además está profundamente integrada en el ecosistema de productos de la empresa: aparece en el buscador, en Gmail, en Google Docs y en el celular.
 
 ## company_meta
-La empresa detrás de Facebook, Instagram y WhatsApp viene apostando por el código abierto con su familia de modelos Llama, aunque en 2026 empezó a combinar esa estrategia con modelos cerrados: su nueva familia, Muse, incluye modelos abiertos que cualquier persona con los conocimientos técnicos necesarios puede descargar y ejecutar por su cuenta, junto con otros disponibles solo a través de sus propias apps. Además, integró un asistente de IA directamente en sus redes sociales y en WhatsApp.
+La empresa detrás de Facebook, Instagram y WhatsApp apuesta fuerte por el código abierto con su familia de modelos Llama, que cualquier persona con los conocimientos técnicos necesarios puede descargar y ejecutar por su cuenta. Además, integró un asistente de IA directamente en sus redes sociales y en WhatsApp.
 
 ## company_deepseek
 Es una empresa china que en poco tiempo se instaló como una alternativa relevante, particularmente por ofrecer modelos de muy buen rendimiento con costos de desarrollo y de uso más bajos que los de algunos de sus competidores. Además, varios de sus modelos pueden descargarse y ejecutarse por cuenta propia.

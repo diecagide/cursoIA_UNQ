@@ -20,6 +20,45 @@
      falta — no hay que preocuparse por caracteres especiales acá.
 
    Ver más detalle en el encabezado de contenido.txt y en el README.
+
+   LISTAS CON VIÑETAS (bullets):
+   Dentro de cualquier bloque de texto, si TODOS los renglones de un
+   párrafo (separado por línea en blanco del resto) arrancan con
+   "- " (guion + espacio), ese párrafo se convierte en una lista con
+   viñetas en vez de un párrafo corrido:
+
+     - Primer punto de la lista.
+     - Segundo punto, también puede llevar **negrita** o *cursiva*.
+     - Tercer punto.
+
+   Cada renglón (Enter simple, sin línea en blanco) es un ítem distinto
+   de la lista.
+
+   NOTA EMERGENTE (pastilla con triangulito, para biografías o definiciones
+   cortas sin cortar la lectura del párrafo):
+   Dentro de cualquier bloque de texto, escribí:
+
+     ^[Mike Caulfield](Investigador estadounidense especializado en
+     alfabetización digital...)
+
+   Eso muestra "Mike Caulfield" seguido de un triangulito (▸); al tocarlo
+   se despliega el texto entre paréntesis como una tarjeta emergente. El
+   texto de la nota admite **negrita** y *cursiva* igual que el resto,
+   pero OJO: no puede contener un paréntesis de cierre ")" — si lo
+   necesitás, reformulá la frase para evitarlo.
+
+   VIDEO DE YOUTUBE (una sola forma de hacerlo, para todas las clases):
+   Dentro de cualquier bloque de texto, en su propio párrafo (con línea
+   en blanco antes y después), escribí:
+
+     @video[Título del video](https://link-que-copiaste-de-youtube)
+
+   El link puede ser cualquiera de los que da YouTube (el de "Compartir",
+   el de la barra de direcciones, o el de "Insertar") — no hace falta el
+   código <iframe>, alcanza con pegar el link normal. Mientras no
+   completes el título y el link, se muestra un recuadro de "pendiente"
+   (como con las imágenes). Si el link no se reconoce como de YouTube, se
+   avisa en el recuadro en vez de romper la página.
    ========================================================================= */
 
 /* ---------- 1. Cargar y aplicar el texto de contenido.txt ---------- */
@@ -43,12 +82,30 @@ function escapeAttr(str) {
 // un párrafo ENTERO (el caso normal para agregar una imagen), no pasa
 // por acá — la maneja renderImageBlock() más abajo, que además arma el
 // recuadro de "pendiente" y el epígrafe opcional.
-function renderInline(text) {
-  var html = escapeHtml(text);
-  html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img class="content-img" src="$2" alt="$1" loading="lazy">');
+// Aplica negrita, cursiva, notas emergentes y links sobre un texto que ya
+// pasó por escapeHtml (por eso está separada de renderInline: así una nota
+// emergente puede llamarse a sí misma sobre su propio contenido sin volver
+// a escapar entidades ya escapadas).
+function applyInlineMarks(html) {
+  // Nota emergente (pastilla con triangulito): va ANTES que el link común
+  // de más abajo porque comparte la misma sintaxis de corchetes + paréntesis
+  // — la diferencia es el "^" pegado adelante.
+  //   ^[Texto que se muestra](contenido de la nota)
+  html = html.replace(/\^\[([^\]]+)\]\(([^)]+)\)/g, function (match, label, note) {
+    return '<span class="note">' + label +
+      '<details class="note__popover"><summary class="note__trigger" aria-label="Ver más"><span aria-hidden="true">▸</span></summary>' +
+      '<div class="note__body">' + applyInlineMarks(note.trim()) + '</div></details></span>';
+  });
   html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
   html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  return html;
+}
+
+function renderInline(text) {
+  var html = escapeHtml(text);
+  html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img class="content-img" src="$2" alt="$1" loading="lazy">');
+  html = applyInlineMarks(html);
   // Un solo Enter (sin línea en blanco) se muestra como salto de línea,
   // no como continuación pegada del mismo renglón.
   html = html.replace(/\n/g, '<br>');
@@ -83,6 +140,82 @@ function renderImageBlock(alt, src, caption) {
 // epígrafe en los renglones siguientes), esta expresión lo detecta y separa
 // la ruta de la imagen del texto del epígrafe.
 var SOLO_IMAGE_RE = /^!\[([^\]]*)\]\(([^)\s]+)\)[ \t]*\n?([\s\S]*)$/;
+
+// Si un párrafo entero es "@video[Título](link)", esta expresión separa el
+// título del link (ver documentación arriba). Título y/o link pueden venir
+// vacíos: eso es lo que pasa antes de que Diego cargue el video real.
+var VIDEO_RE = /^@video\[([^\]]*)\]\(([^)]*)\)\s*$/;
+
+// Saca el ID de un video de YouTube de cualquiera de los formatos de link
+// que da YouTube (compartir, barra de direcciones, insertar, shorts).
+function extractYouTubeId(url) {
+  var patterns = [
+    /youtu\.be\/([A-Za-z0-9_-]{6,})/,
+    /youtube\.com\/watch\?[^#]*[?&]v=([A-Za-z0-9_-]{6,})/,
+    /youtube\.com\/embed\/([A-Za-z0-9_-]{6,})/,
+    /youtube\.com\/shorts\/([A-Za-z0-9_-]{6,})/
+  ];
+  for (var i = 0; i < patterns.length; i++) {
+    var m = url.match(patterns[i]);
+    if (m) return m[1];
+  }
+  return null;
+}
+
+// Arma el bloque completo de un video: el título (si hay) como
+// .interactive-title y el iframe de YouTube adentro de
+// .interactive-placeholder, con el mismo look que el resto de los
+// recuadros "pendiente" mientras no se cargó título+link o el link no se
+// reconoce.
+function renderVideoBlock(title, url) {
+  var safeTitle = (title || '').trim();
+  var safeUrl = (url || '').trim();
+
+  if (!safeTitle && !safeUrl) {
+    return '<div class="interactive-placeholder">' +
+      '<span class="interactive-placeholder__icon" aria-hidden="true">🎬</span>' +
+      '<p class="interactive-placeholder__label">Video pendiente</p>' +
+      '<p class="interactive-placeholder__hint">Reemplazá esta línea por @video[Título del video](link de YouTube)</p>' +
+      '</div>';
+  }
+
+  var videoId = safeUrl ? extractYouTubeId(safeUrl) : null;
+  if (!videoId) {
+    console.warn('[contenido.txt] No se reconoce como link de YouTube: "' + safeUrl + '"');
+    return '<div class="interactive-placeholder">' +
+      '<span class="interactive-placeholder__icon" aria-hidden="true">⚠️</span>' +
+      '<p class="interactive-placeholder__label">No se reconoce ese link de YouTube</p>' +
+      '<p class="interactive-placeholder__hint">Revisá que sea un link completo, por ejemplo https://youtu.be/... o https://www.youtube.com/watch?v=...</p>' +
+      '</div>';
+  }
+
+  var titleHtml = safeTitle ? '<h3 class="interactive-title">Video: ' + escapeHtml(safeTitle) + '</h3>' : '';
+  var iframeTitle = escapeAttr(safeTitle || 'Video de YouTube');
+  return titleHtml +
+    '<div class="interactive-placeholder has-video">' +
+    '<iframe src="https://www.youtube.com/embed/' + videoId + '" title="' + iframeTitle + '" ' +
+    'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+    'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' +
+    '</div>';
+}
+
+// Si TODOS los renglones no vacíos de un párrafo empiezan con "- ", se
+// arma una lista con viñetas en vez de un párrafo corrido (ver
+// documentación arriba).
+function isListChunk(p) {
+  var lines = p.split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
+  return lines.length > 0 && lines.every(function (l) { return /^-[ \t]+/.test(l); });
+}
+
+function renderListBlock(p) {
+  var lines = p.split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
+  var html = '<ul class="content-list">';
+  lines.forEach(function (l) {
+    html += '<li>' + renderInline(l.replace(/^-[ \t]+/, '')) + '</li>';
+  });
+  html += '</ul>';
+  return html;
+}
 
 // Parsea contenido.txt: bloques que empiezan con "## clave" seguidos de texto.
 function parseContent(raw) {
@@ -132,8 +265,13 @@ function applyContent(data) {
       el.innerHTML = '';
       paragraphs.forEach(function (p, i) {
         var soloImage = p.match(SOLO_IMAGE_RE);
-        if (soloImage) {
+        var video = p.match(VIDEO_RE);
+        if (video) {
+          el.insertAdjacentHTML('beforeend', renderVideoBlock(video[1], video[2]));
+        } else if (soloImage) {
           el.insertAdjacentHTML('beforeend', renderImageBlock(soloImage[1], soloImage[2], soloImage[3]));
+        } else if (isListChunk(p)) {
+          el.insertAdjacentHTML('beforeend', renderListBlock(p));
         } else {
           var pEl = document.createElement('p');
           if (i === 0 && el.getAttribute('data-lead') === 'true') {
