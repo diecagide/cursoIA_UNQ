@@ -59,6 +59,13 @@
    completes el título y el link, se muestra un recuadro de "pendiente"
    (como con las imágenes). Si el link no se reconoce como de YouTube, se
    avisa en el recuadro en vez de romper la página.
+
+   Debajo de cada video se agrega automáticamente un avisito ("Si se ve
+   borroso, tocá el ⚙️...") — la calidad con la que arranca un video la
+   decide YouTube (según la conexión de quien mira), no esta página, y
+   ya no existe una forma soportada de forzar 1080p por defecto. Esto es
+   automático: no hay que escribir nada en contenido.txt para que
+   aparezca.
    ========================================================================= */
 
 /* ---------- 1. Cargar y aplicar el texto de contenido.txt ---------- */
@@ -196,7 +203,8 @@ function renderVideoBlock(title, url) {
     '<iframe src="https://www.youtube.com/embed/' + videoId + '" title="' + iframeTitle + '" ' +
     'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
     'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' +
-    '</div>';
+    '</div>' +
+    '<p class="video-quality-tip">💡 Si el video se ve borroso, tocá el ⚙️ (abajo a la derecha, dentro del video) y elegí 1080p o la calidad más alta disponible — YouTube no deja fijar eso desde acá. Con la cuenta de Google iniciada, después lo recuerda solo para los próximos videos.</p>';
 }
 
 // Si TODOS los renglones no vacíos de un párrafo empiezan con "- ", se
