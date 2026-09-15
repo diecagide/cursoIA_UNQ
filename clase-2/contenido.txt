@@ -56,7 +56,7 @@ Prompt: Un cuaderno universitario abierto con escritura manuscrita, tachaduras y
 
 En esta clase nos metemos de lleno en el terreno del texto. Hay algo que ya sabemos y es que, de todos los formatos que genera la IA, este es el que puede presentar mayores desafíos dentro de la universidad: puede generar un documento extenso (trabajo práctico, escrito académico, proyecto de investigación, etc.) con la extensión que le indique, estructura específica, conclusiones y bibliografía en cuestión de segundos.
 
-Esa posibilidad puede necesitar un acompañamiento que involucre dos procesos de validación distintos: por un lado, el de **validar la información que la IA nos entrega**: ¿es correcta? ¿la fuente existe? Por otro lado, el de **validar la voz propia del estudiante**, es decir, si el texto que produce responde a la subjetividad de quien lo pidió: ¿refleja su manera de pensar y de escribir, o es una voz genérica y despoblada de toda subjetividad?
+Esa posibilidad exige acompañar al estudiante en dos frentes bien distintos. Uno es **validar la información que la IA entrega**: ¿es correcta?, ¿la fuente existe? El otro es **validar la voz propia**: si el texto que produce responde a la subjetividad de quien lo pidió, si refleja su manera de pensar y de escribir, o si termina siendo una voz genérica, despoblada de toda subjetividad.
 
 A partir de esto, la idea de la clase 2 es que podamos:
 
@@ -116,13 +116,13 @@ Vale la pena detenerse en Perplexity, porque no es un chatbot generalista como l
 En general, estas plataformas hacen las siguientes cosas:
 
 - **Redactar texto en distintos formatos**: un correo, un informe, un guion, una consigna, un resumen.
-- **Escribir código** en cualquier lenguaje de programación, explicarlo o corregir errores.
-- **Trabajar con archivos que le damos**: artículos, imágenes, tablas, audio. Podemos subir uno o varios y pedirle que los analice, los compare o extraiga información de ellos.
-- **Buscar en internet**: la mayoría ya puede consultar páginas en tiempo real, más allá de lo que aprendió durante el entrenamiento.
-- **Analizar datos**: hacer cálculos sobre una planilla, cruzar columnas, generar un gráfico.
-- **Traducir** entre idiomas, y también entre registros: pasar un texto técnico a uno divulgativo, o al revés.
-- **Transcribir audio y hablar**: pasar una grabación a texto, o mantener una conversación por voz.
-- **Generar imágenes**, aunque no todas las plataformas lo hacen ni todas lo hacen igual de bien. De esto nos ocupamos en la próxima clase.
+- **Escribir código**, en cualquier lenguaje, explicarlo o corregir errores.
+- Trabajar con **archivos que le adjuntemos** —artículos, imágenes, tablas, audio— y pedirle que los analice, los compare o extraiga información de ellos.
+- Buscar en internet: la mayoría ya consulta páginas en tiempo real, no solo lo que aprendió durante el entrenamiento.
+- Analizar datos: hacer cálculos sobre una planilla, cruzar columnas, armar un gráfico.
+- Traducir entre idiomas, y también entre registros: pasar un texto técnico a uno divulgativo, o al revés.
+- Transcribir audio y sostener una conversación por voz.
+- Generar imágenes, aunque no todas las plataformas lo hacen, ni todas igual de bien (de esto nos ocupamos en la próxima clase).
 
 
 ## la_interfaz
@@ -149,13 +149,13 @@ Si bien un prompt puede escribirse de manera rústica y torpe, con errores y pro
 Decirle al modelo desde qué lugar tiene que responder —"Eres un asistente para…"—, en vez de dejarlo actuar de manera genérica. Un rol bien definido orienta el tono y el criterio con el que arma la respuesta.
 
 ## elemento_contexto
-Contarle para qué se necesita el texto o en qué situación se enmarca el pedido, en vez de tirar la instrucción sin más. Ese marco es lo que le permite ajustar la respuesta a lo que realmente hace falta, y no a una explicación genérica.
+Contarle para qué se necesita el texto o en qué situación se enmarca el pedido, sin tirar la instrucción sin más. Ese marco es lo que le permite ajustar la respuesta a lo que realmente hace falta, y no a una explicación genérica.
 
 ## elemento_accion
 Un verbo en imperativo —explicá, analizá, compará, resumí, redactá— seguido de aquello sobre lo que tiene que operar. Un prompt que arranca con una acción clara orienta mejor al modelo que una pregunta vaga.
 
 ## elemento_focalizacion
-Precisar qué aspecto puntual del tema tiene que desarrollar, en vez de dejarlo abierto a cualquier ángulo posible.
+Precisar qué aspecto puntual del tema tiene que desarrollar, para no dejarlo abierto a cualquier ángulo posible.
 
 ## elemento_restricciones
 Aclarar qué evitar o qué priorizar en la respuesta —el tono, el destinatario, la extensión, una época o un recorte bibliográfico determinado.
@@ -247,10 +247,10 @@ Prompt: Una representación de los posibles usos de la IA: producir texto, estru
 ## producir_texto
 Sobre la producción, un LLM puede hacer varias cosas:
 
-- **Generación**: producir un texto nuevo, como un borrador o un primer acercamiento a un tema. "Escribí un párrafo breve que desarrolle esta idea: [tu idea suelta].
-- **Reformulación**: reescribir un texto existente cambiando el registro, el tono o el destinatario. "Reformulá este párrafo para que lo entienda alguien sin formación previa en el tema."
-- **Síntesis**: condensar un texto extenso en sus ideas centrales. "Sintetizá los argumentos centrales de este texto en un párrafo de diez líneas."
-- **Revisión**: corregir gramática, claridad o coherencia de algo ya escrito. "Revisá la claridad y la cohesión de este párrafo, sin cambiar su sentido."
+- **Generación**: producir un texto nuevo, un borrador o un primer acercamiento a un tema. Por ejemplo: "Escribí un párrafo breve que desarrolle esta idea: [tu idea suelta]."
+- **Reformulación**: reescribir un texto existente cambiando el registro, el tono o el destinatario, como en "Reformulá este párrafo para que lo entienda alguien sin formación previa en el tema."
+- **Síntesis**: condensar un texto extenso en sus ideas centrales — "Sintetizá los argumentos centrales de este texto en un párrafo de diez líneas."
+- **Revisión**: corregir gramática, claridad o coherencia de algo ya escrito. Un pedido típico: "Revisá la claridad y la cohesión de este párrafo, sin cambiar su sentido."
 
 
 ## estructurar_info
@@ -263,7 +263,7 @@ Lo que el modelo devuelve no tiene por qué ser necesariamente un texto en prosa
 ## traducir
 Los LLM traducen con un nivel de aproximación muy alto (inglés, ruso, chino, vietnamita, o la lengua que sea). Esto abre bibliografía que de otro modo queda afuera del alcance de los estudiantes, y permite trabajar con fuentes en su idioma original.
 
-**Importante:** la calidad no es pareja en todos los idiomas, y baja en aquellos que tuvieron menos presencia en el entrenamiento, algo que ya mencionamos cuando hablamos de los datos con los que se entrenaron estos modelos.
+Ojo con un punto: la calidad no es pareja en todos los idiomas, y baja en aquellos que tuvieron menos presencia en el entrenamiento — algo que ya mencionamos cuando hablamos de los datos con los que se entrenaron estos modelos.
 
 
 ## archivos_intro
@@ -315,8 +315,8 @@ Leer un texto académico no es recibir información de manera pasiva: es reconst
 Al leer es habitual encontrarse con corrientes, autores o marcos teóricos que el texto menciona sin desarrollar, dando por sentado que el lector ya los conoce. Ahí un LLM sirve para tres tareas:
 
 - **Reponer información ausente**: completar lo que el texto menciona pero no explica.
-- **Reconstruir redes de articulación**: identificar con quién dialoga o discute el texto, qué posiciones están en tensión.
-- **Detectar y clarificar conceptos**: aportar ejemplos o aplicaciones concretas que ayuden a entender una noción abstracta.
+- **Reconstruir redes de articulación**: identificar con quién dialoga o discute el texto, y qué posiciones están en tensión.
+- **Detectar y clarificar conceptos**, aportando ejemplos o aplicaciones concretas que ayuden a entender una noción abstracta.
 
 ## reponer_3
 Tomemos de ejemplo el siguiente párrafo, perteneciente a las conclusiones del capítulo 1 del texto "La construcción sociocognitiva entre iguales", de Roselli:
@@ -410,9 +410,9 @@ En el siguiente video vamos a ver cómo funciona:
 
 
 ## voz_propia_1
-Es fundamental que profundicemos con nuestros estudiantes la importancia de que puedan construir su propia voz. Lo que entrega al final, sea un texto, una imagen, un video, tiene que poder reconocerse como suyo: su pensamiento, su mirada, su manera particular de decir las cosas y no como una reproducción más o menos disimulada de lo que generó una herramienta. Una estrategia posible en nuestros intercambios con los y las estudianrtes es que puedan explicitar qué están buscando y por qué recurren a esta herramienta en particular para hacerlo.
+Vale la pena trabajar con los estudiantes la importancia de construir su propia voz. Lo que entregan al final —sea un texto, una imagen, un video— tiene que poder reconocerse como suyo: su pensamiento, su mirada, su manera particular de decir las cosas, y no una reproducción más o menos disimulada de lo que generó una herramienta. Una estrategia posible en los intercambios con los y las estudiantes es que puedan explicitar qué están buscando y por qué recurren a esta herramienta en particular para hacerlo.
 
-Es importante que los estudiantes construyan una mirada crítica que les permita analizar si el resultado de la interacción se ajusta a su mirada o si a la inversa, están adaptando su mirada a lo que les entregó la IA.
+Conviene que los estudiantes construyan una mirada crítica para analizar si el resultado de la interacción se ajusta a su mirada, o si —a la inversa— terminan adaptando su mirada a lo que les entregó la IA.
 
 
 ## voz_propia_imagen
@@ -422,11 +422,11 @@ Prompt: Una playa de arena húmeda, con varias huellas de pasos que atraviesan l
 
 
 ## voz_propia_list
-- **Evaluar el proceso, no solo el producto.** Entregas por etapas: un mapa conceptual inicial, un borrador, la versión final con justificación de los cambios.
-- **Instancias orales breves.** Preguntas sobre las decisiones tomadas: por qué eligió ese recorte, por qué descartó tal autor, qué le costó más.
-- **Anexo de transparencia.** Si se usó IA, que se documente: qué prompts usó, qué le devolvió el modelo, qué hizo con eso y por qué.
-- **La IA como objeto de auditoría.** Darles una salida generada por IA para que la critiquen: que detecten las alucinaciones, verifiquen las fuentes, señalen los sesgos. Se evalúa el juicio disciplinar, que es justamente lo que no se puede delegar.
-- **Acordar las reglas desde el principio.** Como mencioné en la clase 1, delimitar en qué etapas de la cursada o del proceso de producción puede utilizarse la IA y en cuáles no.
+- **Evaluar el proceso, no solo el producto**: entregas por etapas —un mapa conceptual inicial, un borrador, la versión final con justificación de los cambios.
+- **Instancias orales breves**, con preguntas sobre las decisiones tomadas: por qué eligió ese recorte, por qué descartó tal autor, qué le costó más.
+- **Anexo de transparencia.** Si se usó IA, que quede documentado: qué prompts usó, qué le devolvió el modelo, qué hizo con eso y por qué.
+- **La IA como objeto de auditoría**: darles una salida generada por IA para que la critiquen, que detecten las alucinaciones, verifiquen las fuentes, señalen los sesgos. Ahí se evalúa el juicio disciplinar, que es justamente lo que no se puede delegar.
+- **Acordar las reglas desde el principio**, delimitando (como mencioné en la clase 1) en qué etapas de la cursada o del proceso de producción puede utilizarse la IA y en cuáles no.
 
 
 ## cierre_1
