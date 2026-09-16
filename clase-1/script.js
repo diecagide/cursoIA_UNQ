@@ -337,24 +337,42 @@ function initLightbox() {
   lightbox.setAttribute('aria-hidden', 'true');
   lightbox.innerHTML =
     '<button class="lightbox__close" type="button" aria-label="Cerrar imagen">✕</button>' +
-    '<img class="lightbox__img" src="" alt="">';
+    '<div class="lightbox__frame">' +
+    '<img class="lightbox__img" src="" alt="">' +
+    '<p class="lightbox__caption"></p>' +
+    '</div>';
   document.body.appendChild(lightbox);
 
   var lightboxImg = lightbox.querySelector('.lightbox__img');
+  var lightboxCaption = lightbox.querySelector('.lightbox__caption');
 
   function openLightbox(img) {
     lightboxImg.src = img.currentSrc || img.src;
     lightboxImg.alt = img.alt || '';
+
+    // Si la imagen tiene epígrafe (Modelo/Prompt) en su .img-block, lo
+    // mostramos sobreimpreso abajo de la imagen agrandada.
+    var block = img.closest('.img-block');
+    var captionEl = block ? block.querySelector('.img-caption') : null;
+    if (captionEl && captionEl.textContent.trim()) {
+      lightboxCaption.innerHTML = captionEl.innerHTML;
+      lightbox.classList.add('has-caption');
+    } else {
+      lightboxCaption.innerHTML = '';
+      lightbox.classList.remove('has-caption');
+    }
+
     lightbox.classList.add('is-open');
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.classList.add('lightbox-open');
   }
 
   function closeLightbox() {
-    lightbox.classList.remove('is-open');
+    lightbox.classList.remove('is-open', 'has-caption');
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('lightbox-open');
     lightboxImg.src = '';
+    lightboxCaption.innerHTML = '';
   }
 
   // Delegado en document: las imágenes de contenido.txt se insertan recién
@@ -365,8 +383,10 @@ function initLightbox() {
       openLightbox(img);
       return;
     }
-    // Un clic afuera de la imagen agrandada (fondo oscuro o la ✕) cierra el popup.
-    if (lightbox.classList.contains('is-open') && !e.target.closest('.lightbox__img')) {
+    // Un clic afuera de la imagen agrandada (fondo oscuro o la ✕) cierra el
+    // popup. Un clic sobre el epígrafe sobreimpreso no debe cerrarlo, por
+    // eso el chequeo es contra todo el "cuadro" (imagen + epígrafe).
+    if (lightbox.classList.contains('is-open') && !e.target.closest('.lightbox__frame')) {
       closeLightbox();
     }
   });
