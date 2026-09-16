@@ -115,6 +115,7 @@ a:hover { color: var(--color-primary); }
   color: #8f9ac2;
   margin: 0;
   font-style: italic;
+  white-space: nowrap;
 }
 
 .site-nav__divider {
