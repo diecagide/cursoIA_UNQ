@@ -382,6 +382,16 @@ section.block:first-of-type {
 .interactive-placeholder__label { font-weight: 600; margin: 0 0 4px; }
 .interactive-placeholder__hint { font-size: .82rem; margin: 0; }
 
+/* Tamaño del iframe para recursos "pendiente" que no son video de YouTube
+   (por ahora, Genially) — se pegan directo en index.html. La regla de acá
+   abajo (.has-video) pisa esto para los videos, que usan otra proporción. */
+.interactive-placeholder iframe {
+  width: 100%;
+  min-height: 420px;
+  border: none;
+  border-radius: 8px;
+}
+
 /* Cuando ya hay un video real (generado por @video[Título](link) en
    contenido.txt), se saca el marco de "pendiente" — mismo criterio que
    .img-placeholder.has-image con las imágenes. */
@@ -1310,6 +1320,57 @@ section.block:first-of-type {
 
   .class-header h1 { font-size: 1.6rem; }
 }
+
+/* ---------- Lightbox: agrandar imágenes de contenido al hacer clic ---------- */
+/* Se arma en JS (initLightbox en script.js) y se agrega una sola vez al
+   final del <body>. Solo las imágenes de contenido (las que suben con
+   ![...](...) en contenido.txt) son "zoomables" — logos e íconos chicos
+   quedan afuera a propósito. */
+
+.img-placeholder.has-image img,
+.content-img {
+  cursor: zoom-in;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background: rgba(20, 18, 15, .88);
+}
+
+.lightbox.is-open { display: flex; }
+
+.lightbox__img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 6px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .4);
+  cursor: default;
+}
+
+.lightbox__close {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, .15);
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox__close:hover { background: rgba(255, 255, 255, .28); }
+
+body.lightbox-open { overflow: hidden; }
 
 /* ---------- Variante de color por clase ---------- */
 /* Mismo archivo para todas las clases: el degradé de la barra lateral

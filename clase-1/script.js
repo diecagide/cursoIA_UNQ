@@ -66,6 +66,13 @@
    ya no existe una forma soportada de forzar 1080p por defecto. Esto es
    automático: no hay que escribir nada en contenido.txt para que
    aparezca.
+
+   LIGHTBOX (agrandar una imagen al hacer clic):
+   Cualquier imagen de contenido que subas (con la sintaxis de arriba)
+   ya se puede agrandar con un clic — se abre en un popup sobre fondo
+   oscuro, y se cierra tocando afuera, la ✕ o la tecla Escape. Es
+   automático: no hay que escribir nada en contenido.txt para que
+   funcione, y no aplica a los logos ni íconos chicos de la página.
    ========================================================================= */
 
 /* ---------- 1. Cargar y aplicar el texto de contenido.txt ---------- */
@@ -204,7 +211,7 @@ function renderVideoBlock(title, url) {
     'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
     'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' +
     '</div>' +
-    '<p class="video-quality-tip">💡 Si el video se ve borroso, tocá el ⚙️ (abajo a la derecha, dentro del video) y elegí 1080p o la calidad más alta disponible — YouTube no deja fijar eso desde acá. Con la cuenta de Google iniciada, después lo recuerda solo para los próximos videos.</p>';
+    '<p class="video-quality-tip">💡 Arriba a la derecha del video están los íconos de subtítulos (CC) y de configuración (⚙️). Si se ve borroso, tocá ⚙️ y elegí 1080p o la calidad más alta disponible; desde CC podés activar o desactivar los subtítulos.</p>';
 }
 
 // Si TODOS los renglones no vacíos de un párrafo empiezan con "- ", se
@@ -322,8 +329,56 @@ function loadContent() {
 
 /* ---------- 2. Menú: abrir/cerrar en celular + sección activa ---------- */
 
+/* ---------- 3. Lightbox: agrandar imágenes de contenido al hacer clic ---------- */
+
+function initLightbox() {
+  var lightbox = document.createElement('div');
+  lightbox.className = 'lightbox';
+  lightbox.setAttribute('aria-hidden', 'true');
+  lightbox.innerHTML =
+    '<button class="lightbox__close" type="button" aria-label="Cerrar imagen">✕</button>' +
+    '<img class="lightbox__img" src="" alt="">';
+  document.body.appendChild(lightbox);
+
+  var lightboxImg = lightbox.querySelector('.lightbox__img');
+
+  function openLightbox(img) {
+    lightboxImg.src = img.currentSrc || img.src;
+    lightboxImg.alt = img.alt || '';
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lightbox-open');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lightbox-open');
+    lightboxImg.src = '';
+  }
+
+  // Delegado en document: las imágenes de contenido.txt se insertan recién
+  // después de cargar el archivo, así que todavía no existen en este punto.
+  document.addEventListener('click', function (e) {
+    var img = e.target.closest('.img-placeholder.has-image img, .content-img');
+    if (img) {
+      openLightbox(img);
+      return;
+    }
+    // Un clic afuera de la imagen agrandada (fondo oscuro o la ✕) cierra el popup.
+    if (lightbox.classList.contains('is-open') && !e.target.closest('.lightbox__img')) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   loadContent();
+  initLightbox();
 
   var nav = document.getElementById('siteNav');
   var toggle = document.getElementById('navToggle');
