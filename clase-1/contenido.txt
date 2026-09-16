@@ -59,18 +59,18 @@ Hola a todes. Les doy la bienvenida a "La imaginación al poder: IA generativa y
 
 El nombre del curso refiere a que la imaginación es una dimensión esencialmente humana, y nuestro objetivo acá no es reemplazarla por un algoritmo, sino aprender a integrar estas herramientas en nuestras producciones y prácticas de enseñanza sin cederles ese lugar. Nos interesa pensar la IA generativa como una aliada en los procesos creativos y como una asistente de trabajo que pueda ayudarnos a agilizar tareas, pero nunca como una máquina que decida por nosotros qué queremos decir o mostrar.
 
-Este curso está pensado para docentes de las cuatro unidades académicas de la universidad que quieran conocer algunas herramientas de IA y sus posibilidades, e incorporarlas a su propia práctica de enseñanza, acompañando a sus estudiantes en un uso útil y estratégico de la IA generativa. No importa si ya las vienen usando o si es la primera vez que se acercan al tema. La propuesta está armada para que cada cual pueda avanzar a su ritmo.
+Este curso está pensado para docentes de las cuatro unidades académicas de la universidad que quieran conocer algunas herramientas de IA, sus posibles usos y posibilidades, e incorporarlas a su propia práctica de enseñanza, acompañando a sus estudiantes en un uso útil y estratégico de la IA generativa. No importa si ya las vienen usando o si es la primera vez que se acercan al tema. La propuesta está armada para que cada cual pueda avanzar a su ritmo.
 
 ![Banner del curso](images/01-imagen-curso.jpg)
 Modelo: Nano Banana pro
 Prompt: Un banner de temática IA para un curso de Inteligencia Artificial para docentes universitarios de Artes, Ciencias Sociales, Economía y Ciencia y Tecnología. Debe representar en distintos recuadros las distintas unidades académicas, de manera sobria y representativa. La IA debe estar presente como elemento común entre todas las áreas. Que no tenga textos ni agregados típicos de una infografía.
 
 ## bienvenida_2
-A lo largo de cinco clases vamos a recorrer un camino que va de lo general a lo particular. En esta primera clase nos detenemos en los modelos y las plataformas que existen hoy, usos y cuestiones generales. En la Clase 2 nos metemos de lleno con la escritura de prompts y la producción de texto. En las Clases 3 y 4, con imagen, video y otros formatos. Y en la Clase 5 hacemos una síntesis e integramos varios modelos en un mismo proceso de producción.
+A lo largo de cinco clases vamos a recorrer un camino que va de lo más general a lo más específico. En esta primera clase nos detenemos en los modelos y las plataformas que existen hoy, usos y cuestiones generales. En la Clase 2 nos metemos de lleno con la escritura de prompts y la producción de texto. En las Clases 3 y 4, con imagen, video y otros formatos. Y en la Clase 5 hacemos una síntesis e integramos varios modelos en un mismo proceso de producción.
 
-Cada clase combina una instancia teórica con una práctica, donde van a poder aplicar lo que fuimos viendo con ejercicios concretos, pensados también como recursos que puedan después llevar a sus propias aulas. Va a haber, además, un foro para intercambiar dudas, ideas y experiencias con el resto del grupo.
+Cada clase combina una instancia teórica —la que están leyendo ahora mismo— con una instancia práctica, donde van a poder poner en juego lo que fuimos viendo con ejercicios concretos, pensados también como recursos que puedan después llevar a sus propias aulas. Va a haber, además, un foro para intercambiar dudas, ideas y experiencias con el resto del grupo.
 
-No es necesario tener ningún conocimiento técnico previo para este curso. El recorrido está pensado para ir probando estas herramientas a medida que avanzamos, y así construir una mirada propia sobre sus posibilidades y sus límites. Empecemos
+No hace falta ningún conocimiento técnico previo para este curso. Alcanza con las ganas de meterse y probar, dispuestos a equivocarse en el camino, para ir construyendo una mirada propia sobre las posibilidades y los límites de estas herramientas. Empecemos.
 
 ![Collage compuesto](images/09-imagen.jpg)
 Imagen compuesta en Adobe Photoshop a partir de dos generaciones de IA.
@@ -177,7 +177,7 @@ Volveremos sobre este punto en las siguientes clases.
 El campo de la IA generativa cambia todo el tiempo, así que este panorama es apenas una fotografía del presente —es muy probable que para cuando terminemos el curso ya haya novedades que hoy ni mencionamos. Aun así, sirve tener un mapa general de quiénes son los actores principales hoy:
 
 ## company_openai
-Es la empresa que popularizó todo esto con el lanzamiento de ChatGPT. Su familia de modelos GPT se usa principalmente para trabajar con texto, pero la empresa también desarrolla modelos con capacidades de generación y comprensión de imágenes, audio y video, como Sora para la generación de video.
+Es la empresa que popularizó todo esto con el lanzamiento de ChatGPT. Su familia de modelos GPT se usa principalmente para trabajar con texto, pero la empresa también desarrolla modelos con capacidades de generación y comprensión de imágenes, audio y video.
 
 ## company_anthropic
 Desarrolla Claude, otro modelo conversacional de texto, que se destaca por sostener conversaciones largas y complejas. Desde sus orígenes, Anthropic puso especial énfasis en la "seguridad" de sus modelos, entendida también como una preocupación por la ética: cómo lograr que las respuestas sean confiables y cómo evitar usos dañinos, sin perder de vista los límites del modelo.
