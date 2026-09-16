@@ -48,15 +48,15 @@ romper la página.
 
 
 ## bienvenida_1
-Bienvenides a la segunda clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En la primera clase vimos la diferencia entre un modelo y una plataforma, algunos usos generales, características de las empresas más conocidas, modelos privados vs código abierto, límites, etc.
+Bienvenidas y bienvenidos a la segunda clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En la primera clase vimos la diferencia entre un modelo y una plataforma, algunos usos generales, características de las empresas más conocidas, modelos privados vs código abierto, límites, etc.
 
 ![](images/clase2_01_bienvenida.jpg)
 Modelo: Nano Banana Pro (Gemini 3)
 Prompt: Un cuaderno universitario abierto con escritura manuscrita, tachaduras y correcciones. Todo el cuaderno y su entorno tienen una estética de cómic contemporáneo tipo pop Spider-Verse: colores vibrantes, tramas gráficas y contrastes fuertes. Desde las páginas surgen sutilmente fragmentos de texto y elementos digitales que se integran con el fondo, representando la IA aplicada al texto. Primer plano nítido, fondo desenfocado, iluminación dramática. Debe tener un texto que diga IA TEXTO.
 
-En esta clase nos metemos de lleno en el terreno del texto. Hay algo que ya sabemos y es que, de todos los formatos que genera la IA, este es el que puede presentar mayores desafíos dentro de la universidad: puede generar un documento extenso (trabajo práctico, escrito académico, proyecto de investigación, etc.) con la extensión que le indique, estructura específica, conclusiones y bibliografía en cuestión de segundos.
+En esta clase nos metemos de lleno en el terreno del texto. De todos los formatos que genera la IA, este es el que puede presentar mayores desafíos dentro de la universidad, porque escribir es una de las tareas más habituales de la vida académica. Un modelo de generación de texto puede producir un documento extenso (trabajo práctico, escrito académico, proyecto de investigación, etc.) con la extensión que le indiquemos, una estructura específica, conclusiones y bibliografía, en cuestión de segundos. Esa misma facilidad o inmediatez es lo que abre el riesgo de que termine reemplazando la mirada propia en lugar de acompañarla.
 
-Esa posibilidad puede necesitar un acompañamiento que involucre dos procesos de validación distintos: por un lado, el de **validar la información que la IA nos entrega**: ¿es correcta? ¿la fuente existe? Por otro lado, el de **validar la voz propia del estudiante**, es decir, si el texto que produce responde a la subjetividad de quien lo pidió: ¿refleja su manera de pensar y de escribir, o es una voz genérica y despoblada de toda subjetividad?
+Esa posibilidad puede necesitar un seguimiento que involucre dos procesos de validación distintos: por un lado, el de **validar la información que la IA nos entrega**: ¿es correcta? ¿la fuente existe? Por otro lado, el de **validar la voz propia del estudiante**, es decir, si el texto que produce responde a la subjetividad de quien lo pidió: ¿refleja su manera de pensar y de escribir, o es una voz genérica y despoblada de toda subjetividad?
 
 A partir de esto, la idea de la clase 2 es que podamos:
 
