@@ -48,7 +48,7 @@ romper la página.
 
 
 ## bienvenida_1
-Bienvenidas y bienvenidos a la segunda clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En la primera clase vimos la diferencia entre un modelo y una plataforma, algunos usos generales, características de las empresas más conocidas, modelos privados vs código abierto, límites, etc.
+Bienvenides a la segunda clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En la primera clase vimos la diferencia entre un modelo y una plataforma, algunos usos generales, características de las empresas más conocidas, modelos privados vs código abierto, límites, etc.
 
 ![](images/clase2_01_bienvenida.jpg)
 Modelo: Nano Banana Pro (Gemini 3)
