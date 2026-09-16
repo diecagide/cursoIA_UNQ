@@ -48,13 +48,13 @@ romper la página.
 
 
 ## bienvenida_1
-Bienvenidas y bienvenidos a la segunda clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En la primera clase vimos la diferencia entre un modelo y una plataforma, algunos usos generales, características y límites.
+Bienvenidas y bienvenidos a la segunda clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En la primera clase vimos la diferencia entre un modelo y una plataforma, algunos usos generales, características de las empresas más conocidas, modelos privados vs código abierto, límites, etc.
 
 ![](images/clase2_01_bienvenida.jpg)
 Modelo: Nano Banana Pro (Gemini 3)
-Prompt: Un cuaderno universitario abierto con escritura manuscrita, tachaduras y correcciones. Todo el cuaderno y su entorno tienen una estética de cómic contemporáneo tipo pop Spider-Verse: colores vibrantes, tramas gráficas y contrastes fuertes. Desde las páginas surgen sutilmente fragmentos de texto y elementos digitales que se integran con el fondo, representando la IA aplicada al texto. Primer plano nítido, fondo desenfocado, iluminación dramática. Debe tener un texto que diga IA TEXTO. 
+Prompt: Un cuaderno universitario abierto con escritura manuscrita, tachaduras y correcciones. Todo el cuaderno y su entorno tienen una estética de cómic contemporáneo tipo pop Spider-Verse: colores vibrantes, tramas gráficas y contrastes fuertes. Desde las páginas surgen sutilmente fragmentos de texto y elementos digitales que se integran con el fondo, representando la IA aplicada al texto. Primer plano nítido, fondo desenfocado, iluminación dramática. Debe tener un texto que diga IA TEXTO.
 
-En esta clase nos metemos de lleno en el terreno del texto. Hay algo que ya sabemos y es que, de todos los formatos que genera la IA, este es el que puede presentar mayores desafíos dentro de la universidad: puede generar un documento extenso (trabajo práctico, escrito académico, proyecto de investigación, etc.) con la extensión que le indique, estructura específica, conclusiones y bibliografía en cuestión de segundos.
+En esta clase nos metemos de lleno en el terreno del texto. Hay algo que ya sabemos y es que, de todos los formatos que genera la IA, este es el que puede presentar mayores desafíos dentro de la universidad. Puede generar un documento extenso (trabajo práctico, escrito académico, proyecto de investigación, etc.) con la extensión que le indique, estructura específica, conclusiones y bibliografía en cuestión de segundos.
 
 Esa posibilidad exige acompañar al estudiante en dos frentes bien distintos. Uno es **validar la información que la IA entrega**: ¿es correcta?, ¿la fuente existe? El otro es **validar la voz propia**: si el texto que produce responde a la subjetividad de quien lo pidió, si refleja su manera de pensar y de escribir, o si termina siendo una voz genérica, despoblada de toda subjetividad.
 
@@ -80,7 +80,7 @@ Un LLM es un modelo entrenado para comprender y generar lenguaje humano en forma
 
 
 ## bloquea_sesgo_datos
-No sabemos en qué proporción, en qué idiomas ni de qué regiones. Y eso importa, porque es el terreno donde crecen los sesgos de los que hablamos en la clase anterior. Algo que sí está medido: estos modelos rinden mejor en inglés que en cualquier otro idioma, y esa diferencia aparece en las respuestas.
+No sabemos en qué proporción, en qué idiomas ni de qué regiones. Y eso importa, porque es el terreno donde crecen los sesgos de los que hablamos en la clase anterior. Algo que sí está medido. Estos modelos rinden mejor en inglés que en cualquier otro idioma, y esa diferencia aparece en las respuestas.
 
 
 ## bloquea_sesgo_imagen
@@ -89,13 +89,13 @@ Modelo: Nano Banana Pro (Gemini 3)
 Prompt: Una representación de un modelo LLM de IA, “alimentado” con millones de textos. Estilo historieta cómica, cartoon, colorido y dinámico.
 
 ## bloquea_intro_2
-Cuando escribimos un prompt, el modelo no entiende lo que le pedimos como lo entendemos nosotros. Lo que hace es calcular, palabra por palabra, cuál es la continuación más probable de eso que escribimos. Algo parecido al teclado predictivo del celular, que nos sugiere cómo seguir la frase, pero a otra escala: mira patrones de millones de textos; y en vez de tirar una palabra suelta, encadena una atrás de otra hasta armar la respuesta completa, lógica, verosímil… ¿Validada?
+Cuando escribimos un prompt, el modelo no entiende lo que le pedimos como lo entendemos nosotros. Lo que hace es calcular, palabra por palabra, cuál es la continuación más probable de eso que escribimos. Algo parecido al teclado predictivo del celular, que nos sugiere cómo seguir la frase, pero a otra escala. Mira patrones de millones de textos, y en vez de tirar una palabra suelta, encadena una atrás de otra hasta armar la respuesta completa, lógica, verosímil… ¿Validada?
 
-Para ser precisos: no predice palabras enteras sino tokens (hablamos de ellos la clase anterior), que pueden ser fragmentos de palabras o signos de puntuación.
+Para ser precisos, no predice palabras enteras sino tokens (hablamos de ellos la clase anterior), que pueden ser fragmentos de palabras o signos de puntuación.
 
 
 ## bloquea_tokenizer
-Se puede medir cuántos tokens consumen las palabras que escribimos a través del [Tokenizer](https://platform.openai.com/tokenizer), una herramienta gratuita de OpenAI: pegás un texto y te muestra en qué tokens se descompone.
+Se puede medir cuántos tokens consumen las palabras que escribimos a través del [Tokenizer](https://platform.openai.com/tokenizer), una herramienta gratuita de OpenAI. Pegás un texto y te muestra en qué tokens se descompone.
 
 
 ## bloquea_intro_cont
@@ -109,7 +109,7 @@ Ya nombramos algunas plataformas en la primera clase. Antes de avanzar con la es
 
 
 ## panorama_llms_2
-Vale la pena detenerse en Perplexity, porque no es un chatbot generalista como los demás: está pensada como un motor de búsqueda conversacional, y cada respuesta que da viene acompañada de los enlaces a las fuentes que usó para construirla. Esto no la vuelve infalible, también puede citar mal o interpretar una fuente de manera forzada, pero facilita bastante la primera validación de la que hablamos en la bienvenida: la de la información.
+Vale la pena detenerse en Perplexity, porque no es un chatbot generalista como los demás. Está pensada como un motor de búsqueda conversacional, y cada respuesta que da viene acompañada de los enlaces a las fuentes que usó para construirla. Esto no la vuelve infalible, también puede citar mal o interpretar una fuente de manera forzada, pero facilita bastante la primera validación de la que hablamos en la bienvenida, la de la información.
 
 
 ## que_pueden_hacer
@@ -187,11 +187,11 @@ Un prompt simple es una instrucción directa, sin contexto ni delimitaciones, so
 → En los tres casos la acción y el objeto van juntos al arranque: explica el fenómeno, resume los aportes, menciona las características. La focalización, en cambio, es opcional: el primer ejemplo no la tiene —el pedido queda abierto a cualquier aspecto de la fotosíntesis—, mientras que en los otros dos acota el recorte: a la teoría del aprendizaje, en el cine.
 
 ## simple_2
-El prompt simple puede ser un buen punto de partida, pero tiene un límite: al no darle más información al modelo, es habitual que la respuesta sea genérica o enciclopédica, la primera aproximación que cualquiera podría encontrar en una búsqueda rápida.
+El prompt simple puede ser un buen punto de partida, pero tiene un límite. Al no darle más información al modelo, es habitual que la respuesta sea genérica o enciclopédica, la primera aproximación que cualquiera podría encontrar en una búsqueda rápida.
 
 
 ## medio_1
-Un prompt medio suma contexto y formato de salida a la estructura anterior. Ya no le pedimos al modelo que resuelva en el aire, sino que lo ubicamos: para quién es el texto, con qué objetivo, y en qué formato lo necesitamos.
+Un prompt medio suma contexto y formato de salida a la estructura anterior. Ya no le pedimos al modelo que resuelva en el aire, sino que lo ubicamos, pensando para quién es el texto, con qué objetivo, y en qué formato lo necesitamos.
 
 ## formula_medio
 [contexto] + [acción + objeto] + [focalización] + [formato de salida]
@@ -263,7 +263,7 @@ Lo que el modelo devuelve no tiene por qué ser necesariamente un texto en prosa
 ## traducir
 Los LLM traducen con un nivel de aproximación muy alto (inglés, ruso, chino, vietnamita, o la lengua que sea). Esto abre bibliografía que de otro modo queda afuera del alcance de los estudiantes, y permite trabajar con fuentes en su idioma original.
 
-Ojo con un punto: la calidad no es pareja en todos los idiomas, y baja en aquellos que tuvieron menos presencia en el entrenamiento — algo que ya mencionamos cuando hablamos de los datos con los que se entrenaron estos modelos.
+Ojo con un punto. La calidad no es pareja en todos los idiomas, y baja en aquellos que tuvieron menos presencia en el entrenamiento — algo que ya mencionamos cuando hablamos de los datos con los que se entrenaron estos modelos.
 
 
 ## archivos_intro
@@ -298,7 +298,7 @@ Con los otros formatos pasa algo parecido. Se puede subir:
 - una planilla con datos de una encuesta y pedir que los cruce y grafique,
 - una imagen de un texto manuscrito y pedir que lo transcriba.
 
-Acá conviene probar antes de recomendar: no todas las plataformas aceptan los mismos formatos, y el audio y el video están disponibles en menos lugares que la imagen.
+Acá conviene probar antes de recomendar. No todas las plataformas aceptan los mismos formatos, y el audio y el video están disponibles en menos lugares que la imagen.
 
 
 ## revisar_lecturas
@@ -309,7 +309,7 @@ Pensemos en un estudiante que está produciendo un trabajo de investigación, qu
 
 
 ## reponer_1
-Leer un texto académico no es recibir información de manera pasiva: es reconstruir un sentido a partir de lo que el texto ofrece, lo que ya sabemos y lo que el docente aporta como guía. En ese proceso, la IA puede sumar como fuente de reposición.
+Leer un texto académico no es recibir información de manera pasiva. Es reconstruir un sentido a partir de lo que el texto ofrece, lo que ya sabemos y lo que el docente aporta como guía. En ese proceso, la IA puede sumar como fuente de reposición.
 
 ## reponer_2
 Al leer es habitual encontrarse con corrientes, autores o marcos teóricos que el texto menciona sin desarrollar, dando por sentado que el lector ya los conoce. Ahí un LLM sirve para tres tareas:
@@ -325,7 +325,7 @@ Tomemos de ejemplo el siguiente párrafo, perteneciente a las conclusiones del c
 Justo es reconocer que el recorrido teórico que hemos hecho se refirió fundamentalmente a las corrientes neo-piagetianas y neo-vygotskianas de fuerte desarrollo europeo (aunque no exclusivamente). El gran cúmulo de investigaciones norteamericanas que hay en la materia [de las que las conocidas revisiones de Johnson y Johnson (1978, 1992), Slavin (1980) y Webb (1984) dan cuenta] son en su mayoría intentos descriptivo-correlacionales que no consideran a los factores propiamente cognitivos o no analizan el proceso de construcción cognitiva.
 
 ## reponer_4
-En este caso, el texto menciona las corrientes neo-piagetianas y neo-vygotskianas sin desarrollarlas. Una reacción posible sería pedirle al modelo una definición: "¿Qué es la corriente neo-piagetiana?". Y eso devuelve exactamente lo que devolvería una búsqueda rápida: una explicación general, desconectada de las tensiones y los debates que le interesan al texto.
+En este caso, el texto menciona las corrientes neo-piagetianas y neo-vygotskianas sin desarrollarlas. Una reacción posible sería pedirle al modelo una definición: "¿Qué es la corriente neo-piagetiana?". Y eso devuelve exactamente lo que devolvería una búsqueda rápida, una explicación general, desconectada de las tensiones y los debates que le interesan al texto.
 
 ## reponer_5
 En lugar de preguntar por una definición aislada, las preguntas podrían orientarse hacia:
@@ -354,7 +354,7 @@ Las plataformas de IA pueden equivocarse, y de hecho lo hacen con bastante frecu
 ## sift_intro
 Uno de los métodos que más se usa hoy para verificar lo que devuelve la IA es el SIFT, desarrollado por ^[Mike Caulfield](Investigador estadounidense especializado en alfabetización digital. Trabajó como director de aprendizaje híbrido y en red en la Washington State University Vancouver, y hoy es faculty member del Center for an Informed Public de la Universidad de Washington. Escribió *Web Literacy for Student Fact-Checkers* y, junto con Sam Wineburg, *Verified*, publicado en 2023.). Caulfield lo publicó en 2019, pensado en ese momento para verificar noticias y otro tipo de contenido que circulaba en internet —todavía no existían los chatbots de IA generativa—.
 
-La lógica del método es que la verificación tiene que ser rápida: no se trata de investigar durante horas, sino de hacer en poco tiempo los chequeos que evitan dar por cierto algo que no lo es. Son cuatro pasos:
+La lógica del método es que la verificación tiene que ser rápida. No se trata de investigar durante horas, sino de hacer en poco tiempo los chequeos que evitan dar por cierto algo que no lo es. Son cuatro pasos:
 
 
 ## sift_s
@@ -370,7 +370,7 @@ La lógica del método es que la verificación tiene que ser rápida: no se trat
 **T – Trace back to the original context (Rastrear el contexto original)**: si la IA te proporciona una cita o un enlace, buscalo directamente. Verificá si el autor real dijo exactamente eso o si la IA sacó las palabras de contexto.
 
 ## sift_closing
-Sobre el último paso, que en el caso de la IA es el más importante: cuando el modelo cita un artículo, no alcanza con verificar que el artículo exista. Hay que abrirlo y confirmar que efectivamente diga lo que la IA afirma que dice. El caso más común no es la cita completamente inventada, sino la cita real atribuida a un contenido que no tiene.
+Sobre el último paso, que en el caso de la IA es el más importante, cuando el modelo cita un artículo, no alcanza con verificar que el artículo exista. Hay que abrirlo y confirmar que efectivamente diga lo que la IA afirma que dice. El caso más común no es la cita completamente inventada, sino la cita real atribuida a un contenido que no tiene.
 
 
 ## sift_universidades
@@ -399,7 +399,7 @@ Además de estos dos métodos, hay algunas prácticas que conviene incorporar:
 
 
 ## notebooklm_desc
-Es una plataforma gratuita de Google, distinta de Gemini, pensada para trabajar con fuentes propias: se le suben documentos, artículos o videos y funciona como un cuaderno de investigación, donde podemos hacer preguntas, pedir resúmenes o generar un resumen en audio parecido a un podcast. Lo que la distingue es que responde únicamente en base al material que le cargamos, y cita el pasaje del que sacó cada respuesta, así que verificarla es cuestión de ir a la fuente.
+Es una plataforma gratuita de Google que ahora forma parte de la familia Gemini (se llamaba NotebookLM), pensada para trabajar con fuentes propias: se le suben documentos, artículos o videos y funciona como un cuaderno de investigación, donde podemos hacer preguntas, pedir resúmenes o generar un resumen en audio parecido a un podcast. Lo que la distingue es que responde únicamente en base al material que le cargamos, y cita el pasaje del que sacó cada respuesta, así que verificarla es cuestión de ir a la fuente.
 
 ## notebooklm_video_intro
 En el siguiente video vamos a ver cómo funciona:
@@ -410,7 +410,7 @@ En el siguiente video vamos a ver cómo funciona:
 
 
 ## voz_propia_1
-Vale la pena trabajar con los estudiantes la importancia de construir su propia voz. Lo que entregan al final —sea un texto, una imagen, un video— tiene que poder reconocerse como suyo: su pensamiento, su mirada, su manera particular de decir las cosas, y no una reproducción más o menos disimulada de lo que generó una herramienta. Una estrategia posible en los intercambios con los y las estudiantes es que puedan explicitar qué están buscando y por qué recurren a esta herramienta en particular para hacerlo.
+Vale la pena trabajar con los estudiantes la importancia de construir su propia voz. Lo que entregan al final —sea un texto, una imagen, un video— tiene que poder reconocerse como suyo, su pensamiento y su manera particular de decir las cosas, y no una reproducción más o menos disimulada de lo que generó una herramienta. Una estrategia posible en los intercambios con los y las estudiantes es que puedan explicitar qué están buscando y por qué recurren a esta herramienta en particular para hacerlo.
 
 Conviene que los estudiantes construyan una mirada crítica para analizar si el resultado de la interacción se ajusta a su mirada, o si —a la inversa— terminan adaptando su mirada a lo que les entregó la IA.
 
@@ -435,4 +435,4 @@ Y con esto llegamos al final de la segunda clase. Vimos qué hace un LLM cuando 
 Después pasamos a los usos: producir y transformar textos, trabajar sobre archivos propios, revisar bibliografía antes de leerla, y usar la IA como asistente de lectura para reponer aquello que un texto menciona pero no desarrolla. Y cerramos con las dos validaciones que venimos sosteniendo desde el principio: la legitimidad de la información, con el método SIFT y la lectura lateral como herramientas concretas, y la voz propia, que no se detecta con software sino que se acompaña con estrategias pedagógicas.
 
 ## proxima_clase
-En la próxima clase nos centraremos en Imagen: vamos a ver algunos de los modelos de generación más populares, gramática del prompt en imagen y analizaremos sus posibles usos y posibilidades ¡Nos vemos!
+En la próxima clase nos centraremos en Imagen. Vamos a ver algunos de los modelos de generación más populares, gramática del prompt en imagen y analizaremos sus posibles usos y posibilidades ¡Nos vemos!
