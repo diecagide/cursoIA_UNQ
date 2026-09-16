@@ -62,7 +62,7 @@ Como indica su nombre, el curso pone el foco en la imaginación y la concibe com
 Este curso está pensado para docentes de las cuatro unidades académicas de la universidad que quieran conocer algunas herramientas de IA y sus posibilidades, e incorporarlas a su propia tarea docente, acompañando a sus estudiantes en un uso útil y estratégico de la IA generativa. No importa si ya las vienen usando o si es la primera vez que se acercan al tema, la propuesta está armada para que cada cual pueda avanzar a su ritmo.
 
 ![Banner del curso](images/01-imagen-curso.jpg)
-Modelo: Nano Banana pro
+Modelo: Nano Banana pro (Gemini 3)
 Prompt: Un banner de temática IA para un curso de Inteligencia Artificial para docentes universitarios de Artes, Ciencias Sociales, Economía y Ciencia y Tecnología. Debe representar en distintos recuadros las distintas unidades académicas, de manera sobria y representativa. La IA debe estar presente como elemento común entre todas las áreas. Que no tenga textos ni agregados típicos de una infografía.
 
 ## bienvenida_2
@@ -73,7 +73,7 @@ Cada clase combina una instancia teórica con una práctica, donde van a poder a
 No es necesario tener ningún conocimiento técnico previo para este curso. El recorrido está pensado para ir probando estas herramientas a medida que avanzamos, y así construir una mirada propia sobre sus posibilidades y sus límites. Empecemos.
 
 ![Collage compuesto](images/09-imagen.jpg)
-Modelo: Nano Banana pro. 
+Modelo: Nano Banana pro (Gemini 3)
 Prompt: Plano detalle de la mano de un monje escribiendo en un libro medieval con una pluma antigua. En la punta de la pluma, un pequeño elemento electrónico evidencia un contexto futurista. Al fondo, desenfocado, un monasterio medieval. Estética hiperrealista y cinematográfica, luz cálida de atardecer.
 
 ## porque_intro
@@ -103,7 +103,7 @@ Entonces, si el término tiene más de setenta años, ¿por qué empezamos a hab
 Entonces, una cosa es la IA que analiza y clasifica datos para tomar decisiones automatizadas (la que arma nuestro feed, la que nos sugiere una serie), y otra cosa es la IA generativa, capaz de producir algo nuevo. Ese salto instaló a la IA en el centro de las conversaciones sobre creatividad y autoría, y también sobre el lugar del trabajo intelectual; su uso tan masificado en distintas disciplinas y en el ámbito de la educación es lo que motiva este curso.
 
 ![Banner de modelos y plataformas](images/02-imagen-modelos-ia.jpg)
-Modelo: Nano Banana pro (Gemini)
+Modelo: Nano Banana pro (Gemini 3)
 Prompt: Un banner para el mismo curso, destinado al apartado de Modelos y Plataformas. Debe tener los logos de GPT, Gemini y Meta. No debe tener textos. Quiero que tenga una estética de acuarelas coloridas, combinada con render 3D.
 
 ## bloquea_3
@@ -147,7 +147,6 @@ Por ejemplo, **Claude** de Anthropic es un modelo conversacional similar a ChatG
 Ya que lo nombramos tantas veces, quiero detenerme en el nombre de la IA más popular: "ChatGPT", porque ahí adentro están, literalmente, las dos capas que acabamos de distinguir. "Chat" es el medio: la interfaz conversacional, el sistema de input que nos permite escribirle al modelo y recibir una respuesta, es decir, la plataforma. "GPT" es el modelo, y la sigla resume bastante bien cómo funciona: **G**enerative (generativo, porque produce contenido nuevo), **P**re-trained (preentrenado, porque antes de que nosotros lo usemos ya fue entrenado con una enorme cantidad de datos, y no aprende "en vivo" de nuestra conversación) y **T**ransformer, que es el nombre de la arquitectura —el tipo de algoritmo— sobre la que está construido, y que resultó ser especialmente eficaz para procesar lenguaje.
 
 ![Evolución de los GPTs](images/06-imagen-modelos-gpt.jpg)
-Imagen generada en Adobe Firefly.
 Modelo: GPT Image 2
 Prompt: Un banner horizontal que represente la evolución de los GPTs, desde los primeros modelos hasta los modelos actuales, con elementos de la representación de la evolución de Darwin. Estética tradicional y tecnológica, con tonos violetas, azules y verdes. Incluir una línea de tiempo en la parte inferior con las distintas etapas y textos explicativos. Título superior: "LA EVOLUCIÓN DE LOS GPTS". Adjunto los logos.
 
