@@ -38,10 +38,21 @@ Hay tres maneras principales de generar una imagen con estos modelos:
 Seguramente viste circular en redes el "furor" de un tiempo atrás en el que la gente convertía sus fotos familiares al estilo de un estudio de animación japonesa muy conocido. Eso es exactamente imagen-a-imagen: una imagen de entrada, una instrucción de estilo, y el modelo reinterpreta esa foto conservando su estructura general pero cambiándole la piel visual.
 
 
+## inpainting_outpainting
+Dentro del modo imagen-a-imagen hay dos técnicas puntuales que conviene nombrar, porque son de las más usadas en el trabajo de edición del día a día: el **inpainting** y el **outpainting**.
+
+El inpainting consiste en regenerar solo una parte puntual de una imagen ya existente —la que se selecciona o se "pinta" como máscara— sin tocar el resto. Sirve para borrar un objeto, cambiar un detalle o corregir algo puntual sin tener que generar la imagen entera de nuevo.
+
+El outpainting hace lo opuesto: en vez de editar hacia adentro, extiende la imagen más allá de sus bordes originales, generando contenido nuevo que continúa la escena de forma coherente. Sirve, por ejemplo, para convertir una foto cuadrada en un formato panorámico, o para ampliar el encuadre de una imagen que quedó demasiado ajustada.
+
+Ambas técnicas están detrás de varios de los usos de edición que ya mencionamos —borrar un fondo, expandir el encuadre alrededor de un prop— y hoy están disponibles en la mayoría de las plataformas principales, generalmente con una herramienta de selección o máscara dentro del editor.
+
+![](images/clase3_08_inpainting_outpainting.jpg)
+
 ## espaciolatente_1
 En la Clase 1 hablamos de la "caja negra": ese lugar donde no vemos bien qué pasa entre lo que pedimos y lo que el modelo nos devuelve. En la generación de imágenes, esa caja negra tiene un nombre más técnico: el **espacio latente**, un entorno matemático donde las imágenes posibles quedan representadas como coordenadas.
 
-El proceso funciona, a grandes rasgos, así: el modelo arranca de algo parecido al ruido de una tele mal sintonizada, y a través de sucesivas iteraciones —un proceso que se llama **difusión**— va ajustando ese ruido hasta que se acerca cada vez más a lo que describimos en el prompt. En cada paso, el modelo "lee" nuestra descripción y reacomoda un poco más los píxeles: color, forma, textura, luz. Si pedimos "un dragón volando sobre un castillo en llamas", el proceso arranca de algo caótico e irreconocible, y en unos segundos termina en una imagen coherente con esa descripción.
+El proceso funciona, a grandes rasgos, así: el modelo arranca de algo parecido al ruido de una tele mal sintonizada, y a través de sucesivas iteraciones —un proceso que se llama **difusión**— va ajustando ese ruido hasta que se acerca cada vez más a lo que describimos en el prompt. Ese proceso de refinamiento iterativo —muchos pasos pequeños, cada uno un poco más preciso que el anterior, en vez de un único salto de ruido a imagen final— es lo que distingue a la difusión de otras formas de generación. En cada paso, el modelo "lee" nuestra descripción y reacomoda un poco más los píxeles: color, forma, textura, luz. Si pedimos "un dragón volando sobre un castillo en llamas", el proceso arranca de algo caótico e irreconocible, y en unos segundos termina en una imagen coherente con esa descripción.
 
 No hace falta entender el detalle matemático de esto para usar estas herramientas, pero sirve tenerlo presente. La IA no "dibuja" como lo haría una persona, trazo por trazo. Refina una imagen entera, muchas veces en simultáneo, ajustándola progresivamente hacia el resultado que le pedimos.
 
@@ -50,7 +61,7 @@ No hace falta entender el detalle matemático de esto para usar estas herramient
 Como vimos con los modelos de texto, acá también conviene distinguir entre **modelo** y **plataforma**: el modelo es el algoritmo entrenado que genera la imagen, la plataforma es la interfaz desde la que accedemos a él. El panorama de modelos de imagen cambia todo el tiempo —más todavía que el de texto—, pero hoy los más usados son:
 
 - **Nano Banana** (Google, integrado a Gemini), en su versión Pro y en la más reciente, Nano Banana 2: se destaca por la consistencia de personajes y objetos entre distintas generaciones, la calidad fotorrealista y la capacidad de renderizar texto legible dentro de la imagen (útil para infografías o piezas de comunicación).
-- **GPT Image** (OpenAI, integrado a ChatGPT): buen manejo de prompts largos y detallados, con resultados prolijos para escenas complejas.
+- **GPT Image 2** (OpenAI, integrado a ChatGPT): incorporó un paso de razonamiento previo a la generación, lo que mejoró mucho el manejo de prompts largos y detallados y el renderizado de texto dentro de la imagen.
 - **Midjourney**: sigue siendo la referencia en estética artística e ilustrativa, con una identidad visual muy reconocible.
 - **Flux** (Black Forest Labs), hoy en su versión Flux.2: fuerte en fotorrealismo, textura y manejo de luz natural.
 - **Adobe Firefly**: la familia de modelos de Adobe, pensada para integrarse al flujo de trabajo de Photoshop, Illustrator y Premiere.
@@ -65,7 +76,7 @@ Y, como pasaba con el texto, la relación entre modelo y plataforma no es uno a 
 
 
 ## privados_abiertos_imagen
-La distinción entre modelos propietarios y de código abierto que vimos en la Clase 1 también aplica acá. Midjourney, GPT Image, Nano Banana y Adobe Firefly son modelos propietarios: los usamos a través de la plataforma de la empresa que los desarrolló, con sus condiciones de uso y sus límites gratuitos. Stable Diffusion y Flux, en cambio, tienen versiones de código abierto (hoy, por ejemplo, Flux.2 [dev]) que se pueden descargar y ejecutar en una computadora propia, lo que da más control sobre el proceso, pero exige más conocimiento técnico.
+La distinción entre modelos propietarios y de código abierto que vimos en la Clase 1 también aplica acá. Midjourney, GPT Image 2, Nano Banana y Adobe Firefly son modelos propietarios: los usamos a través de la plataforma de la empresa que los desarrolló, con sus condiciones de uso y sus límites gratuitos. Stable Diffusion y Flux, en cambio, tienen versiones de código abierto (hoy, por ejemplo, Flux.2 [dev]) que se pueden descargar y ejecutar en una computadora propia, lo que da más control sobre el proceso, pero exige más conocimiento técnico.
 
 Ahí es donde vuelve a aparecer **ComfyUI**, la interfaz de nodos que mencionamos en la Clase 1. Sirve para trabajar con Stable Diffusion o Flux de forma más artesanal, armando un flujo propio paso a paso —generación, retoque, escalado— en lugar de escribir un prompt en un chat y esperar un resultado cerrado.
 
@@ -87,17 +98,32 @@ En la Clase 2 vimos que un prompt de texto se arma, en su versión más completa
 El prompt de imagen tiene una lógica distinta. No le hablamos al modelo pidiéndole que "haga" algo con un verbo en imperativo dirigido a una tarea intelectual (explicá, resumí, compará), sino que describimos directamente la escena que queremos ver, como si fuera el epígrafe de una foto. Por eso suele tener una estructura más telegráfica. Es una sucesión de elementos separados por comas, más que oraciones completas.
 
 
-## formula_imagen
-La estructura recomendada para un prompt de imagen es:
+## formula_intro
+No hace falta usar todos los elementos posibles en cada prompt. Como con el texto en la Clase 2, conviene pensarlo en dos niveles: uno simple, para empezar rápido, y uno más completo, para cuando queremos dirigir el resultado con más precisión.
 
-[**Sujeto principal**] + [**Descriptores**] + [**Acción o estado**] + [**Contexto o ambiente**] + [**Especificaciones técnicas**] + [**Estilo artístico**]
+## formula_simple
+[Sujeto principal] + [Acción o estado] + [Estilo artístico]
 
-Un ejemplo simple, con todos los elementos:
+## formula_simple_ejemplo
+Un gato robótico joven, jugando con un ovillo de lana roja, estilo steampunk
 
-"Un gato robótico joven, jugando con un ovillo de lana roja, en una calle nocturna iluminada con luces de neón, enfoque selectivo, estilo steampunk"
+## formula_simple_breakdown
+→ Con estos tres elementos alcanza para que el modelo tenga una idea clara de qué generar. El resto —el contexto, las especificaciones técnicas, los descriptores— es lo que suma control, no lo que hace falta para que la imagen "funcione".
 
+## formula_compleja_intro
+Para dirigir más el resultado, se pueden sumar descriptores, contexto y especificaciones técnicas:
+
+## formula_compleja
+[Sujeto principal] + [Descriptores] + [Acción o estado] + [Contexto o ambiente] + [Especificaciones técnicas] + [Estilo artístico]
+
+## formula_compleja_ejemplo
+Un gato robótico joven, jugando con un ovillo de lana roja, en una calle nocturna iluminada con luces de neón, enfoque selectivo, estilo steampunk
+
+## formula_compleja_breakdown
 → Sujeto (un gato robótico joven), acción (jugando con un ovillo de lana roja), contexto (en una calle nocturna iluminada con luces de neón), especificación técnica (enfoque selectivo) y estilo (steampunk).
 
+## formula_compleja_imagen
+![](images/clase3_09_gato_robotico.jpg)
 
 ## reglas_gramaticales
 Además del orden general, hay algunas convenciones que suelen mejorar el resultado:
@@ -111,23 +137,41 @@ Además del orden general, hay algunas convenciones que suelen mejorar el result
 Ninguna de estas reglas es una ley fija —cada modelo interpreta el prompt a su manera—, pero sirven como punto de partida mientras vamos probando.
 
 
-## ejemplo_comparativo_1
-Veamos cómo un mismo prompt cambia según su nivel de detalle. Esto conecta directamente con los tres niveles de complejidad que vimos para prompts de texto en la Clase 2: simple, medio y complejo también aplican acá.
+## prompt_negativo
+En la Clase 2 vimos las restricciones como uno de los seis elementos de un prompt de texto: lo que la respuesta NO debe incluir. En imagen, esa misma idea tiene nombre propio: **prompt negativo**, o negative prompt.
 
-**Simple**: "Un guerrero elfo con armadura plateada y runas brillantes, de pie sobre una montaña brumosa al amanecer, iluminación cinematográfica, estilo de alta fantasía"
+Cada plataforma lo resuelve de un modo distinto. Stable Diffusion, Flux y las herramientas armadas sobre ComfyUI suelen tener un campo aparte, separado del prompt principal, pensado específicamente para listar lo que no debe aparecer. Midjourney usa un parámetro dentro del mismo prompt (*--no*, seguido de lo que se quiere excluir). En plataformas de tipo chat, como Nano Banana Pro, GPT Image 2 o Meta AI, no hay un campo separado: la exclusión se escribe directamente en el prompt, en lenguaje natural ("sin texto", "sin marcas de agua", "sin personas en la escena"). De hecho, varios de los prompts que fuimos viendo en esta clase ya usan esta lógica, aunque no la hayamos nombrado todavía: "Sin texto." al final de un prompt es, ni más ni menos, un prompt negativo.
 
-**Complejo**: "Un majestuoso guerrero elfo de cabello blanco, con una intrincada armadura plateada con runas azules brillantes, de pie en la cima de una montaña brumosa al amanecer, mirando a la distancia. El fondo presenta islas flotantes y un cielo con suaves nubes rosadas. Ultradetallado, iluminación cinematográfica, texturas realistas. Estilo: ilustración de alta fantasía"
+Una advertencia práctica: en algunas plataformas, listar demasiadas exclusiones puede confundir al sistema de moderación automática, que a veces interpreta cada palabra de la lista por separado en lugar de en conjunto. Por eso, cuando se puede, suele funcionar mejor describir positivamente lo que sí se quiere —"con el cielo despejado" en vez de "sin nubes"— que acumular negaciones.
 
+
+## seed_imagen
+Otro parámetro habitual, sobre todo en las plataformas más técnicas, es el **seed**: un número que fija el punto de partida aleatorio del proceso de difusión que vimos antes. Repetir el mismo seed, con el mismo prompt y el mismo modelo, da como resultado una imagen igual o muy parecida a la anterior.
+
+Esto sirve para dos cosas concretas. Por un lado, para reproducir un resultado que salió bien: guardar el seed junto con el prompt es, en los hechos, la forma de "guardar la receta" de una imagen. Por otro, para aislar variables al ir ajustando un prompt. Si se mantiene el mismo seed y se cambia solo una palabra, es más fácil ver el efecto puntual de ese cambio, en vez de que también cambie todo lo demás por el azar de una nueva generación.
+
+No todas las plataformas lo exponen. Stable Diffusion, Flux y Midjourney permiten fijar el seed manualmente; Nano Banana Pro, en cambio, no lo soporta al momento de escribir esto —cada generación parte de un proceso aleatorio nuevo—, así que ahí no hay forma de reproducir exactamente un resultado anterior, solo de acercarse repitiendo el mismo prompt.
+
+
+## ejemplos_intro
+Veamos cómo un mismo prompt cambia según su nivel de detalle, retomando la distinción entre fórmula simple y fórmula compleja que acabamos de ver.
+
+## ejemplo1_simple
+Un guerrero elfo con armadura plateada y runas brillantes, de pie sobre una montaña brumosa al amanecer, iluminación cinematográfica, estilo de alta fantasía
+
+## ejemplo1_complejo
+Un majestuoso guerrero elfo de cabello blanco, con una intrincada armadura plateada con runas azules brillantes, de pie en la cima de una montaña brumosa al amanecer, mirando a la distancia. El fondo presenta islas flotantes y un cielo con suaves nubes rosadas. Ultradetallado, iluminación cinematográfica, texturas realistas. Estilo: ilustración de alta fantasía
+
+## ejemplo1_breakdown
 → La versión compleja no cambia la idea central, pero agrega descriptores (cabello blanco, runas azules), contexto ampliado (islas flotantes, nubes rosadas) y especificaciones técnicas (ultradetallado, texturas realistas) que le dan al modelo mucha más información para trabajar. El resultado va a ser más parecido a lo que tenemos en la cabeza, y menos a la interpretación genérica que el modelo elige por default.
 
+## ejemplo2_simple
+Un valle con cascadas altas, un río cristalino y montañas nevadas al amanecer, luz cálida y dorada, colores vibrantes y fotorrealistas
 
-## ejemplo_comparativo_2
-Un segundo ejemplo, esta vez orientado a fotorrealismo:
+## ejemplo2_complejo
+Un valle con cascadas que caen sobre un río de aguas cristalinas, rodeado de bosques verdes y montañas nevadas a lo lejos. Un amanecer dorado proyecta un resplandor cálido y la niebla se eleva suavemente desde el agua. Composición fotorrealista, perspectiva atmosférica, equilibrio de color vibrante, estilo documental de naturaleza
 
-**Simple**: "Un valle con cascadas altas, un río cristalino y montañas nevadas al amanecer, luz cálida y dorada, colores vibrantes y fotorrealistas"
-
-**Complejo**: "Un valle con cascadas que caen sobre un río de aguas cristalinas, rodeado de bosques verdes y montañas nevadas a lo lejos. Un amanecer dorado proyecta un resplandor cálido y la niebla se eleva suavemente desde el agua. Composición fotorrealista, perspectiva atmosférica, equilibrio de color vibrante, estilo documental de naturaleza"
-
+## ejemplo2_breakdown
 → Acá la diferencia entre versión simple y compleja no es de tema, sino de **control**. El prompt complejo define composición, tipo de luz y referencia de estilo (documental de naturaleza), en lugar de dejar esas decisiones libradas al modelo.
 
 
@@ -167,6 +211,15 @@ Además de generar imágenes desde cero, buena parte del uso cotidiano de estas 
 Estas funciones suelen depender menos de escribir un prompt elaborado y más de señalar directamente, dentro de la misma imagen, qué parte querés modificar y cómo.
 
 
+## multi_referencia
+Hasta acá hablamos de imágenes de referencia como si fueran una sola. Pero cada vez es más habitual poder subir varias a la vez, y que cada una cumpla un rol distinto dentro de la misma generación: una imagen puede aportar la estructura o composición, otra el estilo visual, otra la paleta de colores, otra un personaje o rostro que se quiere mantener igual en distintas escenas.
+
+Nano Banana Pro, por ejemplo, permite combinar varias imágenes de referencia en una misma generación —al momento de escribir esto, hasta un número bastante alto—, cada una cumpliendo una función distinta dentro del resultado final. Esto abre posibilidades muy concretas para el trabajo docente: mantener la cara de un personaje mientras cambia de escenario, aplicar la paleta de colores de una pieza institucional a una imagen nueva, o combinar la composición de un boceto propio con el estilo visual de otra referencia.
+
+El ejemplo que sigue —el del flyer armado a partir de un esquema propio— es, en el fondo, un caso particular de esto: una sola imagen de referencia, cumpliendo el rol de estructura.
+
+![](images/clase3_10_multireferencia.jpg)
+
 ## usos_flyer_esquema
 Un ejemplo concreto de cómo dirigir un resultado en lugar de dejarlo librado al modelo. En la Clase 1 comparamos pedir "hacé un flyer para este evento" con aportar un esquema propio de composición: dónde van las cajas de texto, qué jerarquía tiene la información, qué paleta de colores. Con imagen, ese esquema propio puede ser literal: un boceto a mano, aunque sea muy simple, con rectángulos marcando dónde va el título, dónde la fecha, dónde una imagen central.
 
@@ -198,7 +251,7 @@ Construir una voz propia en imagen tiene que ver con volver una y otra vez sobre
 
 
 ## cierre_1
-Llegamos al final de la Clase 3. Vimos qué es y cómo funciona la IA generativa de imagen —texto-a-imagen, imagen-a-imagen, voz-a-imagen, espacio latente—, qué modelos y plataformas conviven hoy y qué distingue a unos de otros, y la gramática propia del prompt de imagen, distinta de la que usamos para texto. Después pasamos a los usos —ideación, diseño de personajes y fondos, storyboards, edición, y algunos ejemplos concretos por disciplina— y cerramos con la idea que abrió la clase: la IA de imagen es una herramienta que hay que abordar desde el saber, y ese criterio propio es lo que evita que el resultado sea una estética genérica en lugar de una voz reconocible.
+Llegamos al final de la Clase 3. Vimos qué es y cómo funciona la IA generativa de imagen —texto-a-imagen, imagen-a-imagen, voz-a-imagen, espacio latente, inpainting y outpainting—, qué modelos y plataformas conviven hoy, y la gramática propia del prompt de imagen: la fórmula simple y la compleja, el prompt negativo, el seed y las imágenes de referencia múltiples. Después pasamos a los usos —ideación, diseño de personajes y fondos, storyboards, edición, y algunos ejemplos concretos por disciplina— y cerramos con la idea que abrió la clase: la IA de imagen es una herramienta que hay que abordar desde el saber, y ese criterio propio es lo que evita que el resultado sea una estética genérica en lugar de una voz reconocible.
 
 
 ## proxima_clase

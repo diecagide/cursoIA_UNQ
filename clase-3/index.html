@@ -47,6 +47,7 @@
         <ul class="nav-subgroup">
           <li><a href="#que-es">¿Qué es?</a></li>
           <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#inpainting-outpainting">Inpainting y outpainting</a></li>
           <li><a href="#espacio-latente">El espacio latente</a></li>
         </ul>
       </li>
@@ -64,6 +65,8 @@
         <ul class="nav-subgroup">
           <li><a href="#formula">La fórmula</a></li>
           <li><a href="#reglas">Algunas reglas</a></li>
+          <li><a href="#prompt-negativo">Prompt negativo</a></li>
+          <li><a href="#seed">El seed</a></li>
           <li><a href="#ejemplos">Ejemplos comparados</a></li>
         </ul>
       </li>
@@ -73,6 +76,7 @@
         <ul class="nav-subgroup">
           <li><a href="#usos-disciplinas">Usos por disciplina</a></li>
           <li><a href="#usos-edicion">Edición de imágenes</a></li>
+          <li><a href="#multi-referencia">Varias imágenes de referencia</a></li>
           <li><a href="#usos-flyer">El flyer con esquema propio</a></li>
         </ul>
       </li>
@@ -140,6 +144,10 @@
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="comofunciona_1"></div>
 
+        <h3 id="inpainting-outpainting">Inpainting y outpainting</h3>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="inpainting_outpainting"></div>
+
         <h3 id="espacio-latente">El espacio latente</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="espaciolatente_1"></div>
@@ -177,18 +185,67 @@
 
         <h3 id="formula">La fórmula</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="formula_imagen"></div>
+        <p data-key="formula_intro"></p>
+
+        <h4>Fórmula simple</h4>
+        <p class="prompt-formula" data-key="formula_simple"></p>
+        <div class="prompt-example">
+          <p class="prompt-example__label">Ejemplo</p>
+          <p data-key="formula_simple_ejemplo"></p>
+        </div>
+        <p class="prompt-breakdown" data-key="formula_simple_breakdown"></p>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="formula_compleja_intro"></p>
+
+        <h4>Fórmula compleja</h4>
+        <p class="prompt-formula" data-key="formula_compleja"></p>
+        <div class="prompt-example">
+          <p class="prompt-example__label">Ejemplo</p>
+          <p data-key="formula_compleja_ejemplo"></p>
+        </div>
+        <p class="prompt-breakdown" data-key="formula_compleja_breakdown"></p>
+
+        <!-- Imagen generada a partir del ejemplo de la fórmula compleja de arriba; sin epígrafe propio porque el prompt ya está visible en el recuadro de ejemplo -->
+        <div class="content-block" data-key="formula_compleja_imagen"></div>
 
         <h3 id="reglas">Algunas reglas</h3>
         <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="reglas_gramaticales"></div>
 
+        <h3 id="prompt-negativo">Prompt negativo</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="prompt_negativo"></div>
+
+        <h3 id="seed">El seed: reproducir y variar un resultado</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="seed_imagen"></div>
+
         <h3 id="ejemplos">Ejemplos comparados</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="ejemplo_comparativo_1"></div>
+        <p data-key="ejemplos_intro"></p>
 
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="ejemplo_comparativo_2"></div>
+        <h4>Ejemplo 1: fantasía</h4>
+        <div class="prompt-example">
+          <p class="prompt-example__label">Simple</p>
+          <p data-key="ejemplo1_simple"></p>
+        </div>
+        <div class="prompt-example">
+          <p class="prompt-example__label">Complejo</p>
+          <p data-key="ejemplo1_complejo"></p>
+        </div>
+        <p class="prompt-breakdown" data-key="ejemplo1_breakdown"></p>
+
+        <h4>Ejemplo 2: fotorrealismo</h4>
+        <div class="prompt-example">
+          <p class="prompt-example__label">Simple</p>
+          <p data-key="ejemplo2_simple"></p>
+        </div>
+        <div class="prompt-example">
+          <p class="prompt-example__label">Complejo</p>
+          <p data-key="ejemplo2_complejo"></p>
+        </div>
+        <p class="prompt-breakdown" data-key="ejemplo2_breakdown"></p>
       </section>
 
       <!-- =================================================================
@@ -207,6 +264,10 @@
         <h3 id="usos-edicion">Edición de imágenes</h3>
         <!-- El texto de esta sección, incluidas la lista y la imagen, se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="usos_edicion"></div>
+
+        <h3 id="multi-referencia">Varias imágenes de referencia a la vez</h3>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="multi_referencia"></div>
 
         <h3 id="usos-flyer">El flyer con esquema propio</h3>
         <!-- El texto de esta sección, incluidas las dos imágenes (boceto y resultado), se edita en contenido.txt (no acá) -->
