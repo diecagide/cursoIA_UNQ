@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es" data-clase="3">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clase 3 — Generación de Imágenes | La imaginación al poder</title>
+<meta name="description" content="Clase 3 del curso La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria. Docente: Diego Cagide.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+<div class="layout">
+
+  <!-- =====================================================================
+       MENÚ DE NAVEGACIÓN
+       Los textos de acá son los títulos que aparecen en el menú lateral.
+       Si cambiás un título de sección más abajo, actualizá también el
+       texto acá (el link href="#..." no hace falta tocarlo).
+       Los <li class="nav-group"> con una lista adentro son los bloques que
+       tienen subtemas — no hace falta tocar esa anidación, solo el texto.
+       ===================================================================== -->
+  <nav class="site-nav" id="siteNav">
+    <p class="site-nav__course">La imaginación al poder</p>
+    <p class="site-nav__course-sub">IA generativa y procesos creativos para la enseñanza universitaria</p>
+    <p class="site-nav__docente">Docente: Diego Cagide</p>
+
+    <div class="site-nav__divider"></div>
+
+    <p class="site-nav__class-label">Clase 3</p>
+    <p class="site-nav__title">Generación de Imágenes</p>
+
+    <!-- Grupo 1: introducción a la clase (sin etiqueta) -->
+    <ul class="nav-list">
+      <li><a href="#bienvenida">Bienvenida</a></li>
+      <li><a href="#herramienta">La imagen como herramienta</a></li>
+    </ul>
+
+    <div class="site-nav__divider"></div>
+    <p class="site-nav__section-label">Bloques de la Clase 3</p>
+
+    <!-- Grupo 2: los bloques de contenido propiamente dichos -->
+    <ul class="nav-list nav-list--blocks">
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-a"><span class="nav-bullet"></span>Bloque A · Qué es y cómo funciona</a>
+        <ul class="nav-subgroup">
+          <li><a href="#que-es">¿Qué es?</a></li>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#espacio-latente">El espacio latente</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-b"><span class="nav-bullet"></span>Bloque B · Modelos y plataformas</a>
+        <ul class="nav-subgroup">
+          <li><a href="#privados-abiertos-imagen">Privados vs. código abierto</a></li>
+          <li><a href="#cual-conviene">¿Cuál conviene para qué?</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-c"><span class="nav-bullet"></span>Bloque C · Gramática del prompt de imagen</a>
+        <ul class="nav-subgroup">
+          <li><a href="#formula">La fórmula</a></li>
+          <li><a href="#reglas">Algunas reglas</a></li>
+          <li><a href="#ejemplos">Ejemplos comparados</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-d"><span class="nav-bullet"></span>Bloque D · Usos en el trabajo docente</a>
+        <ul class="nav-subgroup">
+          <li><a href="#usos-disciplinas">Usos por disciplina</a></li>
+          <li><a href="#usos-edicion">Edición de imágenes</a></li>
+          <li><a href="#usos-flyer">El flyer con esquema propio</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-e"><span class="nav-bullet"></span>Bloque E · Criterio propio</a>
+        <ul class="nav-subgroup">
+          <li><a href="#criterio-propio">El criterio propio</a></li>
+          <li><a href="#voz-propia-imagen">Voz propia en imagen</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="site-nav__divider"></div>
+
+    <!-- Grupo 3: cierre -->
+    <ul class="nav-list">
+      <li><a href="#cierre">Cierre</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <header class="class-header">
+        <p class="class-header__course">La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria — Docente:&nbsp;Diego&nbsp;Cagide</p>
+        <p class="class-header__eyebrow">Clase 3</p>
+        <h1>Generación de Imágenes</h1>
+      </header>
+
+      <!-- =================================================================
+           SECCIÓN: Bienvenida
+           ================================================================= -->
+      <section class="block" id="bienvenida">
+        <h2>Bienvenida</h2>
+
+        <!-- El texto de esta sección, incluida la imagen y su epígrafe, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="bienvenida_1" data-lead="true"></div>
+
+        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="bienvenida_2"></div>
+      </section>
+
+      <!-- =================================================================
+           SECCIÓN: La imagen como herramienta
+           ================================================================= -->
+      <section class="block" id="herramienta">
+        <h2>La imagen como herramienta</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="herramienta_saber"></p>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE A
+           ================================================================= -->
+      <section class="block" id="bloque-a">
+        <h2>Bloque A — Qué es y cómo funciona la IA de imagen</h2>
+
+        <h3 id="que-es">¿Qué es?</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="quees_imagen"></div>
+
+        <h3 id="como-funciona">Cómo funciona</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="comofunciona_1"></div>
+
+        <h3 id="espacio-latente">El espacio latente</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="espaciolatente_1"></div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE B
+           ================================================================= -->
+      <section class="block" id="bloque-b">
+        <h2>Bloque B — Modelos y plataformas</h2>
+
+        <!-- El texto de esta sección, incluidas la lista y la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="modelos_plataformas_1"></div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="modelos_plataformas_2"></p>
+
+        <h3 id="privados-abiertos-imagen">Modelos privados vs. código abierto</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="privados_abiertos_imagen"></div>
+
+        <h3 id="cual-conviene">¿Cuál conviene para qué?</h3>
+        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="cual_mejor_imagen"></div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE C
+           ================================================================= -->
+      <section class="block" id="bloque-c">
+        <h2>Bloque C — Gramática del prompt de imagen</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="gramatica_prompt_intro"></div>
+
+        <h3 id="formula">La fórmula</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="formula_imagen"></div>
+
+        <h3 id="reglas">Algunas reglas</h3>
+        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="reglas_gramaticales"></div>
+
+        <h3 id="ejemplos">Ejemplos comparados</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="ejemplo_comparativo_1"></div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="ejemplo_comparativo_2"></div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE D
+           ================================================================= -->
+      <section class="block" id="bloque-d">
+        <h2>Bloque D — Usos en el trabajo docente</h2>
+
+        <!-- El texto de esta sección, incluidas la lista y la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="usos_1"></div>
+
+        <h3 id="usos-disciplinas">Usos por disciplina</h3>
+        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="usos_disciplinas"></div>
+
+        <h3 id="usos-edicion">Edición de imágenes</h3>
+        <!-- El texto de esta sección, incluidas la lista y la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="usos_edicion"></div>
+
+        <h3 id="usos-flyer">El flyer con esquema propio</h3>
+        <!-- El texto de esta sección, incluidas las dos imágenes (boceto y resultado), se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="usos_flyer_esquema"></div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="combinacion_modelos"></p>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE E
+           ================================================================= -->
+      <section class="block" id="bloque-e">
+        <h2>Bloque E — Criterio propio</h2>
+
+        <!-- Recuadro destacado, mismo tratamiento que "La paradoja del conocimiento" de la Clase 1 -->
+        <div class="highlight-box" id="criterio-propio">
+          <h3>El criterio propio</h3>
+          <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+          <div class="content-block" data-key="criterio_propio"></div>
+        </div>
+
+        <h3 id="voz-propia-imagen">Voz propia en imagen</h3>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="voz_propia_imagen"></div>
+      </section>
+
+      <!-- =================================================================
+           CIERRE
+           ================================================================= -->
+      <section class="block" id="cierre">
+        <h2>Cierre</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="cierre_1"></p>
+
+        <div class="next-class">
+          <p class="next-class__label">En la próxima clase</p>
+          <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+          <p data-key="proxima_clase"></p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
