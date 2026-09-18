@@ -45,10 +45,10 @@
       <li class="nav-group">
         <a class="nav-group__link" href="#bloque-a"><span class="nav-bullet"></span>Bloque A · Qué es y cómo funciona</a>
         <ul class="nav-subgroup">
-          <li><a href="#que-es">¿Qué es?</a></li>
-          <li><a href="#como-funciona">Cómo funciona</a></li>
-          <li><a href="#inpainting-outpainting">Inpainting y outpainting</a></li>
           <li><a href="#espacio-latente">El espacio latente</a></li>
+          <li><a href="#generacion-basica">Generación básica: el input</a></li>
+          <li><a href="#inpainting-outpainting">Edición básica: inpainting y outpainting</a></li>
+          <li><a href="#difusion">La difusión</a></li>
         </ul>
       </li>
 
@@ -56,28 +56,29 @@
         <a class="nav-group__link" href="#bloque-b"><span class="nav-bullet"></span>Bloque B · Modelos y plataformas</a>
         <ul class="nav-subgroup">
           <li><a href="#privados-abiertos-imagen">Privados vs. código abierto</a></li>
-          <li><a href="#cual-conviene">¿Cuál conviene para qué?</a></li>
+          <li><a href="#cual-mejor">¿Cuál es mejor?</a></li>
         </ul>
       </li>
 
       <li class="nav-group">
         <a class="nav-group__link" href="#bloque-c"><span class="nav-bullet"></span>Bloque C · Gramática del prompt de imagen</a>
         <ul class="nav-subgroup">
-          <li><a href="#formula">La fórmula</a></li>
+          <li><a href="#elementos-prompt">Los elementos del prompt</a></li>
+          <li><a href="#estructura">La estructura</a></li>
           <li><a href="#reglas">Algunas reglas</a></li>
-          <li><a href="#prompt-negativo">Prompt negativo</a></li>
           <li><a href="#seed">El seed</a></li>
-          <li><a href="#ejemplos">Ejemplos comparados</a></li>
+          <li><a href="#ejemplos">Ejemplos: de simple a complejo</a></li>
         </ul>
       </li>
 
       <li class="nav-group">
-        <a class="nav-group__link" href="#bloque-d"><span class="nav-bullet"></span>Bloque D · Usos en el trabajo docente</a>
+        <a class="nav-group__link" href="#bloque-d"><span class="nav-bullet"></span>Bloque D · Usos: generación y edición</a>
         <ul class="nav-subgroup">
-          <li><a href="#usos-disciplinas">Usos por disciplina</a></li>
+          <li><a href="#usos-generacion">Generación de imágenes completas</a></li>
           <li><a href="#usos-edicion">Edición de imágenes</a></li>
           <li><a href="#multi-referencia">Varias imágenes de referencia</a></li>
-          <li><a href="#usos-flyer">El flyer con esquema propio</a></li>
+          <li><a href="#usos-flyer">El flyer con estética IA</a></li>
+          <li><a href="#combinacion-modelos">Combinando modelos</a></li>
         </ul>
       </li>
 
@@ -94,7 +95,7 @@
 
     <!-- Grupo 3: cierre -->
     <ul class="nav-list">
-      <li><a href="#cierre">Cierre</a></li>
+      <li><a href="#final">Final</a></li>
     </ul>
   </nav>
 
@@ -136,21 +137,25 @@
       <section class="block" id="bloque-a">
         <h2>Bloque A — Qué es y cómo funciona la IA de imagen</h2>
 
-        <h3 id="que-es">¿Qué es?</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <!-- Intro sin subtítulo propio: qué es la IA de imagen. El texto de
+             esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="quees_imagen"></div>
-
-        <h3 id="como-funciona">Cómo funciona</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="comofunciona_1"></div>
-
-        <h3 id="inpainting-outpainting">Inpainting y outpainting</h3>
-        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="inpainting_outpainting"></div>
 
         <h3 id="espacio-latente">El espacio latente</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="espaciolatente_1"></div>
+
+        <h3 id="generacion-basica">Generación básica: el input</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="comofunciona_1"></div>
+
+        <h3 id="inpainting-outpainting">Edición básica de imágenes: inpainting y outpainting</h3>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="inpainting_outpainting"></div>
+
+        <h3 id="difusion">La difusión: un proceso de refinamiento iterativo</h3>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="difusion_1"></div>
       </section>
 
       <!-- =================================================================
@@ -159,19 +164,258 @@
       <section class="block" id="bloque-b">
         <h2>Bloque B — Modelos y plataformas</h2>
 
-        <!-- El texto de esta sección, incluidas la lista y la imagen, se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="modelos_plataformas_1"></div>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="modelos_plataformas_1"></p>
+
+        <!-- Tarjetas de modelos: por pedido de Diego, cada una muestra el
+             nombre propio del modelo, para qué se usa habitualmente y en
+             qué plataformas funciona, con logo y link — mismo componente
+             que las tarjetas de plataformas de texto de la Clase 2. Pieza
+             tabular: se edita acá directo, no en contenido.txt (mismo
+             criterio que las tarjetas de la Clase 2). Los modelos sin un
+             logo real todavía muestran una placa con sus iniciales
+             (.platform-card__logo--text) — ver LEEME.txt de images/ para
+             agregar logos reales más adelante si se quiere. -->
+        <div class="platform-cards">
+
+          <details class="platform-card" style="--platform-color:#4285F4">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo platform-card__logo--text">NB</span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://gemini.google.com/app" target="_blank" rel="noopener">Nano Banana Pro ↗</a></h4>
+                <p class="platform-card__dev">Google DeepMind</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Gemini 3 Pro Image</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Composiciones complejas, texto legible dentro de la imagen, la máxima calidad y fidelidad posible</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Gemini (app y web), Google AI Studio, Vertex AI, y como modelo dentro de Adobe Firefly</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#1A73E8">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo platform-card__logo--text">NB2</span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://gemini.google.com/app" target="_blank" rel="noopener">Nano Banana 2 ↗</a></h4>
+                <p class="platform-card__dev">Google DeepMind</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Gemini 3.1 Flash Image</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Generación rápida y económica, con buen seguimiento de instrucciones — no es "mejor" que Nano Banana Pro, es un nivel distinto pensado para velocidad en vez de calidad máxima</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Gemini (app y web), Google AI Studio, Vertex AI</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#10A37F">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo platform-card__logo--text">GPT</span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://chatgpt.com/" target="_blank" rel="noopener">GPT Image 2 ↗</a></h4>
+                <p class="platform-card__dev">OpenAI</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>GPT Image 2</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Prompts largos y detallados (incorpora un paso de razonamiento previo a la generación) y buen renderizado de texto dentro de la imagen</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>ChatGPT (tocando el ícono "+" y eligiendo Imagen), Sora, y la API de OpenAI</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#000000">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo platform-card__logo--text">MJ</span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://www.midjourney.com/" target="_blank" rel="noopener">Midjourney ↗</a></h4>
+                <p class="platform-card__dev">Midjourney, Inc.</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>No tiene un nombre separado del producto: se lo conoce por su número de versión (hoy V8.2), más una línea aparte especializada en anime (Niji)</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Estética artística e ilustrativa muy reconocible, arte conceptual, piezas con una identidad visual propia</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Sitio web propio (midjourney.com, desde 2024) y también por Discord, donde nació</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#111111">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/flux.png" alt="Flux" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://bfl.ai/" target="_blank" rel="noopener">Flux.2 ↗</a></h4>
+                <p class="platform-card__dev">Black Forest Labs</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>FLUX.2, con variantes: [dev] de código abierto, y versiones privadas más potentes (Pro/Max)</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Fotorrealismo, textura, manejo de luz natural</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Plataforma propia (bfl.ai), y también integrado dentro de otras plataformas como Adobe Firefly</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#FA0F00">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo platform-card__logo--text">Ff</span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://firefly.adobe.com/" target="_blank" rel="noopener">Adobe Firefly ↗</a></h4>
+                <p class="platform-card__dev">Adobe</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Firefly Image Model 4 y 4 Ultra (modelos propios) — la plataforma además da acceso a modelos de otras empresas</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Integrarse al flujo de trabajo de Photoshop, Illustrator y Premiere, con licencia pensada para uso comercial</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>firefly.adobe.com, y dentro de las apps de Adobe</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#6C4FF6">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo platform-card__logo--text">Rc</span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://www.recraft.ai/" target="_blank" rel="noopener">Recraft ↗</a></h4>
+                <p class="platform-card__dev">Recraft</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Piezas de diseño gráfico, con buen manejo de tipografía y de identidad de marca</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Plataforma propia (recraft.ai)</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#00A656">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo platform-card__logo--text">Rw</span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://runwayml.com/" target="_blank" rel="noopener">Runway Gen-4 Image ↗</a></h4>
+                <p class="platform-card__dev">Runway AI</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Mantener un mismo personaje, objeto o lugar de forma consistente entre varias imágenes distintas, a partir de fotos de referencia</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Plataforma propia (runwayml.com) y vía API</p>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="modelos_plataformas_imagen"></div>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="modelos_plataformas_2"></p>
+        <div class="content-block" data-key="modelos_plataformas_2"></div>
 
         <h3 id="privados-abiertos-imagen">Modelos privados vs. código abierto</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="privados_abiertos_imagen"></div>
 
-        <h3 id="cual-conviene">¿Cuál conviene para qué?</h3>
-        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="cual_mejor_imagen"></div>
+        <h3 id="cual-mejor">¿Cuál es mejor?</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="cual_mejor_intro"></p>
+
+        <!-- Cada categoría va en su propio recuadro destacado, con el
+             texto y la imagen de ejemplo juntos adentro (mismo componente
+             .subsection-highlight que Alucinaciones/Sesgos en Clase 1 y
+             Legitimidad/Voz propia en Clase 2). -->
+        <div class="subsection-highlight">
+          <h4>Fotorrealismo</h4>
+          <p data-key="mejor_fotorrealismo"></p>
+          <div class="content-block" data-key="mejor_fotorrealismo_imagen"></div>
+        </div>
+
+        <div class="subsection-highlight">
+          <h4>Ilustración y estética artística</h4>
+          <p data-key="mejor_ilustracion"></p>
+          <div class="content-block" data-key="mejor_ilustracion_imagen"></div>
+        </div>
+
+        <div class="subsection-highlight">
+          <h4>Edición y consistencia entre generaciones</h4>
+          <p data-key="mejor_edicion_consistencia"></p>
+          <div class="content-block" data-key="mejor_edicion_consistencia_imagen"></div>
+        </div>
+
+        <div class="subsection-highlight">
+          <h4>Piezas con texto legible</h4>
+          <p data-key="mejor_texto_legible"></p>
+          <div class="content-block" data-key="mejor_texto_legible_imagen"></div>
+        </div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="cual_mejor_cierre"></p>
       </section>
 
       <!-- =================================================================
@@ -183,96 +427,136 @@
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="gramatica_prompt_intro"></div>
 
-        <h3 id="formula">La fórmula</h3>
+        <h3 id="elementos-prompt">Los elementos del prompt</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="formula_intro"></p>
+        <p data-key="elementos_intro"></p>
 
-        <h4>Fórmula simple</h4>
-        <p class="prompt-formula" data-key="formula_simple"></p>
+        <!-- Cuadro con distintos colores para cada elemento del prompt de
+             imagen: la estructura, el ícono y el color de cada tarjeta son
+             fijos acá; el texto de cada una se edita en contenido.txt.
+             Mismo componente que Rol/Contexto/Acción/... de la Clase 2. -->
+        <div class="elements-grid">
+          <div class="element-card" style="--element-color:#2e6e8e">
+            <h4><span class="element-card__icon" aria-hidden="true">🧍</span> Sujeto principal</h4>
+            <p data-key="elemento_sujeto"></p>
+          </div>
+          <div class="element-card" style="--element-color:#b5502e">
+            <h4><span class="element-card__icon" aria-hidden="true">🎨</span> Descriptores</h4>
+            <p data-key="elemento_descriptores"></p>
+          </div>
+          <div class="element-card" style="--element-color:#3e7a5e">
+            <h4><span class="element-card__icon" aria-hidden="true">⚡</span> Acción o estado</h4>
+            <p data-key="elemento_accion"></p>
+          </div>
+          <div class="element-card" style="--element-color:#a3216b">
+            <h4><span class="element-card__icon" aria-hidden="true">🌆</span> Contexto o ambiente</h4>
+            <p data-key="elemento_contexto_ambiente"></p>
+          </div>
+          <div class="element-card" style="--element-color:#6a3fa0">
+            <h4><span class="element-card__icon" aria-hidden="true">📷</span> Especificaciones técnicas</h4>
+            <p data-key="elemento_especificaciones"></p>
+          </div>
+          <div class="element-card" style="--element-color:#1f7a6c">
+            <h4><span class="element-card__icon" aria-hidden="true">🖌️</span> Estilo artístico</h4>
+            <p data-key="elemento_estilo"></p>
+          </div>
+          <div class="element-card" style="--element-color:#8a3b3b">
+            <h4><span class="element-card__icon" aria-hidden="true">🚫</span> Prompt negativo</h4>
+            <p data-key="elemento_prompt_negativo"></p>
+          </div>
+        </div>
+
+        <h3 id="estructura">La estructura</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="estructura_intro"></p>
+
+        <p class="prompt-formula" data-key="estructura"></p>
         <div class="prompt-example">
           <p class="prompt-example__label">Ejemplo</p>
-          <p data-key="formula_simple_ejemplo"></p>
+          <p data-key="estructura_ejemplo"></p>
         </div>
-        <p class="prompt-breakdown" data-key="formula_simple_breakdown"></p>
+        <p class="prompt-breakdown" data-key="estructura_breakdown"></p>
 
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="formula_compleja_intro"></p>
-
-        <h4>Fórmula compleja</h4>
-        <p class="prompt-formula" data-key="formula_compleja"></p>
-        <div class="prompt-example">
-          <p class="prompt-example__label">Ejemplo</p>
-          <p data-key="formula_compleja_ejemplo"></p>
-        </div>
-        <p class="prompt-breakdown" data-key="formula_compleja_breakdown"></p>
-
-        <!-- Imagen generada a partir del ejemplo de la fórmula compleja de arriba; sin epígrafe propio porque el prompt ya está visible en el recuadro de ejemplo -->
-        <div class="content-block" data-key="formula_compleja_imagen"></div>
+        <!-- Imagen generada a partir del ejemplo de arriba; sin epígrafe propio porque el prompt ya está visible en el recuadro de ejemplo -->
+        <div class="content-block" data-key="estructura_imagen"></div>
 
         <h3 id="reglas">Algunas reglas</h3>
-        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
+        <!-- El texto de esta sección, incluidas las listas, se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="reglas_gramaticales"></div>
-
-        <h3 id="prompt-negativo">Prompt negativo</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="prompt_negativo"></div>
 
         <h3 id="seed">El seed: reproducir y variar un resultado</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="seed_imagen"></div>
+        <p data-key="seed_imagen"></p>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="seed_imagen_ejemplo"></div>
 
-        <h3 id="ejemplos">Ejemplos comparados</h3>
+        <h3 id="ejemplos">Ejemplos: de simple a complejo</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="ejemplos_intro"></p>
 
-        <h4>Ejemplo 1: fantasía</h4>
         <div class="prompt-example">
           <p class="prompt-example__label">Simple</p>
-          <p data-key="ejemplo1_simple"></p>
+          <p data-key="ejemplo_simple"></p>
         </div>
-        <div class="prompt-example">
-          <p class="prompt-example__label">Complejo</p>
-          <p data-key="ejemplo1_complejo"></p>
-        </div>
-        <p class="prompt-breakdown" data-key="ejemplo1_breakdown"></p>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="ejemplo_simple_imagen"></div>
 
-        <h4>Ejemplo 2: fotorrealismo</h4>
         <div class="prompt-example">
-          <p class="prompt-example__label">Simple</p>
-          <p data-key="ejemplo2_simple"></p>
+          <p class="prompt-example__label">Medio</p>
+          <p data-key="ejemplo_medio"></p>
         </div>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="ejemplo_medio_imagen"></div>
+
+        <!-- Este ejemplo va con lista de características, por eso usa un
+             content-block adentro de la caja de ejemplo en vez de un <p>
+             (el <p> no soporta listas) — el CSS de .prompt-example ya
+             contempla una lista adentro. -->
         <div class="prompt-example">
           <p class="prompt-example__label">Complejo</p>
-          <p data-key="ejemplo2_complejo"></p>
+          <div class="content-block" data-key="ejemplo_complejo"></div>
         </div>
-        <p class="prompt-breakdown" data-key="ejemplo2_breakdown"></p>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="ejemplo_complejo_imagen"></div>
+
+        <p class="prompt-breakdown" data-key="ejemplo_breakdown"></p>
       </section>
 
       <!-- =================================================================
            BLOQUE D
            ================================================================= -->
       <section class="block" id="bloque-d">
-        <h2>Bloque D — Usos en el trabajo docente</h2>
+        <h2>Bloque D — Usos: generación y edición de imágenes</h2>
 
-        <!-- El texto de esta sección, incluidas la lista y la imagen, se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="usos_1"></div>
+        <!-- Aviso destacado: estos usos no reemplazan la disciplina artística -->
+        <div class="warning-box">
+          <p class="warning-box__label">¡Importante!</p>
+          <p data-key="usos_nota"></p>
+        </div>
 
-        <h3 id="usos-disciplinas">Usos por disciplina</h3>
+        <h3 id="usos-generacion">Generación de imágenes completas</h3>
         <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="usos_disciplinas"></div>
+        <div class="content-block" data-key="usos_generacion"></div>
+        <!-- Carrusel de imágenes de ejemplo — se edita en contenido.txt (clave con @carousel) -->
+        <div class="content-block" data-key="usos_generacion_carousel"></div>
 
         <h3 id="usos-edicion">Edición de imágenes</h3>
-        <!-- El texto de esta sección, incluidas la lista y la imagen, se edita en contenido.txt (no acá) -->
+        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="usos_edicion"></div>
+        <!-- Carrusel de imágenes de ejemplo — se edita en contenido.txt (clave con @carousel) -->
+        <div class="content-block" data-key="usos_edicion_carousel"></div>
 
         <h3 id="multi-referencia">Varias imágenes de referencia a la vez</h3>
         <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="multi_referencia"></div>
 
-        <h3 id="usos-flyer">El flyer con esquema propio</h3>
+        <h3 id="usos-flyer">El flyer con estética IA</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_flyer_intro"></p>
         <!-- El texto de esta sección, incluidas las dos imágenes (boceto y resultado), se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="usos_flyer_esquema"></div>
 
+        <h3 id="combinacion-modelos">Combinando modelos</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="combinacion_modelos"></p>
       </section>
@@ -296,13 +580,13 @@
       </section>
 
       <!-- =================================================================
-           CIERRE
+           FINAL
            ================================================================= -->
-      <section class="block" id="cierre">
-        <h2>Cierre</h2>
+      <section class="block" id="final">
+        <h2>Final</h2>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="cierre_1"></p>
+        <p data-key="final_1"></p>
 
         <div class="next-class">
           <p class="next-class__label">En la próxima clase</p>

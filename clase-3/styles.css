@@ -1403,7 +1403,113 @@ section.block:first-of-type {
 
 .lightbox__close:hover { background: rgba(255, 255, 255, .28); }
 
+/* Flechas para pasar de una imagen a otra sin cerrar el popup — solo
+   aparecen cuando la imagen agrandada pertenece a un carrusel con más de
+   una imagen (clase .has-gallery, agregada en JS). */
+.lightbox__arrow {
+  display: none;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, .15);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox__arrow:hover { background: rgba(255, 255, 255, .28); }
+.lightbox__arrow--prev { left: 18px; }
+.lightbox__arrow--next { right: 18px; }
+.lightbox.has-gallery .lightbox__arrow { display: flex; }
+
+@media (max-width: 640px) {
+  .lightbox__arrow { width: 42px; height: 42px; font-size: 1.3rem; }
+  .lightbox__arrow--prev { left: 6px; }
+  .lightbox__arrow--next { right: 6px; }
+}
+
 body.lightbox-open { overflow: hidden; }
+
+/* ---------- Carrusel de imágenes (varias fotos, con flechas y puntitos) --------- */
+/* Se arma en JS (renderCarousel en script.js) a partir de una clave de
+   contenido.txt que arranca con "@carousel". Cada imagen usa el mismo
+   .img-block/.img-placeholder que cualquier otra imagen de contenido (con
+   su recuadro de "pendiente" y epígrafe), así que el lightbox de arriba
+   funciona sobre ellas sin nada extra. */
+
+.carousel {
+  position: relative;
+  margin: 20px 0 28px;
+}
+
+.carousel__viewport {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel__track {
+  display: flex;
+  transition: transform .35s ease;
+}
+
+.carousel__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+/* Dentro del carrusel, la imagen y su epígrafe no necesitan el margen
+   inferior que llevan sueltos en el flujo normal del texto. */
+.carousel__slide .img-block { margin: 0; }
+
+.carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, .92);
+  color: var(--color-primary);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.carousel__arrow:hover { background: #fff; color: var(--color-accent); }
+.carousel__arrow--prev { left: 10px; }
+.carousel__arrow--next { right: 10px; }
+
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.carousel__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: var(--color-border);
+  cursor: pointer;
+}
+
+.carousel__dot.is-active { background: var(--color-accent); }
 
 /* ---------- Variante de color por clase ---------- */
 /* Mismo archivo para todas las clases: el degradé de la barra lateral

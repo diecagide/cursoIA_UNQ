@@ -73,6 +73,29 @@
    oscuro, y se cierra tocando afuera, la ✕ o la tecla Escape. Es
    automático: no hay que escribir nada en contenido.txt para que
    funcione, y no aplica a los logos ni íconos chicos de la página.
+
+   CARRUSEL DE IMÁGENES (varias imágenes en fila, con flechas):
+   Dentro de una clave que uses solo para esto, escribí "@carousel" en
+   su propio renglón, y debajo, una imagen por bloque (misma sintaxis
+   de siempre, con epígrafe opcional pegado debajo si querés):
+
+     @carousel
+     ![texto alternativo](images/foto1.jpg)
+     Epígrafe opcional de la primera foto
+
+     ![texto alternativo](images/foto2.jpg)
+     Epígrafe opcional de la segunda foto
+
+     ![texto alternativo](images/foto3.jpg)
+
+   Podés agregar tantas imágenes como quieras (o sacar alguna) siguiendo
+   el mismo patrón, con una línea en blanco entre cada una — no hace
+   falta tocar ningún otro archivo. Con una sola imagen no aparecen
+   flechas ni puntitos (no hace falta navegar). Al hacer clic en
+   cualquier imagen del carrusel, se agranda igual que cualquier otra
+   imagen (ver LIGHTBOX arriba), y ahí también aparecen flechas para
+   pasar a la imagen anterior o siguiente del mismo carrusel sin cerrar
+   el popup.
    ========================================================================= */
 
 /* ---------- 1. Cargar y aplicar el texto de contenido.txt ---------- */
@@ -154,6 +177,81 @@ function renderImageBlock(alt, src, caption) {
 // epígrafe en los renglones siguientes), esta expresión lo detecta y separa
 // la ruta de la imagen del texto del epígrafe.
 var SOLO_IMAGE_RE = /^!\[([^\]]*)\]\(([^)\s]+)\)[ \t]*\n?([\s\S]*)$/;
+
+// Marca que indica que una clave entera (todos sus párrafos, uno por
+// imagen) se arma como carrusel en vez de imágenes sueltas en fila. Ver
+// documentación "CARRUSEL DE IMÁGENES" más arriba.
+var CAROUSEL_MARKER = '@carousel';
+var carouselAutoId = 0;
+
+// Arma el carrusel completo: una fila de imágenes (cada una con el mismo
+// tratamiento de "pendiente"/epígrafe que renderImageBlock), flechas para
+// pasar de una a otra y puntitos de navegación directa. Si solo hay una
+// imagen, no tiene sentido mostrar flechas ni puntitos — se omiten.
+function renderCarousel(slideParagraphs) {
+  carouselAutoId += 1;
+  var id = 'carousel-' + carouselAutoId;
+
+  var slidesHtml = '';
+  var count = 0;
+  slideParagraphs.forEach(function (p) {
+    var m = p.match(SOLO_IMAGE_RE);
+    if (!m) return; // párrafo que no es una imagen: se ignora dentro de un carrusel
+    count++;
+    slidesHtml += '<div class="carousel__slide">' + renderImageBlock(m[1], m[2], m[3]) + '</div>';
+  });
+
+  var html = '<div class="carousel" id="' + id + '">' +
+    '<div class="carousel__viewport"><div class="carousel__track">' + slidesHtml + '</div></div>';
+
+  if (count > 1) {
+    html += '<button class="carousel__arrow carousel__arrow--prev" type="button" aria-label="Imagen anterior">' +
+      '<span aria-hidden="true">‹</span></button>' +
+      '<button class="carousel__arrow carousel__arrow--next" type="button" aria-label="Imagen siguiente">' +
+      '<span aria-hidden="true">›</span></button>' +
+      '<div class="carousel__dots">';
+    for (var i = 0; i < count; i++) {
+      html += '<button class="carousel__dot' + (i === 0 ? ' is-active' : '') + '" type="button" ' +
+        'data-index="' + i + '" aria-label="Ir a la imagen ' + (i + 1) + '"></button>';
+    }
+    html += '</div>';
+  }
+
+  html += '</div>';
+  return html;
+}
+
+// Recorre cada carrusel ya insertado en la página y conecta sus flechas y
+// puntitos. Se llama después de aplicar el contenido (los carruseles recién
+// existen en el DOM en ese momento).
+function initCarousels() {
+  document.querySelectorAll('.carousel').forEach(function (carousel) {
+    var track = carousel.querySelector('.carousel__track');
+    var slides = carousel.querySelectorAll('.carousel__slide');
+    var dots = carousel.querySelectorAll('.carousel__dot');
+    var prevBtn = carousel.querySelector('.carousel__arrow--prev');
+    var nextBtn = carousel.querySelector('.carousel__arrow--next');
+    var index = 0;
+
+    if (slides.length <= 1) return; // nada que navegar
+
+    function update() {
+      track.style.transform = 'translateX(-' + (index * 100) + '%)';
+      dots.forEach(function (d, i) { d.classList.toggle('is-active', i === index); });
+    }
+
+    function goTo(i) {
+      index = (i + slides.length) % slides.length;
+      update();
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(index - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(index + 1); });
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { goTo(i); });
+    });
+  });
+}
 
 // Si un párrafo entero es "@video[Título](link)", esta expresión separa el
 // título del link (ver documentación arriba). Título y/o link pueden venir
@@ -269,13 +367,22 @@ function applyContent(data) {
       return;
     }
 
-    var paragraphs = raw.split(/\n\s*\n+/).map(function (p) { return p.trim(); }).filter(Boolean);
+    // Si la clave arranca con "@carousel", ese marcador puede venir pegado
+    // a la primera imagen (sin línea en blanco en el medio) o separado con
+    // una línea en blanco — los dos casos son válidos, por eso se detecta
+    // sobre el texto crudo (antes de partir en párrafos) y recién después
+    // se saca esa primera línea para partir el resto en imágenes.
+    var isCarousel = /^@carousel[ \t]*\r?\n/.test(raw);
+    var rawForParagraphs = isCarousel ? raw.replace(/^@carousel[ \t]*\r?\n/, '') : raw;
+    var paragraphs = rawForParagraphs.split(/\n\s*\n+/).map(function (p) { return p.trim(); }).filter(Boolean);
 
     if (el.tagName === 'P') {
       // Un solo párrafo esperado; si por error (o a propósito) hay más de
       // uno separado por línea en blanco, se muestran como párrafos
       // distintos (salto de línea doble) en vez de pegarse en un renglón.
       el.innerHTML = paragraphs.map(renderInline).join('<br><br>');
+    } else if (isCarousel) {
+      el.innerHTML = renderCarousel(paragraphs);
     } else {
       el.innerHTML = '';
       paragraphs.forEach(function (p, i) {
@@ -308,6 +415,7 @@ function loadContent() {
     })
     .then(function (raw) {
       applyContent(parseContent(raw));
+      initCarousels();
     })
     .catch(function (err) {
       console.error(err);
@@ -337,6 +445,8 @@ function initLightbox() {
   lightbox.setAttribute('aria-hidden', 'true');
   lightbox.innerHTML =
     '<button class="lightbox__close" type="button" aria-label="Cerrar imagen">✕</button>' +
+    '<button class="lightbox__arrow lightbox__arrow--prev" type="button" aria-label="Imagen anterior"><span aria-hidden="true">‹</span></button>' +
+    '<button class="lightbox__arrow lightbox__arrow--next" type="button" aria-label="Imagen siguiente"><span aria-hidden="true">›</span></button>' +
     '<div class="lightbox__frame">' +
     '<img class="lightbox__img" src="" alt="">' +
     '<p class="lightbox__caption"></p>' +
@@ -346,7 +456,13 @@ function initLightbox() {
   var lightboxImg = lightbox.querySelector('.lightbox__img');
   var lightboxCaption = lightbox.querySelector('.lightbox__caption');
 
-  function openLightbox(img) {
+  // Si la imagen agrandada pertenece a un carrusel, acá se guardan las
+  // demás imágenes del mismo carrusel para poder pasar de una a otra sin
+  // cerrar el popup (ver botones lightbox__arrow).
+  var galleryImgs = [];
+  var galleryIndex = -1;
+
+  function showImage(img) {
     lightboxImg.src = img.currentSrc || img.src;
     lightboxImg.alt = img.alt || '';
 
@@ -361,38 +477,74 @@ function initLightbox() {
       lightboxCaption.innerHTML = '';
       lightbox.classList.remove('has-caption');
     }
+  }
 
+  function openLightbox(img) {
+    var carouselEl = img.closest('.carousel');
+    if (carouselEl) {
+      galleryImgs = Array.prototype.slice.call(
+        carouselEl.querySelectorAll('.img-placeholder.has-image img, .content-img')
+      );
+      galleryIndex = galleryImgs.indexOf(img);
+    } else {
+      galleryImgs = [];
+      galleryIndex = -1;
+    }
+    lightbox.classList.toggle('has-gallery', galleryImgs.length > 1);
+
+    showImage(img);
     lightbox.classList.add('is-open');
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.classList.add('lightbox-open');
   }
 
+  function showGalleryOffset(offset) {
+    if (galleryImgs.length < 2) return;
+    galleryIndex = (galleryIndex + offset + galleryImgs.length) % galleryImgs.length;
+    showImage(galleryImgs[galleryIndex]);
+  }
+
   function closeLightbox() {
-    lightbox.classList.remove('is-open', 'has-caption');
+    lightbox.classList.remove('is-open', 'has-caption', 'has-gallery');
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('lightbox-open');
     lightboxImg.src = '';
     lightboxCaption.innerHTML = '';
+    galleryImgs = [];
+    galleryIndex = -1;
   }
 
   // Delegado en document: las imágenes de contenido.txt se insertan recién
   // después de cargar el archivo, así que todavía no existen en este punto.
   document.addEventListener('click', function (e) {
+    if (lightbox.classList.contains('is-open')) {
+      if (e.target.closest('.lightbox__arrow--prev')) { showGalleryOffset(-1); return; }
+      if (e.target.closest('.lightbox__arrow--next')) { showGalleryOffset(1); return; }
+    }
+
     var img = e.target.closest('.img-placeholder.has-image img, .content-img');
     if (img) {
       openLightbox(img);
       return;
     }
-    // Un clic afuera de la imagen agrandada (fondo oscuro o la ✕) cierra el
-    // popup. Un clic sobre el epígrafe sobreimpreso no debe cerrarlo, por
-    // eso el chequeo es contra todo el "cuadro" (imagen + epígrafe).
-    if (lightbox.classList.contains('is-open') && !e.target.closest('.lightbox__frame')) {
+    // Un clic afuera de la imagen agrandada (fondo oscuro, la ✕ o fuera de
+    // las flechas) cierra el popup. Un clic sobre el epígrafe sobreimpreso
+    // no debe cerrarlo, por eso el chequeo es contra todo el "cuadro"
+    // (imagen + epígrafe) más las flechas de navegación del carrusel.
+    if (
+      lightbox.classList.contains('is-open') &&
+      !e.target.closest('.lightbox__frame') &&
+      !e.target.closest('.lightbox__arrow')
+    ) {
       closeLightbox();
     }
   });
 
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showGalleryOffset(-1);
+    if (e.key === 'ArrowRight') showGalleryOffset(1);
   });
 }
 

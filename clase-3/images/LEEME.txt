@@ -2,8 +2,8 @@ CÓMO AGREGAR IMÁGENES A LA CLASE 3
 ========================================
 
 Las imágenes de esta clase se administran desde contenido.txt (ver las
-instrucciones al principio de ese archivo). Todavía no hay ninguna
-cargada — se van a ir sumando con esta lógica:
+instrucciones al principio de ese archivo). Se van sumando con esta
+lógica:
 
 En el bloque de texto donde quieras que aparezca, escribís una línea
 así:
@@ -26,13 +26,79 @@ Cómo subir un archivo a esta carpeta desde GitHub (sin instalar nada):
 
 Tamaño recomendado: entre 1200 y 1600 px de ancho, formato .jpg o .png.
 
-Imágenes que contenido.txt ya está esperando en esta clase:
+CARRUSELES (varias fotos en fila, con flechas y puntitos)
+========================================
+Dos secciones de esta clase (Generación de imágenes completas, y
+Edición de imágenes) usan un carrusel en vez de una imagen suelta —
+se ve como una sola foto con flechas a los costados. Funciona con la
+MISMA lógica de subir un archivo con el nombre exacto que ya está
+esperando abajo. Si querés agregar más fotos al carrusel (o sacar
+alguna), avisame y te agrego o saco la línea correspondiente en
+contenido.txt — el carrusel se arma solo, no hay que tocar ningún
+otro archivo.
+
+Imágenes que contenido.txt ya está esperando en esta clase
+========================================
+
+Del armado original:
 - clase3_01_bienvenida.jpg (banner de bienvenida)
 - clase3_02_modelos.jpg (banner de modelos y plataformas)
-- clase3_03_usos.jpg (imagen del Taller de Caram/Cagide — diseño de
-  personajes o de fondos, la que elijas)
-- clase3_04_edicion.jpg (imagen del Taller de Caram/Cagide — cambio de
-  estilo, props o variaciones, la que elijas)
 - clase3_05_flyer_boceto.jpg (tu boceto a lápiz del ejemplo del flyer)
 - clase3_06_flyer_resultado.jpg (el flyer generado a partir de ese boceto)
 - clase3_07_vozpropia.jpg (imagen de cierre del bloque de voz propia)
+- clase3_08_inpainting_outpainting.jpg (antes/después de un inpainting
+  o un outpainting — armala vos combinando dos capturas, no hay un
+  prompt único posible para esto)
+- clase3_10_multireferencia.jpg (composición mostrando 2 o 3 imágenes
+  de referencia + el resultado combinado — armala vos, tampoco hay un
+  prompt único posible)
+
+Nuevas de esta vuelta de cambios:
+- clase3_11_difusion.jpg (secuencia de varios fotogramas mostrando el
+  proceso de refinamiento, de ruido a imagen final — se puede armar
+  poniendo en fila varias capturas intermedias de un generador que
+  muestre los pasos, por ejemplo alguno de los espacios gratuitos de
+  Hugging Face que sugerimos para el seed)
+- clase3_12_fotorrealismo.jpg (ejemplo de resultado fotorrealista, para
+  el recuadro de "¿Cuál es mejor?")
+- clase3_13_ilustracion.jpg (ejemplo de ilustración/estética artística,
+  mismo bloque)
+- clase3_14_edicion_consistencia.jpg (ejemplo de edición o de un mismo
+  personaje mantenido entre generaciones, mismo bloque)
+- clase3_15_texto_legible.jpg (ejemplo de una pieza con texto legible
+  bien resuelto, mismo bloque)
+- clase3_16_seed.jpg (comparación entre resultados con el mismo seed
+  fijo vs. seed aleatorio — se arma fácil con los espacios gratuitos de
+  Hugging Face que están linkeados en el texto de "El seed")
+- clase3_17_gato_simple.jpg / clase3_18_gato_medio.jpg /
+  clase3_19_gato_complejo.jpg (el resultado de generar cada una de las
+  tres versiones del ejemplo de "de simple a complejo": mismo prompt
+  base, con más o menos detalle)
+- clase3_20_carousel_gen_1.jpg / clase3_21_carousel_gen_2.jpg /
+  clase3_22_carousel_gen_3.jpg (carrusel de "Generación de imágenes
+  completas": variaciones de personaje, prototipado de un escenario,
+  pieza editorial — cambiá el contenido por lo que tengas a mano)
+- clase3_23_carousel_ed_1.jpg / clase3_24_carousel_ed_2.jpg /
+  clase3_25_carousel_ed_3.jpg (carrusel de "Edición de imágenes":
+  borrado de fondo, cambio de estilo, encuadre ampliado)
+
+LOGOS DE LOS MODELOS (Bloque B)
+========================================
+Las tarjetas de "Modelos y plataformas" muestran, por ahora, una placa
+con las iniciales de cada modelo en vez de su logo real (mismo
+tratamiento que ya usamos en otros lugares del curso cuando no hay un
+logo todavía). Si en algún momento querés sumar los logos reales, se
+hace exactamente igual que con los que ya están en clase-1 y clase-2:
+armá una carpeta "images/logos" acá adentro (ya existe, con el de Flux
+copiado) y subí ahí un archivo cuadrado por modelo, con estos nombres
+exactos:
+
+- nanobananapro.png / nanobanana2.png (Google — Gemini)
+- gptimage2.png (OpenAI)
+- midjourney.png
+- adobefirefly.png
+- recraft.png
+- runway.png
+
+Avisame cuando los tengas y actualizo las tarjetas para que usen esas
+imágenes en vez de las placas de texto.
