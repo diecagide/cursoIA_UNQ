@@ -1511,6 +1511,57 @@ body.lightbox-open { overflow: hidden; }
 
 .carousel__dot.is-active { background: var(--color-accent); }
 
+/* ---------- Comparación de relaciones de aspecto (gráfico horizontal) --------- */
+/* Usado en "Upscaling y adaptación a otros formatos" para mostrar, a modo
+   de selector de formato como los que aparecen en los modelos de imagen,
+   las proporciones más habituales (16:9, 1:1, 9:16). Se dibuja entero con
+   CSS a partir del --ratio que cada .ratio-compare__item define inline en
+   index.html — no hace falta subir ninguna imagen para este componente. */
+
+.ratio-compare {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin: 8px 0 28px;
+  padding: 24px 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.ratio-compare__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.ratio-compare__box {
+  aspect-ratio: var(--ratio);
+  height: 100px;
+  background: var(--color-accent-light);
+  border: 2px solid var(--color-accent);
+  border-radius: 6px;
+}
+
+.ratio-compare__label {
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: .92rem;
+  color: var(--color-primary);
+}
+
+.ratio-compare__label span {
+  display: block;
+  font-weight: 400;
+  font-size: .78rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
 /* ---------- Variante de color por clase ---------- */
 /* Mismo archivo para todas las clases: el degradé de la barra lateral
    (y, con él, la caja destacada tipo .highlight-box y el círculo de

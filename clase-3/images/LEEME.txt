@@ -74,31 +74,64 @@ Nuevas de esta vuelta de cambios:
   clase3_19_gato_complejo.jpg (el resultado de generar cada una de las
   tres versiones del ejemplo de "de simple a complejo": mismo prompt
   base, con más o menos detalle)
-- clase3_20_carousel_gen_1.jpg / clase3_21_carousel_gen_2.jpg /
-  clase3_22_carousel_gen_3.jpg (carrusel de "Generación de imágenes
-  completas": variaciones de personaje, prototipado de un escenario,
-  pieza editorial — cambiá el contenido por lo que tengas a mano)
-- clase3_23_carousel_ed_1.jpg / clase3_24_carousel_ed_2.jpg /
-  clase3_25_carousel_ed_3.jpg (carrusel de "Edición de imágenes":
-  borrado de fondo, cambio de estilo, encuadre ampliado)
+
+Última vuelta de cambios (Bloque D reorganizado: ahora cada uso tiene
+su propia imagen al lado, en vez de un carrusel compartido — los
+carruseles de "Generación" y "Edición" que pedían clase3_20 a
+clase3_25 ya NO se usan más, podés ignorarlos si los tenías anotados):
+- clase3_26_usogen_referencias.jpg (referencia visual para un tema o
+  concepto, ej. un período histórico)
+- clase3_27_usogen_ideacion.jpg (variaciones de prototipado de un
+  escenario o espacio)
+- clase3_28_usogen_vistas.jpg (hoja de modelo: vistas de frente, de
+  perfil y desde arriba de un mismo personaje u objeto)
+- clase3_29_usogen_storyboard.jpg (storyboard generado a partir de un
+  guion o sinopsis)
+- clase3_30_usogen_editorial.jpg (pieza editorial o gráfica para
+  redes)
+- clase3_31_usogen_estilo.jpg (variación de estilo sobre un mismo
+  resultado, sin perder la composición)
+- clase3_32_usoed_borrado.jpg (borrado de fondo sobre una imagen ya
+  existente)
+- clase3_33_usoed_agregar.jpg (elemento nuevo agregado, integrado al
+  estilo original)
+- clase3_34_usoed_props.jpg (ajuste de un objeto — prop — dentro de
+  una escena)
+
+El gráfico de "16:9 / 1:1 / 9:16" de la sección de Upscaling no
+necesita ninguna imagen: se dibuja solo con el diseño de la página.
 
 LOGOS DE LOS MODELOS (Bloque B)
 ========================================
-Las tarjetas de "Modelos y plataformas" muestran, por ahora, una placa
-con las iniciales de cada modelo en vez de su logo real (mismo
-tratamiento que ya usamos en otros lugares del curso cuando no hay un
-logo todavía). Si en algún momento querés sumar los logos reales, se
-hace exactamente igual que con los que ya están en clase-1 y clase-2:
-armá una carpeta "images/logos" acá adentro (ya existe, con el de Flux
-copiado) y subí ahí un archivo cuadrado por modelo, con estos nombres
-exactos:
+Ya agregaste los logos de Nano Banana (nanobanana_logo.png) y de Adobe
+Firefly (adobe_logo.png) en "images/logos", y las tarjetas ya los usan.
+El logo de Recraft (recraft_logo.png) también está en la carpeta, pero
+por ahora no hace falta: sacamos la tarjeta completa de Recraft (ver
+más abajo), así que ese archivo queda sin usar — no molesta si se
+queda ahí, pero avisame si preferís que lo saque de la carpeta.
 
-- nanobananapro.png / nanobanana2.png (Google — Gemini)
-- gptimage2.png (OpenAI)
-- midjourney.png
-- adobefirefly.png
-- recraft.png
-- runway.png
+Los modelos que todavía muestran una placa con sus iniciales en vez de
+un logo real son: GPT Image 2, Midjourney y Runway Gen-4 Image. Si en
+algún momento querés sumarles logo, se hace igual que con los que ya
+subiste: un archivo cuadrado en "images/logos" con estos nombres
+(mismo criterio que usaste vos: nombre del modelo + "_logo.png"):
+
+- gpt_logo.png (OpenAI)
+- midjourney_logo.png
+- runway_logo.png
 
 Avisame cuando los tengas y actualizo las tarjetas para que usen esas
 imágenes en vez de las placas de texto.
+
+SOBRE RECRAFT
+========================================
+Esta vuelta saqué la tarjeta completa de Recraft de "Modelos y
+plataformas" (me preguntaste si valía la pena que siguiera ahí). Según
+lo que investigué, hoy Recraft se destaca sobre todo por gráficos
+vectoriales con tipografía editable — más una herramienta de diseño
+gráfico que algo de uso general como el resto de las tarjetas — así
+que para un curso pensado para docentes no diseñadores no me pareció
+que mereciera una tarjeta propia. Le dejé una mención breve en "¿Cuál
+es mejor? → Piezas con texto legible", aclarando para qué sirve
+específicamente. Si preferís que vuelva a tener su tarjeta completa,
+lo charlamos y la repongo sin problema.

@@ -82,8 +82,6 @@ Prompt: Un banner que muestre, a modo de vitrina o galería, distintos estilos v
 ## modelos_plataformas_2
 Y, como pasaba con el texto, la relación entre modelo y plataforma no es uno a uno. **Adobe Firefly**, por ejemplo, además de sus propios modelos (Firefly Image Model 4 y 4 Ultra), da acceso a modelos de otras empresas —de Google, de OpenAI, de Black Forest Labs, entre otras— todos dentro de la misma interfaz. Otras plataformas, en cambio, están armadas alrededor de un solo modelo: es el caso de Midjourney, que hoy tiene su propio sitio web además del bot de Discord original, pero en los dos casos sigue siendo la única puerta de entrada a su modelo.
 
-Una aclaración puntual, porque es una pregunta habitual: **Nano Banana 2 no es una versión "mejor" que Nano Banana Pro**, sino un nivel distinto dentro de la misma familia. Nano Banana Pro (Gemini 3 Pro Image) prioriza la calidad y el detalle máximo; Nano Banana 2 (Gemini 3.1 Flash Image) prioriza la velocidad y el costo, con buen seguimiento de instrucciones. Cuál conviene depende de si lo que se necesita es la mejor calidad posible o una generación rápida y liviana.
-
 
 ## privados_abiertos_imagen
 La distinción entre modelos propietarios y de código abierto que vimos en la Clase 1 también aplica acá. Midjourney, GPT Image 2, Nano Banana, Adobe Firefly y Runway Gen-4 Image son modelos propietarios: los usamos a través de la plataforma de la empresa que los desarrolló, con sus condiciones de uso y sus límites gratuitos. Stable Diffusion y Flux, en cambio, tienen versiones de código abierto (hoy, por ejemplo, Flux.2 [dev]) que se pueden descargar y ejecutar en una computadora propia, lo que da más control sobre el proceso, pero exige más conocimiento técnico.
@@ -113,7 +111,7 @@ Para **edición de imágenes existentes y consistencia entre generaciones** —m
 ![](images/clase3_14_edicion_consistencia.jpg)
 
 ## mejor_texto_legible
-Para **piezas con texto legible** —infografías, flyers, gráficas con datos— Nano Banana y Recraft son hoy los que mejor resuelven ese detalle, que durante mucho tiempo fue un punto débil de la IA generativa de imagen.
+Para **piezas con texto legible** —infografías, flyers, gráficas con datos— Nano Banana (sobre todo en su versión Pro) suele ser la opción más práctica, resolviendo bien un detalle que durante mucho tiempo fue un punto débil de la IA generativa de imagen. Si lo que necesitás es específicamente un gráfico vectorial editable —un logo, una pieza de identidad—, Recraft es una herramienta especializada en eso, aunque pensada más para uso de diseño gráfico que para el resto de los usos que vimos en esta clase.
 
 ## mejor_texto_legible_imagen
 ![](images/clase3_15_texto_legible.jpg)
@@ -251,56 +249,80 @@ Antes de listar usos: ninguno de estos reemplaza la disciplina artística. Siemp
 ## usos_generacion
 ¿Para qué puede servir esto en el trabajo docente y en el acompañamiento a los y las estudiantes? Venimos con esa pregunta desde la Clase 1. Algunos usos posibles, pensados desde una lógica de producción, más allá de generar una imagen suelta:
 
-- **Referencias visuales**: producir imágenes de referencia para un tema, un período histórico, un concepto abstracto, cuando no encontramos (o no existe) una foto o ilustración que lo represente bien.
-- **Ideación, prototipado y maquetado**: generar rápidamente variaciones visuales sobre una misma idea, para explorar direcciones antes de decidir un camino.
-- **Vistas de un diseño**: generar personajes, espacios o escenarios en distintas variaciones antes de definir una versión final, muy útil en proyectos de animación, cómic o narrativa visual.
-- **Storyboards y biblias de proyecto**: armar rápidamente una secuencia visual de referencia, o material gráfico para presentar y comunicar un proyecto hacia afuera. Ya existen herramientas pensadas específicamente para esto: [Boords](https://boords.com/ai-storyboard-generator), por ejemplo, arma un storyboard completo a partir de subir un guion o una sinopsis.
-- **Diseño editorial y piezas de comunicación**: portadas, gráficas para redes, branding de una cátedra o de un proyecto.
+## usos_generacion_referencias
+**Referencias visuales**: producir imágenes de referencia para un tema, un período histórico, un concepto abstracto, cuando no encontramos (o no existe) una foto o ilustración que lo represente bien.
 
-## usos_generacion_carousel
-@carousel
-![Variaciones de diseño de personaje](images/clase3_20_carousel_gen_1.jpg)
-Variaciones de diseño de personaje a partir del mismo prompt base
+## usos_generacion_referencias_imagen
+![Referencia visual generada para un tema histórico](images/clase3_26_usogen_referencias.jpg)
 
-![Prototipado de un escenario](images/clase3_21_carousel_gen_2.jpg)
-Prototipado rápido de un espacio o escenografía
+## usos_generacion_ideacion
+**Ideación, prototipado y maquetado**: generar rápidamente variaciones visuales sobre una misma idea, para explorar direcciones antes de decidir un camino.
 
-![Pieza de comunicación](images/clase3_22_carousel_gen_3.jpg)
-Pieza editorial generada para redes
+## usos_generacion_ideacion_imagen
+![Variaciones de prototipado de un escenario](images/clase3_27_usogen_ideacion.jpg)
+
+## usos_generacion_vistas
+**Vistas y hojas de modelo**: generar un mismo personaje, objeto o espacio desde distintos ángulos —de frente, de perfil, desde arriba— para usarlo como referencia de modelado 3D, o armar una hoja de modelo con los elementos y variantes de un personaje. Muy útil en proyectos de animación, cómic o narrativa visual.
+
+## usos_generacion_vistas_imagen
+![Hoja de modelo con vistas frontal, lateral y superior de un personaje](images/clase3_28_usogen_vistas.jpg)
+
+## usos_generacion_storyboards
+**Storyboards y biblias de proyecto**: armar rápidamente una secuencia visual de referencia, o material gráfico para presentar y comunicar un proyecto hacia afuera. Ya existen herramientas pensadas específicamente para esto: [Boords](https://boords.com/ai-storyboard-generator), por ejemplo, arma un storyboard completo a partir de subir un guion o una sinopsis.
+
+## usos_generacion_storyboards_imagen
+![Storyboard generado a partir de un guion](images/clase3_29_usogen_storyboard.jpg)
+
+## usos_generacion_editorial
+**Diseño editorial y piezas de comunicación**: portadas, gráficas para redes, branding de una cátedra o de un proyecto.
+
+## usos_generacion_editorial_imagen
+![Pieza editorial generada para redes](images/clase3_30_usogen_editorial.jpg)
+
+## usos_generacion_estilo
+**Cambiar el estilo de una imagen ya generada, o producir variaciones sobre un mismo resultado**: mantener la composición general de una imagen pero explorar otra estética, o generar variantes distintas sobre la misma idea sin perder lo esencial del resultado original.
+
+## usos_generacion_estilo_imagen
+![Variación de estilo sobre un mismo resultado, sin perder la composición](images/clase3_31_usogen_estilo.jpg)
 
 
 ## usos_edicion
 Además de generar imágenes desde cero, buena parte del uso cotidiano de estas herramientas es de **edición** sobre una imagen ya existente:
 
-- Borrar fondos o elementos de una imagen.
-- Agregar elementos nuevos que se integren al estilo visual ya existente.
-- Diseñar y ajustar **props** u objetos puntuales dentro de una escena: escalarlos, moverlos, expandir el encuadre alrededor de ellos.
-- Escalar o adaptar una imagen a distintos formatos y proporciones (por ejemplo, de un formato horizontal a uno cuadrado para redes).
-- Cambiar el estilo de una imagen ya generada, o producir variaciones sobre un mismo resultado sin perder su composición general.
+## usos_edicion_borrado
+**Borrar fondos o elementos** de una imagen.
 
+## usos_edicion_borrado_imagen
+![Borrado de fondo sobre una imagen ya existente](images/clase3_32_usoed_borrado.jpg)
+
+## usos_edicion_agregar
+**Agregar elementos nuevos** que se integren al estilo visual ya existente.
+
+## usos_edicion_agregar_imagen
+![Elemento nuevo agregado, integrado al estilo original](images/clase3_33_usoed_agregar.jpg)
+
+## usos_edicion_props
+**Diseñar y ajustar props** u objetos puntuales dentro de una escena: escalarlos, moverlos, expandir el encuadre alrededor de ellos.
+
+## usos_edicion_props_imagen
+![Ajuste de un objeto dentro de una escena](images/clase3_34_usoed_props.jpg)
+
+## usos_edicion_cierre
 Estas funciones suelen depender menos de escribir un prompt elaborado y más de señalar directamente, dentro de la misma imagen, qué parte querés modificar y cómo.
 
-## usos_edicion_carousel
-@carousel
-![Borrado de fondo](images/clase3_23_carousel_ed_1.jpg)
-Borrado de fondo sobre una imagen ya existente
 
-![Cambio de estilo](images/clase3_24_carousel_ed_2.jpg)
-Cambio de estilo sobre un mismo resultado, sin perder la composición
+## usos_upscaling_intro
+Otro uso frecuente, menos creativo pero muy práctico, es el de resolver problemas técnicos de resolución. Durante mucho tiempo, agrandar una imagen chica implicaba perder nitidez: los píxeles existentes se estiraban y el resultado se veía borroso. Los modelos de IA resuelven esto de otra manera —generan detalle nuevo y coherente con la imagen original para agrandarla, en vez de simplemente estirar los píxeles que ya tiene—. Esta función suele llamarse *upscaling* o *escalado*, y ya está integrada en varias herramientas: Midjourney tiene sus propios botones de Upscale (Subtle y Creative) para ampliar cualquier imagen generada, Adobe Firefly ofrece una función equivalente llamada Generative Upscale, y también hay herramientas dedicadas específicamente a esto —como Topaz Gigapixel— pensadas para agrandar fotos o imágenes de baja calidad en general, no solo las generadas por IA.
 
-![Encuadre ampliado](images/clase3_25_carousel_ed_3.jpg)
-Encuadre ampliado con outpainting
+## usos_upscaling_formatos
+Algo parecido pasa con el formato: la misma imagen suele necesitarse en proporciones distintas según dónde se vaya a publicar. Antes había que recortarla a mano, y a veces eso implicaba perder una parte importante de la composición; hoy varios modelos pueden extender o readaptar una imagen a una proporción distinta generando contenido nuevo en los bordes —la misma lógica del outpainting que vimos antes— en lugar de simplemente recortarla. Los formatos más habituales con los que te vas a encontrar:
+
+## usos_upscaling_cierre
+Conviene tener estos formatos en cuenta desde el momento en que se escribe el prompt, para elegir de entrada el modelo o la herramienta que permita generar —o adaptar después— en la proporción que efectivamente vamos a necesitar.
 
 
-## multi_referencia
-Hasta acá hablamos de imágenes de referencia como si fueran una sola. Pero cada vez es más habitual poder subir varias a la vez, y que cada una cumpla un rol distinto dentro de la misma generación: una imagen puede aportar la estructura o composición, otra el estilo visual, otra la paleta de colores, otra un personaje o rostro que se quiere mantener igual en distintas escenas.
-
-Nano Banana, por ejemplo, permite combinar varias imágenes de referencia en una misma generación —al momento de escribir esto, hasta un número bastante alto—, cada una cumpliendo una función distinta dentro del resultado final. Esto abre posibilidades muy concretas para el trabajo docente: mantener la cara de un personaje mientras cambia de escenario, aplicar la paleta de colores de una pieza institucional a una imagen nueva, o combinar la composición de un boceto propio con el estilo visual de otra referencia.
-
-El ejemplo que sigue —el del flyer armado a partir de un esquema propio— es, en el fondo, un caso particular de esto: una sola imagen de referencia, cumpliendo el rol de estructura.
-
-![](images/clase3_10_multireferencia.jpg)
-
+## usos_otros_intro
+Por fuera de generar y editar, hay un uso más puntual que aparece una y otra vez en el trabajo cotidiano: la **estilización**, aplicarle a una imagen ya existente —una foto, un dibujo, un logo— una estética distinta a la original, manteniendo su estructura. Un caso concreto, que ya vimos en la Clase 1 desde el lado del texto, es el de los flyers.
 
 ## usos_flyer_intro
 Hoy las redes están repletas de flyers genéricos hechos con IA: esa estética reconocible de tipografías grandes, degradados y elementos decorativos repetidos, que en general no tiene mucho que ver con la identidad de quien lo publica. Una posibilidad para evitar ese resultado genérico y hacer flyers realmente personalizados es proporcionarle al modelo una estructura bocetada propia, en lugar de dejar que decida la composición.
@@ -313,6 +335,16 @@ En la Clase 1 comparamos pedir "hacé un flyer para este evento" con aportar un 
 ![](images/clase3_06_flyer_resultado.jpg)
 
 Ese boceto se puede subir como imagen de referencia (imagen-a-imagen) junto con un prompt que describa el estilo visual que queremos, y el modelo va a respetar la estructura que definimos en lugar de inventar una propia. Es una forma simple de que el resultado tenga nuestra impronta desde el arranque, no recién en los ajustes posteriores.
+
+
+## multi_referencia
+Hasta acá hablamos de imágenes de referencia como si fueran una sola. Pero cada vez es más habitual poder subir varias a la vez, y que cada una cumpla un rol distinto dentro de la misma generación: una imagen puede aportar la estructura o composición, otra el estilo visual, otra la paleta de colores, otra un personaje o rostro que se quiere mantener igual en distintas escenas.
+
+Nano Banana, por ejemplo, permite combinar varias imágenes de referencia en una misma generación —al momento de escribir esto, hasta un número bastante alto—, cada una cumpliendo una función distinta dentro del resultado final. Esto abre posibilidades muy concretas para el trabajo docente: mantener la cara de un personaje mientras cambia de escenario, aplicar la paleta de colores de una pieza institucional a una imagen nueva, o combinar la composición de un boceto propio con el estilo visual de otra referencia.
+
+El ejemplo que sigue —el del flyer armado a partir de un esquema propio— es, en el fondo, un caso particular de esto: una sola imagen de referencia, cumpliendo el rol de estructura.
+
+![](images/clase3_10_multireferencia.jpg)
 
 
 ## combinacion_modelos

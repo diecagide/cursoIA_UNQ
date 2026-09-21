@@ -72,12 +72,13 @@
       </li>
 
       <li class="nav-group">
-        <a class="nav-group__link" href="#bloque-d"><span class="nav-bullet"></span>Bloque D · Usos: generación y edición</a>
+        <a class="nav-group__link" href="#bloque-d"><span class="nav-bullet"></span>Bloque D · Usos de la imagen generada</a>
         <ul class="nav-subgroup">
           <li><a href="#usos-generacion">Generación de imágenes completas</a></li>
           <li><a href="#usos-edicion">Edición de imágenes</a></li>
+          <li><a href="#usos-upscaling">Upscaling y adaptación a otros formatos</a></li>
+          <li><a href="#usos-otros">Otros usos</a></li>
           <li><a href="#multi-referencia">Varias imágenes de referencia</a></li>
-          <li><a href="#usos-flyer">El flyer con estética IA</a></li>
           <li><a href="#combinacion-modelos">Combinando modelos</a></li>
         </ul>
       </li>
@@ -180,9 +181,9 @@
 
           <details class="platform-card" style="--platform-color:#4285F4">
             <summary class="platform-card__head">
-              <span class="platform-card__logo platform-card__logo--text">NB</span>
+              <span class="platform-card__logo"><img src="images/logos/nanobanana_logo.png" alt="Nano Banana" loading="lazy"></span>
               <div class="platform-card__id">
-                <h4 class="platform-card__name"><a href="https://gemini.google.com/app" target="_blank" rel="noopener">Nano Banana Pro ↗</a></h4>
+                <h4 class="platform-card__name"><a href="https://gemini.google.com/app" target="_blank" rel="noopener">Nano Banana ↗</a></h4>
                 <p class="platform-card__dev">Google DeepMind</p>
               </div>
               <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
@@ -190,40 +191,15 @@
             <div class="platform-card__body">
               <div class="platform-card__row">
                 <p class="platform-card__label">Nombre propio del modelo</p>
-                <p>Gemini 3 Pro Image</p>
+                <p>"Nano Banana" es el apodo con el que se popularizó esta familia de modelos de imagen de Google. Hoy conviven dos versiones: <strong>Nano Banana Pro</strong> (Gemini 3 Pro Image) y <strong>Nano Banana 2</strong> (Gemini 3.1 Flash Image)</p>
               </div>
               <div class="platform-card__row">
                 <p class="platform-card__label">Se usa para</p>
-                <p>Composiciones complejas, texto legible dentro de la imagen, la máxima calidad y fidelidad posible</p>
+                <p>Pro prioriza la calidad y el detalle máximo —composiciones complejas, texto legible dentro de la imagen—; 2 prioriza la velocidad y el costo, con buen seguimiento de instrucciones. No es que una sea "mejor" que la otra: son dos niveles pensados para necesidades distintas</p>
               </div>
               <div class="platform-card__row">
                 <p class="platform-card__label">Dónde funciona</p>
-                <p>Gemini (app y web), Google AI Studio, Vertex AI, y como modelo dentro de Adobe Firefly</p>
-              </div>
-            </div>
-          </details>
-
-          <details class="platform-card" style="--platform-color:#1A73E8">
-            <summary class="platform-card__head">
-              <span class="platform-card__logo platform-card__logo--text">NB2</span>
-              <div class="platform-card__id">
-                <h4 class="platform-card__name"><a href="https://gemini.google.com/app" target="_blank" rel="noopener">Nano Banana 2 ↗</a></h4>
-                <p class="platform-card__dev">Google DeepMind</p>
-              </div>
-              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
-            </summary>
-            <div class="platform-card__body">
-              <div class="platform-card__row">
-                <p class="platform-card__label">Nombre propio del modelo</p>
-                <p>Gemini 3.1 Flash Image</p>
-              </div>
-              <div class="platform-card__row">
-                <p class="platform-card__label">Se usa para</p>
-                <p>Generación rápida y económica, con buen seguimiento de instrucciones — no es "mejor" que Nano Banana Pro, es un nivel distinto pensado para velocidad en vez de calidad máxima</p>
-              </div>
-              <div class="platform-card__row">
-                <p class="platform-card__label">Dónde funciona</p>
-                <p>Gemini (app y web), Google AI Studio, Vertex AI</p>
+                <p>Gemini (app y web), Google AI Studio, Vertex AI, y Pro además como modelo dentro de Adobe Firefly</p>
               </div>
             </div>
           </details>
@@ -240,7 +216,7 @@
             <div class="platform-card__body">
               <div class="platform-card__row">
                 <p class="platform-card__label">Nombre propio del modelo</p>
-                <p>GPT Image 2</p>
+                <p>GPT Image 2 — en septiembre de 2026 OpenAI sumó una actualización, GPT Image 2.5, que hoy es la versión que usa ChatGPT por defecto</p>
               </div>
               <div class="platform-card__row">
                 <p class="platform-card__label">Se usa para</p>
@@ -248,7 +224,7 @@
               </div>
               <div class="platform-card__row">
                 <p class="platform-card__label">Dónde funciona</p>
-                <p>ChatGPT (tocando el ícono "+" y eligiendo Imagen), Sora, y la API de OpenAI</p>
+                <p>ChatGPT (tocando el ícono "+" y eligiendo "Crear imagen"), y la API de OpenAI</p>
               </div>
             </div>
           </details>
@@ -290,7 +266,7 @@
             <div class="platform-card__body">
               <div class="platform-card__row">
                 <p class="platform-card__label">Nombre propio del modelo</p>
-                <p>FLUX.2, con variantes: [dev] de código abierto, y versiones privadas más potentes (Pro/Max)</p>
+                <p>FLUX.2, con varias variantes: [dev] y la familia [klein] (más liviana, pensada para correr en una computadora con menos recursos) son de código abierto; pro, flex y max son versiones privadas más potentes, disponibles solo por API</p>
               </div>
               <div class="platform-card__row">
                 <p class="platform-card__label">Se usa para</p>
@@ -305,7 +281,7 @@
 
           <details class="platform-card" style="--platform-color:#FA0F00">
             <summary class="platform-card__head">
-              <span class="platform-card__logo platform-card__logo--text">Ff</span>
+              <span class="platform-card__logo"><img src="images/logos/adobe_logo.png" alt="Adobe Firefly" loading="lazy"></span>
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://firefly.adobe.com/" target="_blank" rel="noopener">Adobe Firefly ↗</a></h4>
                 <p class="platform-card__dev">Adobe</p>
@@ -328,27 +304,6 @@
             </div>
           </details>
 
-          <details class="platform-card" style="--platform-color:#6C4FF6">
-            <summary class="platform-card__head">
-              <span class="platform-card__logo platform-card__logo--text">Rc</span>
-              <div class="platform-card__id">
-                <h4 class="platform-card__name"><a href="https://www.recraft.ai/" target="_blank" rel="noopener">Recraft ↗</a></h4>
-                <p class="platform-card__dev">Recraft</p>
-              </div>
-              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
-            </summary>
-            <div class="platform-card__body">
-              <div class="platform-card__row">
-                <p class="platform-card__label">Se usa para</p>
-                <p>Piezas de diseño gráfico, con buen manejo de tipografía y de identidad de marca</p>
-              </div>
-              <div class="platform-card__row">
-                <p class="platform-card__label">Dónde funciona</p>
-                <p>Plataforma propia (recraft.ai)</p>
-              </div>
-            </div>
-          </details>
-
           <details class="platform-card" style="--platform-color:#00A656">
             <summary class="platform-card__head">
               <span class="platform-card__logo platform-card__logo--text">Rw</span>
@@ -360,8 +315,12 @@
             </summary>
             <div class="platform-card__body">
               <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Gen-4 Image. Runway es conocida sobre todo como empresa de generación de <strong>video</strong> (su modelo de video más reciente es Gen-4.5); el modelo de imagen es un producto complementario, pensado para generar y mantener referencias visuales consistentes que después se pueden animar</p>
+              </div>
+              <div class="platform-card__row">
                 <p class="platform-card__label">Se usa para</p>
-                <p>Mantener un mismo personaje, objeto o lugar de forma consistente entre varias imágenes distintas, a partir de fotos de referencia</p>
+                <p>Mantener un mismo personaje, objeto o lugar de forma consistente entre varias imágenes distintas, a partir de fotos de referencia. Es un patrón habitual en las empresas de video: Kuaishou, por ejemplo, además de su modelo de video Kling, tiene un modelo de imagen propio, Kolors</p>
               </div>
               <div class="platform-card__row">
                 <p class="platform-card__label">Dónde funciona</p>
@@ -526,7 +485,7 @@
            BLOQUE D
            ================================================================= -->
       <section class="block" id="bloque-d">
-        <h2>Bloque D — Usos: generación y edición de imágenes</h2>
+        <h2>Bloque D — Usos de la imagen generada</h2>
 
         <!-- Aviso destacado: estos usos no reemplazan la disciplina artística -->
         <div class="warning-box">
@@ -535,26 +494,90 @@
         </div>
 
         <h3 id="usos-generacion">Generación de imágenes completas</h3>
-        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="usos_generacion"></div>
-        <!-- Carrusel de imágenes de ejemplo — se edita en contenido.txt (clave con @carousel) -->
-        <div class="content-block" data-key="usos_generacion_carousel"></div>
+        <!-- Intro de la lista de usos — se edita en contenido.txt (no acá) -->
+        <p data-key="usos_generacion"></p>
+
+        <!-- Cada uso tiene su texto y su imagen de ejemplo juntos, uno
+             debajo del otro — misma lógica que los "Ejemplos: de simple a
+             complejo" del Bloque C. Todo el contenido (texto e imágenes)
+             se edita en contenido.txt, esta estructura de a pares no
+             cambia. -->
+        <p data-key="usos_generacion_referencias"></p>
+        <div class="content-block" data-key="usos_generacion_referencias_imagen"></div>
+
+        <p data-key="usos_generacion_ideacion"></p>
+        <div class="content-block" data-key="usos_generacion_ideacion_imagen"></div>
+
+        <p data-key="usos_generacion_vistas"></p>
+        <div class="content-block" data-key="usos_generacion_vistas_imagen"></div>
+
+        <p data-key="usos_generacion_storyboards"></p>
+        <div class="content-block" data-key="usos_generacion_storyboards_imagen"></div>
+
+        <p data-key="usos_generacion_editorial"></p>
+        <div class="content-block" data-key="usos_generacion_editorial_imagen"></div>
+
+        <p data-key="usos_generacion_estilo"></p>
+        <div class="content-block" data-key="usos_generacion_estilo_imagen"></div>
 
         <h3 id="usos-edicion">Edición de imágenes</h3>
-        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="usos_edicion"></div>
-        <!-- Carrusel de imágenes de ejemplo — se edita en contenido.txt (clave con @carousel) -->
-        <div class="content-block" data-key="usos_edicion_carousel"></div>
+        <!-- Intro de la lista de usos — se edita en contenido.txt (no acá) -->
+        <p data-key="usos_edicion"></p>
 
-        <h3 id="multi-referencia">Varias imágenes de referencia a la vez</h3>
-        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="multi_referencia"></div>
+        <p data-key="usos_edicion_borrado"></p>
+        <div class="content-block" data-key="usos_edicion_borrado_imagen"></div>
 
-        <h3 id="usos-flyer">El flyer con estética IA</h3>
+        <p data-key="usos_edicion_agregar"></p>
+        <div class="content-block" data-key="usos_edicion_agregar_imagen"></div>
+
+        <p data-key="usos_edicion_props"></p>
+        <div class="content-block" data-key="usos_edicion_props_imagen"></div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_edicion_cierre"></p>
+
+        <h3 id="usos-upscaling">Upscaling y adaptación a otros formatos</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_upscaling_intro"></p>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_upscaling_formatos"></p>
+
+        <!-- Gráfico horizontal comparando relaciones de aspecto, al estilo
+             del selector de formato que aparece en los modelos de imagen.
+             Pieza estructural: se edita acá directo, no en contenido.txt
+             (mismo criterio que las tarjetas de plataformas). No necesita
+             que Diego suba ninguna imagen: se dibuja con CSS. -->
+        <div class="ratio-compare">
+          <div class="ratio-compare__item" style="--ratio:16/9">
+            <div class="ratio-compare__box"></div>
+            <p class="ratio-compare__label">16:9<span>Formato HD / horizontal</span></p>
+          </div>
+          <div class="ratio-compare__item" style="--ratio:1/1">
+            <div class="ratio-compare__box"></div>
+            <p class="ratio-compare__label">1:1<span>Feed de Instagram</span></p>
+          </div>
+          <div class="ratio-compare__item" style="--ratio:9/16">
+            <div class="ratio-compare__box"></div>
+            <p class="ratio-compare__label">9:16<span>Stories / Reels</span></p>
+          </div>
+        </div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_upscaling_cierre"></p>
+
+        <h3 id="usos-otros">Otros usos</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_otros_intro"></p>
+
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="usos_flyer_intro"></p>
         <!-- El texto de esta sección, incluidas las dos imágenes (boceto y resultado), se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="usos_flyer_esquema"></div>
+
+        <h3 id="multi-referencia">Varias imágenes de referencia a la vez</h3>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="multi_referencia"></div>
 
         <h3 id="combinacion-modelos">Combinando modelos</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
