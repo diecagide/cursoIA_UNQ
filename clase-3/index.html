@@ -76,8 +76,10 @@
         <ul class="nav-subgroup">
           <li><a href="#usos-generacion">Generación de imágenes completas</a></li>
           <li><a href="#usos-edicion">Edición de imágenes</a></li>
-          <li><a href="#usos-upscaling">Upscaling y adaptación a otros formatos</a></li>
-          <li><a href="#usos-otros">Otros usos</a></li>
+          <li><a href="#usos-upscaling">Upscaling (aumento de resolución)</a></li>
+          <li><a href="#usos-formatos">Adaptación a otros formatos</a></li>
+          <li><a href="#usos-estilo">Cambio de estilo</a></li>
+          <li><a href="#usos-flyers">Flyers</a></li>
           <li><a href="#multi-referencia">Varias imágenes de referencia</a></li>
           <li><a href="#combinacion-modelos">Combinando modelos</a></li>
         </ul>
@@ -173,10 +175,11 @@
              qué plataformas funciona, con logo y link — mismo componente
              que las tarjetas de plataformas de texto de la Clase 2. Pieza
              tabular: se edita acá directo, no en contenido.txt (mismo
-             criterio que las tarjetas de la Clase 2). Los modelos sin un
-             logo real todavía muestran una placa con sus iniciales
-             (.platform-card__logo--text) — ver LEEME.txt de images/ para
-             agregar logos reales más adelante si se quiere. -->
+             criterio que las tarjetas de la Clase 2). Las seis ya usan
+             logo real (GPT Image 2 reusa el logo de ChatGPT, a pedido de
+             Diego); la placa de iniciales (.platform-card__logo--text)
+             queda como fallback en el CSS por si se suma un modelo nuevo
+             sin logo todavía. -->
         <div class="platform-cards">
 
           <details class="platform-card" style="--platform-color:#4285F4">
@@ -206,7 +209,7 @@
 
           <details class="platform-card" style="--platform-color:#10A37F">
             <summary class="platform-card__head">
-              <span class="platform-card__logo platform-card__logo--text">GPT</span>
+              <span class="platform-card__logo"><img src="images/logos/chatgpt.png" alt="GPT Image 2" loading="lazy"></span>
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://chatgpt.com/" target="_blank" rel="noopener">GPT Image 2 ↗</a></h4>
                 <p class="platform-card__dev">OpenAI</p>
@@ -231,7 +234,7 @@
 
           <details class="platform-card" style="--platform-color:#000000">
             <summary class="platform-card__head">
-              <span class="platform-card__logo platform-card__logo--text">MJ</span>
+              <span class="platform-card__logo"><img src="images/logos/Midjourney.png" alt="Midjourney" loading="lazy"></span>
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://www.midjourney.com/" target="_blank" rel="noopener">Midjourney ↗</a></h4>
                 <p class="platform-card__dev">Midjourney, Inc.</p>
@@ -306,7 +309,7 @@
 
           <details class="platform-card" style="--platform-color:#00A656">
             <summary class="platform-card__head">
-              <span class="platform-card__logo platform-card__logo--text">Rw</span>
+              <span class="platform-card__logo"><img src="images/logos/Runway.png" alt="Runway Gen-4 Image" loading="lazy"></span>
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://runwayml.com/" target="_blank" rel="noopener">Runway Gen-4 Image ↗</a></h4>
                 <p class="platform-card__dev">Runway AI</p>
@@ -517,8 +520,8 @@
         <p data-key="usos_generacion_editorial"></p>
         <div class="content-block" data-key="usos_generacion_editorial_imagen"></div>
 
-        <p data-key="usos_generacion_estilo"></p>
-        <div class="content-block" data-key="usos_generacion_estilo_imagen"></div>
+        <p data-key="usos_generacion_ajustes"></p>
+        <div class="content-block" data-key="usos_generacion_ajustes_imagen"></div>
 
         <h3 id="usos-edicion">Edición de imágenes</h3>
         <!-- Intro de la lista de usos — se edita en contenido.txt (no acá) -->
@@ -536,12 +539,15 @@
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="usos_edicion_cierre"></p>
 
-        <h3 id="usos-upscaling">Upscaling y adaptación a otros formatos</h3>
+        <h3 id="usos-upscaling">Upscaling (aumento de resolución)</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="usos_upscaling_intro"></p>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="usos_upscaling_imagen"></div>
 
+        <h3 id="usos-formatos">Adaptación a otros formatos</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="usos_upscaling_formatos"></p>
+        <p data-key="usos_formatos_intro"></p>
 
         <!-- Gráfico horizontal comparando relaciones de aspecto, al estilo
              del selector de formato que aparece en los modelos de imagen.
@@ -553,9 +559,17 @@
             <div class="ratio-compare__box"></div>
             <p class="ratio-compare__label">16:9<span>Formato HD / horizontal</span></p>
           </div>
+          <div class="ratio-compare__item" style="--ratio:4/3">
+            <div class="ratio-compare__box"></div>
+            <p class="ratio-compare__label">4:3<span>Presentaciones / formato clásico</span></p>
+          </div>
           <div class="ratio-compare__item" style="--ratio:1/1">
             <div class="ratio-compare__box"></div>
             <p class="ratio-compare__label">1:1<span>Feed de Instagram</span></p>
+          </div>
+          <div class="ratio-compare__item" style="--ratio:3/4">
+            <div class="ratio-compare__box"></div>
+            <p class="ratio-compare__label">3:4<span>Formato vertical / retrato</span></p>
           </div>
           <div class="ratio-compare__item" style="--ratio:9/16">
             <div class="ratio-compare__box"></div>
@@ -563,17 +577,25 @@
           </div>
         </div>
 
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="usos_upscaling_cierre"></p>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="usos_formatos_imagen"></div>
 
-        <h3 id="usos-otros">Otros usos</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="usos_otros_intro"></p>
+        <p data-key="usos_formatos_cierre"></p>
 
+        <h3 id="usos-estilo">Cambio de estilo</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_estilo_intro"></p>
+
+        <h3 id="usos-flyers">Flyers</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="usos_flyer_intro"></p>
         <!-- El texto de esta sección, incluidas las dos imágenes (boceto y resultado), se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="usos_flyer_esquema"></div>
+
+        <!-- Línea divisoria tenue: a partir de acá el bloque deja de listar
+             "usos" propiamente dichos (aclaración de Diego). -->
+        <hr class="section-divider">
 
         <h3 id="multi-referencia">Varias imágenes de referencia a la vez</h3>
         <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->

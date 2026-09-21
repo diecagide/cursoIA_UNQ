@@ -90,7 +90,7 @@ Ahí es donde vuelve a aparecer **ComfyUI**, la interfaz de nodos que mencionamo
 
 
 ## cual_mejor_intro
-Esta es la pregunta del millón: la que no tiene una sola respuesta, o tiene varias según a quién le preguntes. En los foros y comunidades donde gente que usa estas herramientas todos los días comparte resultados y comparaciones, las opiniones cambian con cada actualización, pero hay algunas tendencias que se repiten lo suficiente como para servir de punto de partida.
+Esta es la pregunta del millón: no tiene una respuesta fija, depende de qué necesites y a quién le preguntes. En comunidades donde gente que usa estas herramientas todos los días comparte resultados y comparaciones —como [r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/) o [r/midjourney](https://www.reddit.com/r/midjourney/) en Reddit, o rankings armados con votación ciega de la comunidad como el [Image Arena de Artificial Analysis](https://artificialanalysis.ai/image/arena)— las opiniones cambian con cada actualización, pero hay algunas tendencias que se repiten lo suficiente como para servir de punto de partida.
 
 ## mejor_fotorrealismo
 Para **fotorrealismo** —luz, textura, proporciones creíbles— Flux y Nano Banana suelen dar los resultados más convincentes, con buen manejo de piel, materiales y profundidad de campo.
@@ -279,11 +279,11 @@ Antes de listar usos: ninguno de estos reemplaza la disciplina artística. Siemp
 ## usos_generacion_editorial_imagen
 ![Pieza editorial generada para redes](images/clase3_30_usogen_editorial.jpg)
 
-## usos_generacion_estilo
-**Cambiar el estilo de una imagen ya generada, o producir variaciones sobre un mismo resultado**: mantener la composición general de una imagen pero explorar otra estética, o generar variantes distintas sobre la misma idea sin perder lo esencial del resultado original.
+## usos_generacion_ajustes
+**Ajustar un aspecto puntual de una imagen ya generada**: modificar la iluminación, el clima, la hora del día u otro elemento específico, sin tocar el resto de la composición ni cambiar el estilo general (cambiar el estilo en sí es otra cosa, la vemos más adelante en "Cambio de estilo").
 
-## usos_generacion_estilo_imagen
-![Variación de estilo sobre un mismo resultado, sin perder la composición](images/clase3_31_usogen_estilo.jpg)
+## usos_generacion_ajustes_imagen
+![Ajuste de iluminación sobre una imagen ya generada, sin cambiar el resto de la composición](images/clase3_31_usogen_ajustes.jpg)
 
 
 ## usos_edicion
@@ -312,17 +312,27 @@ Estas funciones suelen depender menos de escribir un prompt elaborado y más de 
 
 
 ## usos_upscaling_intro
-Otro uso frecuente, menos creativo pero muy práctico, es el de resolver problemas técnicos de resolución. Durante mucho tiempo, agrandar una imagen chica implicaba perder nitidez: los píxeles existentes se estiraban y el resultado se veía borroso. Los modelos de IA resuelven esto de otra manera —generan detalle nuevo y coherente con la imagen original para agrandarla, en vez de simplemente estirar los píxeles que ya tiene—. Esta función suele llamarse *upscaling* o *escalado*, y ya está integrada en varias herramientas: Midjourney tiene sus propios botones de Upscale (Subtle y Creative) para ampliar cualquier imagen generada, Adobe Firefly ofrece una función equivalente llamada Generative Upscale, y también hay herramientas dedicadas específicamente a esto —como Topaz Gigapixel— pensadas para agrandar fotos o imágenes de baja calidad en general, no solo las generadas por IA.
+Otro uso frecuente, menos creativo pero muy práctico, es el de resolver problemas técnicos de resolución. Durante mucho tiempo, agrandar una imagen chica implicaba perder nitidez: los píxeles existentes se estiraban y el resultado se veía borroso. Los modelos de IA resuelven esto de otra manera —generan detalle nuevo y coherente con la imagen original para agrandarla, en vez de simplemente estirar los píxeles que ya tiene—. Esta función suele llamarse *upscaling* (aumento de resolución) o *escalado*.
 
-## usos_upscaling_formatos
+Hay dos maneras de acceder a esto. Algunas plataformas lo tienen integrado: Midjourney tiene sus propios botones de Upscale (Subtle y Creative) para ampliar cualquier imagen generada, y Adobe Firefly ofrece una función equivalente llamada Generative Upscale. También existen herramientas *standalone* —instalables en la computadora, pensadas específicamente para esto y no solo para imágenes generadas por IA—, como [Topaz Gigapixel](https://www.topazlabs.com/topaz-gigapixel) (de pago) o [Upscayl](https://upscayl.org/) (gratuita y de código abierto).
+
+## usos_upscaling_imagen
+![Comparación de una imagen antes y después de aplicar upscaling](images/clase3_35_upscaling.jpg)
+Antes / después de ampliar una imagen con IA, sin perder nitidez
+
+## usos_formatos_intro
 Algo parecido pasa con el formato: la misma imagen suele necesitarse en proporciones distintas según dónde se vaya a publicar. Antes había que recortarla a mano, y a veces eso implicaba perder una parte importante de la composición; hoy varios modelos pueden extender o readaptar una imagen a una proporción distinta generando contenido nuevo en los bordes —la misma lógica del outpainting que vimos antes— en lugar de simplemente recortarla. Los formatos más habituales con los que te vas a encontrar:
 
-## usos_upscaling_cierre
+## usos_formatos_imagen
+![La misma imagen adaptada a distintas proporciones, sin perder la composición central](images/clase3_36_formatos.jpg)
+La misma imagen adaptada a distintos formatos, generando contenido nuevo en los bordes
+
+## usos_formatos_cierre
 Conviene tener estos formatos en cuenta desde el momento en que se escribe el prompt, para elegir de entrada el modelo o la herramienta que permita generar —o adaptar después— en la proporción que efectivamente vamos a necesitar.
 
 
-## usos_otros_intro
-Por fuera de generar y editar, hay un uso más puntual que aparece una y otra vez en el trabajo cotidiano: la **estilización**, aplicarle a una imagen ya existente —una foto, un dibujo, un logo— una estética distinta a la original, manteniendo su estructura. Un caso concreto, que ya vimos en la Clase 1 desde el lado del texto, es el de los flyers.
+## usos_estilo_intro
+Por fuera de generar y editar, hay un uso más puntual que aparece una y otra vez en el trabajo cotidiano: la **estilización**, aplicarle a una imagen ya existente —una foto, un dibujo, un logo— una estética distinta a la original, manteniendo su estructura.
 
 ## usos_flyer_intro
 Hoy las redes están repletas de flyers genéricos hechos con IA: esa estética reconocible de tipografías grandes, degradados y elementos decorativos repetidos, que en general no tiene mucho que ver con la identidad de quien lo publica. Una posibilidad para evitar ese resultado genérico y hacer flyers realmente personalizados es proporcionarle al modelo una estructura bocetada propia, en lugar de dejar que decida la composición.

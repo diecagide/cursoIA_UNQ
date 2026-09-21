@@ -1562,6 +1562,18 @@ body.lightbox-open { overflow: hidden; }
   margin-top: 2px;
 }
 
+/* ---------- Separador tenue entre segmentos de un mismo bloque ---------- */
+/* Línea fina y corta, centrada, para marcar dentro de un bloque largo que
+   arranca un segmento distinto sin necesitar un <h2> nuevo (agregado en
+   Bloque D, Clase 3, antes de "Varias imágenes de referencia a la vez"). */
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  width: 64px;
+  margin: 8px auto 32px;
+}
+
 /* ---------- Variante de color por clase ---------- */
 /* Mismo archivo para todas las clases: el degradé de la barra lateral
    (y, con él, la caja destacada tipo .highlight-box y el círculo de

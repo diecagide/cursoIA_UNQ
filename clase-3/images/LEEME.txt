@@ -28,14 +28,11 @@ Tamaño recomendado: entre 1200 y 1600 px de ancho, formato .jpg o .png.
 
 CARRUSELES (varias fotos en fila, con flechas y puntitos)
 ========================================
-Dos secciones de esta clase (Generación de imágenes completas, y
-Edición de imágenes) usan un carrusel en vez de una imagen suelta —
-se ve como una sola foto con flechas a los costados. Funciona con la
-MISMA lógica de subir un archivo con el nombre exacto que ya está
-esperando abajo. Si querés agregar más fotos al carrusel (o sacar
-alguna), avisame y te agrego o saco la línea correspondiente en
-contenido.txt — el carrusel se arma solo, no hay que tocar ningún
-otro archivo.
+Por ahora ninguna sección de esta clase usa carrusel (las de
+"Generación" y "Edición" pasaron a tener una imagen por uso, ver más
+abajo) — pero el sistema sigue disponible por si en algún momento
+querés una galería de varias fotos en alguna sección. Si llega el
+caso, avisame y lo armamos.
 
 Imágenes que contenido.txt ya está esperando en esta clase
 ========================================
@@ -75,8 +72,8 @@ Nuevas de esta vuelta de cambios:
   tres versiones del ejemplo de "de simple a complejo": mismo prompt
   base, con más o menos detalle)
 
-Última vuelta de cambios (Bloque D reorganizado: ahora cada uso tiene
-su propia imagen al lado, en vez de un carrusel compartido — los
+Penúltima vuelta de cambios (Bloque D reorganizado: ahora cada uso
+tiene su propia imagen al lado, en vez de un carrusel compartido — los
 carruseles de "Generación" y "Edición" que pedían clase3_20 a
 clase3_25 ya NO se usan más, podés ignorarlos si los tenías anotados):
 - clase3_26_usogen_referencias.jpg (referencia visual para un tema o
@@ -89,8 +86,6 @@ clase3_25 ya NO se usan más, podés ignorarlos si los tenías anotados):
   guion o sinopsis)
 - clase3_30_usogen_editorial.jpg (pieza editorial o gráfica para
   redes)
-- clase3_31_usogen_estilo.jpg (variación de estilo sobre un mismo
-  resultado, sin perder la composición)
 - clase3_32_usoed_borrado.jpg (borrado de fondo sobre una imagen ya
   existente)
 - clase3_33_usoed_agregar.jpg (elemento nuevo agregado, integrado al
@@ -98,30 +93,33 @@ clase3_25 ya NO se usan más, podés ignorarlos si los tenías anotados):
 - clase3_34_usoed_props.jpg (ajuste de un objeto — prop — dentro de
   una escena)
 
-El gráfico de "16:9 / 1:1 / 9:16" de la sección de Upscaling no
-necesita ninguna imagen: se dibuja solo con el diseño de la página.
+Última vuelta de cambios:
+- clase3_31_usogen_ajustes.jpg (OJO: cambió el contenido esperado —
+  antes era "variación de estilo", ahora es un ajuste puntual como la
+  iluminación de una imagen ya generada, sin cambiar el resto ni el
+  estilo general — mismo nombre de archivo, contenido distinto)
+- clase3_35_upscaling.jpg (una imagen antes/después de aplicarle
+  upscaling — se arma fácil achicando una imagen y comparándola con
+  el resultado de agrandarla de nuevo con algunas de las herramientas
+  que se mencionan en el texto, como Topaz Gigapixel o Upscayl)
+- clase3_36_formatos.jpg (la misma imagen adaptada a dos o tres
+  formatos distintos, uno al lado del otro — por ejemplo la versión
+  16:9 y la versión 9:16 de una misma escena)
+
+El gráfico de proporciones de "Adaptación a otros formatos" (ahora con
+16:9, 4:3, 1:1, 3:4 y 9:16) no necesita ninguna imagen: se dibuja solo
+con el diseño de la página.
 
 LOGOS DE LOS MODELOS (Bloque B)
 ========================================
-Ya agregaste los logos de Nano Banana (nanobanana_logo.png) y de Adobe
-Firefly (adobe_logo.png) en "images/logos", y las tarjetas ya los usan.
-El logo de Recraft (recraft_logo.png) también está en la carpeta, pero
-por ahora no hace falta: sacamos la tarjeta completa de Recraft (ver
-más abajo), así que ese archivo queda sin usar — no molesta si se
-queda ahí, pero avisame si preferís que lo saque de la carpeta.
+¡Ya están las seis! Gracias por subir los que faltaban
+(nanobanana_logo.png, adobe_logo.png, Midjourney.png, Runway.png) —
+las tarjetas ya los usan a todos. Para GPT Image 2 reusé el logo de
+ChatGPT que ya estaba en la carpeta (chatgpt.png), como pediste.
 
-Los modelos que todavía muestran una placa con sus iniciales en vez de
-un logo real son: GPT Image 2, Midjourney y Runway Gen-4 Image. Si en
-algún momento querés sumarles logo, se hace igual que con los que ya
-subiste: un archivo cuadrado en "images/logos" con estos nombres
-(mismo criterio que usaste vos: nombre del modelo + "_logo.png"):
-
-- gpt_logo.png (OpenAI)
-- midjourney_logo.png
-- runway_logo.png
-
-Avisame cuando los tengas y actualizo las tarjetas para que usen esas
-imágenes en vez de las placas de texto.
+El logo de Recraft (recraft_logo.png) sigue en la carpeta pero sin
+usar, porque sacamos la tarjeta completa de Recraft (ver más abajo) —
+no molesta si se queda ahí, avisame si preferís que lo saque.
 
 SOBRE RECRAFT
 ========================================
