@@ -46,9 +46,6 @@ Del armado original:
 - clase3_08_inpainting_outpainting.jpg (antes/después de un inpainting
   o un outpainting — armala vos combinando dos capturas, no hay un
   prompt único posible para esto)
-- clase3_10_multireferencia.jpg (composición mostrando 2 o 3 imágenes
-  de referencia + el resultado combinado — armala vos, tampoco hay un
-  prompt único posible)
 
 Nuevas de esta vuelta de cambios:
 - clase3_11_difusion.jpg (secuencia de varios fotogramas mostrando el
@@ -67,10 +64,13 @@ Nuevas de esta vuelta de cambios:
 - clase3_16_seed.jpg (comparación entre resultados con el mismo seed
   fijo vs. seed aleatorio — se arma fácil con los espacios gratuitos de
   Hugging Face que están linkeados en el texto de "El seed")
-- clase3_17_gato_simple.jpg / clase3_18_gato_medio.jpg /
-  clase3_19_gato_complejo.jpg (el resultado de generar cada una de las
-  tres versiones del ejemplo de "de simple a complejo": mismo prompt
-  base, con más o menos detalle)
+- clase3_17_dron_simple.jpg / clase3_18_dron_medio.jpg /
+  clase3_19_dron_complejo.jpg (OJO: cambió el ejemplo — antes era un
+  gato robótico, ahora es un dron mensajero en un mercado callejero,
+  para no repetir el mismo sujeto que el ejemplo de "La estructura"
+  más arriba — el resultado de generar cada una de las tres versiones
+  del ejemplo de "de simple a complejo": mismo prompt base, con más o
+  menos detalle)
 
 Penúltima vuelta de cambios (Bloque D reorganizado: ahora cada uso
 tiene su propia imagen al lado, en vez de un carrusel compartido — los
@@ -109,6 +109,36 @@ clase3_25 ya NO se usan más, podés ignorarlos si los tenías anotados):
 El gráfico de proporciones de "Adaptación a otros formatos" (ahora con
 16:9, 4:3, 1:1, 3:4 y 9:16) no necesita ninguna imagen: se dibuja solo
 con el diseño de la página.
+
+Vuelta más nueva de cambios (varios ajustes de contenido, ver el resto
+de este mensaje):
+- clase3_37_estilo_moda.jpg (ejemplo de las "modas" de estilización que
+  se viralizan en redes cada tanto: estética Simpsons, Estudio Ghibli,
+  años 80 — armala vos combinando dos o tres ejemplos, no hay un
+  prompt único)
+- clase3_38_estilo_referencia.jpg (una imagen estilizada como
+  referencia artística sobre algo concreto, para uso propio más allá
+  de las modas de redes)
+- clase3_39_flyer_generico.jpg (ejemplo de esos flyers genéricos e
+  intercambiables que se ven tanto en redes, con tipografías grandes y
+  degradados repetidos — armalo vos o buscá un ejemplo real, no hace
+  falta que lo generes con un prompt específico)
+- clase3_40_multireferencia.jpg (NUEVO NOMBRE, reemplaza al viejo
+  clase3_10_multireferencia.jpg si lo tenías anotado — cambió también
+  el ejemplo: ahora es una composición combinando el rostro de una
+  imagen, el fondo de otra y la paleta de colores de una tercera, en
+  un resultado único — armala vos, no hay un prompt único posible)
+- clase3_41_texto_a_imagen.jpg (ejemplo de texto-a-imagen: un paisaje
+  de montaña al amanecer, generado solo a partir de la descripción
+  escrita)
+- clase3_42_imagen_a_imagen.jpg (ejemplo de imagen-a-imagen: una foto
+  transformada con una instrucción de estilo, conservando la
+  estructura original — puede ser, por ejemplo, una foto convertida a
+  estilo ilustración)
+
+OJO con clase3_17/18/19: en la vuelta anterior ya habían pasado de
+"gato robótico" a "dron mensajero" — si todavía tenías anotado el
+gato, es el dron el que va.
 
 LOGOS DE LOS MODELOS (Bloque B)
 ========================================

@@ -38,13 +38,25 @@ Se trata de un entorno matemático —no un lugar físico, sino un espacio de mu
 Generar una imagen es, en el fondo, encontrar el punto de ese espacio que mejor corresponde a lo que describimos en el prompt, y traducir esas coordenadas de vuelta a píxeles. No hace falta entender el detalle matemático de esto para usar estas herramientas, pero ayuda tener presente la idea general: la IA no "dibuja" como lo haría una persona, trazo por trazo, sino que navega un espacio ya organizado y elige un punto dentro de él.
 
 
-## comofunciona_1
+## comofunciona_intro
 Hay tres maneras principales de generar una imagen con estos modelos:
 
-- **Texto-a-imagen (text-to-image)**: a partir de una descripción escrita, el modelo genera una imagen desde cero. Es el uso más habitual: escribimos "un paisaje de montaña al amanecer" y el modelo produce una imagen que representa esa escena.
-- **Imagen-a-imagen (image-to-image)**: partimos de una imagen existente —una foto, un boceto, un dibujo— y le pedimos al modelo que la transforme: que cambie el estilo, los colores, el nivel de detalle, o que convierta un boceto en una imagen fotorrealista.
-- **Voz-a-imagen (voice-to-image)**: en plataformas con modo de voz (como el modo conversacional de Gemini o de ChatGPT), podemos describir la imagen hablando en lugar de escribiendo, e incluso pedir ajustes en la misma conversación ("hacela más oscura", "sacale el sombrero"). No es una tecnología distinta por dentro —la voz se transcribe y se procesa como cualquier prompt de texto—, pero cambia la experiencia. Permite ir ajustando una imagen de forma conversacional, sin tipear.
+## comofunciona_texto
+**Texto-a-imagen (text-to-image)**: a partir de una descripción escrita, el modelo genera una imagen desde cero. Es el uso más habitual: escribimos "un paisaje de montaña al amanecer" y el modelo produce una imagen que representa esa escena.
 
+## comofunciona_texto_ejemplo
+![Paisaje de montaña al amanecer, generado a partir de esa sola descripción escrita](images/clase3_41_texto_a_imagen.jpg)
+
+## comofunciona_imgimg
+**Imagen-a-imagen (image-to-image)**: partimos de una imagen existente —una foto, un boceto, un dibujo— y le pedimos al modelo que la transforme: que cambie el estilo, los colores, el nivel de detalle, o que convierta un boceto en una imagen fotorrealista.
+
+## comofunciona_imgimg_ejemplo
+![Una foto transformada a partir de una instrucción de estilo, conservando la estructura original](images/clase3_42_imagen_a_imagen.jpg)
+
+## comofunciona_voz
+**Voz-a-imagen (voice-to-image)**: en plataformas con modo de voz (como el modo conversacional de Gemini o de ChatGPT), podemos describir la imagen hablando en lugar de escribiendo, e incluso pedir ajustes en la misma conversación ("hacela más oscura", "sacale el sombrero"). No es una tecnología distinta por dentro —la voz se transcribe y se procesa como cualquier prompt de texto—, pero cambia la experiencia. Permite ir ajustando una imagen de forma conversacional, sin tipear.
+
+## comofunciona_furor
 Seguramente viste circular en redes el "furor" de un tiempo atrás en el que la gente convertía sus fotos familiares al estilo de un estudio de animación japonesa muy conocido. Eso es exactamente imagen-a-imagen: una imagen de entrada, una instrucción de estilo, y el modelo reinterpreta esa foto conservando su estructura general pero cambiándole la piel visual.
 
 
@@ -65,10 +77,12 @@ El proceso que efectivamente genera la imagen, dentro de ese espacio latente que
 
 El modelo arranca de algo parecido al ruido de una tele mal sintonizada: una imagen inicial completamente caótica, sin ninguna forma reconocible. A partir de ahí, en sucesivos pasos, va "limpiando" ese ruido un poco a la vez, acercándose cada vez más a lo que describimos en el prompt. En cada paso, el modelo lee la descripción y reacomoda un poco más los píxeles —color, forma, textura, luz— hasta llegar, después de muchos pasos pequeños, a una imagen coherente.
 
-Ese es el sentido de hablar de un **proceso de refinamiento iterativo**: no hay un único salto de ruido a imagen final, sino muchos ajustes sucesivos, cada uno un poco más preciso que el anterior. Si pedimos "un dragón volando sobre un castillo en llamas", el proceso arranca de algo irreconocible y, en unos segundos, termina en una imagen que responde a esa descripción.
-
 ![](images/clase3_11_difusion.jpg)
 Secuencia que muestra el proceso de refinamiento paso a paso, de ruido a imagen final
+
+Ese es el sentido de hablar de un **proceso de refinamiento iterativo**: no hay un único salto de ruido a imagen final, sino muchos ajustes sucesivos, cada uno un poco más preciso que el anterior. Si pedimos "un dragón volando sobre un castillo en llamas", el proceso arranca de algo irreconocible y, en unos segundos, termina en una imagen que responde a esa descripción.
+
+A la IA de imagen no le pasa el clásico "**problema de la hoja en blanco**" —esa parálisis frente a la nada que conoce cualquiera que haya tenido que arrancar un proceso creativo desde cero—. Le sucede algo muy distinto: arranca de millones de puntos (todo ese ruido inicial) y los va depurando, en sucesivas "*passes*" o pasadas, hasta llegar a la imagen final. No hay una decisión de por dónde empezar, sino un proceso de refinamiento progresivo sobre algo que ya está ahí desde el primer momento, aunque todavía no tenga ninguna forma reconocible.
 
 
 ## modelos_plataformas_1
@@ -215,31 +229,31 @@ Comparación de resultados con el mismo seed fijo (arriba) y con seed aleatorio 
 Veamos cómo un mismo prompt cambia según su nivel de detalle, retomando la estructura que acabamos de ver: la misma idea de base, complejizando sobre todo los descriptores y el contexto.
 
 ## ejemplo_simple
-Un gato robótico joven, jugando con un ovillo de lana roja, estilo steampunk
+Un dron mensajero plateado, sobrevolando un mercado callejero, estilo art déco
 
 ## ejemplo_simple_imagen
-![](images/clase3_17_gato_simple.jpg)
+![](images/clase3_17_dron_simple.jpg)
 
 ## ejemplo_medio
-Un gato robótico joven de metal cobrizo envejecido, jugando con un ovillo de lana roja en una calle nocturna, luces de neón, estilo steampunk
+Un dron mensajero plateado con detalles dorados, sobrevolando un mercado callejero al atardecer, entre puestos con telas de colores, estilo art déco
 
 ## ejemplo_medio_imagen
-![](images/clase3_18_gato_medio.jpg)
+![](images/clase3_18_dron_medio.jpg)
 
 ## ejemplo_complejo
-Un gato robótico joven, con las siguientes características:
+Un dron mensajero plateado, con las siguientes características:
 
-- Cuerpo de metal cobrizo envejecido, con remaches visibles y pequeños engranajes en las articulaciones
-- Ojos con un brillo ámbar suave
-- Jugando con un ovillo de lana roja, en pleno salto
+- Carcasa de metal pulido con relieves ornamentales dorados, de inspiración art déco
+- Cuatro hélices pequeñas dispuestas en simetría alrededor del cuerpo
+- Un compartimento translúcido en la parte inferior, con un sobre de papel visible adentro
 
-Escena: una calle nocturna angosta y adoquinada, iluminada con carteles de neón rosados y celestes, con charcos reflejando las luces. Enfoque selectivo, profundidad de campo baja, estilo steampunk, sin texto ni marcas de agua.
+Escena: un mercado callejero al atardecer, con puestos de telas de colores y toldos a rayas, gente circulando de fondo desenfocada. Luz cálida y rasante, profundidad de campo baja, estilo art déco, sin texto ni marcas de agua.
 
 ## ejemplo_complejo_imagen
-![](images/clase3_19_gato_complejo.jpg)
+![](images/clase3_19_dron_complejo.jpg)
 
 ## ejemplo_breakdown
-→ La versión simple alcanza para que el modelo tenga una idea clara de qué generar. La media agrega textura del material, un contexto más específico y refuerza el estilo con el ambiente lumínico. La compleja detalla características puntuales en una lista —remaches, engranajes, color de ojos—, agrega el prompt negativo y define con precisión la composición (enfoque selectivo, profundidad de campo). El resultado final va a ser mucho más parecido a lo que tenemos en la cabeza, y cada vez menos a la interpretación genérica que el modelo elige por default.
+→ La versión simple alcanza para que el modelo tenga una idea clara de qué generar. La media agrega textura del material (detalles dorados), un contexto más específico (mercado al atardecer, puestos de telas) y refuerza el estilo con el ambiente lumínico. La compleja detalla características puntuales en una lista —relieves ornamentales, hélices, el sobre dentro del compartimento—, agrega el prompt negativo y define con precisión la composición (luz rasante, profundidad de campo). El resultado final va a ser mucho más parecido a lo que tenemos en la cabeza, y cada vez menos a la interpretación genérica que el modelo elige por default.
 
 
 ## usos_nota
@@ -334,27 +348,43 @@ Conviene tener estos formatos en cuenta desde el momento en que se escribe el pr
 ## usos_estilo_intro
 Por fuera de generar y editar, hay un uso más puntual que aparece una y otra vez en el trabajo cotidiano: la **estilización**, aplicarle a una imagen ya existente —una foto, un dibujo, un logo— una estética distinta a la original, manteniendo su estructura.
 
+Cada tanto, las plataformas de imagen masifican en redes un proceso de estilización puntual —una forma, entre otras cosas, de viralizar el propio modelo con fines comerciales—: pasamos por la estética Simpsons, después por la del Estudio Ghibli, y más recientemente por una estética ochentosa.
+
+![](images/clase3_37_estilo_moda.jpg)
+Distintas "modas" de estilización que se viralizaron en redes: Simpsons, Estudio Ghibli, estética de los 80
+
+Pero más allá de lo que pasa en redes, podemos usar esta misma herramienta para estilizar nuestras propias imágenes con estilos bien distintos entre sí, y también puede ser útil para generar referencias artísticas sobre algo concreto.
+
+![](images/clase3_38_estilo_referencia.jpg)
+Una misma imagen estilizada como referencia artística sobre un tema concreto
+
 ## usos_flyer_intro
 Hoy las redes están repletas de flyers genéricos hechos con IA: esa estética reconocible de tipografías grandes, degradados y elementos decorativos repetidos, que en general no tiene mucho que ver con la identidad de quien lo publica. Una posibilidad para evitar ese resultado genérico y hacer flyers realmente personalizados es proporcionarle al modelo una estructura bocetada propia, en lugar de dejar que decida la composición.
+
+## usos_flyer_generico_imagen
+![Flyers genéricos típicos hechos con IA: tipografías grandes, degradados y elementos decorativos repetidos](images/clase3_39_flyer_generico.jpg)
 
 ## usos_flyer_esquema
 En la Clase 1 comparamos pedir "hacé un flyer para este evento" con aportar un esquema propio de composición: dónde van las cajas de texto, qué jerarquía tiene la información, qué paleta de colores. Con imagen, ese esquema propio puede ser literal: un boceto a mano, aunque sea muy simple, con rectángulos marcando dónde va el título, dónde la fecha, dónde una imagen central.
 
+Ese boceto se puede subir como imagen de referencia (imagen-a-imagen) junto con un prompt que describa el estilo visual que queremos, y el modelo va a respetar la estructura que definimos en lugar de inventar una propia. Es una forma simple de que el resultado tenga nuestra impronta desde el arranque, no recién en los ajustes posteriores.
+
+## usos_flyer_planificado_imagen
 ![](images/clase3_05_flyer_boceto.jpg)
+Boceto propio, con la estructura de composición definida a mano
 
 ![](images/clase3_06_flyer_resultado.jpg)
-
-Ese boceto se puede subir como imagen de referencia (imagen-a-imagen) junto con un prompt que describa el estilo visual que queremos, y el modelo va a respetar la estructura que definimos en lugar de inventar una propia. Es una forma simple de que el resultado tenga nuestra impronta desde el arranque, no recién en los ajustes posteriores.
+Flyer generado a partir de ese boceto, respetando la estructura definida
 
 
 ## multi_referencia
 Hasta acá hablamos de imágenes de referencia como si fueran una sola. Pero cada vez es más habitual poder subir varias a la vez, y que cada una cumpla un rol distinto dentro de la misma generación: una imagen puede aportar la estructura o composición, otra el estilo visual, otra la paleta de colores, otra un personaje o rostro que se quiere mantener igual en distintas escenas.
 
-Nano Banana, por ejemplo, permite combinar varias imágenes de referencia en una misma generación —al momento de escribir esto, hasta un número bastante alto—, cada una cumpliendo una función distinta dentro del resultado final. Esto abre posibilidades muy concretas para el trabajo docente: mantener la cara de un personaje mientras cambia de escenario, aplicar la paleta de colores de una pieza institucional a una imagen nueva, o combinar la composición de un boceto propio con el estilo visual de otra referencia.
+Esto no es exclusivo de un modelo: la mayoría de los modelos de imagen actuales —Nano Banana, GPT Image 2 y Flux, entre otros— permiten combinar varias imágenes de referencia en una misma generación, cada una cumpliendo una función distinta dentro del resultado final. Esto abre posibilidades muy concretas para el trabajo docente: mantener la cara de un personaje mientras cambia de escenario, aplicar la paleta de colores de una pieza institucional a una imagen nueva, o combinar la composición de un boceto propio con el estilo visual de otra referencia.
 
-El ejemplo que sigue —el del flyer armado a partir de un esquema propio— es, en el fondo, un caso particular de esto: una sola imagen de referencia, cumpliendo el rol de estructura.
+Por ejemplo: tomar el rostro de un personaje de una foto, el fondo o la ambientación de otra imagen, y la paleta de colores de una tercera, para combinar los tres elementos en un único resultado coherente.
 
-![](images/clase3_10_multireferencia.jpg)
+![](images/clase3_40_multireferencia.jpg)
 
 
 ## combinacion_modelos
@@ -366,19 +396,21 @@ Es la misma lógica de "combinación de modelos" que vamos a retomar en la Clase
 
 
 ## criterio_propio
-Dijimos al principio de la clase que la IA generativa de imagen es una herramienta, y que hay que abordarla desde el saber. En la Clase 1 hablamos de una paradoja parecida: para usar la IA con criterio hace falta, precisamente, saber algo del tema en el que se la está usando. Con imagen esto se vuelve muy concreto. No hace falta ser diseñador o diseñadora para escribir un prompt de imagen, pero sí ayuda —y mucho— tener alguna noción de composición, encuadre, paleta de color o iluminación para poder dirigir el proceso con intención, y no solo aceptar la primera propuesta que devuelve el modelo.
-
-Esto también cambia qué significa "evaluar" una imagen generada. No alcanza con que "guste" a primera vista. Conviene preguntarse: ¿la composición ordena la mirada hacia donde yo quiero? ¿los colores acompañan la idea que quiero transmitir? ¿hay coherencia entre el estilo elegido y el propósito de la imagen? Esa mirada crítica viene del saber disciplinar, no del modelo, y es lo que convierte a la IA en una aliada del proceso creativo en lugar de en quien toma las decisiones.
+Dijimos al principio de la clase que la IA generativa de imagen es una herramienta, y que hay que abordarla desde el saber: cuanto más sabemos del tema en el que la estamos usando, más eficaz se vuelve la interacción con el modelo. Pero lo principal, antes de escribir el primer prompt, es hacerse una pregunta: ¿por qué voy a usar la IA para lo que estoy produciendo, y es la IA la herramienta adecuada para eso?
 
 
 ## voz_propia_imagen
-El mismo problema aparece acá, todavía más a la vista. Si le pedimos a un modelo de imagen un prompt genérico y usamos tal cual el primer resultado, lo más probable es que obtengamos una estética "de IA": esa mezcla reconocible de hiperdetalle, luces dramáticas y composiciones ya vistas miles de veces, porque es lo que el modelo aprendió a repetir mejor. Nada de eso es necesariamente nuestra voz.
+Con imagen, esto se nota todavía más a la vista. Si le pedimos a un modelo un prompt genérico y usamos tal cual el primer resultado, lo más probable es que obtengamos una estética "de IA": esa mezcla reconocible de hiperdetalle, luces dramáticas y composiciones ya vistas miles de veces, porque es lo que el modelo aprendió a repetir mejor. Nada de eso es necesariamente nuestra voz.
 
 ![](images/clase3_07_vozpropia.jpg)
 Modelo: Nano Banana Pro
 Prompt: Un pincel de acuarela apoyado sobre una tablet digital que muestra una imagen a medio generar, con gotas reales de pintura cayendo sobre la pantalla e integrándose con la imagen digital como si fueran parte de ella. Estética híbrida entre lo analógico y lo digital, luz natural, composición cercana y detallada. Sin texto.
 
 Construir una voz propia en imagen tiene que ver con volver una y otra vez sobre el prompt, ajustarlo, combinarlo con referencias propias, editar el resultado, mezclarlo con otras imágenes, y no quedarse con la primera propuesta. Para nuestros y nuestras estudiantes, esto es también una oportunidad pedagógica: pedirles que documenten su proceso —qué prompts probaron, qué descartaron, qué cambiaron y por qué— es una forma concreta de que ese criterio propio quede a la vista, y no solo el resultado final.
+
+
+## modelos_hibridos
+Otra manera de pensar la IA de imagen, sobre todo en el trabajo creativo, es no como un reemplazo del resto de las técnicas, sino como una pieza más dentro de un proceso más amplio: pensar en **modelos híbridos**, donde confluyen técnicas de producción de imagen diversas —analógicas, digitales tradicionales e IA— y cada una aporta lo que mejor sabe hacer. Un boceto a mano, un retoque en Photoshop y una generación con IA pueden convivir perfectamente en la producción de una misma pieza.
 
 
 ## final_1

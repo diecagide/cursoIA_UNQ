@@ -34,7 +34,7 @@
     <!-- Grupo 1: introducción a la clase (sin etiqueta) -->
     <ul class="nav-list">
       <li><a href="#bienvenida">Bienvenida</a></li>
-      <li><a href="#herramienta">La imagen como herramienta</a></li>
+      <li><a href="#herramienta">La IA de imagen como herramienta</a></li>
     </ul>
 
     <div class="site-nav__divider"></div>
@@ -88,8 +88,8 @@
       <li class="nav-group">
         <a class="nav-group__link" href="#bloque-e"><span class="nav-bullet"></span>Bloque E · Criterio propio</a>
         <ul class="nav-subgroup">
-          <li><a href="#criterio-propio">El criterio propio</a></li>
-          <li><a href="#voz-propia-imagen">Voz propia en imagen</a></li>
+          <li><a href="#criterio-propio">Criterio propio y voz propia</a></li>
+          <li><a href="#modelos-hibridos">Hacia modelos híbridos</a></li>
         </ul>
       </li>
     </ul>
@@ -125,10 +125,10 @@
       </section>
 
       <!-- =================================================================
-           SECCIÓN: La imagen como herramienta
+           SECCIÓN: La IA de imagen como herramienta
            ================================================================= -->
       <section class="block" id="herramienta">
-        <h2>La imagen como herramienta</h2>
+        <h2>La IA de imagen como herramienta</h2>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="herramienta_saber"></p>
@@ -150,7 +150,21 @@
 
         <h3 id="generacion-basica">Generación básica: el input</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="comofunciona_1"></div>
+        <p data-key="comofunciona_intro"></p>
+
+        <!-- Texto-a-imagen e imagen-a-imagen tienen cada uno su propio
+             ejemplo de imagen debajo (a pedido de Diego); voz-a-imagen no
+             lleva imagen propia. Todo el contenido se edita en
+             contenido.txt (no acá). -->
+        <p data-key="comofunciona_texto"></p>
+        <div class="content-block" data-key="comofunciona_texto_ejemplo"></div>
+
+        <p data-key="comofunciona_imgimg"></p>
+        <div class="content-block" data-key="comofunciona_imgimg_ejemplo"></div>
+
+        <p data-key="comofunciona_voz"></p>
+
+        <p data-key="comofunciona_furor"></p>
 
         <h3 id="inpainting-outpainting">Edición básica de imágenes: inpainting y outpainting</h3>
         <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
@@ -557,23 +571,23 @@
         <div class="ratio-compare">
           <div class="ratio-compare__item" style="--ratio:16/9">
             <div class="ratio-compare__box"></div>
-            <p class="ratio-compare__label">16:9<span>Formato HD / horizontal</span></p>
+            <p class="ratio-compare__label">16:9</p>
           </div>
           <div class="ratio-compare__item" style="--ratio:4/3">
             <div class="ratio-compare__box"></div>
-            <p class="ratio-compare__label">4:3<span>Presentaciones / formato clásico</span></p>
+            <p class="ratio-compare__label">4:3</p>
           </div>
           <div class="ratio-compare__item" style="--ratio:1/1">
             <div class="ratio-compare__box"></div>
-            <p class="ratio-compare__label">1:1<span>Feed de Instagram</span></p>
+            <p class="ratio-compare__label">1:1</p>
           </div>
           <div class="ratio-compare__item" style="--ratio:3/4">
             <div class="ratio-compare__box"></div>
-            <p class="ratio-compare__label">3:4<span>Formato vertical / retrato</span></p>
+            <p class="ratio-compare__label">3:4</p>
           </div>
           <div class="ratio-compare__item" style="--ratio:9/16">
             <div class="ratio-compare__box"></div>
-            <p class="ratio-compare__label">9:16<span>Stories / Reels</span></p>
+            <p class="ratio-compare__label">9:16</p>
           </div>
         </div>
 
@@ -584,14 +598,19 @@
         <p data-key="usos_formatos_cierre"></p>
 
         <h3 id="usos-estilo">Cambio de estilo</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="usos_estilo_intro"></p>
+        <!-- El texto de esta sección, incluidas las dos imágenes, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="usos_estilo_intro"></div>
 
         <h3 id="usos-flyers">Flyers</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="usos_flyer_intro"></p>
-        <!-- El texto de esta sección, incluidas las dos imágenes (boceto y resultado), se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="usos_flyer_esquema"></div>
+        <!-- Ejemplo de flyers genéricos hechos con IA (el problema que se busca evitar) -->
+        <div class="content-block" data-key="usos_flyer_generico_imagen"></div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_flyer_esquema"></p>
+        <!-- Ejemplo de flyer planificado: boceto propio + resultado respetando esa estructura -->
+        <div class="content-block" data-key="usos_flyer_planificado_imagen"></div>
 
         <!-- Línea divisoria tenue: a partir de acá el bloque deja de listar
              "usos" propiamente dichos (aclaración de Diego). -->
@@ -612,16 +631,19 @@
       <section class="block" id="bloque-e">
         <h2>Bloque E — Criterio propio</h2>
 
+        <h3 id="criterio-propio">Criterio propio y voz propia</h3>
         <!-- Recuadro destacado, mismo tratamiento que "La paradoja del conocimiento" de la Clase 1 -->
-        <div class="highlight-box" id="criterio-propio">
-          <h3>El criterio propio</h3>
+        <div class="highlight-box">
           <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-          <div class="content-block" data-key="criterio_propio"></div>
+          <p data-key="criterio_propio"></p>
         </div>
 
-        <h3 id="voz-propia-imagen">Voz propia en imagen</h3>
         <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="voz_propia_imagen"></div>
+
+        <h3 id="modelos-hibridos">Hacia modelos híbridos</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="modelos_hibridos"></p>
       </section>
 
       <!-- =================================================================
