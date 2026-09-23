@@ -342,6 +342,7 @@ section.block:first-of-type {
    la imagen ocupa el 100% del ancho del recuadro y el recuadro se recorta a la altura
    real de la imagen (sin recorte ni límite de altura fijo). */
 .img-placeholder.has-image {
+  position: relative;
   border-style: solid;
   border-color: var(--color-border);
   background: transparent;
@@ -352,6 +353,24 @@ section.block:first-of-type {
 .img-placeholder.has-image .img-placeholder__hint,
 .img-placeholder.has-image .img-placeholder__icon,
 .img-placeholder.has-image .img-placeholder__label { display: none; }
+
+/* Pista chica de que la imagen se puede agrandar (clic → lightbox),
+   en la esquina superior de cada imagen clickeable. Puramente visual,
+   no interfiere con el clic (pointer-events: none). */
+.img-placeholder.has-image::after {
+  content: "Click para ampliar";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(15,13,10,.68);
+  color: #fff;
+  font-size: .72rem;
+  font-style: normal;
+  padding: 3px 9px;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 1;
+}
 
 .img-placeholder.has-image img {
   width: 100%;
@@ -609,6 +628,7 @@ section.block:first-of-type {
 /* ---------- Epígrafe opcional debajo de una imagen ---------- */
 
 .img-caption {
+  display: none;
   margin: 8px 0 0;
   padding: 0 6px;
   font-size: .85rem;
@@ -618,6 +638,43 @@ section.block:first-of-type {
 }
 
 .img-caption:empty { display: none; margin: 0; }
+
+/* Los epígrafes (prompt + modelo) debajo de cada imagen arrancan
+   ocultos en toda la página; se muestran todos juntos con el botón
+   flotante "Ver prompt y modelo" (ver .caption-toggle más abajo). */
+body.captions-expanded .img-caption:not(:empty) { display: block; }
+
+/* ---------- Botón flotante: mostrar/ocultar todos los epígrafes ---------- */
+
+.caption-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: .85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,.22);
+}
+
+.caption-toggle:hover { filter: brightness(1.08); }
+
+@media (max-width: 640px) {
+  .caption-toggle {
+    right: 14px;
+    bottom: 14px;
+    padding: 9px 14px;
+    font-size: .8rem;
+  }
+}
 
 /* Imagen suelta insertada en medio de una oración (no en su propio
    párrafo) — caso poco común; el habitual, con recuadro de "pendiente"
@@ -1073,6 +1130,10 @@ section.block:first-of-type {
   padding: 16px 18px;
 }
 
+.element-card--wide {
+  grid-column: 1 / -1;
+}
+
 .element-card h4 {
   margin: 0 0 6px;
   font-size: .98rem;
@@ -1093,14 +1154,16 @@ section.block:first-of-type {
 
 .prompt-formula {
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-  font-size: .95rem;
+  font-size: 1.15rem;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .03em;
   text-align: center;
   color: #fff;
   background: var(--gradient-sidebar);
   border-radius: 10px;
-  padding: 16px 18px;
-  margin: 0 0 20px;
+  padding: 18px 18px;
+  margin: 0 0 12px;
   box-shadow: 0 6px 18px rgba(46,58,89,.22);
 }
 
@@ -1387,6 +1450,42 @@ section.block:first-of-type {
 }
 
 .lightbox.has-caption .lightbox__caption { opacity: 1; }
+
+/* Epígrafe partido en dos paneles (izquierda/derecha), para imágenes
+   compuestas 50/50 marcadas con @split en contenido.txt: cada panel se
+   apoya sobre la mitad de la imagen que describe, en vez de un solo
+   bloque de texto largo tapando toda la imagen agrandada. */
+.lightbox__split-captions {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  align-self: end;
+  justify-self: stretch;
+  pointer-events: none;
+}
+
+.lightbox.has-split-caption .lightbox__split-captions { display: grid; }
+
+.lightbox__split-panel {
+  margin: 0;
+  padding: 14px 16px;
+  background: linear-gradient(to top, rgba(15, 13, 10, .92) 0%, rgba(15, 13, 10, .82) 55%, rgba(15, 13, 10, 0) 100%);
+  color: #f4f5f8;
+  font-size: .8rem;
+  font-style: italic;
+  line-height: 1.45;
+  text-align: left;
+  max-height: 42vh;
+  overflow-y: auto;
+  pointer-events: auto;
+}
+
+.lightbox__split-panel--left { border-radius: 0 0 0 6px; }
+.lightbox__split-panel--right { border-radius: 0 0 6px 0; }
+
+@media (max-width: 640px) {
+  .lightbox__split-captions { grid-template-columns: 1fr; }
+  .lightbox__split-panel { font-size: .78rem; max-height: 30vh; }
+}
 
 .lightbox__close {
   position: fixed;

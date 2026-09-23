@@ -156,10 +156,27 @@ function renderInline(text) {
 function renderImageBlock(alt, src, caption) {
   var safeAlt = escapeAttr(alt);
   var safeSrc = escapeAttr(src);
+
+  // Si el epígrafe arranca con "@split" en su propio renglón, es una marca
+  // (no texto para mostrar) que indica que la imagen es un compuesto real
+  // 50/50 de dos fotos lado a lado (ver LEEME/contenido.txt) — en el
+  // lightbox, el epígrafe se muestra entonces partido en dos paneles
+  // (izquierda/derecha) en vez de un solo bloque abajo. Acá solo se saca
+  // la marca del texto y se guarda como atributo para que initLightbox()
+  // la use.
+  var splitCaption = false;
+  if (caption) {
+    var trimmed = caption.replace(/^\s+/, '');
+    if (/^@split\s*(\n|$)/.test(trimmed)) {
+      splitCaption = true;
+      caption = trimmed.replace(/^@split\s*\n?/, '');
+    }
+  }
+
   // Imagen y rótulo van dentro de un mismo contenedor (.img-block) para que
   // el espacio entre ambos sea siempre el mismo, sin depender de que los
   // márgenes de dos elementos separados "colapsen" bien.
-  var html = '<div class="img-block"><div class="img-placeholder">' +
+  var html = '<div class="img-block"' + (splitCaption ? ' data-split-caption="true"' : '') + '><div class="img-placeholder">' +
     '<img src="' + safeSrc + '" alt="' + safeAlt + '" loading="lazy" ' +
     'onerror="this.style.display=\'none\'; this.closest(\'.img-placeholder\').classList.remove(\'has-image\');" ' +
     'onload="this.closest(\'.img-placeholder\').classList.add(\'has-image\');">' +
@@ -450,11 +467,31 @@ function initLightbox() {
     '<div class="lightbox__frame">' +
     '<img class="lightbox__img" src="" alt="">' +
     '<p class="lightbox__caption"></p>' +
+    '<div class="lightbox__split-captions">' +
+    '<div class="lightbox__split-panel lightbox__split-panel--left"></div>' +
+    '<div class="lightbox__split-panel lightbox__split-panel--right"></div>' +
+    '</div>' +
     '</div>';
   document.body.appendChild(lightbox);
 
   var lightboxImg = lightbox.querySelector('.lightbox__img');
   var lightboxCaption = lightbox.querySelector('.lightbox__caption');
+  var lightboxSplitLeft = lightbox.querySelector('.lightbox__split-panel--left');
+  var lightboxSplitRight = lightbox.querySelector('.lightbox__split-panel--right');
+
+  // Corta el epígrafe ya renderizado (HTML) justo antes de "Imagen 2:" en
+  // negrita, para repartirlo en dos paneles (izquierda/derecha) sobre cada
+  // mitad de una imagen compuesta 50/50. Si no encuentra ese punto de
+  // corte (formato inesperado), devuelve null y se usa el epígrafe normal.
+  function splitCaptionHtml(html) {
+    var marker = '<strong>Imagen 2:';
+    var idx = html.indexOf(marker);
+    if (idx === -1) return null;
+    var left = html.slice(0, idx).replace(/<br>\s*$/, '');
+    var right = html.slice(idx);
+    if (!left.trim()) return null;
+    return { left: left, right: right };
+  }
 
   // Si la imagen agrandada pertenece a un carrusel, acá se guardan las
   // demás imágenes del mismo carrusel para poder pasar de una a otra sin
@@ -467,15 +504,32 @@ function initLightbox() {
     lightboxImg.alt = img.alt || '';
 
     // Si la imagen tiene epígrafe (Modelo/Prompt) en su .img-block, lo
-    // mostramos sobreimpreso abajo de la imagen agrandada.
+    // mostramos sobreimpreso abajo de la imagen agrandada. Si además la
+    // imagen es un compuesto 50/50 marcado con @split en contenido.txt, el
+    // epígrafe se reparte en dos paneles (izquierda/derecha) sobre cada
+    // mitad, para que un prompt largo no tape la imagen entera.
     var block = img.closest('.img-block');
     var captionEl = block ? block.querySelector('.img-caption') : null;
-    if (captionEl && captionEl.textContent.trim()) {
-      lightboxCaption.innerHTML = captionEl.innerHTML;
-      lightbox.classList.add('has-caption');
-    } else {
+    var isSplit = block && block.hasAttribute('data-split-caption');
+    var splitParts = isSplit && captionEl ? splitCaptionHtml(captionEl.innerHTML) : null;
+
+    if (splitParts) {
+      lightboxSplitLeft.innerHTML = splitParts.left;
+      lightboxSplitRight.innerHTML = splitParts.right;
       lightboxCaption.innerHTML = '';
       lightbox.classList.remove('has-caption');
+      lightbox.classList.add('has-split-caption');
+    } else if (captionEl && captionEl.textContent.trim()) {
+      lightboxCaption.innerHTML = captionEl.innerHTML;
+      lightbox.classList.add('has-caption');
+      lightbox.classList.remove('has-split-caption');
+      lightboxSplitLeft.innerHTML = '';
+      lightboxSplitRight.innerHTML = '';
+    } else {
+      lightboxCaption.innerHTML = '';
+      lightbox.classList.remove('has-caption', 'has-split-caption');
+      lightboxSplitLeft.innerHTML = '';
+      lightboxSplitRight.innerHTML = '';
     }
   }
 
@@ -505,11 +559,13 @@ function initLightbox() {
   }
 
   function closeLightbox() {
-    lightbox.classList.remove('is-open', 'has-caption', 'has-gallery');
+    lightbox.classList.remove('is-open', 'has-caption', 'has-gallery', 'has-split-caption');
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('lightbox-open');
     lightboxImg.src = '';
     lightboxCaption.innerHTML = '';
+    lightboxSplitLeft.innerHTML = '';
+    lightboxSplitRight.innerHTML = '';
     galleryImgs = [];
     galleryIndex = -1;
   }
@@ -548,9 +604,28 @@ function initLightbox() {
   });
 }
 
+// Botón flotante "Ver prompt y modelo": muestra u oculta de una sola vez
+// todos los epígrafes (Modelo/Prompt) que aparecen debajo de las imágenes
+// en el cuerpo de la página (no el epígrafe del lightbox, que es aparte y
+// siempre se ve al agrandar una imagen). Arrancan ocultos para que la
+// página no quede tan cargada de texto técnico a simple vista.
+function initCaptionToggle() {
+  var btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'caption-toggle';
+  btn.textContent = 'Ver prompt y modelo';
+  document.body.appendChild(btn);
+
+  btn.addEventListener('click', function () {
+    var expanded = document.body.classList.toggle('captions-expanded');
+    btn.textContent = expanded ? 'Ocultar prompt y modelo' : 'Ver prompt y modelo';
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   loadContent();
   initLightbox();
+  initCaptionToggle();
 
   var nav = document.getElementById('siteNav');
   var toggle = document.getElementById('navToggle');

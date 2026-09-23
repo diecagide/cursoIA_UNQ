@@ -34,7 +34,6 @@
     <!-- Grupo 1: introducción a la clase (sin etiqueta) -->
     <ul class="nav-list">
       <li><a href="#bienvenida">Bienvenida</a></li>
-      <li><a href="#herramienta">La IA de imagen como herramienta</a></li>
     </ul>
 
     <div class="site-nav__divider"></div>
@@ -47,7 +46,7 @@
         <ul class="nav-subgroup">
           <li><a href="#espacio-latente">El espacio latente</a></li>
           <li><a href="#generacion-basica">Generación básica: el input</a></li>
-          <li><a href="#inpainting-outpainting">Edición básica: inpainting y outpainting</a></li>
+          <li><a href="#inpainting-outpainting">Lo que está dentro y fuera de la imagen</a></li>
           <li><a href="#difusion">La difusión</a></li>
         </ul>
       </li>
@@ -66,7 +65,6 @@
           <li><a href="#elementos-prompt">Los elementos del prompt</a></li>
           <li><a href="#estructura">La estructura</a></li>
           <li><a href="#reglas">Algunas reglas</a></li>
-          <li><a href="#seed">El seed</a></li>
           <li><a href="#ejemplos">Ejemplos: de simple a complejo</a></li>
         </ul>
       </li>
@@ -125,16 +123,6 @@
       </section>
 
       <!-- =================================================================
-           SECCIÓN: La IA de imagen como herramienta
-           ================================================================= -->
-      <section class="block" id="herramienta">
-        <h2>La IA de imagen como herramienta</h2>
-
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="herramienta_saber"></p>
-      </section>
-
-      <!-- =================================================================
            BLOQUE A
            ================================================================= -->
       <section class="block" id="bloque-a">
@@ -164,9 +152,7 @@
 
         <p data-key="comofunciona_voz"></p>
 
-        <p data-key="comofunciona_furor"></p>
-
-        <h3 id="inpainting-outpainting">Edición básica de imágenes: inpainting y outpainting</h3>
+        <h3 id="inpainting-outpainting">Lo que está dentro y fuera de la imagen</h3>
         <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="inpainting_outpainting"></div>
 
@@ -194,6 +180,10 @@
              Diego); la placa de iniciales (.platform-card__logo--text)
              queda como fallback en el CSS por si se suma un modelo nuevo
              sin logo todavía. -->
+        <h3 id="privados-abiertos-imagen">Modelos privados vs. código abierto</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="privados_abiertos_imagen"></div>
+
         <div class="platform-cards">
 
           <details class="platform-card" style="--platform-color:#4285F4">
@@ -237,11 +227,11 @@
               </div>
               <div class="platform-card__row">
                 <p class="platform-card__label">Se usa para</p>
-                <p>Prompts largos y detallados (incorpora un paso de razonamiento previo a la generación) y buen renderizado de texto dentro de la imagen</p>
+                <p>Prompts largos y detallados (incorpora un paso de razonamiento previo a la generación, y no tiene el límite de extensión de prompt que sí tienen otras plataformas) y buen renderizado de texto dentro de la imagen</p>
               </div>
               <div class="platform-card__row">
                 <p class="platform-card__label">Dónde funciona</p>
-                <p>ChatGPT (tocando el ícono "+" y eligiendo "Crear imagen"), y la API de OpenAI</p>
+                <p>ChatGPT (tocando el ícono "+" y eligiendo "Crear imagen"), y la <span class="note">API<details class="note__popover"><summary class="note__trigger" aria-label="Ver más"><span aria-hidden="true">▸</span></summary><div class="note__body">Una forma en la que un programa se conecta directamente con un modelo o servicio para usarlo desde otra aplicación, sin pasar por la interfaz de chat — es la puerta de entrada que usan, por ejemplo, otras plataformas para ofrecer un modelo "por dentro" de las suyas.</div></details></span> de OpenAI. GPT Image 2.5 también está disponible como modelo dentro de Adobe Firefly, con dos variantes: <strong>Flare</strong> (más rápida) y <strong>Sunburst</strong> (más control y precisión) — ahí sí, al pasar por Firefly, el prompt queda sujeto al límite de extensión de esa plataforma</p>
               </div>
             </div>
           </details>
@@ -262,7 +252,7 @@
               </div>
               <div class="platform-card__row">
                 <p class="platform-card__label">Se usa para</p>
-                <p>Estética artística e ilustrativa muy reconocible, arte conceptual, piezas con una identidad visual propia</p>
+                <p>Se usa sobre todo para proyectos más "artísticos": estética ilustrativa muy reconocible, arte conceptual, piezas con una identidad visual propia</p>
               </div>
               <div class="platform-card__row">
                 <p class="platform-card__label">Dónde funciona</p>
@@ -308,7 +298,7 @@
             <div class="platform-card__body">
               <div class="platform-card__row">
                 <p class="platform-card__label">Nombre propio del modelo</p>
-                <p>Firefly Image Model 4 y 4 Ultra (modelos propios) — la plataforma además da acceso a modelos de otras empresas</p>
+                <p>Firefly Image 5 (modelo propio) — la plataforma además da acceso a modelos de otras empresas</p>
               </div>
               <div class="platform-card__row">
                 <p class="platform-card__label">Se usa para</p>
@@ -353,10 +343,6 @@
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="modelos_plataformas_2"></div>
-
-        <h3 id="privados-abiertos-imagen">Modelos privados vs. código abierto</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="privados_abiertos_imagen"></div>
 
         <h3 id="cual-mejor">¿Cuál es mejor?</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
@@ -436,7 +422,7 @@
             <h4><span class="element-card__icon" aria-hidden="true">🖌️</span> Estilo artístico</h4>
             <p data-key="elemento_estilo"></p>
           </div>
-          <div class="element-card" style="--element-color:#8a3b3b">
+          <div class="element-card element-card--wide" style="--element-color:#8a3b3b">
             <h4><span class="element-card__icon" aria-hidden="true">🚫</span> Prompt negativo</h4>
             <p data-key="elemento_prompt_negativo"></p>
           </div>
@@ -447,6 +433,7 @@
         <p data-key="estructura_intro"></p>
 
         <p class="prompt-formula" data-key="estructura"></p>
+        <p data-key="estructura_cierre"></p>
         <div class="prompt-example">
           <p class="prompt-example__label">Ejemplo</p>
           <p data-key="estructura_ejemplo"></p>
@@ -459,12 +446,6 @@
         <h3 id="reglas">Algunas reglas</h3>
         <!-- El texto de esta sección, incluidas las listas, se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="reglas_gramaticales"></div>
-
-        <h3 id="seed">El seed: reproducir y variar un resultado</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="seed_imagen"></p>
-        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="seed_imagen_ejemplo"></div>
 
         <h3 id="ejemplos">Ejemplos: de simple a complejo</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
@@ -496,6 +477,16 @@
         <div class="content-block" data-key="ejemplo_complejo_imagen"></div>
 
         <p class="prompt-breakdown" data-key="ejemplo_breakdown"></p>
+
+        <details class="expandable">
+          <summary>Para ampliar: el seed, reproducir y variar un resultado</summary>
+          <div class="expandable__body">
+            <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+            <p data-key="seed_imagen"></p>
+            <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+            <div class="content-block" data-key="seed_imagen_ejemplo"></div>
+          </div>
+        </details>
       </section>
 
       <!-- =================================================================
@@ -566,6 +557,10 @@
              (mismo criterio que las tarjetas de plataformas). No necesita
              que Diego suba ninguna imagen: se dibuja con CSS. -->
         <div class="ratio-compare">
+          <div class="ratio-compare__item" style="--ratio:21/9">
+            <div class="ratio-compare__box"></div>
+            <p class="ratio-compare__label">21:9</p>
+          </div>
           <div class="ratio-compare__item" style="--ratio:16/9">
             <div class="ratio-compare__box"></div>
             <p class="ratio-compare__label">16:9</p>
@@ -577,6 +572,10 @@
           <div class="ratio-compare__item" style="--ratio:1/1">
             <div class="ratio-compare__box"></div>
             <p class="ratio-compare__label">1:1</p>
+          </div>
+          <div class="ratio-compare__item" style="--ratio:4/5">
+            <div class="ratio-compare__box"></div>
+            <p class="ratio-compare__label">4:5</p>
           </div>
           <div class="ratio-compare__item" style="--ratio:3/4">
             <div class="ratio-compare__box"></div>
