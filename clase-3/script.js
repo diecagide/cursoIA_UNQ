@@ -96,6 +96,28 @@
    imagen (ver LIGHTBOX arriba), y ahí también aparecen flechas para
    pasar a la imagen anterior o siguiente del mismo carrusel sin cerrar
    el popup.
+
+   SUMAR FOTOS A UN CARRUSEL YA ARMADO, SIN TOCAR CONTENIDO.TXT:
+   Si la última foto de un carrusel se llama, por ejemplo,
+   "referencias6.jpg", alcanza con subir a la carpeta images/ un archivo
+   llamado "referencias7.jpg" (mismo nombre base, siguiente número
+   seguido) — la página lo detecta sola al cargar y lo agrega como una
+   foto más al final del carrusel, con flechas y puntito nuevos incluidos.
+   Podés seguir sumando "referencias8.jpg", "referencias9.jpg", etc., de
+   a una por vez, siempre que sigan el mismo número correlativo. Ojo: una
+   foto agregada así NO tiene epígrafe (Modelo/Prompt) propio, porque ese
+   texto vive en contenido.txt — si más adelante le querés poner epígrafe,
+   agregala como una imagen más dentro de esa clave en contenido.txt (con
+   su epígrafe debajo, como cualquier otra) y a partir de ahí la
+   auto-detección sigue probando el número siguiente a esa.
+
+   BOTÓN "VER PROMPT Y MODELO" DEBAJO DE CADA IMAGEN:
+   Si una imagen tiene epígrafe, aparece un botón chico debajo para
+   mostrarlo u ocultarlo — arranca oculto, así la página no se ve tan
+   cargada de texto técnico de entrada. Es automático, no hay que
+   escribir nada en contenido.txt para que aparezca; es independiente del
+   epígrafe agrandado del lightbox, que siempre se ve entero al hacer
+   clic en la imagen.
    ========================================================================= */
 
 /* ---------- 1. Cargar y aplicar el texto de contenido.txt ---------- */
@@ -184,7 +206,12 @@ function renderImageBlock(alt, src, caption) {
     '<p class="img-placeholder__hint">Se completa reemplazando ' + escapeHtml(src) + '</p>' +
     '</div>';
   if (caption && caption.trim()) {
-    html += '<p class="img-caption">' + renderInline(caption.trim()) + '</p>';
+    // El epígrafe arranca oculto (atributo "hidden"): cada imagen tiene su
+    // propio botón chico para mostrarlo u ocultarlo, sin afectar a las
+    // demás imágenes de la página ni hacer falta agrandar la imagen (ver
+    // el listener de ".caption-toggle-inline" en initInlineCaptionToggles()).
+    html += '<button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>' +
+      '<p class="img-caption" hidden>' + renderInline(caption.trim()) + '</p>';
   }
   html += '</div>';
   return html;
@@ -238,9 +265,132 @@ function renderCarousel(slideParagraphs) {
   return html;
 }
 
+// ---------- Auto-extensión de carruseles: fotos nuevas con sufijo
+// numérico correlativo, SIN tocar contenido.txt ----------
+//
+// Si un carrusel ya termina, por ejemplo, en "...referencias6.jpg", esta
+// función prueba automáticamente si también existe "...referencias7.jpg"
+// subida a la carpeta images/ (aunque contenido.txt no la mencione) y, si
+// existe, la agrega como una foto más al final del carrusel — sin
+// epígrafe propio, porque contenido.txt no tiene ese texto. Sigue
+// probando 8, 9, etc. hasta la primera que no exista. Sirve para sumar
+// fotos a un carrusel ya armado con solo subir el archivo con el próximo
+// número seguido a la carpeta images/, sin editar contenido.txt.
+var AUTO_EXTEND_MAX = 15; // tope de fotos nuevas a probar por carrusel, por las dudas
+
+// A partir de la ruta de la última foto de un carrusel ("images/algo6.jpg"),
+// calcula la ruta de la siguiente ("images/algo7.jpg"). Si esa última foto
+// no tiene ningún número al final (es la primera del carrusel, sin
+// sufijo), asume que la siguiente sería la "2" — mismo criterio que ya se
+// usa en toda la clase (primera foto sin número, de la segunda en
+// adelante con 2, 3, 4...).
+function nextCarouselSrc(src) {
+  var m = src.match(/^(.*?)(\d+)?(\.[a-zA-Z0-9]+)$/);
+  if (!m) return null;
+  var base = m[1];
+  var num = m[2];
+  var ext = m[3];
+  var nextNum = num ? (parseInt(num, 10) + 1) : 2;
+  return base + nextNum + ext;
+}
+
+// Prueba si una imagen existe precargándola (no hace falta pedirle nada
+// especial al servidor: si carga, existe; si tira error, no existe).
+function probeImage(src) {
+  return new Promise(function (resolve) {
+    var probe = new Image();
+    probe.onload = function () { resolve(true); };
+    probe.onerror = function () { resolve(false); };
+    probe.src = src;
+  });
+}
+
+// Prueba, de a una, las fotos siguientes de UN carrusel y las va agregando
+// mientras existan. Se para en la primera que no encuentra.
+function autoExtendCarousel(carouselEl) {
+  var track = carouselEl.querySelector('.carousel__track');
+  if (!track) return Promise.resolve();
+
+  function step(triesLeft) {
+    if (triesLeft <= 0) return Promise.resolve();
+    var slides = track.querySelectorAll('.carousel__slide');
+    var lastImg = slides.length ? slides[slides.length - 1].querySelector('.img-placeholder img') : null;
+    if (!lastImg) return Promise.resolve();
+
+    var nextSrc = nextCarouselSrc(lastImg.getAttribute('src'));
+    if (!nextSrc) return Promise.resolve();
+
+    return probeImage(nextSrc).then(function (exists) {
+      if (!exists) return; // no hay más fotos siguientes: se para acá
+      var slideDiv = document.createElement('div');
+      slideDiv.className = 'carousel__slide';
+      slideDiv.innerHTML = renderImageBlock(lastImg.getAttribute('alt') || '', nextSrc, '');
+      track.appendChild(slideDiv);
+      return step(triesLeft - 1);
+    });
+  }
+
+  return step(AUTO_EXTEND_MAX);
+}
+
+// Arma (o reconstruye) las flechas y los puntitos de un carrusel para que
+// coincidan con la cantidad final de fotos — hace falta porque
+// renderCarousel() solo los arma si al principio había más de una foto, y
+// acá la cantidad puede haber crecido recién después, con
+// autoExtendCarousel().
+function ensureCarouselControls(carouselEl) {
+  var count = carouselEl.querySelectorAll('.carousel__slide').length;
+  if (count <= 1) return;
+
+  if (!carouselEl.querySelector('.carousel__arrow--prev')) {
+    var prevBtn = document.createElement('button');
+    prevBtn.className = 'carousel__arrow carousel__arrow--prev';
+    prevBtn.type = 'button';
+    prevBtn.setAttribute('aria-label', 'Imagen anterior');
+    prevBtn.innerHTML = '<span aria-hidden="true">‹</span>';
+    carouselEl.appendChild(prevBtn);
+  }
+  if (!carouselEl.querySelector('.carousel__arrow--next')) {
+    var nextBtn = document.createElement('button');
+    nextBtn.className = 'carousel__arrow carousel__arrow--next';
+    nextBtn.type = 'button';
+    nextBtn.setAttribute('aria-label', 'Imagen siguiente');
+    nextBtn.innerHTML = '<span aria-hidden="true">›</span>';
+    carouselEl.appendChild(nextBtn);
+  }
+
+  // Se reconstruye siempre, para que la cantidad de puntitos coincida con
+  // la cantidad final de fotos (haya crecido o no en esta carga).
+  var oldDots = carouselEl.querySelector('.carousel__dots');
+  if (oldDots) oldDots.remove();
+  var dotsDiv = document.createElement('div');
+  dotsDiv.className = 'carousel__dots';
+  for (var i = 0; i < count; i++) {
+    var dot = document.createElement('button');
+    dot.className = 'carousel__dot' + (i === 0 ? ' is-active' : '');
+    dot.type = 'button';
+    dot.setAttribute('data-index', i);
+    dot.setAttribute('aria-label', 'Ir a la imagen ' + (i + 1));
+    dotsDiv.appendChild(dot);
+  }
+  carouselEl.appendChild(dotsDiv);
+}
+
+// Recorre todos los carruseles de la página y les prueba fotos nuevas en
+// paralelo. Se llama después de aplicar contenido.txt y antes de
+// initCarousels(), para que las flechas/puntitos ya contemplen las fotos
+// que se hayan sumado automáticamente.
+function extendCarousels() {
+  var carousels = Array.prototype.slice.call(document.querySelectorAll('.carousel'));
+  return Promise.all(carousels.map(autoExtendCarousel)).then(function () {
+    carousels.forEach(ensureCarouselControls);
+  });
+}
+
 // Recorre cada carrusel ya insertado en la página y conecta sus flechas y
-// puntitos. Se llama después de aplicar el contenido (los carruseles recién
-// existen en el DOM en ese momento).
+// puntitos. Se llama después de aplicar el contenido Y de autoextender los
+// carruseles (los carruseles recién existen en su forma final en el DOM
+// en ese momento).
 function initCarousels() {
   document.querySelectorAll('.carousel').forEach(function (carousel) {
     var track = carousel.querySelector('.carousel__track');
@@ -432,6 +582,9 @@ function loadContent() {
     })
     .then(function (raw) {
       applyContent(parseContent(raw));
+      return extendCarousels();
+    })
+    .then(function () {
       initCarousels();
     })
     .catch(function (err) {
@@ -604,28 +757,36 @@ function initLightbox() {
   });
 }
 
-// Botón flotante "Ver prompt y modelo": muestra u oculta de una sola vez
-// todos los epígrafes (Modelo/Prompt) que aparecen debajo de las imágenes
-// en el cuerpo de la página (no el epígrafe del lightbox, que es aparte y
-// siempre se ve al agrandar una imagen). Arrancan ocultos para que la
-// página no quede tan cargada de texto técnico a simple vista.
-function initCaptionToggle() {
-  var btn = document.createElement('button');
-  btn.type = 'button';
-  btn.className = 'caption-toggle';
-  btn.textContent = 'Ver prompt y modelo';
-  document.body.appendChild(btn);
-
-  btn.addEventListener('click', function () {
-    var expanded = document.body.classList.toggle('captions-expanded');
-    btn.textContent = expanded ? 'Ocultar prompt y modelo' : 'Ver prompt y modelo';
+// Botón "Ver prompt y modelo" individual, debajo de cada imagen que tiene
+// epígrafe (ver renderImageBlock() más arriba, que arma el botón con el
+// epígrafe oculto al lado). Un solo listener delegado en document, porque
+// los botones se insertan recién al aplicar contenido.txt. Cada botón
+// muestra/oculta SOLO el epígrafe de esa imagen puntual, sin afectar a las
+// demás ni hacer falta agrandarla — no tiene relación con el epígrafe del
+// lightbox, que es aparte y siempre se ve entero al agrandar la imagen.
+function initInlineCaptionToggles() {
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.caption-toggle-inline');
+    if (!btn) return;
+    var caption = btn.nextElementSibling;
+    if (!caption || !caption.classList.contains('img-caption')) return;
+    var isHidden = caption.hasAttribute('hidden');
+    if (isHidden) {
+      caption.removeAttribute('hidden');
+      btn.textContent = 'Ocultar prompt y modelo';
+      btn.setAttribute('aria-expanded', 'true');
+    } else {
+      caption.setAttribute('hidden', '');
+      btn.textContent = 'Ver prompt y modelo';
+      btn.setAttribute('aria-expanded', 'false');
+    }
   });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   loadContent();
   initLightbox();
-  initCaptionToggle();
+  initInlineCaptionToggles();
 
   var nav = document.getElementById('siteNav');
   var toggle = document.getElementById('navToggle');

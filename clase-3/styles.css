@@ -628,7 +628,6 @@ section.block:first-of-type {
 /* ---------- Epígrafe opcional debajo de una imagen ---------- */
 
 .img-caption {
-  display: none;
   margin: 8px 0 0;
   padding: 0 6px;
   font-size: .85rem;
@@ -639,42 +638,36 @@ section.block:first-of-type {
 
 .img-caption:empty { display: none; margin: 0; }
 
-/* Los epígrafes (prompt + modelo) debajo de cada imagen arrancan
-   ocultos en toda la página; se muestran todos juntos con el botón
-   flotante "Ver prompt y modelo" (ver .caption-toggle más abajo). */
-body.captions-expanded .img-caption:not(:empty) { display: block; }
-
-/* ---------- Botón flotante: mostrar/ocultar todos los epígrafes ---------- */
-
-.caption-toggle {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 40;
+/* ---------- Botón individual: mostrar/ocultar el epígrafe de ESA imagen ---------- */
+/* Cada imagen con epígrafe (Modelo/Prompt) tiene su propio botón chico
+   debajo, para verlo u ocultarlo sin tener que agrandar la imagen ni
+   afectar a las demás. El epígrafe arranca oculto (atributo `hidden` en
+   el HTML, ver renderImageBlock() en script.js) hasta que se toca este
+   botón. */
+.caption-toggle-inline {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: var(--color-primary);
-  color: #fff;
+  gap: 5px;
+  margin: 8px 0 0;
+  padding: 0 6px;
+  background: none;
   border: none;
-  border-radius: 999px;
-  padding: 10px 18px;
-  font-size: .85rem;
+  color: var(--color-accent);
+  font-size: .82rem;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0,0,0,.22);
+  text-align: left;
 }
 
-.caption-toggle:hover { filter: brightness(1.08); }
+.caption-toggle-inline:hover { text-decoration: underline; }
 
-@media (max-width: 640px) {
-  .caption-toggle {
-    right: 14px;
-    bottom: 14px;
-    padding: 9px 14px;
-    font-size: .8rem;
-  }
+.caption-toggle-inline::before {
+  content: "▸";
+  display: inline-block;
+  transition: transform .15s ease;
 }
+
+.caption-toggle-inline[aria-expanded="true"]::before { transform: rotate(90deg); }
 
 /* Imagen suelta insertada en medio de una oración (no en su propio
    párrafo) — caso poco común; el habitual, con recuadro de "pendiente"
