@@ -1373,7 +1373,7 @@ section.block:first-of-type {
   justify-self: stretch;
   margin: 0;
   padding: 16px 20px;
-  background: linear-gradient(to top, rgba(15, 13, 10, .88) 0%, rgba(15, 13, 10, .6) 60%, rgba(15, 13, 10, 0) 100%);
+  background: linear-gradient(to top, rgba(15, 13, 10, .92) 0%, rgba(15, 13, 10, .82) 55%, rgba(15, 13, 10, 0) 100%);
   color: #f4f5f8;
   font-size: .85rem;
   font-style: italic;
@@ -1382,6 +1382,8 @@ section.block:first-of-type {
   border-radius: 0 0 6px 6px;
   opacity: 0;
   transition: opacity .15s ease;
+  max-height: 45vh;
+  overflow-y: auto;
 }
 
 .lightbox.has-caption .lightbox__caption { opacity: 1; }

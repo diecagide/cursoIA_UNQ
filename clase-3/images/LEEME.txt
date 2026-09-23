@@ -26,119 +26,47 @@ Cómo subir un archivo a esta carpeta desde GitHub (sin instalar nada):
 
 Tamaño recomendado: entre 1200 y 1600 px de ancho, formato .jpg o .png.
 
+ESTADO ACTUAL (esta vuelta: se subieron casi todas las imágenes reales)
+========================================
+Ya están cargadas todas las imágenes que espera contenido.txt, con los
+prompts y modelos que pasaste en el Excel como epígrafe (donde el
+Excel tenía el dato — donde estaba vacío, se dejó la imagen sin
+epígrafe, tal como pediste). Sacamos del todo la sección "Storyboards
+y biblias de proyecto" (y la imagen clase3_29_usogen_storyboard.jpg
+que esperaba) porque nos dijiste que la eliminamos — ya no está ni el
+texto ni el lugar para esa imagen en la página.
+
+Una sola cosa para tu atención:
+
+- clase3_35_upscaling.jpg (antes/después de upscaling): la imagen SÍ
+  está subida, pero le dejé el epígrafe tal como estaba (sin tocarlo),
+  porque nos habías dicho que ibas a escribir vos ese texto pensando en
+  el uso para gráfica de vía pública. Si querés que lo reemplace por el
+  epígrafe del Excel (herramienta: Topaz Gigapixel, sin prompt), avisame.
+
 CARRUSELES (varias fotos en fila, con flechas y puntitos)
 ========================================
-Por ahora ninguna sección de esta clase usa carrusel (las de
-"Generación" y "Edición" pasaron a tener una imagen por uso, ver más
-abajo) — pero el sistema sigue disponible por si en algún momento
-querés una galería de varias fotos en alguna sección. Si llega el
-caso, avisame y lo armamos.
+Ahora sí hay varias secciones con carrusel — se armaron automáticamente
+a partir de los archivos que tenían el mismo nombre base con un sufijo
+numérico al final (ej. clase3_13_ilustracion.jpg, _2.jpg, _3.jpg...):
+"¿Cuál es mejor?" (fotorrealismo, ilustración, edición/consistencia),
+"Cambio de estilo" (las 4 variantes de moda), "Varias imágenes de
+referencia a la vez", "Flyers" (el resultado del boceto), y varios usos
+del Bloque D (ideación, editorial, ajustes, borrado de fondo, props,
+formatos). Al hacer clic en cualquier imagen de un carrusel se abre en
+pantalla completa, con flechas para recorrer todo el carrusel sin
+cerrar el popup, y el prompt + modelo sobreimpuestos sobre un fondo
+oscuro semitransparente para que se lean bien (si el epígrafe es muy
+largo, aparece con scroll dentro del recuadro). Esto ya estaba
+armado en el código desde una vuelta anterior — esta vez solo hubo que
+cargar las imágenes reales y sus epígrafes.
 
-Imágenes que contenido.txt ya está esperando en esta clase
-========================================
-
-Del armado original:
-- clase3_01_bienvenida.jpg (banner de bienvenida)
-- clase3_02_modelos.jpg (banner de modelos y plataformas)
-- clase3_05_flyer_boceto.jpg (tu boceto a lápiz del ejemplo del flyer)
-- clase3_06_flyer_resultado.jpg (el flyer generado a partir de ese boceto)
-- clase3_07_vozpropia.jpg (imagen de cierre del bloque de voz propia)
-- clase3_08_inpainting_outpainting.jpg (antes/después de un inpainting
-  o un outpainting — armala vos combinando dos capturas, no hay un
-  prompt único posible para esto)
-
-Nuevas de esta vuelta de cambios:
-- clase3_11_difusion.jpg (secuencia de varios fotogramas mostrando el
-  proceso de refinamiento, de ruido a imagen final — se puede armar
-  poniendo en fila varias capturas intermedias de un generador que
-  muestre los pasos, por ejemplo alguno de los espacios gratuitos de
-  Hugging Face que sugerimos para el seed)
-- clase3_12_fotorrealismo.jpg (ejemplo de resultado fotorrealista, para
-  el recuadro de "¿Cuál es mejor?")
-- clase3_13_ilustracion.jpg (ejemplo de ilustración/estética artística,
-  mismo bloque)
-- clase3_14_edicion_consistencia.jpg (ejemplo de edición o de un mismo
-  personaje mantenido entre generaciones, mismo bloque)
-- clase3_15_texto_legible.jpg (ejemplo de una pieza con texto legible
-  bien resuelto, mismo bloque)
-- clase3_16_seed.jpg (comparación entre resultados con el mismo seed
-  fijo vs. seed aleatorio — se arma fácil con los espacios gratuitos de
-  Hugging Face que están linkeados en el texto de "El seed")
-- clase3_17_dron_simple.jpg / clase3_18_dron_medio.jpg /
-  clase3_19_dron_complejo.jpg (OJO: cambió el ejemplo — antes era un
-  gato robótico, ahora es un dron mensajero en un mercado callejero,
-  para no repetir el mismo sujeto que el ejemplo de "La estructura"
-  más arriba — el resultado de generar cada una de las tres versiones
-  del ejemplo de "de simple a complejo": mismo prompt base, con más o
-  menos detalle)
-
-Penúltima vuelta de cambios (Bloque D reorganizado: ahora cada uso
-tiene su propia imagen al lado, en vez de un carrusel compartido — los
-carruseles de "Generación" y "Edición" que pedían clase3_20 a
-clase3_25 ya NO se usan más, podés ignorarlos si los tenías anotados):
-- clase3_26_usogen_referencias.jpg (referencia visual para un tema o
-  concepto, ej. un período histórico)
-- clase3_27_usogen_ideacion.jpg (variaciones de prototipado de un
-  escenario o espacio)
-- clase3_28_usogen_vistas.jpg (hoja de modelo: vistas de frente, de
-  perfil y desde arriba de un mismo personaje u objeto)
-- clase3_29_usogen_storyboard.jpg (storyboard generado a partir de un
-  guion o sinopsis)
-- clase3_30_usogen_editorial.jpg (pieza editorial o gráfica para
-  redes)
-- clase3_32_usoed_borrado.jpg (borrado de fondo sobre una imagen ya
-  existente)
-- clase3_33_usoed_agregar.jpg (elemento nuevo agregado, integrado al
-  estilo original)
-- clase3_34_usoed_props.jpg (ajuste de un objeto — prop — dentro de
-  una escena)
-
-Última vuelta de cambios:
-- clase3_31_usogen_ajustes.jpg (OJO: cambió el contenido esperado —
-  antes era "variación de estilo", ahora es un ajuste puntual como la
-  iluminación de una imagen ya generada, sin cambiar el resto ni el
-  estilo general — mismo nombre de archivo, contenido distinto)
-- clase3_35_upscaling.jpg (una imagen antes/después de aplicarle
-  upscaling — se arma fácil achicando una imagen y comparándola con
-  el resultado de agrandarla de nuevo con algunas de las herramientas
-  que se mencionan en el texto, como Topaz Gigapixel o Upscayl)
-- clase3_36_formatos.jpg (la misma imagen adaptada a dos o tres
-  formatos distintos, uno al lado del otro — por ejemplo la versión
-  16:9 y la versión 9:16 de una misma escena)
-
-El gráfico de proporciones de "Adaptación a otros formatos" (ahora con
-16:9, 4:3, 1:1, 3:4 y 9:16) no necesita ninguna imagen: se dibuja solo
-con el diseño de la página.
-
-Vuelta más nueva de cambios (varios ajustes de contenido, ver el resto
-de este mensaje):
-- clase3_37_estilo_moda.jpg (ejemplo de las "modas" de estilización que
-  se viralizan en redes cada tanto: estética Simpsons, Estudio Ghibli,
-  años 80 — armala vos combinando dos o tres ejemplos, no hay un
-  prompt único)
-- clase3_38_estilo_referencia.jpg (una imagen estilizada como
-  referencia artística sobre algo concreto, para uso propio más allá
-  de las modas de redes)
-- clase3_39_flyer_generico.jpg (ejemplo de esos flyers genéricos e
-  intercambiables que se ven tanto en redes, con tipografías grandes y
-  degradados repetidos — armalo vos o buscá un ejemplo real, no hace
-  falta que lo generes con un prompt específico)
-- clase3_40_multireferencia.jpg (NUEVO NOMBRE, reemplaza al viejo
-  clase3_10_multireferencia.jpg si lo tenías anotado — cambió también
-  el ejemplo: ahora es una composición combinando el rostro de una
-  imagen, el fondo de otra y la paleta de colores de una tercera, en
-  un resultado único — armala vos, no hay un prompt único posible)
-- clase3_41_texto_a_imagen.jpg (ejemplo de texto-a-imagen: un paisaje
-  de montaña al amanecer, generado solo a partir de la descripción
-  escrita)
-- clase3_42_imagen_a_imagen.jpg (ejemplo de imagen-a-imagen: una foto
-  transformada con una instrucción de estilo, conservando la
-  estructura original — puede ser, por ejemplo, una foto convertida a
-  estilo ilustración)
-
-OJO con clase3_17/18/19: en la vuelta anterior ya habían pasado de
-"gato robótico" a "dron mensajero" — si todavía tenías anotado el
-gato, es el dron el que va.
+Para sumar una imagen nueva a un carrusel que ya existe: subí el
+archivo con el sufijo numérico siguiente (por ejemplo, si ya existe
+clase3_13_ilustracion2.jpg, la próxima sería clase3_13_ilustracion3.jpg
+— o directamente avisame el nombre que le pusiste) y agregala en
+contenido.txt como una imagen más dentro del bloque "@carousel" de esa
+clave. Si preferís, mandame el archivo y el prompt/modelo y lo hago yo.
 
 LOGOS DE LOS MODELOS (Bloque B)
 ========================================
