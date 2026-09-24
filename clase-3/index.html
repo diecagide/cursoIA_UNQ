@@ -97,7 +97,7 @@
 
     <!-- Grupo 3: cierre -->
     <ul class="nav-list">
-      <li><a href="#final">Final y para llevar al aula</a></li>
+      <li><a href="#cierre">Cierre y para llevar al aula</a></li>
     </ul>
   </nav>
 
@@ -184,6 +184,25 @@
         <h3 id="privados-abiertos-imagen">Modelos privados vs. código abierto</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="privados_abiertos_imagen"></div>
+
+        <!-- ComfyUI vuelve a ser un "Para ampliar" plegable, igual que
+             estaba originalmente en la Clase 1 (a pedido de Diego) —
+             antes, en esta clase, iba como párrafo fijo dentro de
+             privados_abiertos_imagen. -->
+        <details class="expandable">
+          <summary>
+            <span class="expandable__icon" aria-hidden="true">🔍</span>
+            <span class="expandable__text">
+              <span class="expandable__eyebrow">Para ampliar</span>
+              <span class="expandable__title">Un caso interesante: ComfyUI</span>
+            </span>
+            <span class="expandable__chevron" aria-hidden="true">▸</span>
+          </summary>
+          <div class="expandable__body">
+            <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+            <div class="content-block" data-key="comfyui"></div>
+          </div>
+        </details>
 
         <div class="platform-cards">
 
@@ -486,7 +505,14 @@
         <p class="prompt-breakdown" data-key="ejemplo_breakdown"></p>
 
         <details class="expandable">
-          <summary>Para ampliar: el seed, reproducir y variar un resultado</summary>
+          <summary>
+            <span class="expandable__icon" aria-hidden="true">🔍</span>
+            <span class="expandable__text">
+              <span class="expandable__eyebrow">Para ampliar</span>
+              <span class="expandable__title">El seed: reproducir y variar un resultado</span>
+            </span>
+            <span class="expandable__chevron" aria-hidden="true">▸</span>
+          </summary>
           <div class="expandable__body">
             <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
             <p data-key="seed_imagen"></p>
@@ -658,13 +684,25 @@
       </section>
 
       <!-- =================================================================
-           FINAL
+           CIERRE
            ================================================================= -->
-      <section class="block" id="final">
-        <h2>Final y para llevar al aula</h2>
+      <section class="block" id="cierre">
+        <h2>Cierre y para llevar al aula</h2>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="final_1"></p>
+        <div class="content-block" data-key="cierre_1"></div>
+
+        <!-- Los ítems van hardcodeados acá (no en contenido.txt), mismo
+             criterio que la Clase 1: son la estructura de la lista, no
+             cuerpo de texto libre. -->
+        <ul class="practice-list">
+          <li><strong>Sugerir modelos y plataformas según el objetivo.</strong> Presentar algunas opciones (fotorrealismo, ilustración, edición, piezas con texto) ayuda a que la elección no quede librada solo a lo que cada estudiante ya conoce o encuentra por su cuenta.</li>
+          <li><strong>Llevar el debate de estilo, referencia y plagio al aula.</strong> Es una buena oportunidad para pensar en conjunto dónde está el límite entre inspirarse en un estilo, referenciar a un autor y copiarlo directamente.</li>
+          <li><strong>Pedir que expliciten el prompt y las decisiones que tomaron.</strong> Que puedan contar qué buscaron, qué modelo usaron y por qué, ayuda a que el criterio propio se vuelva parte del proceso, no solo del resultado final.</li>
+        </ul>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="cierre_2"></p>
 
         <div class="next-class">
           <p class="next-class__label">En la próxima clase</p>

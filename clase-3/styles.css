@@ -588,11 +588,19 @@ section.block:first-of-type {
 .subsection-highlight > *:last-child { margin-bottom: 24px; }
 
 /* ---------- Contenido plegable / "para ampliar" ---------- */
+/* Recurso didáctico destacado, mismo criterio visual que .callout
+   (fondo --color-primary-light, sin borde) pero plegable: un ícono
+   circular a la izquierda, la etiqueta "Para ampliar" como eyebrow y
+   el tema como título, con una flecha a la derecha que rota al
+   abrirse. A pedido de Diego (Clase 3, misma vuelta que restauró
+   ComfyUI como "Para ampliar"): antes era un recuadro con borde fino,
+   poco visible — ahora se destaca igual que un recurso tipo
+   "Herramienta" de la Clase 2. */
 
 .expandable {
-  border: 1px solid var(--color-border);
+  border: none;
   border-radius: 12px;
-  background: var(--color-surface);
+  background: var(--color-primary-light);
   margin: 20px 0 28px;
   overflow: hidden;
 }
@@ -600,28 +608,55 @@ section.block:first-of-type {
 .expandable summary {
   cursor: pointer;
   list-style: none;
-  padding: 16px 20px;
-  font-weight: 700;
-  color: var(--color-primary);
+  padding: 18px 22px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   user-select: none;
 }
 
 .expandable summary::-webkit-details-marker { display: none; }
 
-.expandable summary::before {
-  content: "▸";
-  color: var(--color-accent);
-  display: inline-block;
+.expandable__icon {
   flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.expandable__text { flex: 1; min-width: 0; }
+
+.expandable__eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 0 0 2px;
+}
+
+.expandable__title {
+  display: block;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.expandable__chevron {
+  flex-shrink: 0;
+  color: var(--color-accent);
+  font-size: 1.1rem;
   transition: transform .15s ease;
 }
 
-.expandable[open] summary::before { transform: rotate(90deg); }
+.expandable[open] .expandable__chevron { transform: rotate(90deg); }
 
-.expandable__body { padding: 0 20px 20px; }
+.expandable__body { padding: 0 22px 22px; }
 .expandable__body p:last-child { margin-bottom: 0; }
 .expandable__body .img-block:last-child { margin-bottom: 0; }
 

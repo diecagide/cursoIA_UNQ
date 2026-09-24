@@ -107,12 +107,13 @@ Y, como pasaba con el texto, la relación entre modelo y plataforma no es uno a 
 ## privados_abiertos_imagen
 La distinción entre modelos propietarios y de código abierto que vimos en la Clase 1 también aplica acá. Midjourney, GPT Image 2, Nano Banana, Adobe Firefly y Runway Gen-4 Image son modelos propietarios: los usamos a través de la plataforma de la empresa que los desarrolló, con sus condiciones de uso y sus límites gratuitos. Stable Diffusion y Flux, en cambio, tienen versiones de código abierto (hoy, por ejemplo, Flux.2 [dev]) que se pueden descargar y ejecutar en una computadora propia, lo que da más control sobre el proceso, pero exige más conocimiento técnico.
 
-Ahí es donde entra **ComfyUI**, una interfaz gratuita y de código abierto que permite armar, de manera visual, flujos de trabajo con estos modelos abiertos de generación de imagen (y también de video), conectando distintos "bloques" de procesamiento como si fueran piezas de un circuito. No es una herramienta pensada para un uso cotidiano y sencillo (tiene una curva de aprendizaje bastante más alta que la de escribir un prompt en un chat), pero sirve para trabajar con Stable Diffusion o Flux de forma más artesanal, armando un flujo propio paso a paso: generación, retoque, escalado, en lugar de escribir un prompt y esperar un resultado cerrado.
+Correr un modelo de código abierto en la propia computadora, con ComfyUI o de forma similar, demanda tiempo y conocimiento técnico. Para probar Flux o Stable Diffusion sin instalar nada, se puede usar un espacio gratuito de ^[Hugging Face](Una plataforma donde la comunidad de IA comparte modelos, código y demos que se pueden probar directo desde el navegador, sin instalar nada — funciona como un repositorio público de modelos de inteligencia artificial.) como [FLUX.1 schnell](https://huggingface.co/spaces/black-forest-labs/FLUX.1-schnell) o [Stable Diffusion 3.5 Large](https://huggingface.co/spaces/stabilityai/stable-diffusion-3.5-large).
+
+## comfyui
+**ComfyUI** es una interfaz gratuita y de código abierto que permite armar, de manera visual, flujos de trabajo con estos modelos abiertos de generación de imagen (y también de video), conectando distintos "bloques" de procesamiento como si fueran piezas de un circuito. No es una herramienta pensada para un uso cotidiano y sencillo (tiene una curva de aprendizaje bastante más alta que la de escribir un prompt en un chat), pero sirve para trabajar con Stable Diffusion o Flux de forma más artesanal, armando un flujo propio paso a paso: generación, retoque, escalado, en lugar de escribir un prompt y esperar un resultado cerrado.
 
 ![Ejemplo de flujo de trabajo en ComfyUI](images/clase3_43_comfyui.jpg)
 Ejemplo de flujo de trabajo en ComfyUI
-
-Correr un modelo de código abierto en la propia computadora, con ComfyUI o de forma similar, demanda tiempo y conocimiento técnico. Para probar Flux o Stable Diffusion sin instalar nada, se puede usar un espacio gratuito de ^[Hugging Face](Una plataforma donde la comunidad de IA comparte modelos, código y demos que se pueden probar directo desde el navegador, sin instalar nada — funciona como un repositorio público de modelos de inteligencia artificial.) como [FLUX.1 schnell](https://huggingface.co/spaces/black-forest-labs/FLUX.1-schnell) o [Stable Diffusion 3.5 Large](https://huggingface.co/spaces/stabilityai/stable-diffusion-3.5-large).
 
 
 ## cual_mejor_intro
@@ -280,6 +281,7 @@ Un dron mensajero plateado, sobrevolando un mercado callejero, estilo art déco
 ## ejemplo_simple_imagen
 ![](images/clase3_17_dron_simple.jpg)
 Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Un dron mensajero plateado, sobrevolando un mercado callejero, estilo art déco
 
 ## ejemplo_medio
 Un dron mensajero plateado con detalles dorados, sobrevolando un mercado callejero al atardecer, entre puestos con telas de colores, estilo art déco
@@ -287,6 +289,7 @@ Un dron mensajero plateado con detalles dorados, sobrevolando un mercado calleje
 ## ejemplo_medio_imagen
 ![](images/clase3_18_dron_medio.jpg)
 Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Un dron mensajero plateado con detalles dorados, sobrevolando un mercado callejero al atardecer, entre puestos con telas de colores, estilo art déco
 
 ## ejemplo_complejo
 Un dron mensajero plateado, con las siguientes características:
@@ -300,6 +303,7 @@ Escena: un mercado callejero al atardecer, con puestos de telas de colores y tol
 ## ejemplo_complejo_imagen
 ![](images/clase3_19_dron_complejo.jpg)
 Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Un dron mensajero plateado, con carcasa de metal pulido con relieves ornamentales dorados de inspiración art déco, cuatro hélices pequeñas dispuestas en simetría alrededor del cuerpo, y un compartimento translúcido en la parte inferior con un sobre de papel visible adentro. Escena: un mercado callejero al atardecer, con puestos de telas de colores y toldos a rayas, gente circulando de fondo desenfocada. Luz cálida y rasante, profundidad de campo baja, estilo art déco, sin texto ni marcas de agua.
 
 ## ejemplo_breakdown
 → La versión simple alcanza para que el modelo tenga una idea clara de qué generar. La media agrega textura del material (detalles dorados), un contexto más específico (mercado al atardecer, puestos de telas) y refuerza el estilo con el ambiente lumínico. La compleja detalla características puntuales en una lista —relieves ornamentales, hélices, el sobre dentro del compartimento—, agrega el prompt negativo y define con precisión la composición (luz rasante, profundidad de campo). El resultado final va a ser mucho más parecido a lo que tenemos en la cabeza, y cada vez menos a la interpretación genérica que el modelo elige por default.
@@ -573,8 +577,13 @@ Construir una voz propia en imagen tiene que ver con volver una y otra vez sobre
 Otra manera de pensar la IA de imagen, sobre todo en el trabajo creativo, es no como un reemplazo del resto de las técnicas, sino como una pieza más dentro de un proceso más amplio: pensar en **modelos híbridos**, donde confluyen técnicas de producción de imagen diversas —analógicas, digitales tradicionales e IA— y cada una aporta lo que mejor sabe hacer. Un boceto a mano, un retoque en Photoshop y una generación con IA pueden convivir perfectamente en la producción de una misma pieza.
 
 
-## final_1
-Llegamos al final de la Clase 3. Para llevar al aula, esto es lo que recopilamos: sugerencias de modelos y plataformas según lo que busques (fotorrealismo, ilustración, edición, texto legible), la gramática propia de un prompt de imagen, recomendaciones de uso para la etapa de exploración y desarrollo de un proyecto, y algunas técnicas para ajustar el prompt y lograr una interacción más efectiva. También quedó planteado un debate que vale la pena llevar a tus estudiantes: los límites entre estilo, referencia y plagio, y qué parte de un proceso creativo conviene resolver con IA y qué parte no. Cerramos con la idea que abrió la clase: la IA de imagen es una herramienta, y el criterio propio es lo que hace la diferencia entre una estética genérica y una voz reconocible.
+## cierre_1
+Llegamos al final de la Clase 3. Ya sabés cómo funciona la IA generativa de imagen, qué modelos y plataformas conviene usar según lo que necesites, la gramática propia de un prompt de imagen, y usos concretos para la exploración y el desarrollo de un proyecto.
+
+Por último, te comparto algunas ideas o sugerencias para la práctica docente:
+
+## cierre_2
+Cerramos con la idea que abrió la clase: la IA de imagen es una herramienta, y el criterio propio es lo que hace la diferencia entre una estética genérica y una voz reconocible.
 
 
 ## proxima_clase
