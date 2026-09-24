@@ -26,7 +26,8 @@ Cómo subir un archivo a esta carpeta desde GitHub (sin instalar nada):
 
 Tamaño recomendado: entre 1200 y 1600 px de ancho, formato .jpg o .png.
 
-ESTADO ACTUAL (esta vuelta: se subieron casi todas las imágenes reales)
+ESTADO ACTUAL (última vuelta: separamos "Edición" de "Consistencia" en
+"¿Cuál es mejor?")
 ========================================
 Ya están cargadas todas las imágenes que espera contenido.txt, con los
 prompts y modelos que pasaste en el Excel como epígrafe (donde el
@@ -36,7 +37,17 @@ y biblias de proyecto" (y la imagen clase3_29_usogen_storyboard.jpg
 que esperaba) porque nos dijiste que la eliminamos — ya no está ni el
 texto ni el lugar para esa imagen en la página.
 
-Una sola cosa para tu atención:
+PENDIENTE NUEVO: al separar "¿Cuál es mejor?" en dos categorías
+("Edición de imágenes" y "Consistencia entre generaciones"), las 4
+fotos que ya tenías (clase3_14_edicion_consistencia.jpg a _4.jpg)
+quedaron todas del lado de "Consistencia entre generaciones" (son
+ejemplos de un mismo personaje en distintas escenas, no de retocar una
+foto existente). Falta una imagen nueva para "Edición de imágenes":
+    images/clase3_44_edicion.jpg
+Un ejemplo de retoque sobre una foto ya existente (agregar/quitar algo
+puntual, ajustar un detalle) serviría bien acá.
+
+Otra cosa para tu atención:
 
 - clase3_35_upscaling.jpg (antes/después de upscaling): la imagen SÍ
   está subida, pero le dejé el epígrafe tal como estaba (sin tocarlo),

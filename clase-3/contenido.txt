@@ -1,5 +1,5 @@
 ## bienvenida_1
-Si llegaste a esta clase, ya tenés un panorama de cómo funciona la IA generativa en general, de cómo redactar prompts para mejorar la eficacia de la interacción, de algunos usos posibles y de algunas estrategias de validación. Felicitaciones, pasaste la prueba del bodrio. Hoy la cosa mejora un poco: bienvenidas y bienvenidos a la tercera clase del curso, el mundo de la imagen.
+Si llegaste a esta clase, ya tenés un panorama de cómo funciona la IA generativa en general, de cómo redactar prompts para mejorar la eficacia de la interacción, de algunos usos posibles y de algunas estrategias de validación. Bienvenidas y bienvenidos a la tercera clase del curso: el mundo de la imagen.
 
 ![](images/clase3_01_bienvenida.jpg)
 Modelo: Gemini 3 (Nano Banana Pro)
@@ -10,12 +10,12 @@ Como ya sabemos, un modelo de texto predice palabras a partir de la identificaci
 El mundo de la imagen tiene posibilidades muy diversas, desde crear imágenes desde cero hasta editar contenido existente, como agregar o quitar elementos, modificar encuadres e iluminación, mejorar resoluciones, etc. En ese arco amplio de posibilidades, el proceso cambia mucho según cómo lo llevemos adelante: si lo guiamos de manera activa, comprendiendo las limitaciones de los modelos y evaluando por qué conviene usar la IA en lugar de otras técnicas. La idea troncal de este curso es esa: no cederle a la IA la imaginación.
 
 ## bienvenida_2
-La idea de esta clase es que podamos:
+La idea de esta clase es que te lleves algo concreto para el aula:
 
-- Conocer los modelos y plataformas de generación de imagen más usados hoy, y las diferencias entre ellos.
-- Entender la gramática del prompt aplicada a imagen, y en qué se distingue de la que vimos para texto.
-- Reconocer usos posibles de la IA de imagen en la ideación, el prototipado y la producción de recursos para distintas disciplinas.
-- Evaluar con criterio una imagen generada.
+- Sugerencias de modelos y plataformas de generación de imagen, con las diferencias entre ellos.
+- Recomendaciones de uso pensadas para tus estudiantes, sobre todo en la etapa de exploración y desarrollo de un proyecto (entendiendo el desarrollo como la etapa en la que se definen sus aspectos conceptuales, narrativos y estéticos).
+- Técnicas para ajustar el prompt de imagen y lograr una interacción más efectiva con estos modelos.
+- Herramientas para evaluar con criterio una imagen generada.
 
 Vamos a considerar a la IA como una herramienta, que también puede llegar a ser una aliada estratégica dentro de los desarrollos de un proyecto o en la producción.
 
@@ -43,6 +43,7 @@ Hay tres maneras principales de generar una imagen con estos modelos:
 ## comofunciona_texto_ejemplo
 ![Paisaje de montaña al amanecer, generado a partir de esa sola descripción escrita](images/clase3_41_texto_a_imagen.jpg)
 Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Un paisaje de montaña al amanecer
 
 ## comofunciona_imgimg
 **Imagen-a-imagen (image-to-image)**: partimos de una imagen existente, sea una foto, un boceto o un dibujo, y le pedimos al modelo que la transforme: que cambie el estilo, los colores, el nivel de detalle, o que convierta un boceto en una imagen fotorrealista.
@@ -106,7 +107,10 @@ Y, como pasaba con el texto, la relación entre modelo y plataforma no es uno a 
 ## privados_abiertos_imagen
 La distinción entre modelos propietarios y de código abierto que vimos en la Clase 1 también aplica acá. Midjourney, GPT Image 2, Nano Banana, Adobe Firefly y Runway Gen-4 Image son modelos propietarios: los usamos a través de la plataforma de la empresa que los desarrolló, con sus condiciones de uso y sus límites gratuitos. Stable Diffusion y Flux, en cambio, tienen versiones de código abierto (hoy, por ejemplo, Flux.2 [dev]) que se pueden descargar y ejecutar en una computadora propia, lo que da más control sobre el proceso, pero exige más conocimiento técnico.
 
-Ahí es donde vuelve a aparecer **ComfyUI**, la interfaz de nodos que mencionamos en la Clase 1. Sirve para trabajar con Stable Diffusion o Flux de forma más artesanal, armando un flujo propio paso a paso (generación, retoque, escalado) en lugar de escribir un prompt en un chat y esperar un resultado cerrado.
+Ahí es donde entra **ComfyUI**, una interfaz gratuita y de código abierto que permite armar, de manera visual, flujos de trabajo con estos modelos abiertos de generación de imagen (y también de video), conectando distintos "bloques" de procesamiento como si fueran piezas de un circuito. No es una herramienta pensada para un uso cotidiano y sencillo (tiene una curva de aprendizaje bastante más alta que la de escribir un prompt en un chat), pero sirve para trabajar con Stable Diffusion o Flux de forma más artesanal, armando un flujo propio paso a paso: generación, retoque, escalado, en lugar de escribir un prompt y esperar un resultado cerrado.
+
+![Ejemplo de flujo de trabajo en ComfyUI](images/clase3_43_comfyui.jpg)
+Ejemplo de flujo de trabajo en ComfyUI
 
 Correr un modelo de código abierto en la propia computadora, con ComfyUI o de forma similar, demanda tiempo y conocimiento técnico. Para probar Flux o Stable Diffusion sin instalar nada, se puede usar un espacio gratuito de ^[Hugging Face](Una plataforma donde la comunidad de IA comparte modelos, código y demos que se pueden probar directo desde el navegador, sin instalar nada — funciona como un repositorio público de modelos de inteligencia artificial.) como [FLUX.1 schnell](https://huggingface.co/spaces/black-forest-labs/FLUX.1-schnell) o [Stable Diffusion 3.5 Large](https://huggingface.co/spaces/stabilityai/stable-diffusion-3.5-large).
 
@@ -140,10 +144,16 @@ Para **ilustración y estética artística**, Midjourney sigue siendo la opción
 
 ![](images/clase3_13_ilustracion6.jpg)
 
-## mejor_edicion_consistencia
-Para **edición de imágenes existentes y consistencia entre generaciones** (mantener el mismo personaje u objeto en distintas escenas), Nano Banana, Adobe Firefly (integrado a Photoshop) y Runway Gen-4 Image, pensado específicamente para esto a partir de fotos de referencia, suelen ser las opciones más prácticas.
+## mejor_edicion
+Para **edición de imágenes** (retocar, agregar o quitar elementos, ajustar algo puntual sobre una foto ya existente), recomendamos Adobe Firefly como plataforma: reúne varias herramientas dedicadas para esto (Generative Fill, Generative Remove, Generative Expand, Generative Upscale, quitar fondo, y las más nuevas Precision Flow y AI Markup para ajustes más finos). Nano Banana y Midjourney (que ya tiene su propio editor, con selección de zona, retextura y capas) también funcionan bien para este uso, con la ventaja de resolverlo dentro del mismo chat.
 
-## mejor_edicion_consistencia_imagen
+## mejor_edicion_imagen
+![](images/clase3_44_edicion.jpg)
+
+## mejor_consistencia
+Para **consistencia entre generaciones** (mantener el mismo personaje u objeto reconocible en distintas escenas o ángulos), Nano Banana es hoy la opción más práctica.
+
+## mejor_consistencia_imagen
 @carousel
 ![](images/clase3_14_edicion_consistencia.jpg)
 
@@ -216,6 +226,7 @@ Un gato robótico joven, jugando con un ovillo de lana roja, en una calle noctur
 ## estructura_imagen
 ![](images/clase3_09_gato_robotico.jpg)
 Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Un gato robótico joven, jugando con un ovillo de lana roja, en una calle nocturna iluminada con luces de neón, enfoque selectivo, estilo steampunk, sin texto
 
 
 ## reglas_gramaticales
@@ -294,15 +305,21 @@ Modelo: Gemini 3 (Nano Banana Pro)
 → La versión simple alcanza para que el modelo tenga una idea clara de qué generar. La media agrega textura del material (detalles dorados), un contexto más específico (mercado al atardecer, puestos de telas) y refuerza el estilo con el ambiente lumínico. La compleja detalla características puntuales en una lista —relieves ornamentales, hélices, el sobre dentro del compartimento—, agrega el prompt negativo y define con precisión la composición (luz rasante, profundidad de campo). El resultado final va a ser mucho más parecido a lo que tenemos en la cabeza, y cada vez menos a la interpretación genérica que el modelo elige por default.
 
 
-## usos_nota
-Antes de listar usos: ninguno de estos reemplaza la disciplina artística. Siempre que se pueda contratar a un ilustrador o una ilustradora, está bien hacerlo —estas herramientas sirven para idear, prototipar y agilizar tareas puntuales, no para desplazar ese trabajo profesional.
+## problema_imagen_generada
+Antes de entrar en usos concretos, vale la pena hacer una parada. Hoy un porcentaje altísimo de los contenidos que circulan están hechos con IA, o usaron IA en algún momento del proceso para intervenir sobre una imagen. Eso trae algunas preguntas que conviene tener presentes:
+
+- Los límites entre usar un estilo, referenciar a un autor o una autora, y el plagio directo: una discusión que ya existía antes, pero que hoy se amplifica por la facilidad y la inmediatez con las que se llega a una imagen final.
+- Priorizar unos usos por encima de otros. Este curso parte de la idea de que la IA es una aliada dentro de un proceso creativo, nunca un reemplazo del trabajo de diseñadoras y diseñadores ni del equipo técnico de un proyecto. La pregunta no es si usar estas herramientas, sino qué parte del proceso conviene resolver con ellas y qué parte no.
+- Lo que ya planteamos en la Clase 1: la creación también involucra al cuerpo, algo que ninguna de estas herramientas reemplaza.
+
+Ninguno de estos tres puntos tiene una respuesta cerrada. Son, más bien, un buen debate para llevar al aula.
 
 
 ## usos_generacion
 ¿Para qué puede servir esto en el trabajo docente y en el acompañamiento a los y las estudiantes? Venimos con esa pregunta desde la Clase 1. Algunos usos posibles, pensados desde una lógica de producción, más allá de generar una imagen suelta:
 
 ## usos_generacion_referencias
-**Referencias visuales**: producir imágenes de referencia para un tema, un período histórico, un concepto abstracto, cuando no encontramos (o no existe) una foto o ilustración que lo represente bien.
+**Exploración artística y referencias visuales**: producir imágenes de referencia para un tema, un período histórico, un concepto abstracto, cuando no encontramos (o no existe) una foto o ilustración que lo represente bien. Además de los modos tradicionales (un registro propio o la búsqueda en repositorios de imágenes de internet), ahora también podemos usar la IA para producir nuestras propias referencias.
 
 ## usos_generacion_referencias_imagen
 @carousel
@@ -344,7 +361,7 @@ Modelo: Gemini 3 (Nano Banana 2)
 Prompt: Crea las vistas para modelado 3D
 
 ## usos_generacion_editorial
-**Diseño editorial y piezas de comunicación**: portadas, gráficas para redes, branding de un proyecto.
+**Exploración editorial y piezas de comunicación**: portadas, gráficas para redes, branding de un proyecto.
 
 ## usos_generacion_editorial_imagen
 @carousel
@@ -557,7 +574,7 @@ Otra manera de pensar la IA de imagen, sobre todo en el trabajo creativo, es no 
 
 
 ## final_1
-Llegamos al final de la Clase 3. Vimos cómo funciona la IA generativa de imagen, sus principales modelos y plataformas, la gramática propia de un prompt de imagen y varios usos posibles en el trabajo docente, desde generar recursos desde cero hasta editar y adaptar lo que ya existe. Cerramos con la idea que abrió la clase: la IA de imagen es una herramienta, y el criterio propio es lo que hace la diferencia entre una estética genérica y una voz reconocible.
+Llegamos al final de la Clase 3. Para llevar al aula, esto es lo que recopilamos: sugerencias de modelos y plataformas según lo que busques (fotorrealismo, ilustración, edición, texto legible), la gramática propia de un prompt de imagen, recomendaciones de uso para la etapa de exploración y desarrollo de un proyecto, y algunas técnicas para ajustar el prompt y lograr una interacción más efectiva. También quedó planteado un debate que vale la pena llevar a tus estudiantes: los límites entre estilo, referencia y plagio, y qué parte de un proceso creativo conviene resolver con IA y qué parte no. Cerramos con la idea que abrió la clase: la IA de imagen es una herramienta, y el criterio propio es lo que hace la diferencia entre una estética genérica y una voz reconocible.
 
 
 ## proxima_clase

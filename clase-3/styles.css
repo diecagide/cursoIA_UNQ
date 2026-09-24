@@ -639,27 +639,29 @@ section.block:first-of-type {
 .img-caption:empty { display: none; margin: 0; }
 
 /* ---------- Botón individual: mostrar/ocultar el epígrafe de ESA imagen ---------- */
-/* Cada imagen con epígrafe (Modelo/Prompt) tiene su propio botón chico
-   debajo, para verlo u ocultarlo sin tener que agrandar la imagen ni
-   afectar a las demás. El epígrafe arranca oculto (atributo `hidden` en
-   el HTML, ver renderImageBlock() en script.js) hasta que se toca este
-   botón. */
+/* Cada imagen con epígrafe (Modelo/Prompt) tiene su propio botón debajo,
+   para verlo u ocultarlo sin tener que agrandar la imagen ni afectar a
+   las demás. El epígrafe arranca oculto (atributo `hidden` en el HTML,
+   ver renderImageBlock() en script.js) hasta que se toca este botón.
+   Estilo tipo "pastilla" (fondo azul, letras blancas, bordes redondeados),
+   a pedido de Diego — más destacado que un link de texto suelto. */
 .caption-toggle-inline {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  margin: 8px 0 0;
-  padding: 0 6px;
-  background: none;
+  gap: 6px;
+  margin: 10px 0 0;
+  background: var(--color-primary);
+  color: #fff;
   border: none;
-  color: var(--color-accent);
+  border-radius: 999px;
+  padding: 8px 16px;
   font-size: .82rem;
   font-weight: 600;
   cursor: pointer;
-  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
 
-.caption-toggle-inline:hover { text-decoration: underline; }
+.caption-toggle-inline:hover { filter: brightness(1.1); }
 
 .caption-toggle-inline::before {
   content: "▸";
