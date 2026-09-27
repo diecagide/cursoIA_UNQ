@@ -94,6 +94,15 @@ a:hover { color: var(--color-primary); }
   overflow-y: auto;
 }
 
+/* Logo de la UNQ, arriba de todo en la barra lateral. */
+.site-nav__logo {
+  display: block;
+  max-width: 130px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 22px;
+}
+
 .site-nav__course {
   font-size: .78rem;
   text-transform: uppercase;
@@ -238,6 +247,17 @@ a:hover { color: var(--color-primary); }
 .content-inner {
   max-width: var(--max-content-width);
   margin: 0 auto;
+}
+
+/* Banner del curso, arriba del todo del texto principal (antes del
+   nombre del curso/docente). Ancho completo de la columna de contenido,
+   proporción libre (se adapta sola al alto real de la imagen). */
+.class-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 32px;
 }
 
 .class-header {
