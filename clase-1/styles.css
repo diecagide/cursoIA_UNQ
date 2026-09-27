@@ -94,6 +94,15 @@ a:hover { color: var(--color-primary); }
   overflow-y: auto;
 }
 
+/* Logo de la UNQ, arriba de todo en la barra lateral. */
+.site-nav__logo {
+  display: block;
+  max-width: 130px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 22px;
+}
+
 .site-nav__course {
   font-size: .78rem;
   text-transform: uppercase;
@@ -240,6 +249,17 @@ a:hover { color: var(--color-primary); }
   margin: 0 auto;
 }
 
+/* Banner del curso, arriba del todo del texto principal (antes del
+   nombre del curso/docente). Ancho completo de la columna de contenido,
+   proporción libre (se adapta sola al alto real de la imagen). */
+.class-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+
 .class-header {
   margin-bottom: 40px;
 }
@@ -342,6 +362,7 @@ section.block:first-of-type {
    la imagen ocupa el 100% del ancho del recuadro y el recuadro se recorta a la altura
    real de la imagen (sin recorte ni límite de altura fijo). */
 .img-placeholder.has-image {
+  position: relative;
   border-style: solid;
   border-color: var(--color-border);
   background: transparent;
@@ -352,6 +373,24 @@ section.block:first-of-type {
 .img-placeholder.has-image .img-placeholder__hint,
 .img-placeholder.has-image .img-placeholder__icon,
 .img-placeholder.has-image .img-placeholder__label { display: none; }
+
+/* Pista chica de que la imagen se puede agrandar (clic → lightbox),
+   en la esquina superior de cada imagen clickeable. Puramente visual,
+   no interfiere con el clic (pointer-events: none). */
+.img-placeholder.has-image::after {
+  content: "Click para ampliar";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(15,13,10,.68);
+  color: #fff;
+  font-size: .72rem;
+  font-style: normal;
+  padding: 3px 9px;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 1;
+}
 
 .img-placeholder.has-image img {
   width: 100%;
@@ -569,11 +608,19 @@ section.block:first-of-type {
 .subsection-highlight > *:last-child { margin-bottom: 24px; }
 
 /* ---------- Contenido plegable / "para ampliar" ---------- */
+/* Recurso didáctico destacado, mismo criterio visual que .callout
+   (fondo --color-primary-light, sin borde) pero plegable: un ícono
+   circular a la izquierda, la etiqueta "Para ampliar" como eyebrow y
+   el tema como título, con una flecha a la derecha que rota al
+   abrirse. A pedido de Diego (Clase 3, misma vuelta que restauró
+   ComfyUI como "Para ampliar"): antes era un recuadro con borde fino,
+   poco visible — ahora se destaca igual que un recurso tipo
+   "Herramienta" de la Clase 2. */
 
 .expandable {
-  border: 1px solid var(--color-border);
+  border: none;
   border-radius: 12px;
-  background: var(--color-surface);
+  background: var(--color-primary-light);
   margin: 20px 0 28px;
   overflow: hidden;
 }
@@ -581,28 +628,55 @@ section.block:first-of-type {
 .expandable summary {
   cursor: pointer;
   list-style: none;
-  padding: 16px 20px;
-  font-weight: 700;
-  color: var(--color-primary);
+  padding: 18px 22px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   user-select: none;
 }
 
 .expandable summary::-webkit-details-marker { display: none; }
 
-.expandable summary::before {
-  content: "▸";
-  color: var(--color-accent);
-  display: inline-block;
+.expandable__icon {
   flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.expandable__text { flex: 1; min-width: 0; }
+
+.expandable__eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 0 0 2px;
+}
+
+.expandable__title {
+  display: block;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.expandable__chevron {
+  flex-shrink: 0;
+  color: var(--color-accent);
+  font-size: 1.1rem;
   transition: transform .15s ease;
 }
 
-.expandable[open] summary::before { transform: rotate(90deg); }
+.expandable[open] .expandable__chevron { transform: rotate(90deg); }
 
-.expandable__body { padding: 0 20px 20px; }
+.expandable__body { padding: 0 22px 22px; }
 .expandable__body p:last-child { margin-bottom: 0; }
 .expandable__body .img-block:last-child { margin-bottom: 0; }
 
@@ -618,6 +692,39 @@ section.block:first-of-type {
 }
 
 .img-caption:empty { display: none; margin: 0; }
+
+/* ---------- Botón individual: mostrar/ocultar el epígrafe de ESA imagen ---------- */
+/* Cada imagen con epígrafe (Modelo/Prompt) tiene su propio botón debajo,
+   para verlo u ocultarlo sin tener que agrandar la imagen ni afectar a
+   las demás. El epígrafe arranca oculto (atributo `hidden` en el HTML,
+   ver renderImageBlock() en script.js) hasta que se toca este botón.
+   Estilo tipo "pastilla" (fondo azul, letras blancas, bordes redondeados),
+   a pedido de Diego — más destacado que un link de texto suelto. */
+.caption-toggle-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0 0;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: .82rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+.caption-toggle-inline:hover { filter: brightness(1.1); }
+
+.caption-toggle-inline::before {
+  content: "▸";
+  display: inline-block;
+  transition: transform .15s ease;
+}
+
+.caption-toggle-inline[aria-expanded="true"]::before { transform: rotate(90deg); }
 
 /* Imagen suelta insertada en medio de una oración (no en su propio
    párrafo) — caso poco común; el habitual, con recuadro de "pendiente"
@@ -1073,6 +1180,10 @@ section.block:first-of-type {
   padding: 16px 18px;
 }
 
+.element-card--wide {
+  grid-column: 1 / -1;
+}
+
 .element-card h4 {
   margin: 0 0 6px;
   font-size: .98rem;
@@ -1093,14 +1204,16 @@ section.block:first-of-type {
 
 .prompt-formula {
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-  font-size: .95rem;
+  font-size: 1.15rem;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .03em;
   text-align: center;
   color: #fff;
   background: var(--gradient-sidebar);
   border-radius: 10px;
-  padding: 16px 18px;
-  margin: 0 0 20px;
+  padding: 18px 18px;
+  margin: 0 0 12px;
   box-shadow: 0 6px 18px rgba(46,58,89,.22);
 }
 
@@ -1373,7 +1486,7 @@ section.block:first-of-type {
   justify-self: stretch;
   margin: 0;
   padding: 16px 20px;
-  background: linear-gradient(to top, rgba(15, 13, 10, .88) 0%, rgba(15, 13, 10, .6) 60%, rgba(15, 13, 10, 0) 100%);
+  background: linear-gradient(to top, rgba(15, 13, 10, .92) 0%, rgba(15, 13, 10, .82) 55%, rgba(15, 13, 10, 0) 100%);
   color: #f4f5f8;
   font-size: .85rem;
   font-style: italic;
@@ -1382,9 +1495,47 @@ section.block:first-of-type {
   border-radius: 0 0 6px 6px;
   opacity: 0;
   transition: opacity .15s ease;
+  max-height: 45vh;
+  overflow-y: auto;
 }
 
 .lightbox.has-caption .lightbox__caption { opacity: 1; }
+
+/* Epígrafe partido en dos paneles (izquierda/derecha), para imágenes
+   compuestas 50/50 marcadas con @split en contenido.txt: cada panel se
+   apoya sobre la mitad de la imagen que describe, en vez de un solo
+   bloque de texto largo tapando toda la imagen agrandada. */
+.lightbox__split-captions {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  align-self: end;
+  justify-self: stretch;
+  pointer-events: none;
+}
+
+.lightbox.has-split-caption .lightbox__split-captions { display: grid; }
+
+.lightbox__split-panel {
+  margin: 0;
+  padding: 14px 16px;
+  background: linear-gradient(to top, rgba(15, 13, 10, .92) 0%, rgba(15, 13, 10, .82) 55%, rgba(15, 13, 10, 0) 100%);
+  color: #f4f5f8;
+  font-size: .8rem;
+  font-style: italic;
+  line-height: 1.45;
+  text-align: left;
+  max-height: 42vh;
+  overflow-y: auto;
+  pointer-events: auto;
+}
+
+.lightbox__split-panel--left { border-radius: 0 0 0 6px; }
+.lightbox__split-panel--right { border-radius: 0 0 6px 0; }
+
+@media (max-width: 640px) {
+  .lightbox__split-captions { grid-template-columns: 1fr; }
+  .lightbox__split-panel { font-size: .78rem; max-height: 30vh; }
+}
 
 .lightbox__close {
   position: fixed;
@@ -1403,7 +1554,174 @@ section.block:first-of-type {
 
 .lightbox__close:hover { background: rgba(255, 255, 255, .28); }
 
+/* Flechas para pasar de una imagen a otra sin cerrar el popup — solo
+   aparecen cuando la imagen agrandada pertenece a un carrusel con más de
+   una imagen (clase .has-gallery, agregada en JS). */
+.lightbox__arrow {
+  display: none;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, .15);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox__arrow:hover { background: rgba(255, 255, 255, .28); }
+.lightbox__arrow--prev { left: 18px; }
+.lightbox__arrow--next { right: 18px; }
+.lightbox.has-gallery .lightbox__arrow { display: flex; }
+
+@media (max-width: 640px) {
+  .lightbox__arrow { width: 42px; height: 42px; font-size: 1.3rem; }
+  .lightbox__arrow--prev { left: 6px; }
+  .lightbox__arrow--next { right: 6px; }
+}
+
 body.lightbox-open { overflow: hidden; }
+
+/* ---------- Carrusel de imágenes (varias fotos, con flechas y puntitos) --------- */
+/* Se arma en JS (renderCarousel en script.js) a partir de una clave de
+   contenido.txt que arranca con "@carousel". Cada imagen usa el mismo
+   .img-block/.img-placeholder que cualquier otra imagen de contenido (con
+   su recuadro de "pendiente" y epígrafe), así que el lightbox de arriba
+   funciona sobre ellas sin nada extra. */
+
+.carousel {
+  position: relative;
+  margin: 20px 0 28px;
+}
+
+.carousel__viewport {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel__track {
+  display: flex;
+  transition: transform .35s ease;
+}
+
+.carousel__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+/* Dentro del carrusel, la imagen y su epígrafe no necesitan el margen
+   inferior que llevan sueltos en el flujo normal del texto. */
+.carousel__slide .img-block { margin: 0; }
+
+.carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, .92);
+  color: var(--color-primary);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.carousel__arrow:hover { background: #fff; color: var(--color-accent); }
+.carousel__arrow--prev { left: 10px; }
+.carousel__arrow--next { right: 10px; }
+
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.carousel__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: var(--color-border);
+  cursor: pointer;
+}
+
+.carousel__dot.is-active { background: var(--color-accent); }
+
+/* ---------- Comparación de relaciones de aspecto (gráfico horizontal) --------- */
+/* Usado en "Adaptación a otros formatos" para mostrar, a modo de selector
+   de formato como los que aparecen en los modelos de imagen, las
+   proporciones más habituales (16:9, 4:3, 1:1, 3:4, 9:16). Se dibuja
+   entero con CSS a partir del --ratio que cada .ratio-compare__item
+   define inline en index.html — no hace falta subir ninguna imagen para
+   este componente. Chico y en una sola fila, fondo negro y rectángulos
+   blancos, a pedido de Diego. */
+
+.ratio-compare {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 18px;
+  margin: 8px 0 28px;
+  padding: 18px 16px;
+  background: #000;
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.ratio-compare__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+.ratio-compare__box {
+  aspect-ratio: var(--ratio);
+  height: 44px;
+  background: #fff;
+  border-radius: 3px;
+}
+
+/* Selector reforzado (dos clases) a propósito: ".block p" (más abajo, la
+   regla general de párrafos dentro de un bloque) tiene más especificidad
+   que ".ratio-compare__label" sola y le pisaba el margin:0, dejando 24px
+   de más de fondo negro debajo del gráfico. */
+.ratio-compare .ratio-compare__label {
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: .78rem;
+  color: #fff;
+}
+
+/* ---------- Separador tenue entre segmentos de un mismo bloque ---------- */
+/* Línea fina y corta, centrada, para marcar dentro de un bloque largo que
+   arranca un segmento distinto sin necesitar un <h2> nuevo (agregado en
+   Bloque D, Clase 3, antes de "Varias imágenes de referencia a la vez"). */
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  width: 64px;
+  margin: 8px auto 32px;
+}
 
 /* ---------- Variante de color por clase ---------- */
 /* Mismo archivo para todas las clases: el degradé de la barra lateral
@@ -1416,3 +1734,4 @@ body.lightbox-open { overflow: hidden; }
    mismo patrón. */
 
 :root[data-clase="2"] { --color-sidebar-end: #6a3fa0; } /* azul → violeta */
+:root[data-clase="3"] { --color-sidebar-end: #1c8c73; } /* azul → verde azulado */
