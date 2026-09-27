@@ -203,11 +203,6 @@ En términos prácticos, un modelo propietario está controlado por una empresa,
 ## privados_2
 Un modelo abierto, en cambio, publica los archivos necesarios para utilizarlo, lo que permite que cualquier persona con los conocimientos técnicos necesarios pueda descargarlo y ejecutarlo en su propia computadora, sin depender de una empresa ni de una conexión a internet (y, si tiene el conocimiento, hasta modificarlo). Esto brinda un mayor control sobre nuestros datos y sobre el funcionamiento del modelo, aunque requiere un conocimiento técnico mayor para poder aprovecharlo.
 
-## comfyui
-Un caso interesante es **ComfyUI**, una interfaz gratuita y de código abierto que permite armar, de manera visual, flujos de trabajo con modelos abiertos de generación de imagen y video (como Stable Diffusion), conectando distintos "bloques" de procesamiento como si fueran piezas de un circuito. No es una herramienta pensada para un uso cotidiano y sencillo —tiene una curva de aprendizaje bastante más alta que la de escribir un prompt en un chat— pero es un buen ejemplo de hasta dónde puede llegar el control que ofrece el mundo del código abierto para quien esté dispuesto a invertir tiempo en aprenderlo.
-
-![Ejemplo de flujo de trabajo en ComfyUI](images/comfyui-ejemplo.jpg)
-
 ## privados_3
 Ninguna de las dos opciones es mejor en abstracto. La elección depende de la tarea y el presupuesto, y de cuánto control necesitamos sobre nuestra información. Hoy conviven modelos y plataformas de ambos tipos, con usos que se solapan bastante entre sí.
 
