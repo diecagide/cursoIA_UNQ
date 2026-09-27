@@ -37,15 +37,22 @@ y biblias de proyecto" (y la imagen clase3_29_usogen_storyboard.jpg
 que esperaba) porque nos dijiste que la eliminamos — ya no está ni el
 texto ni el lugar para esa imagen en la página.
 
-PENDIENTE NUEVO: al separar "¿Cuál es mejor?" en dos categorías
-("Edición de imágenes" y "Consistencia entre generaciones"), las 4
-fotos que ya tenías (clase3_14_edicion_consistencia.jpg a _4.jpg)
-quedaron todas del lado de "Consistencia entre generaciones" (son
-ejemplos de un mismo personaje en distintas escenas, no de retocar una
-foto existente). Falta una imagen nueva para "Edición de imágenes":
-    images/clase3_44_edicion.jpg
-Un ejemplo de retoque sobre una foto ya existente (agregar/quitar algo
-puntual, ajustar un detalle) serviría bien acá.
+ACTUALIZACIÓN: ya llegaron las fotos para "Edición de imágenes"
+(clase3_44_edicion.jpg a _5.jpg, la misma escena de un escritorio con
+variantes editadas) — ya no falta nada ahí. También llegaron fotos
+nuevas para varios carruseles que ya existían (Fotorrealismo,
+Ilustración, Consistencia entre generaciones, Referencias visuales,
+Ideación, Vistas y hojas de modelo, Exploración editorial), y se
+cargaron todas siguiendo el mismo sufijo numérico — no hizo falta
+tocar contenido.txt para esas, se agregaron solas. Siguen sin
+epígrafe (Modelo/Prompt) las imágenes que ya estaban así de vacías, más
+las nuevas que se sumaron a esos mismos carruseles — avisame si querés
+que carguemos esos datos.
+
+Además, el boceto del flyer (clase3_05_flyer_boceto.jpg) ahora forma
+parte del mismo carrusel que los flyers generados a partir de él
+(clase3_06_flyer_resultado.jpg y _2.jpg), como primera foto de esa
+tira.
 
 Otra cosa para tu atención:
 
