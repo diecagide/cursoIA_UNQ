@@ -1679,7 +1679,11 @@ body.lightbox-open { overflow: hidden; }
   border-radius: 3px;
 }
 
-.ratio-compare__label {
+/* Selector reforzado (dos clases) a propósito: ".block p" (más abajo, la
+   regla general de párrafos dentro de un bloque) tiene más especificidad
+   que ".ratio-compare__label" sola y le pisaba el margin:0, dejando 24px
+   de más de fondo negro debajo del gráfico. */
+.ratio-compare .ratio-compare__label {
   margin: 0;
   text-align: center;
   font-weight: 700;

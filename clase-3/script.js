@@ -175,7 +175,18 @@ function renderInline(text) {
 // no subiste el archivo (igual que el resto de las imágenes de la clase),
 // y el epígrafe opcional debajo (si hay texto después de la línea de la
 // imagen). Mismo look en todas las clases.
-function renderImageBlock(alt, src, caption) {
+//
+// El cuarto parámetro (eager) fuerza loading="eager" en vez de "lazy".
+// Se usa SOLO para las fotos de un carrusel (ver renderCarousel() y
+// autoExtendCarousel() más abajo): dentro de un carrusel, todas las fotos
+// salvo la primera quedan clippeadas por "overflow:hidden" del viewport,
+// y el navegador puede decidir que están demasiado lejos del área
+// visible como para precargarlas solas con loading="lazy" — quedaban
+// "pegadas" en el recuadro de "pendiente" hasta que se las navegaba a
+// mano. Fuera de un carrusel (imagen suelta en el flujo del texto) se
+// sigue usando "lazy" como siempre, para no perder ese ahorro en el
+// resto de la página.
+function renderImageBlock(alt, src, caption, eager) {
   var safeAlt = escapeAttr(alt);
   var safeSrc = escapeAttr(src);
 
@@ -199,7 +210,7 @@ function renderImageBlock(alt, src, caption) {
   // el espacio entre ambos sea siempre el mismo, sin depender de que los
   // márgenes de dos elementos separados "colapsen" bien.
   var html = '<div class="img-block"' + (splitCaption ? ' data-split-caption="true"' : '') + '><div class="img-placeholder">' +
-    '<img src="' + safeSrc + '" alt="' + safeAlt + '" loading="lazy" ' +
+    '<img src="' + safeSrc + '" alt="' + safeAlt + '" loading="' + (eager ? 'eager' : 'lazy') + '" ' +
     'onerror="this.style.display=\'none\'; this.closest(\'.img-placeholder\').classList.remove(\'has-image\');" ' +
     'onload="this.closest(\'.img-placeholder\').classList.add(\'has-image\');">' +
     '<span class="img-placeholder__icon">🖼️</span>' +
@@ -242,7 +253,7 @@ function renderCarousel(slideParagraphs) {
     var m = p.match(SOLO_IMAGE_RE);
     if (!m) return; // párrafo que no es una imagen: se ignora dentro de un carrusel
     count++;
-    slidesHtml += '<div class="carousel__slide">' + renderImageBlock(m[1], m[2], m[3]) + '</div>';
+    slidesHtml += '<div class="carousel__slide">' + renderImageBlock(m[1], m[2], m[3], true) + '</div>';
   });
 
   var html = '<div class="carousel" id="' + id + '">' +
@@ -324,7 +335,7 @@ function autoExtendCarousel(carouselEl) {
       if (!exists) return; // no hay más fotos siguientes: se para acá
       var slideDiv = document.createElement('div');
       slideDiv.className = 'carousel__slide';
-      slideDiv.innerHTML = renderImageBlock(lastImg.getAttribute('alt') || '', nextSrc, '');
+      slideDiv.innerHTML = renderImageBlock(lastImg.getAttribute('alt') || '', nextSrc, '', true);
       track.appendChild(slideDiv);
       return step(triesLeft - 1);
     });
