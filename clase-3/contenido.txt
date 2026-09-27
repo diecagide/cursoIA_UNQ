@@ -107,13 +107,21 @@ Y, como pasaba con el texto, la relación entre modelo y plataforma no es uno a 
 ## privados_abiertos_imagen
 La distinción entre modelos propietarios y de código abierto que vimos en la Clase 1 también aplica acá. Midjourney, GPT Image 2, Nano Banana, Adobe Firefly y Runway Gen-4 Image son modelos propietarios: los usamos a través de la plataforma de la empresa que los desarrolló, con sus condiciones de uso y sus límites gratuitos. Stable Diffusion y Flux, en cambio, tienen versiones de código abierto (hoy, por ejemplo, Flux.2 [dev]) que se pueden descargar y ejecutar en una computadora propia, lo que da más control sobre el proceso, pero exige más conocimiento técnico.
 
-Correr un modelo de código abierto en la propia computadora, con ComfyUI o de forma similar, demanda tiempo y conocimiento técnico. Para probar Flux o Stable Diffusion sin instalar nada, se puede usar un espacio gratuito de ^[Hugging Face](Una plataforma donde la comunidad de IA comparte modelos, código y demos que se pueden probar directo desde el navegador, sin instalar nada — funciona como un repositorio público de modelos de inteligencia artificial.) como [FLUX.1 schnell](https://huggingface.co/spaces/black-forest-labs/FLUX.1-schnell) o [Stable Diffusion 3.5 Large](https://huggingface.co/spaces/stabilityai/stable-diffusion-3.5-large).
+## modelos_publicos_1
+Los modelos públicos como Stable Diffusion o Flux no tienen una app propia con interfaz de chat: para usarlos en la propia computadora hace falta instalar una plataforma que sepa interactuar con ellos, como [ComfyUI](https://github.com/comfyanonymous/ComfyUI) o [AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui). Esto demanda tiempo y conocimiento técnico: hay que instalar el software, descargar los archivos del modelo (varios GB) y, en general, contar con una placa de video con suficiente memoria.
 
-## comfyui
-**ComfyUI** es una interfaz gratuita y de código abierto que permite armar, de manera visual, flujos de trabajo con estos modelos abiertos de generación de imagen (y también de video), conectando distintos "bloques" de procesamiento como si fueran piezas de un circuito. No es una herramienta pensada para un uso cotidiano y sencillo (tiene una curva de aprendizaje bastante más alta que la de escribir un prompt en un chat), pero sirve para trabajar con Stable Diffusion o Flux de forma más artesanal, armando un flujo propio paso a paso: generación, retoque, escalado, en lugar de escribir un prompt y esperar un resultado cerrado.
+## modelos_publicos_2
+**ComfyUI** es una de esas plataformas: una interfaz gratuita y de código abierto que permite armar, de manera visual, flujos de trabajo con estos modelos abiertos de generación de imagen (y también de video), conectando distintos "bloques" de procesamiento como si fueran piezas de un circuito. No es una herramienta pensada para un uso cotidiano y sencillo (tiene una curva de aprendizaje bastante más alta que la de escribir un prompt en un chat), pero sirve para trabajar con Stable Diffusion o Flux de forma más artesanal, armando un flujo propio paso a paso: generación, retoque, escalado, en lugar de escribir un prompt y esperar un resultado cerrado.
 
+## modelos_publicos_imagen
 ![Ejemplo de flujo de trabajo en ComfyUI](images/clase3_43_comfyui.jpg)
 Ejemplo de flujo de trabajo en ComfyUI
+
+## modelos_publicos_3
+Además del modelo base, se pueden descargar ^[LoRAs](Archivos chicos —unos pocos cientos de MB, contra los varios GB del modelo base— que ajustan un modelo ya entrenado para que reproduzca mejor un estilo, un personaje o un concepto puntual, sin necesidad de reentrenarlo desde cero.) que ajustan el resultado a un estilo, un personaje o un concepto específico. Tanto los modelos base como los LoRAs se descargan de repositorios como [Civitai](https://civitai.com/) o [Hugging Face](https://huggingface.co/models).
+
+## codigo_abierto_huggingface
+Para probar Flux o Stable Diffusion sin instalar nada, se puede usar un espacio gratuito de ^[Hugging Face](Una plataforma donde la comunidad de IA comparte modelos, código y demos que se pueden probar directo desde el navegador, sin instalar nada — funciona como un repositorio público de modelos de inteligencia artificial.): alcanza con abrir el link, escribir el prompt y esperar el resultado, todo desde el navegador.
 
 
 ## cual_mejor_intro
@@ -149,6 +157,7 @@ Para **ilustración y estética artística**, Midjourney sigue siendo la opción
 Para **edición de imágenes** (retocar, agregar o quitar elementos, ajustar algo puntual sobre una foto ya existente), recomendamos Adobe Firefly como plataforma: reúne varias herramientas dedicadas para esto (Generative Fill, Generative Remove, Generative Expand, Generative Upscale, quitar fondo, y las más nuevas Precision Flow y AI Markup para ajustes más finos). Nano Banana y Midjourney (que ya tiene su propio editor, con selección de zona, retextura y capas) también funcionan bien para este uso, con la ventaja de resolverlo dentro del mismo chat.
 
 ## mejor_edicion_imagen
+@carousel
 ![](images/clase3_44_edicion.jpg)
 
 ## mejor_consistencia
@@ -168,6 +177,7 @@ Para **consistencia entre generaciones** (mantener el mismo personaje u objeto r
 Para **piezas con texto legible** (infografías, flyers, gráficas con datos), Nano Banana (sobre todo en su versión Pro) suele ser la opción más práctica, resolviendo bien un detalle que durante mucho tiempo fue un punto débil de la IA generativa de imagen.
 
 ## mejor_texto_legible_imagen
+@carousel
 ![](images/clase3_15_texto_legible.jpg)
 Modelo: GPT Image 2
 Prompt: Una infografía nutricional que describa una alimentación saludable. Debe ser profesional y con textos explicativos que muestren las vitaminas y virtudes de los alimentos, los distintos días de la semana. Debe contener flechas y elementos gráficos, y un listado de los alimentos
@@ -360,6 +370,7 @@ Prompt: Exploración conceptual de un espacio arquitectónico para un proyecto c
 **Vistas y hojas de modelo (model sheets)**: generar un mismo personaje, objeto o espacio desde distintos ángulos (de frente, de perfil, desde arriba) para usarlo como referencia de modelado 3D, o armar una hoja de modelo con los elementos y variantes de un personaje. Muy útil en proyectos de animación, cómic o narrativa visual.
 
 ## usos_generacion_vistas_imagen
+@carousel
 ![](images/clase3_28_usogen_vistas.jpg)
 Modelo: Gemini 3 (Nano Banana 2)
 Prompt: Crea las vistas para modelado 3D
@@ -491,6 +502,17 @@ Prompt: Adaptar a estética de los años 80. Mantener la identidad exacta del pe
 Modelo: GPT Image 2
 Prompt: Adaptar a estética de los años 80. Mantener la identidad exacta del personaje y adaptar la ropa, el peinado, la iluminación y el fondo de estudio al estilo analógico de mediados de los 80. El fondo debe ser un bar ochentoso.
 
+## usos_estilo_moda2_texto
+Otro ejemplo, esta vez sobre una pieza informativa en lugar de un retrato: la misma lámina sobre el aparato digestivo, reestilizada de tres maneras distintas.
+
+## usos_estilo_moda2_imagen
+@carousel
+![](images/clase3_37_estilo_v2.jpg)
+
+![](images/clase3_37_estilo_v2_2.jpg)
+
+![](images/clase3_37_estilo_v2_3.jpg)
+
 ## usos_estilo_referencia_texto
 Pero más allá de lo que pasa en redes, podemos usar esta misma herramienta para estilizar nuestras propias imágenes con estilos bien distintos entre sí, y también puede ser útil para generar referencias artísticas sobre algo concreto.
 
@@ -513,12 +535,11 @@ En la Clase 1 comparamos pedir "hacé un flyer para este evento" con aportar un 
 
 Ese boceto se puede subir como imagen de referencia (imagen-a-imagen) junto con un prompt que describa el estilo visual que queremos, y el modelo va a respetar la estructura que definimos en lugar de inventar una propia. Es una forma simple de que el resultado tenga nuestra impronta desde el arranque, no recién en los ajustes posteriores.
 
-## usos_flyer_planificado_imagen
+## usos_flyer_resultado_imagen
+@carousel
 ![](images/clase3_05_flyer_boceto.jpg)
 Boceto propio, con la estructura de composición definida a mano
 
-## usos_flyer_resultado_imagen
-@carousel
 ![](images/clase3_06_flyer_resultado.jpg)
 @split
 Modelo: GPT Image 2
@@ -530,6 +551,27 @@ Modelo: GPT Image 2
 Modelo: GPT Image 2
 **Imagen 1:** flyer para un Festival de Música Electrónica, dirigido a un público joven, generado con el mismo boceto como guía. Título: FRECUENCIA. Subtítulo: Festival de Música Electrónica. Imagen principal: un DJ frente a una multitud, con luces, pantallas y formas abstractas. Estética contemporánea y audiovisual, con neón y degradados.
 **Imagen 2:** flyer para un Taller de Videojuegos, dirigido a jóvenes interesados en imaginar personajes y mundos, generado con el mismo boceto como guía. Título: TALLER DE VIDEOJUEGOS. Subtítulo: Inventá. Diseñá. Jugá. Imagen principal: una maqueta física de un universo de videojuego, con personajes y objetos de cartón, bloques y plastilina. Estética pop, lúdica y artesanal, inspirada en juguetes y stop motion.
+
+## usos_flyer_resultado2_imagen
+@carousel
+![](images/clase3_05_flyer_boceto2.jpg)
+Fotografía de otro boceto dibujado a mano, con una distribución alternativa de los elementos
+
+![](images/flyer_resultado2_1.jpg)
+Modelo: GPT Image 2
+Flyer para la muestra de arte experimental "Otras formas de mirar", generado a partir del segundo boceto como guía. Título: OTRAS FORMAS DE MIRAR. Subtítulo: Muestra de arte experimental. Imagen principal: un ojo ilustrado combinado con formas y manchas de acuarela. Estética editorial con tipografía manuscrita.
+
+![](images/flyer_resultado2_2.jpg)
+Modelo: GPT Image 2
+Flyer para la muestra de fotografía urbana "Ciudad / Fragmentos", generado con el mismo boceto como guía. Título: CIUDAD / FRAGMENTOS. Subtítulo: Muestra de fotografía urbana. Imagen principal: fotos callejeras en blanco y negro combinadas en una composición diagonal, con tira de contactos estilo Kodak.
+
+![](images/flyer_resultado2_3.jpg)
+Modelo: GPT Image 2
+Flyer para la muestra de fotografía urbana "Ciudad / Fragmentos", generado con el mismo boceto como guía.
+
+![](images/flyer_resultado2_4.jpg)
+Modelo: GPT Image 2
+Flyer para la muestra de fotografía urbana "Ciudad / Fragmentos", generado con el mismo boceto como guía.
 
 
 ## multi_referencia

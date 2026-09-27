@@ -55,6 +55,7 @@
         <a class="nav-group__link" href="#bloque-b"><span class="nav-bullet"></span>Bloque B · Modelos y plataformas</a>
         <ul class="nav-subgroup">
           <li><a href="#privados-abiertos-imagen">Privados vs. código abierto</a></li>
+          <li><a href="#codigo-abierto-como-usar">Cómo usar modelos de código abierto</a></li>
           <li><a href="#cual-mejor">¿Cuál es mejor?</a></li>
         </ul>
       </li>
@@ -176,34 +177,11 @@
              qué plataformas funciona, con logo y link — mismo componente
              que las tarjetas de plataformas de texto de la Clase 2. Pieza
              tabular: se edita acá directo, no en contenido.txt (mismo
-             criterio que las tarjetas de la Clase 2). Las seis ya usan
-             logo real (GPT Image 2 reusa el logo de ChatGPT, a pedido de
+             criterio que las tarjetas de la Clase 2). Todas usan logo
+             real (GPT Image 2 reusa el logo de ChatGPT, a pedido de
              Diego); la placa de iniciales (.platform-card__logo--text)
              queda como fallback en el CSS por si se suma un modelo nuevo
              sin logo todavía. -->
-        <h3 id="privados-abiertos-imagen">Modelos privados vs. código abierto</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="privados_abiertos_imagen"></div>
-
-        <!-- ComfyUI vuelve a ser un "Para ampliar" plegable, igual que
-             estaba originalmente en la Clase 1 (a pedido de Diego) —
-             antes, en esta clase, iba como párrafo fijo dentro de
-             privados_abiertos_imagen. -->
-        <details class="expandable">
-          <summary>
-            <span class="expandable__icon" aria-hidden="true">🔍</span>
-            <span class="expandable__text">
-              <span class="expandable__eyebrow">Para ampliar</span>
-              <span class="expandable__title">Un caso interesante: ComfyUI</span>
-            </span>
-            <span class="expandable__chevron" aria-hidden="true">▸</span>
-          </summary>
-          <div class="expandable__body">
-            <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
-            <div class="content-block" data-key="comfyui"></div>
-          </div>
-        </details>
-
         <div class="platform-cards">
 
           <details class="platform-card" style="--platform-color:#4285F4">
@@ -356,6 +334,31 @@
             </div>
           </details>
 
+          <details class="platform-card" style="--platform-color:#8B5CF6">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/stablediffusion.png" alt="Stable Diffusion" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://stability.ai/" target="_blank" rel="noopener">Stable Diffusion ↗</a></h4>
+                <p class="platform-card__dev">Stability AI</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Stable Diffusion 3.5 (con variantes Large, Large Turbo y Medium) — el modelo de código abierto más conocido, con pesos públicos que cualquiera puede descargar y modificar</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Correr un modelo de imagen en la propia computadora, o modificarlo con entrenamientos propios (LoRAs, checkpoints) — tiene una comunidad enorme de modelos derivados</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Localmente (con ComfyUI, AUTOMATIC1111 u otras interfaces), en DreamStudio (la plataforma propia de Stability AI), o sin instalar nada en un espacio de Hugging Face</p>
+              </div>
+            </div>
+          </details>
+
         </div>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
@@ -363,6 +366,51 @@
 
         <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="modelos_plataformas_imagen"></div>
+
+        <h3 id="privados-abiertos-imagen">Modelos privados vs. código abierto</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="privados_abiertos_imagen"></div>
+
+        <h3 id="codigo-abierto-como-usar">Cómo usar modelos de código abierto</h3>
+
+        <!-- "Para ampliar" plegable sobre modelos públicos: complejidad,
+             plataformas que hay que instalar (ComfyUI, AUTOMATIC1111),
+             y descarga de modelos/LoRAs — todo el detalle técnico va
+             acá adentro, sintetizado; el texto central retoma después
+             con Hugging Face como alternativa sin instalar nada. -->
+        <details class="expandable">
+          <summary>
+            <span class="expandable__icon" aria-hidden="true">🔍</span>
+            <span class="expandable__text">
+              <span class="expandable__eyebrow">Para ampliar</span>
+              <span class="expandable__title">Cómo se usan los modelos públicos</span>
+            </span>
+            <span class="expandable__chevron" aria-hidden="true">▸</span>
+          </summary>
+          <div class="expandable__body">
+            <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+            <p data-key="modelos_publicos_1"></p>
+            <p data-key="modelos_publicos_2"></p>
+            <div class="content-block" data-key="modelos_publicos_imagen"></div>
+            <p data-key="modelos_publicos_3"></p>
+          </div>
+        </details>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="codigo_abierto_huggingface"></p>
+
+        <!-- Botones destacados para probar Stable Diffusion y Flux sin
+             instalar nada, mismo componente .callout/.btn que "Herramienta"
+             en la Clase 2. -->
+        <div class="callout">
+          <p class="callout__label">Probalo sin instalar nada</p>
+          <p>Espacios gratuitos de Hugging Face, listos para usar desde el navegador:</p>
+          <p>
+            <a class="btn" href="https://huggingface.co/spaces/stabilityai/stable-diffusion-3.5-large" target="_blank" rel="noopener">Probá Stable Diffusion →</a>
+            &nbsp;
+            <a class="btn" href="https://huggingface.co/spaces/black-forest-labs/FLUX.1-schnell" target="_blank" rel="noopener">Probá Flux →</a>
+          </p>
+        </div>
 
         <h3 id="cual-mejor">¿Cuál es mejor?</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
@@ -631,6 +679,8 @@
              y usos_estilo_referencia_imagen cierran con el ejemplo de referencia artística propia. -->
         <div class="content-block" data-key="usos_estilo_intro"></div>
         <div class="content-block" data-key="usos_estilo_moda_imagen"></div>
+        <p data-key="usos_estilo_moda2_texto"></p>
+        <div class="content-block" data-key="usos_estilo_moda2_imagen"></div>
         <p data-key="usos_estilo_referencia_texto"></p>
         <div class="content-block" data-key="usos_estilo_referencia_imagen"></div>
 
@@ -642,10 +692,13 @@
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="usos_flyer_esquema"></p>
-        <!-- Ejemplo de flyer planificado: boceto propio (usos_flyer_planificado_imagen) +
-             carrusel con los flyers resultantes de ese boceto (usos_flyer_resultado_imagen) -->
-        <div class="content-block" data-key="usos_flyer_planificado_imagen"></div>
+        <!-- Ejemplo de flyer planificado: un solo carrusel con el boceto propio
+             y los flyers generados a partir de ese boceto (usos_flyer_resultado_imagen) -->
         <div class="content-block" data-key="usos_flyer_resultado_imagen"></div>
+
+        <!-- Segundo ejemplo de flyer planificado: mismo patrón, con otro
+             boceto y sus flyers resultantes (usos_flyer_resultado2_imagen) -->
+        <div class="content-block" data-key="usos_flyer_resultado2_imagen"></div>
 
         <!-- Línea divisoria tenue: a partir de acá el bloque deja de listar
              "usos" propiamente dichos (aclaración de Diego). -->
