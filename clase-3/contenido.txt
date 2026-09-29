@@ -615,7 +615,7 @@ Otra manera de pensar la IA de imagen, sobre todo en el trabajo creativo, es no 
 ## cierre_1
 Llegamos al final de la Clase 3. Ya sabés cómo funciona la IA generativa de imagen, qué modelos y plataformas conviene usar según lo que necesites, la gramática propia de un prompt de imagen, y usos concretos para la exploración y el desarrollo de un proyecto.
 
-Antes de despedirnos, van algunas ideas para llevar al aula:
+Antes de despedirnos, te dejo algunas ideas para acompañar el proceso que tus estudiantes seguramente ya vienen teniendo con estas herramientas por su cuenta — la idea es sumarles criterio a lo que ya hacen. Seguro vos les vas a agregar las tuyas propias:
 
 ## cierre_2
 Cerramos con la idea que abrió la clase: la IA de imagen es una herramienta, y el criterio propio es lo que hace la diferencia entre una estética genérica y una voz reconocible.
