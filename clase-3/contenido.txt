@@ -3,7 +3,7 @@ Bienvenidas y bienvenidos a la tercera clase del curso "La imaginación al poder
 
 ![](images/clase3_01_bienvenida.jpg)
 Modelo: Gemini 3 (Nano Banana Pro)
-Prompt: Un banner hiperrealista y cinematográfico. Un cuaderno abierto sobre una mesa, con un cuento escrito a mano por un estudiante. El dibujo comienza a salir de la página y transformarse en elementos reales que se expanden alrededor del cuaderno, mezclando dibujo y realidad de manera poética y sorprendente. La escena debe transmitir la idea de que el estudiante no se limita a reproducir modelos, sino que desarrolla una mirada y una forma de expresión propia. Iluminación natural, composición artística, profundidad de campo, colores vibrantes pero realistas. Sin textos.
+Prompt: Un cuaderno abierto sobre una mesa de madera, con un cuento escrito a mano. Los dibujos del cuento —bosque, animales, un dragón, edificios de una ciudad— cobran volumen y se elevan por fuera de la página, como recortes de papel y acuarela mezclándose con la escena real. Un/a estudiante observa con asombro, con las manos manchadas de tinta apoyadas cerca del cuaderno. Foto hiperrealista y cinematográfica, luz natural de ventana, profundidad de campo, formato banner panorámico, sin texto.
 
 A grandes rasgos, y asumiendo responsabilidad de la afirmación que hago a continuación, la IA solo puede devolvernos dos grandes tipos de imágenes: imágenes con estética genérica —o como la llamo, "estética IA"—, impactante pero vacía, colorida pero unidimensional, es decir una flojera con ritmo; o imágenes en las que quede plasmado lo propio, lo subjetivo, imágenes más interesantes y más útiles. Esto último se puede conseguir si utilizamos algunos procedimientos que nos permitan guiar ese proceso generativo.
 
@@ -242,7 +242,7 @@ Prompt: Un gato robótico joven, jugando con un ovillo de lana roja, en una call
 ## reglas_gramaticales
 Además del orden general, hay algunas convenciones que suelen mejorar el resultado:
 
-- Los **adjetivos descriptivos** funcionan mejor antes del sustantivo ("brillante cristal azulado"), y los más técnicos, después.
+- Si querés enfatizar un aspecto, podés ubicar los **adjetivos descriptivos** antes del objeto ("brillante cristal azulado"); los más técnicos, en cambio, funcionan mejor después.
 - Las **preposiciones** ayudan a fijar relaciones espaciales: "en" para ubicación, "con" para elementos adicionales, "sobre" o "bajo" para posición ("castillo en la montaña", "nubes sobre el océano").
 - Conviene usar **verbos en presente o gerundio** ("brilla en la oscuridad", "flotando sobre el agua") y evitar tiempos compuestos.
 - Las **especificaciones técnicas** (tipo de lente, iluminación, resolución) y el **estilo** suelen ir al final, separados por comas, y el estilo suele introducirse con fórmulas como "estilo…" o "inspirado en…".
@@ -264,7 +264,7 @@ Y para el **contexto o ambiente**:
 
 Sobre el último elemento, el **prompt negativo**: en la Clase 2 lo vimos como una de las seis partes de un prompt de texto, lo que la respuesta NO debe incluir. En imagen, cada plataforma lo resuelve de un modo distinto. Stable Diffusion, Flux y las herramientas armadas sobre ComfyUI suelen tener un campo aparte, separado del prompt principal, pensado específicamente para listar lo que no debe aparecer. Midjourney usa un parámetro dentro del mismo prompt (*--no*, seguido de lo que se quiere excluir). En plataformas de tipo chat, como Nano Banana o GPT Image 2, no hay un campo separado: la exclusión se escribe directamente en el prompt, en lenguaje natural ("sin texto", "sin marcas de agua", "sin personas en la escena").
 
-Una advertencia práctica: en algunas plataformas, listar demasiadas exclusiones puede confundir al sistema de moderación automática, que a veces interpreta cada palabra de la lista por separado en lugar de en conjunto. Por eso, cuando se puede, suele funcionar mejor describir positivamente lo que sí se quiere —"con el cielo despejado" en vez de "sin nubes"— que acumular negaciones.
+Una advertencia práctica: en algunas plataformas, listar demasiadas exclusiones puede confundir al sistema, que a veces interpreta cada palabra de la lista por separado en lugar de en conjunto. Por eso, cuando se puede, suele funcionar mejor describir positivamente lo que sí se quiere —"con el cielo despejado" en vez de "sin nubes"— que acumular negaciones.
 
 
 ## seed_imagen
@@ -319,7 +319,7 @@ Prompt: Un dron mensajero plateado, con carcasa de metal pulido con relieves orn
 
 
 ## bloque_d_apertura
-Llegamos a la parte más práctica de la clase. La idea de este bloque es, por un lado, proponerte algunos usos de la IA generativa de imagen que puedas compartir en el aula con tus estudiantes —acordando de antemano en qué parte de la producción tendría sentido que usen IA generativa, y por qué conviene esa tecnología y no otras más tradicionales. Por otro lado, conocer este abanico de posibilidades también te puede servir a vos, para elaborar recursos gráficos y didácticos para tus propias clases.
+La idea de este bloque es, por un lado, proponerte algunos usos de la IA generativa de imagen que puedas compartir en el aula con tus estudiantes —acordando de antemano en qué parte de la producción tendría sentido que usen IA generativa, y por qué conviene esa tecnología y no otras más tradicionales. Por otro lado, conocer este abanico de posibilidades también te puede servir a vos, para elaborar recursos gráficos y didácticos para tus propias clases.
 
 
 ## usos_generacion
@@ -343,7 +343,7 @@ Llegamos a la parte más práctica de la clase. La idea de este bloque es, por u
 ![](images/clase3_26_usogen_referencias6.jpg)
 
 ## usos_generacion_ideacion
-**Ideación, prototipado y maquetado**: usar la IA para hacer bocetos de proyectos y visualizaciones esquemáticas, generando rápidamente variaciones visuales sobre una misma idea.
+**Ideación, prototipado y maquetado**: usar la IA para hacer bocetos de proyectos y visualizaciones esquemáticas, pudiendo generar también variaciones visuales sobre una misma idea.
 
 ## usos_generacion_ideacion_imagen
 @carousel
@@ -360,7 +360,7 @@ Modelo: GPT Image 2
 Prompt: Exploración conceptual de un espacio arquitectónico para un proyecto cultural contemporáneo. Mostrar una misma planta o espacio interior desarrollado en varias alternativas de diseño: diferentes distribuciones, mobiliario, circulación, iluminación y materiales. Las propuestas deben aparecer como distintas posibilidades surgidas durante una etapa de ideación y prototipado. Estética de bocetos y visualizaciones arquitectónicas conceptuales, combinando planta, perspectiva y pequeños estudios volumétricos. Aspecto de cuaderno de trabajo de un estudio de arquitectura, todavía en proceso de desarrollo, no como proyecto terminado. Fondo claro, composición limpia, sin texto legible.
 
 ## usos_generacion_vistas
-**Vistas y hojas de modelo (model sheets)**: generar un mismo personaje, objeto o espacio desde distintos ángulos (de frente, de perfil, desde arriba) para usarlo como referencia de modelado 3D, o armar una hoja de modelo con los elementos y variantes de un personaje.
+**Vistas y hojas de modelo (model sheets)**: generar un mismo personaje, objeto o espacio desde distintos ángulos (de frente, de perfil, desde arriba) para usarlo como referencia de modelado 3D, en producciones de live action o en videojuegos, o armar una hoja de modelo con los elementos y variantes de un personaje.
 
 ## usos_generacion_vistas_imagen
 @carousel
@@ -388,7 +388,7 @@ Estética de collage editorial contemporáneo y asimétrico, combinando una pers
 Paleta de blanco, negro y tonos de papel, con un único color de acento — inspirada en revistas de diseño, arte y cultura visual, sin estética corporativa ni de flyer.
 
 ## usos_generacion_ajustes
-**Ajustar un aspecto puntual de una imagen ya generada**: modificar la iluminación, el clima, la hora del día u otro elemento específico, sin tocar el resto de la composición ni cambiar el estilo general (cambiar el estilo en sí es otra cosa, la vemos más adelante en "Cambio de estilo").
+**Ajustar un aspecto puntual de una imagen ya generada**: modificar la iluminación, el clima u otro elemento específico, sin tocar el resto de la composición ni cambiar el estilo general (cambiar el estilo en sí es otra cosa, la vemos más adelante en "Cambio de estilo").
 
 ## usos_generacion_ajustes_imagen
 @carousel
@@ -427,7 +427,7 @@ Modelo: Firefly Image 5
 **Imagen 2:** agregado de lobos, también en Adobe Firefly.
 
 ## usos_edicion_props
-**Diseñar y ajustar props** u objetos puntuales dentro de una escena: escalarlos, moverlos, expandir el encuadre alrededor de ellos.
+**Ajustar props** u objetos puntuales dentro de una escena: reemplazarlos, escalarlos, moverlos, expandir el encuadre alrededor de ellos.
 
 ## usos_edicion_props_imagen
 @carousel
@@ -453,7 +453,7 @@ Hay dos maneras de acceder a esto. Algunas plataformas lo tienen integrado: Midj
 Antes / después de ampliar una imagen con IA, sin perder nitidez
 
 ## usos_formatos_intro
-Algo parecido pasa con el formato: la misma imagen suele necesitarse en proporciones distintas según dónde se vaya a publicar. El feed de Instagram, por ejemplo, pide un formato cuadrado o casi cuadrado (1:1 o 4:5), mientras que una Story necesita un formato vertical completo (9:16) —dos proporciones bien distintas dentro de la misma plataforma—. Antes había que recortarla a mano, y a veces eso implicaba perder una parte importante de la composición; hoy varios modelos pueden extender o readaptar una imagen a una proporción distinta generando contenido nuevo en los bordes —la misma lógica del outpainting que vimos antes— en lugar de simplemente recortarla. Los formatos más habituales con los que te vas a encontrar:
+Algo parecido pasa con el formato: la misma imagen suele necesitarse en proporciones distintas según dónde se vaya a publicar. El feed de Instagram, por ejemplo, pide un formato cuadrado o rectangular (1:1 o 4:5), mientras que una Story necesita un formato vertical completo (9:16) —dos proporciones bien distintas dentro de la misma plataforma—. Antes había que recortarla a mano, y a veces eso implicaba perder una parte importante de la composición; hoy varios modelos pueden extender o readaptar una imagen a una proporción distinta generando contenido nuevo en los bordes —la misma lógica del outpainting que vimos antes— en lugar de simplemente recortarla. Los formatos más habituales con los que te vas a encontrar:
 
 ## usos_formatos_imagen
 @carousel
@@ -496,15 +496,13 @@ Modelo: GPT Image 2
 Prompt: Adaptar a estética de los años 80. Mantener la identidad exacta del personaje y adaptar la ropa, el peinado, la iluminación y el fondo de estudio al estilo analógico de mediados de los 80. El fondo debe ser un bar ochentoso.
 
 ## usos_estilo_moda2_texto
-Otro ejemplo, esta vez sobre una pieza informativa en lugar de un retrato: la misma lámina sobre el aparato digestivo, reestilizada de tres maneras distintas.
+Otro ejemplo, esta vez sobre una pieza informativa en lugar de un retrato: la misma lámina sobre el aparato digestivo, reestilizada de dos maneras distintas.
 
 ## usos_estilo_moda2_imagen
 @carousel
 ![](images/clase3_37_estilo_v2.jpg)
 
 ![](images/clase3_37_estilo_v2_2.jpg)
-
-![](images/clase3_37_estilo_v2_3.jpg)
 
 ## usos_estilo_referencia_texto
 También podemos usar esta misma herramienta para estilizar nuestras propias imágenes con estilos bien distintos entre sí, y para generar referencias artísticas sobre algo concreto.
@@ -599,13 +597,11 @@ Después está cómo nos posicionamos frente a lo que el modelo nos devuelve. Di
 
 
 ## voz_propia_imagen
-Si le pedimos a un modelo un prompt genérico y usamos tal cual el primer resultado, lo más probable es que obtengamos una estética "de IA": esa mezcla reconocible de hiperdetalle, luces dramáticas y composiciones ya vistas miles de veces, porque es lo que el modelo aprendió a repetir mejor. Nada de eso es necesariamente nuestra voz.
+Construir una voz propia en imagen tiene que ver con volver una y otra vez sobre el prompt, ajustarlo, combinarlo con referencias propias, editar el resultado, mezclarlo con otras imágenes, y no quedarse con la primera propuesta. Para nuestros y nuestras estudiantes, esto es también una oportunidad pedagógica: pedirles que documenten su proceso —qué prompts probaron, qué descartaron, qué cambiaron y por qué— es una forma concreta de que ese criterio propio quede a la vista, y no solo el resultado final.
 
 ![](images/clase3_07_vozpropia.jpg)
 Modelo: GPT Image 2
 Prompt: Un pincel de acuarela apoyado sobre una tablet digital que muestra una imagen a medio generar, con gotas reales de pintura cayendo sobre la pantalla e integrándose con la imagen digital como si fueran parte de ella. Estética híbrida entre lo analógico y lo digital, luz natural, composición cercana y detallada. Sin texto.
-
-Construir una voz propia en imagen tiene que ver con volver una y otra vez sobre el prompt, ajustarlo, combinarlo con referencias propias, editar el resultado, mezclarlo con otras imágenes, y no quedarse con la primera propuesta. Para nuestros y nuestras estudiantes, esto es también una oportunidad pedagógica: pedirles que documenten su proceso —qué prompts probaron, qué descartaron, qué cambiaron y por qué— es una forma concreta de que ese criterio propio quede a la vista, y no solo el resultado final.
 
 
 ## modelos_hibridos
@@ -613,13 +609,9 @@ Otra manera de pensar la IA de imagen, sobre todo en el trabajo creativo, es no 
 
 
 ## cierre_1
-Llegamos al final de la Clase 3. Ya sabés cómo funciona la IA generativa de imagen, qué modelos y plataformas conviene usar según lo que necesites, la gramática propia de un prompt de imagen, y usos concretos para la exploración y el desarrollo de un proyecto.
+Llegamos al final de la Clase 3. Si aún no enloqueciste, entonces sabés cómo funciona la IA generativa de imagen (un poqui), qué modelos y plataformas se pueden usar según lo que necesites, la gramática específica de un prompt de imagen, y algunos usos concretos, como los aplicados a la exploración y el desarrollo de un proyecto.
 
-Antes de despedirnos, te dejo algunas ideas para acompañar el proceso que tus estudiantes seguramente ya vienen teniendo con estas herramientas por su cuenta — la idea es sumarles criterio a lo que ya hacen. Seguro vos les vas a agregar las tuyas propias:
-
-## cierre_2
-Cerramos con la idea que abrió la clase: la IA de imagen es una herramienta, y el criterio propio es lo que hace la diferencia entre una estética genérica y una voz reconocible.
-
+Por último, si querés incorporar el *uso* de la IA en el aula (o no te queda otra), te comparto algunas ideas:
 
 ## proxima_clase
 En la próxima clase pasamos a video, audio y otros formatos generativos: qué pueden hacer hoy los modelos de generación de video, cómo se adapta la gramática del prompt a un formato que se mueve en el tiempo, y algunas herramientas de generación de voz y música. ¡Nos vemos!
