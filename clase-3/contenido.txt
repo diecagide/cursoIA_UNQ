@@ -614,4 +614,4 @@ Llegamos al final de la Clase 3. Si aún no enloqueciste, entonces sabés cómo 
 Por último, si querés incorporar el *uso* de la IA en el aula (o no te queda otra), te comparto algunas ideas:
 
 ## proxima_clase
-En la próxima clase pasamos a video, audio y otros formatos generativos: qué pueden hacer hoy los modelos de generación de video, cómo se adapta la gramática del prompt a un formato que se mueve en el tiempo, y algunas herramientas de generación de voz y música. ¡Nos vemos!
+En la próxima clase pasamos a video, audio y otros formatos generativos: qué pueden hacer hoy los modelos de generación de video, cómo se adapta la gramática del prompt a la imagen en movimiento, y algunas herramientas de IA aplicadas a voz y música. ¡Nos vemos!
