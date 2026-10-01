@@ -1,0 +1,67 @@
+CÓMO AGREGAR IMÁGENES A LA CLASE 4
+========================================
+
+Las imágenes de esta clase se administran desde contenido.txt (ver las
+instrucciones al principio de ese archivo). Se van sumando con esta
+lógica:
+
+En el bloque de texto donde quieras que aparezca, escribís una línea
+así:
+
+    ![texto alternativo opcional](images/nombre-del-archivo.jpg)
+
+Y subís el archivo con ESE mismo nombre a esta carpeta "images".
+Mientras no lo subas, la página muestra automáticamente un recuadro de
+"pendiente" en su lugar — no rompe nada. Podés además agregar un
+epígrafe (modelo usado, prompt, etc.) escribiéndolo pegado debajo de
+esa línea, sin dejar renglón en blanco en el medio.
+
+Cómo subir un archivo a esta carpeta desde GitHub (sin instalar nada):
+1. Entrá a la carpeta "images" de clase-4 en el repositorio en github.com
+2. Botón "Add file" → "Upload files"
+3. Arrastrá tu imagen y ANTES de confirmar, renombrala exactamente
+   como la escribiste en contenido.txt (respetá minúsculas y guiones)
+4. Confirmá el cambio ("Commit changes")
+5. Esperá 1-2 minutos y refrescá la página publicada
+
+Tamaño recomendado: entre 1200 y 1600 px de ancho, formato .jpg o .png.
+
+ESTADO ACTUAL (primera vuelta de la Clase 4 — recién armada)
+========================================
+Esta clase es distinta a las anteriores: como todavía no generamos
+ninguna imagen de ejemplo propia (a diferencia de Clase 3, que tenía
+decenas de imágenes generadas por vos), este primer borrador es casi
+todo texto. Lo que SÍ hace falta que subas a esta carpeta "images/logos/"
+son los logos de los modelos y plataformas que aparecen en las tarjetas
+de "Características" (mismo sistema que en clase-3/images/logos/):
+
+  images/logos/runway_logo.png
+  images/logos/kling_logo.png
+  images/logos/veo_logo.png
+  images/logos/seedance_logo.png
+  images/logos/hailuo_logo.png
+  images/logos/luma_logo.png
+  images/logos/suno_logo.png
+  images/logos/udio_logo.png
+  images/logos/aiva_logo.png
+  images/logos/elevenlabs_logo.png
+  images/logos/playht_logo.png
+
+El de Runway ya lo tenés subido en clase-3/images/logos/Runway.png —
+podés copiar ese mismo archivo acá con el nombre runway_logo.png.
+
+VIDEOS: dejé cuatro lugares marcados en la clase para que sumes un
+video de YouTube de ejemplo (mismo sistema que las imágenes: mientras
+no completes el link, se ve un recuadro de "Video pendiente"). Son:
+uno sobre las técnicas básicas de video (Bloque B), uno con un demo
+reel o comparación de modelos (Bloque C), uno sobre frame inicial y
+frame final (Bloque D), y uno con un demo de voz o música generada
+(Bloque E). Para cargarlos, buscá la línea "@video[]()" en
+contenido.txt (en las claves tecnicas_video_demo, modelos_video_demo,
+frame_inicial_final_demo y audio_demo) y completala así:
+
+    @video[Título que quieras mostrar](link de YouTube)
+
+Y por supuesto, si en algún momento generás o filmás ejemplos propios
+de video (como hicimos con las imágenes en Clase 3), avisame y los
+sumamos de la misma manera que esas.

@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="es" data-clase="4">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clase 4 — Video y Audio generados por IA | La imaginación al poder</title>
+<meta name="description" content="Clase 4 del curso La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria. Docente: Diego Cagide.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+<div class="layout">
+
+  <!-- =====================================================================
+       MENÚ DE NAVEGACIÓN
+       Los textos de acá son los títulos que aparecen en el menú lateral.
+       Si cambiás un título de sección más abajo, actualizá también el
+       texto acá (el link href="#..." no hace falta tocarlo).
+       Los <li class="nav-group"> con una lista adentro son los bloques que
+       tienen subtemas — no hace falta tocar esa anidación, solo el texto.
+       ===================================================================== -->
+  <nav class="site-nav" id="siteNav">
+    <img class="site-nav__logo" src="images/logo_barra.png" alt="Logo UNQ">
+    <p class="site-nav__course">La imaginación al poder</p>
+    <p class="site-nav__course-sub">IA generativa y procesos creativos para la enseñanza universitaria</p>
+    <p class="site-nav__docente">Docente: Diego Cagide</p>
+
+    <div class="site-nav__divider"></div>
+
+    <p class="site-nav__class-label">Clase 4</p>
+    <p class="site-nav__title">Video y Audio generados por IA</p>
+
+    <!-- Grupo 1: introducción a la clase (sin etiqueta) -->
+    <ul class="nav-list">
+      <li><a href="#bienvenida">Bienvenida</a></li>
+    </ul>
+
+    <div class="site-nav__divider"></div>
+    <p class="site-nav__section-label">Bloques de la Clase 4</p>
+
+    <!-- Grupo 2: los bloques de contenido propiamente dichos -->
+    <ul class="nav-list nav-list--blocks">
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-a"><span class="nav-bullet"></span>Bloque A · El problema: por qué esta clase</a>
+        <ul class="nav-subgroup">
+          <li><a href="#terreno-produccion">La IA le ganó terreno a la producción</a></li>
+          <li><a href="#por-que-esta-clase">¿Por qué esta clase?</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-b"><span class="nav-bullet"></span>Bloque B · Video: qué es y cómo funciona</a>
+        <ul class="nav-subgroup">
+          <li><a href="#generacion-vs-edicion">Generar desde cero o editar</a></li>
+          <li><a href="#tecnicas-basicas">Las técnicas básicas</a></li>
+          <li><a href="#como-funciona-video">Cómo funciona el modelo</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-c"><span class="nav-bullet"></span>Bloque C · Modelos y plataformas de video</a>
+        <ul class="nav-subgroup">
+          <li><a href="#sora">El caso Sora</a></li>
+          <li><a href="#herramientas-edicion">Herramientas de edición con IA</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-d"><span class="nav-bullet"></span>Bloque D · Gramática del prompt de video</a>
+        <ul class="nav-subgroup">
+          <li><a href="#elementos-prompt-video">Los elementos del prompt</a></li>
+          <li><a href="#estructura-video">La estructura</a></li>
+          <li><a href="#reglas-video">Algunas reglas</a></li>
+          <li><a href="#ejemplos-video">Ejemplos: de simple a complejo</a></li>
+          <li><a href="#frame-inicial-final">Frame inicial y frame final</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-e"><span class="nav-bullet"></span>Bloque E · Audio: música y voces</a>
+        <ul class="nav-subgroup">
+          <li><a href="#musica-ia">Música</a></li>
+          <li><a href="#voces-ia">Generadores de voces</a></li>
+          <li><a href="#extension-audio">Extender o editar una pista</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-f"><span class="nav-bullet"></span>Bloque F · Usos</a>
+        <ul class="nav-subgroup">
+          <li><a href="#usos-generacion-video">Generación de video</a></li>
+          <li><a href="#usos-maquetacion">Maquetación</a></li>
+          <li><a href="#usos-reestilizar">Reestilizar</a></li>
+          <li><a href="#usos-edicion-postproduccion">Editar y postproducir</a></li>
+          <li><a href="#usos-referencias-audio">Referencias de audio</a></li>
+          <li><a href="#usos-extension-audio">Extender la banda sonora</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="site-nav__divider"></div>
+
+    <!-- Grupo 3: cierre -->
+    <ul class="nav-list">
+      <li><a href="#cierre">Cierre y para llevar al aula</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <img class="class-banner" src="images/logo_banner.png" alt="Banner del curso La imaginación al poder">
+
+      <header class="class-header">
+        <p class="class-header__course">La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria — Docente:&nbsp;Diego&nbsp;Cagide</p>
+        <p class="class-header__eyebrow">Clase 4</p>
+        <h1>Video y Audio generados por IA</h1>
+      </header>
+
+      <!-- =================================================================
+           SECCIÓN: Bienvenida
+           ================================================================= -->
+      <section class="block" id="bienvenida">
+        <h2>Bienvenida</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="bienvenida_1" data-lead="true"></div>
+
+        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="bienvenida_2"></div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE A
+           ================================================================= -->
+      <section class="block" id="bloque-a">
+        <h2>Bloque A — El problema: por qué esta clase</h2>
+
+        <h3 id="terreno-produccion">La IA le ganó terreno a la producción audiovisual</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="terreno_produccion"></div>
+
+        <h3 id="por-que-esta-clase">¿Por qué esta clase?</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="por_que_esta_clase"></div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE B
+           ================================================================= -->
+      <section class="block" id="bloque-b">
+        <h2>Bloque B — Video: qué es y cómo funciona</h2>
+
+        <!-- Intro sin subtítulo propio — se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="bloque_b_intro"></div>
+
+        <h3 id="generacion-vs-edicion">Generar desde cero o editar lo que ya existe</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="generacion_vs_edicion"></p>
+
+        <h3 id="tecnicas-basicas">Las técnicas básicas</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="tecnicas_intro"></p>
+        <p data-key="tecnicas_texto"></p>
+        <p data-key="tecnicas_imagen"></p>
+        <p data-key="tecnicas_video"></p>
+        <p data-key="tecnicas_frames"></p>
+
+        <!-- Placeholder de video: Diego puede pegar acá un demo de las
+             técnicas básicas (texto-a-video, imagen-a-video, etc.).
+             Mientras no complete el link en contenido.txt se ve un
+             recuadro de "Video pendiente", igual que con las imágenes. -->
+        <div class="content-block" data-key="tecnicas_video_demo"></div>
+
+        <h3 id="como-funciona-video">Cómo funciona el modelo</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="como_funciona_video"></div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE C
+           ================================================================= -->
+      <section class="block" id="bloque-c">
+        <h2>Bloque C — Modelos y plataformas de video</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="modelos_video_intro"></p>
+
+        <!-- Tarjetas de modelos de generación de video: mismo componente
+             que las tarjetas de imagen de la Clase 3 (logo, nombre propio,
+             para qué sirve, dónde funciona). Pieza tabular: se edita acá
+             directo, no en contenido.txt. Los logos (images/logos/*.png)
+             todavía no están en la carpeta — Diego los tiene que agregar,
+             mismo criterio que en las clases anteriores. -->
+        <div class="platform-cards">
+
+          <details class="platform-card" style="--platform-color:#00A656">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/runway_logo.png" alt="Runway" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://runwayml.com/" target="_blank" rel="noopener">Runway ↗</a></h4>
+                <p class="platform-card__dev">Runway AI</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Gen-4.5, lanzado en diciembre de 2025. Runway fue una de las primeras empresas en apostar fuerte a video generativo, y hoy sigue siendo una referencia del sector</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Consistencia física y de personajes entre cuadros, y coreografía de cámara: es uno de los modelos más citados por su manejo del movimiento de cámara dentro del prompt</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Plataforma propia (runwayml.com) y vía API. No tiene un nivel gratuito permanente para Gen-4.5: ofrece una prueba única de 125 créditos al crear la cuenta</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#FF6A00">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/kling_logo.png" alt="Kling AI" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://klingai.com/" target="_blank" rel="noopener">Kling AI ↗</a></h4>
+                <p class="platform-card__dev">Kuaishou</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Kling 3.0, de la empresa china Kuaishou (la misma detrás de la red social Kwai)</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Movimiento humano fluido, buen control narrativo y de planos, y audio sincronizado de forma nativa en varios idiomas: genera diálogo y sonido junto con el video, no por separado</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Plataforma propia (klingai.com). Tiene nivel gratuito: 66 créditos diarios, con marca de agua, resolución 1080p y clips de unos 5 segundos, sin uso comercial</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#4285F4">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/veo_logo.png" alt="Veo" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://gemini.google.com/app" target="_blank" rel="noopener">Veo ↗</a></h4>
+                <p class="platform-card__dev">Google DeepMind</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Veo 3.1, de Google DeepMind</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Generar video y audio de forma conjunta —incluye sincronización de labios—, mantener un mismo personaje entre varias generaciones (función que Google llama "Ingredients to Video"), y extender clips más allá de los 2 minutos</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Gemini (app y web), Flow y Vertex AI. No tiene nivel gratuito propio para usuarios sin suscripción; quienes tienen Gemini Pro acceden a 3 generaciones diarias con Veo 3 Fast, una versión más liviana</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#111111">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/seedance_logo.png" alt="Seedance" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://www.volcengine.com/" target="_blank" rel="noopener">Seedance ↗</a></h4>
+                <p class="platform-card__dev">ByteDance</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Seedance 2.5, de ByteDance (la empresa detrás de TikTok), disponible a través de Volcano Engine y BytePlus</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Buena fidelidad al prompt y consistencia entre varios planos de una misma escena, generación a partir de imagen con hasta 50 referencias, y clips de hasta 30 segundos</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>No tiene una plataforma de consumo directa ni un nivel gratuito oficial; se accede vía API o a través de plataformas de terceros con pruebas pagas o acotadas</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#E8363D">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/hailuo_logo.png" alt="Hailuo" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://hailuoai.video/" target="_blank" rel="noopener">Hailuo ↗</a></h4>
+                <p class="platform-card__dev">MiniMax</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Hailuo 2.3, de la empresa china MiniMax, con sede en Beijing</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Movimiento de cámara suave y escenas de acción realista, con tiempos de generación rápidos y buena relación entre calidad y costo</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Plataforma propia (hailuoai.video). Tiene nivel gratuito: 200 créditos de bienvenida más un bonus diario, tope de resolución 720p, con marca de agua, y los créditos vencen a los 3 días</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#7C3AED">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/luma_logo.png" alt="Luma AI" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://lumalabs.ai/" target="_blank" rel="noopener">Luma AI ↗</a></h4>
+                <p class="platform-card__dev">Luma AI</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Ray3, actualizada a la versión 3.14 en enero de 2026</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Un paso de "razonamiento" propio antes de generar (el modelo evalúa su propio resultado), salida en alto rango dinámico (HDR), y la posibilidad de generar también con otros modelos —Veo, Kling, Seedance— y audio de ElevenLabs, todo desde la misma plataforma</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Dream Machine, la plataforma de consumo de Luma, tenía históricamente un nivel gratuito limitado; la oferta más nueva, Luma Agents, no tiene plan gratuito y arranca en 30 dólares mensuales — conviene chequear la oferta vigente antes de recomendarla en clase</p>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <!-- "Para ampliar" plegable sobre cómo leer los niveles gratuitos
+             de estas plataformas — el texto de adentro se edita en
+             contenido.txt. -->
+        <details class="expandable">
+          <summary>
+            <span class="expandable__icon" aria-hidden="true">🔍</span>
+            <span class="expandable__text">
+              <span class="expandable__eyebrow">Para ampliar</span>
+              <span class="expandable__title">Cómo leer los "niveles gratuitos" de estas plataformas</span>
+            </span>
+            <span class="expandable__chevron" aria-hidden="true">▸</span>
+          </summary>
+          <div class="expandable__body">
+            <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+            <p data-key="niveles_gratuitos_nota"></p>
+          </div>
+        </details>
+
+        <!-- Placeholder de video: Diego puede pegar acá un demo reel o
+             comparación de modelos de video. -->
+        <div class="content-block" data-key="modelos_video_demo"></div>
+
+        <h3 id="sora">El caso Sora</h3>
+        <!-- Recuadro "¿Sabías que?" — el texto de adentro se edita en
+             contenido.txt (clave sora_discontinuado), el recuadro en sí
+             (ícono, título) es fijo acá. -->
+        <div class="fact-box">
+          <p class="fact-box__label"><span aria-hidden="true">💡</span> ¿Sabías que?</p>
+          <div class="content-block" data-key="sora_discontinuado"></div>
+        </div>
+
+        <h3 id="herramientas-edicion">Herramientas de edición con IA</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="herramientas_edicion_intro"></p>
+        <div class="content-block" data-key="herramientas_edicion_lista"></div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE D
+           ================================================================= -->
+      <section class="block" id="bloque-d">
+        <h2>Bloque D — Gramática del prompt de video</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="gramatica_video_intro"></div>
+
+        <h3 id="elementos-prompt-video">Los elementos del prompt</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="elementos_intro"></p>
+
+        <!-- Cuadro con distintos colores para cada elemento del prompt de
+             video: la estructura, el ícono y el color de cada tarjeta son
+             fijos acá; el texto de cada una se edita en contenido.txt.
+             Mismo componente que los elementos de imagen de la Clase 3. -->
+        <div class="elements-grid">
+          <div class="element-card" style="--element-color:#2e6e8e">
+            <h4><span class="element-card__icon" aria-hidden="true">🧍</span> Sujeto y acción</h4>
+            <p data-key="elemento_sujeto_accion"></p>
+          </div>
+          <div class="element-card" style="--element-color:#3e7a5e">
+            <h4><span class="element-card__icon" aria-hidden="true">🎥</span> Movimiento de cámara</h4>
+            <p data-key="elemento_camara"></p>
+          </div>
+          <div class="element-card" style="--element-color:#a3216b">
+            <h4><span class="element-card__icon" aria-hidden="true">📐</span> Angulación</h4>
+            <p data-key="elemento_angulacion"></p>
+          </div>
+          <div class="element-card" style="--element-color:#b5502e">
+            <h4><span class="element-card__icon" aria-hidden="true">🔍</span> Encuadre y lente</h4>
+            <p data-key="elemento_encuadre"></p>
+          </div>
+          <div class="element-card" style="--element-color:#6a3fa0">
+            <h4><span class="element-card__icon" aria-hidden="true">💡</span> Iluminación y clima</h4>
+            <p data-key="elemento_iluminacion"></p>
+          </div>
+          <div class="element-card" style="--element-color:#1f7a6c">
+            <h4><span class="element-card__icon" aria-hidden="true">🎨</span> Estilo</h4>
+            <p data-key="elemento_estilo_video"></p>
+          </div>
+        </div>
+
+        <h3 id="estructura-video">La estructura</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="estructura_video_intro"></p>
+
+        <p class="prompt-formula" data-key="estructura_video"></p>
+        <p data-key="estructura_video_cierre"></p>
+        <div class="prompt-example">
+          <p class="prompt-example__label">Ejemplo</p>
+          <p data-key="estructura_video_ejemplo"></p>
+        </div>
+        <p class="prompt-breakdown" data-key="estructura_video_breakdown"></p>
+
+        <h3 id="reglas-video">Algunas reglas</h3>
+        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="reglas_video"></div>
+
+        <h3 id="ejemplos-video">Ejemplos: de simple a complejo</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="ejemplos_video_intro"></p>
+
+        <div class="prompt-example">
+          <p class="prompt-example__label">Simple</p>
+          <p data-key="ejemplo_video_simple"></p>
+        </div>
+
+        <div class="prompt-example">
+          <p class="prompt-example__label">Complejo</p>
+          <p data-key="ejemplo_video_complejo"></p>
+        </div>
+
+        <p class="prompt-breakdown" data-key="ejemplo_video_breakdown"></p>
+
+        <h3 id="frame-inicial-final">Frame inicial y frame final</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="frame_inicial_final"></div>
+
+        <!-- Placeholder de video: Diego puede pegar acá un demo de la
+             función de frame inicial y final (Veo, Kling, Luma o Hailuo). -->
+        <div class="content-block" data-key="frame_inicial_final_demo"></div>
+
+        <!-- Botones con la documentación oficial de prompting de cada
+             modelo, mismo componente .callout/.btn que "Probalo sin
+             instalar nada" de la Clase 3. -->
+        <div class="callout">
+          <p class="callout__label">Para ir más al detalle</p>
+          <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+          <p data-key="prompt_docs_intro"></p>
+          <p>
+            <a class="btn" href="https://runway.com/resources/ai-camera-prompts" target="_blank" rel="noopener">Guía de Runway →</a>
+            &nbsp;
+            <a class="btn" href="https://ai.google.dev/gemini-api/docs/veo" target="_blank" rel="noopener">Guía de Veo →</a>
+            &nbsp;
+            <a class="btn" href="https://kling.ai/blog/kling-ai-prompt-guide" target="_blank" rel="noopener">Guía de Kling AI →</a>
+            &nbsp;
+            <a class="btn" href="https://lumalabs.ai/learning-hub/how-to-use-keyframes" target="_blank" rel="noopener">Keyframes de Luma →</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE E
+           ================================================================= -->
+      <section class="block" id="bloque-e">
+        <h2>Bloque E — Audio: música y voces</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="audio_intro"></div>
+
+        <h3 id="musica-ia">Música</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="musica_intro"></p>
+
+        <!-- Tarjetas de modelos de generación de música: mismo componente
+             que las tarjetas de video de arriba. -->
+        <div class="platform-cards">
+
+          <details class="platform-card" style="--platform-color:#0EA5A4">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/suno_logo.png" alt="Suno" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://suno.com/" target="_blank" rel="noopener">Suno ↗</a></h4>
+                <p class="platform-card__dev">Suno</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Suno v6 (y v6-wild, en planes Pro o superiores)</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Generar una canción completa —música y voz— a partir de un prompt de texto o de una letra propia, remixarla, extenderla, separarla en pistas (voz, batería, bajo), o generar solo la letra sin música</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Plataforma propia (suno.com). Nivel gratuito: 50 créditos diarios, sin derechos comerciales ni descarga de los temas en ese nivel</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#DB2777">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/udio_logo.png" alt="Udio" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://www.udio.com/" target="_blank" rel="noopener">Udio ↗</a></h4>
+                <p class="platform-card__dev">Udio</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Udio, en pleno proceso de reconversión: a mediados de 2025 llegó a un acuerdo judicial con Universal Music Group y Warner por una demanda de derechos de autor, y está migrando hacia una plataforma con licencias cuyos términos finales todavía se están definiendo durante 2026</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Lo mismo que Suno: canciones completas a partir de un prompt o de una letra</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Plataforma propia (udio.com). Nivel gratuito acotado (del orden de 100 créditos mensuales, 10 diarios), sin descarga de los temas en ese nivel — conviene revisar los términos vigentes antes de usarla en clase, porque están cambiando</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#334155">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/aiva_logo.png" alt="AIVA" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://www.aiva.ai/" target="_blank" rel="noopener">AIVA ↗</a></h4>
+                <p class="platform-card__dev">AIVA Technologies</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>AIVA (Artificial Intelligence Virtual Artist)</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Composición instrumental a partir de un estilo o de una referencia en MIDI. A diferencia de Suno o Udio, no genera letra ni voz, solo música instrumental</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Plataforma propia (aiva.ai). Tiene un plan gratuito permanente ("Free Forever"): hasta 3 descargas mensuales, temas de hasta 3 minutos y uso no comercial, con crédito obligatorio a AIVA</p>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <!-- Recuadro "¿Sabías que?" aclarando que Moises no es generativo
+             — el texto de adentro se edita en contenido.txt. -->
+        <div class="fact-box">
+          <p class="fact-box__label"><span aria-hidden="true">💡</span> ¿Sabías que?</p>
+          <div class="content-block" data-key="musica_moises_nota"></div>
+        </div>
+
+        <h3 id="voces-ia">Generadores de voces</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="voces_intro"></p>
+
+        <!-- Tarjetas de modelos de generación de voz. -->
+        <div class="platform-cards">
+
+          <details class="platform-card" style="--platform-color:#0F0F0F">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/elevenlabs_logo.png" alt="ElevenLabs" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://elevenlabs.io/" target="_blank" rel="noopener">ElevenLabs ↗</a></h4>
+                <p class="platform-card__dev">ElevenLabs</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>ElevenLabs</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Texto a voz con voces muy naturales, clonación de voz instantánea o profesional, transcripción de audio a texto, doblaje automático de un video a otro idioma (Dubbing Studio), y generación de efectos de sonido a partir de una descripción</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Plataforma propia (elevenlabs.io) y API. Nivel gratuito: 10.000 créditos mensuales, sin clonación de voz (esa función arranca en el plan Starter, 6 dólares mensuales) y sin licencia comercial en el nivel gratuito</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#F59E0B">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/playht_logo.png" alt="Play.ht" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://play.ht/" target="_blank" rel="noopener">Play.ht ↗</a></h4>
+                <p class="platform-card__dev">Play.ht</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Play.ht</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Texto a voz y clonación de voz</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Plataforma propia (play.ht). Nivel gratuito: 12.500 caracteres mensuales, incluye una clonación de voz instantánea, de uso no comercial y con atribución obligatoria</p>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <!-- Placeholder de video: Diego puede pegar acá un demo de
+             ElevenLabs o Suno (clonación de voz, canción generada, etc.). -->
+        <div class="content-block" data-key="audio_demo"></div>
+
+        <h3 id="extension-audio">Extender o editar una pista existente</h3>
+        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
+        <p data-key="extension_audio_intro"></p>
+        <div class="content-block" data-key="extension_audio_lista"></div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE F
+           ================================================================= -->
+      <section class="block" id="bloque-f">
+        <h2>Bloque F — Usos</h2>
+
+        <!-- Apertura del bloque, sin subtítulo propio — se edita en contenido.txt (no acá) -->
+        <p data-key="usos_intro"></p>
+
+        <h3 id="usos-generacion-video">Generación de video</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_generacion_video"></p>
+
+        <h3 id="usos-maquetacion">Maquetación</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_maquetacion"></p>
+
+        <h3 id="usos-reestilizar">Reestilizar</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_reestilizar"></p>
+
+        <h3 id="usos-edicion-postproduccion">Editar y postproducir</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_edicion_postproduccion"></p>
+
+        <h3 id="usos-referencias-audio">Referencias de audio</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_referencias_audio"></p>
+
+        <h3 id="usos-extension-audio">Extender la banda sonora</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_extension_audio"></p>
+      </section>
+
+      <!-- =================================================================
+           CIERRE
+           ================================================================= -->
+      <section class="block" id="cierre">
+        <h2>Cierre y para llevar al aula</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="cierre_1"></div>
+
+        <!-- Los ítems van hardcodeados acá (no en contenido.txt), mismo
+             criterio que en las clases anteriores: son la estructura de
+             la lista, no cuerpo de texto libre. -->
+        <ul class="practice-list">
+          <li><strong>Podés recomendarles a tus estudiantes modelos y plataformas.</strong> Alcanza con mostrarles dos o tres, elegidos según lo que están buscando lograr —uno de video, uno de música o voz. También está bueno que ellos compartan los modelos que ya vienen usando.</li>
+          <li><strong>Podés compartirles algunos usos.</strong> Los que vimos en esta clase, o pensar algunos propios de tu área disciplinar.</li>
+          <li><strong>Podés mostrarles cómo estructurar un prompt de video.</strong> Qué elementos lo constituyen, por qué conviene evitar el prompt negativo, y cómo ajustar el pedido de a un elemento por vez cuando el resultado no sale como esperaban.</li>
+          <li><strong>Podés proponerles algunas preguntas para mirar los resultados con criterio.</strong> ¿Cuál era la búsqueda inicial? ¿Por qué decidieron usar IA generativa en vez de otra técnica? ¿Qué les devolvió el modelo? ¿Se ajusta total o parcialmente a lo que buscaban? ¿Conviene editar el resultado de manera manual o seguir interactuando con el modelo?</li>
+          <li><strong>Pueden establecer algunos acuerdos de uso.</strong> En qué etapas de la cursada se puede usar IA generativa de video o audio, y en cuáles se espera que usen las técnicas habituales propias de la disciplina.</li>
+        </ul>
+
+        <div class="next-class">
+          <p class="next-class__label">Próxima clase</p>
+          <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+          <p data-key="proxima_clase"></p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
