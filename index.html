@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="es" data-clase="3">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clase 3 — Generación de Imágenes | La imaginación al poder</title>
+<meta name="description" content="Clase 3 del curso La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria. Docente: Diego Cagide.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+<div class="layout">
+
+  <!-- =====================================================================
+       MENÚ DE NAVEGACIÓN
+       Los textos de acá son los títulos que aparecen en el menú lateral.
+       Si cambiás un título de sección más abajo, actualizá también el
+       texto acá (el link href="#..." no hace falta tocarlo).
+       Los <li class="nav-group"> con una lista adentro son los bloques que
+       tienen subtemas — no hace falta tocar esa anidación, solo el texto.
+       ===================================================================== -->
+  <nav class="site-nav" id="siteNav">
+    <img class="site-nav__logo" src="images/logo_barra.png" alt="Logo UNQ">
+    <p class="site-nav__course">La imaginación al poder</p>
+    <p class="site-nav__course-sub">IA generativa y procesos creativos para la enseñanza universitaria</p>
+    <p class="site-nav__docente">Docente: Diego Cagide</p>
+
+    <div class="site-nav__divider"></div>
+
+    <p class="site-nav__class-label">Clase 3</p>
+    <p class="site-nav__title">Generación de Imágenes</p>
+
+    <!-- Grupo 1: introducción a la clase (sin etiqueta) -->
+    <ul class="nav-list">
+      <li><a href="#bienvenida">Bienvenida</a></li>
+    </ul>
+
+    <div class="site-nav__divider"></div>
+    <p class="site-nav__section-label">Bloques de la Clase 3</p>
+
+    <!-- Grupo 2: los bloques de contenido propiamente dichos -->
+    <ul class="nav-list nav-list--blocks">
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-a"><span class="nav-bullet"></span>Bloque A · Qué es y cómo funciona</a>
+        <ul class="nav-subgroup">
+          <li><a href="#espacio-latente">El espacio latente</a></li>
+          <li><a href="#generacion-basica">Generación básica: el input</a></li>
+          <li><a href="#inpainting-outpainting">Lo que está dentro y fuera de la imagen</a></li>
+          <li><a href="#difusion">La difusión</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-b"><span class="nav-bullet"></span>Bloque B · Modelos y plataformas</a>
+        <ul class="nav-subgroup">
+          <li><a href="#privados-abiertos-imagen">Privados vs. código abierto</a></li>
+          <li><a href="#codigo-abierto-como-usar">Cómo usar modelos de código abierto</a></li>
+          <li><a href="#cual-mejor">¿Cuál es mejor?</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-c"><span class="nav-bullet"></span>Bloque C · Gramática del prompt de imagen</a>
+        <ul class="nav-subgroup">
+          <li><a href="#elementos-prompt">Los elementos del prompt</a></li>
+          <li><a href="#estructura">La estructura</a></li>
+          <li><a href="#reglas">Algunas reglas</a></li>
+          <li><a href="#ejemplos">Ejemplos: de simple a complejo</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-d"><span class="nav-bullet"></span>Bloque D · Usos de la IA Generativa de Imagen</a>
+        <ul class="nav-subgroup">
+          <li><a href="#usos-generacion">Generación de imágenes completas</a></li>
+          <li><a href="#usos-edicion">Edición de imágenes</a></li>
+          <li><a href="#usos-upscaling">Upscaling (aumento de resolución)</a></li>
+          <li><a href="#usos-formatos">Adaptación a otros formatos</a></li>
+          <li><a href="#usos-estilo">Cambio de estilo</a></li>
+          <li><a href="#usos-flyers">Flyers</a></li>
+          <li><a href="#multi-referencia">Varias imágenes de referencia</a></li>
+          <li><a href="#combinacion-modelos">Combinando modelos</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-e"><span class="nav-bullet"></span>Bloque E · Criterio propio</a>
+        <ul class="nav-subgroup">
+          <li><a href="#criterio-propio">Criterio propio y voz propia</a></li>
+          <li><a href="#modelos-hibridos">Hacia modelos híbridos</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="site-nav__divider"></div>
+
+    <!-- Grupo 3: cierre -->
+    <ul class="nav-list">
+      <li><a href="#cierre">Cierre y para llevar al aula</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <img class="class-banner" src="images/logo_banner.png" alt="Banner del curso La imaginación al poder">
+
+      <header class="class-header">
+        <p class="class-header__course">La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria — Docente:&nbsp;Diego&nbsp;Cagide</p>
+        <p class="class-header__eyebrow">Clase 3</p>
+        <h1>Generación de Imágenes</h1>
+      </header>
+
+      <!-- =================================================================
+           SECCIÓN: Bienvenida
+           ================================================================= -->
+      <section class="block" id="bienvenida">
+        <h2>Bienvenida</h2>
+
+        <!-- El texto de esta sección, incluida la imagen y su epígrafe, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="bienvenida_1" data-lead="true"></div>
+
+        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="bienvenida_2"></div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE A
+           ================================================================= -->
+      <section class="block" id="bloque-a">
+        <h2>Bloque A — Qué es y cómo funciona la IA de imagen</h2>
+
+        <!-- Intro sin subtítulo propio: qué es la IA de imagen. El texto de
+             esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="quees_imagen"></div>
+
+        <h3 id="espacio-latente">El espacio latente</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="espaciolatente_1"></div>
+
+        <h3 id="generacion-basica">Generación básica: el input</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="comofunciona_intro"></p>
+
+        <!-- Texto-a-imagen e imagen-a-imagen tienen cada uno su propio
+             ejemplo de imagen debajo (a pedido de Diego); voz-a-imagen no
+             lleva imagen propia. Todo el contenido se edita en
+             contenido.txt (no acá). -->
+        <p data-key="comofunciona_texto"></p>
+        <div class="content-block" data-key="comofunciona_texto_ejemplo"></div>
+
+        <p data-key="comofunciona_imgimg"></p>
+        <div class="content-block" data-key="comofunciona_imgimg_ejemplo"></div>
+
+        <p data-key="comofunciona_voz"></p>
+
+        <h3 id="inpainting-outpainting">Lo que está dentro y fuera de la imagen</h3>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="inpainting_outpainting"></div>
+
+        <h3 id="difusion">La difusión: un proceso de refinamiento iterativo</h3>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="difusion_1"></div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE B
+           ================================================================= -->
+      <section class="block" id="bloque-b">
+        <h2>Bloque B — Modelos y plataformas</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="modelos_plataformas_1"></p>
+
+        <!-- Tarjetas de modelos: por pedido de Diego, cada una muestra el
+             nombre propio del modelo, para qué se usa habitualmente y en
+             qué plataformas funciona, con logo y link — mismo componente
+             que las tarjetas de plataformas de texto de la Clase 2. Pieza
+             tabular: se edita acá directo, no en contenido.txt (mismo
+             criterio que las tarjetas de la Clase 2). Todas usan logo
+             real (GPT Image 2 reusa el logo de ChatGPT, a pedido de
+             Diego); la placa de iniciales (.platform-card__logo--text)
+             queda como fallback en el CSS por si se suma un modelo nuevo
+             sin logo todavía. -->
+        <div class="platform-cards">
+
+          <details class="platform-card" style="--platform-color:#4285F4">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/nanobanana_logo.png" alt="Nano Banana" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://gemini.google.com/app" target="_blank" rel="noopener">Nano Banana ↗</a></h4>
+                <p class="platform-card__dev">Google DeepMind</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>"Nano Banana" es el apodo con el que se popularizó esta familia de modelos de imagen de Google. Hoy conviven dos versiones: <strong>Nano Banana Pro</strong> (Gemini 3 Pro Image) y <strong>Nano Banana 2</strong> (Gemini 3.1 Flash Image)</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Pro prioriza la calidad y el detalle máximo —composiciones complejas, texto legible dentro de la imagen—; 2 prioriza la velocidad y el costo, con buen seguimiento de instrucciones. No es que una sea "mejor" que la otra: son dos niveles pensados para necesidades distintas</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Gemini (app y web), Google AI Studio, Vertex AI, y Pro además como modelo dentro de Adobe Firefly</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#10A37F">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/chatgpt.png" alt="GPT Image" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://chatgpt.com/" target="_blank" rel="noopener">GPT Image ↗</a></h4>
+                <p class="platform-card__dev">OpenAI</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>GPT Image 2 — en septiembre de 2026 OpenAI sumó una actualización, GPT Image 2.5, que hoy es la versión que usa ChatGPT por defecto</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Prompts largos y detallados (incorpora un paso de razonamiento previo a la generación, y no tiene el límite de extensión de prompt que sí tienen otras plataformas) y buen renderizado de texto dentro de la imagen</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>ChatGPT (tocando el ícono "+" y eligiendo "Crear imagen"), y la <span class="note">API<span class="note__popover"><button type="button" class="note__trigger" aria-label="Ver más" aria-expanded="false"><span aria-hidden="true">▸</span></button><span class="note__body" hidden>Una forma en la que un programa se conecta directamente con un modelo o servicio para usarlo desde otra aplicación, sin pasar por la interfaz de chat — es la puerta de entrada que usan, por ejemplo, otras plataformas para ofrecer un modelo "por dentro" de las suyas.</span></span></span> de OpenAI. GPT Image 2.5 también está disponible como modelo dentro de Adobe Firefly, con dos variantes: <strong>Flare</strong> (más rápida) y <strong>Sunburst</strong> (más control y precisión) — ahí sí, al pasar por Firefly, el prompt queda sujeto al límite de extensión de esa plataforma</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#000000">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/Midjourney.png" alt="Midjourney" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://www.midjourney.com/" target="_blank" rel="noopener">Midjourney ↗</a></h4>
+                <p class="platform-card__dev">Midjourney, Inc.</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>No tiene un nombre separado del producto: se lo conoce por su número de versión (hoy V8.2), más una línea aparte especializada en anime (Niji)</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Se usa sobre todo para proyectos más "artísticos": estética ilustrativa muy reconocible, arte conceptual, piezas con una identidad visual propia</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Sitio web propio (midjourney.com, desde 2024) y también por Discord, donde nació</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#111111">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/flux.png" alt="Flux" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://bfl.ai/" target="_blank" rel="noopener">Flux.2 ↗</a></h4>
+                <p class="platform-card__dev">Black Forest Labs</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>FLUX.2, con varias variantes: [dev] y la familia [klein] (más liviana, pensada para correr en una computadora con menos recursos) son de código abierto; pro, flex y max son versiones privadas más potentes, disponibles solo por API</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Fotorrealismo, textura, manejo de luz natural</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Plataforma propia (bfl.ai), y también integrado dentro de otras plataformas como Adobe Firefly</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#FA0F00">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/adobe_logo.png" alt="Adobe Firefly" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://firefly.adobe.com/" target="_blank" rel="noopener">Adobe Firefly ↗</a></h4>
+                <p class="platform-card__dev">Adobe</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Firefly Image 5 (modelo propio) — la plataforma además da acceso a modelos de otras empresas</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Integrarse al flujo de trabajo de Photoshop, Illustrator y Premiere, con licencia pensada para uso comercial</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>firefly.adobe.com, y dentro de las apps de Adobe</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#00A656">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/Runway.png" alt="Runway Gen-4 Image" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://runwayml.com/" target="_blank" rel="noopener">Runway Gen-4 Image ↗</a></h4>
+                <p class="platform-card__dev">Runway AI</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Gen-4 Image. Runway es conocida sobre todo como empresa de generación de <strong>video</strong> (su modelo de video más reciente es Gen-4.5); el modelo de imagen es un producto complementario, pensado para generar y mantener referencias visuales consistentes que después se pueden animar</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Mantener un mismo personaje, objeto o lugar de forma consistente entre varias imágenes distintas, a partir de fotos de referencia. Es un patrón habitual en las empresas de video: Kuaishou, por ejemplo, además de su modelo de video Kling, tiene un modelo de imagen propio, Kolors</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Plataforma propia (runwayml.com) y vía API</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="platform-card" style="--platform-color:#8B5CF6">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/stablediffusion.png" alt="Stable Diffusion" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://stability.ai/" target="_blank" rel="noopener">Stable Diffusion ↗</a></h4>
+                <p class="platform-card__dev">Stability AI</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Stable Diffusion 3.5 (con variantes Large, Large Turbo y Medium) — el modelo de código abierto más conocido, con pesos públicos que cualquiera puede descargar y modificar</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Correr un modelo de imagen en la propia computadora, o modificarlo con entrenamientos propios (LoRAs, checkpoints) — tiene una comunidad enorme de modelos derivados</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Localmente (con ComfyUI, AUTOMATIC1111 u otras interfaces), en DreamStudio (la plataforma propia de Stability AI), o sin instalar nada en un espacio de Hugging Face</p>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="modelos_plataformas_2"></div>
+
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="modelos_plataformas_imagen"></div>
+
+        <h3 id="privados-abiertos-imagen">Modelos privados vs. código abierto</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="privados_abiertos_imagen"></div>
+
+        <h3 id="codigo-abierto-como-usar">Cómo usar modelos de código abierto</h3>
+
+        <!-- "Para ampliar" plegable sobre modelos públicos: complejidad,
+             plataformas que hay que instalar (ComfyUI, AUTOMATIC1111),
+             y descarga de modelos/LoRAs — todo el detalle técnico va
+             acá adentro, sintetizado; el texto central retoma después
+             con Hugging Face como alternativa sin instalar nada. -->
+        <details class="expandable">
+          <summary>
+            <span class="expandable__icon" aria-hidden="true">🔍</span>
+            <span class="expandable__text">
+              <span class="expandable__eyebrow">Para ampliar</span>
+              <span class="expandable__title">Cómo se usan los modelos públicos</span>
+            </span>
+            <span class="expandable__chevron" aria-hidden="true">▸</span>
+          </summary>
+          <div class="expandable__body">
+            <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+            <p data-key="modelos_publicos_1"></p>
+            <p data-key="modelos_publicos_2"></p>
+            <div class="content-block" data-key="modelos_publicos_imagen"></div>
+            <p data-key="modelos_publicos_3"></p>
+          </div>
+        </details>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="codigo_abierto_huggingface"></p>
+
+        <!-- Botones destacados para probar Stable Diffusion y Flux sin
+             instalar nada, mismo componente .callout/.btn que "Herramienta"
+             en la Clase 2. -->
+        <div class="callout">
+          <p class="callout__label">Probalo sin instalar nada</p>
+          <p>Espacios gratuitos de Hugging Face, listos para usar desde el navegador:</p>
+          <p>
+            <a class="btn" href="https://huggingface.co/spaces/stabilityai/stable-diffusion-3.5-large" target="_blank" rel="noopener">Probá Stable Diffusion →</a>
+            &nbsp;
+            <a class="btn" href="https://huggingface.co/spaces/black-forest-labs/FLUX.1-schnell" target="_blank" rel="noopener">Probá Flux →</a>
+          </p>
+        </div>
+
+        <h3 id="cual-mejor">¿Cuál es mejor?</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="cual_mejor_intro"></p>
+
+        <!-- Cada categoría va en su propio recuadro destacado, con el
+             texto y la imagen de ejemplo juntos adentro (mismo componente
+             .subsection-highlight que Alucinaciones/Sesgos en Clase 1 y
+             Legitimidad/Voz propia en Clase 2). -->
+        <div class="subsection-highlight">
+          <h4>Fotorrealismo</h4>
+          <p data-key="mejor_fotorrealismo"></p>
+          <div class="content-block" data-key="mejor_fotorrealismo_imagen"></div>
+        </div>
+
+        <div class="subsection-highlight">
+          <h4>Ilustración y estética artística</h4>
+          <p data-key="mejor_ilustracion"></p>
+          <div class="content-block" data-key="mejor_ilustracion_imagen"></div>
+        </div>
+
+        <div class="subsection-highlight">
+          <h4>Edición de imágenes</h4>
+          <p data-key="mejor_edicion"></p>
+          <div class="content-block" data-key="mejor_edicion_imagen"></div>
+        </div>
+
+        <div class="subsection-highlight">
+          <h4>Consistencia entre generaciones</h4>
+          <p data-key="mejor_consistencia"></p>
+          <div class="content-block" data-key="mejor_consistencia_imagen"></div>
+        </div>
+
+        <div class="subsection-highlight">
+          <h4>Piezas con texto legible</h4>
+          <p data-key="mejor_texto_legible"></p>
+          <div class="content-block" data-key="mejor_texto_legible_imagen"></div>
+        </div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="cual_mejor_cierre"></p>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE C
+           ================================================================= -->
+      <section class="block" id="bloque-c">
+        <h2>Bloque C — Gramática del prompt de imagen</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="gramatica_prompt_intro"></div>
+
+        <h3 id="elementos-prompt">Los elementos del prompt</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="elementos_intro"></p>
+
+        <!-- Cuadro con distintos colores para cada elemento del prompt de
+             imagen: la estructura, el ícono y el color de cada tarjeta son
+             fijos acá; el texto de cada una se edita en contenido.txt.
+             Mismo componente que Rol/Contexto/Acción/... de la Clase 2. -->
+        <div class="elements-grid">
+          <div class="element-card" style="--element-color:#2e6e8e">
+            <h4><span class="element-card__icon" aria-hidden="true">🧍</span> Sujeto principal</h4>
+            <p data-key="elemento_sujeto"></p>
+          </div>
+          <div class="element-card" style="--element-color:#b5502e">
+            <h4><span class="element-card__icon" aria-hidden="true">🎨</span> Descriptores</h4>
+            <p data-key="elemento_descriptores"></p>
+          </div>
+          <div class="element-card" style="--element-color:#3e7a5e">
+            <h4><span class="element-card__icon" aria-hidden="true">⚡</span> Acción o estado</h4>
+            <p data-key="elemento_accion"></p>
+          </div>
+          <div class="element-card" style="--element-color:#a3216b">
+            <h4><span class="element-card__icon" aria-hidden="true">🌆</span> Contexto o ambiente</h4>
+            <p data-key="elemento_contexto_ambiente"></p>
+          </div>
+          <div class="element-card" style="--element-color:#6a3fa0">
+            <h4><span class="element-card__icon" aria-hidden="true">📷</span> Especificaciones técnicas</h4>
+            <p data-key="elemento_especificaciones"></p>
+          </div>
+          <div class="element-card" style="--element-color:#1f7a6c">
+            <h4><span class="element-card__icon" aria-hidden="true">🖌️</span> Estilo artístico</h4>
+            <p data-key="elemento_estilo"></p>
+          </div>
+          <div class="element-card element-card--wide" style="--element-color:#8a3b3b">
+            <h4><span class="element-card__icon" aria-hidden="true">🚫</span> Prompt negativo</h4>
+            <p data-key="elemento_prompt_negativo"></p>
+          </div>
+        </div>
+
+        <h3 id="estructura">La estructura</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="estructura_intro"></p>
+
+        <p class="prompt-formula" data-key="estructura"></p>
+        <p data-key="estructura_cierre"></p>
+        <div class="prompt-example">
+          <p class="prompt-example__label">Ejemplo</p>
+          <p data-key="estructura_ejemplo"></p>
+        </div>
+        <p class="prompt-breakdown" data-key="estructura_breakdown"></p>
+
+        <!-- Imagen generada a partir del ejemplo de arriba, con el mismo prompt repetido en el epígrafe (a pedido de Diego, igual que el resto de las imágenes) -->
+        <div class="content-block" data-key="estructura_imagen"></div>
+
+        <h3 id="reglas">Algunas reglas</h3>
+        <!-- El texto de esta sección, incluidas las listas, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="reglas_gramaticales"></div>
+
+        <h3 id="ejemplos">Ejemplos: de simple a complejo</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="ejemplos_intro"></p>
+
+        <div class="prompt-example">
+          <p class="prompt-example__label">Simple</p>
+          <p data-key="ejemplo_simple"></p>
+        </div>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="ejemplo_simple_imagen"></div>
+
+        <div class="prompt-example">
+          <p class="prompt-example__label">Medio</p>
+          <p data-key="ejemplo_medio"></p>
+        </div>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="ejemplo_medio_imagen"></div>
+
+        <!-- Este ejemplo va con lista de características, por eso usa un
+             content-block adentro de la caja de ejemplo en vez de un <p>
+             (el <p> no soporta listas) — el CSS de .prompt-example ya
+             contempla una lista adentro. -->
+        <div class="prompt-example">
+          <p class="prompt-example__label">Complejo</p>
+          <div class="content-block" data-key="ejemplo_complejo"></div>
+        </div>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="ejemplo_complejo_imagen"></div>
+
+        <p class="prompt-breakdown" data-key="ejemplo_breakdown"></p>
+
+        <details class="expandable">
+          <summary>
+            <span class="expandable__icon" aria-hidden="true">🔍</span>
+            <span class="expandable__text">
+              <span class="expandable__eyebrow">Para ampliar</span>
+              <span class="expandable__title">El seed: reproducir y variar un resultado</span>
+            </span>
+            <span class="expandable__chevron" aria-hidden="true">▸</span>
+          </summary>
+          <div class="expandable__body">
+            <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+            <p data-key="seed_imagen"></p>
+            <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+            <div class="content-block" data-key="seed_imagen_ejemplo"></div>
+          </div>
+        </details>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE D
+           ================================================================= -->
+      <section class="block" id="bloque-d">
+        <h2>Bloque D — Usos de la IA Generativa de Imagen</h2>
+
+        <!-- Apertura del bloque, sin subtítulo propio — se edita en contenido.txt (no acá) -->
+        <p data-key="bloque_d_apertura"></p>
+
+        <h3 id="usos-generacion">Generación de imágenes completas</h3>
+        <!-- Intro de la lista de usos — se edita en contenido.txt (no acá) -->
+        <p data-key="usos_generacion"></p>
+
+        <!-- Cada uso tiene su texto y su imagen de ejemplo juntos, uno
+             debajo del otro — misma lógica que los "Ejemplos: de simple a
+             complejo" del Bloque C. Todo el contenido (texto e imágenes)
+             se edita en contenido.txt, esta estructura de a pares no
+             cambia. -->
+        <p data-key="usos_generacion_referencias"></p>
+        <div class="content-block" data-key="usos_generacion_referencias_imagen"></div>
+
+        <p data-key="usos_generacion_ideacion"></p>
+        <div class="content-block" data-key="usos_generacion_ideacion_imagen"></div>
+
+        <p data-key="usos_generacion_vistas"></p>
+        <div class="content-block" data-key="usos_generacion_vistas_imagen"></div>
+
+        <p data-key="usos_generacion_editorial"></p>
+        <div class="content-block" data-key="usos_generacion_editorial_imagen"></div>
+
+        <p data-key="usos_generacion_ajustes"></p>
+        <div class="content-block" data-key="usos_generacion_ajustes_imagen"></div>
+
+        <h3 id="usos-edicion">Edición de imágenes</h3>
+        <!-- Intro de la lista de usos — se edita en contenido.txt (no acá) -->
+        <p data-key="usos_edicion"></p>
+
+        <p data-key="usos_edicion_borrado"></p>
+        <div class="content-block" data-key="usos_edicion_borrado_imagen"></div>
+
+        <p data-key="usos_edicion_agregar"></p>
+        <div class="content-block" data-key="usos_edicion_agregar_imagen"></div>
+
+        <p data-key="usos_edicion_props"></p>
+        <div class="content-block" data-key="usos_edicion_props_imagen"></div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_edicion_cierre"></p>
+
+        <h3 id="usos-upscaling">Upscaling (aumento de resolución)</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_upscaling_intro"></p>
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="usos_upscaling_imagen"></div>
+
+        <h3 id="usos-formatos">Adaptación a otros formatos</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_formatos_intro"></p>
+
+        <!-- Gráfico horizontal comparando relaciones de aspecto, al estilo
+             del selector de formato que aparece en los modelos de imagen.
+             Pieza estructural: se edita acá directo, no en contenido.txt
+             (mismo criterio que las tarjetas de plataformas). No necesita
+             que Diego suba ninguna imagen: se dibuja con CSS. -->
+        <div class="ratio-compare">
+          <div class="ratio-compare__item" style="--ratio:21/9">
+            <div class="ratio-compare__box"></div>
+            <p class="ratio-compare__label">21:9</p>
+          </div>
+          <div class="ratio-compare__item" style="--ratio:16/9">
+            <div class="ratio-compare__box"></div>
+            <p class="ratio-compare__label">16:9</p>
+          </div>
+          <div class="ratio-compare__item" style="--ratio:4/3">
+            <div class="ratio-compare__box"></div>
+            <p class="ratio-compare__label">4:3</p>
+          </div>
+          <div class="ratio-compare__item" style="--ratio:1/1">
+            <div class="ratio-compare__box"></div>
+            <p class="ratio-compare__label">1:1</p>
+          </div>
+          <div class="ratio-compare__item" style="--ratio:4/5">
+            <div class="ratio-compare__box"></div>
+            <p class="ratio-compare__label">4:5</p>
+          </div>
+          <div class="ratio-compare__item" style="--ratio:3/4">
+            <div class="ratio-compare__box"></div>
+            <p class="ratio-compare__label">3:4</p>
+          </div>
+          <div class="ratio-compare__item" style="--ratio:9/16">
+            <div class="ratio-compare__box"></div>
+            <p class="ratio-compare__label">9:16</p>
+          </div>
+        </div>
+
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="usos_formatos_imagen"></div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_formatos_cierre"></p>
+
+        <h3 id="usos-estilo">Cambio de estilo</h3>
+        <!-- El texto de esta sección, incluidas las imágenes, se edita en contenido.txt (no acá).
+             usos_estilo_intro trae el texto de apertura; usos_estilo_moda_imagen es el carrusel
+             de las "modas" de estilización (Simpsons / Ghibli / años 80); usos_estilo_referencia_texto
+             y usos_estilo_referencia_imagen cierran con el ejemplo de referencia artística propia. -->
+        <div class="content-block" data-key="usos_estilo_intro"></div>
+        <div class="content-block" data-key="usos_estilo_moda_imagen"></div>
+        <p data-key="usos_estilo_moda2_texto"></p>
+        <div class="content-block" data-key="usos_estilo_moda2_imagen"></div>
+        <p data-key="usos_estilo_referencia_texto"></p>
+        <div class="content-block" data-key="usos_estilo_referencia_imagen"></div>
+
+        <h3 id="usos-flyers">Flyers</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_flyer_intro"></p>
+        <!-- Ejemplo de flyers genéricos hechos con IA (el problema que se busca evitar) -->
+        <div class="content-block" data-key="usos_flyer_generico_imagen"></div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_flyer_esquema"></p>
+        <!-- Ejemplo de flyer planificado: un solo carrusel con el boceto propio
+             y los flyers generados a partir de ese boceto (usos_flyer_resultado_imagen) -->
+        <div class="content-block" data-key="usos_flyer_resultado_imagen"></div>
+
+        <!-- Segundo ejemplo de flyer planificado: mismo patrón, con otro
+             boceto y sus flyers resultantes (usos_flyer_resultado2_imagen) -->
+        <div class="content-block" data-key="usos_flyer_resultado2_imagen"></div>
+
+        <!-- Línea divisoria tenue: a partir de acá el bloque deja de listar
+             "usos" propiamente dichos (aclaración de Diego). -->
+        <hr class="section-divider">
+
+        <h3 id="multi-referencia">Varias imágenes de referencia a la vez</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá); multi_referencia_imagen
+             es el carrusel con los dos ejemplos de combinación de varias referencias -->
+        <div class="content-block" data-key="multi_referencia"></div>
+        <div class="content-block" data-key="multi_referencia_imagen"></div>
+
+        <h3 id="combinacion-modelos">Combinando modelos</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="combinacion_modelos"></p>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE E
+           ================================================================= -->
+      <section class="block" id="bloque-e">
+        <h2>Bloque E — Criterio propio</h2>
+
+        <h3 id="criterio-propio">Criterio propio y voz propia</h3>
+        <!-- Recuadro destacado, mismo tratamiento que "La paradoja del conocimiento" de la Clase 1 -->
+        <div class="highlight-box">
+          <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+          <p data-key="criterio_propio"></p>
+        </div>
+
+        <!-- El texto de esta sección, incluida la imagen, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="voz_propia_imagen"></div>
+
+        <h3 id="modelos-hibridos">Hacia modelos híbridos</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="modelos_hibridos"></p>
+      </section>
+
+      <!-- =================================================================
+           CIERRE
+           ================================================================= -->
+      <section class="block" id="cierre">
+        <h2>Cierre y para llevar al aula</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="cierre_1"></div>
+
+        <!-- Los ítems van hardcodeados acá (no en contenido.txt), mismo
+             criterio que la Clase 1: son la estructura de la lista, no
+             cuerpo de texto libre. -->
+        <ul class="practice-list">
+          <li><strong>Podés recomendarles a tus estudiantes modelos y plataformas.</strong> Alcanza con mostrarles dos o tres, elegidos según lo que están buscando lograr. También está bueno que ellos compartan los modelos que ya vienen usando.</li>
+          <li><strong>Podés compartirles algunos usos.</strong> Los que vimos en esta clase, o pensar algunos propios de tu área disciplinar.</li>
+          <li><strong>Podés mostrarles cómo estructurar un prompt de imagen.</strong> Qué elementos lo constituyen, qué detalles conviene incluir, y cómo ajustar el pedido cuando el resultado no sale como esperaban.</li>
+          <li><strong>Podés proponerles algunas preguntas para mirar los resultados con criterio.</strong> ¿Cuál era la búsqueda inicial? ¿Por qué decidieron usar IA generativa? ¿Qué les devolvió el modelo? ¿Se ajusta total o parcialmente a su búsqueda? ¿Conviene editar la imagen de manera manual o seguir interactuando con el modelo?</li>
+          <li><strong>Pueden establecer algunos acuerdos de uso.</strong> En qué etapas de la cursada se puede usar IA generativa, y en cuáles se espera que usen las técnicas habituales propias de la disciplina.</li>
+        </ul>
+
+        <div class="next-class">
+          <p class="next-class__label">Próxima clase</p>
+          <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+          <p data-key="proxima_clase"></p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,617 @@
+## bienvenida_1
+Bienvenidas y bienvenidos a la tercera clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". Si llegaste hasta acá es porque sos una persona tenaz con ascendente en prompts, y eso significa que ya tenés un panorama de cómo funciona la IA generativa en general, de cómo redactar prompts para mejorar la eficacia de la interacción, de algunos usos posibles y de algunas estrategias de validación. Congratulaciones totales.
+
+![](images/clase3_01_bienvenida.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Un cuaderno abierto sobre una mesa de madera, con un cuento escrito a mano. Los dibujos del cuento —bosque, animales, un dragón, edificios de una ciudad— cobran volumen y se elevan por fuera de la página, como recortes de papel y acuarela mezclándose con la escena real. Un/a estudiante observa con asombro, con las manos manchadas de tinta apoyadas cerca del cuaderno. Foto hiperrealista y cinematográfica, luz natural de ventana, profundidad de campo, formato banner panorámico, sin texto.
+
+A grandes rasgos, y asumiendo responsabilidad de la afirmación que hago a continuación, la IA solo puede devolvernos dos grandes tipos de imágenes: imágenes con estética genérica —o como la llamo, "estética IA"—, impactante pero vacía, colorida pero unidimensional, es decir una flojera con ritmo; o imágenes en las que quede plasmado lo propio, lo subjetivo, imágenes más interesantes y más útiles. Esto último se puede conseguir si utilizamos algunos procedimientos que nos permitan guiar ese proceso generativo.
+
+El mundo de la imagen generada por IA tiene posibilidades muy diversas, desde crear imágenes desde cero hasta editarlas de diferentes maneras, como agregar o quitar elementos, modificar encuadres e iluminación, mejorar resoluciones, etc. En ese arco amplio de posibilidades, el proceso cambia mucho según cómo lo llevemos adelante: si lo guiamos de manera activa, comprendemos las limitaciones de los modelos, utilizamos técnicas de prompteo de imagen y reflexionamos por qué conviene usar la IA en lugar de otras técnicas, podremos tener una experiencia más enriquecedora del uso de la IA, intentando siempre mantener la idea troncal de este curso: no cederle a la IA la imaginación.
+
+## bienvenida_2
+La idea de esta clase es que te lleves algunos saberes para que puedas:
+
+- Sugerir a tus estudiantes modelos y plataformas de generación de imagen, conociendo las diferencias que existen entre ellos.
+- Recomendarles algunos usos, sobre todo en la etapa de exploración y desarrollo de un proyecto (entendiendo el desarrollo como la etapa en la que se definen sus aspectos conceptuales, narrativos y estéticos).
+- Proporcionarles técnicas de redacción y refinamiento de prompts para lograr una interacción más efectiva con los modelos.
+- Proporcionarles algunas herramientas para evaluar con criterio una imagen generada.
+- Utilizar estas tecnologías para generar recursos para tus clases.
+
+En este curso vamos a considerar a la IA como una herramienta, y como tal puede ser una aliada estratégica dentro de los desarrollos de un proyecto o en la producción. Comencemos.
+
+
+## quees_imagen
+La IA generativa de imagen es una tecnología que permite crear imágenes originales a partir de descripciones textuales. Como los modelos de texto que vimos en la clase anterior, estos sistemas fueron entrenados con una cantidad enorme de información —en este caso, millones de imágenes junto con sus descripciones— y de ahí aprendieron a relacionar el lenguaje con los elementos visuales: qué forma, qué color, qué composición corresponde a determinada palabra o combinación de palabras.
+
+A diferencia de una herramienta de edición tradicional, donde manipulamos directamente los píxeles o los objetos de una imagen, acá el punto de partida suele ser verbal. El resultado depende de cómo describimos lo que queremos, y ahí entra la gramática del prompt que vemos más adelante.
+
+
+## espaciolatente_1
+En la Clase 1 hablamos de la "caja negra", es decir, ese espacio misterioso donde no vemos bien qué pasa entre lo que pedimos y lo que el modelo nos devuelve. Ese concepto lo vamos a llamar el **espacio latente**, un entorno matemático multidimensional donde cada imagen posible queda representada como un punto, con coordenadas propias. Imágenes parecidas entre sí (dos fotos de perros, por ejemplo) quedan como puntos cercanos dentro de ese espacio; imágenes muy distintas quedan lejos. El modelo aprendió, durante su entrenamiento, a organizar ese espacio de esa manera: agrupando lo similar, separando lo distinto, y relacionando ciertas zonas con ciertas palabras del lenguaje.
+
+Generar una imagen es, en el fondo, encontrar el punto de ese espacio que mejor corresponde a lo que describimos en el prompt, y traducir esas coordenadas de vuelta a píxeles. No hace falta entender el detalle matemático de esto para usar estas herramientas, pero ayuda tener presente la idea general: la IA no "dibuja" como lo haría una persona, trazo por trazo, sino que navega un espacio ya organizado y elige un punto dentro de él.
+
+
+## comofunciona_intro
+Desde una perspectiva general de interacción, hay tres maneras principales de generar una imagen con estos modelos:
+
+## comofunciona_texto
+**Texto-a-imagen (text-to-image)**: a partir de una descripción escrita, el modelo genera una imagen desde cero. Es el uso más habitual: escribimos "un paisaje de montaña al amanecer" y el modelo produce una imagen que representa esa escena.
+
+## comofunciona_texto_ejemplo
+![Paisaje de montaña al amanecer, generado a partir de esa sola descripción escrita](images/clase3_41_texto_a_imagen.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Un paisaje de montaña al amanecer
+
+## comofunciona_imgimg
+**Imagen-a-imagen (image-to-image)**: partimos de una imagen existente, sea una foto, un boceto o un dibujo, y le pedimos al modelo que la transforme: que cambie el estilo, los colores, el nivel de detalle, o que convierta un boceto en una imagen fotorrealista.
+
+## comofunciona_imgimg_ejemplo
+![Una foto transformada a partir de una instrucción de estilo, conservando la estructura original](images/clase3_42_imagen_a_imagen.jpg)
+Modelo: GPT Image 1.5
+El dibujo original (a la izquierda) lo hizo mi hijo en sala de 5.
+**Imagen 1:** adaptación al estilo visual de Los Simpson.
+**Imagen 2:** conversión en muñeco de trapo.
+
+## comofunciona_voz
+**Voz-a-imagen (voice-to-image)**: con el modo de voz de plataformas como Gemini o ChatGPT, podemos describir la imagen hablando en lugar de escribiendo, e incluso pedir ajustes en la misma conversación ("hacela más oscura", "sacale el sombrero"). No es una tecnología distinta por dentro ya que la voz se transcribe y se procesa como cualquier prompt de texto, pero cambia la experiencia y permite ir ajustando una imagen de forma conversacional, sin tipear.
+
+
+## inpainting_outpainting
+Desde una perspectiva de edición de imágenes, es decir modificar algún aspecto de una imagen que le compartimos al modelo a través del modo imagen-a-imagen, hay dos conceptos relevantes: el **inpainting** (pintado del interior de la imagen) y el **outpainting** (pintado del exterior de la imagen).
+
+El inpainting consiste en regenerar solo una parte puntual de una imagen ya existente —la que se selecciona o se "pinta" como máscara— sin tocar el resto. Sirve para borrar un objeto, cambiar un detalle o corregir algo puntual sin tener que generar la imagen entera de nuevo.
+
+El outpainting, en cambio, extiende la imagen más allá de sus bordes originales, generando contenido nuevo que continúa la escena de forma coherente. Sirve, por ejemplo, para convertir una foto cuadrada en un formato panorámico, o para ampliar el encuadre de una imagen que quedó demasiado ajustada.
+
+Ambas técnicas hoy están incluidas en la mayoría de las plataformas principales como funciones específicas, generalmente con una herramienta de selección o máscara dentro del editor, un botón de borrado del fondo o la posibilidad de ampliar el fondo eligiendo la resolución de la imagen.
+
+![](images/clase3_08_inpainting.jpg)
+@split
+Modelo: Midjourney
+**Imagen 1:** calle angosta de ciudad de noche, empedrado mojado por la lluvia con reflejos de luz. En primer plano a la izquierda, un auto antiguo negro estacionado. Edificios viejos con balcones de hierro, escaleras de incendio y carteles luminosos. A lo lejos, un hombre con sombrero y traje caminando de espaldas, otras siluetas y un carro en la bruma. Fotografía en blanco y negro estilo film noir de los años 40, alto contraste, grano de película.
+**Imagen 2:** selección y reemplazo del hombre por una mujer con la herramienta Brush (inpainting) de Adobe Firefly.
+
+![](images/clase3_08_outpainting.jpg)
+Modelo: Adobe Firefly
+Prompt: Expansión de la imagen con la herramienta Expand Background de Adobe Firefly.
+
+
+## difusion_1
+El proceso que efectivamente genera la imagen, dentro de ese espacio latente que vimos más arriba, se llama **difusión**.
+
+El modelo arranca de algo parecido al ruido de una tele mal sintonizada: una imagen inicial completamente caótica, sin ninguna forma reconocible. A partir de ahí, en sucesivos pasos, va "limpiando" ese ruido un poco a la vez, acercándose cada vez más a lo que describimos en el prompt. En cada paso, el modelo lee la descripción y reacomoda un poco más los píxeles (color, forma, textura, luz) hasta llegar, después de muchos pasos pequeños, a una imagen coherente.
+
+![](images/clase3_11_difusion.jpg)
+Prompt: Progreso de difusión: imágenes descargadas de internet
+
+Ese es el sentido de hablar de un **proceso de refinamiento iterativo**: no hay un único salto de ruido a imagen final, sino muchos ajustes sucesivos, cada uno un poco más preciso que el anterior. Si pedimos "un dragón volando sobre un castillo en llamas", el proceso arranca de algo irreconocible y, en unos segundos, termina en una imagen que responde a esa descripción.
+
+A la IA de imagen no le pasa el clásico "problema de la hoja en blanco", sino todo lo contrario: arranca con millones de puntos (todo ese ruido inicial) y los va depurando, en sucesivas "*passes*" o pasadas, hasta llegar a la imagen final. No hay una decisión de por dónde empezar, sino un proceso de refinamiento progresivo sobre algo que ya está ahí desde el primer momento, aunque todavía no tenga ninguna forma reconocible.
+
+
+## modelos_plataformas_1
+Como vimos con los modelos de texto, acá también conviene distinguir entre **modelo** y **plataforma**: el modelo es el algoritmo entrenado que genera la imagen, la plataforma es la interfaz desde la que accedemos a él. El panorama de modelos de imagen cambia todo el tiempo, con actualizaciones frecuentes y varias empresas compitiendo en paralelo —lo que hace difícil mantenerse al día con cada novedad—, pero hoy los más relevantes son los siguientes.
+
+## modelos_plataformas_imagen
+![](images/clase3_02_modelos.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Un banner surrealista con los logos de ChatGPT, Nano Banana, Midjourney, Adobe, FLUX y Stable Diffusion, integrados en una composición visual fantástica y experimental. Sin texto adicional.
+
+## modelos_plataformas_2
+Y, como pasaba con el texto, la relación entre modelo y plataforma no es uno a uno. **Adobe Firefly**, por ejemplo, además de su propio modelo (Firefly Image 5), da acceso a modelos de otras empresas (de Google, de OpenAI, de Black Forest Labs, entre otras), todos dentro de la misma interfaz. Otras plataformas, en cambio, están armadas alrededor de un solo modelo: es el caso de Midjourney, que hoy tiene su propio sitio web además del bot de Discord original, pero en los dos casos sigue siendo la única puerta de entrada a su modelo.
+
+
+## privados_abiertos_imagen
+La distinción entre modelos propietarios y de código abierto que vimos en la Clase 1 también aplica acá. Midjourney, GPT Image 2, Nano Banana, Adobe Firefly y Runway Gen-4 Image son modelos propietarios: los usamos a través de la plataforma de la empresa que los desarrolló, con sus condiciones de uso y sus límites gratuitos. Stable Diffusion y Flux, en cambio, tienen versiones de código abierto (hoy, por ejemplo, Flux.2 [dev]) que se pueden descargar y ejecutar en una computadora propia, lo que da más control sobre el proceso, pero exige más conocimiento técnico.
+
+## modelos_publicos_1
+Los modelos públicos como Stable Diffusion o Flux no tienen una app propia con interfaz de chat: para usarlos en la propia computadora hace falta instalar una plataforma que sepa interactuar con ellos, como [ComfyUI](https://github.com/comfyanonymous/ComfyUI) o [AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui). Esto demanda tiempo y conocimiento técnico: hay que instalar el software, descargar los archivos del modelo (varios GB) y, en general, contar con una placa de video con suficiente memoria.
+
+## modelos_publicos_2
+**ComfyUI** es una de esas plataformas: una interfaz gratuita y de código abierto que permite armar, de manera visual, flujos de trabajo con estos modelos abiertos de generación de imagen (y también de video), conectando distintos "bloques" de procesamiento como si fueran piezas de un circuito. No es una herramienta pensada para un uso cotidiano y sencillo (tiene una curva de aprendizaje bastante más alta que la de escribir un prompt en un chat), pero sirve para trabajar con Stable Diffusion o Flux de forma más artesanal, armando un flujo propio paso a paso: generación, retoque, escalado, en lugar de escribir un prompt y esperar un resultado cerrado.
+
+## modelos_publicos_imagen
+![Ejemplo de flujo de trabajo en ComfyUI](images/clase3_43_comfyui.jpg)
+Ejemplo de flujo de trabajo en ComfyUI
+
+## modelos_publicos_3
+Además del modelo base, se pueden descargar ^[LoRAs](Archivos chicos —unos pocos cientos de MB, contra los varios GB del modelo base— que ajustan un modelo ya entrenado para que reproduzca mejor un estilo, un personaje o un concepto puntual, sin necesidad de reentrenarlo desde cero.) que ajustan el resultado a un estilo, un personaje o un concepto específico. Tanto los modelos base como los LoRAs se descargan de repositorios como [Civitai](https://civitai.com/) o [Hugging Face](https://huggingface.co/models).
+
+## codigo_abierto_huggingface
+Para probar Flux o Stable Diffusion sin instalar nada, se puede usar un espacio gratuito de ^[Hugging Face](Una plataforma donde la comunidad de IA comparte modelos, código y demos que se pueden probar directo desde el navegador, sin instalar nada — funciona como un repositorio público de modelos de inteligencia artificial.): alcanza con abrir el link, escribir el prompt y esperar el resultado, todo desde el navegador.
+
+
+## cual_mejor_intro
+Esta es la pregunta del millón: no tiene una respuesta fija, depende de qué necesites y a quién le preguntes. En comunidades donde gente que usa estas herramientas todos los días comparte resultados y comparaciones —como [r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/) o [r/midjourney](https://www.reddit.com/r/midjourney/) en Reddit, o rankings armados con votación ciega de la comunidad como el [Image Arena de Artificial Analysis](https://artificialanalysis.ai/image/arena)— las opiniones cambian con cada actualización, pero hay algunas tendencias que se repiten lo suficiente como para servir de punto de partida.
+
+## mejor_fotorrealismo
+Para **fotorrealismo** (luz, textura, proporciones creíbles), Flux, Nano Banana y GPT Image 2 suelen dar los resultados más convincentes, con buen manejo de piel, materiales y profundidad de campo.
+
+## mejor_fotorrealismo_imagen
+@carousel
+![](images/clase3_12_fotorrealismo.jpg)
+
+![](images/clase3_12_fotorrealismo2.jpg)
+
+## mejor_ilustracion
+Para **ilustración y estética artística**, Midjourney sigue siendo la opción de mayor calidad gráfica y artística, con una identidad visual propia y muy reconocible que pocos modelos logran igualar.
+
+## mejor_ilustracion_imagen
+@carousel
+![](images/clase3_13_ilustracion.jpg)
+
+![](images/clase3_13_ilustracion2.jpg)
+
+![](images/clase3_13_ilustracion3.jpg)
+
+![](images/clase3_13_ilustracion4.jpg)
+
+![](images/clase3_13_ilustracion5.jpg)
+
+![](images/clase3_13_ilustracion6.jpg)
+
+## mejor_edicion
+Para **edición de imágenes**, puede ser útil usar Adobe Firefly ya que reúne varias herramientas dedicadas para esto. Nano Banana y Midjourney también funcionan bien para este uso, con la ventaja de resolverlo dentro del mismo chat.
+
+## mejor_edicion_imagen
+@carousel
+![](images/clase3_44_edicion.jpg)
+
+## mejor_consistencia
+Para **consistencia entre generaciones** (mantener el mismo personaje u objeto reconocible en distintas escenas o ángulos), Nano Banana es una de las opciones más usadas.
+
+## mejor_consistencia_imagen
+@carousel
+![](images/clase3_14_edicion_consistencia.jpg)
+
+![](images/clase3_14_edicion_consistencia2.jpg)
+
+![](images/clase3_14_edicion_consistencia3.jpg)
+
+![](images/clase3_14_edicion_consistencia4.jpg)
+
+## mejor_texto_legible
+Para **piezas con texto legible** (infografías, flyers, gráficas con datos), Nano Banana (sobre todo en su versión Pro) y GPT Image 2 suelen ser la opción más práctica, resolviendo bien un detalle que durante mucho tiempo fue un punto débil de la IA generativa de imagen.
+
+## mejor_texto_legible_imagen
+@carousel
+![](images/clase3_15_texto_legible.jpg)
+Modelo: GPT Image 2
+Prompt: Una infografía nutricional que describa una alimentación saludable. Debe ser profesional y con textos explicativos que muestren las vitaminas y virtudes de los alimentos, los distintos días de la semana. Debe contener flechas y elementos gráficos, y un listado de los alimentos
+
+## cual_mejor_cierre
+**Recomendación:** la mejor comparación es la que puedas hacer vos, probando los distintos modelos que tengan versiones gratuitas. Podés usar un mismo prompt y ver cómo responde cada uno, y cómo responden a distintos estilos (realista, ilustración, etc.).
+
+
+## gramatica_prompt_intro
+En la Clase 2 vimos que un prompt de texto se arma, en su versión más completa, con rol, contexto, acción, focalización, restricciones y formato de salida, y que suele escribirse como una instrucción o una pregunta.
+
+El prompt de imagen tiene una lógica distinta. No le hablamos al modelo pidiéndole que "haga" algo con un verbo en imperativo dirigido a una tarea intelectual (explicá, resumí, compará), sino que describimos directamente la escena que queremos ver. Por eso suele tener una estructura más telegráfica: una sucesión de elementos separados por comas, más que oraciones completas.
+
+Ahora bien, si el modelo o la plataforma son exclusivamente de imagen (Midjourney, Flux, Recraft), el prompt empieza directamente con la descripción de la imagen. Si el modelo es multimodal, como ChatGPT o Gemini, hay que indicarle primero que querés una imagen: podés escribir "Una imagen de…" al principio del prompt, o —como vimos en el video de la Clase 2— tocar el ícono "+" y elegir la opción Imagen, y ahí sí escribir directo la descripción.
+
+
+## elementos_intro
+Un prompt de imagen puede combinar estos elementos, en mayor o menor medida según cuánto control queramos tener sobre el resultado.
+
+## elemento_sujeto
+El qué central de la imagen: una persona, un animal, un objeto, un paisaje.
+
+## elemento_descriptores
+Adjetivos y detalles que precisan al sujeto: color, edad, material, textura.
+
+## elemento_accion
+Qué está haciendo o en qué estado se encuentra el sujeto.
+
+## elemento_contexto_ambiente
+Dónde y cuándo transcurre la escena: el lugar, la época, el clima, la hora del día.
+
+## elemento_especificaciones
+Detalles técnicos que definen cómo se ve la imagen: tipo de lente, ángulo de cámara, iluminación, resolución.
+
+## elemento_estilo
+La referencia visual general: un estilo artístico, una técnica, o el nombre de un ilustrador o corriente.
+
+## elemento_prompt_negativo
+Lo que NO tiene que aparecer en la imagen (texto, marcas de agua, ciertos colores), escrito en lenguaje natural o en el campo específico que ofrezca cada plataforma.
+
+
+## estructura_intro
+Uniendo estos elementos en un mismo prompt, una estructura posible es esta:
+
+## estructura_cierre
+No hace falta usar todos los elementos en cada prompt: se puede armar una versión simple con pocos, una intermedia, o una más compleja sumando descriptores y contexto —la misma lógica de niveles que vimos con el texto en la Clase 2.
+
+## estructura
+[Sujeto principal] + [Descriptores] + [Acción o estado] + [Contexto o ambiente] + [Especificaciones técnicas] + [Estilo artístico] + [Prompt negativo]
+
+## estructura_ejemplo
+Un gato robótico joven, jugando con un ovillo de lana roja, en una calle nocturna iluminada con luces de neón, enfoque selectivo, estilo steampunk, sin texto
+
+## estructura_breakdown
+→ Sujeto (un gato robótico joven), acción (jugando con un ovillo de lana roja), contexto (en una calle nocturna iluminada con luces de neón), especificación técnica (enfoque selectivo), estilo (steampunk) y prompt negativo (sin texto).
+
+## estructura_imagen
+![](images/clase3_09_gato_robotico.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Un gato robótico joven, jugando con un ovillo de lana roja, en una calle nocturna iluminada con luces de neón, enfoque selectivo, estilo steampunk, sin texto
+
+
+## reglas_gramaticales
+Además del orden general, hay algunas convenciones que suelen mejorar el resultado:
+
+- Si querés enfatizar un aspecto, podés ubicar los **adjetivos descriptivos** antes del objeto ("brillante cristal azulado"); los más técnicos, en cambio, funcionan mejor después.
+- Las **preposiciones** ayudan a fijar relaciones espaciales: "en" para ubicación, "con" para elementos adicionales, "sobre" o "bajo" para posición ("castillo en la montaña", "nubes sobre el océano").
+- Conviene usar **verbos en presente o gerundio** ("brilla en la oscuridad", "flotando sobre el agua") y evitar tiempos compuestos.
+- Las **especificaciones técnicas** (tipo de lente, iluminación, resolución) y el **estilo** suelen ir al final, separados por comas, y el estilo suele introducirse con fórmulas como "estilo…" o "inspirado en…".
+- No hace falta punto final ni signos de exclamación. El prompt de imagen se arma como una lista de elementos separados por comas, no como una oración cerrada.
+
+Ninguna de estas reglas es una ley fija ya que los modelos pueden interpretar las instrucciones de manera diversa, pero pueden ser un buen punto de partida para luego ir refinando los prompts.
+
+Para los **descriptores**, algunos ejemplos de vocabulario que suele ser útil tener a mano:
+
+- Textura y material: metálico, aterciopelado, translúcido, oxidado, brillante.
+- Iluminación: luz dorada, contraluz, neón, luz difusa, sombras marcadas.
+- Encuadre y cámara: primer plano, plano general, gran angular, enfoque selectivo, vista aérea.
+
+Y para el **contexto o ambiente**:
+
+- Lugar: interior, calle urbana, bosque, desierto, estudio fotográfico.
+- Época: futurista, medieval, años 80, contemporáneo.
+- Clima y momento del día: amanecer, atardecer, niebla, tormenta, noche despejada.
+
+Sobre el último elemento, el **prompt negativo**: en la Clase 2 lo vimos como una de las seis partes de un prompt de texto, lo que la respuesta NO debe incluir. En imagen, cada plataforma lo resuelve de un modo distinto. Stable Diffusion, Flux y las herramientas armadas sobre ComfyUI suelen tener un campo aparte, separado del prompt principal, pensado específicamente para listar lo que no debe aparecer. Midjourney usa un parámetro dentro del mismo prompt (*--no*, seguido de lo que se quiere excluir). En plataformas de tipo chat, como Nano Banana o GPT Image 2, no hay un campo separado: la exclusión se escribe directamente en el prompt, en lenguaje natural ("sin texto", "sin marcas de agua", "sin personas en la escena").
+
+Una advertencia práctica: en algunas plataformas, listar demasiadas exclusiones puede confundir al sistema, que a veces interpreta cada palabra de la lista por separado en lugar de en conjunto. Por eso, cuando se puede, suele funcionar mejor describir positivamente lo que sí se quiere —"con el cielo despejado" en vez de "sin nubes"— que acumular negaciones.
+
+
+## seed_imagen
+Otro parámetro habitual, sobre todo en las plataformas más técnicas, es el **seed**: un número que fija el punto de partida aleatorio del proceso de difusión que vimos antes. Repetir el mismo seed, con el mismo prompt y el mismo modelo, da como resultado una imagen igual o muy parecida a la anterior.
+
+Esto sirve para dos cosas concretas. Por un lado, para reproducir un resultado que salió bien: guardar el seed junto con el prompt es, en los hechos, la forma de "guardar la receta" de una imagen. Por otro, para aislar variables al ir ajustando un prompt. Si se mantiene el mismo seed y se cambia solo una palabra, es más fácil ver el efecto puntual de ese cambio, en vez de que también cambie todo lo demás por el azar de una nueva generación.
+
+No todas las plataformas lo exponen. Stable Diffusion, Flux y Midjourney permiten fijar el seed manualmente; Nano Banana no lo incluye dentro de la interfaz de Gemini, así que ahí no hay forma de reproducir exactamente un resultado anterior, solo de acercarse repitiendo el mismo prompt.
+
+Para probarlo sin instalar nada ni pagar, se pueden usar los mismos espacios gratuitos de Hugging Face que vimos en "Modelos y plataformas" (FLUX.1 schnell y Stable Diffusion 3.5 Large): los dos corren directo en el navegador y tienen un campo "Seed" con una opción de "randomize" para activar o desactivar. Generar dos veces el mismo prompt con el seed fijo, y después con "randomize" activado, es una forma rápida de ver la diferencia en la práctica.
+
+## seed_imagen_ejemplo
+![](images/clase3_16_seed.jpg)
+Prompt: Imágenes creadas en Midjourney. Al modificar el seed, se generan variaciones manteniendo los elementos indicados en el prompt.
+
+
+## ejemplos_intro
+Veamos cómo un mismo prompt cambia según su nivel de detalle, retomando la estructura que acabamos de ver: la misma idea de base, complejizando sobre todo los descriptores y el contexto.
+
+## ejemplo_simple
+Un dron mensajero plateado, sobrevolando un mercado callejero, estilo art déco
+
+## ejemplo_simple_imagen
+![](images/clase3_17_dron_simple.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Un dron mensajero plateado, sobrevolando un mercado callejero, estilo art déco
+
+## ejemplo_medio
+Un dron mensajero plateado con detalles dorados, sobrevolando un mercado callejero al atardecer, entre puestos con telas de colores, estilo art déco
+
+## ejemplo_medio_imagen
+![](images/clase3_18_dron_medio.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Un dron mensajero plateado con detalles dorados, sobrevolando un mercado callejero al atardecer, entre puestos con telas de colores, estilo art déco
+
+## ejemplo_complejo
+Un dron mensajero plateado, con las siguientes características:
+
+- Carcasa de metal pulido con relieves ornamentales dorados, de inspiración art déco
+- Cuatro hélices pequeñas dispuestas en simetría alrededor del cuerpo
+- Un compartimento translúcido en la parte inferior, con un sobre de papel visible adentro
+
+Escena: un mercado callejero al atardecer, con puestos de telas de colores y toldos a rayas, gente circulando de fondo desenfocada. Luz cálida y rasante, profundidad de campo baja, estilo art déco, sin texto ni marcas de agua.
+
+## ejemplo_complejo_imagen
+![](images/clase3_19_dron_complejo.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Un dron mensajero plateado, con carcasa de metal pulido con relieves ornamentales dorados de inspiración art déco, cuatro hélices pequeñas dispuestas en simetría alrededor del cuerpo, y un compartimento translúcido en la parte inferior con un sobre de papel visible adentro. Escena: un mercado callejero al atardecer, con puestos de telas de colores y toldos a rayas, gente circulando de fondo desenfocada. Luz cálida y rasante, profundidad de campo baja, estilo art déco, sin texto ni marcas de agua.
+
+## ejemplo_breakdown
+→ La versión simple alcanza para que el modelo tenga una idea clara de qué generar. La media agrega textura del material (detalles dorados), un contexto más específico (mercado al atardecer, puestos de telas) y refuerza el estilo con el ambiente lumínico. La compleja detalla características puntuales en una lista —relieves ornamentales, hélices, el sobre dentro del compartimento—, agrega el prompt negativo y define con precisión la composición (luz rasante, profundidad de campo). El resultado final va a ser mucho más parecido a lo que tenemos en la cabeza, y cada vez menos a la interpretación genérica que el modelo elige por default.
+
+
+## bloque_d_apertura
+La idea de este bloque es, por un lado, proponerte algunos usos de la IA generativa de imagen que puedas compartir en el aula con tus estudiantes —acordando de antemano en qué parte de la producción tendría sentido que usen IA generativa, y por qué conviene esa tecnología y no otras más tradicionales. Por otro lado, conocer este abanico de posibilidades también te puede servir a vos, para elaborar recursos gráficos y didácticos para tus propias clases.
+
+
+## usos_generacion
+¿Para qué puede servir esto en el trabajo docente y en el acompañamiento a los y las estudiantes? Venimos con esa pregunta desde la Clase 1. Algunos usos posibles, pensados desde una lógica de producción, más allá de generar una imagen suelta:
+
+## usos_generacion_referencias
+**Exploración artística y referencias visuales**: este es uno de los usos que más me interesa compartirles. Puede ser algo que complemente las maneras tradicionales de conseguir referencias —investigación, búsqueda en repositorios de internet, registros propios— para un tema, un período histórico o un concepto abstracto, sobre todo cuando no encontramos (o no existe) una foto o ilustración que lo represente bien. Ahora también podemos producir nuestras propias referencias con IA.
+
+## usos_generacion_referencias_imagen
+@carousel
+![](images/clase3_26_usogen_referencias.jpg)
+
+![](images/clase3_26_usogen_referencias2.jpg)
+
+![](images/clase3_26_usogen_referencias3.jpg)
+
+![](images/clase3_26_usogen_referencias4.jpg)
+
+![](images/clase3_26_usogen_referencias5.jpg)
+
+![](images/clase3_26_usogen_referencias6.jpg)
+
+## usos_generacion_ideacion
+**Ideación, prototipado y maquetado**: usar la IA para hacer bocetos de proyectos y visualizaciones esquemáticas, pudiendo generar también variaciones visuales sobre una misma idea.
+
+## usos_generacion_ideacion_imagen
+@carousel
+![](images/clase3_27_usogen_ideacion.jpg)
+Modelo: GPT Image 2
+Prompt: Diseño conceptual de una puesta en escena teatral para una obra contemporánea. Vista del escenario desde la platea, con varios actores ubicados en diferentes posiciones y realizando distintas acciones. Explorar distintas posibilidades de composición, movimientos, alturas y relaciones entre los personajes y el espacio. Estética de boceto de dirección escénica, con líneas de movimiento, pequeñas variantes de la misma escena y anotaciones visuales de trabajo. Aspecto de proceso creativo, no de resultado final. Fondo claro, composición limpia, sin texto legible.
+
+![](images/clase3_27_usogen_ideacion2.jpg)
+Modelo: GPT Image 2
+Prompt: Exploración conceptual de vestuario para una obra teatral. Una misma persona representada en varias propuestas diferentes de vestuario, organizadas como una hoja de exploración de diseño. Variaciones de silueta, materiales, colores, accesorios y estilos, manteniendo siempre el mismo personaje. Estética de bocetos profesionales de diseño de vestuario, con dibujos a mano combinados con pequeñas visualizaciones más detalladas de cada alternativa. Debe transmitir un proceso de búsqueda y comparación de posibilidades, no un diseño definitivo. Fondo claro, composición limpia, sin texto legible.
+
+![](images/clase3_27_usogen_ideacion3.jpg)
+Modelo: GPT Image 2
+Prompt: Exploración conceptual de un espacio arquitectónico para un proyecto cultural contemporáneo. Mostrar una misma planta o espacio interior desarrollado en varias alternativas de diseño: diferentes distribuciones, mobiliario, circulación, iluminación y materiales. Las propuestas deben aparecer como distintas posibilidades surgidas durante una etapa de ideación y prototipado. Estética de bocetos y visualizaciones arquitectónicas conceptuales, combinando planta, perspectiva y pequeños estudios volumétricos. Aspecto de cuaderno de trabajo de un estudio de arquitectura, todavía en proceso de desarrollo, no como proyecto terminado. Fondo claro, composición limpia, sin texto legible.
+
+## usos_generacion_vistas
+**Vistas y hojas de modelo (model sheets)**: generar un mismo personaje, objeto o espacio desde distintos ángulos (de frente, de perfil, desde arriba) para usarlo como referencia de modelado 3D, en producciones de live action o en videojuegos, o armar una hoja de modelo con los elementos y variantes de un personaje.
+
+## usos_generacion_vistas_imagen
+@carousel
+![](images/clase3_28_usogen_vistas.jpg)
+Modelo: Gemini 3 (Nano Banana 2)
+Prompt: Crea las vistas para modelado 3D
+
+## usos_generacion_editorial
+**Exploración editorial y piezas de comunicación**: portadas, gráficas para redes, branding de un proyecto.
+
+## usos_generacion_editorial_imagen
+@carousel
+![](images/clase3_30_usogen_editorial.jpg)
+Modelo: GPT Image 2
+Prompt: Una composición editorial horizontal 16:9 sobre creatividad, cultura visual e inteligencia artificial, sin que parezca un flyer ni una presentación.
+Título: CREAR CON INTELIGENCIA ARTIFICIAL — Bajada: Ideas, imágenes y posibilidades en la era de la generación — Cita: "La herramienta también transforma la manera de imaginar."
+Estética de collage editorial contemporáneo y asimétrico, combinando una persona frente a una computadora con fotografías, dibujos, recortes, texturas y elementos digitales, con los textos integrados a la composición.
+Paleta de blanco, negro y tonos de papel, con un único color de acento — inspirada en revistas de diseño, arte y cultura visual, sin estética corporativa ni de flyer.
+
+![](images/clase3_30_usogen_editorial2.jpg)
+Modelo: GPT Image 2
+Prompt: Una composición editorial horizontal 16:9 sobre creatividad, cultura visual e inteligencia artificial, sin que parezca un flyer ni una presentación.
+Título: CREAR CON INTELIGENCIA ARTIFICIAL — Bajada: Ideas, imágenes y posibilidades en la era de la generación — Cita: "La herramienta también transforma la manera de imaginar."
+Estética de collage editorial contemporáneo y asimétrico, combinando una persona frente a una computadora con fotografías, dibujos, recortes, texturas y elementos digitales, con los textos integrados a la composición.
+Paleta de blanco, negro y tonos de papel, con un único color de acento — inspirada en revistas de diseño, arte y cultura visual, sin estética corporativa ni de flyer.
+
+## usos_generacion_ajustes
+**Ajustar un aspecto puntual de una imagen ya generada**: modificar la iluminación, el clima u otro elemento específico, sin tocar el resto de la composición ni cambiar el estilo general (cambiar el estilo en sí es otra cosa, la vemos más adelante en "Cambio de estilo").
+
+## usos_generacion_ajustes_imagen
+@carousel
+![](images/clase3_31_usogen_ajustes.jpg)
+Prompt: Composición realizada combinando fotografía y render 3D de una bandera.
+
+![](images/clase3_31_usogen_ajustes2.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Mejora la integración de la imagen con una luz de sol ingresando por izquierda de cuadro, estilo cinematográfico
+
+
+## usos_edicion
+Además de generar imágenes desde cero, buena parte del uso cotidiano de estas herramientas es de **edición** sobre una imagen ya existente:
+
+## usos_edicion_borrado
+**Borrar fondos o elementos** de una imagen.
+
+## usos_edicion_borrado_imagen
+@carousel
+![](images/clase3_32_usoed_borrado.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Pintura al óleo estilo ilustración western: hombre de mediana edad con bigote, sombrero de ala ancha beige, saco largo marrón gastado, chaleco gris y cinturón de cuero con hebilla, de pie mirando hacia abajo con una rienda en la mano. A su lado, un caballo alazán ensillado junto a un corral de madera. A la izquierda, un granero de madera viejo con techo de chapa oxidada. Fondo: pastizal seco dorado, montañas violáceas, cielo azul con nubes blancas. Luz de sol fuerte con sombras marcadas, pinceladas visibles, paleta cálida de ocres y marrones contra azul. Formato 16:9.
+
+![](images/clase3_32_usoed_borrado2.jpg)
+Modelo: Firefly Image 5
+Prompt: Fondo eliminado utilizando la herramienta Borrar fondo de Adobe Firefly.
+
+## usos_edicion_agregar
+**Agregar elementos nuevos** que se integren al estilo visual ya existente.
+
+## usos_edicion_agregar_imagen
+![](images/clase3_33_usoed_agregar.jpg)
+@split
+Modelo: Firefly Image 5
+**Imagen 1:** portada de single creada en Adobe Firefly.
+**Imagen 2:** agregado de lobos, también en Adobe Firefly.
+
+## usos_edicion_props
+**Ajustar props** u objetos puntuales dentro de una escena: reemplazarlos, escalarlos, moverlos, expandir el encuadre alrededor de ellos.
+
+## usos_edicion_props_imagen
+@carousel
+![](images/clase3_34_usoed_props.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: un perro flotando en el espacio con traje de astronauta, estilo cinematográfico hiperrealista
+
+![](images/clase3_34_usoed_props2.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Reemplaza el satélite por un hueso típico de perro
+
+## usos_edicion_cierre
+Estas funciones suelen combinar la escritura de prompts con señalar directamente, dentro de la misma imagen, qué parte querés modificar y cómo.
+
+
+## usos_upscaling_intro
+Otro uso frecuente, menos creativo pero muy práctico: usar la IA para resolver el problema de la resolución insuficiente. En vez de simplemente estirar los píxeles que ya tiene una imagen, el modelo genera detalle nuevo y coherente con la imagen original para agrandarla. Esta función suele llamarse *upscaling* (aumento de resolución) o *escalado*.
+
+Hay dos maneras de acceder a esto. Algunas plataformas lo tienen integrado: Midjourney tiene sus propios botones de Upscale (Subtle y Creative) para ampliar cualquier imagen generada, y Adobe Firefly ofrece una función equivalente llamada Generative Upscale. También existen herramientas *standalone* —instalables en la computadora, pensadas específicamente para esto y no solo para imágenes generadas por IA—, como [Topaz Gigapixel](https://www.topazlabs.com/topaz-gigapixel) (de pago) o [Upscayl](https://upscayl.org/) (gratuita y de código abierto).
+
+## usos_upscaling_imagen
+![Comparación de una imagen antes y después de aplicar upscaling](images/clase3_35_upscaling.jpg)
+Antes / después de ampliar una imagen con IA, sin perder nitidez
+
+## usos_formatos_intro
+Algo parecido pasa con el formato: la misma imagen suele necesitarse en proporciones distintas según dónde se vaya a publicar. El feed de Instagram, por ejemplo, pide un formato cuadrado o rectangular (1:1 o 4:5), mientras que una Story necesita un formato vertical completo (9:16) —dos proporciones bien distintas dentro de la misma plataforma—. Antes había que recortarla a mano, y a veces eso implicaba perder una parte importante de la composición; hoy varios modelos pueden extender o readaptar una imagen a una proporción distinta generando contenido nuevo en los bordes —la misma lógica del outpainting que vimos antes— en lugar de simplemente recortarla. Los formatos más habituales con los que te vas a encontrar:
+
+## usos_formatos_imagen
+@carousel
+![](images/clase3_36_formatos.jpg)
+Modelo: GPT Image 2
+Prompt: imagen 1:1 para Instagram de un estudio de cerámica contemporánea, con estética editorial y artística: vasijas, tazas y piezas en proceso, arcilla húmeda, herramientas y manos trabajando.
+Fotografía cercana, luz lateral, textura artesanal, paleta de arcilla, beige, crema y tierra.
+Textos integrados a la composición: HECHO A MANO — La forma también cuenta una historia — "Cada pieza nace de un proceso lento, imperfecto y único. Modelar, transformar, hornear y volver a empezar." — Taller abierto · Cupos disponibles.
+
+![](images/clase3_36_formatos2.jpg)
+Modelo: GPT Image 2
+**Imagen 1 (9:16):** adaptar la pieza original de Instagram (1:1) a formato vertical para Story, manteniendo diseño, identidad visual, colores, tipografías, imágenes y textos, reorganizando los elementos para aprovechar el formato vertical.
+**Imagen 2 (16:9):** adaptar la misma pieza a formato horizontal, con el mismo criterio, sin recortar ni estirar la imagen.
+
+## usos_formatos_cierre
+Conviene tener estos formatos en cuenta desde el momento en que se escribe el prompt, para elegir de entrada el modelo o la herramienta que permita generar —o adaptar después— en la proporción que efectivamente vamos a necesitar.
+
+
+## usos_estilo_intro
+Dentro de la edición, un uso frecuente es la **estilización**: aplicarle a una imagen ya existente (una foto, un dibujo, un logo) una estética distinta a la original, manteniendo su estructura.
+
+Cada tanto, las plataformas de imagen masifican en redes un proceso de estilización puntual —una forma, entre otras cosas, de viralizar el propio modelo con fines comerciales—: pasamos por la estética Simpsons, después por la del Estudio Ghibli, y más recientemente por una estética ochentosa.
+
+## usos_estilo_moda_imagen
+@carousel
+![](images/clase3_37_estilo.jpg)
+Modelo: Flux Schnell
+Prompt: Pintura al óleo estilo ilustración western: retrato de un hombre de mediana edad, pelo canoso despeinado y barba corta, mirada cansada y seria hacia cámara, campera de cuero marrón gastada y camisa blanca. Está agachado en primer plano a la derecha. Fondo: rancho de madera abandonado, pastizal seco dorado, montañas azuladas a lo lejos, cielo azul con grandes nubes blancas. Luz de mediodía intensa, pinceladas visibles, paleta cálida de ocres y naranjas contra azul. Formato 16:9.
+
+![](images/clase3_37_estilo2.jpg)
+Modelo: GPT Image 2
+Prompt: Adaptar a estética Studio Ghibli. Mantener la identidad del personaje y adaptar la ropa, el peinado, la iluminación y el fondo de estudio al estilo Studio Ghibli. El fondo debe ser similar al de las películas de Miyazaki.
+
+![](images/clase3_37_estilo3.jpg)
+Modelo: GPT Image 2
+Prompt: Adaptar a estética de los años 80. Mantener la identidad exacta del personaje y adaptar la ropa, el peinado, la iluminación y el fondo de estudio al estilo analógico de mediados de los 80.
+
+![](images/clase3_37_estilo4.jpg)
+Modelo: GPT Image 2
+Prompt: Adaptar a estética de los años 80. Mantener la identidad exacta del personaje y adaptar la ropa, el peinado, la iluminación y el fondo de estudio al estilo analógico de mediados de los 80. El fondo debe ser un bar ochentoso.
+
+## usos_estilo_moda2_texto
+Otro ejemplo, esta vez sobre una pieza informativa en lugar de un retrato: la misma lámina sobre el aparato digestivo, reestilizada de dos maneras distintas.
+
+## usos_estilo_moda2_imagen
+@carousel
+![](images/clase3_37_estilo_v2.jpg)
+
+![](images/clase3_37_estilo_v2_2.jpg)
+
+## usos_estilo_referencia_texto
+También podemos usar esta misma herramienta para estilizar nuestras propias imágenes con estilos bien distintos entre sí, y para generar referencias artísticas sobre algo concreto.
+
+## usos_estilo_referencia_imagen
+![](images/clase3_38_estilo_referencia.jpg)
+Una misma imagen estilizada como referencia artística sobre un tema concreto
+
+## usos_flyer_intro
+Hoy las redes están repletas de flyers genéricos hechos con IA: esa estética reconocible de tipografías grandes, degradados y elementos decorativos repetidos, que en general no tiene mucho que ver con la identidad de quien lo publica. Una posibilidad para evitar ese resultado genérico y hacer flyers realmente personalizados es proporcionarle al modelo una estructura bocetada propia, en lugar de dejar que decida la composición.
+
+## usos_flyer_generico_imagen
+![](images/clase3_39_flyer_generico.jpg)
+Modelo: GPT Image 2
+**Imagen 1:** flyer genérico estilo IA para un cumpleaños, colorido y alegre.
+**Imagen 2:** flyer para una casa de empanadas, promocionando sus distintos sabores y variedades.
+**Imagen 3:** flyer genérico estilo IA para una exposición de sillas, con estética sobria y elegante.
+
+## usos_flyer_esquema
+En la Clase 1 comparamos pedir "hacé un flyer para este evento" con aportar un esquema propio de composición: dónde van las cajas de texto, qué jerarquía tiene la información, qué paleta de colores. Con imagen, ese esquema propio puede ser un boceto a mano.
+
+Ese boceto se puede subir como imagen de referencia (imagen-a-imagen) junto con un prompt que describa el estilo visual que queremos, y el modelo va a respetar la estructura que definimos en lugar de inventar una propia. Es una forma simple de que el resultado tenga nuestra impronta desde el arranque, no recién en los ajustes posteriores.
+
+## usos_flyer_resultado_imagen
+@carousel
+![](images/clase3_05_flyer_boceto.jpg)
+Boceto propio, con la estructura de composición definida a mano
+
+![](images/clase3_06_flyer_resultado.jpg)
+@split
+Modelo: GPT Image 2
+**Imagen 1:** flyer para un Taller de Luthería, dirigido a jóvenes y adultos interesados en música, diseño y fabricación de instrumentos, generado a partir del boceto como guía estricta de composición. Título: TALLER DE LUTHERÍA. Subtítulo: Diseñá y construí tu propio instrumento. Imagen principal: una guitarra eléctrica parcialmente desmontada y en construcción, con madera, piezas, herramientas y planos técnicos. Estética de afiche editorial contemporáneo, paleta de papel, madera, negro y gris con un color de acento.
+**Imagen 2:** flyer para un Taller de Customización de Zapatillas, dirigido a jóvenes interesados en diseño, moda y cultura urbana, generado con el mismo boceto como guía. Título: CUSTOM LAB. Subtítulo: Diseñá · Intervení · Transformá. Imagen principal: una zapatilla blanca intervenida a mano, con pinceles, marcadores y materiales alrededor. Estética urbana, colorida y DIY, inspirada en street art y graffiti.
+
+![](images/clase3_06_flyer_resultado2.jpg)
+@split
+Modelo: GPT Image 2
+**Imagen 1:** flyer para un Festival de Música Electrónica, dirigido a un público joven, generado con el mismo boceto como guía. Título: FRECUENCIA. Subtítulo: Festival de Música Electrónica. Imagen principal: un DJ frente a una multitud, con luces, pantallas y formas abstractas. Estética contemporánea y audiovisual, con neón y degradados.
+**Imagen 2:** flyer para un Taller de Videojuegos, dirigido a jóvenes interesados en imaginar personajes y mundos, generado con el mismo boceto como guía. Título: TALLER DE VIDEOJUEGOS. Subtítulo: Inventá. Diseñá. Jugá. Imagen principal: una maqueta física de un universo de videojuego, con personajes y objetos de cartón, bloques y plastilina. Estética pop, lúdica y artesanal, inspirada en juguetes y stop motion.
+
+## usos_flyer_resultado2_imagen
+@carousel
+![](images/clase3_05_flyer_boceto2.jpg)
+Fotografía de otro boceto dibujado a mano, con una distribución alternativa de los elementos
+
+![](images/flyer_resultado2_1.jpg)
+Modelo: GPT Image 2
+Flyer para la muestra de arte experimental "Otras formas de mirar", generado a partir del segundo boceto como guía. Título: OTRAS FORMAS DE MIRAR. Subtítulo: Muestra de arte experimental. Imagen principal: un ojo ilustrado combinado con formas y manchas de acuarela. Estética editorial con tipografía manuscrita.
+
+![](images/flyer_resultado2_2.jpg)
+Modelo: GPT Image 2
+Flyer para la muestra de fotografía urbana "Ciudad / Fragmentos", generado con el mismo boceto como guía. Título: CIUDAD / FRAGMENTOS. Subtítulo: Muestra de fotografía urbana. Imagen principal: fotos callejeras en blanco y negro combinadas en una composición diagonal, con tira de contactos estilo Kodak.
+
+![](images/flyer_resultado2_3.jpg)
+Modelo: GPT Image 2
+Flyer para la muestra de fotografía urbana "Ciudad / Fragmentos", generado con el mismo boceto como guía.
+
+![](images/flyer_resultado2_4.jpg)
+Modelo: GPT Image 2
+Flyer para la muestra de fotografía urbana "Ciudad / Fragmentos", generado con el mismo boceto como guía.
+
+
+## multi_referencia
+Hasta ahora vimos ejemplos de generación imagen-a-imagen compartiendo una única imagen de referencia. Pero también podemos trabajar con varias imágenes a la vez, y que cada una cumpla un rol distinto dentro de la misma generación: una imagen puede aportar la estructura o composición, otra el estilo visual, otra la paleta de colores, otra un personaje o rostro que se quiere mantener igual en distintas escenas.
+
+Esto no es exclusivo de un modelo: la mayoría de los modelos de imagen actuales (Nano Banana, GPT Image 2 y Flux, entre otros) permiten combinar varias imágenes de referencia en una misma generación, cada una cumpliendo una función distinta dentro del resultado final. Esto abre posibilidades muy concretas para el trabajo docente: mantener la cara de un personaje mientras cambia de escenario, aplicar la paleta de colores de una pieza institucional a una imagen nueva, o combinar la composición de un boceto propio con el estilo visual de otra referencia.
+
+## multi_referencia_imagen
+@carousel
+![](images/clase3_40_multireferencia.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: una figurita horizontal de álbum de cromos Panini, con estética y acabado de cromo nuevo, sin textos ni nombres de jugadores.
+Reemplazar el logo PANINI por YUGOSLAVIA (misma tipografía y estética del original), usar el escudo de AFA con tres estrellas arriba, eliminar nombres y números de jugadores, cambiar el número de cromo por 10 y agregar el código QR en la esquina inferior derecha.
+
+![](images/clase3_40_multireferencia2.jpg)
+Modelo: GPT Image 2
+Prompt: Crear una nueva imagen combinando las tres imágenes de referencia: Imagen 1: utilizar como referencia del escenario del bar, manteniendo su arquitectura, mobiliario, distribución, perspectiva, iluminación y atmósfera. Imagen 2: utilizar como referencia para el personaje, manteniendo su apariencia, vestuario, proporciones y estilo. Imagen 3: utilizar como referencia para la flauta traversa, pero eliminarla completamente de la escena final. El personaje debe estar sentado en uno de los asientos que ya existen en el bar de la primera imagen. No agregar ninguna silla, banqueta ni asiento nuevo, y no modificar la distribución del mobiliario existente. El personaje no debe mirar directamente a cámara ni mantener la pose exacta de la segunda imagen. Debe estar sentado de espaldas a cámara, ligeramente girado hacia un lado, permitiendo ver parcialmente su rostro y su acción. El personaje está comiendo un taco. Debe sostener un taco con las manos y estar llevándolo hacia la boca, en una postura natural que permita entender claramente que está comiendo. El taco debe verse claramente y tener una apariencia realista y apetecible. Adaptar la postura y orientación del personaje a esta nueva acción, manteniendo su identidad visual, vestuario y características originales. Integrar perfectamente al personaje en el bar, respetando la perspectiva, escala, iluminación, sombras, profundidad y atmósfera de la primera imagen. No incluir la flauta. No agregar mobiliario. No crear un asiento nuevo. No hacer que el personaje mire a cámara. No reproducir la pose original de la segunda referencia.
+
+
+## combinacion_modelos
+Como vimos en la Clase 2, un LLM puede funcionar como asistente para redactar y traducir prompts, y esto aplica también acá. Si tenés una idea en la cabeza pero te cuesta encontrar las palabras exactas —qué tipo de luz, qué composición, qué referencia estilística—, podés pedirle a un modelo de texto que te ayude a convertir esa idea en un prompt de imagen más preciso, o que te lo traduzca al inglés (todavía hoy, muchos modelos de imagen responden mejor en inglés). De hecho, algunas plataformas ya lo hacen solas: cuando le pedís una imagen a ChatGPT, reescribe tu prompt y lo expande antes de generar, sin que tengas que pedírselo.
+
+También existen herramientas específicas para esto, como [PromptPerfect](https://promptperfect.jina.ai/), pensada para optimizar y traducir prompts de imagen.
+
+Es la misma lógica de "combinación de modelos" que vamos a retomar en la Clase 5, cuando integremos varias herramientas en un mismo proceso de producción.
+
+
+## criterio_propio
+Ya lo dijimos al principio de la clase: la IA generativa de imagen es una herramienta. Y como con cualquier herramienta, cuanto más sabemos de aquello en lo que la estamos usando, más eficaz se vuelve la interacción con el modelo. Esto no significa que haya que ser director o directora de fotografía para lograr una buena composición o una situación lumínica particular, pero usar la IA desde el saber disciplinar amortiza la interacción y acerca el resultado a lo que buscamos. Por eso conviene hacerse una pregunta antes de escribir el primer prompt: ¿por qué voy a usar la IA para lo que estoy produciendo? ¿Es la herramienta adecuada para eso?
+
+Después está cómo nos posicionamos frente a lo que el modelo nos devuelve. Difícilmente el resultado sea exactamente lo que le pedimos, ya que es habitual que haya algún aspecto que no coincide con la idea que teníamos en la cabeza. Otras veces se acerca, pero no del todo. Es probable que lo que nos devuelva sea algo deslumbrante, espectacular, pero sí es importante que nos preguntemos si es lo que estábamos buscando, o si esa nueva imagen deslumbrante me resulta útil para lo que estoy produciendo. También es posible que de una misma interacción nos resulte útil una imagen entera, o solo una parte de ella —un fragmento que podemos sustraer, combinar o modificar para acercarnos a lo que buscábamos—. La pregunta que vale la pena hacerse frente a cada resultado es esa: ¿esta imagen es la expresión de mi búsqueda?
+
+
+## voz_propia_imagen
+Construir una voz propia en imagen tiene que ver con volver una y otra vez sobre el prompt, ajustarlo, combinarlo con referencias propias, editar el resultado, mezclarlo con otras imágenes, y no quedarse con la primera propuesta. Para nuestros y nuestras estudiantes, esto es también una oportunidad pedagógica: pedirles que documenten su proceso —qué prompts probaron, qué descartaron, qué cambiaron y por qué— es una forma concreta de que ese criterio propio quede a la vista, y no solo el resultado final.
+
+![](images/clase3_07_vozpropia.jpg)
+Modelo: GPT Image 2
+Prompt: Un pincel de acuarela apoyado sobre una tablet digital que muestra una imagen a medio generar, con gotas reales de pintura cayendo sobre la pantalla e integrándose con la imagen digital como si fueran parte de ella. Estética híbrida entre lo analógico y lo digital, luz natural, composición cercana y detallada. Sin texto.
+
+
+## modelos_hibridos
+Otra manera de pensar la IA de imagen, sobre todo en el trabajo creativo, es no como un reemplazo del resto de las técnicas, sino como una pieza más dentro de un proceso más amplio: pensar en **modelos híbridos**, donde confluyen técnicas de producción de imagen diversas —analógicas, digitales tradicionales e IA— y cada una aporta lo que mejor sabe hacer. Un boceto a mano, un retoque en Photoshop y una generación con IA pueden convivir perfectamente en la producción de una misma pieza.
+
+
+## cierre_1
+Llegamos al final de la Clase 3. Si aún no enloqueciste, entonces sabés cómo funciona la IA generativa de imagen (un poqui), qué modelos y plataformas se pueden usar según lo que necesites, la gramática específica de un prompt de imagen, y algunos usos concretos, como los aplicados a la exploración y el desarrollo de un proyecto.
+
+Por último, si querés incorporar el *uso* de la IA en el aula (o no te queda otra), te comparto algunas ideas:
+
+## proxima_clase
+En la próxima clase pasamos a video, audio y otros formatos generativos: qué pueden hacer hoy los modelos de generación de video, cómo se adapta la gramática del prompt a un formato que se mueve en el tiempo, y algunas herramientas de generación de voz y música. ¡Nos vemos!
