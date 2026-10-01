@@ -51,7 +51,7 @@
       </li>
 
       <li class="nav-group">
-        <a class="nav-group__link" href="#bloque-b"><span class="nav-bullet"></span>Bloque B · Video: qué es y cómo funciona</a>
+        <a class="nav-group__link" href="#bloque-b"><span class="nav-bullet"></span>Bloque B · Qué es y cómo funciona la IA de video</a>
         <ul class="nav-subgroup">
           <li><a href="#generacion-vs-edicion">Generar desde cero o editar</a></li>
           <li><a href="#tecnicas-basicas">Las técnicas básicas</a></li>
@@ -62,6 +62,7 @@
       <li class="nav-group">
         <a class="nav-group__link" href="#bloque-c"><span class="nav-bullet"></span>Bloque C · Modelos y plataformas de video</a>
         <ul class="nav-subgroup">
+          <li><a href="#videos-en-accion">Para verlos en acción</a></li>
           <li><a href="#sora">El caso Sora</a></li>
           <li><a href="#herramientas-edicion">Herramientas de edición con IA</a></li>
         </ul>
@@ -151,10 +152,20 @@
            BLOQUE B
            ================================================================= -->
       <section class="block" id="bloque-b">
-        <h2>Bloque B — Video: qué es y cómo funciona</h2>
+        <h2>Bloque B — Qué es y cómo funciona la IA de video</h2>
 
         <!-- Intro sin subtítulo propio — se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="bloque_b_intro"></div>
+
+        <!-- Recomendación destacada (escribir los prompts en inglés) —
+             mismo componente .fact-box que "¿Sabías que?", con otro
+             ícono/label para que se lea como recomendación y no como
+             dato de color. El texto de adentro se edita en
+             contenido.txt (clave recomendacion_ingles). -->
+        <div class="fact-box">
+          <p class="fact-box__label"><span aria-hidden="true">📌</span> Recomendación</p>
+          <p data-key="recomendacion_ingles"></p>
+        </div>
 
         <h3 id="generacion-vs-edicion">Generar desde cero o editar lo que ya existe</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
@@ -366,9 +377,37 @@
           </div>
         </details>
 
-        <!-- Placeholder de video: Diego puede pegar acá un demo reel o
-             comparación de modelos de video. -->
-        <div class="content-block" data-key="modelos_video_demo"></div>
+        <h3 id="videos-en-accion">Para verlos en acción</h3>
+        <!-- Galería de videos de ejemplo: oficiales de cada empresa más
+             algunos más artísticos. Agrupados con .mini-heading (chico,
+             hardcodeado) por plataforma; el video en sí (título + link)
+             se edita en contenido.txt, una clave por video. -->
+        <p data-key="videos_en_accion_intro"></p>
+
+        <p class="mini-heading">Midjourney</p>
+        <div class="content-block" data-key="video_midjourney"></div>
+
+        <p class="mini-heading">Seedance</p>
+        <div class="content-block" data-key="video_seedance"></div>
+
+        <p class="mini-heading">Runway</p>
+        <div class="content-block" data-key="video_runway_1"></div>
+        <div class="content-block" data-key="video_runway_2"></div>
+        <div class="content-block" data-key="video_runway_3"></div>
+        <div class="content-block" data-key="video_runway_4"></div>
+
+        <p class="mini-heading">Kling AI</p>
+        <div class="content-block" data-key="video_kling"></div>
+
+        <p class="mini-heading">MiniMax</p>
+        <div class="content-block" data-key="video_minimax"></div>
+
+        <p class="mini-heading">Veo</p>
+        <div class="content-block" data-key="video_veo_1"></div>
+        <div class="content-block" data-key="video_veo_2"></div>
+
+        <p class="mini-heading">Para comparar</p>
+        <div class="content-block" data-key="video_comparativa"></div>
 
         <h3 id="sora">El caso Sora</h3>
         <!-- Recuadro "¿Sabías que?" — el texto de adentro se edita en
@@ -571,7 +610,7 @@
               </div>
               <div class="platform-card__row">
                 <p class="platform-card__label">Se usa para</p>
-                <p>Composición instrumental a partir de un estilo o de una referencia en MIDI. A diferencia de Suno o Udio, no genera letra ni voz, solo música instrumental</p>
+                <p>Generación de música instrumental a partir de un estilo o de una referencia en MIDI. A diferencia de Suno o Udio, no genera letra ni voz, solo música instrumental</p>
               </div>
               <div class="platform-card__row">
                 <p class="platform-card__label">Dónde funciona</p>
