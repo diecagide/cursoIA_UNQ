@@ -132,8 +132,40 @@ Para **fotorrealismo** (luz, textura, proporciones creíbles), Flux, Nano Banana
 ## mejor_fotorrealismo_imagen
 @carousel
 ![](images/clase3_12_fotorrealismo.jpg)
+Modelo: GPT Image 2.5 Flare
+Prompt: El general José de San Martín, en su caballo, combate con su ejército a los realistas españoles, estilo hiperrealista
 
 ![](images/clase3_12_fotorrealismo2.jpg)
+Modelo: GPT Image 2.5 Flare
+Prompt: Primer plano de perfil de un campesino abatido, con otros campesinos agachados detrás y un castillo en lo alto de una colina al fondo. Cielo nublado, estética de Game of Thrones, foto hiperrealista.
+
+![](images/clase3_12_fotorrealismo3.jpg)
+Modelo: GPT Image 2.5 Flare
+Prompt: Una calle de un pueblo mongol medieval, llena de pobladores caminando entre carpas redondas y puestos de mercado. Estandartes azules ondean en postes de madera y un jinete a caballo se acerca a las puertas fortificadas del fondo, con montañas nevadas detrás. Foto hiperrealista y cinematográfica, luz natural de día.
+
+![](images/clase3_12_fotorrealismo4.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Un hombre sentado solo en una habitación de hotel antigua, frente a un teléfono rojo sobre una pequeña mesa. Imagen hiperrealista, atmósfera de surrealismo psicológico y misterio, iluminación cinematográfica contrastada, sombras profundas, composición inquietante, detalles extraños y sutiles, textura de película analógica, estética onírica y perturbadora.
+
+![](images/clase3_12_fotorrealismo5.jpg)
+Modelo: Midjourney
+Prompt: Varias botas de distintos colores cuelgan de un cable de luz, sobre un fondo de edificios abandonados entre la niebla. Foto hiperrealista, atmósfera decadente.
+
+![](images/clase3_12_fotorrealismo6.jpg)
+Modelo: Midjourney
+Prompt: Una calle de ciudad al atardecer, con autos antiguos circulando y un edificio ornamentado e iluminado al fondo. Luces cálidas, calle mojada que refleja las luces, foto hiperrealista.
+
+![](images/clase3_12_fotorrealismo7.jpg)
+Modelo: Midjourney
+Prompt: Un mapa del mundo antiguo, con tonos sepia y rojizos, dentro de un marco de madera tallado, sobre una pared de madera. Foto hiperrealista, estilo vintage.
+
+![](images/clase3_12_fotorrealismo8.jpg)
+Modelo: Midjourney
+Prompt: Un callejón de noche, bajo la lluvia, con ropa colgada entre los edificios y ventanas iluminadas. Atmósfera decadente, tonos fríos azul-verdosos, foto hiperrealista.
+
+![](images/clase3_12_fotorrealismo9.jpg)
+Modelo: Midjourney
+Prompt: Una calle de ciudad soleada, con un auto rojo antiguo, plantas y flores en las veredas, y pájaros de papel volando en el cielo. Edificio con cúpula al fondo, foto hiperrealista, colores cálidos
 
 ## mejor_ilustracion
 Para **ilustración y estética artística**, Midjourney sigue siendo la opción de mayor calidad gráfica y artística, con una identidad visual propia y muy reconocible que pocos modelos logran igualar.
@@ -141,16 +173,36 @@ Para **ilustración y estética artística**, Midjourney sigue siendo la opción
 ## mejor_ilustracion_imagen
 @carousel
 ![](images/clase3_13_ilustracion.jpg)
+Modelo: Midjourney
+Prompt: Una locomotora a vapor antigua avanzando a toda velocidad sobre las vías, salpicando agua y dejando una enorme nube de humo naranja y blanco detrás. Ilustración digital dinámica, cielo celeste con nubes, sensación de movimiento
 
 ![](images/clase3_13_ilustracion2.jpg)
+Modelo: Midjourney
+Prompt: Un árbol con hojas, flores y pájaros de colores vivos, con dos soles brillando detrás entre un fondo de manchas de acuarela azul y verde, y más flores creciendo en el pasto debajo. Ilustración en acuarela, estilo infantil y colorido.
 
 ![](images/clase3_13_ilustracion3.jpg)
+Modelo: Midjourney
+Prompt: Un conjunto de casas angostas y coloridas, apiladas una junto a otra como un pueblo en la ladera de una colina, con árboles de otoño y pájaros volando alrededor, y pequeñas personas caminando en la vereda. Ilustración en acuarela, paleta otoñal.
 
 ![](images/clase3_13_ilustracion4.jpg)
+Modelo: Midjourney
+Prompt: Un árbol grande con hojas en forma de espirales de colores otoñales, junto a una casita con techo rojo y otros árboles, con tres niños y sus bicicletas mirando el paisaje. Ilustración pictórica estilizada, paleta cálida de otoño, formas onduladas.
 
 ![](images/clase3_13_ilustracion5.jpg)
+Modelo: Midjourney
+Prompt: Retrato de un anciano con barba y cabello azul ondulado, usando un casco steampunk con engranajes y antenas, y anteojos redondos que reflejan un paisaje desértico al atardecer. Ilustración digital detallada, fondo oscuro, estilo steampunk.
 
 ![](images/clase3_13_ilustracion6.jpg)
+Modelo: Midjourney
+Prompt: Un personaje de aspecto tierno y excéntrico, con barba larga y una corona alta de picos, parado en un bosque nevado de árboles finitos y pinos. Ilustración en acuarela, paleta de azules fríos, estilo cuento infantil
+
+![](images/clase3_13_ilustracion7.jpg)
+Modelo: Midjourney
+Prompt: Una mujer de pelo rojo con tapado negro, mirando hacia arriba en una calle de ciudad de noche, rodeada de luces y parlantes colgando de los cables entre los edificios. Ilustración digital estilo anime/cómic, iluminación nocturna azul y naranja.
+
+![](images/clase3_13_ilustracion8.jpg)
+Modelo: Midjourney
+Prompt: Ejemplos de 3 ilustraciones para pósters creados con Midjourney
 
 ## mejor_edicion
 Para **edición de imágenes**, puede ser útil usar Adobe Firefly ya que reúne varias herramientas dedicadas para esto. Nano Banana y Midjourney también funcionan bien para este uso, con la ventaja de resolverlo dentro del mismo chat.
@@ -158,6 +210,24 @@ Para **edición de imágenes**, puede ser útil usar Adobe Firefly ya que reúne
 ## mejor_edicion_imagen
 @carousel
 ![](images/clase3_44_edicion.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Una fotografía realista de un estudio creativo en Buenos Aires, con un escritorio de madera, una silla roja, una lámpara de escritorio, una computadora, una taza de café, varios libros, una planta y cuadros en la pared. Luz natural entrando por una ventana, estética cinematográfica, composición cuidada.
+
+![](images/clase3_44_edicion2.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: cambia la silla roja por una silla azul, manteniendo su forma, textura e iluminación
+
+![](images/clase3_44_edicion3.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: reemplaza los cuadros de la pared por fotografías en blanco y negro.
+
+![](images/clase3_44_edicion4.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: agrega una bicicleta apoyada contra la pared
+
+![](images/clase3_44_edicion5.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: elimina la taza
 
 ## mejor_consistencia
 Para **consistencia entre generaciones** (mantener el mismo personaje u objeto reconocible en distintas escenas o ángulos), Nano Banana es una de las opciones más usadas.
@@ -165,12 +235,24 @@ Para **consistencia entre generaciones** (mantener el mismo personaje u objeto r
 ## mejor_consistencia_imagen
 @carousel
 ![](images/clase3_14_edicion_consistencia.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Una joven de 25 años, cabello corto y oscuro con flequillo, piel clara, ojos grandes, vestido sencillo de los años 60 y zapatos bajos, caminando por una calle de Buenos Aires, llevando una pequeña cámara fotográfica. Fotografía cinematográfica realista, película a color de los años 60, luz natural, grano analógico, colores ligeramente desaturados, estética de cine de época.
 
 ![](images/clase3_14_edicion_consistencia2.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: La misma joven en una estación de tren de Buenos Aires, caminando con una pequeña valija mientras busca su andén. Mantener exactamente su identidad y apariencia
 
 ![](images/clase3_14_edicion_consistencia3.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: La misma joven en un parque de Buenos Aires, sentada sobre el pasto leyendo un libro, vista de perfil en tres cuartos, con el cuerpo orientado hacia un sendero y el rostro ligeramente girado hacia el libro. La cámara la observa desde un ángulo lateral, no de frente. Mantener exactamente su identidad, rostro, cabello y vestuario.
 
 ![](images/clase3_14_edicion_consistencia4.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: La misma joven en un café tradicional de Buenos Aires, sentada junto a la ventana mientras toma un café y observa unas fotografías sobre la mesa. Mantener exactamente su rostro, cabello, vestuario y apariencia
+
+![](images/clase3_14_edicion_consistencia5.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: La misma joven dentro de un antiguo cine de barrio de Buenos Aires, sentada entre las butacas mientras mira la pantalla, vista desde atrás y ligeramente de costado, mostrando su perfil y parte de la sala. La pantalla ocupa el fondo de la imagen. No mirar a cámara. Mantener exactamente su identidad y apariencia
 
 ## mejor_texto_legible
 Para **piezas con texto legible** (infografías, flyers, gráficas con datos), Nano Banana (sobre todo en su versión Pro) y GPT Image 2 suelen ser la opción más práctica, resolviendo bien un detalle que durante mucho tiempo fue un punto débil de la IA generativa de imagen.
@@ -179,7 +261,19 @@ Para **piezas con texto legible** (infografías, flyers, gráficas con datos), N
 @carousel
 ![](images/clase3_15_texto_legible.jpg)
 Modelo: GPT Image 2
-Prompt: Una infografía nutricional que describa una alimentación saludable. Debe ser profesional y con textos explicativos que muestren las vitaminas y virtudes de los alimentos, los distintos días de la semana. Debe contener flechas y elementos gráficos, y un listado de los alimentos
+Prompt: Una infografía nutricional que describa una alimentación saludable. Debe ser profesional y con textos explicativos que muestren las vitaminas y virtudes de los alimentos, organizados según los distintos días de la semana. Debe contener flechas y elementos gráficos, y un listado de los alimentos
+
+![](images/clase3_15_texto_legible2.jpg)
+Modelo: GPT Image 2
+Prompt: Infografía científica futurista sobre la estructura del ADN, con una doble hélice hiperrealista suspendida en un espacio oscuro y tecnológico. Incorporar etiquetas y textos explicativos holográficos, claramente legibles y conectados a cada parte mediante líneas luminosas. Incluir: "Adenina — A", "Timina — T", "Citosina — C", "Guanina — G", "Azúcar — forma parte de la estructura del ADN" y "Fosfato — conecta los nucleótidos". Agregar un bloque explicativo holográfico: "El ADN almacena la información genética de los seres vivos." Los textos deben integrarse naturalmente en la escena como interfaces holográficas, sin tapar la molécula. Estética cinematográfica, científica y sofisticada, hiperrealismo, iluminación dramática y alto nivel de detalle
+
+![](images/clase3_15_texto_legible3.jpg)
+Modelo: GPT Image 2
+Prompt: Ilustración anatómica del oído humano, con estilo de libro de anatomía contemporáneo. Mostrar claramente el oído externo, medio e interno, con un corte detallado y preciso. Incorporar etiquetas y textos explicativos claramente legibles, conectados mediante líneas finas: Pabellón auricular, Conducto auditivo, Tímpano, Martillo, Yunque, Estribo, Cóclea, Nervio auditivo y Trompa de Eustaquio. Ilustración detallada, didáctica y elegante, con colores suaves, fondo claro y composición editorial.
+
+![](images/clase3_15_texto_legible4.jpg)
+Modelo: GPT Image 2
+Prompt: Infografía educativa y universitaria sobre inflación y poder adquisitivo, con gráfico de evolución mensual, porcentajes, fechas, flechas y breves explicaciones que ayuden a comprender los conceptos y su relación. Diseño editorial contemporáneo, claro y atractivo, con jerarquía visual, datos destacados y todos los textos perfectamente legibles.
 
 ## cual_mejor_cierre
 **Recomendación:** la mejor comparación es la que puedas hacer vos, probando los distintos modelos que tengan versiones gratuitas. Podés usar un mismo prompt y ver cómo responde cada uno, y cómo responden a distintos estilos (realista, ilustración, etc.).
@@ -331,16 +425,48 @@ La idea de este bloque es, por un lado, proponerte algunos usos de la IA generat
 ## usos_generacion_referencias_imagen
 @carousel
 ![](images/clase3_26_usogen_referencias.jpg)
+Modelo: Midjourney
+Prompt: Un bosque fantástico y oscuro, con hongos gigantes que brillan en tonos naranja y verde, musgo cubriendo todo y un arco formado por un árbol sobre un arroyo que refleja la luz. Arte digital de fantasía, atmósfera misteriosa, iluminación verde-azulada.
 
 ![](images/clase3_26_usogen_referencias2.jpg)
+Modelo: Midjourney
+Prompt: Una calle empedrada de un pueblo medieval de fantasía, con casas de madera inclinadas, faroles encendidos y torres asomando entre la niebla al fondo. Arte digital de fantasía oscura, iluminación cálida de faroles contra un cielo azulado.
 
 ![](images/clase3_26_usogen_referencias3.jpg)
+Modelo: Midjourney
+Prompt: Un callejón de un pueblo medieval de fantasía, con casas de madera desgastadas, escaleras y faroles encendidos, torres en ruinas al fondo entre la niebla. Arte digital de fantasía oscura, iluminación cálida y terrosa.
 
 ![](images/clase3_26_usogen_referencias4.jpg)
+Modelo: Midjourney
+Prompt: Una plaza de un pueblo de fantasía con carpas y edificios de techos a rayas rojas y azules, un gran pabellón con cúpula en el centro, y criaturas voladoras en el cielo. Arte digital de fantasía, día soleado, estilo videojuego.
 
 ![](images/clase3_26_usogen_referencias5.jpg)
+Modelo: Midjourney
+Prompt: Una casa de madera desgastada con techo de tejas naranjas, construida sobre el agua y rodeada de barriles y herramientas colgadas, con una ciudad de fantasía al fondo. Arte digital de fantasía, cielo despejado.
 
 ![](images/clase3_26_usogen_referencias6.jpg)
+Modelo: Midjourney
+Prompt: Un televisor antiguo encendido en un cuarto en ruinas, cubierto de enredaderas, mostrando en su pantalla un bosque dorado al atardecer, con tomates desparramados en el piso. Foto cinematográfica, luz cálida y tenue, atmósfera onírica.
+
+![](images/clase3_26_usogen_referencias7.jpg)
+Modelo: Midjourney
+Prompt: Un pequeño robot de ojos grandes y casco steampunk, parado junto a una torta con una vela encendida, en un taller oscuro lleno de velas y objetos antiguos. Ilustración digital de personaje, estilo tierno y fantástico, iluminación cálida.
+
+![](images/clase3_26_usogen_referencias8.jpg)
+Modelo: Midjourney
+Prompt: Un carromato ornamentado de estilo steampunk, con techo a rayas y detalles dorados, estacionado en un terreno rocoso junto a un pueblo de fantasía. Arte digital de fantasía, cielo despejado de día.
+
+![](images/clase3_26_usogen_referencias9.jpg)
+Modelo: Midjourney
+Prompt: Una calle de ciudad abandonada y en ruinas, con escombros a los costados y un enorme sol anaranjado poniéndose al fondo entre los edificios. Ilustración digital estilo anime, paleta de rojos y violetas, atmósfera post-apocalíptica.
+
+![](images/clase3_26_usogen_referencias10.jpg)
+Modelo: Midjourney
+Prompt: Un barrio denso de edificios angostos apilados unos sobre otros, pintados en rojos, azules y rosas, con una calle estrecha entre ellos y una ciudad futurista de fondo. Ilustración digital, paleta vibrante, estilo urbano estilizado.
+
+![](images/clase3_26_usogen_referencias11.jpg)
+Modelo: Midjourney
+Prompt: Un castillo de fantasía con torres iluminadas junto a un canal de agua, y una estructura circular mecánica gigante frente a una luna enorme en el cielo nocturno. Arte digital de fantasía oscura, iluminación de luna llena.
 
 ## usos_generacion_ideacion
 **Ideación, prototipado y maquetado**: usar la IA para hacer bocetos de proyectos y visualizaciones esquemáticas, pudiendo generar también variaciones visuales sobre una misma idea.
@@ -359,6 +485,17 @@ Prompt: Exploración conceptual de vestuario para una obra teatral. Una misma pe
 Modelo: GPT Image 2
 Prompt: Exploración conceptual de un espacio arquitectónico para un proyecto cultural contemporáneo. Mostrar una misma planta o espacio interior desarrollado en varias alternativas de diseño: diferentes distribuciones, mobiliario, circulación, iluminación y materiales. Las propuestas deben aparecer como distintas posibilidades surgidas durante una etapa de ideación y prototipado. Estética de bocetos y visualizaciones arquitectónicas conceptuales, combinando planta, perspectiva y pequeños estudios volumétricos. Aspecto de cuaderno de trabajo de un estudio de arquitectura, todavía en proceso de desarrollo, no como proyecto terminado. Fondo claro, composición limpia, sin texto legible.
 
+![](images/clase3_27_usogen_ideacion4.jpg)
+Modelo: GPT Image 2
+Prompt: un prototipo 3D de un pequeño stand para una feria universitaria, a partir de una idea inicial. Estructura modular de madera, mostrador, estanterías y espacio para exhibir objetos. Materiales simples y aspecto de maqueta física, iluminación de estudio, vista en perspectiva, diseño contemporáneo.
+
+![](images/clase3_27_usogen_ideacion5.jpg)
+Modelo: GPT Image 2
+Prompt: un prototipo de instalación artística interactiva para una sala de museo: una estructura circular de metal con telas translúcidas, luces y sensores que reaccionan al movimiento de los visitantes. Mostrarla como una maqueta física a escala dentro de un espacio de trabajo, con materiales visibles y aspecto experimental. Fotografía realista, vista en perspectiva.
+
+![](images/clase3_27_usogen_ideacion6.jpg)
+Prompt: un prototipo de robot explorador para investigar cuevas subterráneas. Mostrar una primera versión física del robot, con ruedas, sensores, cámara y brazos articulados, construido con materiales y piezas experimentales. Fotografía realista de prototipo, vista en perspectiva, iluminación de laboratorio.
+
 ## usos_generacion_vistas
 **Vistas y hojas de modelo (model sheets)**: generar un mismo personaje, objeto o espacio desde distintos ángulos (de frente, de perfil, desde arriba) para usarlo como referencia de modelado 3D, en producciones de live action o en videojuegos, o armar una hoja de modelo con los elementos y variantes de un personaje.
 
@@ -366,7 +503,23 @@ Prompt: Exploración conceptual de un espacio arquitectónico para un proyecto c
 @carousel
 ![](images/clase3_28_usogen_vistas.jpg)
 Modelo: Gemini 3 (Nano Banana 2)
-Prompt: Crea las vistas para modelado 3D
+Prompt: un model sheet profesional de un personaje para una película live action de estilo costumbrista. Mostrar al mismo personaje de frente, perfil, tres cuartos y cuerpo completo, además de algunas expresiones y gestos cotidianos. Mantener exactamente sus rasgos faciales, peinado, vestuario y proporciones en todas las vistas. Fotografía hiperrealista, iluminación natural, estética cinematográfica, fondo neutro y presentación de producción audiovisual. Sin armas, poses de acción ni gestos exagerados.
+
+![](images/clase3_28_usogen_vistas2.jpg)
+Modelo: GPT Image 2
+Prompt: un model sheet profesional de un personaje femenino para una película live action ambientada durante la crisis de 1929. Mostrar a la misma mujer de frente, perfil, tres cuartos y cuerpo completo, además de expresiones y gestos cotidianos. Mantener exactamente sus rasgos faciales, peinado, vestuario y proporciones en todas las vistas. Fotografía hiperrealista, estética cinematográfica de época, iluminación natural, vestuario y peinado propios de finales de los años 20 y comienzos de los 30, fondo neutro y presentación de producción audiovisual. Sin poses de acción ni gestos exagerados.
+
+![](images/clase3_28_usogen_vistas3.jpg)
+Modelo: GPT Image 2
+Prompt: un model sheet de un zorro antropomórfico para una serie de animación cartoon. Mostrar frente, perfil, tres cuartos, espalda, diferentes poses y expresiones faciales. Mantener exactamente las mismas proporciones, colores, ropa y características del personaje en todas las vistas. Diseño cartoon expresivo, fondo neutro y presentación profesional.
+
+![](images/clase3_28_usogen_vistas4.jpg)
+Modelo: GPT Image 2
+Prompt: un model sheet profesional de un personaje de fantasía para una película live action. Mostrar frente, perfil, tres cuartos, espalda y diferentes poses, incluyendo una pose de acción. Mantener constantes el rostro, cabello, vestuario, accesorios y proporciones. Hiperrealismo cinematográfico, iluminación de estudio y fondo neutro.
+
+![](images/clase3_28_usogen_vistas5.jpg)
+Modelo: Gemini 3 (Nano Banana 2)
+Prompt: un model sheet de un personaje para videojuegos, estilo moderno tipo Fortnite. Además, que el diseño gráfico sea novedoso y colorido
 
 ## usos_generacion_editorial
 **Exploración editorial y piezas de comunicación**: portadas, gráficas para redes, branding de un proyecto.
@@ -387,6 +540,22 @@ Título: CREAR CON INTELIGENCIA ARTIFICIAL — Bajada: Ideas, imágenes y posibi
 Estética de collage editorial contemporáneo y asimétrico, combinando una persona frente a una computadora con fotografías, dibujos, recortes, texturas y elementos digitales, con los textos integrados a la composición.
 Paleta de blanco, negro y tonos de papel, con un único color de acento — inspirada en revistas de diseño, arte y cultura visual, sin estética corporativa ni de flyer.
 
+![](images/clase3_30_usogen_editorial3.jpg)
+Modelo: Midjourney
+Prompt: Castillo de fantasía iluminado sobre un acantilado junto a un lago, con torre central de múltiples agujas góticas y ventanas con luz cálida. Un muelle de madera con faroles encendidos se extiende sobre el agua, con un bote amarrado; bosque de pinos denso rodea la base del castillo. De fondo, montañas nevadas y la silueta de una torre en ruinas más lejana. Cielo nocturno con una luna llena enorme, una segunda luna más chica, estrellas y nubes finas; estructuras colgantes tipo faroles/cadenas flotando cerca del castillo (detalle steampunk). Debajo de la ilustración, una fila horizontal de 8 paneles tipo ficha de videojuego sobre fondo oscuro, cada uno con un ícono pequeño y texto de relleno (ilegible) a modo de título y cuerpo — estilo códice o planilla de stats de videojuego. Arte digital de fantasía estilo portada/pantalla de carga de videojuego, paleta azul y dorado, atmósfera épica.
+
+![](images/clase3_30_usogen_editorial4.jpg)
+Modelo: Midjourney
+Prompt: Imagen compuesta en dos mitades. Izquierda: mockup de afiche/tarjeta en fondo amarillo con un personaje caricaturesco estilo superhéroe (capa roja, insignia circular roja, silueta de skyline urbano celeste detrás), nombre de marca en letras negras grandes ("BRIGGING", de relleno) y eslogan debajo (ilegible), todo sobre un fondo de tarjetas repetidas en rosa y azul oscuro con texto de relleno ilegible — ilustración vectorial plana. Derecha: mockup fotográfico realista de una pila de tarjetas personales sobre una mesa de madera; la tarjeta superior muestra el retrato ilustrado de un chico con anteojos y traje, bloques geométricos de color (turquesa, amarillo, naranja), con nombre y datos de contacto de relleno (ilegibles); el resto de la pila muestra tarjetas con patrones geométricos abstractos de colores. Mockup de identidad de marca, combinando ilustración plana de personaje con mockup fotorrealista de impresión, colores vivos.
+
+![](images/clase3_30_usogen_editorial5.jpg)
+Modelo: Midjourney
+Prompt: Imagen compuesta en dos mitades. Izquierda: mapa ilustrado de fantasía con un castillo de techos rojos junto a un río, acantilados rocosos, bosque, aves volando y pequeñas figuras de personajes, faroles encendidos, luz cálida de atardecer; marco decorativo ornamentado estilo pergamino/portada de juego, título en tipografía fantástica arriba (ilegible, de relleno) y, en el borde inferior, viñetas circulares y paneles de texto adicionales (también de relleno, ilegibles). Derecha: diseño de personaje/model sheet en 3D animado de un villano victoriano — hombre robusto, cejas pobladas, bigote fino, expresión altanera, galera roja y dorada, levita roja con botones dorados, moño rojo, pantalón y guantes negros, rodeado de relojes de bolsillo, relojes antiguos y objetos steampunk flotantes, con pequeñas etiquetas de texto ilegibles junto a cada objeto. Estilo animación 3D tipo Pixar/Disney, fondo oscuro, acentos cálidos en rojo y dorado.
+
+![](images/clase3_30_usogen_editorial6.jpg)
+Modelo: Midjourney
+Prompt: Composición armada con distintas generaciones
+
 ## usos_generacion_ajustes
 **Ajustar un aspecto puntual de una imagen ya generada**: modificar la iluminación, el clima u otro elemento específico, sin tocar el resto de la composición ni cambiar el estilo general (cambiar el estilo en sí es otra cosa, la vemos más adelante en "Cambio de estilo").
 
@@ -397,7 +566,7 @@ Prompt: Composición realizada combinando fotografía y render 3D de una bandera
 
 ![](images/clase3_31_usogen_ajustes2.jpg)
 Modelo: Gemini 3 (Nano Banana Pro)
-Prompt: Mejora la integración de la imagen con una luz de sol ingresando por izquierda de cuadro, estilo cinematográfico
+Prompt: Mejora la integración de la imagen con una luz de sol ingresando por la izquierda del cuadro, estilo cinematográfico
 
 
 ## usos_edicion
@@ -485,15 +654,15 @@ Prompt: Pintura al óleo estilo ilustración western: retrato de un hombre de me
 
 ![](images/clase3_37_estilo2.jpg)
 Modelo: GPT Image 2
-Prompt: Adaptar a estética Studio Ghibli. Mantener la identidad del personaje y adaptar la ropa, el peinado, la iluminación y el fondo de estudio al estilo Studio Ghibli. El fondo debe ser similar al de las películas de Miyazaki.
+Prompt: Adaptar a la estética de Studio Ghibli. Mantener la identidad del personaje y adaptar la ropa, el peinado, la iluminación y el fondo de estudio al estilo Studio Ghibli. El fondo debe ser similar al de las películas de Miyazaki.
 
 ![](images/clase3_37_estilo3.jpg)
 Modelo: GPT Image 2
-Prompt: Adaptar a estética de los años 80. Mantener la identidad exacta del personaje y adaptar la ropa, el peinado, la iluminación y el fondo de estudio al estilo analógico de mediados de los 80.
+Prompt: Adaptar a la estética de los años 80. Mantener la identidad exacta del personaje y adaptar la ropa, el peinado, la iluminación y el fondo de estudio al estilo analógico de mediados de los 80.
 
 ![](images/clase3_37_estilo4.jpg)
 Modelo: GPT Image 2
-Prompt: Adaptar a estética de los años 80. Mantener la identidad exacta del personaje y adaptar la ropa, el peinado, la iluminación y el fondo de estudio al estilo analógico de mediados de los 80. El fondo debe ser un bar ochentoso.
+Prompt: Adaptar a la estética de los años 80. Mantener la identidad exacta del personaje y adaptar la ropa, el peinado, la iluminación y el fondo de estudio al estilo analógico de mediados de los 80. El fondo debe ser un bar ochentoso.
 
 ## usos_estilo_moda2_texto
 Otro ejemplo, esta vez sobre una pieza informativa en lugar de un retrato: la misma lámina sobre el aparato digestivo, reestilizada de dos maneras distintas.
@@ -501,8 +670,16 @@ Otro ejemplo, esta vez sobre una pieza informativa en lugar de un retrato: la mi
 ## usos_estilo_moda2_imagen
 @carousel
 ![](images/clase3_37_estilo_v2.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Imagen original del libro de anatomía
 
 ![](images/clase3_37_estilo_v2_2.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Reinterpretar la imagen de referencia con una estética moderna de infografía médica, manteniendo exactamente la misma información, textos y explicaciones. Modernizar la representación del aparato digestivo y cambiar el encuadre y la composición, utilizando una estética contemporánea, colores actuales, tipografía clara, líneas precisas y una diagramación más dinámica. No eliminar, modificar ni agregar ninguna información de la imagen original.
+
+![](images/clase3_37_estilo_v2_3.jpg)
+Modelo: Gemini 3 (Nano Banana Pro)
+Prompt: Reinterpretar la imagen de referencia manteniendo exactamente la información médica, las etiquetas y las explicaciones de cada parte, pero separándose completamente del diseño del libro original. No conservar el título, la diagramación, la composición ni la distribución de los textos de la imagen de referencia. Crear una nueva composición tridimensional y dinámica, con el aparato digestivo representado con volumen y profundidad. Reorganizar libremente las etiquetas y los textos explicativos alrededor de la estructura, manteniendo exactamente su contenido y significado. Crear un título nuevo y contemporáneo relacionado con el aparato digestivo. Estética moderna de visualización médica 3D, iluminación de estudio, profundidad y materiales realistas.
 
 ## usos_estilo_referencia_texto
 También podemos usar esta misma herramienta para estilizar nuestras propias imágenes con estilos bien distintos entre sí, y para generar referencias artísticas sobre algo concreto.
