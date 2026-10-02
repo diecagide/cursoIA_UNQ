@@ -43,10 +43,11 @@
     <!-- Grupo 2: los bloques de contenido propiamente dichos -->
     <ul class="nav-list nav-list--blocks">
       <li class="nav-group">
-        <a class="nav-group__link" href="#bloque-a"><span class="nav-bullet"></span>Bloque A · El problema: por qué esta clase</a>
+        <a class="nav-group__link" href="#bloque-a"><span class="nav-bullet"></span>Bloque A · El problema del audiovisual en el marco de la IA</a>
         <ul class="nav-subgroup">
           <li><a href="#terreno-produccion">La IA le ganó terreno a la producción</a></li>
           <li><a href="#por-que-esta-clase">¿Por qué esta clase?</a></li>
+          <li><a href="#panorama-industria">Panorama de la industria</a></li>
         </ul>
       </li>
 
@@ -80,23 +81,23 @@
       </li>
 
       <li class="nav-group">
-        <a class="nav-group__link" href="#bloque-e"><span class="nav-bullet"></span>Bloque E · Audio: música y voces</a>
-        <ul class="nav-subgroup">
-          <li><a href="#musica-ia">Música</a></li>
-          <li><a href="#voces-ia">Generadores de voces</a></li>
-          <li><a href="#extension-audio">Extender o editar una pista</a></li>
-        </ul>
-      </li>
-
-      <li class="nav-group">
-        <a class="nav-group__link" href="#bloque-f"><span class="nav-bullet"></span>Bloque F · Usos</a>
+        <a class="nav-group__link" href="#bloque-e"><span class="nav-bullet"></span>Bloque E · Usos de video: generación y edición</a>
         <ul class="nav-subgroup">
           <li><a href="#usos-generacion-video">Generación de video</a></li>
           <li><a href="#usos-maquetacion">Maquetación</a></li>
           <li><a href="#usos-reestilizar">Reestilizar</a></li>
           <li><a href="#usos-edicion-postproduccion">Editar y postproducir</a></li>
-          <li><a href="#usos-referencias-audio">Referencias de audio</a></li>
-          <li><a href="#usos-extension-audio">Extender la banda sonora</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-f"><span class="nav-bullet"></span>Bloque F · Audio: música y voces</a>
+        <ul class="nav-subgroup">
+          <li><a href="#musica-ia">Música</a></li>
+          <li><a href="#voces-ia">Generadores de voces</a></li>
+          <li><a href="#gramatica-audio">Gramática del prompt de audio</a></li>
+          <li><a href="#extension-audio">Extender o editar una pista</a></li>
+          <li><a href="#usos-audio">Usos de audio</a></li>
         </ul>
       </li>
     </ul>
@@ -137,7 +138,7 @@
            BLOQUE A
            ================================================================= -->
       <section class="block" id="bloque-a">
-        <h2>Bloque A — El problema: por qué esta clase</h2>
+        <h2>Bloque A — El problema del audiovisual en el marco de la IA</h2>
 
         <h3 id="terreno-produccion">La IA le ganó terreno a la producción audiovisual</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
@@ -146,6 +147,29 @@
         <h3 id="por-que-esta-clase">¿Por qué esta clase?</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="por_que_esta_clase"></div>
+
+        <h3 id="panorama-industria">Panorama de la industria</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="panorama_industria_intro"></p>
+
+        <p class="mini-heading">Ficción</p>
+        <p data-key="panorama_ficcion"></p>
+        <!-- Placeholder de video: Diego va a buscar un ejemplo para cada
+             categoría de este panorama. Mientras no complete el link se
+             ve el recuadro de "Video pendiente". -->
+        <div class="content-block" data-key="panorama_ficcion_demo"></div>
+
+        <p class="mini-heading">Publicidad</p>
+        <p data-key="panorama_publicidad"></p>
+        <div class="content-block" data-key="panorama_publicidad_demo"></div>
+
+        <p class="mini-heading">Redes sociales</p>
+        <p data-key="panorama_redes"></p>
+        <div class="content-block" data-key="panorama_redes_demo"></div>
+
+        <p class="mini-heading">Otros</p>
+        <p data-key="panorama_otros"></p>
+        <div class="content-block" data-key="panorama_otros_demo"></div>
       </section>
 
       <!-- =================================================================
@@ -174,16 +198,21 @@
         <h3 id="tecnicas-basicas">Las técnicas básicas</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="tecnicas_intro"></p>
-        <p data-key="tecnicas_texto"></p>
-        <p data-key="tecnicas_imagen"></p>
-        <p data-key="tecnicas_video"></p>
-        <p data-key="tecnicas_frames"></p>
 
-        <!-- Placeholder de video: Diego puede pegar acá un demo de las
-             técnicas básicas (texto-a-video, imagen-a-video, etc.).
-             Mientras no complete el link en contenido.txt se ve un
+        <p data-key="tecnicas_texto"></p>
+        <!-- Placeholder de video: un demo debajo de cada técnica básica.
+             Mientras no se complete el link en contenido.txt se ve un
              recuadro de "Video pendiente", igual que con las imágenes. -->
+        <div class="content-block" data-key="tecnicas_texto_demo"></div>
+
+        <p data-key="tecnicas_imagen"></p>
+        <div class="content-block" data-key="tecnicas_imagen_demo"></div>
+
+        <p data-key="tecnicas_video"></p>
         <div class="content-block" data-key="tecnicas_video_demo"></div>
+
+        <p data-key="tecnicas_frames"></p>
+        <div class="content-block" data-key="tecnicas_frames_demo"></div>
 
         <h3 id="como-funciona-video">Cómo funciona el modelo</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
@@ -394,7 +423,6 @@
         <div class="content-block" data-key="video_runway_1"></div>
         <div class="content-block" data-key="video_runway_2"></div>
         <div class="content-block" data-key="video_runway_3"></div>
-        <div class="content-block" data-key="video_runway_4"></div>
 
         <p class="mini-heading">Kling AI</p>
         <div class="content-block" data-key="video_kling"></div>
@@ -480,6 +508,27 @@
         </div>
         <p class="prompt-breakdown" data-key="estructura_video_breakdown"></p>
 
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="estructura_video_runway_alt"></p>
+
+        <!-- "Para ampliar" plegable con la escala de planos y los
+             movimientos de cámara en español e inglés — el texto de
+             adentro se edita en contenido.txt. -->
+        <details class="expandable">
+          <summary>
+            <span class="expandable__icon" aria-hidden="true">🔍</span>
+            <span class="expandable__text">
+              <span class="expandable__eyebrow">Para ampliar</span>
+              <span class="expandable__title">Escala de planos y movimientos de cámara</span>
+            </span>
+            <span class="expandable__chevron" aria-hidden="true">▸</span>
+          </summary>
+          <div class="expandable__body">
+            <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+            <div class="content-block" data-key="escala_planos_movimientos"></div>
+          </div>
+        </details>
+
         <h3 id="reglas-video">Algunas reglas</h3>
         <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="reglas_video"></div>
@@ -518,20 +567,42 @@
           <p>
             <a class="btn" href="https://runway.com/resources/ai-camera-prompts" target="_blank" rel="noopener">Guía de Runway →</a>
             &nbsp;
-            <a class="btn" href="https://ai.google.dev/gemini-api/docs/veo" target="_blank" rel="noopener">Guía de Veo →</a>
-            &nbsp;
             <a class="btn" href="https://kling.ai/blog/kling-ai-prompt-guide" target="_blank" rel="noopener">Guía de Kling AI →</a>
-            &nbsp;
-            <a class="btn" href="https://lumalabs.ai/learning-hub/how-to-use-keyframes" target="_blank" rel="noopener">Keyframes de Luma →</a>
           </p>
         </div>
       </section>
 
       <!-- =================================================================
-           BLOQUE E
+           BLOQUE E — Usos de video
            ================================================================= -->
       <section class="block" id="bloque-e">
-        <h2>Bloque E — Audio: música y voces</h2>
+        <h2>Bloque E — Usos de video: generación y edición</h2>
+
+        <!-- Apertura del bloque, sin subtítulo propio — se edita en contenido.txt (no acá) -->
+        <p data-key="usos_intro"></p>
+
+        <h3 id="usos-generacion-video">Generación de video</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_generacion_video"></p>
+
+        <h3 id="usos-maquetacion">Maquetación</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_maquetacion"></p>
+
+        <h3 id="usos-reestilizar">Reestilizar</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_reestilizar"></p>
+
+        <h3 id="usos-edicion-postproduccion">Editar y postproducir</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_edicion_postproduccion"></p>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE F — Audio
+           ================================================================= -->
+      <section class="block" id="bloque-f">
+        <h2>Bloque F — Audio: música y voces</h2>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="audio_intro"></div>
@@ -691,43 +762,23 @@
              ElevenLabs o Suno (clonación de voz, canción generada, etc.). -->
         <div class="content-block" data-key="audio_demo"></div>
 
+        <h3 id="gramatica-audio">Gramática del prompt de audio</h3>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="audio_gramatica_intro"></p>
+        <p class="prompt-formula" data-key="audio_formula"></p>
+        <div class="prompt-example">
+          <p class="prompt-example__label">Ejemplo</p>
+          <p data-key="audio_formula_ejemplo"></p>
+        </div>
+
         <h3 id="extension-audio">Extender o editar una pista existente</h3>
         <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
         <p data-key="extension_audio_intro"></p>
         <div class="content-block" data-key="extension_audio_lista"></div>
-      </section>
 
-      <!-- =================================================================
-           BLOQUE F
-           ================================================================= -->
-      <section class="block" id="bloque-f">
-        <h2>Bloque F — Usos</h2>
-
-        <!-- Apertura del bloque, sin subtítulo propio — se edita en contenido.txt (no acá) -->
-        <p data-key="usos_intro"></p>
-
-        <h3 id="usos-generacion-video">Generación de video</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="usos_generacion_video"></p>
-
-        <h3 id="usos-maquetacion">Maquetación</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="usos_maquetacion"></p>
-
-        <h3 id="usos-reestilizar">Reestilizar</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="usos_reestilizar"></p>
-
-        <h3 id="usos-edicion-postproduccion">Editar y postproducir</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="usos_edicion_postproduccion"></p>
-
-        <h3 id="usos-referencias-audio">Referencias de audio</h3>
+        <h3 id="usos-audio">Usos de audio</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="usos_referencias_audio"></p>
-
-        <h3 id="usos-extension-audio">Extender la banda sonora</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="usos_extension_audio"></p>
       </section>
 
