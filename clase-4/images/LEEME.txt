@@ -26,42 +26,41 @@ Cómo subir un archivo a esta carpeta desde GitHub (sin instalar nada):
 
 Tamaño recomendado: entre 1200 y 1600 px de ancho, formato .jpg o .png.
 
-ESTADO ACTUAL (primera vuelta de la Clase 4 — recién armada)
+ESTADO ACTUAL
 ========================================
-Esta clase es distinta a las anteriores: como todavía no generamos
-ninguna imagen de ejemplo propia (a diferencia de Clase 3, que tenía
-decenas de imágenes generadas por vos), este primer borrador es casi
-todo texto. Lo que SÍ hace falta que subas a esta carpeta "images/logos/"
-son los logos de los modelos y plataformas que aparecen en las tarjetas
-de "Características" (mismo sistema que en clase-3/images/logos/):
+LOGOS: ya subiste la mayoría a "images/logos/" — quedaron con nombre
+propio + .jpg (no con el sufijo "_logo" que se había sugerido al
+principio), y el código ya está actualizado para buscarlos con esos
+nombres exactos:
 
-  images/logos/runway_logo.png
-  images/logos/kling_logo.png
-  images/logos/veo_logo.png
-  images/logos/seedance_logo.png
-  images/logos/hailuo_logo.png
-  images/logos/luma_logo.png
-  images/logos/suno_logo.png
-  images/logos/udio_logo.png
-  images/logos/aiva_logo.png
-  images/logos/elevenlabs_logo.png
-  images/logos/playht_logo.png
+  images/logos/Runway.jpg
+  images/logos/Kling.jpg
+  images/logos/Veo.jpg
+  images/logos/Seedance.jpg
+  images/logos/Hailouo.jpg   (así lo subiste vos, con esa variante de
+                               "Hailuo" — si en algún momento lo volvés
+                               a subir, avisame así actualizo el nombre
+                               en el código; mientras tanto funciona
+                               igual)
+  images/logos/Luma.jpg
+  images/logos/Suno.jpg
+  images/logos/Udio.jpg
+  images/logos/Aiva.jpg
+  images/logos/Elevenlabs.jpg
+  images/logos/Playht.jpg
 
-El de Runway ya lo tenés subido en clase-3/images/logos/Runway.png —
-podés copiar ese mismo archivo acá con el nombre runway_logo.png.
+Para cualquier logo nuevo que agregues de acá en adelante, seguí esta
+misma convención (nombre propio empezando con mayúscula + .jpg).
 
-VIDEOS: dejé cuatro lugares marcados en la clase para que sumes un
-video de YouTube de ejemplo (mismo sistema que las imágenes: mientras
-no completes el link, se ve un recuadro de "Video pendiente"). Son:
-uno sobre las técnicas básicas de video (Bloque B), uno con un demo
-reel o comparación de modelos (Bloque C), uno sobre frame inicial y
-frame final (Bloque D), y uno con un demo de voz o música generada
-(Bloque E). Para cargarlos, buscá la línea "@video[]()" en
-contenido.txt (en las claves tecnicas_video_demo, modelos_video_demo,
-frame_inicial_final_demo y audio_demo) y completala así:
+FALTA: el logo de Midjourney (se agregó como modelo de video nuevo) —
+subilo como images/logos/Midjourney.jpg cuando lo tengas.
+
+VIDEOS: los lugares marcados con un recuadro de "Video pendiente" se
+completan buscando la línea "@video[]()" correspondiente en
+contenido.txt y escribiendo:
 
     @video[Título que quieras mostrar](link de YouTube)
 
-Y por supuesto, si en algún momento generás o filmás ejemplos propios
-de video (como hicimos con las imágenes en Clase 3), avisame y los
-sumamos de la misma manera que esas.
+Los videos de los modelos de Bloque C ahora son botones directos
+desde cada tarjeta (no pasan por contenido.txt) — si querés cambiar
+alguno de esos links, pedímelo y lo actualizo en index.html.

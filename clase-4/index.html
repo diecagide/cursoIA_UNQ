@@ -63,7 +63,6 @@
       <li class="nav-group">
         <a class="nav-group__link" href="#bloque-c"><span class="nav-bullet"></span>Bloque C · Modelos y plataformas de video</a>
         <ul class="nav-subgroup">
-          <li><a href="#videos-en-accion">Para verlos en acción</a></li>
           <li><a href="#sora">El caso Sora</a></li>
           <li><a href="#herramientas-edicion">Herramientas de edición con IA</a></li>
         </ul>
@@ -143,6 +142,9 @@
         <h3 id="terreno-produccion">La IA le ganó terreno a la producción audiovisual</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="terreno_produccion"></div>
+
+        <!-- Placeholder de video: espacio libre, a definir más adelante. -->
+        <div class="content-block" data-key="terreno_produccion_demo"></div>
 
         <h3 id="por-que-esta-clase">¿Por qué esta clase?</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
@@ -231,17 +233,24 @@
         <!-- Tarjetas de modelos de generación de video: mismo componente
              que las tarjetas de imagen de la Clase 3 (logo, nombre propio,
              para qué sirve, dónde funciona). Pieza tabular: se edita acá
-             directo, no en contenido.txt. Los logos (images/logos/*.png)
-             todavía no están en la carpeta — Diego los tiene que agregar,
-             mismo criterio que en las clases anteriores. -->
+             directo, no en contenido.txt. Los logos ya están subidos por
+             Diego en images/logos/ con nombre propio + .jpg (Runway.jpg,
+             Kling.jpg, etc. — NO con el sufijo "_logo" que se había
+             sugerido originalmente). Mantener esa convención para logos
+             nuevos que se agreguen más adelante. -->
         <div class="platform-cards">
 
           <details class="platform-card" style="--platform-color:#00A656">
             <summary class="platform-card__head">
-              <span class="platform-card__logo"><img src="images/logos/runway_logo.png" alt="Runway" loading="lazy"></span>
+              <span class="platform-card__logo"><img src="images/logos/Runway.jpg" alt="Runway" loading="lazy"></span>
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://runwayml.com/" target="_blank" rel="noopener">Runway ↗</a></h4>
                 <p class="platform-card__dev">Runway AI</p>
+                <p class="platform-card__videos">
+                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=8vAqhBxCxc0" target="_blank" rel="noopener">▶ Aleph 2.0</a>
+                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=KhXxcU6cgzM" target="_blank" rel="noopener">▶ MCP</a>
+                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=yeRj7xGYUoM" target="_blank" rel="noopener">▶ Publicidades con IA</a>
+                </p>
               </div>
               <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
             </summary>
@@ -263,10 +272,13 @@
 
           <details class="platform-card" style="--platform-color:#FF6A00">
             <summary class="platform-card__head">
-              <span class="platform-card__logo"><img src="images/logos/kling_logo.png" alt="Kling AI" loading="lazy"></span>
+              <span class="platform-card__logo"><img src="images/logos/Kling.jpg" alt="Kling AI" loading="lazy"></span>
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://klingai.com/" target="_blank" rel="noopener">Kling AI ↗</a></h4>
                 <p class="platform-card__dev">Kuaishou</p>
+                <p class="platform-card__videos">
+                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=nlM7kL3kv_Y" target="_blank" rel="noopener">▶ Video</a>
+                </p>
               </div>
               <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
             </summary>
@@ -288,10 +300,13 @@
 
           <details class="platform-card" style="--platform-color:#4285F4">
             <summary class="platform-card__head">
-              <span class="platform-card__logo"><img src="images/logos/veo_logo.png" alt="Veo" loading="lazy"></span>
+              <span class="platform-card__logo"><img src="images/logos/Veo.jpg" alt="Veo" loading="lazy"></span>
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://gemini.google.com/app" target="_blank" rel="noopener">Veo ↗</a></h4>
                 <p class="platform-card__dev">Google DeepMind</p>
+                <p class="platform-card__videos">
+                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=8Uf6OO-XG00" target="_blank" rel="noopener">▶ Video</a>
+                </p>
               </div>
               <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
             </summary>
@@ -313,10 +328,13 @@
 
           <details class="platform-card" style="--platform-color:#111111">
             <summary class="platform-card__head">
-              <span class="platform-card__logo"><img src="images/logos/seedance_logo.png" alt="Seedance" loading="lazy"></span>
+              <span class="platform-card__logo"><img src="images/logos/Seedance.jpg" alt="Seedance" loading="lazy"></span>
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://www.volcengine.com/" target="_blank" rel="noopener">Seedance ↗</a></h4>
                 <p class="platform-card__dev">ByteDance</p>
+                <p class="platform-card__videos">
+                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=m-o4qLnD7_M" target="_blank" rel="noopener">▶ Video</a>
+                </p>
               </div>
               <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
             </summary>
@@ -338,10 +356,13 @@
 
           <details class="platform-card" style="--platform-color:#E8363D">
             <summary class="platform-card__head">
-              <span class="platform-card__logo"><img src="images/logos/hailuo_logo.png" alt="Hailuo" loading="lazy"></span>
+              <span class="platform-card__logo"><img src="images/logos/Hailouo.jpg" alt="Hailuo" loading="lazy"></span>
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://hailuoai.video/" target="_blank" rel="noopener">Hailuo ↗</a></h4>
                 <p class="platform-card__dev">MiniMax</p>
+                <p class="platform-card__videos">
+                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=AvjamLzt2pg" target="_blank" rel="noopener">▶ Video</a>
+                </p>
               </div>
               <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
             </summary>
@@ -363,7 +384,7 @@
 
           <details class="platform-card" style="--platform-color:#7C3AED">
             <summary class="platform-card__head">
-              <span class="platform-card__logo"><img src="images/logos/luma_logo.png" alt="Luma AI" loading="lazy"></span>
+              <span class="platform-card__logo"><img src="images/logos/Luma.jpg" alt="Luma AI" loading="lazy"></span>
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://lumalabs.ai/" target="_blank" rel="noopener">Luma AI ↗</a></h4>
                 <p class="platform-card__dev">Luma AI</p>
@@ -386,6 +407,47 @@
             </div>
           </details>
 
+          <!-- Logo todavía pendiente: Diego lo tiene que subir como
+               images/logos/Midjourney.jpg (ver LEEME.txt). -->
+          <details class="platform-card" style="--platform-color:#6366F1">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/Midjourney.jpg" alt="Midjourney" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://www.midjourney.com/" target="_blank" rel="noopener">Midjourney ↗</a></h4>
+                <p class="platform-card__dev">Midjourney</p>
+                <p class="platform-card__videos">
+                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=E9PvSeIO5NY" target="_blank" rel="noopener">▶ Video</a>
+                </p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Video V1, lanzado en junio de 2025</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Animar una imagen —propia o generada en Midjourney— y convertirla en un clip de 5 segundos, extensible hasta unos 21. No genera video a partir de un prompt de texto solo: siempre parte de una imagen</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Solo por la web (midjourney.com), sin Discord ni app aparte. No tiene nivel gratuito: viene incluido en los planes de imagen pagos (desde 10 dólares mensuales), aunque consume bastante más cómputo que generar una imagen</p>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <!-- Video comparativo entre varios modelos: no pertenece a una
+             sola plataforma, así que queda como un botón aparte en vez
+             de ir dentro de una tarjeta. -->
+        <div class="callout">
+          <p class="callout__label">Para comparar</p>
+          <p>Un video que pone varios modelos uno al lado del otro, para ver las diferencias de un vistazo.</p>
+          <p>
+            <a class="btn" href="https://www.youtube.com/watch?v=-MluR9dqt5w" target="_blank" rel="noopener">Ver comparativa entre modelos →</a>
+          </p>
         </div>
 
         <!-- "Para ampliar" plegable sobre cómo leer los niveles gratuitos
@@ -405,37 +467,6 @@
             <p data-key="niveles_gratuitos_nota"></p>
           </div>
         </details>
-
-        <h3 id="videos-en-accion">Para verlos en acción</h3>
-        <!-- Galería de videos de ejemplo: oficiales de cada empresa más
-             algunos más artísticos. Agrupados con .mini-heading (chico,
-             hardcodeado) por plataforma; el video en sí (título + link)
-             se edita en contenido.txt, una clave por video. -->
-        <p data-key="videos_en_accion_intro"></p>
-
-        <p class="mini-heading">Midjourney</p>
-        <div class="content-block" data-key="video_midjourney"></div>
-
-        <p class="mini-heading">Seedance</p>
-        <div class="content-block" data-key="video_seedance"></div>
-
-        <p class="mini-heading">Runway</p>
-        <div class="content-block" data-key="video_runway_1"></div>
-        <div class="content-block" data-key="video_runway_2"></div>
-        <div class="content-block" data-key="video_runway_3"></div>
-
-        <p class="mini-heading">Kling AI</p>
-        <div class="content-block" data-key="video_kling"></div>
-
-        <p class="mini-heading">MiniMax</p>
-        <div class="content-block" data-key="video_minimax"></div>
-
-        <p class="mini-heading">Veo</p>
-        <div class="content-block" data-key="video_veo_1"></div>
-        <div class="content-block" data-key="video_veo_2"></div>
-
-        <p class="mini-heading">Para comparar</p>
-        <div class="content-block" data-key="video_comparativa"></div>
 
         <h3 id="sora">El caso Sora</h3>
         <!-- Recuadro "¿Sabías que?" — el texto de adentro se edita en
@@ -508,8 +539,14 @@
         </div>
         <p class="prompt-breakdown" data-key="estructura_video_breakdown"></p>
 
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="estructura_video_runway_alt"></p>
+        <!-- Placeholder de video: el resultado de este ejemplo concreto. -->
+        <div class="content-block" data-key="estructura_video_ejemplo_demo"></div>
+
+        <!-- Segunda estructura, tan destacada como la habitual: la que
+             propone Runway en su propia documentación. El texto se
+             edita en contenido.txt (no acá). -->
+        <p data-key="estructura_video_runway_intro"></p>
+        <p class="prompt-formula" data-key="estructura_video_runway"></p>
 
         <!-- "Para ampliar" plegable con la escala de planos y los
              movimientos de cámara en español e inglés — el texto de
@@ -541,11 +578,15 @@
           <p class="prompt-example__label">Simple</p>
           <p data-key="ejemplo_video_simple"></p>
         </div>
+        <!-- Placeholder de video: el resultado de este ejemplo. -->
+        <div class="content-block" data-key="ejemplo_video_simple_demo"></div>
 
         <div class="prompt-example">
           <p class="prompt-example__label">Complejo</p>
           <p data-key="ejemplo_video_complejo"></p>
         </div>
+        <!-- Placeholder de video: el resultado de este ejemplo. -->
+        <div class="content-block" data-key="ejemplo_video_complejo_demo"></div>
 
         <p class="prompt-breakdown" data-key="ejemplo_video_breakdown"></p>
 
@@ -617,7 +658,7 @@
 
           <details class="platform-card" style="--platform-color:#0EA5A4">
             <summary class="platform-card__head">
-              <span class="platform-card__logo"><img src="images/logos/suno_logo.png" alt="Suno" loading="lazy"></span>
+              <span class="platform-card__logo"><img src="images/logos/Suno.jpg" alt="Suno" loading="lazy"></span>
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://suno.com/" target="_blank" rel="noopener">Suno ↗</a></h4>
                 <p class="platform-card__dev">Suno</p>
@@ -642,7 +683,7 @@
 
           <details class="platform-card" style="--platform-color:#DB2777">
             <summary class="platform-card__head">
-              <span class="platform-card__logo"><img src="images/logos/udio_logo.png" alt="Udio" loading="lazy"></span>
+              <span class="platform-card__logo"><img src="images/logos/Udio.jpg" alt="Udio" loading="lazy"></span>
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://www.udio.com/" target="_blank" rel="noopener">Udio ↗</a></h4>
                 <p class="platform-card__dev">Udio</p>
@@ -667,7 +708,7 @@
 
           <details class="platform-card" style="--platform-color:#334155">
             <summary class="platform-card__head">
-              <span class="platform-card__logo"><img src="images/logos/aiva_logo.png" alt="AIVA" loading="lazy"></span>
+              <span class="platform-card__logo"><img src="images/logos/Aiva.jpg" alt="AIVA" loading="lazy"></span>
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://www.aiva.ai/" target="_blank" rel="noopener">AIVA ↗</a></h4>
                 <p class="platform-card__dev">AIVA Technologies</p>
@@ -708,7 +749,7 @@
 
           <details class="platform-card" style="--platform-color:#0F0F0F">
             <summary class="platform-card__head">
-              <span class="platform-card__logo"><img src="images/logos/elevenlabs_logo.png" alt="ElevenLabs" loading="lazy"></span>
+              <span class="platform-card__logo"><img src="images/logos/Elevenlabs.jpg" alt="ElevenLabs" loading="lazy"></span>
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://elevenlabs.io/" target="_blank" rel="noopener">ElevenLabs ↗</a></h4>
                 <p class="platform-card__dev">ElevenLabs</p>
@@ -733,7 +774,7 @@
 
           <details class="platform-card" style="--platform-color:#F59E0B">
             <summary class="platform-card__head">
-              <span class="platform-card__logo"><img src="images/logos/playht_logo.png" alt="Play.ht" loading="lazy"></span>
+              <span class="platform-card__logo"><img src="images/logos/Playht.jpg" alt="Play.ht" loading="lazy"></span>
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://play.ht/" target="_blank" rel="noopener">Play.ht ↗</a></h4>
                 <p class="platform-card__dev">Play.ht</p>

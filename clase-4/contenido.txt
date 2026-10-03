@@ -21,7 +21,8 @@ Esto está emparentado con el espacio que ocupan las redes sociales en la vida c
 
 El impacto cae directo sobre el área audiovisual y musical, y no podemos avanzar con estas tecnologías sin conocer ese impacto. Las estructuras de producción habituales, que necesitaban un equipo de filmación y un equipo de postproducción, dejan de ser un requisito indispensable para resolver ciertos encargos, sobre todo los más chicos o los más urgentes.
 
-@video[La Triste Figura](https://www.youtube.com/watch?v=Ixj6Zu9bahU)
+## terreno_produccion_demo
+@video[]()
 
 ## por_que_esta_clase
 ¿Por qué entonces dedicarle un contenido a una tecnología que está impactando de forma desfavorable en el sector audiovisual y musical? Porque conviene conocer qué se está haciendo con estas herramientas, en nuestro país y en el mundo: qué modelos existen y qué usos tienen hoy en la industria. A partir de ahí podemos pensar y reflexionar sobre qué de todo esto tiene sentido llevar al aula, reafirmando las formas colaborativas de producción audiovisual y usando algunos aspectos de la IA que puedan allanar el camino de esa producción.
@@ -33,7 +34,7 @@ Un panorama rápido de cómo está entrando la IA generativa en distintas ramas 
 Largometrajes, series y cortos que empiezan a incorporar IA generativa en algún tramo de su producción —desde efectos visuales puntuales hasta piezas generadas casi por completo.
 
 ## panorama_ficcion_demo
-@video[]()
+@video[La Triste Figura](https://www.youtube.com/watch?v=Ixj6Zu9bahU)
 
 ## panorama_publicidad
 El terreno donde más rápido se adoptó: spots y piezas institucionales resueltas enteramente con IA generativa, sobre todo para campañas chicas o con poco presupuesto de producción.
@@ -76,7 +77,7 @@ Dentro de las técnicas más básicas para generar video con IA hay cuatro forma
 **Imagen-a-video (image-to-video)**: se parte de una o más imágenes, que el modelo usa como fotogramas de referencia para construir el movimiento. Es una forma de ganar control sobre cómo arranca —o termina— la escena, en vez de dejarlo librado por completo al prompt.
 
 ## tecnicas_imagen_demo
-@video[Runway — Imagen a video](https://www.youtube.com/watch?v=AwKSrJFvdps)
+@video[]()
 
 ## tecnicas_video
 **Video-a-video (video-to-video)**: se sube un video ya existente y se le pide al modelo que lo reestilice o que haga algún trabajo puntual sobre él, como cambiar la estética o reemplazar un elemento.
@@ -101,39 +102,6 @@ Conviene conocer al menos uno de cada familia para tener un panorama representat
 
 ## niveles_gratuitos_nota
 Casi todas las plataformas de esta sección ofrecen algún nivel gratuito, pero conviene leer la letra chica antes de recomendarlas en clase. Los créditos suelen ser limitados y renovarse por día o por mes —y a veces vencer si no se usan a tiempo—, los videos gratuitos casi siempre salen con marca de agua y en una resolución menor a la versión paga, y el uso comercial —publicar el resultado con fines de lucro— casi nunca está permitido en el nivel gratuito. Para una experiencia exploratoria en el aula alcanza y sobra, pero vale la pena aclararlo de entrada para evitar sorpresas.
-
-## videos_en_accion_intro
-Para ver todo esto en acción, antes de seguir con las herramientas de edición: una selección de videos, algunos oficiales de cada empresa y otros más artísticos, para que te hagas una idea concreta de lo que cada modelo puede lograr hoy.
-
-## video_midjourney
-@video[Midjourney](https://www.youtube.com/watch?v=E9PvSeIO5NY)
-
-## video_seedance
-@video[Seedance 2.5](https://www.youtube.com/watch?v=m-o4qLnD7_M)
-
-## video_runway_1
-@video[Runway Aleph 2.0](https://www.youtube.com/watch?v=8vAqhBxCxc0)
-
-## video_runway_2
-@video[Runway MCP](https://www.youtube.com/watch?v=KhXxcU6cgzM)
-
-## video_runway_3
-@video[Runway — publicidades hechas con IA](https://www.youtube.com/watch?v=yeRj7xGYUoM)
-
-## video_kling
-@video[Kling AI](https://www.youtube.com/watch?v=nlM7kL3kv_Y)
-
-## video_minimax
-@video[MiniMax H3](https://www.youtube.com/watch?v=AvjamLzt2pg)
-
-## video_veo_1
-@video[Veo 3 — Ingredients to Video](https://www.youtube.com/watch?v=8Uf6OO-XG00)
-
-## video_veo_2
-@video[Tutorial de Veo 3](https://www.youtube.com/watch?v=LgoJoMAdNC8)
-
-## video_comparativa
-@video[Comparativa entre modelos](https://www.youtube.com/watch?v=-MluR9dqt5w)
 
 ## sora_discontinuado
 Hasta hace poco, OpenAI tenía su propio modelo de video, llamado Sora. La aplicación de consumo dejó de funcionar el 26 de abril de 2026 —un mes después de que la empresa anunciara el cierre—, tras decidir reorientar ese desarrollo hacia robótica y simulación de mundos en lugar de seguir compitiendo en generación de video para el público general. El acceso por API se mantuvo un poco más, hasta septiembre de ese mismo año. Por ahora, OpenAI no anunció un modelo sucesor.
@@ -188,8 +156,14 @@ Una mujer camina por una calle de noche bajo la lluvia, cámara en travelling la
 ## estructura_video_breakdown
 Acá el sujeto y la acción son "una mujer camina... bajo la lluvia"; el movimiento de cámara es el travelling lateral; el encuadre y la angulación son el plano medio a la altura de los ojos; la iluminación y el estilo quedan definidos por las luces de neón y la referencia cinematográfica.
 
-## estructura_video_runway_alt
-Runway, en su propia documentación, propone una estructura algo distinta: [tamaño de plano] + [ángulo] + [movimiento, dirección y velocidad] + [sujeto y acción] + [lente o estética] + [iluminación y clima] + [qué revela el plano]. No es la misma que usamos acá, pero tiene un plus interesante: arranca definiendo el tipo de plano, algo que ayuda a pensar la escena como una imagen en movimiento desde el principio.
+## estructura_video_ejemplo_demo
+@video[]()
+
+## estructura_video_runway_intro
+Runway, en su propia documentación, propone una estructura algo distinta, que arranca definiendo el tipo de plano en vez del sujeto. No hay una mejor que la otra: vale la pena probar las dos con el mismo prompt y comparar qué efecto tiene cada una.
+
+## estructura_video_runway
+[Tamaño de plano] + [ángulo] + [movimiento, dirección y velocidad] + [sujeto y acción] + [lente o estética] + [iluminación y clima] + [qué revela el plano]
 
 ## reglas_video
 A diferencia de la gramática de imagen, acá hay algunas particularidades que vale la pena tener presentes:
@@ -205,8 +179,14 @@ Veamos cómo se arma un prompt simple, y cómo ese mismo prompt se vuelve más c
 ## ejemplo_video_simple
 Un gato camina sobre una mesa de madera, luz natural de ventana.
 
+## ejemplo_video_simple_demo
+@video[]()
+
 ## ejemplo_video_complejo
 Un astronauta camina lentamente sobre la superficie de la Luna, cámara en travelling lateral que lo sigue a la altura de la cintura, plano general, polvo lunar levantándose con cada paso, la Tierra visible en el cielo negro de fondo, luz dura y contrastada, estilo fotorrealista tipo documental espacial.
+
+## ejemplo_video_complejo_demo
+@video[]()
 
 ## ejemplo_video_breakdown
 El prompt complejo no suma categorías nuevas respecto del simple: solo describe cada una con más precisión —el travelling lateral especifica a qué altura sigue al sujeto, la luz dura y sin atmósfera reemplaza a un genérico "de día"—. Esa suele ser la diferencia entre un prompt simple y uno complejo: no hay más elementos, cada elemento está más desarrollado.

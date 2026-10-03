@@ -1094,6 +1094,28 @@ section.block:first-of-type {
   margin: 2px 0 0;
 }
 
+.platform-card__videos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 6px 0 0;
+}
+
+.platform-card__video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: .76rem;
+  font-weight: 600;
+  color: var(--platform-color, var(--color-accent));
+  background: var(--color-primary-light);
+  padding: 3px 10px 3px 8px;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.platform-card__video-link:hover { background: var(--platform-color, var(--color-accent)); color: #fff; }
+
 .platform-card__toggle {
   flex-shrink: 0;
   margin-left: auto;
