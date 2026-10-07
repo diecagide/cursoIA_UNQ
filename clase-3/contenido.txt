@@ -59,7 +59,7 @@ El dibujo original (a la izquierda) lo hizo mi hijo en sala de 5.
 
 
 ## inpainting_outpainting
-Desde una perspectiva de edición de imágenes, es decir modificar algún aspecto de una imagen que le compartimos al modelo a través del modo imagen-a-imagen, hay dos conceptos relevantes: el **inpainting** (pintado del interior de la imagen) y el **outpainting** (pintado del exterior de la imagen).
+Además de generar imágenes de cero, también podemos editarlas, es decir modificar algún aspecto específico de una imagen que le compartimos al modelo. En línea con esto, hay dos conceptos que es importante que tengamos en cuenta: el **inpainting** (pintado del interior de la imagen) y el **outpainting** (pintado del exterior de la imagen).
 
 El inpainting consiste en regenerar solo una parte puntual de una imagen ya existente —la que se selecciona o se "pinta" como máscara— sin tocar el resto. Sirve para borrar un objeto, cambiar un detalle o corregir algo puntual sin tener que generar la imagen entera de nuevo.
 
@@ -81,7 +81,7 @@ Prompt: Expansión de la imagen con la herramienta Expand Background de Adobe Fi
 ## difusion_1
 El proceso que efectivamente genera la imagen, dentro de ese espacio latente que vimos más arriba, se llama **difusión**.
 
-El modelo arranca de algo parecido al ruido de una tele mal sintonizada: una imagen inicial completamente caótica, sin ninguna forma reconocible. A partir de ahí, en sucesivos pasos, va "limpiando" ese ruido un poco a la vez, acercándose cada vez más a lo que describimos en el prompt. En cada paso, el modelo lee la descripción y reacomoda un poco más los píxeles (color, forma, textura, luz) hasta llegar, después de muchos pasos pequeños, a una imagen coherente.
+Ahora quiero contarles cómo se producen esas imágenes. El modelo arranca de algo parecido al ruido de una tele mal sintonizada: una imagen inicial completamente caótica, sin ninguna forma reconocible. A partir de ahí, en sucesivos pasos, va "limpiando" ese ruido un poco a la vez, acercándose cada vez más a lo que describimos en el prompt. En cada paso, el modelo lee la descripción y reacomoda un poco más los píxeles (color, forma, textura, luz) hasta llegar, después de muchos pasos pequeños, a una imagen coherente.
 
 ![](images/clase3_11_difusion.jpg)
 Prompt: Progreso de difusión: imágenes descargadas de internet
@@ -245,6 +245,7 @@ Prompt: La misma joven en una estación de tren de Buenos Aires, caminando con u
 ![](images/clase3_14_edicion_consistencia3.jpg)
 Modelo: Gemini 3 (Nano Banana Pro)
 Prompt: La misma joven en un parque de Buenos Aires, sentada sobre el pasto leyendo un libro, vista de perfil en tres cuartos, con el cuerpo orientado hacia un sendero y el rostro ligeramente girado hacia el libro. La cámara la observa desde un ángulo lateral, no de frente. Mantener exactamente su identidad, rostro, cabello y vestuario.
+**Observación:** esta imagen tiene una alucinación — aparece un segundo par de zapatos apoyado junto a ella, a pesar de que los sigue teniendo puestos.
 
 ![](images/clase3_14_edicion_consistencia4.jpg)
 Modelo: Gemini 3 (Nano Banana Pro)
@@ -362,7 +363,7 @@ Una advertencia práctica: en algunas plataformas, listar demasiadas exclusiones
 
 
 ## seed_imagen
-Otro parámetro habitual, sobre todo en las plataformas más técnicas, es el **seed**: un número que fija el punto de partida aleatorio del proceso de difusión que vimos antes. Repetir el mismo seed, con el mismo prompt y el mismo modelo, da como resultado una imagen igual o muy parecida a la anterior.
+Hay un parámetro en la generación de imágenes llamado **seed** (semilla) que está vinculado a la "aleatoriedad" de la generación. Se trata de un valor numérico que en algunos modelos está disponible para modificar (no en todos) y que nos permite generar variaciones de un mismo prompt (por ejemplo un cambio de orientación de luz, de distribución de objetos, etc.).
 
 Esto sirve para dos cosas concretas. Por un lado, para reproducir un resultado que salió bien: guardar el seed junto con el prompt es, en los hechos, la forma de "guardar la receta" de una imagen. Por otro, para aislar variables al ir ajustando un prompt. Si se mantiene el mismo seed y se cambia solo una palabra, es más fácil ver el efecto puntual de ese cambio, en vez de que también cambie todo lo demás por el azar de una nueva generación.
 
@@ -383,16 +384,16 @@ Un dron mensajero plateado, sobrevolando un mercado callejero, estilo art déco
 
 ## ejemplo_simple_imagen
 ![](images/clase3_17_dron_simple.jpg)
+@plain
 Modelo: Gemini 3 (Nano Banana Pro)
-Prompt: Un dron mensajero plateado, sobrevolando un mercado callejero, estilo art déco
 
 ## ejemplo_medio
 Un dron mensajero plateado con detalles dorados, sobrevolando un mercado callejero al atardecer, entre puestos con telas de colores, estilo art déco
 
 ## ejemplo_medio_imagen
 ![](images/clase3_18_dron_medio.jpg)
+@plain
 Modelo: Gemini 3 (Nano Banana Pro)
-Prompt: Un dron mensajero plateado con detalles dorados, sobrevolando un mercado callejero al atardecer, entre puestos con telas de colores, estilo art déco
 
 ## ejemplo_complejo
 Un dron mensajero plateado, con las siguientes características:
@@ -405,8 +406,8 @@ Escena: un mercado callejero al atardecer, con puestos de telas de colores y tol
 
 ## ejemplo_complejo_imagen
 ![](images/clase3_19_dron_complejo.jpg)
+@plain
 Modelo: Gemini 3 (Nano Banana Pro)
-Prompt: Un dron mensajero plateado, con carcasa de metal pulido con relieves ornamentales dorados de inspiración art déco, cuatro hélices pequeñas dispuestas en simetría alrededor del cuerpo, y un compartimento translúcido en la parte inferior con un sobre de papel visible adentro. Escena: un mercado callejero al atardecer, con puestos de telas de colores y toldos a rayas, gente circulando de fondo desenfocada. Luz cálida y rasante, profundidad de campo baja, estilo art déco, sin texto ni marcas de agua.
 
 ## ejemplo_breakdown
 → La versión simple alcanza para que el modelo tenga una idea clara de qué generar. La media agrega textura del material (detalles dorados), un contexto más específico (mercado al atardecer, puestos de telas) y refuerza el estilo con el ambiente lumínico. La compleja detalla características puntuales en una lista —relieves ornamentales, hélices, el sobre dentro del compartimento—, agrega el prompt negativo y define con precisión la composición (luz rasante, profundidad de campo). El resultado final va a ser mucho más parecido a lo que tenemos en la cabeza, y cada vez menos a la interpretación genérica que el modelo elige por default.
@@ -432,25 +433,9 @@ Prompt: Un bosque fantástico y oscuro, con hongos gigantes que brillan en tonos
 Modelo: Midjourney
 Prompt: Una calle empedrada de un pueblo medieval de fantasía, con casas de madera inclinadas, faroles encendidos y torres asomando entre la niebla al fondo. Arte digital de fantasía oscura, iluminación cálida de faroles contra un cielo azulado.
 
-![](images/clase3_26_usogen_referencias3.jpg)
-Modelo: Midjourney
-Prompt: Un callejón de un pueblo medieval de fantasía, con casas de madera desgastadas, escaleras y faroles encendidos, torres en ruinas al fondo entre la niebla. Arte digital de fantasía oscura, iluminación cálida y terrosa.
-
-![](images/clase3_26_usogen_referencias4.jpg)
-Modelo: Midjourney
-Prompt: Una plaza de un pueblo de fantasía con carpas y edificios de techos a rayas rojas y azules, un gran pabellón con cúpula en el centro, y criaturas voladoras en el cielo. Arte digital de fantasía, día soleado, estilo videojuego.
-
-![](images/clase3_26_usogen_referencias5.jpg)
-Modelo: Midjourney
-Prompt: Una casa de madera desgastada con techo de tejas naranjas, construida sobre el agua y rodeada de barriles y herramientas colgadas, con una ciudad de fantasía al fondo. Arte digital de fantasía, cielo despejado.
-
 ![](images/clase3_26_usogen_referencias6.jpg)
 Modelo: Midjourney
 Prompt: Un televisor antiguo encendido en un cuarto en ruinas, cubierto de enredaderas, mostrando en su pantalla un bosque dorado al atardecer, con tomates desparramados en el piso. Foto cinematográfica, luz cálida y tenue, atmósfera onírica.
-
-![](images/clase3_26_usogen_referencias7.jpg)
-Modelo: Midjourney
-Prompt: Un pequeño robot de ojos grandes y casco steampunk, parado junto a una torta con una vela encendida, en un taller oscuro lleno de velas y objetos antiguos. Ilustración digital de personaje, estilo tierno y fantástico, iluminación cálida.
 
 ![](images/clase3_26_usogen_referencias8.jpg)
 Modelo: Midjourney
@@ -459,14 +444,6 @@ Prompt: Un carromato ornamentado de estilo steampunk, con techo a rayas y detall
 ![](images/clase3_26_usogen_referencias9.jpg)
 Modelo: Midjourney
 Prompt: Una calle de ciudad abandonada y en ruinas, con escombros a los costados y un enorme sol anaranjado poniéndose al fondo entre los edificios. Ilustración digital estilo anime, paleta de rojos y violetas, atmósfera post-apocalíptica.
-
-![](images/clase3_26_usogen_referencias10.jpg)
-Modelo: Midjourney
-Prompt: Un barrio denso de edificios angostos apilados unos sobre otros, pintados en rojos, azules y rosas, con una calle estrecha entre ellos y una ciudad futurista de fondo. Ilustración digital, paleta vibrante, estilo urbano estilizado.
-
-![](images/clase3_26_usogen_referencias11.jpg)
-Modelo: Midjourney
-Prompt: Un castillo de fantasía con torres iluminadas junto a un canal de agua, y una estructura circular mecánica gigante frente a una luna enorme en el cielo nocturno. Arte digital de fantasía oscura, iluminación de luna llena.
 
 ## usos_generacion_ideacion
 **Ideación, prototipado y maquetado**: usar la IA para hacer bocetos de proyectos y visualizaciones esquemáticas, pudiendo generar también variaciones visuales sobre una misma idea.
@@ -501,10 +478,6 @@ Prompt: un prototipo de robot explorador para investigar cuevas subterráneas. M
 
 ## usos_generacion_vistas_imagen
 @carousel
-![](images/clase3_28_usogen_vistas.jpg)
-Modelo: Gemini 3 (Nano Banana 2)
-Prompt: un model sheet profesional de un personaje para una película live action de estilo costumbrista. Mostrar al mismo personaje de frente, perfil, tres cuartos y cuerpo completo, además de algunas expresiones y gestos cotidianos. Mantener exactamente sus rasgos faciales, peinado, vestuario y proporciones en todas las vistas. Fotografía hiperrealista, iluminación natural, estética cinematográfica, fondo neutro y presentación de producción audiovisual. Sin armas, poses de acción ni gestos exagerados.
-
 ![](images/clase3_28_usogen_vistas2.jpg)
 Modelo: GPT Image 2
 Prompt: un model sheet profesional de un personaje femenino para una película live action ambientada durante la crisis de 1929. Mostrar a la misma mujer de frente, perfil, tres cuartos y cuerpo completo, además de expresiones y gestos cotidianos. Mantener exactamente sus rasgos faciales, peinado, vestuario y proporciones en todas las vistas. Fotografía hiperrealista, estética cinematográfica de época, iluminación natural, vestuario y peinado propios de finales de los años 20 y comienzos de los 30, fondo neutro y presentación de producción audiovisual. Sin poses de acción ni gestos exagerados.
@@ -512,10 +485,6 @@ Prompt: un model sheet profesional de un personaje femenino para una película l
 ![](images/clase3_28_usogen_vistas3.jpg)
 Modelo: GPT Image 2
 Prompt: un model sheet de un zorro antropomórfico para una serie de animación cartoon. Mostrar frente, perfil, tres cuartos, espalda, diferentes poses y expresiones faciales. Mantener exactamente las mismas proporciones, colores, ropa y características del personaje en todas las vistas. Diseño cartoon expresivo, fondo neutro y presentación profesional.
-
-![](images/clase3_28_usogen_vistas4.jpg)
-Modelo: GPT Image 2
-Prompt: un model sheet profesional de un personaje de fantasía para una película live action. Mostrar frente, perfil, tres cuartos, espalda y diferentes poses, incluyendo una pose de acción. Mantener constantes el rostro, cabello, vestuario, accesorios y proporciones. Hiperrealismo cinematográfico, iluminación de estudio y fondo neutro.
 
 ![](images/clase3_28_usogen_vistas5.jpg)
 Modelo: Gemini 3 (Nano Banana 2)
@@ -526,23 +495,12 @@ Prompt: un model sheet de un personaje para videojuegos, estilo moderno tipo For
 
 ## usos_generacion_editorial_imagen
 @carousel
-![](images/clase3_30_usogen_editorial.jpg)
-Modelo: GPT Image 2
-Prompt: Una composición editorial horizontal 16:9 sobre creatividad, cultura visual e inteligencia artificial, sin que parezca un flyer ni una presentación.
-Título: CREAR CON INTELIGENCIA ARTIFICIAL — Bajada: Ideas, imágenes y posibilidades en la era de la generación — Cita: "La herramienta también transforma la manera de imaginar."
-Estética de collage editorial contemporáneo y asimétrico, combinando una persona frente a una computadora con fotografías, dibujos, recortes, texturas y elementos digitales, con los textos integrados a la composición.
-Paleta de blanco, negro y tonos de papel, con un único color de acento — inspirada en revistas de diseño, arte y cultura visual, sin estética corporativa ni de flyer.
-
 ![](images/clase3_30_usogen_editorial2.jpg)
 Modelo: GPT Image 2
 Prompt: Una composición editorial horizontal 16:9 sobre creatividad, cultura visual e inteligencia artificial, sin que parezca un flyer ni una presentación.
 Título: CREAR CON INTELIGENCIA ARTIFICIAL — Bajada: Ideas, imágenes y posibilidades en la era de la generación — Cita: "La herramienta también transforma la manera de imaginar."
 Estética de collage editorial contemporáneo y asimétrico, combinando una persona frente a una computadora con fotografías, dibujos, recortes, texturas y elementos digitales, con los textos integrados a la composición.
 Paleta de blanco, negro y tonos de papel, con un único color de acento — inspirada en revistas de diseño, arte y cultura visual, sin estética corporativa ni de flyer.
-
-![](images/clase3_30_usogen_editorial3.jpg)
-Modelo: Midjourney
-Prompt: Castillo de fantasía iluminado sobre un acantilado junto a un lago, con torre central de múltiples agujas góticas y ventanas con luz cálida. Un muelle de madera con faroles encendidos se extiende sobre el agua, con un bote amarrado; bosque de pinos denso rodea la base del castillo. De fondo, montañas nevadas y la silueta de una torre en ruinas más lejana. Cielo nocturno con una luna llena enorme, una segunda luna más chica, estrellas y nubes finas; estructuras colgantes tipo faroles/cadenas flotando cerca del castillo (detalle steampunk). Debajo de la ilustración, una fila horizontal de 8 paneles tipo ficha de videojuego sobre fondo oscuro, cada uno con un ícono pequeño y texto de relleno (ilegible) a modo de título y cuerpo — estilo códice o planilla de stats de videojuego. Arte digital de fantasía estilo portada/pantalla de carga de videojuego, paleta azul y dorado, atmósfera épica.
 
 ![](images/clase3_30_usogen_editorial4.jpg)
 Modelo: Midjourney
@@ -560,13 +518,11 @@ Prompt: Composición armada con distintas generaciones
 **Ajustar un aspecto puntual de una imagen ya generada**: modificar la iluminación, el clima u otro elemento específico, sin tocar el resto de la composición ni cambiar el estilo general (cambiar el estilo en sí es otra cosa, la vemos más adelante en "Cambio de estilo").
 
 ## usos_generacion_ajustes_imagen
-@carousel
 ![](images/clase3_31_usogen_ajustes.jpg)
-Prompt: Composición realizada combinando fotografía y render 3D de una bandera.
-
-![](images/clase3_31_usogen_ajustes2.jpg)
+@split
 Modelo: Gemini 3 (Nano Banana Pro)
-Prompt: Mejora la integración de la imagen con una luz de sol ingresando por la izquierda del cuadro, estilo cinematográfico
+**Imagen 1:** composición realizada combinando fotografía y render 3D de una bandera.
+**Imagen 2:** ajuste de iluminación sobre esa misma composición, con una luz de sol ingresando por la izquierda del cuadro, estilo cinematográfico.
 
 
 ## usos_edicion
@@ -760,7 +716,7 @@ Prompt: Crear una nueva imagen combinando las tres imágenes de referencia: Imag
 
 
 ## combinacion_modelos
-Como vimos en la Clase 2, un LLM puede funcionar como asistente para redactar y traducir prompts, y esto aplica también acá. Si tenés una idea en la cabeza pero te cuesta encontrar las palabras exactas —qué tipo de luz, qué composición, qué referencia estilística—, podés pedirle a un modelo de texto que te ayude a convertir esa idea en un prompt de imagen más preciso, o que te lo traduzca al inglés (todavía hoy, muchos modelos de imagen responden mejor en inglés). De hecho, algunas plataformas ya lo hacen solas: cuando le pedís una imagen a ChatGPT, reescribe tu prompt y lo expande antes de generar, sin que tengas que pedírselo.
+Como vimos en la Clase 2, un LLM (los modelos de IA que generan texto) puede funcionar como asistente para redactar y traducir prompts, y esto aplica también acá. Si tenés una idea en la cabeza pero te cuesta encontrar las palabras exactas —qué tipo de luz, qué composición, qué referencia estilística—, podés pedirle a un modelo de texto que te ayude a convertir esa idea en un prompt de imagen más preciso, o que te lo traduzca al inglés (todavía hoy, muchos modelos de imagen responden mejor en inglés). De hecho, algunas plataformas ya lo hacen solas: cuando le pedís una imagen a ChatGPT, reescribe tu prompt y lo expande antes de generar, sin que tengas que pedírselo.
 
 También existen herramientas específicas para esto, como [PromptPerfect](https://promptperfect.jina.ai/), pensada para optimizar y traducir prompts de imagen.
 

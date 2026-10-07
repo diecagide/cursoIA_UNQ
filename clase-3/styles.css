@@ -1094,6 +1094,28 @@ section.block:first-of-type {
   margin: 2px 0 0;
 }
 
+.platform-card__videos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 6px 0 0;
+}
+
+.platform-card__video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: .76rem;
+  font-weight: 600;
+  color: var(--platform-color, var(--color-accent));
+  background: var(--color-primary-light);
+  padding: 3px 10px 3px 8px;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.platform-card__video-link:hover { background: var(--platform-color, var(--color-accent)); color: #fff; }
+
 .platform-card__toggle {
   flex-shrink: 0;
   margin-left: auto;
@@ -1347,10 +1369,15 @@ section.block:first-of-type {
 .sift-step p { margin: 0; font-size: .96rem; }
 
 /* ---------- Nota emergente (pastilla con biografía/definición corta) ---------- */
-/* Generada por script.js a partir de ^[Texto](nota) en contenido.txt. Es un
-   <details> nativo (sin JavaScript propio) puesto en línea dentro del
-   párrafo: al tocar el triangulito se abre una tarjeta flotante con el
-   texto de la nota, posicionada debajo sin correr el resto del texto. */
+/* Generada por script.js a partir de ^[Texto](nota) en contenido.txt.
+   Botón + span puestos en línea dentro del párrafo, con el abrir/cerrar
+   manejado a mano en initNotePopovers() (script.js): al tocar el
+   triangulito se abre una tarjeta flotante con el texto de la nota,
+   posicionada debajo sin correr el resto del texto. Antes era un
+   <details> nativo, pero <details> no es contenido de línea y no puede
+   ir dentro de un <p> — el navegador cortaba el párrafo por la mitad
+   (el resto del texto quedaba suelto, con otro tamaño de letra) y el
+   popover se desubicaba, tapando contenido de al lado. */
 
 .note {
   white-space: nowrap;
@@ -1369,13 +1396,15 @@ section.block:first-of-type {
   width: 1.3em;
   height: 1.3em;
   cursor: pointer;
-  list-style: none;
   color: var(--color-accent);
   vertical-align: middle;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
 }
-
-.note__trigger::-webkit-details-marker { display: none; }
-.note__trigger::marker { content: ""; }
 
 .note__trigger span {
   transition: transform .15s ease;
@@ -1384,7 +1413,7 @@ section.block:first-of-type {
   font-weight: 700;
   line-height: 1;
 }
-.note__popover[open] .note__trigger span { transform: rotate(90deg); }
+.note__popover.is-open .note__trigger span { transform: rotate(90deg); }
 
 .note__body {
   position: absolute;
@@ -1735,3 +1764,4 @@ body.lightbox-open { overflow: hidden; }
 
 :root[data-clase="2"] { --color-sidebar-end: #6a3fa0; } /* azul → violeta */
 :root[data-clase="3"] { --color-sidebar-end: #1c8c73; } /* azul → verde azulado */
+:root[data-clase="4"] { --color-sidebar-end: #c2601c; } /* azul → naranja terracota */

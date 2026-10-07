@@ -151,9 +151,16 @@ function applyInlineMarks(html) {
   // — la diferencia es el "^" pegado adelante.
   //   ^[Texto que se muestra](contenido de la nota)
   html = html.replace(/\^\[([^\]]+)\]\(([^)]+)\)/g, function (match, label, note) {
+    // Antes esto armaba un <details>/<summary> nativo. <details> no es
+    // "phrasing content" y no puede ir dentro de un <p>: el navegador
+    // cierra el <p> antes de tiempo, deja texto suelto (que pierde el
+    // tamaño de letra de párrafo) y descoloca el popover, que termina
+    // tapando contenido de al lado. Por eso ahora es todo <span>/<button>
+    // (contenido de línea, válido dentro de <p>), con el abrir/cerrar
+    // manejado a mano en initNotePopovers() más abajo.
     return '<span class="note">' + label +
-      '<details class="note__popover"><summary class="note__trigger" aria-label="Ver más"><span aria-hidden="true">▸</span></summary>' +
-      '<div class="note__body">' + applyInlineMarks(note.trim()) + '</div></details></span>';
+      '<span class="note__popover"><button type="button" class="note__trigger" aria-label="Ver más" aria-expanded="false"><span aria-hidden="true">▸</span></button>' +
+      '<span class="note__body" hidden>' + applyInlineMarks(note.trim()) + '</span></span></span>';
   });
   html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
   html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
@@ -198,9 +205,18 @@ function renderImageBlock(alt, src, caption, eager) {
   // la marca del texto y se guarda como atributo para que initLightbox()
   // la use.
   var splitCaption = false;
+  // "@plain" en el propio renglón del epígrafe: el texto queda siempre
+  // visible debajo de la imagen, sin el botón "Ver prompt y modelo" que
+  // lo oculta por default (ver más abajo). Se usa cuando el epígrafe no es
+  // el prompt completo sino solo un dato corto (por ejemplo el modelo
+  // usado) que no tiene sentido esconder.
+  var plainCaption = false;
   if (caption) {
     var trimmed = caption.replace(/^\s+/, '');
-    if (/^@split\s*(\n|$)/.test(trimmed)) {
+    if (/^@plain\s*(\n|$)/.test(trimmed)) {
+      plainCaption = true;
+      caption = trimmed.replace(/^@plain\s*\n?/, '');
+    } else if (/^@split\s*(\n|$)/.test(trimmed)) {
       splitCaption = true;
       caption = trimmed.replace(/^@split\s*\n?/, '');
     }
@@ -217,12 +233,16 @@ function renderImageBlock(alt, src, caption, eager) {
     '<p class="img-placeholder__hint">Se completa reemplazando ' + escapeHtml(src) + '</p>' +
     '</div>';
   if (caption && caption.trim()) {
-    // El epígrafe arranca oculto (atributo "hidden"): cada imagen tiene su
-    // propio botón chico para mostrarlo u ocultarlo, sin afectar a las
-    // demás imágenes de la página ni hacer falta agrandar la imagen (ver
-    // el listener de ".caption-toggle-inline" en initInlineCaptionToggles()).
-    html += '<button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>' +
-      '<p class="img-caption" hidden>' + renderInline(caption.trim()) + '</p>';
+    if (plainCaption) {
+      html += '<p class="img-caption img-caption--plain">' + renderInline(caption.trim()) + '</p>';
+    } else {
+      // El epígrafe arranca oculto (atributo "hidden"): cada imagen tiene su
+      // propio botón chico para mostrarlo u ocultarlo, sin afectar a las
+      // demás imágenes de la página ni hacer falta agrandar la imagen (ver
+      // el listener de ".caption-toggle-inline" en initInlineCaptionToggles()).
+      html += '<button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>' +
+        '<p class="img-caption" hidden>' + renderInline(caption.trim()) + '</p>';
+    }
   }
   html += '</div>';
   return html;
@@ -441,7 +461,7 @@ var VIDEO_RE = /^@video\[([^\]]*)\]\(([^)]*)\)\s*$/;
 function extractYouTubeId(url) {
   var patterns = [
     /youtu\.be\/([A-Za-z0-9_-]{6,})/,
-    /youtube\.com\/watch\?[^#]*[?&]v=([A-Za-z0-9_-]{6,})/,
+    /youtube\.com\/watch\?(?:[^#]*[?&])?v=([A-Za-z0-9_-]{6,})/,
     /youtube\.com\/embed\/([A-Za-z0-9_-]{6,})/,
     /youtube\.com\/shorts\/([A-Za-z0-9_-]{6,})/
   ];
@@ -775,6 +795,43 @@ function initLightbox() {
 // muestra/oculta SOLO el epígrafe de esa imagen puntual, sin afectar a las
 // demás ni hacer falta agrandarla — no tiene relación con el epígrafe del
 // lightbox, que es aparte y siempre se ve entero al agrandar la imagen.
+// Notas emergentes inline (pastilla + triangulito), ver ^[Texto](nota) en
+// contenido.txt y applyInlineMarks() más arriba. Un solo listener delegado
+// en document, con el mismo criterio que initInlineCaptionToggles(): abre/
+// cierra a mano, cierra las demás notas abiertas y la propia si se hace
+// clic afuera o se aprieta Escape.
+function initNotePopovers() {
+  function closeAll(except) {
+    document.querySelectorAll('.note__popover.is-open').forEach(function (p) {
+      if (p === except) return;
+      p.classList.remove('is-open');
+      var body = p.querySelector('.note__body');
+      if (body) body.hidden = true;
+      var trigger = p.querySelector('.note__trigger');
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  document.addEventListener('click', function (e) {
+    var trigger = e.target.closest('.note__trigger');
+    if (trigger) {
+      var popover = trigger.closest('.note__popover');
+      var body = popover.querySelector('.note__body');
+      var isOpen = popover.classList.contains('is-open');
+      closeAll(isOpen ? null : popover);
+      popover.classList.toggle('is-open', !isOpen);
+      body.hidden = isOpen;
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+      return;
+    }
+    if (!e.target.closest('.note__popover')) closeAll();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeAll();
+  });
+}
+
 function initInlineCaptionToggles() {
   document.addEventListener('click', function (e) {
     var btn = e.target.closest('.caption-toggle-inline');
@@ -798,6 +855,7 @@ document.addEventListener('DOMContentLoaded', function () {
   loadContent();
   initLightbox();
   initInlineCaptionToggles();
+  initNotePopovers();
 
   var nav = document.getElementById('siteNav');
   var toggle = document.getElementById('navToggle');
