@@ -520,9 +520,9 @@ Prompt: Composición armada con distintas generaciones
 ## usos_generacion_ajustes_imagen
 ![](images/clase3_31_usogen_ajustes.jpg)
 @split
-Modelo: Gemini 3 (Nano Banana Pro)
-**Imagen 1:** composición realizada combinando fotografía y render 3D de una bandera.
+**Imagen 1:** composición realizada combinando fotografía y render 3D de una bandera. No fue generada con IA.
 **Imagen 2:** ajuste de iluminación sobre esa misma composición, con una luz de sol ingresando por la izquierda del cuadro, estilo cinematográfico.
+Modelo: Gemini 3 (Nano Banana Pro)
 
 
 ## usos_edicion
@@ -658,23 +658,6 @@ Modelo: GPT Image 2
 En la Clase 1 comparamos pedir "hacé un flyer para este evento" con aportar un esquema propio de composición: dónde van las cajas de texto, qué jerarquía tiene la información, qué paleta de colores. Con imagen, ese esquema propio puede ser un boceto a mano.
 
 Ese boceto se puede subir como imagen de referencia (imagen-a-imagen) junto con un prompt que describa el estilo visual que queremos, y el modelo va a respetar la estructura que definimos en lugar de inventar una propia. Es una forma simple de que el resultado tenga nuestra impronta desde el arranque, no recién en los ajustes posteriores.
-
-## usos_flyer_resultado_imagen
-@carousel
-![](images/clase3_05_flyer_boceto.jpg)
-Boceto propio, con la estructura de composición definida a mano
-
-![](images/clase3_06_flyer_resultado.jpg)
-@split
-Modelo: GPT Image 2
-**Imagen 1:** flyer para un Taller de Luthería, dirigido a jóvenes y adultos interesados en música, diseño y fabricación de instrumentos, generado a partir del boceto como guía estricta de composición. Título: TALLER DE LUTHERÍA. Subtítulo: Diseñá y construí tu propio instrumento. Imagen principal: una guitarra eléctrica parcialmente desmontada y en construcción, con madera, piezas, herramientas y planos técnicos. Estética de afiche editorial contemporáneo, paleta de papel, madera, negro y gris con un color de acento.
-**Imagen 2:** flyer para un Taller de Customización de Zapatillas, dirigido a jóvenes interesados en diseño, moda y cultura urbana, generado con el mismo boceto como guía. Título: CUSTOM LAB. Subtítulo: Diseñá · Intervení · Transformá. Imagen principal: una zapatilla blanca intervenida a mano, con pinceles, marcadores y materiales alrededor. Estética urbana, colorida y DIY, inspirada en street art y graffiti.
-
-![](images/clase3_06_flyer_resultado2.jpg)
-@split
-Modelo: GPT Image 2
-**Imagen 1:** flyer para un Festival de Música Electrónica, dirigido a un público joven, generado con el mismo boceto como guía. Título: FRECUENCIA. Subtítulo: Festival de Música Electrónica. Imagen principal: un DJ frente a una multitud, con luces, pantallas y formas abstractas. Estética contemporánea y audiovisual, con neón y degradados.
-**Imagen 2:** flyer para un Taller de Videojuegos, dirigido a jóvenes interesados en imaginar personajes y mundos, generado con el mismo boceto como guía. Título: TALLER DE VIDEOJUEGOS. Subtítulo: Inventá. Diseñá. Jugá. Imagen principal: una maqueta física de un universo de videojuego, con personajes y objetos de cartón, bloques y plastilina. Estética pop, lúdica y artesanal, inspirada en juguetes y stop motion.
 
 ## usos_flyer_resultado2_imagen
 @carousel
