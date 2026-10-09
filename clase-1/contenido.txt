@@ -87,7 +87,7 @@ Me parece importante conocer al monstruo que viene a trastocarlo todo en nuestra
 
 Hay herramientas y usos de IA que difícilmente generen dudas. Pienso, por ejemplo, en algunas funciones de Photoshop para borrar elementos de una imagen, las posibilidades que brinda Nano Banana (el modelo de generación de imágenes de Gemini) para creación y producción de referencias visuales, la síntesis y traducción de textos, la consulta sobre herramientas puntuales de software, etc.
 
-Pero ¿qué pasa cuando un proyecto audiovisual con personas, elementos, música y voces, es creado íntegramente con IA? Para mi, todo proceso creativo debe incluir cabeza y cuerpo, y en ese caso todo se reduce a la cabeza, porque escribir prompts no pone en juego el cuerpo.
+Pero ¿qué pasa cuando un proyecto audiovisual con personas, elementos, música y voces, es creado íntegramente con IA? Para mí, todo proceso creativo debe incluir cabeza y cuerpo, y en ese caso todo se reduce a la cabeza, porque escribir prompts no pone en juego el cuerpo.
 
 ## razon3
 Como diría el señor Miyagi en Karate Kid: aprendemos karate para no tener que usarlo. La idea de comprender estas tecnologías no es necesariamente someterse a su uso porque los tiempos que corren nos dicen que hay que hacerlo, sino que, en esa misma comprensión, podamos reivindicar con mayor firmeza las modalidades en las que venimos trabajando.
@@ -172,7 +172,7 @@ Esto no es exclusivo de ningún campo. Quien está produciendo un texto académi
 Volveremos sobre este punto en las siguientes clases.
 
 ## panorama_intro
-El campo de la IA generativa cambia todo el tiempo, así que este panorama es apenas una fotografía del presente —es muy probable que para cuando terminemos el curso ya haya novedades que hoy ni mencionamos. Aun así, sirve tener un mapa general de quiénes son los actores principales hoy:
+El campo de la IA generativa evoluciona todo el tiempo: los modelos se actualizan y surgen funciones nuevas constantemente, así que estos detalles pueden quedar desactualizados pronto. Aun así, sirve tener un mapa general de quiénes son los actores principales hoy:
 
 ## company_openai
 Es la empresa que popularizó todo esto con el lanzamiento de ChatGPT. Su familia de modelos GPT se usa principalmente para trabajar con texto, pero la empresa también desarrolla modelos con capacidades de generación y comprensión de imágenes, audio y video.
