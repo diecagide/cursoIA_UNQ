@@ -66,9 +66,9 @@ Modelo: Nano Banana pro (Gemini 3)
 Prompt: Un banner de temática IA para un curso de Inteligencia Artificial para docentes universitarios de Artes, Ciencias Sociales, Economía y Ciencia y Tecnología. Debe representar en distintos recuadros las distintas unidades académicas, de manera sobria y representativa. La IA debe estar presente como elemento común entre todas las áreas. Que no tenga textos ni agregados típicos de una infografía.
 
 ## bienvenida_2
-A lo largo de cinco clases vamos a recorrer un camino que va de lo general a lo particular. En esta primera clase nos detendremos en los modelos y las plataformas que existen hoy y en sus usos habituales. En la Clase 2 vamos a trabajar con modelos de texto y escritura de prompts. En las Clases 3 y 4 pasaremos a imagen, video y otros formatos. Y en la Clase 5 haremos una síntesis e integraremos varios modelos en un mismo proceso de producción..
+A lo largo de cinco clases vamos a recorrer un camino que va de lo general a lo particular. En esta primera clase nos detendremos en los modelos y las plataformas que existen hoy y en sus usos habituales. En la Clase 2 vamos a trabajar con modelos de texto y escritura de prompts. En las Clases 3 y 4 pasaremos a imagen y video. Y en la Clase 5 haremos una síntesis e integraremos varios modelos en un mismo proceso de producción..
 
-Cada clase combina una instancia teórica con una práctica, donde van a poder aplicar lo que fuimos viendo con ejercicios concretos, pensados también como recursos que puedan después llevar a sus propias aulas. Va a haber, además, un foro para intercambiar dudas, ideas y experiencias con el resto del grupo.
+Cada clase combina una instancia teórica con una práctica, donde van a poder aplicar lo que fuimos viendo con ejercicios concretos, pensados también como recursos que puedan después llevar a sus propias aulas. Va a haber, además, un canal de Discord para intercambiar dudas, ideas y experiencias con el resto del grupo.
 
 No es necesario tener ningún conocimiento técnico previo para este curso. El recorrido está pensado para ir probando estas herramientas a medida que avanzamos, y así construir una mirada propia sobre sus posibilidades y sus límites. Empecemos.
 
@@ -87,7 +87,7 @@ Me parece importante conocer al monstruo que viene a trastocarlo todo en nuestra
 
 Hay herramientas y usos de IA que difícilmente generen dudas. Pienso, por ejemplo, en algunas funciones de Photoshop para borrar elementos de una imagen, las posibilidades que brinda Nano Banana (el modelo de generación de imágenes de Gemini) para creación y producción de referencias visuales, la síntesis y traducción de textos, la consulta sobre herramientas puntuales de software, etc.
 
-Pero ¿está bien hacer un proyecto audiovisual con personas, elementos, música y voces, todo creado con IA? Mi respuesta es que no, y de hecho estoy en la vereda de enfrente de ese modo de uso. Principalmente porque estoy a favor de que la situación de creación tiene que incluir cabeza y cuerpo, y en ese caso todo se reduce a la cabeza (escribir prompts no es cuerpo).
+Pero ¿qué pasa cuando un proyecto audiovisual con personas, elementos, música y voces, es creado íntegramente con IA? Para mi, todo proceso creativo debe incluir cabeza y cuerpo, y en ese caso todo se reduce a la cabeza, porque escribir prompts no pone en juego el cuerpo.
 
 ## razon3
 Como diría el señor Miyagi en Karate Kid: aprendemos karate para no tener que usarlo. La idea de comprender estas tecnologías no es necesariamente someterse a su uso porque los tiempos que corren nos dicen que hay que hacerlo, sino que, en esa misma comprensión, podamos reivindicar con mayor firmeza las modalidades en las que venimos trabajando.
