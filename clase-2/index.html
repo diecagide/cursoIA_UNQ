@@ -69,7 +69,11 @@
       </li>
 
       <li class="nav-group">
-        <a class="nav-group__link" href="#bloque-e"><span class="nav-bullet"></span>Bloque E · Validación</a>
+        <a class="nav-group__link" href="#bloque-e"><span class="nav-bullet"></span>Bloque E · Usos creativos</a>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#bloque-f"><span class="nav-bullet"></span>Bloque F · Validación</a>
         <ul class="nav-subgroup">
           <li><a href="#legitimidad">Legitimidad</a></li>
           <li><a href="#voz-propia">Voz propia</a></li>
@@ -335,9 +339,21 @@
         <!-- El texto de esta sección (incluida la lista) se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="que_pueden_hacer"></div>
 
+        <!-- Aviso de límites de archivos en cuentas gratuitas — el texto
+             de adentro se edita en contenido.txt (clave archivos_atencion),
+             el recuadro en sí es fijo acá (mismo estilo que "¡Cuidado!"
+             del Bloque C, con ícono propio para diferenciarlo). -->
+        <div class="warning-box">
+          <p class="warning-box__label">🚨 ¡Atención!</p>
+          <p data-key="archivos_atencion"></p>
+        </div>
+
         <h3 id="la-interfaz">La interfaz</h3>
         <!-- El texto de esta sección (incluida la lista) se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="la_interfaz"></div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="video_interfaz_intro"></p>
 
         <!-- Video: se agrega y se titula desde contenido.txt (clave
              video_interfaz), con @video[Título](link de YouTube) — ver
@@ -543,7 +559,67 @@
            BLOQUE E
            ================================================================= -->
       <section class="block" id="bloque-e">
-        <h2>Bloque E — Estrategias de validación</h2>
+        <h2>Bloque E — Usos posibles para el aula, parte 3: usos creativos</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="creativo_intro"></div>
+
+        <!-- Recuadro "Fragmento del libro" — mismo estilo que la cita de
+             Roselli (.academic-quote). El texto de adentro se edita en
+             contenido.txt (clave creativo_fragmento), la fuente debajo
+             es fija acá. -->
+        <div class="academic-quote">
+          <div class="content-block" data-key="creativo_fragmento"></div>
+        </div>
+        <p class="academic-quote__source">— Rodari, G., <em>La gramática de la fantasía</em>, capítulo 21, "Fábulas calcadas"</p>
+
+        <!-- Recuadro con el link al libro completo — mismo estilo que el
+             de "Herramienta" (Gemini Notebook). El link es fijo acá
+             (Google Drive); el texto se edita en contenido.txt (clave
+             creativo_libro_texto). -->
+        <div class="callout">
+          <p class="callout__label">Lectura</p>
+          <p data-key="creativo_libro_texto"></p>
+          <a class="btn" href="https://drive.google.com/file/d/1WMXbJ7bXwRvho4A_LXvt5rzhhsIF2Ki4/view?usp=sharing" target="_blank" rel="noopener">Ir al libro completo →</a>
+        </div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="creativo_aplicacion"></div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="caperucita_sinopsis"></div>
+
+        <!-- Prompt 1 y su resultado — mismo estilo que los ejemplos del
+             Bloque B (.prompt-example), con la etiqueta cambiada acá
+             mismo ("Prompt 1" / "Resultado") en vez de "Ejemplo". -->
+        <div class="prompt-example">
+          <p class="prompt-example__label">Prompt 1</p>
+          <p data-key="creativo_prompt1"></p>
+        </div>
+        <div class="prompt-example">
+          <p class="prompt-example__label">Resultado</p>
+          <p data-key="creativo_esquema1"></p>
+        </div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="creativo_transicion"></p>
+
+        <!-- Prompt 2 y su resultado final -->
+        <div class="prompt-example">
+          <p class="prompt-example__label">Prompt 2</p>
+          <p data-key="creativo_prompt2"></p>
+        </div>
+        <div class="prompt-example">
+          <p class="prompt-example__label">Resultado</p>
+          <p data-key="creativo_historia"></p>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE F
+           ================================================================= -->
+      <section class="block" id="bloque-f">
+        <h2>Bloque F — Estrategias de validación</h2>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="bloquee_1"></p>

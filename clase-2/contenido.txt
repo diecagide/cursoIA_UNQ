@@ -125,6 +125,10 @@ En general, estas plataformas hacen las siguientes cosas:
 - Generar imágenes, aunque no todas las plataformas lo hacen, ni todas igual de bien (de esto nos ocupamos en la próxima clase).
 
 
+## archivos_atencion
+Las cuentas gratuitas de estos modelos suelen tener límites para trabajar con archivos: algunas (como Perplexity) permiten adjuntar solo uno por día, y en general la conversación con un archivo adjunto se corta después de cierta cantidad de interacciones. Si eso pasa, iniciá una conversación nueva para seguir trabajando gratis.
+
+
 ## la_interfaz
 Todas estas plataformas comparten una interfaz bastante parecida que incluye los siguientes elementos:
 
@@ -133,6 +137,10 @@ Todas estas plataformas comparten una interfaz bastante parecida que incluye los
 - la opción de adjuntar archivos —PDFs, imágenes, planillas— para que el modelo trabaje sobre ellos,
 - un selector para elegir entre distintos modelos disponibles,
 - alguna forma de memoria que permite que el modelo recuerde información de conversaciones anteriores sin que se la repitamos cada vez.
+
+
+## video_interfaz_intro
+Acá te muestro cómo están constituidas las interfaces de las plataformas más populares, y te explico qué son los "Proyectos" (chats personalizados sobre un tema específico) y cómo funcionan.
 
 
 ## video_interfaz
@@ -341,6 +349,56 @@ Llevado a un prompt complejo, con todos los elementos que vimos en el Bloque B:
 
 ## reponer_ej_final
 "Estoy trabajando con un texto académico que menciona las corrientes neo-piagetianas y neo-vygotskianas, pero no desarrolla sus debates centrales. Explicá cuáles son las principales discusiones que se dieron en torno a estas corrientes, destacando qué puntos tienen en común y en qué aspectos se diferencian. Enfocate en su lugar dentro de los debates sobre el aprendizaje colaborativo. Proporcioná la respuesta en formato de lista con tres debates centrales y un párrafo de síntesis final. Si es posible, incluí referencias a autores posteriores a 2010 que trabajen sobre estas corrientes."
+
+
+## creativo_intro
+Uno de mis grandes referentes en el mundo de la creatividad es Gianni Rodari, autor de *La gramática de la fantasía*, un libro que propone numerosos mecanismos para estimular la imaginación. En el capítulo 21, "Fábulas calcadas", Rodari describe el juego del calco: a partir de historias viejas, podemos obtener historias nuevas con distintos grados de alejamiento del original.
+
+El juego consiste en reducir una historia a su esquema interno, reemplazando sus elementos centrales por letras, para luego hacer un nuevo reemplazo que dé lugar a una historia nueva y auténtica.
+
+
+## creativo_fragmento
+Reduzcamos una conocida fábula a su argumento y a sus relaciones internas:
+
+Cenicienta vive con su madrastra y sus hermanastras. Estas últimas acuden a un gran baile y la dejan sola en casa. Por intervención de un hada también ella puede ir a bailar. El Príncipe se enamora de ella, etc.
+
+La segunda operación consiste en reducir aún más la trama hasta una pura expresión abstracta:
+
+«A» vive en casa de «B», estando con «B» en una relación diferente a la de «C» y «D» que también conviven. Mientras «B», «C» y «D» acuden a «E», donde tiene lugar un suceso «F», «A» se queda sola (o solo, no importa el sexo). Pero gracias a la intervención de «G», también «A» puede acudir a «E», donde produce un efecto extraordinario sobre «H».
+
+
+## creativo_libro_texto
+Si querés leer el libro completo, acá te lo dejo.
+
+
+## creativo_aplicacion
+Partiendo de este juego, podemos usar la IA para hacer este mismo procedimiento como punto de partida para nuevas historias.
+
+Tomemos una fábula muy conocida, pero que Rodari no usa como ejemplo de calco en este capítulo: Caperucita Roja.
+
+
+## caperucita_sinopsis
+Caperucita Roja es una niña que su madre envía a cruzar el bosque para llevarle una canasta con comida a su abuela enferma, advirtiéndole que no se desvíe del camino ni hable con extraños. En el camino se cruza con un lobo, que le pregunta adónde va y, al enterarse, se adelanta corriendo hasta la casa de la abuela. Allí se la come y ocupa su lugar en la cama, disfrazado con su ropa de dormir, esperando a que la niña llegue. Cuando Caperucita entra y empieza a notar lo extraño que luce su abuela, el lobo finalmente se revela y también la devora, hasta que un cazador que pasaba por la zona los rescata a las dos abriéndole la panza al lobo.
+
+
+## creativo_prompt1
+Reemplazá los personajes, ambientes, elementos y acciones de esta historia por letras.
+
+
+## creativo_esquema1
+«B» envía a «A» a atravesar «C» para llevarle «D» a «E», advirtiéndole que no se desvíe ni hable con nadie en el camino. En «C», «A» se cruza con «F», que al enterarse de su destino se adelanta hasta «G» (la casa de «E»), donde devora a «E» y ocupa su lugar, disfrazado, a la espera de «A». Cuando «A» llega y empieza a notar que «E» no es quien parece, «F» se revela y también la devora. Finalmente «H», que pasaba por «C», los rescata a ambas abriendo a «F».
+
+
+## creativo_transicion
+Luego, llevamos esa abstracción a una nueva historia.
+
+
+## creativo_prompt2
+Reemplazá las letras por estos elementos y escribí una sinopsis breve, sin diálogos: la protagonista es una detective enviada por su comisario; en lugar de comida, lleva un mensaje o pista que la conduce a la víctima; el bosque es una metáfora de una zona deshabitada de Ituzaingó; la abuela es en realidad una víctima de zona oeste secuestrada por el lobo, que ahora es un secuestrador que ocupa su lugar disfrazado para sorprender a la detective; una colega detective, conocida como "la cazadora", la rescata en el enfrentamiento final. Estilo policial y de misterio, en el tono de *El silencio de los inocentes*.
+
+
+## creativo_historia
+El comisario a cargo le asigna a la detective Alfonsina Roldán el caso de una mujer de zona oeste, secuestrada semanas atrás, y le entrega el único rastro que tienen: un mensaje de texto enviado desde el celular de la víctima con una dirección en una franja deshabitada de Ituzaingó que en la comisaría llaman "el bosque", por los pastizales altos y los galpones abandonados que la cubren. Alfonsina cruza sola esa zona, contra el protocolo, siguiendo la dirección. Al llegar al galpón indicado, encuentra a alguien envuelto en una manta, en la misma postura en la que describieron a la víctima, y se acerca convencida de haberla encontrado con vida. Recién cuando está a centímetros nota que las manos que asoman no son las de la desaparecida: el secuestrador se incorpora y la reduce antes de que pueda reaccionar. Está a punto de correr la misma suerte cuando irrumpe su compañera de la brigada, a quien todos conocen como "la cazadora" por su instinto para encontrar a los que se esconden, y lo reduce a tiempo.
 
 
 ## bloquee_1
