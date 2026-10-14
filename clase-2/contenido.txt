@@ -80,7 +80,7 @@ Un LLM es un modelo entrenado para comprender y generar lenguaje humano en forma
 
 
 ## bloquea_sesgo_datos
-No sabemos en qué proporción, en qué idiomas ni de qué regiones. Y eso importa, porque es el terreno donde crecen los sesgos de los que hablamos en la clase anterior. Algo que sí está medido. Estos modelos rinden mejor en inglés que en cualquier otro idioma, y esa diferencia aparece en las respuestas.
+No sabemos en qué proporción, en qué idiomas ni de qué regiones. Y eso importa, porque es el terreno donde crecen los sesgos de los que hablamos en la clase anterior. Algo que sí está confirmado es que estos modelos rinden mejor en inglés que en cualquier otro idioma, y esa diferencia aparece en las respuestas.
 
 
 ## bloquea_sesgo_imagen
