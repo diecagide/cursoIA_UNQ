@@ -432,7 +432,7 @@ Prompt: Una playa de arena húmeda, con varias huellas de pasos que atraviesan l
 ## cierre_1
 Y con esto llegamos al final de la segunda clase. Vimos qué hace un LLM cuando le escribimos algo, recorrimos las plataformas más usadas hoy y qué sabe hacer cada una, y nos metimos con la gramática del prompt: el rol, el contexto, la acción, la focalización, las restricciones y el formato de salida, y cómo se combinan en prompts simples, medios y complejos.
 
-Después pasamos a los usos: producir y transformar textos, trabajar sobre archivos propios, revisar bibliografía antes de leerla, y usar la IA como asistente de lectura para reponer aquello que un texto menciona pero no desarrolla. Y cerramos con las dos validaciones que venimos sosteniendo desde el principio: la legitimidad de la información, con el método SIFT y la lectura lateral como herramientas concretas, y la voz propia, que no se detecta con software sino que se acompaña con estrategias pedagógicas.
+Después pasamos a los usos: producir y trabajar sobre textos, interactuar con archivos propios, revisar bibliografía complementaria antes de leerla, y usar la IA como asistente de lectura para reponer aquello que un texto menciona pero no desarrolla. Y cerramos con las dos validaciones que venimos sosteniendo desde el principio: la legitimidad de la información y la voz propia, que se trabaja con estrategias pedagógicas de acompañamiento.
 
 ## proxima_clase
 En la próxima clase nos centraremos en Imagen. Vamos a ver algunos de los modelos de generación más populares, gramática del prompt en imagen y analizaremos sus posibles usos y posibilidades ¡Nos vemos!
