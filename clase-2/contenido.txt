@@ -425,7 +425,7 @@ Prompt: Una playa de arena húmeda, con varias huellas de pasos que atraviesan l
 - **Evaluar el proceso, no solo el producto**: entregas por etapas —un mapa conceptual inicial, un borrador, la versión final con justificación de los cambios.
 - **Instancias orales breves**, con preguntas sobre las decisiones tomadas: por qué eligió ese recorte, por qué descartó tal autor, qué le costó más.
 - **Anexo de transparencia.** Si se usó IA, que quede documentado: qué prompts usó, qué le devolvió el modelo, qué hizo con eso y por qué.
-- **La IA como objeto de auditoría**: darles una salida generada por IA para que la critiquen, que detecten las alucinaciones, verifiquen las fuentes, señalen los sesgos. Ahí se evalúa el juicio disciplinar, que es justamente lo que no se puede delegar.
+- **Revisar una respuesta de IA**: darles un texto generado por IA para que lo analicen, que detecten las alucinaciones, verifiquen las fuentes, señalen los sesgos. Ahí se evalúa el juicio disciplinar, que es justamente lo que no se puede delegar.
 - **Acordar las reglas desde el principio**, delimitando (como mencioné en la clase 1) en qué etapas de la cursada o del proceso de producción puede utilizarse la IA y en cuáles no.
 
 
