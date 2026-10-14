@@ -361,7 +361,7 @@ La lógica del método es que la verificación tiene que ser rápida. No se trat
 **S – Stop (Detenerse)**: no uses el texto de la IA de inmediato. Asumí que la respuesta es un borrador que requiere verificación obligatoria.
 
 ## sift_i
-**I – Investigate the source (Investigar la fuente)**: pedile a la IA las fuentes que usó y chequealas vos, viendo quién las escribió, si tienen respaldo académico o institucional y si son reconocidas en el tema.
+**I – Investigate the source (Investigar la fuente)**: pedile a la IA en qué se basó para esa afirmación, y fijate quién es el autor o la institución detrás: si tiene trayectoria reconocida o respaldo académico en el tema.
 
 ## sift_f
 **F – Find better coverage (Encontrar mejor cobertura)**: buscá el dato en [Google Académico] (https://scholar.google.com/), bases de datos científicas o libros, para comprobar si expertos humanos validan lo que afirma la IA.
