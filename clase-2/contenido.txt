@@ -352,7 +352,7 @@ Llevado a un prompt complejo, con todos los elementos que vimos en el Bloque B:
 
 
 ## creativo_intro
-Uno de mis grandes referentes en el mundo de la creatividad es Gianni Rodari, autor de *La gramática de la fantasía*, un libro que propone numerosos mecanismos para estimular la imaginación. En el capítulo 21, "Fábulas calcadas", Rodari describe el juego del calco: a partir de historias viejas, podemos obtener historias nuevas con distintos grados de alejamiento del original.
+Uno de mis grandes referentes en el mundo de la creatividad es [Gianni Rodari](https://en.wikipedia.org/wiki/Gianni_Rodari), autor de *La gramática de la fantasía*, un libro que propone numerosos mecanismos para estimular la imaginación. En el capítulo 21, "Fábulas calcadas", Rodari describe el juego del calco: a partir de historias viejas, podemos obtener historias nuevas con distintos grados de alejamiento del original.
 
 El juego consiste en reducir una historia a su esquema interno, reemplazando sus elementos centrales por letras, para luego hacer un nuevo reemplazo que dé lugar a una historia nueva y auténtica.
 
@@ -364,7 +364,7 @@ Cenicienta vive con su madrastra y sus hermanastras. Estas últimas acuden a un 
 
 La segunda operación consiste en reducir aún más la trama hasta una pura expresión abstracta:
 
-«A» vive en casa de «B», estando con «B» en una relación diferente a la de «C» y «D» que también conviven. Mientras «B», «C» y «D» acuden a «E», donde tiene lugar un suceso «F», «A» se queda sola (o solo, no importa el sexo). Pero gracias a la intervención de «G», también «A» puede acudir a «E», donde produce un efecto extraordinario sobre «H».
+«A» vive en casa de «B», estando con «B» en una relación diferente a la de «C» y «D» que también conviven. Mientras «B», «C» y «D» acuden a «E», donde tiene lugar un suceso «F», «A» se queda sola (o solo, no importa el género). Pero gracias a la intervención de «G», también «A» puede acudir a «E», donde produce un efecto extraordinario sobre «H».
 
 Demos todavía una nueva interpretación a la expresión abstracta y podemos obtener, por ejemplo, este esquema:
 
@@ -373,6 +373,10 @@ Delfina es la pariente pobre de la señora Notábilis, propietaria de una tintor
 
 ## creativo_libro_texto
 Si querés leer el libro completo, acá te lo dejo.
+
+
+## creativo_libro_imagen
+![Portada del libro La gramática de la fantasía, de Gianni Rodari](images/clase2_07_rodari_portada.jpg)
 
 
 ## creativo_aplicacion
@@ -394,20 +398,22 @@ Reemplazá los personajes, ambientes, elementos y acciones de esta historia por 
 
 
 ## creativo_transicion
-Luego, llevamos esa abstracción a una nueva historia.
+Luego, a cada letra le asignamos un elemento:
 
 
 ## creativo_prompt2
-Reemplazá las letras por estos elementos y escribí una sinopsis breve, sin diálogos, a partir de esta lista:
+Reemplazá las letras por estos elementos y escribí una sinopsis breve, sin diálogos:
 
-- La protagonista es la detective Alfonsina Roldán, enviada por el comisario Mendoza.
-- En lugar de comida, lleva un mensaje o pista que la conduce hasta la víctima.
-- En lugar de una mujer, la víctima es un adolescente, secuestrado semanas atrás.
-- El bosque es una metáfora de una zona deshabitada de Ituzaingó, que la detective cruza sola, contra el protocolo —este tramo es el núcleo de la historia, con una serie de obstáculos que la van haciendo descender a un submundo cada vez más infernal.
-- La abuela es en realidad la víctima, retenida por el secuestrador.
-- El lobo es el secuestrador, que ocupa el lugar de la víctima disfrazado para sorprender a la detective.
-- El cazador es una colega detective, conocida como "la cazadora", que la rescata en el enfrentamiento final.
-- Estilo policial y de misterio, en el tono de *El silencio de los inocentes*.
+- A = la detective Alfonsina Roldán.
+- B = el comisario Mendoza, que le asigna el caso.
+- C = una zona deshabitada de Ituzaingó, que A cruza sola, contra el protocolo —este tramo es el núcleo de la historia, con una serie de obstáculos que la van haciendo descender a un submundo cada vez más infernal.
+- D = un mensaje o pista que la conduce hasta la víctima.
+- E = un adolescente, secuestrado semanas atrás.
+- F = el secuestrador, que ocupa el lugar de E, disfrazado, para sorprender a A.
+- G = el galpón donde F espera disfrazado de E.
+- H = una colega detective, conocida como "la cazadora", que rescata a A en el enfrentamiento final.
+
+Estilo policial y de misterio, en el tono de *El silencio de los inocentes*.
 
 
 ## creativo_historia
