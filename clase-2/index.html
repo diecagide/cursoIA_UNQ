@@ -69,16 +69,21 @@
       </li>
 
       <li class="nav-group">
-        <a class="nav-group__link" href="#bloque-e"><span class="nav-bullet"></span>Bloque E · Usos creativos</a>
-      </li>
-
-      <li class="nav-group">
-        <a class="nav-group__link" href="#bloque-f"><span class="nav-bullet"></span>Bloque F · Validación</a>
+        <a class="nav-group__link" href="#bloque-e"><span class="nav-bullet"></span>Bloque E · Validación</a>
         <ul class="nav-subgroup">
           <li><a href="#legitimidad">Legitimidad</a></li>
           <li><a href="#voz-propia">Voz propia</a></li>
         </ul>
       </li>
+    </ul>
+
+    <div class="site-nav__divider"></div>
+    <p class="site-nav__section-label">Anexo</p>
+
+    <!-- El anexo no es un "bloque" con letra: tiene su propio grupo en
+         el menú, separado de "Bloques de la Clase 2". -->
+    <ul class="nav-list">
+      <li><a href="#anexo-historias">La IA en la creación de historias</a></li>
     </ul>
 
     <div class="site-nav__divider"></div>
@@ -574,75 +579,7 @@
            BLOQUE E
            ================================================================= -->
       <section class="block" id="bloque-e">
-        <h2>Bloque E — Usos posibles para el aula, parte 3: usos creativos</h2>
-
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="creativo_intro"></div>
-
-        <!-- Recuadro "Fragmento del libro" — mismo estilo que la cita de
-             Roselli (.academic-quote). El texto de adentro se edita en
-             contenido.txt (clave creativo_fragmento), la fuente debajo
-             es fija acá. -->
-        <div class="academic-quote">
-          <div class="content-block" data-key="creativo_fragmento"></div>
-        </div>
-        <p class="academic-quote__source">— Rodari, G., <em>La gramática de la fantasía</em>, capítulo 21, "Fábulas calcadas"</p>
-
-        <!-- Portada del libro, arriba del recuadro de Lectura. Achicada
-             con un estilo en línea (no toca styles.css, que tiene que
-             quedarse igual en las 5 clases) porque es la única imagen
-             de la clase que necesita este tamaño reducido y centrado.
-             El archivo se edita en contenido.txt (clave
-             creativo_libro_imagen). -->
-        <div class="content-block" data-key="creativo_libro_imagen" style="max-width:200px; margin:0 auto 20px;"></div>
-
-        <!-- Recuadro con el link al libro completo — mismo estilo que el
-             de "Herramienta" (Gemini Notebook). El link es fijo acá
-             (Google Drive); el texto se edita en contenido.txt (clave
-             creativo_libro_texto). -->
-        <div class="callout">
-          <p class="callout__label">Lectura</p>
-          <p data-key="creativo_libro_texto"></p>
-          <a class="btn" href="https://drive.google.com/file/d/1WMXbJ7bXwRvho4A_LXvt5rzhhsIF2Ki4/view?usp=sharing" target="_blank" rel="noopener">Ir al libro completo →</a>
-        </div>
-
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="creativo_aplicacion"></div>
-
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="caperucita_sinopsis"></div>
-
-        <!-- Prompt 1 y su resultado — mismo estilo que los ejemplos del
-             Bloque B (.prompt-example), con la etiqueta cambiada acá
-             mismo ("Prompt 1" / "Resultado") en vez de "Ejemplo". -->
-        <div class="prompt-example">
-          <p class="prompt-example__label">Prompt 1</p>
-          <p data-key="creativo_prompt1"></p>
-        </div>
-        <div class="prompt-example">
-          <p class="prompt-example__label">Resultado</p>
-          <p data-key="creativo_esquema1"></p>
-        </div>
-
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="creativo_transicion"></p>
-
-        <!-- Prompt 2 y su resultado final -->
-        <div class="prompt-example">
-          <p class="prompt-example__label">Prompt 2</p>
-          <div class="content-block" data-key="creativo_prompt2"></div>
-        </div>
-        <div class="prompt-example">
-          <p class="prompt-example__label">Resultado</p>
-          <div class="content-block" data-key="creativo_historia"></div>
-        </div>
-      </section>
-
-      <!-- =================================================================
-           BLOQUE F
-           ================================================================= -->
-      <section class="block" id="bloque-f">
-        <h2>Bloque F — Estrategias de validación</h2>
+        <h2>Bloque E — Estrategias de validación</h2>
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="bloquee_1"></p>
@@ -709,6 +646,81 @@
         <p class="mini-heading">Estrategias para validar la voz propia</p>
         <!-- El texto de esta sección (la lista) se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="voz_propia_list"></div>
+      </section>
+
+      <!-- =================================================================
+           ANEXO: LA IA EN LA CREACIÓN DE HISTORIAS
+           No es un "Bloque" con letra (no entra en la secuencia A-E): es
+           un anexo aparte, con el mismo diseño visual de bloque pero su
+           propio grupo en el menú lateral, al final, antes del cierre.
+           ================================================================= -->
+      <section class="block" id="anexo-historias">
+        <h2>Anexo: la IA en la creación de historias</h2>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="creativo_intro"></div>
+
+        <!-- Recuadro "Fragmento del libro" — mismo estilo que la cita de
+             Roselli (.academic-quote). El texto de adentro se edita en
+             contenido.txt (clave creativo_fragmento), la fuente debajo
+             es fija acá. -->
+        <div class="academic-quote">
+          <div class="content-block" data-key="creativo_fragmento"></div>
+        </div>
+        <p class="academic-quote__source">— Rodari, G., <em>La gramática de la fantasía</em>, capítulo 21, "Fábulas calcadas"</p>
+
+        <!-- Portada del libro, arriba del recuadro de Lectura. Achicada
+             con un estilo en línea (no toca styles.css, que tiene que
+             quedarse igual en las 5 clases) porque es la única imagen
+             de la clase que necesita este tamaño reducido y centrado.
+             El archivo se edita en contenido.txt (clave
+             creativo_libro_imagen). -->
+        <div class="content-block" data-key="creativo_libro_imagen" style="max-width:200px; margin:0 auto 20px;"></div>
+
+        <!-- Recuadro con el link al libro completo — mismo estilo que el
+             de "Herramienta" (Gemini Notebook). El link es fijo acá
+             (Google Drive); el texto se edita en contenido.txt (clave
+             creativo_libro_texto). -->
+        <div class="callout">
+          <p class="callout__label">Lectura</p>
+          <p data-key="creativo_libro_texto"></p>
+          <a class="btn" href="https://drive.google.com/file/d/1WMXbJ7bXwRvho4A_LXvt5rzhhsIF2Ki4/view?usp=sharing" target="_blank" rel="noopener">Ir al libro completo →</a>
+        </div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="creativo_aplicacion"></div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="caperucita_sinopsis"></div>
+
+        <!-- Prompt 1: mismo estilo que los ejemplos del Bloque B
+             (.prompt-example) — este sí se mantiene. El resultado usa un
+             diseño distinto (.academic-quote, el mismo que "Fragmento
+             del libro" más arriba) para diferenciar la consigna que le
+             damos a la IA de lo que la IA devuelve. -->
+        <div class="prompt-example">
+          <p class="prompt-example__label">Prompt 1</p>
+          <p data-key="creativo_prompt1"></p>
+        </div>
+
+        <p class="mini-heading">Resultado</p>
+        <div class="academic-quote">
+          <p data-key="creativo_esquema1"></p>
+        </div>
+
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="creativo_transicion"></p>
+
+        <!-- Prompt 2 y su resultado final -->
+        <div class="prompt-example">
+          <p class="prompt-example__label">Prompt 2</p>
+          <div class="content-block" data-key="creativo_prompt2"></div>
+        </div>
+
+        <p class="mini-heading">Nueva sinopsis</p>
+        <div class="academic-quote">
+          <div class="content-block" data-key="creativo_historia"></div>
+        </div>
       </section>
 
       <!-- =================================================================

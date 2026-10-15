@@ -470,10 +470,10 @@ Además de estos dos métodos, hay algunas prácticas que conviene incorporar:
 
 
 ## notebooklm_desc
-Es una plataforma gratuita de Google que ahora forma parte de la familia Gemini (se llamaba NotebookLM), pensada para trabajar con fuentes propias: se le suben documentos, artículos o videos y funciona como un cuaderno de investigación, donde podemos hacer preguntas, pedir resúmenes o generar un resumen en audio parecido a un podcast. Lo que la distingue es que responde únicamente en base al material que le cargamos, y cita el pasaje del que sacó cada respuesta, así que verificarla es cuestión de ir a la fuente.
+Es una plataforma gratuita de Google que ahora forma parte de la familia Gemini (se llamaba NotebookLM), pensada para trabajar con fuentes propias: se le suben documentos, artículos o videos y funciona como un cuaderno de investigación, donde podemos hacer preguntas, pedir resúmenes o generar un resumen en audio parecido a un podcast. Lo que la distingue es que responde únicamente en base al material que le cargamos.
 
 ## video_notebooklm
-@video[]()
+@video[Gemini Notebook | Qué es y cómo funciona](https://www.youtube.com/watch?v=yrWJuApkDco)
 
 
 ## voz_propia_1
