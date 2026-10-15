@@ -366,6 +366,10 @@ La segunda operación consiste en reducir aún más la trama hasta una pura expr
 
 «A» vive en casa de «B», estando con «B» en una relación diferente a la de «C» y «D» que también conviven. Mientras «B», «C» y «D» acuden a «E», donde tiene lugar un suceso «F», «A» se queda sola (o solo, no importa el sexo). Pero gracias a la intervención de «G», también «A» puede acudir a «E», donde produce un efecto extraordinario sobre «H».
 
+Demos todavía una nueva interpretación a la expresión abstracta y podemos obtener, por ejemplo, este esquema:
+
+Delfina es la pariente pobre de la señora Notábilis, propietaria de una tintorería en Módena y madre de dos antipáticas educandas. Mientras la señora y las hijas emprenden un crucero a Marte, donde tendrá lugar una gran fiesta intergaláctica, Delfina debe permanecer en la tintorería para planchar el vestido de la señora Qualúnquis. Dejándose llevar de su fantasía, se pone el vestido y aborda la astronave Hada-Segunda... Justo la misma en que la señora Qualúnquis vuela hacia la fiesta marciana, con Delfina de polizón. Durante el baile, el Presidente de la República de Marte se fija en Delfina y baila con ella, etc...
+
 
 ## creativo_libro_texto
 Si querés leer el libro completo, acá te lo dejo.
@@ -394,11 +398,24 @@ Luego, llevamos esa abstracción a una nueva historia.
 
 
 ## creativo_prompt2
-Reemplazá las letras por estos elementos y escribí una sinopsis breve, sin diálogos: la protagonista es una detective enviada por su comisario; en lugar de comida, lleva un mensaje o pista que la conduce a la víctima; el bosque es una metáfora de una zona deshabitada de Ituzaingó; la abuela es en realidad una víctima de zona oeste secuestrada por el lobo, que ahora es un secuestrador que ocupa su lugar disfrazado para sorprender a la detective; una colega detective, conocida como "la cazadora", la rescata en el enfrentamiento final. Estilo policial y de misterio, en el tono de *El silencio de los inocentes*.
+Reemplazá las letras por estos elementos y escribí una sinopsis breve, sin diálogos, a partir de esta lista:
+
+- La protagonista es la detective Alfonsina Roldán, enviada por el comisario Mendoza.
+- En lugar de comida, lleva un mensaje o pista que la conduce hasta la víctima.
+- En lugar de una mujer, la víctima es un adolescente, secuestrado semanas atrás.
+- El bosque es una metáfora de una zona deshabitada de Ituzaingó, que la detective cruza sola, contra el protocolo —este tramo es el núcleo de la historia, con una serie de obstáculos que la van haciendo descender a un submundo cada vez más infernal.
+- La abuela es en realidad la víctima, retenida por el secuestrador.
+- El lobo es el secuestrador, que ocupa el lugar de la víctima disfrazado para sorprender a la detective.
+- El cazador es una colega detective, conocida como "la cazadora", que la rescata en el enfrentamiento final.
+- Estilo policial y de misterio, en el tono de *El silencio de los inocentes*.
 
 
 ## creativo_historia
-El comisario a cargo le asigna a la detective Alfonsina Roldán el caso de una mujer de zona oeste, secuestrada semanas atrás, y le entrega el único rastro que tienen: un mensaje de texto enviado desde el celular de la víctima con una dirección en una franja deshabitada de Ituzaingó que en la comisaría llaman "el bosque", por los pastizales altos y los galpones abandonados que la cubren. Alfonsina cruza sola esa zona, contra el protocolo, siguiendo la dirección. Al llegar al galpón indicado, encuentra a alguien envuelto en una manta, en la misma postura en la que describieron a la víctima, y se acerca convencida de haberla encontrado con vida. Recién cuando está a centímetros nota que las manos que asoman no son las de la desaparecida: el secuestrador se incorpora y la reduce antes de que pueda reaccionar. Está a punto de correr la misma suerte cuando irrumpe su compañera de la brigada, a quien todos conocen como "la cazadora" por su instinto para encontrar a los que se esconden, y lo reduce a tiempo.
+El comisario Mendoza le asigna a la detective Alfonsina Roldán el caso de un adolescente de zona oeste, secuestrado semanas atrás, y le entrega el único rastro que tienen: un mensaje de texto enviado desde el celular de la víctima, con una dirección en una franja deshabitada de Ituzaingó que en la comisaría llaman "el bosque", por los pastizales altos y los galpones abandonados que la cubren.
+
+Alfonsina cruza sola esa zona, contra el protocolo, siguiendo la dirección: deja atrás el asfalto y se hunde en un descampado de barro y chatarra, después tiene que vadear un zanjón que corre entre los galpones, y cuando ya no ve con claridad por el humo de fogones que arden sin nadie alrededor, llega por fin al galpón con el candado nuevo.
+
+Al entrar, encuentra a alguien envuelto en una manta, en la misma postura en la que describieron a la víctima, y se acerca convencida de haberlo encontrado con vida. Recién cuando está a centímetros nota que las manos que asoman no son las del adolescente: el secuestrador se incorpora y se abalanza sobre ella. A diferencia de lo que él esperaba, Alfonsina no se deja reducir con facilidad: forcejea, lo golpea con una barra que encuentra a mano y logra activar el botón de pánico de su radio antes de que la inmovilice contra el piso. Está perdiendo la pelea cuando irrumpe su compañera de la brigada, a quien todos conocen como "la cazadora" por su instinto para encontrar a los que se esconden, y lo reduce a tiempo.
 
 
 ## bloquee_1
