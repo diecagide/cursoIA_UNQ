@@ -372,7 +372,7 @@ Si querés leer el libro completo, acá te lo dejo.
 ## creativo_aplicacion
 Partiendo de este juego, podemos usar la IA para hacer este mismo procedimiento como punto de partida para nuevas historias.
 
-Tomemos una fábula muy conocida, pero que Rodari no usa como ejemplo de calco en este capítulo: Caperucita Roja.
+Tomemos un cuento muy conocido, pero que Rodari no usa como ejemplo de calco en este capítulo: Caperucita Roja.
 
 
 ## caperucita_sinopsis
