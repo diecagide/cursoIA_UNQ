@@ -341,6 +341,10 @@ Llevado a un prompt complejo, con todos los elementos que vimos en el Bloque B:
 "Estoy trabajando con un texto académico que menciona las corrientes neo-piagetianas y neo-vygotskianas, pero no desarrolla sus debates centrales. Explicá cuáles son las principales discusiones que se dieron en torno a estas corrientes, destacando qué puntos tienen en común y en qué aspectos se diferencian. Enfocate en su lugar dentro de los debates sobre el aprendizaje colaborativo. Proporcioná la respuesta en formato de lista con tres debates centrales y un párrafo de síntesis final. Si es posible, incluí referencias a autores posteriores a 2010 que trabajen sobre estas corrientes."
 
 
+## anexo_comentario
+Prometo que este es el último contenido de la clase 😬. Lo puse como anexo para que no me repudien.
+
+
 ## creativo_intro
 Uno de mis grandes referentes en el mundo de la creatividad es [Gianni Rodari](https://en.wikipedia.org/wiki/Gianni_Rodari), autor de *La gramática de la fantasía*, un libro que propone numerosos mecanismos para estimular la imaginación. En el capítulo 21, "Fábulas calcadas", Rodari describe el juego del calco: a partir de historias viejas, podemos obtener historias nuevas con distintos grados de alejamiento del original.
 
@@ -414,6 +418,10 @@ Alfonsina cruza sola esa zona, contra el protocolo, siguiendo la dirección: dej
 Al entrar, encuentra a alguien envuelto en una manta, en la misma postura en la que describieron a la víctima, y se acerca convencida de haberlo encontrado con vida. Recién cuando está a centímetros nota que las manos que asoman no son las del adolescente: el secuestrador se incorpora y se abalanza sobre ella. A diferencia de lo que él esperaba, Alfonsina no se deja reducir con facilidad: forcejea, lo golpea con una barra que encuentra a mano y logra activar el botón de pánico de su radio antes de que la inmovilice contra el piso. Está perdiendo la pelea cuando irrumpe su compañera de la brigada, a quien todos conocen como "la cazadora" por su instinto para encontrar a los que se esconden, y lo reduce a tiempo.
 
 
+## creativo_cierre
+Esta sinopsis no es definitiva: todavía necesita bastante trabajo antes de poder usarse como tal. Pero ya nos sirve como punto de partida para crear historias, y hasta podríamos pedirle a la IA que, con el mismo esquema, nos proporcione historias diferentes.
+
+
 ## bloquee_1
 Para acompañar a un estudiante en una interacción útil, reflexiva y enriquecedora con estas herramientas, les comparto las dos dimensiones que considero relevantes para realizar ese proceso: **legitimidad** y **voz propia**.
 
@@ -473,7 +481,7 @@ Además de estos dos métodos, hay algunas prácticas que conviene incorporar:
 Es una plataforma gratuita de Google que ahora forma parte de la familia Gemini (se llamaba NotebookLM), pensada para trabajar con fuentes propias: se le suben documentos, artículos o videos y funciona como un cuaderno de investigación, donde podemos hacer preguntas, pedir resúmenes o generar un resumen en audio parecido a un podcast. Lo que la distingue es que responde únicamente en base al material que le cargamos.
 
 ## video_notebooklm
-@video[Gemini Notebook | Qué es y cómo funciona](https://www.youtube.com/watch?v=yrWJuApkDco)
+@video[Gemini Notebook | Qué es y cómo funciona](https://www.youtube.com/watch?v=eQjwyNLnXAQ)
 
 
 ## voz_propia_1
