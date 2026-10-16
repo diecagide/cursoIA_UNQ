@@ -342,7 +342,7 @@ Llevado a un prompt complejo, con todos los elementos que vimos en el Bloque B:
 
 
 ## anexo_comentario
-Prometo que este es el último contenido de la clase 😬. Lo puse como anexo para que no me repudien.
+(Prometo que este es el último contenido de la clase 😬. Lo puse como anexo para que no me repudien.)
 
 
 ## creativo_intro
