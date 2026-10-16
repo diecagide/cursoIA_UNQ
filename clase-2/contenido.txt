@@ -419,7 +419,7 @@ Al entrar, encuentra a alguien envuelto en una manta, en la misma postura en la 
 
 
 ## creativo_cierre
-Esta sinopsis no es definitiva: todavía necesita bastante trabajo antes de poder usarse como tal. Pero ya nos sirve como punto de partida para crear historias, y hasta podríamos pedirle a la IA que, con el mismo esquema, nos proporcione historias diferentes.
+Esta sinopsis no es definitiva, todavía necesita bastante trabajo antes de poder usarse como tal, pero nos puede servir como punto de partida. También podríamos pedirle a la IA que, con el mismo esquema, nos proporcione propuestas de historias diferentes.
 
 
 ## bloquee_1
