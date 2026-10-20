@@ -63,7 +63,6 @@
       <li class="nav-group">
         <a class="nav-group__link" href="#bloque-c"><span class="nav-bullet"></span>Bloque C · Modelos y plataformas de video</a>
         <ul class="nav-subgroup">
-          <li><a href="#sora">El caso Sora</a></li>
           <li><a href="#herramientas-edicion">Herramientas de edición con IA</a></li>
         </ul>
       </li>
@@ -150,6 +149,8 @@
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="por_que_esta_clase"></div>
 
+        <hr class="section-divider">
+
         <h3 id="panorama-industria">Panorama de la industria</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="panorama_industria_intro"></p>
@@ -197,24 +198,35 @@
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="generacion_vs_edicion"></p>
 
+        <hr class="section-divider">
+
         <h3 id="tecnicas-basicas">Las técnicas básicas</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="tecnicas_intro"></p>
 
         <p data-key="tecnicas_texto"></p>
-        <!-- Placeholder de video: un demo debajo de cada técnica básica.
-             Mientras no se complete el link en contenido.txt se ve un
-             recuadro de "Video pendiente", igual que con las imágenes. -->
+        <!-- Video propio de Diego (subido a videos/, no YouTube) — mismo
+             sistema que una imagen, ver LOCAL_VIDEO_EXT_RE en script.js. -->
         <div class="content-block" data-key="tecnicas_texto_demo"></div>
 
+        <!-- Dos botones "Ver prompt" (español/inglés), mismo componente
+             .caption-toggle-inline que el de cada imagen, agrupados en
+             .prompt-toggle-group porque no cuelgan de una imagen puntual.
+             El texto de cada prompt se edita en contenido.txt. -->
+        <div class="prompt-toggle-group">
+          <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt (español)</button>
+          <p class="img-caption" data-key="tecnicas_texto_prompt_es" hidden></p>
+          <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt (inglés)</button>
+          <p class="img-caption" data-key="tecnicas_texto_prompt_en" hidden></p>
+        </div>
+
         <p data-key="tecnicas_imagen"></p>
+        <!-- Carrusel mixto (imagen + 2 videos propios) armado en
+             contenido.txt con @carousel, igual que un carrusel de fotos. -->
         <div class="content-block" data-key="tecnicas_imagen_demo"></div>
 
         <p data-key="tecnicas_video"></p>
         <div class="content-block" data-key="tecnicas_video_demo"></div>
-
-        <p data-key="tecnicas_frames"></p>
-        <div class="content-block" data-key="tecnicas_frames_demo"></div>
 
         <h3 id="como-funciona-video">Cómo funciona el modelo</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
@@ -468,14 +480,20 @@
           </div>
         </details>
 
-        <h3 id="sora">El caso Sora</h3>
-        <!-- Recuadro "¿Sabías que?" — el texto de adentro se edita en
-             contenido.txt (clave sora_discontinuado), el recuadro en sí
-             (ícono, título) es fijo acá. -->
-        <div class="fact-box">
-          <p class="fact-box__label"><span aria-hidden="true">💡</span> ¿Sabías que?</p>
-          <div class="content-block" data-key="sora_discontinuado"></div>
+        <!-- Mismo formato "Herramienta" que usamos en los videos de
+             herramientas de clases anteriores — reemplaza a "El caso
+             Sora". El texto se edita en contenido.txt (claves
+             google_flow_intro / google_flow_video); el video todavía no
+             está (Diego lo va a grabar). -->
+        <div class="callout" id="google-flow">
+          <p class="callout__label">Herramienta</p>
+          <p><strong>Google Flow</strong></p>
+          <p data-key="google_flow_intro"></p>
+          <div class="content-block" data-key="google_flow_video"></div>
+          <a class="btn" href="https://labs.google/flow/about" target="_blank" rel="noopener">Ir a Google Flow →</a>
         </div>
+
+        <hr class="section-divider">
 
         <h3 id="herramientas-edicion">Herramientas de edición con IA</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
@@ -541,12 +559,6 @@
 
         <!-- Placeholder de video: el resultado de este ejemplo concreto. -->
         <div class="content-block" data-key="estructura_video_ejemplo_demo"></div>
-
-        <!-- Segunda estructura, tan destacada como la habitual: la que
-             propone Runway en su propia documentación. El texto se
-             edita en contenido.txt (no acá). -->
-        <p data-key="estructura_video_runway_intro"></p>
-        <p class="prompt-formula" data-key="estructura_video_runway"></p>
 
         <!-- "Para ampliar" plegable con la escala de planos y los
              movimientos de cámara en español e inglés — el texto de
@@ -798,10 +810,6 @@
           </details>
 
         </div>
-
-        <!-- Placeholder de video: Diego puede pegar acá un demo de
-             ElevenLabs o Suno (clonación de voz, canción generada, etc.). -->
-        <div class="content-block" data-key="audio_demo"></div>
 
         <h3 id="gramatica-audio">Gramática del prompt de audio</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->

@@ -21,6 +21,20 @@
 
    Ver más detalle en el encabezado de contenido.txt y en el README.
 
+   VIDEO PROPIO (subido a mano a la carpeta videos/, NO de YouTube):
+   Usá la MISMA sintaxis que una imagen, pero apuntando a un archivo
+   .mp4/.webm/.mov dentro de videos/:
+
+     ![texto alternativo opcional](videos/archivo.mp4)
+
+   La página detecta sola la extensión y arma un <video controls> en vez
+   de un <img>, con el mismo recuadro de "pendiente" y el mismo epígrafe
+   con botón "Ver prompt y modelo" que una imagen — funciona también
+   dentro de un @carousel, para mezclar fotos y videos propios en el
+   mismo carrusel. A diferencia del video de YouTube (@video[...](...)
+   más abajo), este no tiene el avisito de calidad/CC debajo, porque la
+   calidad la define el archivo que subas, no YouTube.
+
    LISTAS CON VIÑETAS (bullets):
    Dentro de cualquier bloque de texto, si TODOS los renglones de un
    párrafo (separado por línea en blanco del resto) arrancan con
@@ -66,6 +80,15 @@
    ya no existe una forma soportada de forzar 1080p por defecto. Esto es
    automático: no hay que escribir nada en contenido.txt para que
    aparezca.
+
+   Si en cambio querés mostrar otra cosa debajo del video (por ejemplo,
+   los datos de un corto: año, director, modelos de IA usados), escribilo
+   pegado en el renglón siguiente, SIN línea en blanco en el medio —igual
+   que el epígrafe de una imagen—, y eso reemplaza al avisito de
+   calidad/CC para ESE video puntual:
+
+     @video[Título](link de YouTube)
+     Año: 2026. Dirección: Fulano. Modelos de IA usados: tal y tal.
 
    LIGHTBOX (agrandar una imagen al hacer clic):
    Cualquier imagen de contenido que subas (con la sintaxis de arriba)
@@ -193,9 +216,19 @@ function renderInline(text) {
 // mano. Fuera de un carrusel (imagen suelta en el flujo del texto) se
 // sigue usando "lazy" como siempre, para no perder ese ahorro en el
 // resto de la página.
+// Si el archivo de la imagen termina en una extensión de video (lo sube
+// Diego a mano a la carpeta videos/, no por YouTube), se arma un
+// <video controls> en vez de un <img>, pero reutilizando la misma caja
+// (.img-block/.img-placeholder) y el mismo epígrafe con botón "Ver prompt
+// y modelo" que cualquier imagen — así un carrusel puede mezclar fotos y
+// videos propios sin ningún marcador especial en contenido.txt: alcanza
+// con escribir ![texto](videos/archivo.mp4) igual que con una imagen.
+var LOCAL_VIDEO_EXT_RE = /\.(mp4|webm|mov)(\?.*)?$/i;
+
 function renderImageBlock(alt, src, caption, eager) {
   var safeAlt = escapeAttr(alt);
   var safeSrc = escapeAttr(src);
+  var isLocalVideo = LOCAL_VIDEO_EXT_RE.test(src);
 
   // Si el epígrafe arranca con "@split" en su propio renglón, es una marca
   // (no texto para mostrar) que indica que la imagen es un compuesto real
@@ -205,9 +238,18 @@ function renderImageBlock(alt, src, caption, eager) {
   // la marca del texto y se guarda como atributo para que initLightbox()
   // la use.
   var splitCaption = false;
+  // "@plain" en el propio renglón del epígrafe: el texto queda siempre
+  // visible debajo de la imagen, sin el botón "Ver prompt y modelo" que
+  // lo oculta por default (ver más abajo). Se usa cuando el epígrafe no es
+  // el prompt completo sino solo un dato corto (por ejemplo el modelo
+  // usado) que no tiene sentido esconder.
+  var plainCaption = false;
   if (caption) {
     var trimmed = caption.replace(/^\s+/, '');
-    if (/^@split\s*(\n|$)/.test(trimmed)) {
+    if (/^@plain\s*(\n|$)/.test(trimmed)) {
+      plainCaption = true;
+      caption = trimmed.replace(/^@plain\s*\n?/, '');
+    } else if (/^@split\s*(\n|$)/.test(trimmed)) {
       splitCaption = true;
       caption = trimmed.replace(/^@split\s*\n?/, '');
     }
@@ -216,20 +258,35 @@ function renderImageBlock(alt, src, caption, eager) {
   // Imagen y rótulo van dentro de un mismo contenedor (.img-block) para que
   // el espacio entre ambos sea siempre el mismo, sin depender de que los
   // márgenes de dos elementos separados "colapsen" bien.
+  var mediaHtml;
+  if (isLocalVideo) {
+    mediaHtml = '<video class="content-video" controls preload="metadata" playsinline ' +
+      'onerror="this.closest(\'.img-placeholder\').classList.remove(\'has-video\');" ' +
+      'onloadedmetadata="this.closest(\'.img-placeholder\').classList.add(\'has-video\');">' +
+      '<source src="' + safeSrc + '" type="video/mp4"></video>' +
+      '<span class="img-placeholder__icon">🎬</span>' +
+      '<p class="img-placeholder__hint">Se completa reemplazando ' + escapeHtml(src) + '</p>';
+  } else {
+    mediaHtml = '<img src="' + safeSrc + '" alt="' + safeAlt + '" loading="' + (eager ? 'eager' : 'lazy') + '" ' +
+      'onerror="this.style.display=\'none\'; this.closest(\'.img-placeholder\').classList.remove(\'has-image\');" ' +
+      'onload="this.closest(\'.img-placeholder\').classList.add(\'has-image\');">' +
+      '<span class="img-placeholder__icon">🖼️</span>' +
+      '<p class="img-placeholder__hint">Se completa reemplazando ' + escapeHtml(src) + '</p>';
+  }
   var html = '<div class="img-block"' + (splitCaption ? ' data-split-caption="true"' : '') + '><div class="img-placeholder">' +
-    '<img src="' + safeSrc + '" alt="' + safeAlt + '" loading="' + (eager ? 'eager' : 'lazy') + '" ' +
-    'onerror="this.style.display=\'none\'; this.closest(\'.img-placeholder\').classList.remove(\'has-image\');" ' +
-    'onload="this.closest(\'.img-placeholder\').classList.add(\'has-image\');">' +
-    '<span class="img-placeholder__icon">🖼️</span>' +
-    '<p class="img-placeholder__hint">Se completa reemplazando ' + escapeHtml(src) + '</p>' +
+    mediaHtml +
     '</div>';
   if (caption && caption.trim()) {
-    // El epígrafe arranca oculto (atributo "hidden"): cada imagen tiene su
-    // propio botón chico para mostrarlo u ocultarlo, sin afectar a las
-    // demás imágenes de la página ni hacer falta agrandar la imagen (ver
-    // el listener de ".caption-toggle-inline" en initInlineCaptionToggles()).
-    html += '<button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>' +
-      '<p class="img-caption" hidden>' + renderInline(caption.trim()) + '</p>';
+    if (plainCaption) {
+      html += '<p class="img-caption img-caption--plain">' + renderInline(caption.trim()) + '</p>';
+    } else {
+      // El epígrafe arranca oculto (atributo "hidden"): cada imagen tiene su
+      // propio botón chico para mostrarlo u ocultarlo, sin afectar a las
+      // demás imágenes de la página ni hacer falta agrandar la imagen (ver
+      // el listener de ".caption-toggle-inline" en initInlineCaptionToggles()).
+      html += '<button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>' +
+        '<p class="img-caption" hidden>' + renderInline(caption.trim()) + '</p>';
+    }
   }
   html += '</div>';
   return html;
@@ -441,7 +498,11 @@ function initCarousels() {
 // Si un párrafo entero es "@video[Título](link)", esta expresión separa el
 // título del link (ver documentación arriba). Título y/o link pueden venir
 // vacíos: eso es lo que pasa antes de que Diego cargue el video real.
-var VIDEO_RE = /^@video\[([^\]]*)\]\(([^)]*)\)\s*$/;
+// El título y el link son obligatorios (o los dos vacíos, para el estado
+// "pendiente"); el tercer grupo es un epígrafe OPCIONAL pegado debajo, sin
+// línea en blanco en el medio (mismo criterio que una imagen) — si está,
+// reemplaza al avisito automático de calidad/CC (ver renderVideoBlock()).
+var VIDEO_RE = /^@video\[([^\]]*)\]\(([^)]*)\)[ \t]*\n?([\s\S]*)$/;
 
 // Saca el ID de un video de YouTube de cualquiera de los formatos de link
 // que da YouTube (compartir, barra de direcciones, insertar, shorts).
@@ -464,9 +525,10 @@ function extractYouTubeId(url) {
 // .interactive-placeholder, con el mismo look que el resto de los
 // recuadros "pendiente" mientras no se cargó título+link o el link no se
 // reconoce.
-function renderVideoBlock(title, url) {
+function renderVideoBlock(title, url, caption) {
   var safeTitle = (title || '').trim();
   var safeUrl = (url || '').trim();
+  var safeCaption = (caption || '').trim();
 
   if (!safeTitle && !safeUrl) {
     return '<div class="interactive-placeholder">' +
@@ -494,7 +556,9 @@ function renderVideoBlock(title, url) {
     'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
     'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' +
     '</div>' +
-    '<p class="video-quality-tip">💡 Arriba a la derecha del video están los íconos de subtítulos (CC) y de configuración (⚙️). Si se ve borroso, tocá ⚙️ y elegí 1080p o la calidad más alta disponible; desde CC podés activar o desactivar los subtítulos.</p>';
+    (safeCaption
+      ? '<p class="video-quality-tip">' + renderInline(safeCaption) + '</p>'
+      : '<p class="video-quality-tip">💡 Arriba a la derecha del video están los íconos de subtítulos (CC) y de configuración (⚙️). Si se ve borroso, tocá ⚙️ y elegí 1080p o la calidad más alta disponible; desde CC podés activar o desactivar los subtítulos.</p>');
 }
 
 // Si TODOS los renglones no vacíos de un párrafo empiezan con "- ", se
@@ -574,7 +638,7 @@ function applyContent(data) {
         var soloImage = p.match(SOLO_IMAGE_RE);
         var video = p.match(VIDEO_RE);
         if (video) {
-          el.insertAdjacentHTML('beforeend', renderVideoBlock(video[1], video[2]));
+          el.insertAdjacentHTML('beforeend', renderVideoBlock(video[1], video[2], video[3]));
         } else if (soloImage) {
           el.insertAdjacentHTML('beforeend', renderImageBlock(soloImage[1], soloImage[2], soloImage[3]));
         } else if (isListChunk(p)) {
