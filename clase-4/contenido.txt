@@ -152,48 +152,52 @@ La luz de la escena y el tono general: luz natural de ventana, hora dorada, luz 
 La estética general del video: cinematográfico, documental, animación 3D, stop motion, found footage. Cuanto más específica la referencia, mejor suele responder el modelo.
 
 ## estructura_video_intro
-Esta síntesis combina la estructura propia con la que propone Runway en su propia documentación, y junta estos elementos en un orden que primero ubica el plano y después agrega qué pasa en la escena:
+Hay distintas formas de estructurar un prompt de video: cada modelo tiene su propia documentación, con su propia estructura recomendada. En este curso vamos a usar esta, que junta los elementos en un orden que primero ubica el plano y después agrega qué pasa en la escena:
 
 ## estructura_video
-[Encuadre y tipo de plano] + [ángulo y movimiento de cámara] + [sujeto y acción] + [iluminación, clima y estilo] + [qué revela el plano (opcional)]
+[Encuadre y lente] + [sujeto y acción] + [movimiento de cámara] + [angulación] + [iluminación y clima] + [estilo]
 
 ## estructura_video_cierre
 No hace falta seguir este orden de forma rígida: es una guía flexible, que ayuda a no olvidarse de ningún elemento al armar el prompt.
 
 ## estructura_video_ejemplo
-Plano medio a la altura de los ojos, cámara en travelling lateral que acompaña a una mujer que camina por una calle de noche bajo la lluvia, luces de neón reflejadas en el pavimento mojado, estilo cinematográfico.
+Plano medio con lente gran angular; una mujer camina por una calle de noche bajo la lluvia; cámara en travelling lateral que la acompaña; a la altura de los ojos; luces de neón reflejadas en el pavimento mojado; estilo cinematográfico.
 
 ## estructura_video_breakdown
-Acá el encuadre y el movimiento de cámara son el plano medio a la altura de los ojos y el travelling lateral; el sujeto y la acción son la mujer que camina bajo la lluvia; la iluminación y el estilo quedan definidos por las luces de neón y la referencia cinematográfica.
+El encuadre y la lente son el plano medio con lente gran angular; el sujeto y la acción son la mujer que camina bajo la lluvia; el movimiento de cámara es el travelling lateral; la angulación es a la altura de los ojos; la iluminación y el clima quedan definidos por las luces de neón reflejadas en el pavimento mojado; y el estilo es la referencia cinematográfica.
 
 ## estructura_video_ejemplo_demo
 @video[]()
 
 ## reglas_video
-A diferencia de la gramática de imagen, acá hay algunas particularidades que vale la pena tener presentes:
+Estas son algunas reglas específicas para armar un prompt de video:
 
-- Usá frases cortas y directas en vez de oraciones largas y conversacionales: varios modelos, Runway entre ellos, responden mejor a instrucciones breves que a un pedido redactado como si le estuvieras hablando a una persona.
-- Evitá el prompt negativo. La documentación de Runway recomienda describir solamente lo que querés que pase, en positivo: pedir "sin autos" en vez de describir una calle vacía tiende a confundir al modelo más de lo que ayuda.
-- Pedí un solo movimiento de cámara principal por plano. Combinar varios —zoom y paneo al mismo tiempo, por ejemplo— suele dar resultados menos prolijos que pedirlos por separado, en planos distintos.
-- Sumá un elemento nuevo por vez cuando estés ajustando un resultado, en vez de reescribir el prompt entero. Así es más fácil identificar qué cambio produjo qué efecto.
+- 🎯 Usá frases cortas y directas en vez de oraciones largas y conversacionales: varios modelos, Runway entre ellos, responden mejor a instrucciones breves que a un pedido redactado como si le estuvieras hablando a una persona (por ejemplo, "mujer corre por la playa, cámara en travelling" en vez de "quiero ver a una mujer que está corriendo tranquilamente por la playa mientras la cámara la sigue").
+- 🚫 Evitá el prompt negativo: describí lo que querés que pase, en positivo, en vez de lo que no querés. La mayoría de los modelos lee el texto negativo como una instrucción positiva más, y termina generando justo lo que se quería evitar (por ejemplo, pedí "calle vacía" en vez de "sin autos").
+- 🎥 Pedí un solo movimiento de cámara principal por plano. Combinar varios —zoom y paneo al mismo tiempo, por ejemplo— suele dar resultados temblorosos o poco prolijos (por ejemplo, "travelling lateral" en vez de "travelling lateral con zoom y paneo simultáneo").
+- 🎨 Preferí señales visuales concretas en vez de palabras de estilo vagas como "cinematográfico" o "épico", que por sí solas dicen poco: la luz, la lente, la paleta de color o la composición comunican mejor (por ejemplo, "luz dorada de atardecer, lente gran angular" en vez de solo "estilo épico").
+- 🔁 Sumá un elemento nuevo por vez cuando estés ajustando un resultado, en vez de reescribir el prompt entero. Así es más fácil identificar qué cambio produjo qué efecto (por ejemplo, si el movimiento de cámara no convence, probá cambiar solo eso y repetí el resto igual).
 
 ## ejemplos_video_intro
-Veamos cómo se arma un prompt simple, y cómo ese mismo prompt se vuelve más complejo sin cambiar de elementos, sino desarrollando cada uno con más detalle:
+Partiendo de esta estructura, podemos armar prompts simples o más complejos. Veamos cómo se arma uno simple, y cómo ese mismo prompt se vuelve más complejo sin cambiar de elementos, sino desarrollando cada uno con más detalle:
 
 ## ejemplo_video_simple
-Un gato camina sobre una mesa de madera, luz natural de ventana.
+Plano medio; un gato camina sobre una mesa de madera; cámara estática; a la altura de los ojos; luz natural de ventana; estilo realista.
+
+## ejemplo_video_simple_breakdown
+El encuadre es un plano medio, sin lente particular; el sujeto y la acción son el gato que camina sobre la mesa; la cámara está estática, sin movimiento; la angulación es a la altura de los ojos; la iluminación es la luz natural de ventana; y el estilo es realista, sin ninguna referencia adicional.
 
 ## ejemplo_video_simple_demo
 @video[]()
 
 ## ejemplo_video_complejo
-Un astronauta camina lentamente sobre la superficie de la Luna, cámara en travelling lateral que lo sigue a la altura de la cintura, plano general, polvo lunar levantándose con cada paso, la Tierra visible en el cielo negro de fondo, luz dura y contrastada, estilo fotorrealista tipo documental espacial.
+Plano general con lente gran angular; un astronauta camina lentamente sobre la superficie de la Luna, levantando polvo lunar con cada paso; cámara en travelling lateral que lo sigue a la altura de la cintura; angulación a la altura de los ojos, levemente por debajo; luz dura y contrastada, con la Tierra visible en el cielo negro de fondo; estilo fotorrealista tipo documental espacial.
+
+## ejemplo_video_complejo_breakdown
+Acá los mismos seis elementos están más desarrollados: el encuadre suma la lente gran angular; el sujeto y la acción describen también el polvo lunar que se levanta; el movimiento de cámara especifica a qué altura sigue al astronauta; la angulación se vuelve más precisa; la iluminación describe el contraste de la luz y agrega el detalle de la Tierra de fondo; y el estilo se vuelve más específico, con la referencia al documental espacial.
 
 ## ejemplo_video_complejo_demo
 @video[]()
-
-## ejemplo_video_breakdown
-El prompt complejo no suma categorías nuevas respecto del simple: solo describe cada una con más precisión —el travelling lateral especifica a qué altura sigue al sujeto, la luz dura y sin atmósfera reemplaza a un genérico "de día"—. Esa suele ser la diferencia entre un prompt simple y uno complejo: no hay más elementos, cada elemento está más desarrollado.
 
 ## frame_inicial_final
 Una forma cada vez más común de ganar control sobre un video generado es no describirlo todo con palabras, sino mostrarle directamente al modelo cómo tiene que empezar y cómo tiene que terminar la escena, con dos imágenes: un frame inicial y un frame final. El modelo genera todo el movimiento intermedio entre una imagen y la otra, guiado además por el prompt de texto que la acompañe.
@@ -261,19 +265,28 @@ Además de generar desde cero, hay herramientas pensadas para intervenir audio y
 
 
 ## usos_intro
-Como pasa con imagen, conviene pensar los usos de estas herramientas no como un reemplazo directo de una producción terminada, sino según la etapa del proyecto en la que se aplican. Hoy el terreno más sólido para video y audio generados por IA sigue estando en las instancias iniciales —exploración, desarrollo, preproducción— más que en una pieza final lista para publicar sin intervención humana.
+Como pasa con imagen, conviene pensar los usos de estas herramientas no como un reemplazo directo de una producción terminada, sino según la etapa del proyecto en la que se aplican: desde la exploración y el desarrollo hasta, en algunos casos, una pieza final.
 
-## usos_generacion_video
-**Generación de video**: gran parte del contenido audiovisual que se produce hoy para redes sociales ya se hace con IA generativa, y los spots publicitarios —junto con sus derivados en distintos formatos para cada plataforma— también. Es, hasta ahora, el uso más extendido y más maduro de estos modelos.
+## usos_video_docencia_intro
+Ya vimos usos habituales como la ficción o la publicidad en el Panorama de la industria, al principio de la clase. Además de esos, podemos pensar algunos usos más específicos para la práctica docente:
 
-## usos_maquetacion
-**Maquetación**: generar visualizaciones esquemáticas de una escena antes del rodaje, a modo de storyboard animado, sirve como insumo para planificar la producción: anticipar la puesta en escena, los movimientos de cámara, los tiempos. Ahorra tiempo de preproducción sin reemplazar el rodaje en sí.
+## usos_representaciones_historicas
+Recrear visualmente una época, un evento o un proceso histórico del que no quedó registro en video o fotografía —útil para historia, pero también para cualquier materia que necesite mostrar algo que ya no existe o que nunca se filmó.
 
-## usos_reestilizar
-**Reestilizar**: tomar un video ya filmado y cambiarle la estética —convertirlo en animación, en blanco y negro, en un estilo de época— usando las técnicas de video-a-video que vimos en el Bloque B.
+## usos_simulaciones
+Mostrar el funcionamiento interno de algo que no se puede observar a simple vista, como el latido del corazón o cómo funciona el ojo humano —útil para biología y ciencias naturales.
 
-## usos_edicion_postproduccion
-**Editar y postproducir**: las herramientas que vimos en el Bloque C (Clipchamp, DaVinci Resolve, Premiere, After Effects) resuelven en minutos tareas que antes requerían más tiempo o más conocimiento técnico: subtitulado automático, remoción de silencios, extensión de un clip, aislamiento de un objeto o una persona del fondo.
+## usos_videos_explicativos
+Animar el funcionamiento de una máquina o un mecanismo, como una máquina de vapor, para desarmarlo visualmente paso a paso —útil para física, tecnología o historia de la ciencia.
+
+## usos_animacion_graficas
+Darle movimiento a un gráfico o a una serie de datos para mostrar cómo cambia en el tiempo, en vez de mostrarlo estático —útil para estadística, economía o cualquier materia que trabaje con datos.
+
+## usos_testing_movimiento
+Previsualizar cómo se vería una coreografía, un gesto técnico o un movimiento físico antes de ejecutarlo o filmarlo de verdad —útil para educación física, danza o deportes.
+
+## usos_fenomenos_dificiles
+Recrear un fenómeno difícil o peligroso de observar en vivo, como una reacción química, una erupción volcánica o un fenómeno astronómico —útil para química, geología o astronomía.
 
 ## usos_referencias_audio
 **Referencias de audio**: producir una banda sonora de referencia para un proyecto audiovisual, algo que ayude a definir conceptualmente el tono de una escena o una secuencia, es otro uso frecuente. No se trata de la banda sonora final, sino de un insumo más para que quien compone después tome como punto de partida.

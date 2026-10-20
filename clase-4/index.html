@@ -79,13 +79,7 @@
       </li>
 
       <li class="nav-group">
-        <a class="nav-group__link" href="#bloque-e"><span class="nav-bullet"></span>Bloque E · Usos de video: generación y edición</a>
-        <ul class="nav-subgroup">
-          <li><a href="#usos-generacion-video">Generación de video</a></li>
-          <li><a href="#usos-maquetacion">Maquetación</a></li>
-          <li><a href="#usos-reestilizar">Reestilizar</a></li>
-          <li><a href="#usos-edicion-postproduccion">Editar y postproducir</a></li>
-        </ul>
+        <a class="nav-group__link" href="#bloque-e"><span class="nav-bullet"></span>Bloque E · Usos de video para la enseñanza</a>
       </li>
 
       <li class="nav-group">
@@ -519,6 +513,10 @@
              fijos acá; el texto de cada una se edita en contenido.txt.
              Mismo componente que los elementos de imagen de la Clase 3. -->
         <div class="elements-grid">
+          <div class="element-card" style="--element-color:#b5502e">
+            <h4><span class="element-card__icon" aria-hidden="true">🔍</span> Encuadre y lente</h4>
+            <p data-key="elemento_encuadre"></p>
+          </div>
           <div class="element-card" style="--element-color:#2e6e8e">
             <h4><span class="element-card__icon" aria-hidden="true">🧍</span> Sujeto y acción</h4>
             <p data-key="elemento_sujeto_accion"></p>
@@ -530,10 +528,6 @@
           <div class="element-card" style="--element-color:#a3216b">
             <h4><span class="element-card__icon" aria-hidden="true">📐</span> Angulación</h4>
             <p data-key="elemento_angulacion"></p>
-          </div>
-          <div class="element-card" style="--element-color:#b5502e">
-            <h4><span class="element-card__icon" aria-hidden="true">🔍</span> Encuadre y lente</h4>
-            <p data-key="elemento_encuadre"></p>
           </div>
           <div class="element-card" style="--element-color:#6a3fa0">
             <h4><span class="element-card__icon" aria-hidden="true">💡</span> Iluminación y clima</h4>
@@ -582,6 +576,8 @@
         <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="reglas_video"></div>
 
+        <hr class="section-divider">
+
         <h3 id="ejemplos-video">Ejemplos: de simple a complejo</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="ejemplos_video_intro"></p>
@@ -590,6 +586,7 @@
           <p class="prompt-example__label">Simple</p>
           <p data-key="ejemplo_video_simple"></p>
         </div>
+        <p class="prompt-breakdown" data-key="ejemplo_video_simple_breakdown"></p>
         <!-- Placeholder de video: el resultado de este ejemplo. -->
         <div class="content-block" data-key="ejemplo_video_simple_demo"></div>
 
@@ -597,10 +594,9 @@
           <p class="prompt-example__label">Complejo</p>
           <p data-key="ejemplo_video_complejo"></p>
         </div>
+        <p class="prompt-breakdown" data-key="ejemplo_video_complejo_breakdown"></p>
         <!-- Placeholder de video: el resultado de este ejemplo. -->
         <div class="content-block" data-key="ejemplo_video_complejo_demo"></div>
-
-        <p class="prompt-breakdown" data-key="ejemplo_video_breakdown"></p>
 
         <h3 id="frame-inicial-final">Frame inicial y frame final</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
@@ -629,26 +625,33 @@
            BLOQUE E — Usos de video
            ================================================================= -->
       <section class="block" id="bloque-e">
-        <h2>Bloque E — Usos de video: generación y edición</h2>
+        <h2>Bloque E — Usos de video para la enseñanza</h2>
 
         <!-- Apertura del bloque, sin subtítulo propio — se edita en contenido.txt (no acá) -->
         <p data-key="usos_intro"></p>
+        <p data-key="usos_video_docencia_intro"></p>
 
-        <h3 id="usos-generacion-video">Generación de video</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="usos_generacion_video"></p>
+        <!-- Lista de usos concretos: mismo componente .use-case-title +
+             .use-case-num que "Usos posibles para el aula" en otras
+             clases — sin h3 propio ni texto en negrita repitiendo el
+             título (evita la redundancia título/subtítulo). -->
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">1</span> Representaciones históricas</h4>
+        <p data-key="usos_representaciones_historicas"></p>
 
-        <h3 id="usos-maquetacion">Maquetación</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="usos_maquetacion"></p>
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">2</span> Simulaciones de procesos</h4>
+        <p data-key="usos_simulaciones"></p>
 
-        <h3 id="usos-reestilizar">Reestilizar</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="usos_reestilizar"></p>
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">3</span> Videos explicativos</h4>
+        <p data-key="usos_videos_explicativos"></p>
 
-        <h3 id="usos-edicion-postproduccion">Editar y postproducir</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="usos_edicion_postproduccion"></p>
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">4</span> Animación de gráficas</h4>
+        <p data-key="usos_animacion_graficas"></p>
+
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">5</span> Testing de movimiento</h4>
+        <p data-key="usos_testing_movimiento"></p>
+
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">6</span> Recrear fenómenos difíciles de observar en vivo</h4>
+        <p data-key="usos_fenomenos_dificiles"></p>
       </section>
 
       <!-- =================================================================
