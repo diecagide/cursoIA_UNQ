@@ -1,0 +1,39 @@
+CÓMO AGREGAR VIDEOS PROPIOS A LA CLASE 4 (no de YouTube)
+========================================
+
+Para los videos que grabás o generás vos mismo (no los que pegás como
+link de YouTube), la página usa la MISMA sintaxis que una imagen, en
+contenido.txt:
+
+    ![texto alternativo opcional](videos/nombre-del-archivo.mp4)
+
+Y subís el archivo con ESE mismo nombre a esta carpeta "videos". La
+página detecta sola que es un video (por la extensión .mp4/.webm/.mov)
+y lo muestra con sus propios controles de reproducción (play, pausa,
+volumen, pantalla completa), en el mismo recuadro de "pendiente" que
+usa cualquier imagen mientras no subas el archivo.
+
+También funciona dentro de un carrusel (@carousel): podés mezclar
+fotos y videos propios en el mismo carrusel, uno por bloque, igual que
+con fotos solas.
+
+Cómo subir un archivo a esta carpeta desde GitHub (sin instalar nada):
+1. Entrá a la carpeta "videos" de clase-4 en el repositorio en github.com
+2. Botón "Add file" → "Upload files"
+3. Arrastrá tu video y ANTES de confirmar, renombralo exactamente
+   como lo escribiste en contenido.txt (respetá minúsculas y guiones)
+4. Confirmá el cambio ("Commit changes")
+5. Esperá 1-2 minutos y refrescá la página publicada
+
+Los archivos de video pesan más que una imagen — si GitHub te avisa
+que es muy grande (más de 100 MB), conviene comprimirlo antes de subir.
+
+ESTADO ACTUAL
+========================================
+Pendientes de subir a esta carpeta:
+  videos/01_texto-a-video.mp4   (técnicas básicas — texto a video)
+  videos/02_image-a-video.mp4   (técnicas básicas — imagen a video)
+  videos/03_video-a-video_02.mp4   (técnicas básicas — reestilizado a stop motion)
+
+Y en la carpeta "images": images/01_image-a-video.jpg (la imagen de
+partida del ejemplo de arriba).
