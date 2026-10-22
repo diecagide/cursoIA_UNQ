@@ -35,6 +35,17 @@
    más abajo), este no tiene el avisito de calidad/CC debajo, porque la
    calidad la define el archivo que subas, no YouTube.
 
+   AUDIO PROPIO (subido a mano a la carpeta audio/, para escuchar el
+   resultado de un ejemplo de prompt de audio):
+   Misma sintaxis que una imagen o un video propio, apuntando a un
+   archivo .mp3/.wav/.m4a/.ogg dentro de audio/:
+
+     ![texto alternativo opcional](audio/archivo.mp3)
+
+   La página detecta sola la extensión y arma un <audio controls> chico
+   y centrado en vez de un <img> o un <video>, con el mismo recuadro de
+   "pendiente" mientras no subas el archivo.
+
    LISTAS CON VIÑETAS (bullets):
    Dentro de cualquier bloque de texto, si TODOS los renglones de un
    párrafo (separado por línea en blanco del resto) arrancan con
@@ -225,10 +236,16 @@ function renderInline(text) {
 // con escribir ![texto](videos/archivo.mp4) igual que con una imagen.
 var LOCAL_VIDEO_EXT_RE = /\.(mp4|webm|mov)(\?.*)?$/i;
 
+// Mismo criterio que LOCAL_VIDEO_EXT_RE, pero para un archivo de audio
+// propio (grabado o generado por Diego, subido a mano a la carpeta
+// audio/) — reusa la misma sintaxis de imagen: ![alt](audio/archivo.mp3).
+var LOCAL_AUDIO_EXT_RE = /\.(mp3|wav|m4a|ogg)(\?.*)?$/i;
+
 function renderImageBlock(alt, src, caption, eager) {
   var safeAlt = escapeAttr(alt);
   var safeSrc = escapeAttr(src);
   var isLocalVideo = LOCAL_VIDEO_EXT_RE.test(src);
+  var isLocalAudio = !isLocalVideo && LOCAL_AUDIO_EXT_RE.test(src);
 
   // Si el epígrafe arranca con "@split" en su propio renglón, es una marca
   // (no texto para mostrar) que indica que la imagen es un compuesto real
@@ -265,6 +282,13 @@ function renderImageBlock(alt, src, caption, eager) {
       'onloadedmetadata="this.closest(\'.img-placeholder\').classList.add(\'has-video\');">' +
       '<source src="' + safeSrc + '" type="video/mp4"></video>' +
       '<span class="img-placeholder__icon">🎬</span>' +
+      '<p class="img-placeholder__hint">Se completa reemplazando ' + escapeHtml(src) + '</p>';
+  } else if (isLocalAudio) {
+    mediaHtml = '<audio class="content-audio" controls preload="metadata" ' +
+      'onerror="this.closest(\'.img-placeholder\').classList.remove(\'has-audio\');" ' +
+      'onloadedmetadata="this.closest(\'.img-placeholder\').classList.add(\'has-audio\');">' +
+      '<source src="' + safeSrc + '"></audio>' +
+      '<span class="img-placeholder__icon">🎧</span>' +
       '<p class="img-placeholder__hint">Se completa reemplazando ' + escapeHtml(src) + '</p>';
   } else {
     mediaHtml = '<img src="' + safeSrc + '" alt="' + safeAlt + '" loading="' + (eager ? 'eager' : 'lazy') + '" ' +

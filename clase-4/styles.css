@@ -425,6 +425,27 @@ section.block:first-of-type {
   background: #000;
 }
 
+/* Mismo criterio para un archivo de audio propio (ver LOCAL_AUDIO_EXT_RE
+   en script.js) — recuadro angosto y centrado en vez de ocupar todo el
+   ancho, porque un reproductor de audio es una barra chica, no una
+   imagen o un video. */
+.img-placeholder.has-audio {
+  border-style: solid;
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  padding: 20px;
+}
+.img-placeholder.has-audio .img-placeholder__hint,
+.img-placeholder.has-audio .img-placeholder__label { display: none; }
+.img-placeholder.has-audio .img-placeholder__icon { display: block; margin: 0 0 10px; font-size: 1.4rem; }
+
+.img-placeholder .content-audio {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  margin: 0 auto;
+}
+
 /* ---------- Recurso interactivo (Genially, etc.) ---------- */
 
 .interactive-title {
@@ -1301,6 +1322,15 @@ section.block:first-of-type {
 .prompt-example p, .prompt-example ul { font-style: italic; color: var(--color-text); }
 .prompt-example p:last-child, .prompt-example ul:last-child { margin-bottom: 0; }
 
+/* Variante para la versión en inglés de un ejemplo bilingüe (Clase 4,
+   Bloque D): mismo componente, borde más discreto para que se lea como
+   la traducción y no repita el peso visual del prompt en español que
+   va justo arriba. */
+.prompt-example--en {
+  border-left-color: var(--color-border);
+  margin-top: 10px;
+}
+
 /* ---------- Análisis / desglose de un prompt de ejemplo ---------- */
 
 .prompt-breakdown {
@@ -1786,9 +1816,32 @@ body.lightbox-open { overflow: hidden; }
 
 .section-divider {
   border: none;
+  border-top: 2px solid var(--color-border);
+  width: 200px;
+  margin: 10px auto 36px;
+}
+
+/* ---------- Mini-separador entre reglas de un prompt de video ---------- */
+/* Línea chica y centrada ENTRE cada regla de reglas_video (Clase 4,
+   Bloque D) — más chica que .section-divider, para separar visualmente
+   una lista que venía muy apelmasada sin armar un nuevo componente
+   global (queda scopeada a esta clave puntual, no toca .content-list en
+   el resto de la clase). */
+[data-key="reglas_video"] .content-list { list-style: none; }
+[data-key="reglas_video"] .content-list li { padding-left: 0; padding-top: 14px; }
+[data-key="reglas_video"] .content-list li::before { content: none; }
+[data-key="reglas_video"] .content-list li + li {
+  margin-top: 14px;
+  position: relative;
+}
+[data-key="reglas_video"] .content-list li + li::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
   border-top: 1px solid var(--color-border);
-  width: 64px;
-  margin: 8px auto 32px;
 }
 
 /* ---------- Variante de color por clase ---------- */

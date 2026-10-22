@@ -47,6 +47,7 @@
         <ul class="nav-subgroup">
           <li><a href="#terreno-produccion">La IA le ganó terreno a la producción</a></li>
           <li><a href="#por-que-esta-clase">¿Por qué esta clase?</a></li>
+          <li><a href="#objetivos-clase">Objetivos de la clase</a></li>
           <li><a href="#panorama-industria">Panorama de la industria</a></li>
         </ul>
       </li>
@@ -62,9 +63,6 @@
 
       <li class="nav-group">
         <a class="nav-group__link" href="#bloque-c"><span class="nav-bullet"></span>Bloque C · Modelos y plataformas de video</a>
-        <ul class="nav-subgroup">
-          <li><a href="#herramientas-edicion">Herramientas de edición con IA</a></li>
-        </ul>
       </li>
 
       <li class="nav-group">
@@ -74,7 +72,7 @@
           <li><a href="#estructura-video">La estructura</a></li>
           <li><a href="#reglas-video">Algunas reglas</a></li>
           <li><a href="#ejemplos-video">Ejemplos: de simple a complejo</a></li>
-          <li><a href="#frame-inicial-final">Frame inicial y frame final</a></li>
+          <li><a href="#metodologia">Metodología</a></li>
         </ul>
       </li>
 
@@ -86,11 +84,15 @@
         <a class="nav-group__link" href="#bloque-f"><span class="nav-bullet"></span>Bloque F · Audio: música y voces</a>
         <ul class="nav-subgroup">
           <li><a href="#musica-ia">Música</a></li>
+          <li><a href="#separacion-pistas">Separación de pistas</a></li>
           <li><a href="#voces-ia">Generadores de voces</a></li>
           <li><a href="#gramatica-audio">Gramática del prompt de audio</a></li>
-          <li><a href="#extension-audio">Extender o editar una pista</a></li>
           <li><a href="#usos-audio">Usos de audio</a></li>
         </ul>
+      </li>
+
+      <li class="nav-group">
+        <a class="nav-group__link" href="#anexo"><span class="nav-bullet"></span>Anexo · Herramientas de edición integradas a softs</a>
       </li>
     </ul>
 
@@ -121,9 +123,6 @@
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="bienvenida_1" data-lead="true"></div>
-
-        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="bienvenida_2"></div>
       </section>
 
       <!-- =================================================================
@@ -142,6 +141,10 @@
         <h3 id="por-que-esta-clase">¿Por qué esta clase?</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="por_que_esta_clase"></div>
+
+        <h3 id="objetivos-clase">Objetivos de la clase</h3>
+        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="objetivos_clase"></div>
 
         <hr class="section-divider">
 
@@ -178,16 +181,6 @@
         <!-- Intro sin subtítulo propio — se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="bloque_b_intro"></div>
 
-        <!-- Recomendación destacada (escribir los prompts en inglés) —
-             mismo componente .fact-box que "¿Sabías que?", con otro
-             ícono/label para que se lea como recomendación y no como
-             dato de color. El texto de adentro se edita en
-             contenido.txt (clave recomendacion_ingles). -->
-        <div class="fact-box">
-          <p class="fact-box__label"><span aria-hidden="true">📌</span> Recomendación</p>
-          <p data-key="recomendacion_ingles"></p>
-        </div>
-
         <h3 id="generacion-vs-edicion">Generar desde cero o editar lo que ya existe</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="generacion_vs_edicion"></p>
@@ -222,9 +215,23 @@
         <p data-key="tecnicas_video"></p>
         <div class="content-block" data-key="tecnicas_video_demo"></div>
 
-        <h3 id="como-funciona-video">Cómo funciona el modelo</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="como_funciona_video"></div>
+        <!-- "Para ampliar" plegable sobre cómo funciona el modelo por dentro
+             — el texto de adentro se edita en contenido.txt. Mantiene su
+             propio id para el link del menú lateral. -->
+        <details class="expandable" id="como-funciona-video">
+          <summary>
+            <span class="expandable__icon" aria-hidden="true">🔍</span>
+            <span class="expandable__text">
+              <span class="expandable__eyebrow">Para ampliar</span>
+              <span class="expandable__title">Cómo funciona el modelo por dentro</span>
+            </span>
+            <span class="expandable__chevron" aria-hidden="true">▸</span>
+          </summary>
+          <div class="expandable__body">
+            <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+            <div class="content-block" data-key="como_funciona_video"></div>
+          </div>
+        </details>
       </section>
 
       <!-- =================================================================
@@ -253,9 +260,9 @@
                 <h4 class="platform-card__name"><a href="https://runwayml.com/" target="_blank" rel="noopener">Runway ↗</a></h4>
                 <p class="platform-card__dev">Runway AI</p>
                 <p class="platform-card__videos">
-                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=8vAqhBxCxc0" target="_blank" rel="noopener">▶ Aleph 2.0</a>
-                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=KhXxcU6cgzM" target="_blank" rel="noopener">▶ MCP</a>
-                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=yeRj7xGYUoM" target="_blank" rel="noopener">▶ Publicidades con IA</a>
+                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=yeRj7xGYUoM" target="_blank" rel="noopener">▶ Mirá lo que se puede hacer con este modelo</a>
+                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=8vAqhBxCxc0" target="_blank" rel="noopener">▶ Aleph 2.0: edición de video con IA</a>
+                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=KhXxcU6cgzM" target="_blank" rel="noopener">▶ MCP: integrarlo con otras herramientas</a>
                 </p>
               </div>
               <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
@@ -283,7 +290,7 @@
                 <h4 class="platform-card__name"><a href="https://klingai.com/" target="_blank" rel="noopener">Kling AI ↗</a></h4>
                 <p class="platform-card__dev">Kuaishou</p>
                 <p class="platform-card__videos">
-                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=nlM7kL3kv_Y" target="_blank" rel="noopener">▶ Video</a>
+                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=nlM7kL3kv_Y" target="_blank" rel="noopener">▶ Mirá lo que se puede hacer con este modelo</a>
                 </p>
               </div>
               <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
@@ -311,7 +318,7 @@
                 <h4 class="platform-card__name"><a href="https://gemini.google.com/app" target="_blank" rel="noopener">Veo ↗</a></h4>
                 <p class="platform-card__dev">Google DeepMind</p>
                 <p class="platform-card__videos">
-                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=8Uf6OO-XG00" target="_blank" rel="noopener">▶ Video</a>
+                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=8Uf6OO-XG00" target="_blank" rel="noopener">▶ Mirá lo que se puede hacer con este modelo</a>
                 </p>
               </div>
               <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
@@ -339,7 +346,7 @@
                 <h4 class="platform-card__name"><a href="https://www.volcengine.com/" target="_blank" rel="noopener">Seedance ↗</a></h4>
                 <p class="platform-card__dev">ByteDance</p>
                 <p class="platform-card__videos">
-                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=m-o4qLnD7_M" target="_blank" rel="noopener">▶ Video</a>
+                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=m-o4qLnD7_M" target="_blank" rel="noopener">▶ Mirá lo que se puede hacer con este modelo</a>
                 </p>
               </div>
               <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
@@ -367,7 +374,7 @@
                 <h4 class="platform-card__name"><a href="https://hailuoai.video/" target="_blank" rel="noopener">Hailuo ↗</a></h4>
                 <p class="platform-card__dev">MiniMax</p>
                 <p class="platform-card__videos">
-                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=AvjamLzt2pg" target="_blank" rel="noopener">▶ Video</a>
+                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=AvjamLzt2pg" target="_blank" rel="noopener">▶ Mirá lo que se puede hacer con este modelo</a>
                 </p>
               </div>
               <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
@@ -422,7 +429,7 @@
                 <h4 class="platform-card__name"><a href="https://www.midjourney.com/" target="_blank" rel="noopener">Midjourney ↗</a></h4>
                 <p class="platform-card__dev">Midjourney</p>
                 <p class="platform-card__videos">
-                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=E9PvSeIO5NY" target="_blank" rel="noopener">▶ Video</a>
+                  <a class="platform-card__video-link" href="https://www.youtube.com/watch?v=E9PvSeIO5NY" target="_blank" rel="noopener">▶ Mirá lo que se puede hacer con este modelo</a>
                 </p>
               </div>
               <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
@@ -456,29 +463,15 @@
           </p>
         </div>
 
-        <!-- "Para ampliar" plegable sobre cómo leer los niveles gratuitos
-             de estas plataformas — el texto de adentro se edita en
-             contenido.txt. -->
-        <details class="expandable">
-          <summary>
-            <span class="expandable__icon" aria-hidden="true">🔍</span>
-            <span class="expandable__text">
-              <span class="expandable__eyebrow">Para ampliar</span>
-              <span class="expandable__title">Cómo leer los "niveles gratuitos" de estas plataformas</span>
-            </span>
-            <span class="expandable__chevron" aria-hidden="true">▸</span>
-          </summary>
-          <div class="expandable__body">
-            <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-            <p data-key="niveles_gratuitos_nota"></p>
-          </div>
-        </details>
+        <hr class="section-divider">
 
         <!-- Mismo formato "Herramienta" que usamos en los videos de
              herramientas de clases anteriores — reemplaza a "El caso
              Sora". El texto se edita en contenido.txt (claves
              google_flow_intro / google_flow_video); el video todavía no
-             está (Diego lo va a grabar). -->
+             está (Diego lo va a grabar: un video explicativo que arranque
+             con algo como "acá te cuento cómo funciona"). -->
+        <p class="mini-heading">¿Qué podemos usar de manera gratuita para esta clase?</p>
         <div class="callout" id="google-flow">
           <p class="callout__label">Herramienta</p>
           <p><strong>Google Flow</strong></p>
@@ -486,13 +479,6 @@
           <div class="content-block" data-key="google_flow_video"></div>
           <a class="btn" href="https://labs.google/flow/about" target="_blank" rel="noopener">Ir a Google Flow →</a>
         </div>
-
-        <hr class="section-divider">
-
-        <h3 id="herramientas-edicion">Herramientas de edición con IA</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="herramientas_edicion_intro"></p>
-        <div class="content-block" data-key="herramientas_edicion_lista"></div>
       </section>
 
       <!-- =================================================================
@@ -544,15 +530,32 @@
         <p data-key="estructura_video_intro"></p>
 
         <p class="prompt-formula" data-key="estructura_video"></p>
-        <p data-key="estructura_video_cierre"></p>
+
+        <!-- Recomendación destacada (escribir los prompts en inglés) —
+             mismo componente .fact-box que "¿Sabías que?", movida acá
+             desde el Bloque B. El texto se edita en contenido.txt
+             (clave recomendacion_ingles). -->
+        <div class="fact-box">
+          <p class="fact-box__label"><span aria-hidden="true">📌</span> Recomendación IMPORTANTE</p>
+          <p data-key="recomendacion_ingles"></p>
+        </div>
+
+        <!-- Ejemplo bilingüe: el mismo prompt en español y su traducción al
+             inglés, con la identificación de elementos entre ambos y el
+             video generado a partir de la versión en inglés. -->
         <div class="prompt-example">
-          <p class="prompt-example__label">Ejemplo</p>
-          <p data-key="estructura_video_ejemplo"></p>
+          <p class="prompt-example__label">Ejemplo — español</p>
+          <p data-key="estructura_video_ejemplo_es"></p>
         </div>
         <p class="prompt-breakdown" data-key="estructura_video_breakdown"></p>
+        <div class="prompt-example prompt-example--en">
+          <p class="prompt-example__label">English version (traducción con ChatGPT)</p>
+          <p data-key="estructura_video_ejemplo_en"></p>
+        </div>
 
-        <!-- Placeholder de video: el resultado de este ejemplo concreto. -->
+        <!-- Video del resultado, generado a partir del prompt en inglés. -->
         <div class="content-block" data-key="estructura_video_ejemplo_demo"></div>
+        <p class="prompt-breakdown" data-key="estructura_video_ejemplo_obs"></p>
 
         <!-- "Para ampliar" plegable con la escala de planos y los
              movimientos de cámara en español e inglés — el texto de
@@ -583,28 +586,43 @@
         <p data-key="ejemplos_video_intro"></p>
 
         <div class="prompt-example">
-          <p class="prompt-example__label">Simple</p>
-          <p data-key="ejemplo_video_simple"></p>
+          <p class="prompt-example__label">Simple — español</p>
+          <p data-key="ejemplo_video_simple_es"></p>
         </div>
         <p class="prompt-breakdown" data-key="ejemplo_video_simple_breakdown"></p>
+        <div class="prompt-example prompt-example--en">
+          <p class="prompt-example__label">English version</p>
+          <p data-key="ejemplo_video_simple_en"></p>
+        </div>
         <!-- Placeholder de video: el resultado de este ejemplo. -->
         <div class="content-block" data-key="ejemplo_video_simple_demo"></div>
 
         <div class="prompt-example">
-          <p class="prompt-example__label">Complejo</p>
-          <p data-key="ejemplo_video_complejo"></p>
+          <p class="prompt-example__label">Complejo — español</p>
+          <p data-key="ejemplo_video_complejo_es"></p>
         </div>
         <p class="prompt-breakdown" data-key="ejemplo_video_complejo_breakdown"></p>
+        <div class="prompt-example prompt-example--en">
+          <p class="prompt-example__label">English version</p>
+          <p data-key="ejemplo_video_complejo_en"></p>
+        </div>
         <!-- Placeholder de video: el resultado de este ejemplo. -->
         <div class="content-block" data-key="ejemplo_video_complejo_demo"></div>
+        <p class="prompt-breakdown" data-key="ejemplo_video_complejo_obs"></p>
 
-        <h3 id="frame-inicial-final">Frame inicial y frame final</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="frame_inicial_final"></div>
+        <h3 id="metodologia">Metodología</h3>
+        <!-- El texto de esta sección, incluida la lista, se edita en
+             contenido.txt (no acá) -->
+        <div class="content-block" data-key="metodologia_intro"></div>
 
-        <!-- Placeholder de video: Diego puede pegar acá un demo de la
-             función de frame inicial y final (Veo, Kling, Luma o Hailuo). -->
-        <div class="content-block" data-key="frame_inicial_final_demo"></div>
+        <!-- Carrusel con 3-4 imágenes de "la mujer" (pendientes de que
+             Diego las suba) manteniendo consistencia visual entre tomas. -->
+        <div class="content-block" data-key="metodologia_carrusel"></div>
+
+        <!-- Video armado a partir de esas imágenes, más el ejemplo de
+             reencuadre en Photoshop y su video resultante — todo en una
+             sola clave con texto e imágenes/videos mezclados. -->
+        <div class="content-block" data-key="metodologia_resultado"></div>
 
         <!-- Botones con la documentación oficial de prompting de cada
              modelo, mismo componente .callout/.btn que "Probalo sin
@@ -629,29 +647,43 @@
 
         <!-- Apertura del bloque, sin subtítulo propio — se edita en contenido.txt (no acá) -->
         <p data-key="usos_intro"></p>
-        <p data-key="usos_video_docencia_intro"></p>
 
         <!-- Lista de usos concretos: mismo componente .use-case-title +
              .use-case-num que "Usos posibles para el aula" en otras
              clases — sin h3 propio ni texto en negrita repitiendo el
-             título (evita la redundancia título/subtítulo). -->
-        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">1</span> Representaciones históricas</h4>
+             título (evita la redundancia título/subtítulo). Cada uso
+             lleva su propio slot de video debajo. -->
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">1</span> Producir tomas específicas</h4>
+        <p data-key="usos_tomas_especificas"></p>
+        <div class="content-block" data-key="usos_tomas_especificas_demo"></div>
+
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">2</span> Representaciones históricas</h4>
         <p data-key="usos_representaciones_historicas"></p>
+        <div class="content-block" data-key="usos_representaciones_historicas_demo"></div>
 
-        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">2</span> Simulaciones de procesos</h4>
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">3</span> Simulaciones de procesos</h4>
         <p data-key="usos_simulaciones"></p>
+        <div class="content-block" data-key="usos_simulaciones_demo"></div>
 
-        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">3</span> Videos explicativos</h4>
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">4</span> Videos explicativos</h4>
         <p data-key="usos_videos_explicativos"></p>
+        <div class="content-block" data-key="usos_videos_explicativos_demo"></div>
 
-        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">4</span> Animación de gráficas</h4>
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">5</span> Animación de gráficas</h4>
         <p data-key="usos_animacion_graficas"></p>
+        <div class="content-block" data-key="usos_animacion_graficas_demo"></div>
 
-        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">5</span> Testing de movimiento</h4>
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">6</span> Testing de movimiento</h4>
         <p data-key="usos_testing_movimiento"></p>
+        <div class="content-block" data-key="usos_testing_movimiento_demo"></div>
 
-        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">6</span> Recrear fenómenos difíciles de observar en vivo</h4>
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">7</span> Recrear fenómenos difíciles de observar en vivo</h4>
         <p data-key="usos_fenomenos_dificiles"></p>
+        <div class="content-block" data-key="usos_fenomenos_dificiles_demo"></div>
+
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">8</span> Reestilización de videos</h4>
+        <p data-key="usos_reestilizacion"></p>
+        <div class="content-block" data-key="usos_reestilizacion_demo"></div>
       </section>
 
       <!-- =================================================================
@@ -677,6 +709,9 @@
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://suno.com/" target="_blank" rel="noopener">Suno ↗</a></h4>
                 <p class="platform-card__dev">Suno</p>
+                <p class="platform-card__videos">
+                  <a class="platform-card__video-link" href="https://suno.com/" target="_blank" rel="noopener">▶ Escuchar ejemplos</a>
+                </p>
               </div>
               <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
             </summary>
@@ -702,6 +737,9 @@
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://www.udio.com/" target="_blank" rel="noopener">Udio ↗</a></h4>
                 <p class="platform-card__dev">Udio</p>
+                <p class="platform-card__videos">
+                  <a class="platform-card__video-link" href="https://www.udio.com/" target="_blank" rel="noopener">▶ Escuchar ejemplos</a>
+                </p>
               </div>
               <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
             </summary>
@@ -727,6 +765,9 @@
               <div class="platform-card__id">
                 <h4 class="platform-card__name"><a href="https://www.aiva.ai/" target="_blank" rel="noopener">AIVA ↗</a></h4>
                 <p class="platform-card__dev">AIVA Technologies</p>
+                <p class="platform-card__videos">
+                  <a class="platform-card__video-link" href="https://www.youtube.com/channel/UCykVChITx5kqBoGkzfz8iZg" target="_blank" rel="noopener">▶ Escuchar ejemplos</a>
+                </p>
               </div>
               <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
             </summary>
@@ -748,11 +789,39 @@
 
         </div>
 
-        <!-- Recuadro "¿Sabías que?" aclarando que Moises no es generativo
-             — el texto de adentro se edita en contenido.txt. -->
-        <div class="fact-box">
-          <p class="fact-box__label"><span aria-hidden="true">💡</span> ¿Sabías que?</p>
-          <div class="content-block" data-key="musica_moises_nota"></div>
+        <h3 id="separacion-pistas">Separación de pistas</h3>
+        <!-- No es un modelo generativo, por eso va como su propia
+             categoría y no mezclado con los modelos de música. El texto
+             de adentro se edita en contenido.txt. -->
+        <p data-key="separacion_pistas_intro"></p>
+
+        <div class="platform-cards">
+          <!-- Logo todavía pendiente: Diego lo tiene que subir como
+               images/logos/Moises.jpg. -->
+          <details class="platform-card" style="--platform-color:#F97316">
+            <summary class="platform-card__head">
+              <span class="platform-card__logo"><img src="images/logos/Moises.jpg" alt="Moises" loading="lazy"></span>
+              <div class="platform-card__id">
+                <h4 class="platform-card__name"><a href="https://moises.ai/" target="_blank" rel="noopener">Moises ↗</a></h4>
+                <p class="platform-card__dev">Moises Systems</p>
+              </div>
+              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
+            </summary>
+            <div class="platform-card__body">
+              <div class="platform-card__row">
+                <p class="platform-card__label">Nombre propio del modelo</p>
+                <p>Moises, de Moises Systems</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Se usa para</p>
+                <p>Separar las pistas de una canción existente —voz, batería, bajo, guitarra, piano o cuerdas—, detectar acordes en tiempo real, y cambiar el tono o la velocidad sin perder calidad</p>
+              </div>
+              <div class="platform-card__row">
+                <p class="platform-card__label">Dónde funciona</p>
+                <p>Plataforma propia (moises.ai), app móvil y plugin VST/AU para programas de edición de audio. Tiene nivel gratuito, con una cantidad limitada de subidas por mes y separación de voz, batería y bajo</p>
+              </div>
+            </div>
+          </details>
         </div>
 
         <h3 id="voces-ia">Generadores de voces</h3>
@@ -787,32 +856,9 @@
             </div>
           </details>
 
-          <details class="platform-card" style="--platform-color:#F59E0B">
-            <summary class="platform-card__head">
-              <span class="platform-card__logo"><img src="images/logos/Playht.jpg" alt="Play.ht" loading="lazy"></span>
-              <div class="platform-card__id">
-                <h4 class="platform-card__name"><a href="https://play.ht/" target="_blank" rel="noopener">Play.ht ↗</a></h4>
-                <p class="platform-card__dev">Play.ht</p>
-              </div>
-              <span class="platform-card__toggle"><span class="platform-card__toggle-text">Características</span><span class="platform-card__chevron" aria-hidden="true">▾</span></span>
-            </summary>
-            <div class="platform-card__body">
-              <div class="platform-card__row">
-                <p class="platform-card__label">Nombre propio del modelo</p>
-                <p>Play.ht</p>
-              </div>
-              <div class="platform-card__row">
-                <p class="platform-card__label">Se usa para</p>
-                <p>Texto a voz y clonación de voz</p>
-              </div>
-              <div class="platform-card__row">
-                <p class="platform-card__label">Dónde funciona</p>
-                <p>Plataforma propia (play.ht). Nivel gratuito: 12.500 caracteres mensuales, incluye una clonación de voz instantánea, de uso no comercial y con atribución obligatoria</p>
-              </div>
-            </div>
-          </details>
-
         </div>
+
+        <hr class="section-divider">
 
         <h3 id="gramatica-audio">Gramática del prompt de audio</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
@@ -823,15 +869,40 @@
           <p data-key="audio_formula_ejemplo"></p>
         </div>
 
-        <h3 id="extension-audio">Extender o editar una pista existente</h3>
-        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
-        <p data-key="extension_audio_intro"></p>
-        <div class="content-block" data-key="extension_audio_lista"></div>
+        <!-- Reproductor para escuchar el resultado del ejemplo anterior
+             — mismo sistema de archivo propio que un video local, pero
+             detectando extensión de audio (ver LOCAL_AUDIO_EXT_RE en
+             script.js). El archivo lo sube Diego a audio/. -->
+        <div class="content-block" data-key="audio_formula_ejemplo_demo"></div>
 
         <h3 id="usos-audio">Usos de audio</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="usos_referencias_audio"></p>
-        <p data-key="usos_extension_audio"></p>
+        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
+        <div class="content-block" data-key="usos_audio_intro"></div>
+      </section>
+
+      <!-- =================================================================
+           ANEXO — Herramientas de edición integradas a softs
+           ================================================================= -->
+      <section class="block" id="anexo">
+        <h2>Anexo — Herramientas de edición integradas a softs</h2>
+
+        <!-- Todo el anexo es un "Para ampliar" plegable: no es contenido
+             central de la clase, por eso va cerrado por default. -->
+        <details class="expandable">
+          <summary>
+            <span class="expandable__icon" aria-hidden="true">🔍</span>
+            <span class="expandable__text">
+              <span class="expandable__eyebrow">Para ampliar</span>
+              <span class="expandable__title">Herramientas de edición de video y audio ya integradas a los softs</span>
+            </span>
+            <span class="expandable__chevron" aria-hidden="true">▸</span>
+          </summary>
+          <div class="expandable__body">
+            <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
+            <p data-key="anexo_intro"></p>
+            <div class="content-block" data-key="anexo_lista"></div>
+          </div>
+        </details>
       </section>
 
       <!-- =================================================================

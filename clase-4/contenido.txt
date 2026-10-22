@@ -1,17 +1,7 @@
 ## bienvenida_1
-Bienvenidas y bienvenidos a la cuarta clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En esta clase vamos a trabajar con video y audio, dos tecnologías que avanzaron mucho en los últimos tiempos e impactaron fuertemente en la industria audiovisual y musical. A su vez, a diferencia de la imagen, todavía les cuesta bastante responder con precisión a lo que les pedimos: cuesta obtener el resultado que buscamos porque los prompts son más complejos y entran en juego otros elementos —como los movimientos de cámara—, y también cuesta modificar con precisión una parte puntual de una toma.
+Bienvenidas y bienvenidos a la cuarta clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En esta clase vamos a trabajar principalmente con video y también vamos a conocer algo del mundo del audio, dos tecnologías que avanzaron mucho en los últimos tiempos e impactaron fuertemente en la industria audiovisual y musical. A su vez, en ambos casos —pero centralmente en el mundo del video— todavía les cuesta bastante responder con precisión a lo que les pedimos: esto está ligado a la propia complejidad del lenguaje audiovisual, a la complejidad de los prompts (que ahora incluyen movimiento de cámara, tipo de lente, y otros elementos) y también a la propia limitación de los modelos para responder a lo que les pedimos.
 
-## bienvenida_2
-La idea de esta clase es que te lleves algunos saberes para que puedas:
-
-- Conocer los modelos de video y audio que existen hoy, y las funciones de cada uno.
-- Generar contenidos de video y audio de cero, a partir de texto, de una imagen o de otro video.
-- Redactar un prompt de video siguiendo su propia gramática, con elementos distintos a los de texto o imagen: con las reglas propias del lenguaje audiovisual.
-- Reconocer qué modelos de audio sirven para generar música y cuáles para generar voces y/o efectos.
-- Pensar usos posibles de estas tecnologías en tu práctica docente, sin perder de vista las formas de producción colaborativas que estas herramientas tienden a dejar afuera.
-
-A su vez, uno de los objetivos de la clase es conocer el terreno: qué hay, qué pueden hacer estos modelos, y qué impacto están teniendo en la producción audiovisual y musical. Conocer al monstruo, como dijimos en la primera clase, es también una forma de poder posicionarnos frente a él en el aula. Empecemos.
-
+La clase va a estar dividida en dos partes: en la primera vamos a ver VIDEO, y en la segunda vamos a ver, de forma más sintética, algo de AUDIO.
 
 ## terreno_produccion
 Los modelos de IA de video y audio avanzaron lo suficiente como para ocuparle un lugar a la producción que hasta hace poco requería un equipo con formación técnica específica. Hoy se puede armar una publicidad, un video institucional o un cortometraje sin equipos de cámara, iluminación y montaje.
@@ -26,8 +16,14 @@ El impacto cae directo sobre el área audiovisual y musical, y pienso que no pod
 ## por_que_esta_clase
 ¿Por qué entonces dedicarle un contenido a una tecnología que está impactando de forma desfavorable en el sector audiovisual y musical? Porque conviene conocer qué se está haciendo con estas herramientas, en nuestro país y en el mundo: qué modelos existen y qué usos tienen hoy en la industria. A partir de ahí podemos pensar y reflexionar sobre qué de todo esto tiene sentido llevar al aula, reafirmando las formas colaborativas de producción audiovisual y usando algunos aspectos de la IA que puedan allanar el camino de esa producción.
 
+## objetivos_clase
+- Conocer los modelos de video y audio que existen hoy y sus características.
+- Generar contenidos de video y audio de cero, a partir de texto, de una imagen o de otro video.
+- Redactar un prompt de video siguiendo su propia gramática y con las reglas propias del lenguaje audiovisual.
+- Pensar usos posibles de estas tecnologías para compartir en el aula, sin perder de vista las formas de producción colaborativas que estas herramientas tienden a dejar afuera.
+
 ## panorama_industria_intro
-Un panorama rápido de cómo está entrando la IA generativa en distintas ramas de la industria audiovisual:
+La IA ya se está usando para la generación de cortometrajes de ficción, tomas completas para largometrajes, publicidades enteras de productos y servicios, y material para redes, entre otros usos. El cambio del último año en el funcionamiento de los modelos generadores de video fue lo suficientemente significativo como para que los productos puedan realizarse de manera integral: diseño, audio y video a la vez. Varios estudios de publicidad ya tienen en sus equipos operadores de IA para la realización de spots. Una de las áreas que más se vio afectada dentro de la producción audiovisual fue la de los FXs —efectos especiales—, un área históricamente de gran complejidad técnica que hoy en día puede realizarse de manera inmediata. En este marco, te comparto algunas obras que circulan en internet realizadas con IA:
 
 ## panorama_ficcion
 Largometrajes, series y cortos que empiezan a incorporar IA generativa en algún tramo de su producción —desde efectos visuales puntuales hasta piezas generadas casi por completo.
@@ -56,16 +52,20 @@ Videoclips musicales, piezas documentales experimentales, contenido educativo e 
 
 
 ## bloque_b_intro
-Generar video con IA es un problema bastante más difícil que generar una imagen fija: en vez de un solo cuadro, el modelo tiene que producir una secuencia de cuadros que se mantenga coherente entre sí, con los mismos personajes, la misma escena y las mismas proporciones, y que además se mueva de forma creíble. Por eso cuesta más que el modelo responda exactamente a lo que pedimos. Al igual que en texto o imagen, hay reglas para construir los prompts, pero la dificultad es mayor para conseguir lo que se busca.
+Si bien generar video con IA es algo que hoy se puede hacer de una manera fácil e inmediata y con un resultado impactante, producir un video con una búsqueda artística y conceptual personal —con tomas que mantengan la continuidad en el montaje, y la coherencia de personajes, escenarios y objetos entre toma y toma— representa un problema bastante mayor. Es habitual que los modelos no respondan de la manera que queremos, y esto tiene que ver con que el video tiene una complejidad en la que se ven involucradas varias dimensiones del lenguaje propio que la IA debe procesar en simultáneo: movimientos de cámara, tamaños de plano, angulaciones, iluminación, diversidad de estilos, movimientos de los elementos dentro del cuadro, etc. Y más allá de que exista una gramática del prompt —incluso los modelos vienen con su propia documentación para la redacción de prompts, que difiere de uno a otro—, la realidad es que la mayoría de las veces hace falta realizar múltiples interacciones con el modelo para obtener la toma que buscamos.
 
-## recomendacion_ingles
-**Si escribís los prompts en inglés, varios modelos de video funcionan mejor y responden con más precisión**, porque la mayor parte del material con el que se entrenaron está en ese idioma. No hace falta que lo redactes vos mismo o vos misma: podés pedirle a un LLM que te ayude a traducir tu idea a un prompt en inglés, siguiendo la estructura que vamos a ver en el Bloque D.
+En líneas generales, la IA de video puede:
+
+- Generar videos desde cero, con modelos y plataformas específicas.
+- Editar videos ya existentes, con herramientas integradas a softs de edición.
+
+Vamos a centrarnos en la generación de videos desde cero. Al final de la clase, como anexo, vamos a mencionar algunas herramientas de edición.
 
 ## generacion_vs_edicion
-Dentro del mundo del video y la IA conviene hacer la misma división que hicimos con imagen en la clase anterior: por un lado, modelos que generan video desde cero, con estéticas y técnicas diversas; por otro, herramientas de edición que trabajan sobre un video que ya existe. Le extienden la duración, generan cortes y ediciones automáticas, arman máscaras para aislar un objeto o una persona, y limpian el audio. Vamos a ver modelos de los dos tipos en el Bloque C.
+Dentro del mundo del video y la IA conviene hacer la misma división que hicimos con imagen en la clase anterior: por un lado, modelos que generan video desde cero, con estéticas y técnicas diversas; por otro, herramientas de edición que trabajan sobre un video que ya existe. Le extienden la duración, generan cortes y ediciones automáticas, arman máscaras para aislar un objeto o una persona, y limpian el audio.
 
 ## tecnicas_intro
-Dentro de las técnicas más básicas para generar video con IA hay cuatro formas principales de arrancar:
+Dentro de las técnicas más básicas para generar video con IA hay tres formas principales de arrancar:
 
 ## tecnicas_texto
 **Texto-a-video (text-to-video)**: se escribe un prompt describiendo la escena y el modelo genera un video desde cero, sin ningún material de partida.
@@ -105,10 +105,11 @@ Varios de estos modelos —entre ellos Veo, Kling y Seedance— ya generan el di
 
 
 ## modelos_video_intro
-Conviene conocer al menos uno de cada familia para tener un panorama representativo del sector. Lo que sigue es una foto de este momento: aunque plataformas como Runway ya llevan varios años en el mercado, el sector en general sigue cambiando rápido, así que conviene chequear si algo se actualizó antes de llevarlo a clase.
+Hay muchos modelos que actualmente se están utilizando en la producción audiovisual profesional. Todos los modelos —al menos los que conozco y tuve la oportunidad de probar— son pagos, pero, como es habitual, suelen tener unos créditos iniciales de prueba para hacer algunas generaciones (esto último puede variar mes a mes). Esas interacciones de prueba tienen varias limitaciones:
 
-## niveles_gratuitos_nota
-Casi todas las plataformas de esta sección ofrecen algún nivel gratuito, pero conviene leer la letra chica antes de recomendarlas en clase. Los créditos suelen ser limitados y renovarse por día o por mes —y a veces vencer si no se usan a tiempo—, los videos gratuitos casi siempre salen con marca de agua y en una resolución menor a la versión paga, y el uso comercial —publicar el resultado con fines de lucro— casi nunca está permitido en el nivel gratuito. Para una experiencia exploratoria en el aula alcanza y sobra, pero vale la pena aclararlo de entrada para evitar sorpresas.
+- Cantidad de interacciones: por un lado te permiten hacer pocas hasta que se renuevan los créditos (esto puede suceder mensualmente, diariamente, o que no se renueven luego de esas primeras interacciones).
+- Resolución: en general suelen generarse en resoluciones de 720p o menores.
+- Marca de agua: los videos suelen descargarse con una marca de agua con el nombre del modelo.
 
 ## google_flow_intro
 Flow es la herramienta de Google para generar video con IA, pensada para resolver las actividades de esta clase. Combina tres modelos: Veo (genera el video), Imagen (genera personajes y fondos a partir de texto) y Gemini (interpreta la consigna escrita). Permite reutilizar un mismo personaje o fondo en varias escenas para mantener la coherencia entre ellas —Google lo llama "Ingredients to Video"— y ajustar los planos con controles de cámara propios.
@@ -116,19 +117,8 @@ Flow es la herramienta de Google para generar video con IA, pensada para resolve
 ## google_flow_video
 @video[]()
 
-## herramientas_edicion_intro
-Además de los modelos que generan video desde cero, buena parte del software de edición que ya se usa habitualmente sumó funciones de IA para resolver tareas puntuales —no reemplazan a un editor profesional, pero resuelven en minutos tareas que antes llevaban mucho más tiempo.
-
-## herramientas_edicion_lista
-- **Clipchamp** (Microsoft, gratis con una cuenta de Microsoft): arma automáticamente un video a partir de tus clips (Auto Compose), genera voz en off a partir de texto en más de 400 voces, subtitula de forma automática en más de 80 idiomas, y elimina silencios o ruido de fondo. Estas funciones de IA están disponibles también en la versión gratuita: lo pago ahí es el 4K y los assets premium.
-- **DaVinci Resolve** (Blackmagic Design, descarga gratuita; la versión Studio cuesta 295 dólares, pago único): la mayoría de sus herramientas de IA —edición basada en texto, aislar una voz del resto del audio, Magic Mask para recortar objetos o personas, eliminar elementos con seguimiento automático, mejorar la resolución— están disponibles solo en la versión Studio.
-- **Adobe Premiere Pro y After Effects**: Premiere tiene Generative Extend, que alarga un clip generando los cuadros y el audio que faltan, y Enhance Speech, que limpia diálogo grabado en malas condiciones. After Effects tiene ^[Roto Brush](Herramienta que separa automáticamente a una persona u objeto del fondo de un video, cuadro por cuadro —antes ese trabajo, llamado rotoscopia, se hacía a mano.), que automatiza el recorte de una figura del fondo. Son herramientas pagas, dentro del ecosistema de suscripción de Adobe.
-- **Canva**: Magic Video, disponible en los planes Pro y Ultra, arma clips cortos a partir de texto o convierte una foto en un video con movimiento leve, con voz en off automática incluida. Es una herramienta rápida y con plantillas, pensada para resolver algo simple.
-- **InVideo AI**: se presenta como un editor agéntico que integra varios modelos de video, como Sora, Veo y Kling, para generar material dentro del editor. Su plan gratuito es muy limitado: 5 créditos (alcanza para un video aproximadamente), 4 exportaciones y marca de agua permanente, así que en la práctica funciona más como demostración que como plan usable. Los planes pagos arrancan en 20 dólares mensuales.
-
-
 ## gramatica_video_intro
-La gramática de un prompt de video retoma varias ideas de la gramática de imagen que vimos en la clase anterior, pero le suma los elementos propios del movimiento: cómo se mueve lo que aparece en escena, y cómo se mueve la cámara que la está filmando. Esta síntesis está armada a partir de la documentación oficial de Runway, Kling AI y Google Veo, que son los que más detalle publican sobre cómo arman sus propios prompts.
+La gramática de un prompt de video retoma algunos elementos de la estructura de imagen que vimos en la clase anterior, pero le suma los elementos propios del movimiento: tipo de lente, angulación y movimiento de cámara.
 
 ## elementos_intro
 Un prompt de video suele combinar estos seis elementos:
@@ -152,22 +142,30 @@ La luz de la escena y el tono general: luz natural de ventana, hora dorada, luz 
 La estética general del video: cinematográfico, documental, animación 3D, stop motion, found footage. Cuanto más específica la referencia, mejor suele responder el modelo.
 
 ## estructura_video_intro
-Hay distintas formas de estructurar un prompt de video: cada modelo tiene su propia documentación, con su propia estructura recomendada. En este curso vamos a usar esta, que junta los elementos en un orden que primero ubica el plano y después agrega qué pasa en la escena:
+Hay distintas formas de estructurar un prompt de video: cada modelo tiene su propia documentación, con su propia estructura recomendada. En este curso vamos a usar la estructura que te comparto a continuación, que primero ubica el plano y después agrega qué pasa en la escena. Esta estructura la armé haciendo una síntesis de lo que aparece en la documentación oficial de Runway, Kling AI y Google Veo, que son los que más detalle publican sobre cómo arman sus propios prompts.
 
 ## estructura_video
 [Encuadre y lente] + [sujeto y acción] + [movimiento de cámara] + [angulación] + [iluminación y clima] + [estilo]
 
-## estructura_video_cierre
-No hace falta seguir este orden de forma rígida: es una guía flexible, que ayuda a no olvidarse de ningún elemento al armar el prompt.
+## recomendacion_ingles
+Si escribís los prompts en inglés, los modelos de video funcionan mejor y responden con más precisión, porque la mayor parte del material con el que se entrenaron está en ese idioma. No hace falta que lo redactes vos: podés pedirle a un LLM que te ayude a traducir tu idea a un prompt en inglés.
 
-## estructura_video_ejemplo
-Plano medio con lente gran angular; una mujer camina por una calle de noche bajo la lluvia; cámara en travelling lateral que la acompaña; a la altura de los ojos; luces de neón reflejadas en el pavimento mojado; estilo cinematográfico.
+## estructura_video_ejemplo_es
+Plano medio de una mujer caminando por una calle de la ciudad de noche bajo la lluvia, filmado con un lente gran angular. La cámara la acompaña en un travelling lateral a la altura de los ojos, manteniendo su mismo ritmo y encuadrándola en todo momento. Las luces de neón se reflejan sobre el pavimento mojado, creando una atmósfera nocturna, envolvente y cinematográfica.
 
 ## estructura_video_breakdown
-El encuadre y la lente son el plano medio con lente gran angular; el sujeto y la acción son la mujer que camina bajo la lluvia; el movimiento de cámara es el travelling lateral; la angulación es a la altura de los ojos; la iluminación y el clima quedan definidos por las luces de neón reflejadas en el pavimento mojado; y el estilo es la referencia cinematográfica.
+El encuadre y la lente son el plano medio con lente gran angular; el sujeto y la acción son la mujer que camina por la calle de noche bajo la lluvia; el movimiento de cámara es el travelling lateral que la acompaña; la angulación es a la altura de los ojos; la iluminación y el clima quedan definidos por las luces de neón reflejadas en el pavimento mojado; y el estilo es la referencia cinematográfica.
+
+## estructura_video_ejemplo_en
+A medium shot of a woman walking down a city street at night in the rain, filmed with a wide-angle lens. The camera tracks laterally alongside her at eye level, matching her pace and keeping her framed throughout the shot. Neon lights reflect on the wet pavement, creating an immersive, cinematic nighttime atmosphere.
 
 ## estructura_video_ejemplo_demo
-@video[]()
+![Resultado del prompt en inglés, generado con Google Flow](videos/01_estructura-ejemplo.mp4)
+@plain
+Modelo: Veo 3.1 – Lite (a través de Google Flow)
+
+## estructura_video_ejemplo_obs
+**Observaciones:** esta fue la cuarta generación que hice, porque en las primeras no respetaba el tamaño de plano. El modelo decidió por su cuenta varias cosas que no le especifiqué: el sentido de la caminata (de izquierda a derecha), la vestimenta y el portafolios, entre otras.
 
 ## reglas_video
 Estas son algunas reglas específicas para armar un prompt de video:
@@ -179,72 +177,109 @@ Estas son algunas reglas específicas para armar un prompt de video:
 - 🔁 Sumá un elemento nuevo por vez cuando estés ajustando un resultado, en vez de reescribir el prompt entero. Así es más fácil identificar qué cambio produjo qué efecto (por ejemplo, si el movimiento de cámara no convence, probá cambiar solo eso y repetí el resto igual).
 
 ## ejemplos_video_intro
-Partiendo de esta estructura, podemos armar prompts simples o más complejos. Veamos cómo se arma uno simple, y cómo ese mismo prompt se vuelve más complejo sin cambiar de elementos, sino desarrollando cada uno con más detalle:
+Partiendo de esta estructura, podemos armar prompts con diferentes niveles de complejidad. Veamos cómo se arma uno simple, y cómo ese mismo prompt se vuelve más complejo sin cambiar de elementos, sino desarrollando cada uno con más detalle:
 
-## ejemplo_video_simple
-Plano medio; un gato camina sobre una mesa de madera; cámara estática; a la altura de los ojos; luz natural de ventana; estilo realista.
+## ejemplo_video_simple_es
+Plano entero de un gato caminando sobre una mesa de madera; la cámara realiza un movimiento orbital suave alrededor del gato; a la altura de los ojos; luz natural de ventana; estilo realista.
 
 ## ejemplo_video_simple_breakdown
-El encuadre es un plano medio, sin lente particular; el sujeto y la acción son el gato que camina sobre la mesa; la cámara está estática, sin movimiento; la angulación es a la altura de los ojos; la iluminación es la luz natural de ventana; y el estilo es realista, sin ninguna referencia adicional.
+El encuadre es un plano entero, sin lente particular; el sujeto y la acción son el gato que camina sobre la mesa; el movimiento de cámara es el orbital suave alrededor del gato; la angulación es a la altura de los ojos; la iluminación es la luz natural de ventana; y el estilo es realista, sin ninguna referencia adicional.
+
+## ejemplo_video_simple_en
+Full shot of a cat walking across a wooden table; the camera performs a smooth orbital movement around the cat; eye-level angle; natural window light; realistic style.
 
 ## ejemplo_video_simple_demo
-@video[]()
+![Resultado del prompt simple, generado con Google Flow](videos/02_ejemplo-simple.mp4)
+@plain
+Modelo: Veo 3.1 – Lite (a través de Google Flow)
 
-## ejemplo_video_complejo
-Plano general con lente gran angular; un astronauta camina lentamente sobre la superficie de la Luna, levantando polvo lunar con cada paso; cámara en travelling lateral que lo sigue a la altura de la cintura; angulación a la altura de los ojos, levemente por debajo; luz dura y contrastada, con la Tierra visible en el cielo negro de fondo; estilo fotorrealista tipo documental espacial.
+## ejemplo_video_complejo_es
+Plano general filmado con un lente gran angular, que muestra a un astronauta caminando lentamente sobre la superficie lunar, levantando polvo lunar con cada paso. La cámara realiza un movimiento orbital aéreo, suave y cinematográfico, en una vista de tres cuartos, acercándose lentamente al astronauta mientras gira a su alrededor. Perspectiva dramática en contrapicado, luz solar intensa y de alto contraste, sombras largas sobre el terreno lunar y la Tierra visible contra el cielo negro profundo. Estilo fotorrealista de documental espacial, con una composición cinematográfica épica.
 
 ## ejemplo_video_complejo_breakdown
-Acá los mismos seis elementos están más desarrollados: el encuadre suma la lente gran angular; el sujeto y la acción describen también el polvo lunar que se levanta; el movimiento de cámara especifica a qué altura sigue al astronauta; la angulación se vuelve más precisa; la iluminación describe el contraste de la luz y agrega el detalle de la Tierra de fondo; y el estilo se vuelve más específico, con la referencia al documental espacial.
+Acá los mismos seis elementos están más desarrollados: el encuadre suma la lente gran angular; el sujeto y la acción describen también el polvo lunar que se levanta con cada paso; el movimiento de cámara especifica el orbital aéreo en vista de tres cuartos, acercándose mientras gira; la angulación se vuelve más precisa, en contrapicado; la iluminación describe el contraste de la luz solar y agrega el detalle de la Tierra de fondo; y el estilo se vuelve más específico, con la referencia al documental espacial y a una composición épica.
+
+## ejemplo_video_complejo_en
+A wide shot filmed with a wide-angle lens, showing an astronaut walking slowly across the lunar surface, kicking up lunar dust with each step. The camera performs a smooth, cinematic aerial orbit in a three-quarter view, slowly approaching the astronaut while circling around them. Dramatic low-angle perspective, hard, high-contrast sunlight, long shadows across the lunar terrain, and Earth visible against the deep black sky. Photorealistic space documentary style, epic cinematic composition.
 
 ## ejemplo_video_complejo_demo
-@video[]()
+![Resultado del prompt complejo, generado con Google Flow](videos/03_ejemplo-complejo.mp4)
+@plain
+Modelo: Veo 3.1 – Lite (a través de Google Flow)
 
-## frame_inicial_final
-Una forma cada vez más común de ganar control sobre un video generado es no describirlo todo con palabras, sino mostrarle directamente al modelo cómo tiene que empezar y cómo tiene que terminar la escena, con dos imágenes: un frame inicial y un frame final. El modelo genera todo el movimiento intermedio entre una imagen y la otra, guiado además por el prompt de texto que la acompañe.
+## ejemplo_video_complejo_obs
+**Observaciones:** el resultado no es exactamente el que buscaba. Quería que la cámara orbitara de forma más pronunciada y que el acercamiento al astronauta fuera mayor.
 
-Veo, Kling, Luma y Hailuo ya tienen esta función integrada —cada uno la llama distinto, "Start and End Frames" o "Keyframes"—, y la recomendación general es que las dos imágenes compartan composición y estilo: cuanto más parecidas entre sí, más prolija sale la transición.
+## metodologia_intro
+Como mencionamos antes, uno de los problemas más grandes al generar video es lograr algo cercano a lo que se quiere obtener. Esto pasa, como ya vimos, por las propias características del lenguaje audiovisual, pero también por la propia limitación de los modelos. Entonces, ¿cómo tener un poco más de control sobre las generaciones? Un procedimiento que permite superar, al menos parcialmente, esta dificultad consiste en combinar varios modelos a la vez:
 
-## frame_inicial_final_demo
-@video[]()
+- Un modelo de imagen, para generar una imagen que sirva de base o de frame inicial del video. Esta imagen se puede generar con los modelos que vimos en la Clase 3.
+- Un LLM que ayude a redactar o a refinar el prompt, y que también se pueda usar para traducirlo.
+- Un modelo de video para generar la toma final: como recomendación, el que ya vimos en este bloque, Google Flow, que usa el modelo Veo 3.1.
+
+Esta metodología permite, además de lograr una toma más cercana a lo que se busca, mantener la continuidad entre toma y toma y controlar con más precisión los tamaños de plano. Como vimos en la clase anterior, hay modelos de imagen —como Nano Banana— que permiten una mejor consistencia entre imágenes, manteniendo coherencia visual entre las distintas generaciones: mismo personaje, escenario y elementos. A partir de esas imágenes individuales, podemos después usarlas como materia prima para generar las tomas de forma independiente.
+
+## metodologia_carrusel
+@carousel
+![Imagen 1 de referencia de "la mujer", generada manteniendo consistencia visual entre tomas](images/metodologia_mujer1.jpg)
+
+![Imagen 2 de referencia de "la mujer"](images/metodologia_mujer2.jpg)
+
+![Imagen 3 de referencia de "la mujer"](images/metodologia_mujer3.jpg)
+
+![Imagen 4 de referencia de "la mujer"](images/metodologia_mujer4.jpg)
+
+## metodologia_resultado
+Un video armado con las tomas generadas a partir de esas cuatro imágenes.
+
+![Video armado a partir de las cuatro imágenes de "la mujer"](videos/04_metodologia.mp4)
+
+También podríamos reencuadrar las imágenes generadas en algún programa de edición de imágenes, como Photoshop, si el encuadre que generó el modelo de imagen —Nano Banana o ChatGPT— no tiene el tamaño de plano que buscamos.
+
+![Imagen reencuadrada en Photoshop](images/metodologia_reencuadre.jpg)
+
+![Video generado con el nuevo reencuadre](videos/05_metodologia-reencuadre.mp4)
 
 ## escala_planos_movimientos
-Una síntesis, en español e inglés, para tener a mano:
+Una síntesis, en español e inglés, para tener a mano. La escala de planos se relaciona con la escala humana: toma como referencia el cuerpo de una persona para definir qué tan cerca o lejos está la cámara.
 
 **Escala de planos (shot sizes)**
 
-- Primerísimo primer plano (*extreme close-up*): un detalle único, como un ojo o una mano.
+- Primerísimo primer plano (*extreme close-up*): plano cerrado de los ojos.
 - Primer plano (*close-up*): de los hombros hacia arriba.
 - Plano medio (*medium shot*): de la cintura hacia arriba.
-- Plano entero (*full shot*): de la cabeza a los pies.
-- Plano general (*wide / establishing shot*): el sujeto se ve chico dentro del entorno.
-- Plano general extremo (*extreme wide shot*): el sujeto casi no se distingue.
+- Plano entero (*full shot*): el cuerpo entero.
+- Plano general (*wide / establishing shot*): plano abierto que establece el lugar.
+- Gran plano general (*extreme wide shot*): más abierto que el anterior, muestra grandes espacios.
+- Plano detalle (*insert shot*): un plano corto de un objeto o de una parte del cuerpo.
+- Plano conjunto (*two shot*): dos personajes en cuadro, por ejemplo en un diálogo.
 
 **Movimientos de cámara (camera movements)**
 
-- Acercamiento (*dolly in / push-in*): genera tensión o intimidad.
-- Alejamiento (*dolly out / pull-back*): revela el entorno o un aislamiento.
-- Paneo (*pan / whip pan*): sigue una acción o conecta dos sujetos.
-- Inclinación (*tilt up / tilt down*): revela altura.
-- Órbita (*orbit*): típico de planos de producto o momentos destacados.
-- Grúa o drone (*crane up / drone rise*): escala dramática, suele usarse para cerrar.
-- Cámara en mano (*handheld*): sensación documental, urgencia.
-- Estática fija (*locked-off static*): genera tensión por inmovilidad.
+- Acercamiento (*dolly in / push-in*)
+- Alejamiento (*dolly out / pull-back*)
+- Paneo (*pan / whip pan*): la cámara rota sobre su propio eje vertical.
+- Inclinación (*tilt up / tilt down*): la cámara rota sobre su eje horizontal, hacia arriba o hacia abajo.
+- Orbital (*orbit*): la cámara orbita alrededor de un elemento o personaje.
+- Grúa o drone (*crane up / drone rise*): cámara aérea o con grúa.
+- Cámara en mano (*handheld*)
+- Cámara estática (*static camera*)
 
 ## prompt_docs_intro
 Si querés profundizar en la gramática de un modelo en particular, estas son las documentaciones oficiales que usamos como referencia para este bloque:
 
 
 ## audio_intro
-El mundo de las bandas sonoras también quedó atravesado por la IA generativa. Hay modelos que generan una canción completa a partir de un prompt, que escriben una letra a partir de una melodía (o al revés), y modelos que generan locuciones o líneas de diálogo a partir de texto escrito. Acá la división no es tanto generación contra edición, como en video, sino más bien música y voces por un lado, y herramientas para intervenir o extender una pista ya grabada por el otro.
+El mundo de las bandas sonoras también quedó atravesado por la IA generativa. Hay modelos que generan una canción o musicalización completa a partir de un prompt, que escriben una letra a partir de una melodía (o al revés), y modelos que generan locuciones o líneas de diálogo a partir de texto escrito. Incluso los modelos de video que vimos en este bloque ya elaboran una banda sonora asociada al video generado —eso sucede porque son plataformas multimodales, que operan varios modelos a la vez.
 
 ## musica_intro
-Dentro de los modelos de generación de música, estos son tres de los más usados hoy:
+Dentro de los modelos de generación de música, estos son algunos de los más usados hoy:
 
-## musica_moises_nota
-Moises, que a veces aparece en listados de este tipo, en realidad no genera música: es una herramienta para separar las pistas de una canción existente —aislar la voz, la batería, el bajo—, detectar acordes o cambiar el tono y la velocidad. Muy útil para practicar o remixar, pero no es un modelo generativo.
+## separacion_pistas_intro
+Moises, que a veces aparece en listados de este tipo, en realidad no genera música: es una aplicación muy popular para separar las pistas de una canción existente —aislar la voz, la batería, el bajo, la guitarra, el piano o las cuerdas—, detectar acordes o cambiar el tono y la velocidad sin perder calidad. Muy útil para practicar o remixar, pero no es un modelo generativo.
 
 ## voces_intro
-Para generar voces, locuciones o clonar una voz existente, estos son los más usados:
+Para generar voces, locuciones o clonar una voz existente, este es el más usado:
 
 ## audio_gramatica_intro
 Un prompt de música generativa es bastante más simple que uno de video: alcanza con combinar estos elementos.
@@ -255,48 +290,90 @@ Un prompt de música generativa es bastante más simple que uno de video: alcanz
 ## audio_formula_ejemplo
 Balada folk, voz femenina suave acompañada de guitarra acústica y violín, tempo lento, letra sobre la nostalgia de volver a un lugar de la infancia.
 
-## extension_audio_intro
-Además de generar desde cero, hay herramientas pensadas para intervenir audio ya grabado:
+## audio_formula_ejemplo_demo
+![Audio generado a partir del ejemplo anterior](audio/01_ejemplo-audio.mp3)
+@plain
+Modelo: Suno
 
-## extension_audio_lista
-- **Stable Audio 2.5** (Stability AI) tiene una función de inpainting de audio: permite rellenar o extender un fragmento puntual de una pista ya existente, de forma parecida al inpainting de imagen que vimos en la clase anterior. Es la herramienta más directa para resolver el caso de "la banda sonora quedó corta".
-- **DaVinci Resolve**, dentro de su módulo de audio —^[Fairlight](El módulo de audio de DaVinci Resolve, pensado para mezclar y limpiar sonido sin salir del mismo programa de edición de video.)—, tiene aislamiento de voz por IA para separarla del resto de una mezcla.
-- **Adobe Podcast** (la herramienta gratuita de Adobe, distinta de Premiere) tiene Enhance Speech, que limpia una grabación de voz con ruido de fondo o eco y la deja con calidad de estudio. Es gratuita hasta 30 minutos por archivo y una hora diaria de uso.
+## usos_audio_intro
+Usos generativos posibles para pensar en la práctica docente:
+
+- **Banda sonora de referencia**: producir una banda sonora de referencia para un proyecto audiovisual, algo que ayude a definir conceptualmente el tono de una escena o una secuencia, sin que sea la banda sonora final.
+- **Diálogos**: generar líneas de diálogo o locuciones a partir de un guion escrito, para probar cómo suena una escena antes de grabarla con actores reales.
+- **Narración de materiales de estudio**: generar la voz en off de un video explicativo, el resumen en audio de un texto, o una consigna grabada para que los estudiantes la escuchen en vez de leerla.
 
 
 ## usos_intro
 Como pasa con imagen, conviene pensar los usos de estas herramientas no como un reemplazo directo de una producción terminada, sino según la etapa del proyecto en la que se aplican: desde la exploración y el desarrollo hasta, en algunos casos, una pieza final.
 
-## usos_video_docencia_intro
-Ya vimos usos habituales como la ficción o la publicidad en el Panorama de la industria, al principio de la clase. Además de esos, podemos pensar algunos usos más específicos para la práctica docente:
+## usos_tomas_especificas
+Si estamos trabajando en un proyecto audiovisual, podemos usar la IA para producir algunas tomas puntuales que, por diversas razones —mayormente presupuestarias y de infraestructura—, no podamos hacer: tomas aéreas, tomas con efectos especiales, o tomas específicas para cine de género, como ciencia ficción o terror.
+
+## usos_tomas_especificas_demo
+@video[]()
 
 ## usos_representaciones_historicas
 Recrear visualmente una época, un evento o un proceso histórico del que no quedó registro en video o fotografía —útil para historia, pero también para cualquier materia que necesite mostrar algo que ya no existe o que nunca se filmó.
 
+## usos_representaciones_historicas_demo
+@video[]()
+
 ## usos_simulaciones
-Mostrar el funcionamiento interno de algo que no se puede observar a simple vista, como el latido del corazón o cómo funciona el ojo humano —útil para biología y ciencias naturales.
+Mostrar el funcionamiento interno de algo que no se puede observar a simple vista, como el latido del corazón o cómo funciona el ojo humano.
+
+## usos_simulaciones_demo
+@video[]()
 
 ## usos_videos_explicativos
-Animar el funcionamiento de una máquina o un mecanismo, como una máquina de vapor, para desarmarlo visualmente paso a paso —útil para física, tecnología o historia de la ciencia.
+Animar el funcionamiento de una máquina o un mecanismo, como una máquina de vapor, para desarmarlo visualmente paso a paso.
+
+## usos_videos_explicativos_demo
+@video[]()
 
 ## usos_animacion_graficas
 Darle movimiento a un gráfico o a una serie de datos para mostrar cómo cambia en el tiempo, en vez de mostrarlo estático —útil para estadística, economía o cualquier materia que trabaje con datos.
 
+## usos_animacion_graficas_demo
+@video[]()
+
 ## usos_testing_movimiento
-Previsualizar cómo se vería una coreografía, un gesto técnico o un movimiento físico antes de ejecutarlo o filmarlo de verdad —útil para educación física, danza o deportes.
+Previsualizar cómo se vería una coreografía, un gesto técnico o un movimiento físico antes de ejecutarlo o filmarlo de verdad.
+
+## usos_testing_movimiento_demo
+@video[]()
 
 ## usos_fenomenos_dificiles
 Recrear un fenómeno difícil o peligroso de observar en vivo, como una reacción química, una erupción volcánica o un fenómeno astronómico —útil para química, geología o astronomía.
 
-## usos_referencias_audio
-**Referencias de audio**: producir una banda sonora de referencia para un proyecto audiovisual, algo que ayude a definir conceptualmente el tono de una escena o una secuencia, es otro uso frecuente. No se trata de la banda sonora final, sino de un insumo más para que quien compone después tome como punto de partida.
+## usos_fenomenos_dificiles_demo
+@video[]()
 
-## usos_extension_audio
-**Extender una banda sonora**: también se pueden usar estas herramientas para extender una parte de la banda sonora cuando la duración no alcanza, o para limpiar y mejorar un audio ya grabado, como vimos más arriba en este bloque.
+## usos_reestilizacion
+Grabar un video de manera casera y reestilizarlo con un modelo video-a-video, como vimos entre las técnicas básicas del Bloque B.
+
+## usos_reestilizacion_demo
+@video[]()
+
+## anexo_intro
+Además de los modelos que vimos, tanto en video como en audio existen herramientas de edición que ya están integradas a los softs de edición que se usan habitualmente. No vamos a verlas en detalle, pero está bueno que tengas un panorama de lo que existe:
+
+## anexo_lista
+- **Adobe Premiere Pro**: tiene cortes automáticos, eliminación de silencios, Enhance Speech (limpia diálogo grabado en malas condiciones) y Generative Extend, que alarga un clip generando los cuadros y el audio que faltan. Desde 2025 también suma generación propiamente dicha: un Generative Media Tool que genera clips de video y efectos de sonido a partir de un prompt, y Generate Music (en beta), que genera una pista musical completa a partir de un prompt de texto, directamente en la línea de tiempo.
+- **Adobe After Effects**: su herramienta para separar automáticamente una persona u objeto del fondo —antes ^[Roto Brush](Herramienta que separaba automáticamente a una persona u objeto del fondo de un video, cuadro por cuadro —antes ese trabajo, llamado rotoscopia, se hacía a mano.)— se renovó como Object Matte, que combina varias herramientas de selección asistidas por IA para armar máscaras de seguimiento más rápido. También tiene su propio Generative Extend, que analiza el último segundo de un clip y genera cuadros adicionales respetando la luz, el grano y el movimiento.
+- **DaVinci Resolve** (Blackmagic Design, descarga gratuita; la versión Studio cuesta 295 dólares, pago único): además de mejorar la resolución de un video con IA y aislar una voz del resto de una mezcla —dentro de su módulo de audio, ^[Fairlight](El módulo de audio de DaVinci Resolve, pensado para mezclar y limpiar sonido sin salir del mismo programa de edición de video.)—, suma un AI Music Extender que acorta o extiende una pista musical existente para que coincida con la duración del video (no genera música nueva), y otras funciones como Magic Mask (recortar objetos o personas con seguimiento automático), edición basada en texto, AI Voice Convert (aplica un modelo de voz sobre una grabación ya existente) y un Audio Assistant que arma una mezcla automática a partir de la línea de tiempo.
+- **Clipchamp** (Microsoft, gratis con una cuenta de Microsoft): arma automáticamente un video a partir de tus clips (Auto Compose), genera voz en off a partir de texto en más de 400 voces, subtitula de forma automática en más de 80 idiomas, y elimina silencios o ruido de fondo.
+- **Canva**: Magic Video, disponible en los planes Pro y Ultra, arma clips cortos a partir de texto o convierte una foto en un video con movimiento leve, con voz en off automática incluida.
+- **InVideo AI**: un editor agéntico que integra varios modelos de video, como Sora, Veo y Kling, para generar material dentro del editor. Su plan gratuito es muy limitado, así que en la práctica funciona más como demostración que como plan usable.
+- **Stable Audio 2.5** (Stability AI): tiene una función de inpainting de audio, que permite rellenar o extender un fragmento puntual de una pista ya existente, de forma parecida al inpainting de imagen que vimos en la clase anterior.
+- **Adobe Podcast** (la herramienta gratuita de Adobe, distinta de Premiere): tiene Enhance Speech, que limpia una grabación de voz con ruido de fondo o eco y la deja con calidad de estudio. Es gratuita hasta 30 minutos por archivo y una hora diaria de uso.
 
 
 ## cierre_1
 Llegamos al final de la Clase 4. Si llegaste hasta acá, ya tenés un panorama de qué modelos existen para generar video y audio, cómo funcionan por dentro, la gramática específica de un prompt de video, y algunos usos concretos para pensar en tu propia práctica.
+
+Lo que me interesa que te lleves de esta clase, además de algunos modelos que puedas recomendar en el aula o usar para generar tus propios recursos, es que la IA de video puede integrarse en los procesos de producción audiovisual de una manera creativa y útil. Por ejemplo, si estás desarrollando un proyecto de cine de género y necesitás hacer alguna toma que por presupuesto sería imposible realizar en los trabajos de tus estudiantes, la IA puede ser de gran utilidad. Tené presente las limitaciones de los modelos, como la cantidad de créditos o la resolución. Pero si hay algo que la IA no hace es reemplazar la magia que sucede en el rodaje: no mejora las posibilidades artísticas que surgen de la improvisación del elenco, ni el giro dramático que puede tomar una escena según las condiciones propias de la situación fílmica.
+
+Lo mismo para la elaboración de bandas sonoras: una cosa es producir una música de referencia que permita captar la esencia de una escena o una secuencia. Pero es eso, una referencia que luego, en manos de un músico o una música especializado/a en composición original, pueda orientar para componer la banda sonora adecuada para esa obra audiovisual, haciéndola propia y única.
 
 Por último, si querés incorporar el *uso* de la IA de video y audio en el aula, te comparto algunas ideas:
 
