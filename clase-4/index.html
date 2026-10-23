@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clase 4 — El mundo audiovisual | La imaginación al poder</title>
+<title>Clase 4 — La IA en el mundo audiovisual | La imaginación al poder</title>
 <meta name="description" content="Clase 4 del curso La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria. Docente: Diego Cagide.">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -30,7 +30,7 @@
     <div class="site-nav__divider"></div>
 
     <p class="site-nav__class-label">Clase 4</p>
-    <p class="site-nav__title">El mundo audiovisual</p>
+    <p class="site-nav__title">La IA en el mundo audiovisual</p>
 
     <!-- Grupo 1: introducción a la clase (sin etiqueta) -->
     <ul class="nav-list">
@@ -76,7 +76,7 @@
       </li>
 
       <li class="nav-group">
-        <a class="nav-group__link" href="#bloque-e"><span class="nav-bullet"></span>Bloque E · Usos de video para la enseñanza</a>
+        <a class="nav-group__link" href="#bloque-e"><span class="nav-bullet"></span>Bloque E · Usos de la IA de video</a>
       </li>
 
       <li class="nav-group">
@@ -111,7 +111,7 @@
       <header class="class-header">
         <p class="class-header__course">La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria — Docente:&nbsp;Diego&nbsp;Cagide</p>
         <p class="class-header__eyebrow">Clase 4</p>
-        <h1>El mundo audiovisual</h1>
+        <h1>La IA en el mundo audiovisual</h1>
       </header>
 
       <!-- =================================================================
@@ -145,6 +145,13 @@
         <h3 id="objetivos-clase">Objetivos de la clase</h3>
         <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="objetivos_clase"></div>
+
+        <!-- Aclaración sobre el origen de los videos de la clase — mismo
+             componente .callout que el resto de los recuadros destacados. -->
+        <div class="callout">
+          <p class="callout__label">Aclaración</p>
+          <p data-key="aclaracion_material_audiovisual"></p>
+        </div>
 
         <hr class="section-divider">
 
@@ -456,7 +463,7 @@
              google_flow_intro / google_flow_video); el video todavía no
              está (Diego lo va a grabar: un video explicativo que arranque
              con algo como "acá te cuento cómo funciona"). -->
-        <p class="mini-heading">¿Qué podemos usar de manera gratuita para esta clase?</p>
+        <p class="mini-heading mini-heading--upright">¿Qué podemos usar gratis?</p>
         <div class="callout" id="google-flow">
           <p class="callout__label">Herramienta</p>
           <p><strong>Google Flow</strong></p>
@@ -595,7 +602,9 @@
         <div class="content-block" data-key="ejemplo_video_complejo_demo"></div>
         <p class="prompt-breakdown" data-key="ejemplo_video_complejo_obs"></p>
 
-        <h3 id="metodologia">Metodología</h3>
+        <hr class="section-divider">
+
+        <h3 id="metodologia">Metodología ¿Cómo aproximarnos a lo que queremos?</h3>
         <!-- El texto de esta sección, incluida la lista, se edita en
              contenido.txt (no acá) -->
         <div class="content-block" data-key="metodologia_intro"></div>
@@ -628,7 +637,7 @@
            BLOQUE E — Usos de video
            ================================================================= -->
       <section class="block" id="bloque-e">
-        <h2>Bloque E — Usos de video para la enseñanza</h2>
+        <h2>Bloque E — Usos de la IA de video</h2>
 
         <!-- Apertura del bloque, sin subtítulo propio — se edita en contenido.txt (no acá) -->
         <p data-key="usos_intro"></p>
@@ -857,8 +866,27 @@
         <div class="content-block" data-key="audio_formula_ejemplo_demo"></div>
 
         <h3 id="usos-audio">Usos de audio</h3>
-        <!-- El texto de esta sección, incluida la lista, se edita en contenido.txt (no acá) -->
-        <div class="content-block" data-key="usos_audio_intro"></div>
+        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
+        <p data-key="usos_audio_intro"></p>
+
+        <!-- Misma lógica que los usos de video del Bloque E: ítems
+             numerados con .use-case-title + .use-case-num, sin el
+             recuadro de lista con viñetas que tenía antes (pedido
+             explícito de Diego). -->
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">1</span> Banda sonora de referencia</h4>
+        <p data-key="usos_audio_banda"></p>
+        <div class="content-block" data-key="usos_audio_banda_demo"></div>
+
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">2</span> Diálogos</h4>
+        <p data-key="usos_audio_dialogos"></p>
+
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">3</span> Narración de materiales</h4>
+        <p data-key="usos_audio_narracion"></p>
+        <div class="prompt-example">
+          <p class="prompt-example__label">Texto base</p>
+          <p data-key="usos_audio_narracion_texto"></p>
+        </div>
+        <div class="content-block" data-key="usos_audio_narracion_demo"></div>
       </section>
 
       <!-- =================================================================
@@ -899,11 +927,11 @@
              criterio que en las clases anteriores: son la estructura de
              la lista, no cuerpo de texto libre. -->
         <ul class="practice-list">
-          <li><strong>Podés recomendarles a tus estudiantes modelos y plataformas.</strong> Alcanza con mostrarles dos o tres, elegidos según lo que están buscando lograr —uno de video, uno de música o voz. También está bueno que ellos compartan los modelos que ya vienen usando.</li>
+          <li><strong>Podés contarles acerca de los modelos que vimos.</strong> Y recomendarles Google Flow, que es gratuita.</li>
           <li><strong>Podés compartirles algunos usos.</strong> Los que vimos en esta clase, o pensar algunos propios de tu área disciplinar.</li>
-          <li><strong>Podés mostrarles cómo estructurar un prompt de video.</strong> Qué elementos lo constituyen, por qué conviene evitar el prompt negativo, y cómo ajustar el pedido de a un elemento por vez cuando el resultado no sale como esperaban.</li>
+          <li><strong>Podés mostrarles cómo estructurar un prompt de video.</strong> Qué elementos lo constituyen y qué reglas pueden tener en cuenta al momento de interactuar con el modelo.</li>
+          <li><strong>Podés contarles sobre la metodología que vimos en la clase.</strong> La combinación de modelos, la generación de imágenes fijas que serán los frames iniciales de cada video, y la utilización de modelos de texto para refinar prompts o traducirlos al inglés —ya que los modelos de video funcionan mejor en ese idioma.</li>
           <li><strong>Podés proponerles algunas preguntas para mirar los resultados con criterio.</strong> ¿Cuál era la búsqueda inicial? ¿Por qué decidieron usar IA generativa en vez de otra técnica? ¿Qué les devolvió el modelo? ¿Se ajusta total o parcialmente a lo que buscaban? ¿Conviene editar el resultado de manera manual o seguir interactuando con el modelo?</li>
-          <li><strong>Pueden establecer algunos acuerdos de uso.</strong> En qué etapas de la cursada se puede usar IA generativa de video o audio, y en cuáles se espera que usen las técnicas habituales propias de la disciplina.</li>
         </ul>
 
         <div class="next-class">

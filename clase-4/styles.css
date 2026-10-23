@@ -740,6 +740,20 @@ section.block:first-of-type {
 
 .img-caption:empty { display: none; margin: 0; }
 
+/* Línea divisoria chica DENTRO de un epígrafe, para separar varios datos
+   (Modelo / Prompt español / Prompt inglés / Observaciones) que antes
+   quedaban todos pegados uno debajo del otro — ver CAPTION_RULE_PLACEHOLDER
+   en script.js (se escribe como un renglón "---" en contenido.txt). Es un
+   <span>, no un <hr> (un <hr> no puede ir dentro de un <p>), por eso se
+   fuerza a verse como línea completa con display:block. */
+.caption-rule {
+  display: block;
+  height: 1px;
+  background: var(--color-border);
+  margin: 8px 0;
+  opacity: .7;
+}
+
 /* ---------- Botón individual: mostrar/ocultar el epígrafe de ESA imagen ---------- */
 /* Cada imagen con epígrafe (Modelo/Prompt) tiene su propio botón debajo,
    para verlo u ocultarlo sin tener que agrandar la imagen ni afectar a
@@ -1056,6 +1070,12 @@ section.block:first-of-type {
   color: var(--color-primary);
   margin: 24px 0 10px;
 }
+
+/* Variante sin itálica — pedido puntual de Diego para una pregunta que
+   quiere más "seria" que el resto de los mini-heading (ej. "¿Qué
+   podemos usar gratis?" en Clase 4). El resto de los mini-heading de
+   la página siguen en itálica por default. */
+.mini-heading--upright { font-style: normal; }
 
 /* ---------- Tarjetas comparativas (ej.: plataformas de IA) ---------- */
 /* Se armaron como tarjetas apiladas (no como tabla) a propósito: con

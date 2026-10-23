@@ -202,13 +202,31 @@ function applyInlineMarks(html) {
   return html;
 }
 
+// Línea divisoria chica dentro de un epígrafe con varios datos (Modelo /
+// Prompt español / Prompt inglés / Observaciones): si UN RENGLÓN del
+// epígrafe es exactamente "---" (tres guiones, nada más), se convierte en
+// una línea fina para separar visualmente cada dato. Pedido explícito de
+// Diego ("separar con una línea para que se lea mejor") — se usa un
+// placeholder antes de escapar/convertir saltos de línea, y recién al
+// final se reemplaza por un <span> (NO <hr>: un <hr> no es contenido de
+// línea y no puede ir dentro de un <p>, igual que pasa con <details> —
+// ver nota de .note más abajo). El CSS de .caption-rule lo hace lucir
+// como una línea aunque sea un <span>.
+var CAPTION_RULE_PLACEHOLDER = '\u0000CAPTION_RULE\u0000';
+
 function renderInline(text) {
-  var html = escapeHtml(text);
+  var withPlaceholders = text.split('\n').map(function (line) {
+    return line.trim() === '---' ? CAPTION_RULE_PLACEHOLDER : line;
+  }).join('\n');
+  var html = escapeHtml(withPlaceholders);
   html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img class="content-img" src="$2" alt="$1" loading="lazy">');
   html = applyInlineMarks(html);
   // Un solo Enter (sin línea en blanco) se muestra como salto de línea,
   // no como continuación pegada del mismo renglón.
   html = html.replace(/\n/g, '<br>');
+  // Saca los <br> que quedaron pegados a cada lado del placeholder (el
+  // span ya se ve como su propia línea, no hace falta el salto extra).
+  html = html.replace(/(<br>)?\u0000CAPTION_RULE\u0000(<br>)?/g, '<span class="caption-rule" aria-hidden="true"></span>');
   return html;
 }
 
@@ -572,7 +590,7 @@ function renderVideoBlock(title, url, caption) {
       '</div>';
   }
 
-  var titleHtml = safeTitle ? '<h3 class="interactive-title">Video: ' + escapeHtml(safeTitle) + '</h3>' : '';
+  var titleHtml = safeTitle ? '<h3 class="interactive-title">' + escapeHtml(safeTitle) + '</h3>' : '';
   var iframeTitle = escapeAttr(safeTitle || 'Video de YouTube');
   return titleHtml +
     '<div class="interactive-placeholder has-video">' +
@@ -926,11 +944,29 @@ function initInlineCaptionToggles() {
   });
 }
 
+// Pausa cualquier otro <video>/<audio> de la página apenas se arranca a
+// reproducir uno nuevo (pedido de Diego: en un carrusel, si tocás play en
+// el segundo video mientras el primero seguía sonando, se escuchaban los
+// dos audios superpuestos). El evento "play" de los elementos de media no
+// burbujea, por eso el listener va en la fase de "captura" (tercer
+// argumento `true`) en vez de en la de burbujeo habitual — así igual se
+// entera cuando el evento pasa por acá en su camino hacia el elemento.
+function initExclusiveMediaPlayback() {
+  document.addEventListener('play', function (e) {
+    var playing = e.target;
+    if (playing.tagName !== 'VIDEO' && playing.tagName !== 'AUDIO') return;
+    document.querySelectorAll('video, audio').forEach(function (other) {
+      if (other !== playing && !other.paused) other.pause();
+    });
+  }, true);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   loadContent();
   initLightbox();
   initInlineCaptionToggles();
   initNotePopovers();
+  initExclusiveMediaPlayback();
 
   var nav = document.getElementById('siteNav');
   var toggle = document.getElementById('navToggle');

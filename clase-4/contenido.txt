@@ -1,7 +1,7 @@
 ## bienvenida_1
 Bienvenidas y bienvenidos a la cuarta clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En esta clase vamos a trabajar principalmente con **video** y también vamos a conocer algo del mundo del **audio**, dos tecnologías que avanzaron mucho en los últimos tiempos e impactaron fuertemente en la industria audiovisual y musical.
 
-En la actualidad, a los modelos de IA que generan contenidos audiovisuales todavía les cuesta bastante responder con precisión a lo que les pedimos: esto está ligado, por un lado, a la propia complejidad del lenguaje audiovisual y a la dificultad para traducir pedidos a través de prompts (que ahora incluyen movimiento de cámara, tipo de lente, angulación, coreografías dentro del cuadro, etc.), y por otro lado a la propia limitación de los modelos para responder a lo que les pedimos. Esta clase va a estar dividida en dos partes: en la primera vamos a ver VIDEO, y en la segunda vamos a ver, de forma más sintética, algo de AUDIO.
+En la actualidad, a los modelos de IA que generan contenidos audiovisuales todavía les cuesta bastante responder con precisión a lo que les pedimos: esto está ligado, por un lado, a la propia complejidad del lenguaje audiovisual que se expresa en la dificultad para traducir pedidos a través de prompts, y por otro lado a la propia limitación de los modelos para responder a lo que les pedimos. Esta clase va a estar dividida en dos partes: en la primera vamos a ver VIDEO, y en la segunda vamos a ver, de forma más sintética, algo de AUDIO.
 
 ## bienvenida_apertura_demo
 ![Video de apertura](videos/00_apertura.mp4)
@@ -18,13 +18,16 @@ Esto está emparentado con el espacio que ocupan las redes sociales en la vida c
 El impacto cae directo sobre el área audiovisual y musical, y pienso que no podemos avanzar con el conocimiento de estas tecnologías sin conocer ese impacto. Las estructuras de producción habituales, que necesitaban un equipo de filmación y un equipo de postproducción, dejan de ser un requisito necesario para resolver gran parte de la producción audiovisual que circula.
 
 ## por_que_esta_clase
-¿Por qué entonces dedicarle un contenido a una tecnología que está impactando de forma desfavorable en el sector audiovisual y musical? Porque conviene conocer qué se está haciendo con estas herramientas, en nuestro país y en el mundo: qué modelos existen y qué usos tienen hoy en la industria. A partir de ahí podemos pensar y reflexionar sobre qué de todo esto tiene sentido llevar al aula, reafirmando las formas colaborativas de producción audiovisual y usando algunos aspectos de la IA que puedan allanar el camino de esa producción.
+¿Por qué entonces dedicarle un contenido a una tecnología que está impactando de forma desfavorable en el sector audiovisual y musical? Porque conviene conocer qué se está haciendo con estas herramientas, en nuestro país y en el mundo: qué modelos existen y qué usos tienen hoy en la industria. A partir de ahí podemos pensar y reflexionar sobre qué de todo esto podemos y queremos llevar al aula.
 
 ## objetivos_clase
 - Conocer los modelos de video y audio que existen hoy y sus características.
 - Generar contenidos de video y audio de cero, a partir de texto, de una imagen o de otro video.
 - Redactar un prompt de video siguiendo su propia gramática y con las reglas propias del lenguaje audiovisual.
 - Pensar usos posibles de estas tecnologías para compartir en el aula, sin perder de vista las formas de producción colaborativas que estas herramientas tienden a dejar afuera.
+
+## aclaracion_material_audiovisual
+Aclaración respecto del material audiovisual compartido en la clase: exceptuando los videos de la sección Panorama de la industria y los links a los videos de cada modelo en particular ("Mirá lo que se puede hacer con este modelo"), todos los videos de esta clase fueron creados específicamente para ella.
 
 ## panorama_industria_intro
 La IA ya se está usando para la generación de cortometrajes de ficción, tomas completas para largometrajes, publicidades enteras de productos y servicios, y material para redes, entre otros usos. El cambio del último año en el funcionamiento de los modelos generadores de video fue lo suficientemente significativo como para que los productos puedan realizarse de manera integral: diseño, audio y video a la vez. Varios estudios de publicidad ya tienen en sus equipos operadores de IA para la realización de spots. Una de las áreas que más se vio afectada dentro de la producción audiovisual fue la de los FXs —efectos especiales—, un área históricamente de gran complejidad técnica que hoy en día puede realizarse de manera inmediata. En este marco, te comparto algunas obras que circulan en internet realizadas con IA:
@@ -68,8 +71,12 @@ Dentro de las técnicas más básicas para generar video con IA hay tres formas 
 ## tecnicas_texto_demo
 ![Texto a video: elefantes gigantes y criaturas surrealistas caminando por la avenida 9 de Julio](videos/01_texto-a-video.mp4)
 Modelo: Veo 3.1 (Google Flow)
+---
 Prompt en español: Plano general extremo, con ángulo contrapicado a ras del suelo. Travelling lento y continuo hacia adelante, siguiendo el desplazamiento de las criaturas. Elefantes gigantes de patas interminables y criaturas surrealistas de cuerpos deformados y proporciones imposibles, inspiradas en el imaginario de Salvador Dalí, caminan por la avenida 9 de Julio de Buenos Aires. Lente gran angular, estética cinematográfica fotorrealista combinada con surrealismo daliniano. Luz cálida de atardecer, sombras alargadas y atmósfera ligeramente brumosa. El plano revela progresivamente el Obelisco entre las figuras colosales, mientras los edificios, los autos y los peatones diminutos acentúan la escala monumental y onírica de la escena.
+---
 Prompt en inglés: Extreme wide shot, filmed from a low-angle perspective close to the ground. Slow, continuous forward tracking shot following the movement of the creatures. Giant elephants with impossibly long legs and surreal creatures with distorted bodies and impossible proportions, inspired by Salvador Dalí's artistic imagination, walk along Avenida 9 de Julio in Buenos Aires, Argentina. Wide-angle lens, photorealistic cinematic aesthetic blended with Dalí-inspired surrealism. Warm sunset lighting, elongated shadows, and a slightly misty atmosphere. The shot gradually reveals the Obelisk emerging between the colossal figures, while buildings, cars, and tiny pedestrians emphasize the monumental scale and dreamlike nature of the scene.
+---
+Observaciones: le pedí que situara la acción en la avenida 9 de Julio y agregó un obelisco que no es el correcto, y los edificios de la ciudad parecen de París.
 
 ## tecnicas_imagen
 **Imagen-a-video (image-to-video)**: se parte de una o más imágenes, que el modelo usa como fotogramas de referencia para construir el movimiento. Es una forma de ganar control sobre cómo arranca —o termina— la escena, en vez de dejarlo librado por completo al prompt.
@@ -81,6 +88,12 @@ Imagen descargada de la web
 
 ![Video generado a partir de la imagen anterior](videos/02_image-a-video.mp4)
 Modelo: Veo 3.1 (Google Flow)
+---
+Prompt en español: Plano aéreo cinematográfico con dron, con un movimiento de cámara fluido y continuo que sobrevuela la escena.
+---
+Prompt en inglés: Cinematic drone aerial shot, with a smooth, fluid camera movement gliding above the scene.
+---
+Observaciones: la fotografía original corresponde a la Cuarta Marcha Federal Universitaria. Entre otras cosas, el modelo de video agregó banderas que no estuvieron en el momento. Como usé la versión gratuita del modelo, además me muestra la marca de agua sobreimpresa.
 
 ## tecnicas_video
 **Video-a-video (video-to-video)**: se sube un video ya existente y se le pide al modelo que lo reestilice o que haga algún trabajo puntual sobre él, como cambiar la estética o reemplazar un elemento.
@@ -189,7 +202,7 @@ Full shot of a frog jumping across a wooden table; the camera performs a smooth 
 ![Resultado del prompt simple, generado con Google Flow](videos/05_ranamesa_.mp4)
 @plain
 Modelo: Veo 3.1 – Lite (a través de Google Flow)
-Observaciones: el modelo decidió realizar el movimiento en slow motion, cosa que no fue pedida.
+Observaciones: el modelo decidió realizar el movimiento en slow motion, cosa que no fue pedida. Además, le agregó una banda sonora errática que no coincide con el contenido ni con el realismo de la toma.
 
 ## ejemplo_video_complejo_es
 Plano general filmado con un lente gran angular, que muestra a un astronauta caminando lentamente sobre la superficie lunar, levantando polvo lunar con cada paso. La cámara realiza un movimiento orbital aéreo, suave y cinematográfico, en una vista de tres cuartos, acercándose lentamente al astronauta mientras gira a su alrededor. Perspectiva dramática en contrapicado, luz solar intensa y de alto contraste, sombras largas sobre el terreno lunar y la Tierra visible contra el cielo negro profundo. Estilo fotorrealista de documental espacial, con una composición cinematográfica épica.
@@ -217,10 +230,12 @@ Como mencionamos antes, uno de los problemas más grandes al generar video es lo
 
 Esta metodología permite, además de lograr una toma más cercana a lo que se busca, mantener la continuidad entre toma y toma y controlar con más precisión los tamaños de plano. Como vimos en la clase anterior, hay modelos de imagen —como Nano Banana— que permiten una mejor consistencia entre imágenes, manteniendo coherencia visual entre las distintas generaciones: mismo personaje, escenario y elementos. A partir de esas imágenes individuales, podemos después usarlas como materia prima para generar las tomas de forma independiente.
 
+A continuación te muestro un ejemplo de una secuencia en la que primero creé 4 imágenes (dos de ellas mostradas como ejemplo de la clase pasada) y luego les di movimiento.
+
 ## metodologia_carrusel
 @carousel
 ![Imagen 1 de referencia de "la mujer", generada manteniendo consistencia visual entre tomas](images/metodologia_01.jpg)
-Modelo: dos de estas imágenes las generé como ejemplo en la Clase 3. A partir de esas imágenes generé la imagen de la entrada al bar y la imagen en la que la mujer mira por la ventana.
+Modelo: Gemini 3 (Nano Banana Pro)
 
 ![Imagen 2 de referencia de "la mujer"](images/metodologia_02.jpg)
 
@@ -229,7 +244,7 @@ Modelo: dos de estas imágenes las generé como ejemplo en la Clase 3. A partir 
 ![Imagen 4 de referencia de "la mujer"](images/metodologia_04.jpg)
 
 ## metodologia_resultado
-Un video armado con las tomas generadas a partir de esas cuatro imágenes.
+Un video armado con las tomas generadas a partir de esas cuatro imágenes. Las cuatro tomas las editó en un soft de edición.
 
 ![Video armado a partir de las cuatro imágenes de "la mujer"](videos/06_mujerfrancesa_.mp4)
 
@@ -259,7 +274,7 @@ Una síntesis, en español e inglés, para tener a mano. La escala de planos se 
 - Cámara estática (*static camera*)
 
 ## prompt_docs_intro
-Si querés profundizar en la gramática de un modelo en particular, estas son las documentaciones oficiales que usamos como referencia para este bloque:
+Si querés profundizar en la gramática de un modelo en particular, estas son las documentaciones oficiales que usé como referencia para este bloque:
 
 
 ## audio_intro
@@ -285,13 +300,31 @@ Folk cinematográfico, atmósfera nostálgica y melancólica con guitarra acúst
 
 ## audio_formula_ejemplo_demo
 ![Audio generado a partir del ejemplo anterior](audio/01_folkcine_.mp3)
+@plain
+Modelo: Suno
 
 ## usos_audio_intro
 Usos generativos posibles para pensar en la práctica docente:
 
-- **Banda sonora de referencia**: producir una banda sonora de referencia para un proyecto audiovisual, algo que ayude a definir conceptualmente el tono de una escena o una secuencia, sin que sea la banda sonora final.
-- **Diálogos**: generar líneas de diálogo o locuciones a partir de un guion escrito, para probar cómo suena una escena antes de grabarla con actores reales.
-- **Narración de materiales de estudio**: generar la voz en off de un video explicativo, el resumen en audio de un texto, o una consigna grabada para que los estudiantes la escuchen en vez de leerla.
+## usos_audio_banda
+Producir una banda sonora de referencia para un proyecto audiovisual, algo que ayude a definir conceptualmente el tono de una escena o una secuencia, sin que sea la banda sonora final.
+
+## usos_audio_banda_demo
+![Ejemplo de banda sonora de referencia](audio/02_bandareferencia.mp3)
+
+## usos_audio_dialogos
+Generar líneas de diálogo o locuciones a partir de un guion escrito, para probar cómo suena una escena antes de grabarla con actores reales. Los créditos gratuitos de la mayoría de las plataformas impiden generar diálogos de más de una línea.
+
+## usos_audio_narracion
+Generar la voz en off de un video explicativo, el resumen en audio de un texto, o una consigna grabada para que los estudiantes la escuchen en vez de leerla.
+
+## usos_audio_narracion_texto
+Hace unos 13.800 millones de años, el universo comenzó a expandirse desde un estado extremadamente caliente y denso. A ese proceso lo llamamos Big Bang.
+
+## usos_audio_narracion_demo
+![Ejemplo de narración generada a partir del texto anterior](audio/04_narracion.mp3)
+@plain
+Plataforma: ElevenLabs
 
 
 ## usos_intro
@@ -303,14 +336,29 @@ Si estamos trabajando en un proyecto audiovisual, podemos usar la IA para produc
 ## usos_tomas_especificas_demo
 @carousel
 ![](videos/07_zombies.mp4)
+Modelo: Veo 3.1 (Google Flow)
+---
+Prompt en español: Plano general aéreo con lente gran angular de la Floralis Genérica en una Buenos Aires postapocalíptica, con hordas de zombis avanzando caóticamente por las calles; un vuelo de dron rápido y envolvente realiza una órbita dinámica de 360 grados alrededor de la gigantesca flor; angulación aérea elevada en tres cuartos; luz natural, visibilidad clara y sombras realistas; estilo cinematográfico fotorrealista.
+---
+Prompt en inglés: Wide aerial shot with a wide-angle lens of Floralis Genérica in a post-apocalyptic Buenos Aires, with hordes of zombies advancing chaotically through the streets; a fast, sweeping drone flight performs a dynamic 360-degree orbit around the giant flower; high three-quarter aerial angle; natural light, clear visibility, and realistic shadows; photorealistic cinematic style.
 
 ![](videos/07.1_avion.mp4)
+Modelo: Veo 3.1 (Google Flow)
+---
+Prompt en español: Plano entero de un avión volando a toda velocidad a baja altura sobre una calle urbana. La cámara realiza un paneo rápido y fluido, siguiendo al avión mientras atraviesa la escena a gran velocidad. Perspectiva dinámica, sensación de velocidad, movimiento realista y estilo cinematográfico fotorrealista.
+---
+Prompt en inglés: Full shot of an airplane flying at high speed at low altitude over an urban street. The camera performs a fast, smooth pan, tracking the airplane as it races through the scene. Dynamic perspective, sense of speed, realistic motion, and photorealistic cinematic style.
 
 ## usos_representaciones_historicas
 Recrear visualmente una época, un evento o un proceso histórico del que no quedó registro en video o fotografía —útil para historia, pero también para cualquier materia que necesite mostrar algo que ya no existe o que nunca se filmó.
 
 ## usos_representaciones_historicas_demo
 ![](videos/08_historia.mp4)
+Modelo: Veo 3.1 (Google Flow)
+---
+Prompt en español: Video cinematográfico del general José de San Martín, inspirado en el estilo de la imagen de referencia, liderando una carga de su ejército contra las fuerzas realistas españolas durante una batalla histórica de la independencia sudamericana. El campo de batalla es caótico, con humo, infantería en plena carga y banderas ondeando. Composición dramática, iluminación épica y un paisaje escarpado de montañas andinas bajo un cielo tormentoso. Estética de película histórica de alta calidad. Todos los personajes hablan en español, con diálogos históricamente apropiados y acento argentino natural.
+---
+Prompt en inglés: Cinematic video of General José de San Martín, inspired by the style of the reference image, leading a charge of his army against Royalist Spanish forces in a historic South American independence battle. The battlefield is chaotic with smoke, charging infantry, and waving flags. Dramatic composition, epic lighting, set against a rugged Andean mountain landscape under a stormy sky. High-quality historical drama aesthetic. All characters speak Spanish, with historically appropriate dialogue and natural Argentine Spanish accents.
 
 ## usos_simulaciones
 Mostrar el funcionamiento interno de algo que no se puede observar a simple vista, como el latido del corazón o cómo funciona el ojo humano.
@@ -318,20 +366,36 @@ Mostrar el funcionamiento interno de algo que no se puede observar a simple vist
 ## usos_simulaciones_demo
 @carousel
 ![](videos/09_simulacion.mp4)
+Modelo: Veo 3.1 (Google Flow)
+---
+Prompt en español: Plano con cámara estática de un corazón humano 3D que late y bombea sangre continuamente, siguiendo un ciclo rítmico en el centro del encuadre. Flechas luminosas azules y rojas pulsan y fluyen de manera constante a lo largo de los vasos sanguíneos, mostrando la circulación de la sangre, mientras las etiquetas en español permanecen claras y legibles en pantalla. Animación médica científica 3D fotorrealista.
+---
+Prompt en inglés: Static camera shot of the 3D human heart continuously beating and pumping in a rhythmic cycle in the center of the frame. Glowing blue and red arrows pulse and flow steadily along the vascular pathways, demonstrating blood flow while the labels in Spanish remain clear and legible on screen. Photorealistic scientific 3D medical animation.
 
 ![](videos/09.1_simulacion.mp4)
+Modelo: Veo 3.1 (Google Flow)
 
 ## usos_videos_explicativos
 Animar el funcionamiento de una máquina o un mecanismo, como una máquina de vapor, para desarmarlo visualmente paso a paso.
 
 ## usos_videos_explicativos_demo
 ![](videos/10_explicativo.mp4)
+Modelo: Veo 3.1 (Google Flow)
+---
+Prompt en español: Video explicativo educativo con renderizado 3D de una máquina de vapor en funcionamiento, mostrada en un corte transversal. Las llamas de la caldera calientan el agua y generan vapor incandescente que fluye por las tuberías hasta el cilindro. El pistón se mueve suavemente hacia adelante y hacia atrás, impulsando la biela y haciendo girar el volante de inercia. Textos explicativos en pantalla y narración educativa profesional en español latinoamericano que explica cómo la presión del vapor genera el movimiento mecánico. Texturas de metal pulido, representación clara del flujo del vapor y movimientos mecánicos fluidos. Renderizado 3D realista.
+---
+Prompt en inglés: 3D render educational explainer video of a working steam engine in cross-section cutaway. The flames in the boiler heat the water, producing glowing steam that flows through pipes into the cylinder. The piston moves smoothly back and forth, driving the connecting rod and spinning the flywheel. Clear text overlays and professional spoken educational voiceover narration in Latin American Spanish ("español latino") explaining how steam pressure drives the mechanical motion. Polished metal texture, clear fluid dynamics of steam movement, smooth mechanical motion, realistic 3D render.
 
 ## usos_testing_movimiento
 Previsualizar cómo se vería una coreografía, un gesto técnico o un movimiento físico antes de ejecutarlo o filmarlo de verdad.
 
 ## usos_testing_movimiento_demo
 ![](videos/12_testmovimiento.mp4)
+Modelo: Veo 3.1 (Google Flow)
+---
+Prompt en español: Primer plano de un hombre que ríe de forma natural, con un gran bigote blanco, gafas de sol redondas y un tocado mecánico. La cámara permanece estática mientras sus facciones se mueven con la risa, manteniendo la consistencia visual y el estilo artístico digital de la imagen de referencia.
+---
+Prompt en inglés: Close-up of a man laughing naturally, with a large white mustache, round sunglasses, and a mechanical headpiece. The camera remains static as his facial features move with laughter, maintaining visual consistency and the original digital art style of the reference image.
 
 ## usos_fenomenos_dificiles
 Recrear un fenómeno difícil o peligroso de observar en vivo, como una reacción química, una erupción volcánica o un fenómeno astronómico —útil para química, geología o astronomía.
@@ -339,18 +403,33 @@ Recrear un fenómeno difícil o peligroso de observar en vivo, como una reacció
 ## usos_fenomenos_dificiles_demo
 @carousel
 ![](videos/13_fenomenos.mp4)
+Modelo: Veo 3.1 (Google Flow)
+---
+Prompt en español: Transición en cámara rápida que muestra las placas tectónicas chocando y elevando el terreno, donde fuerzas geológicas épicas dan forma a majestuosas cumbres montañosas cubiertas de nieve a lo largo de millones de años.
+---
+Prompt en inglés: Time-lapse transition showing the tectonic plates colliding and pushing the ground upwards, epic geological force forming majestic snow-capped mountain peaks over millions of years.
 
 ![](videos/13.1_fenomenos.mp4)
+Modelo: Veo 3.1 (Google Flow)
+---
+Prompt en español: Simulación documental cinematográfica y fotorrealista de la erupción de un volcán gigantesco, en plano general. Cámara aérea y orbital alrededor del volcán. Lava incandescente sale disparada a gran altura hacia el cielo oscuro, mientras densas columnas de ceniza y humo se elevan y se expanden.
+---
+Prompt en inglés: Cinematic, photorealistic documentary simulation of a massive volcanic eruption in a wide shot. Aerial camera orbiting around the volcano. Glowing molten lava shoots high into the dark sky, while dense plumes of ash and smoke rise and expand.
 
 ## usos_frames
 Podemos generar un video diciéndole al modelo con qué imagen comienza y con cuál finaliza.
 
 ## usos_frames_demo
 @carousel
-![Dibujos hechos a mano](images/14_frames_01.jpg)
-Dibujos hechos a mano
+![Dibujos hechos a mano: un ojo cerrado y uno abierto](images/14_frames_01.jpg)
+Ilustración de un ojo cerrado y uno abierto (dibujos hechos a mano).
 
 ![](videos/14_frames.mp4)
+Modelo: Veo 3.1 (Google Flow)
+---
+Prompt en español: Un ojo abriéndose y mirando. La transición debe mostrar el ojo abriéndose suavemente y mirando, manteniendo la estética de dibujo a mano en blanco y negro y preservando los detalles de ambas imágenes de referencia.
+---
+Prompt en inglés: An eye opening and looking around. The transition should show the eye opening smoothly and beginning to look around, maintaining the black-and-white hand-drawn aesthetic and preserving the details of both reference images.
 
 ## anexo_intro
 Además de los modelos que vimos, tanto en video como en audio existen herramientas de edición que ya están integradas a los softs de edición que se usan habitualmente. No vamos a verlas en detalle, pero está bueno que tengas un panorama de lo que existe:
@@ -376,4 +455,4 @@ Lo mismo para la elaboración de bandas sonoras: una cosa es producir una músic
 Por último, si querés incorporar el *uso* de la IA de video y audio en el aula, te comparto algunas ideas:
 
 ## proxima_clase
-Llegamos a la cuarta de las cinco clases del curso. Para la última todavía estamos terminando de definir el recorrido juntos —en breve vas a tener el link. ¡Nos vemos!
+Y con esto finaliza la cuarta clase del curso. En la próxima clase vamos a ver algunos casos útiles para crear contenido. ¡Nos vemos!
