@@ -747,19 +747,6 @@ section.block:first-of-type {
    ver renderImageBlock() en script.js) hasta que se toca este botón.
    Estilo tipo "pastilla" (fondo azul, letras blancas, bordes redondeados),
    a pedido de Diego — más destacado que un link de texto suelto. */
-/* Grupo de dos botones "Ver prompt" (español/inglés) para un video
-   propio que no está colgado de una imagen puntual — mismo botón
-   .caption-toggle-inline de siempre, en fila, con su epígrafe propio
-   debajo de cada uno en vez de compartir uno solo. */
-.prompt-toggle-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 14px;
-  margin: 14px 0 28px;
-}
-.prompt-toggle-group .caption-toggle-inline { margin: 0; }
-.prompt-toggle-group .img-caption { flex: 1 1 100%; margin: 0; }
-
 .caption-toggle-inline {
   display: inline-flex;
   align-items: center;

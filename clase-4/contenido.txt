@@ -1,7 +1,14 @@
 ## bienvenida_1
-Bienvenidas y bienvenidos a la cuarta clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En esta clase vamos a trabajar principalmente con video y también vamos a conocer algo del mundo del audio, dos tecnologías que avanzaron mucho en los últimos tiempos e impactaron fuertemente en la industria audiovisual y musical. A su vez, en ambos casos —pero centralmente en el mundo del video— todavía les cuesta bastante responder con precisión a lo que les pedimos: esto está ligado a la propia complejidad del lenguaje audiovisual, a la complejidad de los prompts (que ahora incluyen movimiento de cámara, tipo de lente, y otros elementos) y también a la propia limitación de los modelos para responder a lo que les pedimos.
+Bienvenidas y bienvenidos a la cuarta clase del curso "La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria". En esta clase vamos a trabajar principalmente con **video** y también vamos a conocer algo del mundo del **audio**, dos tecnologías que avanzaron mucho en los últimos tiempos e impactaron fuertemente en la industria audiovisual y musical.
 
-La clase va a estar dividida en dos partes: en la primera vamos a ver VIDEO, y en la segunda vamos a ver, de forma más sintética, algo de AUDIO.
+En la actualidad, a los modelos de IA que generan contenidos audiovisuales todavía les cuesta bastante responder con precisión a lo que les pedimos: esto está ligado, por un lado, a la propia complejidad del lenguaje audiovisual y a la dificultad para traducir pedidos a través de prompts (que ahora incluyen movimiento de cámara, tipo de lente, angulación, coreografías dentro del cuadro, etc.), y por otro lado a la propia limitación de los modelos para responder a lo que les pedimos. Esta clase va a estar dividida en dos partes: en la primera vamos a ver VIDEO, y en la segunda vamos a ver, de forma más sintética, algo de AUDIO.
+
+## bienvenida_apertura_demo
+![Video de apertura](videos/00_apertura.mp4)
+Modelo: Veo 3.1 (Google Flow)
+Prompt en español: Agregá un movimiento general suave. Zoom in suave.
+Prompt en inglés: Add soft general movement. Soft zoom in.
+Observaciones: sin haberle dado indicaciones de audio, le agregó un diálogo en inglés y sonorizó la toma.
 
 ## terreno_produccion
 Los modelos de IA de video y audio avanzaron lo suficiente como para ocuparle un lugar a la producción que hasta hace poco requería un equipo con formación técnica específica. Hoy se puede armar una publicidad, un video institucional o un cortometraje sin equipos de cámara, iluminación y montaje.
@@ -9,9 +16,6 @@ Los modelos de IA de video y audio avanzaron lo suficiente como para ocuparle un
 Esto está emparentado con el espacio que ocupan las redes sociales en la vida cotidiana, donde los algoritmos entienden cada vez mejor los gustos de cada usuario a partir de sus búsquedas y de sus interacciones. Esa dinámica necesitó la producción de mucho más contenido, en general y en particular —asociado a cada usuario—, un contenido mucho más efímero que la publicidad de la tele de hace unos años, que podía durar varios meses en el aire. La IA generativa calzó justo en ese escenario.
 
 El impacto cae directo sobre el área audiovisual y musical, y pienso que no podemos avanzar con el conocimiento de estas tecnologías sin conocer ese impacto. Las estructuras de producción habituales, que necesitaban un equipo de filmación y un equipo de postproducción, dejan de ser un requisito necesario para resolver gran parte de la producción audiovisual que circula.
-
-## terreno_produccion_demo
-@video[]()
 
 ## por_que_esta_clase
 ¿Por qué entonces dedicarle un contenido a una tecnología que está impactando de forma desfavorable en el sector audiovisual y musical? Porque conviene conocer qué se está haciendo con estas herramientas, en nuestro país y en el mundo: qué modelos existen y qué usos tienen hoy en la industria. A partir de ahí podemos pensar y reflexionar sobre qué de todo esto tiene sentido llevar al aula, reafirmando las formas colaborativas de producción audiovisual y usando algunos aspectos de la IA que puedan allanar el camino de esa producción.
@@ -26,22 +30,16 @@ El impacto cae directo sobre el área audiovisual y musical, y pienso que no pod
 La IA ya se está usando para la generación de cortometrajes de ficción, tomas completas para largometrajes, publicidades enteras de productos y servicios, y material para redes, entre otros usos. El cambio del último año en el funcionamiento de los modelos generadores de video fue lo suficientemente significativo como para que los productos puedan realizarse de manera integral: diseño, audio y video a la vez. Varios estudios de publicidad ya tienen en sus equipos operadores de IA para la realización de spots. Una de las áreas que más se vio afectada dentro de la producción audiovisual fue la de los FXs —efectos especiales—, un área históricamente de gran complejidad técnica que hoy en día puede realizarse de manera inmediata. En este marco, te comparto algunas obras que circulan en internet realizadas con IA:
 
 ## panorama_ficcion
-Largometrajes, series y cortos que empiezan a incorporar IA generativa en algún tramo de su producción —desde efectos visuales puntuales hasta piezas generadas casi por completo.
+Largometrajes, series y cortos que empiezan a incorporar IA generativa en algún tramo de su producción —desde efectos visuales puntuales hasta piezas generadas casi por completo. A continuación te comparto un corto realizado en 2026 que recibió numerosos premios.
 
 ## panorama_ficcion_demo
 @video[A Face Only A Mother Could Love | A Short-Film by Robert Gaudette.](https://www.youtube.com/watch?v=wytfCS-N8Sk)
 Año: 2026. Dirección: Robert Gaudette. Modelos de IA usados: Grok, Nano Banana y Seedance.
 
 ## panorama_publicidad
-El terreno donde más rápido se adoptó: spots y piezas institucionales resueltas enteramente con IA generativa, sobre todo para campañas chicas o con poco presupuesto de producción.
+El terreno donde más rápido se adoptó: spots, piezas institucionales y contenido para redes sociales resueltos enteramente con IA generativa, sobre todo para campañas chicas o con poco presupuesto de producción. Es también donde se consume el volumen más grande de contenido generado con IA: clips cortos, formatos verticales, pensados para durar poco.
 
 ## panorama_publicidad_demo
-@video[]()
-
-## panorama_redes
-El volumen más grande de contenido generado con IA se consume acá: clips cortos, formatos verticales, contenido pensado para durar poco.
-
-## panorama_redes_demo
 @video[Bagóvit Blue Line](https://www.youtube.com/watch?v=22jaFT3Enrk)
 
 ## panorama_otros
@@ -52,32 +50,26 @@ Videoclips musicales, piezas documentales experimentales, contenido educativo e 
 
 
 ## bloque_b_intro
-Si bien generar video con IA es algo que hoy se puede hacer de una manera fácil e inmediata y con un resultado impactante, producir un video con una búsqueda artística y conceptual personal —con tomas que mantengan la continuidad en el montaje, y la coherencia de personajes, escenarios y objetos entre toma y toma— representa un problema bastante mayor. Es habitual que los modelos no respondan de la manera que queremos, y esto tiene que ver con que el video tiene una complejidad en la que se ven involucradas varias dimensiones del lenguaje propio que la IA debe procesar en simultáneo: movimientos de cámara, tamaños de plano, angulaciones, iluminación, diversidad de estilos, movimientos de los elementos dentro del cuadro, etc. Y más allá de que exista una gramática del prompt —incluso los modelos vienen con su propia documentación para la redacción de prompts, que difiere de uno a otro—, la realidad es que la mayoría de las veces hace falta realizar múltiples interacciones con el modelo para obtener la toma que buscamos.
+Si bien generar video con IA es algo que hoy se puede hacer de una manera fácil e inmediata y con un resultado impactante, producir un video con una búsqueda artística y conceptual personal —con tomas que mantengan la continuidad en el montaje, y la coherencia de personajes, escenarios y objetos entre toma y toma— representa un problema bastante mayor. Es habitual que los modelos no respondan de la manera que queremos, y esto tiene que ver con que el video tiene una complejidad en la que se ven involucradas varias dimensiones del lenguaje propio que la IA debe procesar en simultáneo: movimientos de cámara, tamaños de plano, angulaciones, iluminación, dirección de arte, movimientos de los elementos dentro del cuadro, etc. Y más allá de que exista una gramática del prompt —incluso los modelos vienen con su propia documentación para la redacción de prompts, que difiere de uno a otro—, la realidad es que la mayoría de las veces hace falta realizar múltiples interacciones con el modelo para obtener la toma que buscamos.
 
 En líneas generales, la IA de video puede:
 
-- Generar videos desde cero, con modelos y plataformas específicas.
-- Editar videos ya existentes, con herramientas integradas a softs de edición.
+- 🎬 Generar videos desde cero, con modelos y plataformas específicas.
+- ✂️ Editar videos ya existentes, con herramientas integradas a softs de edición.
 
 Vamos a centrarnos en la generación de videos desde cero. Al final de la clase, como anexo, vamos a mencionar algunas herramientas de edición.
-
-## generacion_vs_edicion
-Dentro del mundo del video y la IA conviene hacer la misma división que hicimos con imagen en la clase anterior: por un lado, modelos que generan video desde cero, con estéticas y técnicas diversas; por otro, herramientas de edición que trabajan sobre un video que ya existe. Le extienden la duración, generan cortes y ediciones automáticas, arman máscaras para aislar un objeto o una persona, y limpian el audio.
 
 ## tecnicas_intro
 Dentro de las técnicas más básicas para generar video con IA hay tres formas principales de arrancar:
 
 ## tecnicas_texto
-**Texto-a-video (text-to-video)**: se escribe un prompt describiendo la escena y el modelo genera un video desde cero, sin ningún material de partida.
+**Texto-a-video (text-to-video)**: igual que como vimos en imagen, se escribe un prompt describiendo la escena y el modelo genera el video, sin ningún material de partida.
 
 ## tecnicas_texto_demo
 ![Texto a video: elefantes gigantes y criaturas surrealistas caminando por la avenida 9 de Julio](videos/01_texto-a-video.mp4)
-
-## tecnicas_texto_prompt_es
-Plano general extremo, con ángulo contrapicado a ras del suelo. Travelling lento y continuo hacia adelante, siguiendo el desplazamiento de las criaturas. Elefantes gigantes de patas interminables y criaturas surrealistas de cuerpos deformados y proporciones imposibles, inspiradas en el imaginario de Salvador Dalí, caminan por la avenida 9 de Julio de Buenos Aires. Lente gran angular, estética cinematográfica fotorrealista combinada con surrealismo daliniano. Luz cálida de atardecer, sombras alargadas y atmósfera ligeramente brumosa. El plano revela progresivamente el Obelisco entre las figuras colosales, mientras los edificios, los autos y los peatones diminutos acentúan la escala monumental y onírica de la escena.
-
-## tecnicas_texto_prompt_en
-Extreme wide shot, filmed from a low-angle perspective close to the ground. Slow, continuous forward tracking shot following the movement of the creatures. Giant elephants with impossibly long legs and surreal creatures with distorted bodies and impossible proportions, inspired by Salvador Dalí's artistic imagination, walk along Avenida 9 de Julio in Buenos Aires, Argentina. Wide-angle lens, photorealistic cinematic aesthetic blended with Dalí-inspired surrealism. Warm sunset lighting, elongated shadows, and a slightly misty atmosphere. The shot gradually reveals the Obelisk emerging between the colossal figures, while buildings, cars, and tiny pedestrians emphasize the monumental scale and dreamlike nature of the scene.
+Modelo: Veo 3.1 (Google Flow)
+Prompt en español: Plano general extremo, con ángulo contrapicado a ras del suelo. Travelling lento y continuo hacia adelante, siguiendo el desplazamiento de las criaturas. Elefantes gigantes de patas interminables y criaturas surrealistas de cuerpos deformados y proporciones imposibles, inspiradas en el imaginario de Salvador Dalí, caminan por la avenida 9 de Julio de Buenos Aires. Lente gran angular, estética cinematográfica fotorrealista combinada con surrealismo daliniano. Luz cálida de atardecer, sombras alargadas y atmósfera ligeramente brumosa. El plano revela progresivamente el Obelisco entre las figuras colosales, mientras los edificios, los autos y los peatones diminutos acentúan la escala monumental y onírica de la escena.
+Prompt en inglés: Extreme wide shot, filmed from a low-angle perspective close to the ground. Slow, continuous forward tracking shot following the movement of the creatures. Giant elephants with impossibly long legs and surreal creatures with distorted bodies and impossible proportions, inspired by Salvador Dalí's artistic imagination, walk along Avenida 9 de Julio in Buenos Aires, Argentina. Wide-angle lens, photorealistic cinematic aesthetic blended with Dalí-inspired surrealism. Warm sunset lighting, elongated shadows, and a slightly misty atmosphere. The shot gradually reveals the Obelisk emerging between the colossal figures, while buildings, cars, and tiny pedestrians emphasize the monumental scale and dreamlike nature of the scene.
 
 ## tecnicas_imagen
 **Imagen-a-video (image-to-video)**: se parte de una o más imágenes, que el modelo usa como fotogramas de referencia para construir el movimiento. Es una forma de ganar control sobre cómo arranca —o termina— la escena, en vez de dejarlo librado por completo al prompt.
@@ -85,18 +77,23 @@ Extreme wide shot, filmed from a low-angle perspective close to the ground. Slow
 ## tecnicas_imagen_demo
 @carousel
 ![Imagen de partida para generar el video](images/01_image-a-video.jpg)
+Imagen descargada de la web
 
 ![Video generado a partir de la imagen anterior](videos/02_image-a-video.mp4)
-Video generado a partir de la imagen (grabado originalmente con un celular).
-
-![El mismo video reestilizado a stop motion de plastilina](videos/03_video-a-video_02.mp4)
-Reestilizado a stop motion de plastilina, con la técnica de video-a-video que vemos a continuación.
+Modelo: Veo 3.1 (Google Flow)
 
 ## tecnicas_video
 **Video-a-video (video-to-video)**: se sube un video ya existente y se le pide al modelo que lo reestilice o que haga algún trabajo puntual sobre él, como cambiar la estética o reemplazar un elemento.
 
 ## tecnicas_video_demo
-@video[]()
+@carousel
+![Video de mi gato grabado en casa](videos/03_video-a-video_01.mp4)
+Video de mi gato grabado en casa (grabación original, sin IA)
+
+![El mismo video reestilizado a stop motion de plastilina con IA](videos/03_video-a-video_02.mp4)
+Modelo: LUMA
+Prompt: Convierte el video a estilo de animación con plastilina
+Observaciones: como usé la versión no paga del modelo, me muestra la marca de agua sobreimpresa.
 
 ## como_funciona_video
 Los modelos de video más usados hoy se entrenan con el mismo principio de difusión que vimos con los modelos de imagen, pero aplicado a una secuencia de cuadros en vez de a uno solo, es decir que a partir de millones de videos con sus descripciones, aprenden cómo se relaciona el lenguaje con el movimiento. Para generar un video nuevo, arrancan de ruido y lo van refinando hasta llegar a una secuencia de cuadros coherente entre sí. Esa coherencia temporal es la parte más difícil, sobre todo en detalles como que un personaje no cambie de cara entre un cuadro y el siguiente, que un objeto no aparezca y desaparezca, o que la cámara se mueva de forma física y no con saltos imposibles. Por eso estos modelos necesitan mucha más capacidad de cómputo que los de imagen fija, y por eso todavía cometen errores que casi no vemos en una imagen fija: dedos que se fusionan al moverse, objetos que cambian de lugar sin razón, texto que se deforma cuadro a cuadro.
@@ -160,7 +157,7 @@ El encuadre y la lente son el plano medio con lente gran angular; el sujeto y la
 A medium shot of a woman walking down a city street at night in the rain, filmed with a wide-angle lens. The camera tracks laterally alongside her at eye level, matching her pace and keeping her framed throughout the shot. Neon lights reflect on the wet pavement, creating an immersive, cinematic nighttime atmosphere.
 
 ## estructura_video_ejemplo_demo
-![Resultado del prompt en inglés, generado con Google Flow](videos/01_estructura-ejemplo.mp4)
+![Resultado del prompt en inglés, generado con Google Flow](videos/04_mujerlluvia_.mp4)
 @plain
 Modelo: Veo 3.1 – Lite (a través de Google Flow)
 
@@ -180,18 +177,19 @@ Estas son algunas reglas específicas para armar un prompt de video:
 Partiendo de esta estructura, podemos armar prompts con diferentes niveles de complejidad. Veamos cómo se arma uno simple, y cómo ese mismo prompt se vuelve más complejo sin cambiar de elementos, sino desarrollando cada uno con más detalle:
 
 ## ejemplo_video_simple_es
-Plano entero de un gato caminando sobre una mesa de madera; la cámara realiza un movimiento orbital suave alrededor del gato; a la altura de los ojos; luz natural de ventana; estilo realista.
+Plano entero de una rana saltando sobre una mesa de madera; la cámara realiza un movimiento suave alrededor de la rana; a la altura de los ojos; luz natural de ventana; estilo realista.
 
 ## ejemplo_video_simple_breakdown
-El encuadre es un plano entero, sin lente particular; el sujeto y la acción son el gato que camina sobre la mesa; el movimiento de cámara es el orbital suave alrededor del gato; la angulación es a la altura de los ojos; la iluminación es la luz natural de ventana; y el estilo es realista, sin ninguna referencia adicional.
+El encuadre es un plano entero, sin lente particular; el sujeto y la acción son la rana que salta sobre la mesa; el movimiento de cámara es el movimiento suave alrededor de la rana; la angulación es a la altura de los ojos; la iluminación es la luz natural de ventana; y el estilo es realista, sin ninguna referencia adicional.
 
 ## ejemplo_video_simple_en
-Full shot of a cat walking across a wooden table; the camera performs a smooth orbital movement around the cat; eye-level angle; natural window light; realistic style.
+Full shot of a frog jumping across a wooden table; the camera performs a smooth movement around the frog, eye-level angle; natural window light; realistic style.
 
 ## ejemplo_video_simple_demo
-![Resultado del prompt simple, generado con Google Flow](videos/02_ejemplo-simple.mp4)
+![Resultado del prompt simple, generado con Google Flow](videos/05_ranamesa_.mp4)
 @plain
 Modelo: Veo 3.1 – Lite (a través de Google Flow)
+Observaciones: el modelo decidió realizar el movimiento en slow motion, cosa que no fue pedida.
 
 ## ejemplo_video_complejo_es
 Plano general filmado con un lente gran angular, que muestra a un astronauta caminando lentamente sobre la superficie lunar, levantando polvo lunar con cada paso. La cámara realiza un movimiento orbital aéreo, suave y cinematográfico, en una vista de tres cuartos, acercándose lentamente al astronauta mientras gira a su alrededor. Perspectiva dramática en contrapicado, luz solar intensa y de alto contraste, sombras largas sobre el terreno lunar y la Tierra visible contra el cielo negro profundo. Estilo fotorrealista de documental espacial, con una composición cinematográfica épica.
@@ -203,7 +201,7 @@ Acá los mismos seis elementos están más desarrollados: el encuadre suma la le
 A wide shot filmed with a wide-angle lens, showing an astronaut walking slowly across the lunar surface, kicking up lunar dust with each step. The camera performs a smooth, cinematic aerial orbit in a three-quarter view, slowly approaching the astronaut while circling around them. Dramatic low-angle perspective, hard, high-contrast sunlight, long shadows across the lunar terrain, and Earth visible against the deep black sky. Photorealistic space documentary style, epic cinematic composition.
 
 ## ejemplo_video_complejo_demo
-![Resultado del prompt complejo, generado con Google Flow](videos/03_ejemplo-complejo.mp4)
+![Resultado del prompt complejo, generado con Google Flow](videos/06_astronauta_.mp4)
 @plain
 Modelo: Veo 3.1 – Lite (a través de Google Flow)
 
@@ -221,24 +219,19 @@ Esta metodología permite, además de lograr una toma más cercana a lo que se b
 
 ## metodologia_carrusel
 @carousel
-![Imagen 1 de referencia de "la mujer", generada manteniendo consistencia visual entre tomas](images/metodologia_mujer1.jpg)
+![Imagen 1 de referencia de "la mujer", generada manteniendo consistencia visual entre tomas](images/metodologia_01.jpg)
+Modelo: dos de estas imágenes las generé como ejemplo en la Clase 3. A partir de esas imágenes generé la imagen de la entrada al bar y la imagen en la que la mujer mira por la ventana.
 
-![Imagen 2 de referencia de "la mujer"](images/metodologia_mujer2.jpg)
+![Imagen 2 de referencia de "la mujer"](images/metodologia_02.jpg)
 
-![Imagen 3 de referencia de "la mujer"](images/metodologia_mujer3.jpg)
+![Imagen 3 de referencia de "la mujer"](images/metodologia_03.jpg)
 
-![Imagen 4 de referencia de "la mujer"](images/metodologia_mujer4.jpg)
+![Imagen 4 de referencia de "la mujer"](images/metodologia_04.jpg)
 
 ## metodologia_resultado
 Un video armado con las tomas generadas a partir de esas cuatro imágenes.
 
-![Video armado a partir de las cuatro imágenes de "la mujer"](videos/04_metodologia.mp4)
-
-También podríamos reencuadrar las imágenes generadas en algún programa de edición de imágenes, como Photoshop, si el encuadre que generó el modelo de imagen —Nano Banana o ChatGPT— no tiene el tamaño de plano que buscamos.
-
-![Imagen reencuadrada en Photoshop](images/metodologia_reencuadre.jpg)
-
-![Video generado con el nuevo reencuadre](videos/05_metodologia-reencuadre.mp4)
+![Video armado a partir de las cuatro imágenes de "la mujer"](videos/06_mujerfrancesa_.mp4)
 
 ## escala_planos_movimientos
 Una síntesis, en español e inglés, para tener a mano. La escala de planos se relaciona con la escala humana: toma como referencia el cuerpo de una persona para definir qué tan cerca o lejos está la cámara.
@@ -288,12 +281,10 @@ Un prompt de música generativa es bastante más simple que uno de video: alcanz
 [Género o estilo] + [ánimo e instrumentación] + [tempo] + [tema de la letra, o "instrumental" si no lleva voz]
 
 ## audio_formula_ejemplo
-Balada folk, voz femenina suave acompañada de guitarra acústica y violín, tempo lento, letra sobre la nostalgia de volver a un lugar de la infancia.
+Folk cinematográfico, atmósfera nostálgica y melancólica con guitarra acústica, violín y piano sutil, tempo lento, instrumental.
 
 ## audio_formula_ejemplo_demo
-![Audio generado a partir del ejemplo anterior](audio/01_ejemplo-audio.mp3)
-@plain
-Modelo: Suno
+![Audio generado a partir del ejemplo anterior](audio/01_folkcine_.mp3)
 
 ## usos_audio_intro
 Usos generativos posibles para pensar en la práctica docente:
@@ -310,49 +301,56 @@ Como pasa con imagen, conviene pensar los usos de estas herramientas no como un 
 Si estamos trabajando en un proyecto audiovisual, podemos usar la IA para producir algunas tomas puntuales que, por diversas razones —mayormente presupuestarias y de infraestructura—, no podamos hacer: tomas aéreas, tomas con efectos especiales, o tomas específicas para cine de género, como ciencia ficción o terror.
 
 ## usos_tomas_especificas_demo
-@video[]()
+@carousel
+![](videos/07_zombies.mp4)
+
+![](videos/07.1_avion.mp4)
 
 ## usos_representaciones_historicas
 Recrear visualmente una época, un evento o un proceso histórico del que no quedó registro en video o fotografía —útil para historia, pero también para cualquier materia que necesite mostrar algo que ya no existe o que nunca se filmó.
 
 ## usos_representaciones_historicas_demo
-@video[]()
+![](videos/08_historia.mp4)
 
 ## usos_simulaciones
 Mostrar el funcionamiento interno de algo que no se puede observar a simple vista, como el latido del corazón o cómo funciona el ojo humano.
 
 ## usos_simulaciones_demo
-@video[]()
+@carousel
+![](videos/09_simulacion.mp4)
+
+![](videos/09.1_simulacion.mp4)
 
 ## usos_videos_explicativos
 Animar el funcionamiento de una máquina o un mecanismo, como una máquina de vapor, para desarmarlo visualmente paso a paso.
 
 ## usos_videos_explicativos_demo
-@video[]()
-
-## usos_animacion_graficas
-Darle movimiento a un gráfico o a una serie de datos para mostrar cómo cambia en el tiempo, en vez de mostrarlo estático —útil para estadística, economía o cualquier materia que trabaje con datos.
-
-## usos_animacion_graficas_demo
-@video[]()
+![](videos/10_explicativo.mp4)
 
 ## usos_testing_movimiento
 Previsualizar cómo se vería una coreografía, un gesto técnico o un movimiento físico antes de ejecutarlo o filmarlo de verdad.
 
 ## usos_testing_movimiento_demo
-@video[]()
+![](videos/12_testmovimiento.mp4)
 
 ## usos_fenomenos_dificiles
 Recrear un fenómeno difícil o peligroso de observar en vivo, como una reacción química, una erupción volcánica o un fenómeno astronómico —útil para química, geología o astronomía.
 
 ## usos_fenomenos_dificiles_demo
-@video[]()
+@carousel
+![](videos/13_fenomenos.mp4)
 
-## usos_reestilizacion
-Grabar un video de manera casera y reestilizarlo con un modelo video-a-video, como vimos entre las técnicas básicas del Bloque B.
+![](videos/13.1_fenomenos.mp4)
 
-## usos_reestilizacion_demo
-@video[]()
+## usos_frames
+Podemos generar un video diciéndole al modelo con qué imagen comienza y con cuál finaliza.
+
+## usos_frames_demo
+@carousel
+![Dibujos hechos a mano](images/14_frames_01.jpg)
+Dibujos hechos a mano
+
+![](videos/14_frames.mp4)
 
 ## anexo_intro
 Además de los modelos que vimos, tanto en video como en audio existen herramientas de edición que ya están integradas a los softs de edición que se usan habitualmente. No vamos a verlas en detalle, pero está bueno que tengas un panorama de lo que existe:

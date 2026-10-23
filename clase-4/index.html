@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clase 4 — Video y Audio generados por IA | La imaginación al poder</title>
+<title>Clase 4 — El mundo audiovisual | La imaginación al poder</title>
 <meta name="description" content="Clase 4 del curso La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria. Docente: Diego Cagide.">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -30,7 +30,7 @@
     <div class="site-nav__divider"></div>
 
     <p class="site-nav__class-label">Clase 4</p>
-    <p class="site-nav__title">Video y Audio generados por IA</p>
+    <p class="site-nav__title">El mundo audiovisual</p>
 
     <!-- Grupo 1: introducción a la clase (sin etiqueta) -->
     <ul class="nav-list">
@@ -55,8 +55,7 @@
       <li class="nav-group">
         <a class="nav-group__link" href="#bloque-b"><span class="nav-bullet"></span>Bloque B · Qué es y cómo funciona la IA de video</a>
         <ul class="nav-subgroup">
-          <li><a href="#generacion-vs-edicion">Generar desde cero o editar</a></li>
-          <li><a href="#tecnicas-basicas">Las técnicas básicas</a></li>
+          <li><a href="#generacion-de-videos">Generación de videos</a></li>
           <li><a href="#como-funciona-video">Cómo funciona el modelo</a></li>
         </ul>
       </li>
@@ -112,7 +111,7 @@
       <header class="class-header">
         <p class="class-header__course">La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria — Docente:&nbsp;Diego&nbsp;Cagide</p>
         <p class="class-header__eyebrow">Clase 4</p>
-        <h1>Video y Audio generados por IA</h1>
+        <h1>El mundo audiovisual</h1>
       </header>
 
       <!-- =================================================================
@@ -123,6 +122,10 @@
 
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="bienvenida_1" data-lead="true"></div>
+
+        <!-- Video de apertura de la clase, con botón de prompt y modelo
+             debajo (mismo componente que cualquier video propio). -->
+        <div class="content-block" data-key="bienvenida_apertura_demo"></div>
       </section>
 
       <!-- =================================================================
@@ -134,9 +137,6 @@
         <h3 id="terreno-produccion">La IA le ganó terreno a la producción audiovisual</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="terreno_produccion"></div>
-
-        <!-- Placeholder de video: espacio libre, a definir más adelante. -->
-        <div class="content-block" data-key="terreno_produccion_demo"></div>
 
         <h3 id="por-que-esta-clase">¿Por qué esta clase?</h3>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
@@ -159,13 +159,9 @@
              ve el recuadro de "Video pendiente". -->
         <div class="content-block" data-key="panorama_ficcion_demo"></div>
 
-        <p class="mini-heading">Publicidad</p>
+        <p class="mini-heading">Publicidad y redes sociales</p>
         <p data-key="panorama_publicidad"></p>
         <div class="content-block" data-key="panorama_publicidad_demo"></div>
-
-        <p class="mini-heading">Redes sociales</p>
-        <p data-key="panorama_redes"></p>
-        <div class="content-block" data-key="panorama_redes_demo"></div>
 
         <p class="mini-heading">Otros</p>
         <p data-key="panorama_otros"></p>
@@ -181,31 +177,20 @@
         <!-- Intro sin subtítulo propio — se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="bloque_b_intro"></div>
 
-        <h3 id="generacion-vs-edicion">Generar desde cero o editar lo que ya existe</h3>
-        <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
-        <p data-key="generacion_vs_edicion"></p>
-
         <hr class="section-divider">
 
-        <h3 id="tecnicas-basicas">Las técnicas básicas</h3>
+        <h3 id="generacion-de-videos">Generación de videos</h3>
+
+        <p class="mini-heading" id="tecnicas-basicas">Las técnicas básicas</p>
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <p data-key="tecnicas_intro"></p>
 
         <p data-key="tecnicas_texto"></p>
         <!-- Video propio de Diego (subido a videos/, no YouTube) — mismo
-             sistema que una imagen, ver LOCAL_VIDEO_EXT_RE en script.js. -->
+             sistema que una imagen, ver LOCAL_VIDEO_EXT_RE en script.js.
+             El epígrafe (modelo + prompt ES + prompt EN) se edita en
+             contenido.txt, un solo botón "Ver prompt y modelo". -->
         <div class="content-block" data-key="tecnicas_texto_demo"></div>
-
-        <!-- Dos botones "Ver prompt" (español/inglés), mismo componente
-             .caption-toggle-inline que el de cada imagen, agrupados en
-             .prompt-toggle-group porque no cuelgan de una imagen puntual.
-             El texto de cada prompt se edita en contenido.txt. -->
-        <div class="prompt-toggle-group">
-          <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt (español)</button>
-          <p class="img-caption" data-key="tecnicas_texto_prompt_es" hidden></p>
-          <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt (inglés)</button>
-          <p class="img-caption" data-key="tecnicas_texto_prompt_en" hidden></p>
-        </div>
 
         <p data-key="tecnicas_imagen"></p>
         <!-- Carrusel mixto (imagen + 2 videos propios) armado en
@@ -549,7 +534,7 @@
         </div>
         <p class="prompt-breakdown" data-key="estructura_video_breakdown"></p>
         <div class="prompt-example prompt-example--en">
-          <p class="prompt-example__label">English version (traducción con ChatGPT)</p>
+          <p class="prompt-example__label">Versión en inglés (traducción con ChatGPT)</p>
           <p data-key="estructura_video_ejemplo_en"></p>
         </div>
 
@@ -591,7 +576,7 @@
         </div>
         <p class="prompt-breakdown" data-key="ejemplo_video_simple_breakdown"></p>
         <div class="prompt-example prompt-example--en">
-          <p class="prompt-example__label">English version</p>
+          <p class="prompt-example__label">Versión en inglés</p>
           <p data-key="ejemplo_video_simple_en"></p>
         </div>
         <!-- Placeholder de video: el resultado de este ejemplo. -->
@@ -603,7 +588,7 @@
         </div>
         <p class="prompt-breakdown" data-key="ejemplo_video_complejo_breakdown"></p>
         <div class="prompt-example prompt-example--en">
-          <p class="prompt-example__label">English version</p>
+          <p class="prompt-example__label">Versión en inglés</p>
           <p data-key="ejemplo_video_complejo_en"></p>
         </div>
         <!-- Placeholder de video: el resultado de este ejemplo. -->
@@ -669,21 +654,17 @@
         <p data-key="usos_videos_explicativos"></p>
         <div class="content-block" data-key="usos_videos_explicativos_demo"></div>
 
-        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">5</span> Animación de gráficas</h4>
-        <p data-key="usos_animacion_graficas"></p>
-        <div class="content-block" data-key="usos_animacion_graficas_demo"></div>
-
-        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">6</span> Testing de movimiento</h4>
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">5</span> Testing de movimiento</h4>
         <p data-key="usos_testing_movimiento"></p>
         <div class="content-block" data-key="usos_testing_movimiento_demo"></div>
 
-        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">7</span> Recrear fenómenos difíciles de observar en vivo</h4>
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">6</span> Recrear fenómenos difíciles de observar en vivo</h4>
         <p data-key="usos_fenomenos_dificiles"></p>
         <div class="content-block" data-key="usos_fenomenos_dificiles_demo"></div>
 
-        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">8</span> Reestilización de videos</h4>
-        <p data-key="usos_reestilizacion"></p>
-        <div class="content-block" data-key="usos_reestilizacion_demo"></div>
+        <h4 class="use-case-title"><span class="use-case-num" aria-hidden="true">7</span> Animación con frame inicial y frame final</h4>
+        <p data-key="usos_frames"></p>
+        <div class="content-block" data-key="usos_frames_demo"></div>
       </section>
 
       <!-- =================================================================
