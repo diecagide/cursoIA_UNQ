@@ -1,0 +1,35 @@
+CÓMO AGREGAR AUDIO PROPIO A LA CLASE 4
+========================================
+
+Para que se pueda escuchar el resultado de un ejemplo de prompt de
+audio (por ejemplo, la "Gramática del prompt de audio" del Bloque F),
+la página usa la MISMA sintaxis que una imagen o un video propio, en
+contenido.txt:
+
+    ![texto alternativo opcional](audio/nombre-del-archivo.mp3)
+
+Y subís el archivo con ESE mismo nombre a esta carpeta "audio". La
+página detecta sola que es un audio (por la extensión .mp3/.wav/.m4a/
+.ogg) y muestra un reproductor chico con sus propios controles (play,
+pausa, volumen), en el mismo recuadro de "pendiente" que usa cualquier
+imagen mientras no subas el archivo.
+
+Cómo subir un archivo a esta carpeta desde GitHub (sin instalar nada):
+1. Entrá a la carpeta "audio" de clase-4 en el repositorio en github.com
+   (si la carpeta todavía no existe ahí, "Add file" → "Upload files"
+   la crea sola al subir el primer archivo adentro)
+2. Botón "Add file" → "Upload files"
+3. Arrastrá tu archivo y ANTES de confirmar, renombralo exactamente
+   como lo escribiste en contenido.txt (respetá minúsculas y guiones)
+4. Confirmá el cambio ("Commit changes")
+5. Esperá 1-2 minutos y refrescá la página publicada
+
+ESTADO ACTUAL
+========================================
+Pendiente de subir a esta carpeta:
+  audio/01_ejemplo-audio.mp3   (resultado del ejemplo de la gramática
+                                 del prompt de audio, Bloque F —
+                                 generado con Suno según el epígrafe
+                                 que ya está en contenido.txt; si lo
+                                 generaste con otro modelo, actualizá
+                                 el "Modelo: ..." ahí)
