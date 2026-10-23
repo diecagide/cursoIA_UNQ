@@ -43,13 +43,17 @@ Año: 2026. Dirección: Robert Gaudette. Modelos de IA usados: Grok, Nano Banana
 El terreno donde más rápido se adoptó: spots, piezas institucionales y contenido para redes sociales resueltos enteramente con IA generativa, sobre todo para campañas chicas o con poco presupuesto de producción. Es también donde se consume el volumen más grande de contenido generado con IA: clips cortos, formatos verticales, pensados para durar poco.
 
 ## panorama_publicidad_demo
-@video[Bagóvit Blue Line](https://www.youtube.com/watch?v=22jaFT3Enrk)
+@video[Cedric](https://www.youtube.com/watch?v=YRilSGupXEA)
+Hecho en Argentina.
 
 ## panorama_otros
 Videoclips musicales, piezas documentales experimentales, contenido educativo e institucional por fuera del circuito publicitario.
 
 ## panorama_otros_demo
 @video[Surreal and Strange AI Video | Not Made For The Cage | Kelly Boesch - 4K](https://www.youtube.com/watch?v=ACNj3L2bzV8)
+
+@video[MALVINAS - La Pregunta](https://www.youtube.com/watch?v=wkQGm0a_2nY)
+Dirigido por Nicolás Couvin. Argentina, 2025. Hecho enteramente con fotos animadas con IA.
 
 
 ## bloque_b_intro

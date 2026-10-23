@@ -1863,4 +1863,4 @@ body.lightbox-open { overflow: hidden; }
 
 :root[data-clase="2"] { --color-sidebar-end: #6a3fa0; } /* azul → violeta */
 :root[data-clase="3"] { --color-sidebar-end: #1c8c73; } /* azul → verde azulado */
-:root[data-clase="4"] { --color-sidebar-end: #c2601c; } /* azul → naranja terracota */
+:root[data-clase="4"] { --color-sidebar-end: #0e8ca8; } /* azul → turquesa / cian */
