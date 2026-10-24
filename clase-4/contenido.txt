@@ -18,7 +18,7 @@ Esto está emparentado con el espacio que ocupan las redes sociales en la vida c
 El impacto cae directo sobre el área audiovisual y musical, y pienso que no podemos avanzar con el conocimiento de estas tecnologías sin conocer ese impacto. Las estructuras de producción habituales, que necesitaban un equipo de filmación y un equipo de postproducción, dejan de ser un requisito necesario para resolver gran parte de la producción audiovisual que circula.
 
 ## por_que_esta_clase
-¿Por qué entonces dedicarle un contenido a una tecnología que está impactando de forma desfavorable en el sector audiovisual y musical? Porque conviene conocer qué se está haciendo con estas herramientas, en nuestro país y en el mundo: qué modelos existen y qué usos tienen hoy en la industria. A partir de ahí podemos pensar y reflexionar sobre qué de todo esto podemos y queremos llevar al aula.
+¿Por qué entonces dedicarle una clase a una tecnología que está impactando de forma desfavorable en el sector audiovisual y musical? Porque conviene conocer qué se está haciendo con estas herramientas, en nuestro país y en el mundo: qué modelos existen y qué usos tienen hoy en la industria. A partir de ahí podemos pensar y reflexionar sobre qué de todo esto podemos y queremos llevar al aula y a nuestras producciones.
 
 ## objetivos_clase
 - Conocer los modelos de video y audio que existen hoy y sus características.
@@ -97,7 +97,7 @@ Prompt en español: Plano aéreo cinematográfico con dron, con un movimiento de
 ---
 Prompt en inglés: Cinematic drone aerial shot, with a smooth, fluid camera movement gliding above the scene.
 ---
-Observaciones: la fotografía original corresponde a la Cuarta Marcha Federal Universitaria. Entre otras cosas, el modelo de video agregó banderas que no estuvieron en el momento. Como usé la versión gratuita del modelo, además me muestra la marca de agua sobreimpresa.
+Observaciones: la fotografía original corresponde a la Cuarta Marcha Federal Universitaria. El modelo de video agregó banderas que no estuvieron en el momento y también agregó edificios que no existen y quedan raris. 
 
 ## tecnicas_video
 **Video-a-video (video-to-video)**: se sube un video ya existente y se le pide al modelo que lo reestilice o que haga algún trabajo puntual sobre él, como cambiar la estética o reemplazar un elemento.
