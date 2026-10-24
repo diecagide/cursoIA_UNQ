@@ -13,7 +13,7 @@ Observaciones: sin haberle dado indicaciones de audio, le agregó un diálogo en
 ## terreno_produccion
 Los modelos de IA de video y audio avanzaron lo suficiente como para ocuparle un lugar a la producción que hasta hace poco requería un equipo con formación técnica específica. Hoy se puede armar una publicidad, un video institucional o un cortometraje sin equipos de cámara, iluminación y montaje.
 
-Esto está emparentado con el espacio que ocupan las redes sociales en la vida cotidiana, donde los algoritmos decodifican cada vez mejor los gustos de cada usuario a partir de sus búsquedas y de sus interacciones. Y donde las interacciones entre personas y publicidades -gráficas y audiovisuales- se multiplican a una velocidad exponencialmente mayor que en el pasado.  Esa dinámica necesitó la producción de mucho más contenido —asociado a cada usuario—, un contenido mucho más efímero que la publicidad de la tele de hace unos años, que podía durar varios meses en el aire. La IA generativa se complementa perfecto en ese escenario.
+Esto está emparentado con el espacio que ocupan las redes sociales en la vida cotidiana, donde los algoritmos decodifican cada vez mejor los gustos de cada usuario a partir de sus búsquedas y de sus interacciones. Y donde las interacciones entre personas y publicidades -gráficas y audiovisuales- se multiplican a una velocidad exponencialmente mayor que en el pasado. Esa dinámica necesitó la producción de mucho más contenido —asociado a cada usuario—, un contenido mucho más efímero que la publicidad de la tele de hace unos años, que podía durar varios meses en el aire. La IA generativa se complementa perfectamente en ese escenario.
 
 El impacto cae directo sobre el área audiovisual y musical, y pienso que no podemos avanzar con el conocimiento de estas tecnologías sin conocer ese impacto. Las estructuras de producción habituales, que necesitaban un equipo de filmación y un equipo de postproducción, dejan de ser un requisito necesario para resolver gran parte de la producción audiovisual que circula.
 
@@ -97,7 +97,7 @@ Prompt en español: Plano aéreo cinematográfico con dron, con un movimiento de
 ---
 Prompt en inglés: Cinematic drone aerial shot, with a smooth, fluid camera movement gliding above the scene.
 ---
-Observaciones: la fotografía original corresponde a la Cuarta Marcha Federal Universitaria. El modelo de video agregó banderas que no estuvieron en el momento y también agregó edificios que no existen y quedan raris. 
+Observaciones: la fotografía original corresponde a la Cuarta Marcha Federal Universitaria. El modelo de video agregó banderas que no estuvieron en el momento y también agregó edificios que no existen y quedan raris.
 
 ## tecnicas_video
 **Video-a-video (video-to-video)**: se sube un video ya existente y se le pide al modelo que lo reestilice o que haga algún trabajo puntual sobre él, como cambiar la estética o reemplazar un elemento.
@@ -378,6 +378,10 @@ Prompt en inglés: Static camera shot of the 3D human heart continuously beating
 
 ![](videos/09.1_simulacion.mp4)
 Modelo: Veo 3.1 (Google Flow)
+---
+Prompt en español: Animación explicativa de la estructura del ADN, con movimiento fluido de la doble hélice y elementos gráficos que acompañan la explicación, manteniendo los textos originales.
+---
+Prompt en inglés: Explanatory animation of the DNA structure, with smooth movement of the double helix and graphic elements that support the explanation, preserving the original text.
 
 ## usos_videos_explicativos
 Animar el funcionamiento de una máquina o un mecanismo, como una máquina de vapor, para desarmarlo visualmente paso a paso.
@@ -452,7 +456,13 @@ Además de los modelos que vimos, tanto en video como en audio existen herramien
 ## cierre_1
 Llegamos al final de la Clase 4. Si llegaste hasta acá, ya tenés un panorama de qué modelos existen para generar video y audio, cómo funcionan por dentro, la gramática específica de un prompt de video, y algunos usos concretos para pensar en tu propia práctica.
 
-Lo que me interesa que te lleves de esta clase, además de algunos modelos que puedas recomendar en el aula o usar para generar tus propios recursos, es que la IA de video puede integrarse en los procesos de producción audiovisual de una manera creativa y útil. Por ejemplo, si estás desarrollando un proyecto de cine de género y necesitás hacer alguna toma que por presupuesto sería imposible realizar en los trabajos de tus estudiantes, la IA puede ser de gran utilidad. Tené presente las limitaciones de los modelos, como la cantidad de créditos o la resolución. Pero si hay algo que la IA no hace es reemplazar la magia que sucede en el rodaje: no mejora las posibilidades artísticas que surgen de la improvisación del elenco, ni el giro dramático que puede tomar una escena según las condiciones propias de la situación fílmica.
+Lo que me interesa que te lleves de esta clase, además de algunos modelos que puedas recomendar en el aula o usar para generar tus propios recursos, es que la IA de video puede integrarse en los procesos de producción audiovisual de una manera creativa y útil.
+
+## cierre_conocimiento_previo
+Pero hay algo más que es interesante conversar con los y las estudiantes. Como habrás visto a lo largo de esta clase, y al igual que en las clases anteriores, para poder obtener resultados cercanos a lo que se busca, y a la vez para poder imprimir una impronta a un proyecto que usa IA, es muy importante tener conocimientos previos. Algunos de ellos son técnicos: saber que cuando buscamos una imagen o una pieza audiovisual tenemos que definir dónde se ubica la cámara, qué tipo de movimiento le vamos a dar y qué implicancias tiene eso visualmente; lo mismo sucede con la dirección de fotografía o la dirección de arte. Pero también es importante tener conocimientos en torno a estilos y géneros pictóricos, literarios y cinematográficos. Es decir que es posible utilizar la IA de manera crítica, autónoma y con estilo propio, pero para eso es muy importante formarse previamente, a la vez que validar lo que la IA propone.
+
+## cierre_2
+Por ejemplo, si estás desarrollando un proyecto de cine de género y necesitás hacer alguna toma que por presupuesto sería imposible realizar en los trabajos de tus estudiantes, la IA puede ser de gran utilidad. Tené presente las limitaciones de los modelos, como la cantidad de créditos o la resolución. Pero si hay algo que la IA no hace es reemplazar la magia que sucede en el rodaje: no mejora las posibilidades artísticas que surgen de la improvisación del elenco, ni el giro dramático que puede tomar una escena según las condiciones propias de la situación fílmica.
 
 Lo mismo para la elaboración de bandas sonoras: una cosa es producir una música de referencia que permita captar la esencia de una escena o una secuencia. Pero es eso, una referencia que luego, en manos de un músico o una música especializado/a en composición original, pueda orientar para componer la banda sonora adecuada para esa obra audiovisual, haciéndola propia y única.
 
