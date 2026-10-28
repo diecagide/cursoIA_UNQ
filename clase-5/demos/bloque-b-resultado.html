@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>De qué hablamos cuando hablamos de IA generativa</title>
+<style>
+  :root {
+    --text: #23262b;
+    --muted: #5b6270;
+    --accent: #3a6ea5;
+    --border: #e4e2dc;
+    --bg: #fdfcfa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+  }
+  .page { max-width: 700px; margin: 0 auto; padding: 48px 24px 90px; }
+  h1 {
+    font-size: 1.7rem;
+    line-height: 1.3;
+    margin: 0 0 32px;
+    padding-bottom: 18px;
+    border-bottom: 3px solid var(--accent);
+  }
+  p { margin: 0 0 1.1rem; font-size: 1.02rem; }
+
+  .carousel {
+    position: relative;
+    margin: 32px 0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 10px 26px rgba(0,0,0,.14);
+  }
+  .carousel__track {
+    display: flex;
+    transition: transform .4s ease;
+  }
+  .carousel__track img {
+    width: 100%;
+    flex: 0 0 100%;
+    display: block;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+  }
+  .carousel__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,.92);
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    font-family: Georgia, serif;
+    color: var(--text);
+  }
+  .carousel__arrow:hover { background: #fff; }
+  .carousel__arrow--prev { left: 10px; }
+  .carousel__arrow--next { right: 10px; }
+  .carousel__dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    padding: 12px 0 2px;
+    background: #fff;
+  }
+  .carousel__dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    border: none; background: var(--border); cursor: pointer; padding: 0;
+  }
+  .carousel__dot.is-active { background: var(--accent); }
+
+  .links { margin: 44px 0 0; display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-start; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: .92rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    background: var(--accent);
+    padding: 11px 20px;
+    border-radius: 999px;
+    transition: filter .15s ease;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .btn--secondary { background: #6b6358; }
+
+  .tag {
+    display: inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <span class="tag">Resultado generado por el modelo</span>
+  <h1>De qué hablamos cuando hablamos de IA generativa</h1>
+
+  <p>La inteligencia artificial no es una novedad del último tiempo. Si pensamos en las publicidades que nos aparecen en las redes sociales, en las propuestas de contenido que recibimos habitualmente en plataformas de streaming, o en esa sensación tan instalada de que "internet nos escucha" porque nos ofrece justo aquello de lo que veníamos hablando, podemos identificar un comportamiento digital que hasta hace no mucho solíamos llamar (y seguimos haciéndolo) "el algoritmo". Y si utilizo ese término como sujeto de una oración bimembre podría reconocer, sin escandalizarme, que "el algoritmo me persigue". Pero ese algoritmo no es otra cosa que sistemas computacionales entrenados con datos, que analizan enormes cantidades de información e identifican patrones de comportamiento para ofrecernos después el contenido o el producto que esos patrones anticipan. Meta, Google, Netflix o Spotify son ejemplos concretos de esto. Cada una, a su manera, usa este tipo de inteligencia artificial —no generativa— para decidir qué anuncio, serie o canción nos va a aparecer a continuación.</p>
+
+  <div class="carousel" id="carousel">
+    <div class="carousel__track">
+      <img src="../images/doc1-carrusel1.jpg" alt="Imagen 1">
+      <img src="../images/doc1-carrusel2.jpg" alt="Imagen 2">
+      <img src="../images/doc1-carrusel3.jpg" alt="Imagen 3">
+    </div>
+  </div>
+  <div class="carousel__dots" id="carouselDots"></div>
+
+  <p>El término "inteligencia artificial" tampoco es nuevo. Lo usó por primera vez Alan Turing —matemático y lógico británico (1912-1954)— hace ya más de setenta años. Turing propuso un experimento mental muy simple para pensar si una máquina podía "pensar". Una persona conversa, sin verlo, con un interlocutor que puede ser otra persona o una máquina, y si no logra distinguir cuál es cuál, esa máquina pasa la prueba. Eso significa, ni más ni menos, que esa máquina tiene inteligencia artificial. (La película <em>Ex Machina</em> (2014) de Alex Garland juega justamente con esta idea). Ese ejercicio se conoció como el test de Turing, y todavía hoy sigue siendo una referencia cuando se habla de IA.</p>
+
+  <p>A continuación te comparto el tráiler de la película Ex Machina y una crítica del sitio "El antepenúltimo mohicano".</p>
+
+  <div class="links">
+    <a class="btn" href="https://www.youtube.com/watch?v=sNExF5WYMaA" target="_blank" rel="noopener">▶ Ver tráiler</a>
+    <a class="btn btn--secondary" href="https://www.elantepenultimomohicano.com/2015/02/critica-exmachina.html" target="_blank" rel="noopener">📝 Leer la crítica</a>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var track = document.querySelector('.carousel__track');
+    var slides = document.querySelectorAll('.carousel__track img');
+    var dotsWrap = document.getElementById('carouselDots');
+    var index = 0;
+
+    slides.forEach(function (_, i) {
+      var dot = document.createElement('button');
+      dot.className = 'carousel__dot' + (i === 0 ? ' is-active' : '');
+      dot.addEventListener('click', function () { goTo(i); });
+      dotsWrap.appendChild(dot);
+    });
+
+    var prevBtn = document.createElement('button');
+    prevBtn.className = 'carousel__arrow carousel__arrow--prev';
+    prevBtn.innerHTML = '‹';
+    prevBtn.addEventListener('click', function () { goTo(index - 1); });
+    document.getElementById('carousel').appendChild(prevBtn);
+
+    var nextBtn = document.createElement('button');
+    nextBtn.className = 'carousel__arrow carousel__arrow--next';
+    nextBtn.innerHTML = '›';
+    nextBtn.addEventListener('click', function () { goTo(index + 1); });
+    document.getElementById('carousel').appendChild(nextBtn);
+
+    function goTo(i) {
+      index = (i + slides.length) % slides.length;
+      track.style.transform = 'translateX(-' + (index * 100) + '%)';
+      dotsWrap.querySelectorAll('.carousel__dot').forEach(function (d, di) {
+        d.classList.toggle('is-active', di === index);
+      });
+    }
+  })();
+</script>
+</body>
+</html>
