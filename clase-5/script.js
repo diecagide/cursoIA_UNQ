@@ -1051,10 +1051,55 @@ function initExclusiveMediaPlayback() {
   }, true);
 }
 
+// ---------- Código generado con botón de copiar ----------
+// Pensado para mostrar el código fuente REAL de una demo embebida (ver
+// .code-embed en styles.css), sin tener que pegarlo a mano en
+// contenido.txt ni en index.html — se carga directo desde el archivo con
+// fetch(), igual que contenido.txt. Hardcodeado en index.html así:
+//
+//   <div class="code-embed" data-src="demos/archivo.html">
+//     <button type="button" class="code-embed__copy">📋 Copiar código</button>
+//     <pre class="code-embed__pre"><code class="code-embed__code">Cargando…</code></pre>
+//   </div>
+function initCodeEmbeds() {
+  document.querySelectorAll('.code-embed').forEach(function (el) {
+    var src = el.getAttribute('data-src');
+    var codeEl = el.querySelector('.code-embed__code');
+    var copyBtn = el.querySelector('.code-embed__copy');
+    if (!src || !codeEl) return;
+
+    fetch(src)
+      .then(function (res) {
+        if (!res.ok) throw new Error('No se pudo cargar ' + src);
+        return res.text();
+      })
+      .then(function (text) { codeEl.textContent = text; })
+      .catch(function () { codeEl.textContent = 'No se pudo cargar el código (' + src + ').'; });
+
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function () {
+        var text = codeEl.textContent;
+        var original = copyBtn.textContent;
+        function showCopied() {
+          copyBtn.textContent = '✓ Copiado';
+          setTimeout(function () { copyBtn.textContent = original; }, 1800);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(showCopied).catch(function () {
+            copyBtn.textContent = 'No se pudo copiar';
+            setTimeout(function () { copyBtn.textContent = original; }, 1800);
+          });
+        }
+      });
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   loadContent();
   initLightbox();
   initInlineCaptionToggles();
+  initCodeEmbeds();
   initNotePopovers();
   initExclusiveMediaPlayback();
 

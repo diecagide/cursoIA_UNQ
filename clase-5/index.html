@@ -3,9 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- TÍTULO TENTATIVO: "Integración de modelos en procesos de producción"
-     (del cronograma de Diego) — a confirmar, ver charla con Diego -->
-<title>Clase 5 — Integración de modelos en procesos de producción | La imaginación al poder</title>
+<title>Clase 5 — Creando interactividad con IA | La imaginación al poder</title>
 <meta name="description" content="Clase 5 del curso La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria. Docente: Diego Cagide.">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -30,8 +28,7 @@
     <div class="site-nav__divider"></div>
 
     <p class="site-nav__class-label">Clase 5</p>
-    <!-- TÍTULO TENTATIVO, a confirmar con Diego -->
-    <p class="site-nav__title">Integración de modelos en procesos de producción</p>
+    <p class="site-nav__title">Creando interactividad con IA</p>
 
     <ul class="nav-list">
       <li><a href="#bienvenida">Bienvenida</a></li>
@@ -45,7 +42,7 @@
         <a class="nav-group__link" href="#bloque-a"><span class="nav-bullet"></span>Bloque A · La IA en el mundo de la interactividad</a>
         <ul class="nav-subgroup">
           <li><a href="#tener-en-claro">Tener en claro lo que buscamos</a></li>
-          <li><a href="#otras-posibilidades">Otras cosas que podemos hacer</a></li>
+          <li><a href="#otras-posibilidades">Cosas que podemos hacer</a></li>
         </ul>
       </li>
 
@@ -81,8 +78,7 @@
       <header class="class-header">
         <p class="class-header__course">La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria — Docente:&nbsp;Diego&nbsp;Cagide</p>
         <p class="class-header__eyebrow">Clase 5</p>
-        <!-- TÍTULO TENTATIVO, a confirmar con Diego -->
-        <h1>Integración de modelos en procesos de producción</h1>
+        <h1>Creando interactividad con IA</h1>
       </header>
 
       <!-- =================================================================
@@ -94,9 +90,8 @@
         <!-- El texto de esta sección se edita en contenido.txt (no acá) -->
         <div class="content-block" data-key="bienvenida_1" data-lead="true"></div>
 
-        <!-- PENDIENTE: Diego dejó "Objetivos" sin redactar en el Word.
-             No se inventó contenido — agregar este h3 + content-block
-             cuando tengamos el texto real. -->
+        <h3 id="objetivos-clase5">Objetivos de la clase</h3>
+        <div class="content-block" data-key="objetivos_clase5"></div>
       </section>
 
       <!-- =================================================================
@@ -119,7 +114,7 @@
 
         <div class="content-block" data-key="bloque_a_tener_claro_2"></div>
 
-        <h3 id="otras-posibilidades">Otras cosas que podemos hacer con las herramientas ya vistas</h3>
+        <h3 id="otras-posibilidades">Cosas que podemos hacer con las herramientas ya vistas</h3>
         <p data-key="bloque_a_otras_intro"></p>
         <!-- PENDIENTE: Diego pidió una imagen ilustrativa después de cada
              ítem de esta lista (7 en total) — todavía no están, a
@@ -146,21 +141,47 @@
 
         <p data-key="bloque_b_metodo"></p>
 
-        <h3 id="prompt-bloque-b">Prompt</h3>
-        <!-- El PROMPT se muestra siempre visible, como en el resto de las
-             clases — NO va dentro de un "Para ampliar". -->
-        <p data-key="bloque_b_prompt"></p>
-
-        <h3>Resultado</h3>
+        <h3 id="resultado-bloque-b">Resultado</h3>
         <p data-key="bloque_b_resultado_intro"></p>
         <!-- Demo real embebida: el HTML que generaría el modelo a partir
-             del prompt de arriba, armado con el texto, las imágenes y los
+             del prompt de abajo, armado con el texto, las imágenes y los
              links reales de este ejemplo. Vive en demos/, no pasa por
              contenido.txt (es un archivo HTML aparte, no texto). -->
-        <div class="demo-embed">
-          <iframe src="demos/bloque-b-resultado.html" title="Resultado: De qué hablamos cuando hablamos de IA generativa" loading="lazy"></iframe>
+        <!-- El PROMPT se muestra con el MISMO componente "Ver prompt y
+             modelo" que una imagen o un video (ver .caption-toggle-inline
+             en script.js, botón + epígrafe DENTRO del mismo .img-block)
+             — NO va dentro de un "Para ampliar" ni suelto y siempre
+             visible: ese es el criterio ya establecido en el resto de
+             las clases. -->
+        <div class="img-block">
+          <div class="demo-embed">
+            <iframe src="demos/bloque-b-resultado.html" title="Resultado: De qué hablamos cuando hablamos de IA generativa" loading="lazy"></iframe>
+          </div>
+          <p class="demo-embed__link"><a href="demos/bloque-b-resultado.html" target="_blank" rel="noopener">Abrir el resultado en pantalla completa ↗</a></p>
+          <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
+          <p class="img-caption" data-key="bloque_b_resultado_prompt" hidden></p>
         </div>
-        <p class="demo-embed__link"><a href="demos/bloque-b-resultado.html" target="_blank" rel="noopener">Abrir el resultado en pantalla completa ↗</a></p>
+
+        <details class="expandable">
+          <summary>
+            <span class="expandable__icon" aria-hidden="true">💻</span>
+            <span class="expandable__text">
+              <span class="expandable__eyebrow">Para ampliar</span>
+              <span class="expandable__title">El código generado</span>
+            </span>
+            <span class="expandable__chevron" aria-hidden="true">▸</span>
+          </summary>
+          <div class="expandable__body">
+            <p data-key="bloque_b_codigo_intro"></p>
+            <!-- Carga el código real de demos/bloque-b-resultado.html con
+                 fetch() y agrega el botón de copiar — ver initCodeEmbeds()
+                 en script.js. -->
+            <div class="code-embed" data-src="demos/bloque-b-resultado.html">
+              <button type="button" class="code-embed__copy">📋 Copiar código</button>
+              <pre class="code-embed__pre"><code class="code-embed__code">Cargando…</code></pre>
+            </div>
+          </div>
+        </details>
       </section>
 
       <!-- =================================================================

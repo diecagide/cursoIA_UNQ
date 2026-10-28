@@ -590,10 +590,13 @@ section.block:first-of-type {
 
 .pdf-preview__expand-hint { color: var(--color-accent); font-weight: 600; }
 
-/* Mismo degradé que .highlight-box (varía según data-clase="N"), para que
-   el panel se identifique de un vistazo con el color de la clase. */
+/* Degradé fijo (NO varía por clase, a diferencia de .highlight-box):
+   azul profundo → terracota oscurecido. Mismo criterio que el primer
+   mockup que aprobó Diego — el --color-accent normal (#d9704f) da
+   mal contraste con el texto blanco en la zona más clara del degradé,
+   por eso acá se usa una versión más oscura solo para este uso. */
 .pdf-preview__after {
-  background: var(--gradient-sidebar);
+  background: linear-gradient(160deg, var(--color-primary) 0%, #a8502f 140%);
   color: #fff;
   border-radius: 14px;
   padding: 26px 24px;
@@ -649,6 +652,51 @@ section.block:first-of-type {
   text-align: right;
   font-size: .85rem;
   margin: 8px 0 28px;
+}
+
+/* ---------- Código generado: bloque con botón de copiar ----------
+   Ver .code-embed en script.js (initCodeEmbeds): carga el código fuente
+   de un archivo real (por ejemplo, el HTML de una demo embebida) y lo
+   muestra con un botón para copiarlo al portapapeles. */
+.code-embed {
+  position: relative;
+  margin: 16px 0 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #1e2430;
+}
+
+.code-embed__copy {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255,255,255,.14);
+  color: #fff;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: background .15s ease;
+}
+
+.code-embed__copy:hover { background: rgba(255,255,255,.26); }
+
+.code-embed__pre {
+  margin: 0;
+  padding: 44px 18px 20px;
+  overflow: auto;
+  max-height: 420px;
+}
+
+.code-embed__code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: .8rem;
+  line-height: 1.6;
+  color: #d8dde6;
+  white-space: pre;
 }
 
 /* ---------- Tarjetas de razones (bloque "Maldita IA") ---------- */
