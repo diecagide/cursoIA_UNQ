@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clase 5 — Creando interactividad con IA | La imaginación al poder</title>
+<title>Clase 5 — Recursos interactivos generados con IA | La imaginación al poder</title>
 <meta name="description" content="Clase 5 del curso La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria. Docente: Diego Cagide.">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -28,7 +28,7 @@
     <div class="site-nav__divider"></div>
 
     <p class="site-nav__class-label">Clase 5</p>
-    <p class="site-nav__title">Creando interactividad con IA</p>
+    <p class="site-nav__title">Recursos interactivos generados con IA</p>
 
     <ul class="nav-list">
       <li><a href="#bienvenida">Bienvenida</a></li>
@@ -78,7 +78,7 @@
       <header class="class-header">
         <p class="class-header__course">La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria — Docente:&nbsp;Diego&nbsp;Cagide</p>
         <p class="class-header__eyebrow">Clase 5</p>
-        <h1>Creando interactividad con IA</h1>
+        <h1>Recursos interactivos generados con IA</h1>
       </header>
 
       <!-- =================================================================
@@ -104,7 +104,10 @@
         <div class="content-block" data-key="bloque_a_intro"></div>
 
         <h3 id="tener-en-claro">Tener en claro lo que buscamos</h3>
-        <div class="content-block" data-key="bloque_a_tener_claro"></div>
+        <p data-key="bloque_a_tener_claro"></p>
+
+        <p class="mini-heading">¿Qué buscamos?</p>
+        <p data-key="bloque_a_tener_claro_ejemplo"></p>
 
         <!-- Caja explicativa "¿Qué es un HTML?" -->
         <div class="callout">
@@ -130,37 +133,43 @@
 
         <div class="content-block" data-key="bloque_b_intro"></div>
 
-        <!-- Comparación PDF original / lo que vamos a armar -->
-        <div class="content-block" data-key="bloque_b_pdf_demo"></div>
+        <h3 id="insumos-bloque-b">Antes de arrancar: los insumos</h3>
+        <!-- Los "insumos" (ingredientes) de este ejemplo: el PDF con el
+             texto y los links, y las tres imágenes juntas en un solo
+             archivo (el que mandó Diego, tal cual, sin separar) — pedido
+             explícito: mostrar los materiales de partida ANTES del
+             prompt/resultado, como ingredientes antes de cocinar. -->
+        <div class="content-block" data-key="bloque_b_insumos"></div>
+
+        <div class="callout">
+          <p class="callout__label">Recomendación práctica</p>
+          <div class="content-block" data-key="bloque_b_recomendacion"></div>
+        </div>
 
         <p data-key="bloque_b_que_quiero_hacer"></p>
 
-        <!-- Carrusel con las tres imágenes del documento — PENDIENTE,
-             ver nota en contenido.txt -->
-        <div class="content-block" data-key="bloque_b_carousel"></div>
-
         <p data-key="bloque_b_metodo"></p>
+        <!-- El prompt de este ejemplo va DESTACADO y SIEMPRE VISIBLE
+             (componente .prompt-example, igual que en el resto del
+             curso para un prompt de ejemplo) — acá no corresponde el
+             botón "Ver prompt y modelo" oculto: es un ejemplo didáctico,
+             va arriba, antes del resultado, no como epígrafe de una
+             imagen/demo ya armada. -->
+        <div class="prompt-example">
+          <p class="prompt-example__label">Prompt — se lo podés pedir a cualquier asistente de IA conversacional (ChatGPT, Claude, Gemini, etc.)</p>
+          <div class="content-block" data-key="bloque_b_prompt"></div>
+        </div>
 
         <h3 id="resultado-bloque-b">Resultado</h3>
         <p data-key="bloque_b_resultado_intro"></p>
         <!-- Demo real embebida: el HTML que generaría el modelo a partir
-             del prompt de abajo, armado con el texto, las imágenes y los
+             del prompt de arriba, armado con el texto, las imágenes y los
              links reales de este ejemplo. Vive en demos/, no pasa por
              contenido.txt (es un archivo HTML aparte, no texto). -->
-        <!-- El PROMPT se muestra con el MISMO componente "Ver prompt y
-             modelo" que una imagen o un video (ver .caption-toggle-inline
-             en script.js, botón + epígrafe DENTRO del mismo .img-block)
-             — NO va dentro de un "Para ampliar" ni suelto y siempre
-             visible: ese es el criterio ya establecido en el resto de
-             las clases. -->
-        <div class="img-block">
-          <div class="demo-embed">
-            <iframe src="demos/bloque-b-resultado.html" title="Resultado: De qué hablamos cuando hablamos de IA generativa" loading="lazy"></iframe>
-          </div>
-          <p class="demo-embed__link"><a href="demos/bloque-b-resultado.html" target="_blank" rel="noopener">Abrir el resultado en pantalla completa ↗</a></p>
-          <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
-          <p class="img-caption" data-key="bloque_b_resultado_prompt" hidden></p>
+        <div class="demo-embed">
+          <iframe src="demos/bloque-b-resultado.html" title="Resultado: De qué hablamos cuando hablamos de IA generativa" loading="lazy"></iframe>
         </div>
+        <p class="demo-embed__link"><a href="demos/bloque-b-resultado.html" target="_blank" rel="noopener">Abrir el resultado en pantalla completa ↗</a></p>
 
         <details class="expandable">
           <summary>

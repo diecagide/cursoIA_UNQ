@@ -1,20 +1,21 @@
 ## bienvenida_1
-Llegamos a la última clase del curso. A lo largo de las anteriores trabajamos con texto, imágenes, video y audio generados por IA. En esta, la idea es dar un paso más: usar esos mismos modelos, ya conocidos, de manera integrada para generar nuevas posibilidades que puedas incorporar como actividades en el aula o para tu propio uso.
+Llegamos a la última clase del curso. En las clases anteriores trabajamos con texto, imágenes, video y audio generados por IA. En esta clase vamos a integrar esas mismas herramientas para generar recursos interactivos, que vas a poder usar como actividades para tus estudiantes o para tu propio trabajo.
 
 Esta decidí reformularla un poco respecto de lo que había planteado en el programa ya que tuve en cuenta el recorrido que fuimos haciendo en las cuatro clases previas y también recopilé algunos intereses que me fueron compartiendo. En ese sentido, quise hacer una clase de cierre con algunos usos vinculados a la interactividad.
 
 ## objetivos_clase5
-- No vamos a ver gramática del prompt ni modelos nuevos.
-- Vamos a utilizar los modelos que ya vimos para generar dinámicas interactivas y recursos visuales.
-- Vamos a integrar las herramientas que ya conocemos: no hace falta pensar en herramientas nuevas.
+- Usar los modelos de IA que ya conocemos para generar recursos interactivos, sin necesidad de sumar herramientas nuevas.
+- Convertir un documento existente (en PDF o Word, por ejemplo) en una página web navegable, con imágenes, botones y otros recursos interactivos.
+- Incorporar esos recursos a tu aula virtual, como link externo o insertados directamente en Moodle.
 
 ## bloque_a_intro
-Si bien el mundo de la interactividad está directamente ligado a la programación y al diseño gráfico, hoy podemos conseguir algunas soluciones gráficas e interactivas usando los modelos que ya vimos. En mi caso, la programación es una batalla perdida, pero podemos utilizar la IA como asistente de generación de código, pidiéndole exactamente lo que buscamos.
+Si bien el mundo de la interactividad está directamente ligado a la programación y al diseño multimedia, hoy podemos conseguir algunas soluciones gráficas e interactivas usando los modelos que ya vimos. En mi caso no soy programador, pero encontré algunas soluciones útiles para generar recursos interactivos y "customizar" el aula virtual.
 
 ## bloque_a_tener_claro
 Como venimos viendo a lo largo del curso, uno de los aspectos centrales es tener claro qué estamos buscando, para poder traducir después ese deseo en un prompt y obtener un resultado lo más cercano posible a lo que imaginamos.
 
-Supongamos que tenemos un texto en PDF como parte de una clase y queremos darle algo de dinamismo. Tenemos la posibilidad de convertirlo a HTML: un documento con un texto troncal, algunas imágenes y links a recursos externos como un video, que después podemos tener como link externo o insertar directamente en nuestra aula de Moodle (en un bloque, una tarea, etc.).
+## bloque_a_tener_claro_ejemplo
+Supongamos que tenemos un texto en PDF como parte de una clase y queremos darle algo de dinamismo. Una búsqueda posible es enriquecer su dinámica y su diseño general, armando una página web que incluya todos los elementos del documento original (el texto troncal, las imágenes, los links a recursos externos como un video) y que además sume algunos recursos interactivos propios de ese formato. Esa página la podemos tener como link externo o insertar directamente en nuestra aula de Moodle, en un bloque, una tarea, etc.
 
 ## que_es_html
 HTML (HyperText Markup Language) es el lenguaje con el que está escrita casi cualquier página que ves en internet, incluida esta misma clase. No hace falta saber programar para pedirle a una IA que te genere uno: alcanza con describirle qué contenido querés mostrar y cómo querés que se vea, y el modelo te devuelve el código listo para subir a una web.
@@ -39,34 +40,31 @@ Podés armar una página web en HTML, como esta misma que estás recorriendo aho
 ## bloque_b_intro
 Vamos a ver, paso a paso, cómo se arma un HTML simple a partir de un documento que ya existe. La idea es partir de un texto plano en formato Word o PDF y convertirlo en una página con la que tus estudiantes puedan interactuar un poco más: con las imágenes mejor organizadas, botones que lleven directo a los recursos que mencionás, y una lectura más liviana que la de un documento corrido de punta a punta.
 
-Partimos de este texto, armado especialmente para este ejemplo:
+## bloque_b_insumos
+Antes de arrancar, estos son los materiales con los que vamos a trabajar:
 
-## bloque_b_pdf_demo
-@pdfpreview[De qué hablamos cuando hablamos de IA generativa](images/doc1-preview.png)(pdfs/doc1-ia-generativa.pdf)
-Una página dinámica, tuneada
-El mismo texto, reorganizado: título destacado arriba, un carrusel con las tres imágenes en el medio, y dos botones abajo a la izquierda para el tráiler de *Ex Machina* y la crítica del sitio El antepenúltimo mohicano.
+- Un PDF con el texto troncal y dos links a recursos externos: el tráiler de *Ex Machina* y una crítica del sitio *El antepenúltimo mohicano*.
+- Tres imágenes sueltas, pensadas para acompañar el texto.
+
+![Documento con el texto y los links](images/doc1-preview.png)
+@plain
+El documento original. [Ver el PDF completo](pdfs/doc1-ia-generativa.pdf)
+
+![Las tres imágenes, en un solo archivo](images/doc1-imagenes-insumo.jpg)
+@plain
+Las tres imágenes que vamos a usar, juntas en un solo archivo.
+
+## bloque_b_recomendacion
+- Antes de pedirle esto a un modelo, conviene juntar todos los materiales (el documento y las imágenes) en una sola carpeta comprimida (zip o rar), para no perder ni olvidar ningún archivo en el camino.
+- Trabajar con varias imágenes o archivos adjuntos puede consumir bastantes interacciones de un plan gratuito (en ChatGPT, por ejemplo). Como alternativa gratuita, podés usar Gemini.
 
 ## bloque_b_que_quiero_hacer
 ¿Qué quiero hacer? La idea es que el texto arranque con el título bien destacado. La primera parte del texto troncal, desde "La inteligencia artificial no es una novedad…" hasta "…serie o canción nos va a aparecer a continuación", va seguida de un carrusel con las tres imágenes, con flechas para pasar de una a otra. Después sigue el resto del texto, desde "El término inteligencia artificial tampoco…" hasta el final. Y abajo, dos botones alineados a la izquierda, uno al lado del otro, para el tráiler y la crítica.
 
-## bloque_b_carousel
-@carousel
-![Primera imagen del carrusel](images/doc1-carrusel1.jpg)
-
-![Segunda imagen del carrusel](images/doc1-carrusel2.jpg)
-
-![Tercera imagen del carrusel](images/doc1-carrusel3.jpg)
-
 ## bloque_b_metodo
-Vamos a crear el HTML pidiéndole a un modelo de lenguaje que genere el código y nos dé el o los archivos.
+Vamos a crear la página pidiéndole a un modelo de lenguaje que genere el código, con un prompt como este:
 
-## bloque_b_resultado_intro
-Esto es lo que devolvió el modelo (también lo podés abrir en una pestaña aparte):
-
-## bloque_b_resultado_prompt
-Modelo: un asistente de IA conversacional (ChatGPT, Claude, Gemini, etc.)
----
-Prompt:
+## bloque_b_prompt
 Generá un archivo HTML, con su CSS incluido, a partir de este texto: [pego acá el texto completo del documento].
 
 - El título "De qué hablamos cuando hablamos de IA generativa" destacado arriba, como encabezado principal.
@@ -75,6 +73,9 @@ Generá un archivo HTML, con su CSS incluido, a partir de este texto: [pego acá
 - El resto del texto, desde "El término inteligencia artificial tampoco…" hasta el final.
 - Al pie, dos botones alineados a la izquierda, uno al lado del otro: "Ver tráiler" → https://www.youtube.com/watch?v=sNExF5WYMaA y "Leer la crítica" → https://www.elantepenultimomohicano.com/2015/02/critica-exmachina.html.
 - Tipografía clara tipo libro, colores sobrios. Que se vea bien en computadora y en celular.
+
+## bloque_b_resultado_intro
+Esto es lo que devolvió el modelo (también lo podés abrir en una pestaña aparte):
 
 ## bloque_b_codigo_intro
 El modelo nos devolvió directamente el archivo HTML para descargar, pero también podemos pedirle el código para copiar y pegar, por ejemplo, en nuestra aula virtual:
