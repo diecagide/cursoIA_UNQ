@@ -1,0 +1,64 @@
+## bienvenida_1
+Llegamos a la última clase del curso. A lo largo de las anteriores trabajamos con texto, imágenes, video y audio generados por IA — en esta, la idea es dar un paso más: usar esos mismos modelos, ya conocidos, de manera integrada para generar nuevas posibilidades que puedas incorporar como actividades en el aula o para tu propio uso.
+
+## bloque_a_intro
+Si bien el mundo de la interactividad está directamente ligado a la programación y al diseño gráfico, hoy podemos conseguir algunas soluciones gráficas e interactivas usando los modelos que ya vimos. Por supuesto que lo ideal es saber de código y de diseño, pero cuando esos dos mundos no son lo tuyo —como me pasa a mí—, la IA puede funcionar como asistente para resolverlos y darle más dinamismo a tus clases o recursos.
+
+## bloque_a_tener_claro
+Como venimos viendo a lo largo del curso, uno de los aspectos centrales es tener claro qué estamos buscando, para poder traducir después ese deseo en un prompt y obtener un resultado lo más cercano posible a lo que imaginamos.
+
+Si tu objetivo es darle dinamismo a un texto en formato Word o PDF que usás en tu clase —un documento con un texto troncal, algunas imágenes y links a recursos externos como un video—, podés lograrlo creando un HTML que después tengas como link externo o insertado directamente en tu aula de Moodle (en un bloque, una tarea, etc.).
+
+## que_es_html
+HTML (HyperText Markup Language) es el lenguaje con el que está escrita casi cualquier página que ves en internet, incluida esta misma clase. No hace falta saber programar para pedirle a una IA que te genere uno: alcanza con describirle qué contenido querés mostrar y cómo querés que se vea, y el modelo te devuelve el código listo para subir a una web.
+
+## bloque_a_tener_claro_2
+Para esto, lo primero que vas a tener que hacer es definir qué nivel de interactividad y desarrollo gráfico estás buscando, y después desglosar ese documento en sus distintas partes, cada una con un tratamiento particular. Esa etapa de definición consiste en preguntarte: ¿cómo se va a ver? ¿Qué paleta de colores va a tener? ¿Va a tener botones? ¿De qué color y forma? ¿Va a tener textos destacados?
+
+Este mismo criterio lo podés usar para que tus estudiantes armen presentaciones dinámicas de sus propias entregas.
+
+## bloque_a_otras_intro
+Podés armar una página web en HTML —como esta misma que estás recorriendo ahora— con distintas secciones, un menú lateral u horizontal, banners, y más. También podés crear recursos puntuales para usar en una web o directamente en Moodle:
+
+## bloque_a_otras_lista
+- Crear y personalizar botones que lleven a otras páginas o links externos.
+- Trabajar recursos gráficos y de color.
+- Armar cajas de texto para destacar o jerarquizar contenidos.
+- Agregar reproductores de video integrados, o embeber videos de YouTube.
+- Insertar recursos interactivos externos, como Genially.
+- Crear carruseles de imágenes o de video.
+- Hacer que las imágenes con texto superpuesto se puedan expandir al hacer clic.
+
+## bloque_b_intro
+Vamos a ver cómo armar un HTML simple a partir de un documento. Partimos de este texto:
+
+## bloque_b_pdf_demo
+@pdfpreview[De qué hablamos cuando hablamos de IA generativa](images/doc1-preview.png)(pdfs/doc1-ia-generativa.pdf)
+Reorganizamos el texto en dos partes separadas por un carrusel con las tres imágenes que lo acompañan, agregamos el título bien destacado arriba, y dos botones abajo a la izquierda para el tráiler de *Ex Machina* y la crítica del sitio El antepenúltimo mohicano.
+
+## bloque_b_que_quiero_hacer
+¿Qué quiero hacer? La idea es que el texto arranque con el título bien destacado. La primera parte del texto troncal —desde "La inteligencia artificial no es una novedad…" hasta "…serie o canción nos va a aparecer a continuación"— va seguida de un carrusel con las tres imágenes, con flechas para pasar de una a otra. Después sigue el resto del texto, desde "El término inteligencia artificial tampoco…" hasta el final. Y abajo, dos botones alineados a la izquierda, uno al lado del otro, para el tráiler y la crítica.
+
+## bloque_b_carousel
+*Pendiente: a la espera de confirmar si las tres imágenes que mandaste van directo acá, las tres juntas, o si son variantes para elegir una sola.*
+
+## bloque_b_metodo
+Vamos a crear el HTML pidiéndole a un modelo de lenguaje que genere el código y nos dé el o los archivos.
+
+## bloque_b_prompt
+*Pendiente: todavía no armamos el prompt real.*
+
+## bloque_b_resultado
+*Pendiente: acá va el resultado — el HTML que genere el modelo, mostrado en vivo.*
+
+## bloque_c_intro
+*Este bloque todavía no tiene contenido — falta el segundo PDF (el más complejo, con portada, menú lateral, imágenes expandibles, video y botón de descripción) que vas a mandar más adelante.*
+
+## bloque_d_intro
+*Este bloque todavía no tiene contenido — la idea es llevar lo visto en B y C a Moodle: pedirle el código a un modelo y pegarlo en la sección correspondiente del aula.*
+
+## bloque_e_intro
+*Este bloque todavía no tiene contenido — va la generalización de la lógica de los ejemplos (otros recursos posibles: ventanas expandibles, pastillas en vez de notas al pie, etc.) y el armado en vivo de un test de autoevaluación de 5 preguntas con 3 opciones cada una.*
+
+## cierre_1
+*Este bloque todavía no tiene contenido — acá va la conclusión de las cinco clases del curso completo (no el aviso de "próxima clase" que tienen las demás, porque esta es la última).*
