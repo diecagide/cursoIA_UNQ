@@ -1,6 +1,8 @@
 ## bienvenida_1
 Llegamos a la última clase del curso. A lo largo de las anteriores trabajamos con texto, imágenes, video y audio generados por IA — en esta, la idea es dar un paso más: usar esos mismos modelos, ya conocidos, de manera integrada para generar nuevas posibilidades que puedas incorporar como actividades en el aula o para tu propio uso.
 
+Esta clase, además, fue cambiando de forma a medida que avanzábamos en el curso: algunas de las consultas e intereses que fueron apareciendo en el camino terminaron orientando el contenido de hoy. Más de un/a docente me preguntó, por ejemplo, cómo armé esta misma aula virtual en la que estás leyendo esto. Así que en vez de sumar herramientas nuevas, vamos a ver qué se puede construir con lo que ya conocemos, combinado de otra manera.
+
 ## bloque_a_intro
 Si bien el mundo de la interactividad está directamente ligado a la programación y al diseño gráfico, hoy podemos conseguir algunas soluciones gráficas e interactivas usando los modelos que ya vimos. Por supuesto que lo ideal es saber de código y de diseño, pero cuando esos dos mundos no son lo tuyo —como me pasa a mí—, la IA puede funcionar como asistente para resolverlos y darle más dinamismo a tus clases o recursos.
 
@@ -30,35 +32,60 @@ Podés armar una página web en HTML —como esta misma que estás recorriendo a
 - Hacer que las imágenes con texto superpuesto se puedan expandir al hacer clic.
 
 ## bloque_b_intro
-Vamos a ver cómo armar un HTML simple a partir de un documento. Partimos de este texto:
+Vamos a ver, paso a paso, cómo se arma un HTML simple a partir de un documento que ya existe. La idea es partir de un texto plano, como el que seguramente ya usás en tus clases en formato Word o PDF, y convertirlo en una página con la que tus estudiantes puedan interactuar un poco más: con las imágenes mejor organizadas, botones que lleven directo a los recursos que mencionás, y una lectura más liviana que la de un documento corrido de punta a punta.
+
+Partimos de este texto, armado especialmente para este ejemplo:
 
 ## bloque_b_pdf_demo
 @pdfpreview[De qué hablamos cuando hablamos de IA generativa](images/doc1-preview.png)(pdfs/doc1-ia-generativa.pdf)
-Reorganizamos el texto en dos partes separadas por un carrusel con las tres imágenes que lo acompañan, agregamos el título bien destacado arriba, y dos botones abajo a la izquierda para el tráiler de *Ex Machina* y la crítica del sitio El antepenúltimo mohicano.
+Una página dinámica, tuneada
+El mismo texto, reorganizado: título destacado arriba, un carrusel con las tres imágenes en el medio, y dos botones abajo a la izquierda para el tráiler de *Ex Machina* y la crítica del sitio El antepenúltimo mohicano.
 
 ## bloque_b_que_quiero_hacer
 ¿Qué quiero hacer? La idea es que el texto arranque con el título bien destacado. La primera parte del texto troncal —desde "La inteligencia artificial no es una novedad…" hasta "…serie o canción nos va a aparecer a continuación"— va seguida de un carrusel con las tres imágenes, con flechas para pasar de una a otra. Después sigue el resto del texto, desde "El término inteligencia artificial tampoco…" hasta el final. Y abajo, dos botones alineados a la izquierda, uno al lado del otro, para el tráiler y la crítica.
 
 ## bloque_b_carousel
-*Pendiente: a la espera de confirmar si las tres imágenes que mandaste van directo acá, las tres juntas, o si son variantes para elegir una sola.*
+@carousel
+![Primera imagen del carrusel](images/doc1-carrusel1.jpg)
+
+![Segunda imagen del carrusel](images/doc1-carrusel2.jpg)
+
+![Tercera imagen del carrusel](images/doc1-carrusel3.jpg)
 
 ## bloque_b_metodo
 Vamos a crear el HTML pidiéndole a un modelo de lenguaje que genere el código y nos dé el o los archivos.
 
 ## bloque_b_prompt
-*Pendiente: todavía no armamos el prompt real.*
+Quiero que generes un archivo HTML, con su CSS incluido, a partir de este texto: [pego acá el texto completo del documento]. Que el título "De qué hablamos cuando hablamos de IA generativa" quede destacado arriba, como encabezado principal.
 
-## bloque_b_resultado
-*Pendiente: acá va el resultado — el HTML que genere el modelo, mostrado en vivo.*
+Dividí el texto troncal en dos partes: la primera va desde "La inteligencia artificial no es una novedad…" hasta "…serie o canción nos va a aparecer a continuación". Después de esa primera parte, agregá un carrusel con flechas para pasar de una imagen a otra, con estas tres imágenes [adjuntar]. Seguí con el resto del texto, desde "El término inteligencia artificial tampoco…" hasta el final.
+
+Al pie de la página, agregá dos botones alineados a la izquierda, uno al lado del otro: uno que diga "Ver tráiler" y lleve a [link de YouTube], y otro que diga "Leer la crítica" y lleve a [link de la crítica]. Usá una tipografía clara tipo libro, colores sobrios, y que se vea bien tanto en computadora como en celular.
+
+## bloque_b_resultado_intro
+Esto es lo que devolvió el modelo (también lo podés abrir en una pestaña aparte):
 
 ## bloque_c_intro
-*Este bloque todavía no tiene contenido — falta el segundo PDF (el más complejo, con portada, menú lateral, imágenes expandibles, video y botón de descripción) que vas a mandar más adelante.*
+Vamos a ver cómo complejizar un poco más ese mismo ejercicio, esta vez a partir de un documento con más información.
+
+## bloque_c_que_quiero_hacer
+¿Qué quiero hacer? Agregar una imagen de portada y un texto de bienvenida; sumar un menú lateral que lleve a cada sección del documento; destacar algunos textos; que las imágenes, además de estar en un carrusel, se puedan expandir al hacer clic; agregar un video; y poner un botón de descripción debajo de las imágenes y los videos, que se expanda al tocarlo.
+
+Después armamos el prompt con todos estos elementos, adjuntando los enlaces externos y los recursos que no estén ya en el documento.
+
+## bloque_c_boceto
+Un boceto a mano también puede servir como base: igual que hicimos con los flyers en la Clase 3, podés dibujar a mano dónde van el texto, los botones, el video y el color, y usar ese boceto como punto de partida antes de pedirle el diseño a la IA.
 
 ## bloque_d_intro
-*Este bloque todavía no tiene contenido — la idea es llevar lo visto en B y C a Moodle: pedirle el código a un modelo y pegarlo en la sección correspondiente del aula.*
+Lo que acabamos de ver lo podés llevar directamente a tu aula de Moodle. Alcanza con hacerle un pedido específico a un modelo, copiar el código que te da, y pegarlo en la sección correspondiente de tu aula —un bloque, una etiqueta, una página—, sin necesidad de saber programar.
 
 ## bloque_e_intro
-*Este bloque todavía no tiene contenido — va la generalización de la lógica de los ejemplos (otros recursos posibles: ventanas expandibles, pastillas en vez de notas al pie, etc.) y el armado en vivo de un test de autoevaluación de 5 preguntas con 3 opciones cada una.*
+La lógica que venimos viendo en los ejemplos anteriores se puede aplicar a cualquier otra situación en la que quieras usar la IA como asistente: podés agregar ventanas expandibles, pastillas que reemplacen la nota al pie y que muestren información al hacer clic en una palabra o un ícono, o cualquier otro recurso que se te ocurra.
+
+## bloque_e_autoevaluacion
+También podés llevar esa misma lógica a otros formatos. Un ejemplo: armar un test de autoevaluación, algo que yo mismo nunca había hecho hasta este momento. Probemos cómo sería.
+
+La dinámica básica: cinco preguntas, cada una con tres opciones para elegir. Una pantalla de inicio que le dé la bienvenida a quien lo esté jugando. Y al final, un cartel con las estadísticas de aciertos y errores. Para armarlo hay que definir las cinco preguntas con sus tres opciones cada una, pensar algún dato de estilo, y recién ahí pedirle el código al modelo.
 
 ## cierre_1
 *Este bloque todavía no tiene contenido — acá va la conclusión de las cinco clases del curso completo (no el aviso de "próxima clase" que tienen las demás, porque esta es la última).*

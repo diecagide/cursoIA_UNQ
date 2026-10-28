@@ -102,25 +102,32 @@
      Año: 2026. Dirección: Fulano. Modelos de IA usados: tal y tal.
 
    COMPARACIÓN "PDF original / lo que vamos a armar" (postit a la
-   izquierda + panel de texto a la derecha — pensado para la Clase 5,
-   donde se parte de un documento real para armar un HTML):
+   izquierda + panel con degradé de color a la derecha — pensado para
+   la Clase 5, donde se parte de un documento real para armar un HTML):
    Dentro de cualquier bloque de texto, en su propio párrafo (con línea
    en blanco antes y después), escribí:
 
      @pdfpreview[Título del documento](images/vista-previa.png)(pdfs/documento.pdf)
-     Texto que va a aparecer en el panel de la derecha, bajo "Lo que
-     vamos a armar". Admite **negrita**, *cursiva* y [links](url) igual
-     que cualquier otro texto.
+     Título propio del panel de la derecha
+     Texto que va a aparecer debajo de ese título, en el mismo panel.
+     Admite **negrita**, *cursiva* y [links](url) igual que cualquier
+     otro texto.
+
+   El título entre corchetes ([Título del documento]) es el título DEL
+   PDF — se usa solo como texto alternativo de la imagen, no aparece
+   escrito en ningún lado de la página. El renglón que sigue INMEDIATO
+   después del marcador (sin línea en blanco, igual que el epígrafe de
+   una imagen o un video) es el título que se va a VER en el panel de
+   la derecha — pensá ahí algo del estilo "Una página dinámica,
+   tuneada", que describa el resultado, no el documento. Lo que venga
+   después de ese renglón es el texto del panel.
 
    El primer paréntesis es una IMAGEN (una captura o render del PDF —
    no el PDF en sí, los navegadores no lo muestran bien como si fuera
    una foto), el segundo paréntesis es el PDF real: al hacer clic sobre
    el postit, se abre ese PDF en una pestaña nueva. Mientras no
    completes título+imagen+PDF, se muestra un recuadro de "pendiente"
-   (como con los videos e imágenes). Si falta solo alguno de los tres
-   campos, se muestra igual con lo que haya (por ejemplo, el título y
-   el texto de la derecha ya escritos, aunque la imagen todavía no esté
-   subida).
+   (como con los videos e imágenes).
 
    LIGHTBOX (agrandar una imagen al hacer clic):
    Cualquier imagen de contenido que subas (con la sintaxis de arriba)
@@ -558,23 +565,29 @@ function initCarousels() {
   });
 }
 
-// Si un párrafo entero es "@pdfpreview[Título](imagen)(pdf)", esta expresión
-// separa el título, la ruta de la imagen de vista previa, la ruta del PDF
-// real y un epígrafe/texto opcional pegado debajo (ver documentación
-// arriba). Los tres primeros campos pueden venir vacíos: eso es lo que
-// pasa antes de que Diego cargue el material real.
+// Si un párrafo entero es "@pdfpreview[Título del documento](imagen)(pdf)",
+// esta expresión separa el título del DOCUMENTO (se usa como alt de la
+// imagen, no se muestra como texto visible), la ruta de la imagen de vista
+// previa, la ruta del PDF real, y el resto pegado debajo (ver documentación
+// arriba). Los tres primeros campos pueden venir vacíos: eso es lo que pasa
+// antes de que Diego cargue el material real. El "resto" (cuarto grupo) se
+// parte a su vez en el RENGLÓN SIGUIENTE (sin línea en blanco) = título del
+// panel derecho ("Lo que vamos a armar"), y lo que sigue a partir de ahí =
+// el texto de ese panel — mismo criterio que el epígrafe de una imagen o un
+// video, ver renderPdfPreviewBlock() más abajo.
 var PDFPREVIEW_RE = /^@pdfpreview\[([^\]]*)\]\(([^)]*)\)\(([^)]*)\)[ \t]*\n?([\s\S]*)$/;
 
 // Arma el bloque de comparación "documento / lo que vamos a armar": a la
 // izquierda el PDF como una hoja apoyada (con sombra, etiqueta "PDF" y
 // clic para abrir el PDF real en pestaña nueva), a la derecha un panel con
-// el título y el texto que describe el resultado. Si no hay nada cargado
-// todavía, se muestra el mismo tipo de recuadro "pendiente" que un video.
-function renderPdfPreviewBlock(title, imgSrc, pdfSrc, afterText) {
+// degradé (mismo que .highlight-box, varía según data-clase) con un título
+// PROPIO del panel (no el título del documento) y el texto que describe el
+// resultado. Si no hay nada cargado todavía, se muestra el mismo tipo de
+// recuadro "pendiente" que un video.
+function renderPdfPreviewBlock(title, imgSrc, pdfSrc, afterRaw) {
   var safeTitle = (title || '').trim();
   var safeImg = (imgSrc || '').trim();
   var safePdf = (pdfSrc || '').trim();
-  var safeAfter = (afterText || '').trim();
 
   if (!safeTitle && !safeImg && !safePdf) {
     return '<div class="interactive-placeholder">' +
@@ -583,6 +596,12 @@ function renderPdfPreviewBlock(title, imgSrc, pdfSrc, afterText) {
       '<p class="interactive-placeholder__hint">Reemplazá esta línea por @pdfpreview[Título](images/vista-previa.png)(pdfs/documento.pdf)</p>' +
       '</div>';
   }
+
+  // El renglón siguiente al marcador (sin línea en blanco) es el título del
+  // panel derecho; lo que venga después es su texto.
+  var afterLines = (afterRaw || '').replace(/^\n/, '').split('\n');
+  var panelTitle = (afterLines.shift() || '').trim();
+  var panelText = afterLines.join('\n').trim();
 
   var docHtml = '<div class="pdf-preview__doc-mock">' +
     '<span class="pdf-preview__tag">PDF</span>' +
@@ -598,8 +617,8 @@ function renderPdfPreviewBlock(title, imgSrc, pdfSrc, afterText) {
 
   var after = '<div class="pdf-preview__after">' +
     '<span class="pdf-preview__pane-tag">Lo que vamos a armar</span>' +
-    (safeTitle ? '<h3 class="pdf-preview__title">' + escapeHtml(safeTitle) + '</h3>' : '') +
-    (safeAfter ? '<p class="pdf-preview__text">' + renderInline(safeAfter) + '</p>' : '') +
+    (panelTitle ? '<h3 class="pdf-preview__title">' + renderInline(panelTitle) + '</h3>' : '') +
+    (panelText ? '<p class="pdf-preview__text">' + renderInline(panelText) + '</p>' : '') +
     '</div>';
 
   return '<div class="pdf-preview">' + before + after + '</div>';

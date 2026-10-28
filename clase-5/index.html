@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clase 5 — [Nombre pendiente] | La imaginación al poder</title>
+<!-- TÍTULO TENTATIVO: "Integración de modelos en procesos de producción"
+     (del cronograma de Diego) — a confirmar, ver charla con Diego -->
+<title>Clase 5 — Integración de modelos en procesos de producción | La imaginación al poder</title>
 <meta name="description" content="Clase 5 del curso La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria. Docente: Diego Cagide.">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -28,8 +30,8 @@
     <div class="site-nav__divider"></div>
 
     <p class="site-nav__class-label">Clase 5</p>
-    <!-- TODAVÍA SIN NOMBRE DEFINITIVO — reemplazar cuando Diego lo confirme -->
-    <p class="site-nav__title">[Nombre de la clase — pendiente]</p>
+    <!-- TÍTULO TENTATIVO, a confirmar con Diego -->
+    <p class="site-nav__title">Integración de modelos en procesos de producción</p>
 
     <ul class="nav-list">
       <li><a href="#bienvenida">Bienvenida</a></li>
@@ -79,8 +81,8 @@
       <header class="class-header">
         <p class="class-header__course">La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria — Docente:&nbsp;Diego&nbsp;Cagide</p>
         <p class="class-header__eyebrow">Clase 5</p>
-        <!-- TODAVÍA SIN NOMBRE DEFINITIVO -->
-        <h1>[Nombre de la clase — pendiente]</h1>
+        <!-- TÍTULO TENTATIVO, a confirmar con Diego -->
+        <h1>Integración de modelos en procesos de producción</h1>
       </header>
 
       <!-- =================================================================
@@ -144,22 +146,21 @@
 
         <p data-key="bloque_b_metodo"></p>
 
-        <details class="expandable" id="prompt-bloque-b">
-          <summary>
-            <span class="expandable__icon" aria-hidden="true">💬</span>
-            <span class="expandable__text">
-              <span class="expandable__eyebrow">Para ampliar</span>
-              <span class="expandable__title">El prompt que usamos</span>
-            </span>
-            <span class="expandable__chevron" aria-hidden="true">▸</span>
-          </summary>
-          <div class="expandable__body">
-            <p data-key="bloque_b_prompt"></p>
-          </div>
-        </details>
+        <h3 id="prompt-bloque-b">Prompt</h3>
+        <!-- El PROMPT se muestra siempre visible, como en el resto de las
+             clases — NO va dentro de un "Para ampliar". -->
+        <p data-key="bloque_b_prompt"></p>
 
         <h3>Resultado</h3>
-        <div class="content-block" data-key="bloque_b_resultado"></div>
+        <p data-key="bloque_b_resultado_intro"></p>
+        <!-- Demo real embebida: el HTML que generaría el modelo a partir
+             del prompt de arriba, armado con el texto, las imágenes y los
+             links reales de este ejemplo. Vive en demos/, no pasa por
+             contenido.txt (es un archivo HTML aparte, no texto). -->
+        <div class="demo-embed">
+          <iframe src="demos/bloque-b-resultado.html" title="Resultado: De qué hablamos cuando hablamos de IA generativa" loading="lazy"></iframe>
+        </div>
+        <p class="demo-embed__link"><a href="demos/bloque-b-resultado.html" target="_blank" rel="noopener">Abrir el resultado en pantalla completa ↗</a></p>
       </section>
 
       <!-- =================================================================
@@ -168,6 +169,16 @@
       <section class="block" id="bloque-c">
         <h2>Bloque C — Mejorando el estilo visual</h2>
         <p data-key="bloque_c_intro"></p>
+
+        <!-- PENDIENTE: falta el segundo PDF (más complejo) que Diego va a
+             mandar — por ahora va solo la explicación de qué vamos a
+             hacer, sin el @pdfpreview real ni el prompt/resultado. -->
+        <p data-key="bloque_c_que_quiero_hacer"></p>
+
+        <div class="callout">
+          <p class="callout__label">Un truco: el boceto a mano</p>
+          <p data-key="bloque_c_boceto"></p>
+        </div>
       </section>
 
       <!-- =================================================================
@@ -184,6 +195,12 @@
       <section class="block" id="bloque-e">
         <h2>Bloque E — Usos: aprendiendo a aprender</h2>
         <p data-key="bloque_e_intro"></p>
+
+        <h3>Probemos con un test de autoevaluación</h3>
+        <p data-key="bloque_e_autoevaluacion"></p>
+        <!-- PENDIENTE: falta el prompt y el resultado en vivo del test,
+             mismo criterio que en Bloque B (prompt visible + demo
+             embebida), una vez que definamos las 5 preguntas reales. -->
       </section>
 
       <!-- =================================================================
