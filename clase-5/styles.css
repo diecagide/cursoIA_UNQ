@@ -531,6 +531,23 @@ section.block:first-of-type {
   .pdf-preview { grid-template-columns: 1fr; }
 }
 
+/* Dos "insumos" (post-its) lado a lado, en vez de apilados — reusa el
+   mismo mock/sheet/tag/caption de @pdfpreview de arriba (sombra +
+   inclinación + el movimiento al pasar el mouse), pero sin el panel
+   de texto de la derecha: acá los dos lados son imágenes. */
+.insumos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin: 20px 0 8px;
+}
+
+@media (max-width: 640px) {
+  .insumos-grid { grid-template-columns: 1fr; }
+}
+
+.insumo-item { text-align: center; }
+
 .pdf-preview__before {
   display: block;
   text-decoration: none;
@@ -2051,4 +2068,11 @@ body.lightbox-open { overflow: hidden; }
 :root[data-clase="2"] { --color-sidebar-end: #6a3fa0; } /* azul → violeta */
 :root[data-clase="3"] { --color-sidebar-end: #1c8c73; } /* azul → verde azulado */
 :root[data-clase="4"] { --color-sidebar-end: #0e8ca8; } /* azul → turquesa / cian */
-:root[data-clase="5"] { --color-sidebar-end: #b8863a; } /* azul → dorado — TEMPORAL, falta confirmar con Diego */
+:root[data-clase="5"] {
+  --color-sidebar-end: #2d4fa3; /* azul real — última parada del degradé */
+  /* "Fuego y hielo" — degradé de tres paradas, confirmado por Diego:
+     azul profundo (base) → rojo cereza → azul real. Sobreescribe
+     --gradient-sidebar completo (no solo --color-sidebar-end) porque
+     el degradé de dos paradas no alcanza para un tercer color. */
+  --gradient-sidebar: linear-gradient(180deg, var(--color-sidebar-start) 0%, #a8203f 50%, #2d4fa3 100%);
+}

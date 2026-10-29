@@ -42,12 +42,16 @@
         <a class="nav-group__link" href="#bloque-a"><span class="nav-bullet"></span>Bloque A · La IA en el mundo de la interactividad</a>
         <ul class="nav-subgroup">
           <li><a href="#tener-en-claro">Tener en claro lo que buscamos</a></li>
-          <li><a href="#otras-posibilidades">Cosas que podemos hacer</a></li>
+          <li><a href="#elementos-posibles">Tipos de recursos y elementos</a></li>
         </ul>
       </li>
 
       <li class="nav-group">
         <a class="nav-group__link" href="#bloque-b"><span class="nav-bullet"></span>Bloque B · Creación de un HTML simple</a>
+        <ul class="nav-subgroup">
+          <li><a href="#gramatica-prompt-b">Gramática del prompt</a></li>
+          <li><a href="#ejemplo-html-simple">Ejemplo del HTML simple</a></li>
+        </ul>
       </li>
 
       <li class="nav-group">
@@ -117,12 +121,66 @@
 
         <div class="content-block" data-key="bloque_a_tener_claro_2"></div>
 
-        <h3 id="otras-posibilidades">Cosas que podemos hacer con las herramientas ya vistas</h3>
-        <p data-key="bloque_a_otras_intro"></p>
-        <!-- PENDIENTE: Diego pidió una imagen ilustrativa después de cada
-             ítem de esta lista (7 en total) — todavía no están, a
-             confirmar si las vamos a sumar. -->
-        <div class="content-block" data-key="bloque_a_otras_lista"></div>
+        <h3 id="elementos-posibles">Tipos de recursos y elementos interactivos</h3>
+        <div class="content-block" data-key="bloque_a_elementos_intro"></div>
+
+        <p class="mini-heading">Tipo de recurso</p>
+        <!-- Mismo componente .elements-grid / .element-card que el
+             desglose de "Los elementos del prompt" en la Clase 4
+             (Bloque D) y "los elementos de imagen" en la Clase 3: cada
+             tarjeta tiene su color e ícono fijos en el HTML, el texto se
+             edita en contenido.txt. -->
+        <div class="elements-grid">
+          <div class="element-card" style="--element-color:#2d4fa3">
+            <h4><span class="element-card__icon" aria-hidden="true">📜</span> Página web para scrollear</h4>
+            <p data-key="tipo_recurso_pagina"></p>
+          </div>
+          <div class="element-card" style="--element-color:#a8203f">
+            <h4><span class="element-card__icon" aria-hidden="true">🧩</span> Recurso interactivo puntual</h4>
+            <p data-key="tipo_recurso_puntual"></p>
+          </div>
+        </div>
+
+        <p class="mini-heading">Elementos y comportamientos interactivos</p>
+        <!-- Paleta de las tarjetas limitada a los dos colores de
+             identidad de la clase ("Fuego y hielo": rojo cereza + azul
+             real), en variantes clara/base/oscura — pedido explícito de
+             Diego: "los recursos que sumemos deben estar en esos
+             colores". -->
+        <div class="elements-grid">
+          <div class="element-card" style="--element-color:#a8203f">
+            <h4><span class="element-card__icon" aria-hidden="true">🖼️</span> Carrusel de imágenes</h4>
+            <p data-key="elemento_carrusel"></p>
+          </div>
+          <div class="element-card" style="--element-color:#2d4fa3">
+            <h4><span class="element-card__icon" aria-hidden="true">🎬</span> Video embebido</h4>
+            <p data-key="elemento_video"></p>
+          </div>
+          <div class="element-card" style="--element-color:#7a1830">
+            <h4><span class="element-card__icon" aria-hidden="true">💬</span> Cajas de texto destacadas</h4>
+            <p data-key="elemento_cajas"></p>
+          </div>
+          <div class="element-card" style="--element-color:#1f3a7a">
+            <h4><span class="element-card__icon" aria-hidden="true">🔘</span> Botones</h4>
+            <p data-key="elemento_botones"></p>
+          </div>
+          <div class="element-card" style="--element-color:#c23a52">
+            <h4><span class="element-card__icon" aria-hidden="true">🧭</span> Menú de navegación</h4>
+            <p data-key="elemento_menu"></p>
+          </div>
+          <div class="element-card" style="--element-color:#4a6cc2">
+            <h4><span class="element-card__icon" aria-hidden="true">🎨</span> Banners y recursos gráficos</h4>
+            <p data-key="elemento_banners"></p>
+          </div>
+          <div class="element-card" style="--element-color:#a8203f">
+            <h4><span class="element-card__icon" aria-hidden="true">🔽</span> Elementos plegables</h4>
+            <p data-key="elemento_plegables"></p>
+          </div>
+          <div class="element-card" style="--element-color:#2d4fa3">
+            <h4><span class="element-card__icon" aria-hidden="true">💊</span> Pastillas interactivas</h4>
+            <p data-key="elemento_pastillas"></p>
+          </div>
+        </div>
       </section>
 
       <!-- =================================================================
@@ -133,13 +191,55 @@
 
         <div class="content-block" data-key="bloque_b_intro"></div>
 
-        <h3 id="insumos-bloque-b">Antes de arrancar: los insumos</h3>
+        <h3 id="gramatica-prompt-b">Gramática del prompt</h3>
+        <p data-key="bloque_b_gramatica_intro"></p>
+        <p class="prompt-formula" data-key="bloque_b_gramatica_formula"></p>
+
+        <hr class="section-divider">
+
+        <h3 id="ejemplo-html-simple">Ejemplo del HTML simple</h3>
+
+        <h4 id="insumos-bloque-b">Antes de arrancar: los insumos</h4>
         <!-- Los "insumos" (ingredientes) de este ejemplo: el PDF con el
              texto y los links, y las tres imágenes juntas en un solo
              archivo (el que mandó Diego, tal cual, sin separar) — pedido
              explícito: mostrar los materiales de partida ANTES del
              prompt/resultado, como ingredientes antes de cocinar. -->
-        <div class="content-block" data-key="bloque_b_insumos"></div>
+        <div class="content-block" data-key="bloque_b_insumos_intro"></div>
+
+        <!-- Los dos insumos van lado a lado (pedido explícito de Diego,
+             antes ocupaban mucho espacio apilados) con el mismo efecto
+             "post-it" (sombra + inclinación + movimiento al pasar el
+             mouse) que @pdfpreview, reusando sus clases .pdf-preview__*
+             aunque acá no se use el marcador @pdfpreview en sí (es HTML
+             hardcodeado, no pasa por contenido.txt). -->
+        <div class="insumos-grid">
+          <div class="insumo-item">
+            <a class="pdf-preview__before" href="pdfs/doc1-ia-generativa.pdf" target="_blank" rel="noopener">
+              <div class="pdf-preview__doc-mock">
+                <span class="pdf-preview__tag">PDF</span>
+                <div class="pdf-preview__sheet">
+                  <img src="images/doc1-preview.png" alt="Documento con el texto y los links">
+                </div>
+              </div>
+            </a>
+            <p class="pdf-preview__caption" data-key="bloque_b_insumo_pdf_caption"></p>
+          </div>
+          <div class="insumo-item">
+            <!-- Sin link a ningún lado (no hay "PDF real" que abrir acá):
+                 el <img class="content-img"> sí dispara el lightbox normal
+                 de la página al hacer clic, para verla agrandada. -->
+            <div class="pdf-preview__before">
+              <div class="pdf-preview__doc-mock">
+                <span class="pdf-preview__tag">FOTOS</span>
+                <div class="pdf-preview__sheet">
+                  <img class="content-img" src="images/doc1-imagenes-insumo.jpg" alt="Las tres imágenes, en un solo archivo">
+                </div>
+              </div>
+            </div>
+            <p class="pdf-preview__caption" data-key="bloque_b_insumo_imagenes_caption"></p>
+          </div>
+        </div>
 
         <div class="callout">
           <p class="callout__label">Recomendación práctica</p>
@@ -156,11 +256,11 @@
              va arriba, antes del resultado, no como epígrafe de una
              imagen/demo ya armada. -->
         <div class="prompt-example">
-          <p class="prompt-example__label">Prompt — se lo podés pedir a cualquier asistente de IA conversacional (ChatGPT, Claude, Gemini, etc.)</p>
+          <p class="prompt-example__label">Prompt completo</p>
           <div class="content-block" data-key="bloque_b_prompt"></div>
         </div>
 
-        <h3 id="resultado-bloque-b">Resultado</h3>
+        <h4 id="resultado-bloque-b">Resultado</h4>
         <p data-key="bloque_b_resultado_intro"></p>
         <!-- Demo real embebida: el HTML que generaría el modelo a partir
              del prompt de arriba, armado con el texto, las imágenes y los

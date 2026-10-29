@@ -20,38 +20,65 @@ Supongamos que tenemos un texto en PDF como parte de una clase y queremos darle 
 ## que_es_html
 HTML (HyperText Markup Language) es el lenguaje con el que está escrita casi cualquier página que ves en internet, incluida esta misma clase. No hace falta saber programar para pedirle a una IA que te genere uno: alcanza con describirle qué contenido querés mostrar y cómo querés que se vea, y el modelo te devuelve el código listo para subir a una web.
 
+Junto con el HTML suele venir el CSS, que es la parte del código que define el diseño visual: colores, tipografías, espacios. No hace falta nombrarlo en el prompt ni saber qué es: alcanza con describir cómo querés que se vea la página, y el modelo arma ese diseño también.
+
 ## bloque_a_tener_claro_2
 Para esto, lo primero que vas a tener que hacer es definir qué nivel de interactividad y desarrollo gráfico estás buscando, y después desglosar ese documento en sus distintas partes, cada una con un tratamiento particular. Esa etapa de definición consiste en preguntarte: **¿cómo se va a ver? ¿Qué paleta de colores va a tener? ¿Va a tener botones? ¿De qué color y forma? ¿Va a tener textos destacados?**
 
 Este mismo criterio lo podés usar para que tus estudiantes armen presentaciones dinámicas de sus propias entregas.
 
-## bloque_a_otras_intro
-Podés armar una página web en HTML, como esta misma que estás recorriendo ahora, con distintas secciones, un menú lateral u horizontal, banners, y más. También podés crear recursos puntuales para usar en una web o directamente en Moodle:
+## bloque_a_elementos_intro
+Antes de pasar al ejemplo, conviene pensar en dos niveles. Primero, qué tipo de recurso general querés armar. Después, qué elementos y comportamientos interactivos le vas a sumar adentro.
 
-## bloque_a_otras_lista
-- Crear y personalizar botones que lleven a otras páginas o links externos.
-- Trabajar recursos gráficos y de color.
-- Armar cajas de texto para destacar o jerarquizar contenidos.
-- Agregar reproductores de video integrados, o embeber videos de YouTube.
-- Insertar recursos interactivos externos, como Genially.
-- Crear carruseles de imágenes o de video.
-- Hacer que las imágenes con texto superpuesto se puedan expandir al hacer clic.
+## tipo_recurso_pagina
+Todo el contenido de la clase en una sola página larga, como esta misma, con un menú que lleva directo a cada sección.
+
+## tipo_recurso_puntual
+Una actividad acotada: un test de autoevaluación, un juego corto, una línea de tiempo, o cualquier otro recurso específico que se te ocurra.
+
+## elemento_carrusel
+Varias imágenes en un mismo espacio, con flechas para pasar de una a otra.
+
+## elemento_video
+Un video de YouTube (o de otra plataforma) insertado directamente en la página, sin que el estudiante tenga que salir a buscarlo.
+
+## elemento_cajas
+Texto destacado dentro de un recuadro de color, para resaltar una idea, una recomendación o una advertencia.
+
+## elemento_botones
+Links con forma de botón, que lleven a otra sección de la página o a un recurso externo.
+
+## elemento_menu
+Un menú lateral o superior que lleva directo a cada sección, sin tener que scrollear toda la página para encontrar algo.
+
+## elemento_banners
+Imágenes grandes de portada, separadores visuales entre secciones, o cualquier otro recurso gráfico que le dé identidad visual a la página.
+
+## elemento_plegables
+Contenido que se oculta y se despliega al hacer clic, para no mostrar todo de entrada (por ejemplo, para profundizar en un tema sin alargar la lectura principal).
+
+## elemento_pastillas
+Una palabra o un ícono que, al tocarlo, muestra una aclaración breve. Sirve para reemplazar la nota al pie tradicional.
 
 ## bloque_b_intro
 Vamos a ver, paso a paso, cómo se arma un HTML simple a partir de un documento que ya existe. La idea es partir de un texto plano en formato Word o PDF y convertirlo en una página con la que tus estudiantes puedan interactuar un poco más: con las imágenes mejor organizadas, botones que lleven directo a los recursos que mencionás, y una lectura más liviana que la de un documento corrido de punta a punta.
 
-## bloque_b_insumos
+## bloque_b_gramatica_intro
+Para pedirle este tipo de recurso a un modelo, conviene seguir siempre la misma lógica: qué tipo de recurso querés, a partir de qué materiales, con qué elementos interactivos, y con qué estilo visual.
+
+## bloque_b_gramatica_formula
+[Tipo de recurso] + [materiales que adjuntás] + [elementos interactivos que elegiste] + [estilo visual]
+
+## bloque_b_insumos_intro
 Antes de arrancar, estos son los materiales con los que vamos a trabajar:
 
 - Un PDF con el texto troncal y dos links a recursos externos: el tráiler de *Ex Machina* y una crítica del sitio *El antepenúltimo mohicano*.
 - Tres imágenes sueltas, pensadas para acompañar el texto.
 
-![Documento con el texto y los links](images/doc1-preview.png)
-@plain
-El documento original. [Ver el PDF completo](pdfs/doc1-ia-generativa.pdf)
+## bloque_b_insumo_pdf_caption
+El documento original. Hacé clic para ver el PDF completo.
 
-![Las tres imágenes, en un solo archivo](images/doc1-imagenes-insumo.jpg)
-@plain
+## bloque_b_insumo_imagenes_caption
 Las tres imágenes que vamos a usar, juntas en un solo archivo.
 
 ## bloque_b_recomendacion
@@ -65,14 +92,16 @@ Las tres imágenes que vamos a usar, juntas en un solo archivo.
 Vamos a crear la página pidiéndole a un modelo de lenguaje que genere el código, con un prompt como este:
 
 ## bloque_b_prompt
-Generá un archivo HTML, con su CSS incluido, a partir de este texto: [pego acá el texto completo del documento].
+Generá un archivo HTML con el diseño visual incluido, a partir del PDF y las imágenes que te adjunto.
 
 - El título "De qué hablamos cuando hablamos de IA generativa" destacado arriba, como encabezado principal.
 - El texto troncal dividido en dos partes: la primera desde "La inteligencia artificial no es una novedad…" hasta "…serie o canción nos va a aparecer a continuación".
 - Después de esa primera parte, un carrusel con flechas para pasar de una imagen a otra, con estas tres imágenes [las adjunto].
 - El resto del texto, desde "El término inteligencia artificial tampoco…" hasta el final.
 - Al pie, dos botones alineados a la izquierda, uno al lado del otro: "Ver tráiler" → https://www.youtube.com/watch?v=sNExF5WYMaA y "Leer la crítica" → https://www.elantepenultimomohicano.com/2015/02/critica-exmachina.html.
-- Tipografía clara tipo libro, colores sobrios. Que se vea bien en computadora y en celular.
+- Tipografía clara tipo libro, con buen espacio entre líneas y párrafos.
+- Colores sobrios: fondo claro, texto oscuro, y un solo color de acento para los botones y los títulos.
+- Que se vea bien tanto en computadora como en celular.
 
 ## bloque_b_resultado_intro
 Esto es lo que devolvió el modelo (también lo podés abrir en una pestaña aparte):
