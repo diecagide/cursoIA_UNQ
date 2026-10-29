@@ -126,10 +126,10 @@ Hay muchos modelos que actualmente se están utilizando en la producción audiov
 - Marca de agua: los videos suelen descargarse con una marca de agua con el nombre del modelo.
 
 ## google_flow_intro
-Flow es la herramienta de Google para generar video con IA, pensada para resolver las actividades de esta clase. Combina tres modelos: Veo (genera el video), Imagen (genera personajes y fondos a partir de texto) y Gemini (interpreta la consigna escrita). Permite reutilizar un mismo personaje o fondo en varias escenas para mantener la coherencia entre ellas —Google lo llama "Ingredients to Video"— y ajustar los planos con controles de cámara propios.
+Flow es la plataforma de Google para generar video con IA, pensada para resolver una actividad de esta clase. Por defecto, usa el modelo Veo 3.1 – Lite para generar el video y Nano Banana 2.1 para generar las imágenes. Permite reutilizar un mismo personaje o fondo en varias escenas para mantener la coherencia entre ellas, y ajustar los planos con controles de cámara propios. Permite utilizar imágenes para referencia general para usarlas como frame inicial o final de la toma.
 
 ## google_flow_video
-@video[]()
+@video[Google Flow](https://www.youtube.com/watch?v=quXSZiXbwbI)
 
 ## gramatica_video_intro
 La gramática de un prompt de video retoma algunos elementos de la estructura de imagen que vimos en la clase anterior, pero le suma los elementos propios del movimiento: tipo de lente, angulación y movimiento de cámara.
