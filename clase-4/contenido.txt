@@ -469,4 +469,4 @@ Lo mismo para la elaboración de bandas sonoras: una cosa es producir una músic
 Por último, si querés incorporar el *uso* de la IA de video y audio en el aula, te comparto algunas ideas:
 
 ## proxima_clase
-Y con esto finaliza la cuarta clase del curso. En la próxima clase vamos a ver algunos casos útiles para crear contenido. ¡Nos vemos!
+Y con esto finaliza la cuarta clase del curso. En la próxima clase vamos a ver cómo podemos crear recursos interactivos con IA. ¡Nos vemos!
