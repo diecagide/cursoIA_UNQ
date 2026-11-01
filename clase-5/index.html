@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clase 5 — Recursos interactivos generados con IA | La imaginación al poder</title>
+<title>Clase 5 — Recursos didácticos interactivos para el aula | La imaginación al poder</title>
 <meta name="description" content="Clase 5 del curso La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria. Docente: Diego Cagide.">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -28,7 +28,7 @@
     <div class="site-nav__divider"></div>
 
     <p class="site-nav__class-label">Clase 5</p>
-    <p class="site-nav__title">Recursos interactivos generados con IA</p>
+    <p class="site-nav__title">Recursos didácticos interactivos para el aula</p>
 
     <ul class="nav-list">
       <li><a href="#bienvenida">Bienvenida</a></li>
@@ -41,29 +41,30 @@
       <li class="nav-group">
         <a class="nav-group__link" href="#bloque-a"><span class="nav-bullet"></span>Bloque A · La IA en el mundo de la interactividad</a>
         <ul class="nav-subgroup">
-          <li><a href="#tener-en-claro">Tener en claro lo que buscamos</a></li>
-          <li><a href="#elementos-posibles">Tipos de recursos y elementos</a></li>
+          <li><a href="#que-es-codigo">HTML, CSS y JavaScript</a></li>
+          <li><a href="#ejemplos-bloque-a">Ejemplos</a></li>
         </ul>
       </li>
 
       <li class="nav-group">
-        <a class="nav-group__link" href="#bloque-b"><span class="nav-bullet"></span>Bloque B · Creación de un HTML simple</a>
+        <a class="nav-group__link" href="#bloque-b"><span class="nav-bullet"></span>Bloque B · Crear dispositivos: estructura y metodología</a>
         <ul class="nav-subgroup">
+          <li><a href="#tipos-de-recurso">Tipos de recurso y elementos</a></li>
           <li><a href="#gramatica-prompt-b">Gramática del prompt</a></li>
-          <li><a href="#ejemplo-html-simple">Ejemplo del HTML simple</a></li>
+          <li><a href="#ejemplos-simples">Ejemplos</a></li>
         </ul>
       </li>
 
       <li class="nav-group">
-        <a class="nav-group__link" href="#bloque-c"><span class="nav-bullet"></span>Bloque C · Mejorando el estilo visual</a>
+        <a class="nav-group__link" href="#bloque-c"><span class="nav-bullet"></span>Bloque C · Usos e incorporación al aula</a>
       </li>
 
       <li class="nav-group">
-        <a class="nav-group__link" href="#bloque-d"><span class="nav-bullet"></span>Bloque D · Customizando el aula virtual</a>
-      </li>
-
-      <li class="nav-group">
-        <a class="nav-group__link" href="#bloque-e"><span class="nav-bullet"></span>Bloque E · Usos: aprendiendo a aprender</a>
+        <a class="nav-group__link" href="#bloque-d"><span class="nav-bullet"></span>Bloque D · Formato web y aula virtual</a>
+        <ul class="nav-subgroup">
+          <li><a href="#ejemplo-html-simple">Ejemplo del HTML simple</a></li>
+          <li><a href="#customizar-aula">Customizar el aula virtual</a></li>
+        </ul>
       </li>
     </ul>
 
@@ -82,7 +83,7 @@
       <header class="class-header">
         <p class="class-header__course">La imaginación al poder: IA generativa y procesos creativos para la enseñanza universitaria — Docente:&nbsp;Diego&nbsp;Cagide</p>
         <p class="class-header__eyebrow">Clase 5</p>
-        <h1>Recursos interactivos generados con IA</h1>
+        <h1>Recursos didácticos interactivos para el aula</h1>
       </header>
 
       <!-- =================================================================
@@ -99,120 +100,317 @@
       </section>
 
       <!-- =================================================================
-           BLOQUE A
+           BLOQUE A — reemplazo total del Bloque A anterior
            ================================================================= -->
       <section class="block" id="bloque-a">
         <h2>Bloque A — La IA en el mundo de la interactividad</h2>
 
-        <!-- Intro sin subtítulo propio -->
         <div class="content-block" data-key="bloque_a_intro"></div>
+        <div class="content-block" data-key="bloque_a_modelos_llm"></div>
 
-        <h3 id="tener-en-claro">Tener en claro lo que buscamos</h3>
-        <p data-key="bloque_a_tener_claro"></p>
-
-        <p class="mini-heading">¿Qué buscamos?</p>
-        <p data-key="bloque_a_tener_claro_ejemplo"></p>
-
-        <!-- Caja explicativa "¿Qué es un HTML?" -->
+        <h3 id="que-es-codigo">HTML, CSS y JavaScript</h3>
         <div class="callout">
-          <p class="callout__label">¿Qué es un HTML?</p>
-          <p data-key="que_es_html"></p>
+          <p class="callout__label">¿Qué hay detrás de un recurso interactivo?</p>
+          <div class="content-block" data-key="bloque_a_que_es_codigo"></div>
         </div>
 
-        <div class="content-block" data-key="bloque_a_tener_claro_2"></div>
+        <div class="callout">
+          <p class="callout__label">Claude pago vs. gratuito</p>
+          <div class="content-block" data-key="bloque_a_claude_pago"></div>
+        </div>
 
-        <h3 id="elementos-posibles">Tipos de recursos y elementos interactivos</h3>
-        <div class="content-block" data-key="bloque_a_elementos_intro"></div>
+        <h3 id="ejemplos-bloque-a">Ejemplos</h3>
+        <div class="content-block" data-key="bloque_a_ejemplos_intro"></div>
 
-        <p class="mini-heading">Tipo de recurso</p>
-        <!-- Mismo componente .elements-grid / .element-card que el
-             desglose de "Los elementos del prompt" en la Clase 4
-             (Bloque D) y "los elementos de imagen" en la Clase 3: cada
-             tarjeta tiene su color e ícono fijos en el HTML, el texto se
-             edita en contenido.txt. -->
-        <div class="elements-grid">
-          <div class="element-card" style="--element-color:#2d4fa3">
-            <h4><span class="element-card__icon" aria-hidden="true">📜</span> Página web para scrollear</h4>
-            <p data-key="tipo_recurso_pagina"></p>
+        <!-- Ejemplo 1: Sistema solar -->
+        <div class="device-example">
+          <h4>🌌 Sistema solar interactivo</h4>
+          <p data-key="ejemplo_sistema_solar"></p>
+          <div class="demo-embed">
+            <iframe src="demos/sistema-solar.html" title="Sistema solar interactivo" loading="lazy"></iframe>
           </div>
+          <p class="demo-embed__link"><a href="demos/sistema-solar.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
+          <div class="img-caption" hidden>
+            <strong>Modelo:</strong> Claude (Sonnet 5)
+            <span class="caption-rule"></span>
+            <div class="content-block" data-key="prompt_sistema_solar"></div>
+          </div>
+        </div>
+
+        <!-- Ejemplo 2: Traductor matemático -->
+        <div class="device-example">
+          <h4>🔢 Traductor matemático</h4>
+          <p data-key="ejemplo_traductor_matematico"></p>
+          <div class="demo-embed">
+            <iframe src="demos/traductor-matematico.html" title="Traductor matemático" loading="lazy"></iframe>
+          </div>
+          <p class="demo-embed__link"><a href="demos/traductor-matematico.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
+          <div class="img-caption" hidden>
+            <strong>Modelo:</strong> Claude (Sonnet 5)
+            <span class="caption-rule"></span>
+            <div class="content-block" data-key="prompt_traductor_matematico"></div>
+          </div>
+        </div>
+
+        <!-- Ejemplo 3: Música 3D -->
+        <div class="device-example">
+          <h4>🎵 Música 3D</h4>
+          <p data-key="ejemplo_musica_3d"></p>
+          <div class="demo-embed">
+            <iframe src="demos/cubo-color-sonido-3d.html" title="Música 3D" loading="lazy"></iframe>
+          </div>
+          <p class="demo-embed__link"><a href="demos/cubo-color-sonido-3d.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
+          <div class="img-caption" hidden>
+            <strong>Modelo:</strong> Claude (Sonnet 5)
+            <span class="caption-rule"></span>
+            <div class="content-block" data-key="prompt_musica_3d"></div>
+          </div>
+        </div>
+
+        <p data-key="bloque_a_cierre"></p>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE B — nuevo (antes vivía como parte del Bloque A)
+           ================================================================= -->
+      <section class="block" id="bloque-b">
+        <h2>Bloque B — Crear dispositivos: estructura y metodología</h2>
+
+        <p data-key="bloque_b_tener_claro"></p>
+
+        <h3 id="tipos-de-recurso">Tipos de recurso</h3>
+        <p data-key="bloque_b_tipos_recurso_intro"></p>
+
+        <div class="elements-grid">
           <div class="element-card" style="--element-color:#a8203f">
-            <h4><span class="element-card__icon" aria-hidden="true">🧩</span> Recurso interactivo puntual</h4>
-            <p data-key="tipo_recurso_puntual"></p>
+            <h4><span class="element-card__icon" aria-hidden="true">✅</span> Ejercitaciones autoevaluables</h4>
+            <p data-key="tipo_recurso_ejercitaciones"></p>
+          </div>
+          <div class="element-card" style="--element-color:#2d4fa3">
+            <h4><span class="element-card__icon" aria-hidden="true">🎮</span> Juegos educativos</h4>
+            <p data-key="tipo_recurso_juegos"></p>
+          </div>
+          <div class="element-card" style="--element-color:#7a1830">
+            <h4><span class="element-card__icon" aria-hidden="true">⏳</span> Líneas de tiempo interactivas</h4>
+            <p data-key="tipo_recurso_lineas_tiempo"></p>
+          </div>
+          <div class="element-card" style="--element-color:#1f3a7a">
+            <h4><span class="element-card__icon" aria-hidden="true">🧪</span> Simulaciones</h4>
+            <p data-key="tipo_recurso_simulaciones"></p>
+          </div>
+          <div class="element-card" style="--element-color:#c23a52">
+            <h4><span class="element-card__icon" aria-hidden="true">📚</span> Contenidos educativos</h4>
+            <p data-key="tipo_recurso_contenidos"></p>
           </div>
         </div>
 
         <p class="mini-heading">Elementos y comportamientos interactivos</p>
-        <!-- Paleta de las tarjetas limitada a los dos colores de
-             identidad de la clase ("Fuego y hielo": rojo cereza + azul
-             real), en variantes clara/base/oscura — pedido explícito de
-             Diego: "los recursos que sumemos deben estar en esos
-             colores". -->
+        <div class="content-block" data-key="bloque_b_elementos_intro"></div>
+
         <div class="elements-grid">
           <div class="element-card" style="--element-color:#a8203f">
-            <h4><span class="element-card__icon" aria-hidden="true">🖼️</span> Carrusel de imágenes</h4>
-            <p data-key="elemento_carrusel"></p>
+            <h4><span class="element-card__icon" aria-hidden="true">📎</span> Materiales adjuntos</h4>
+            <p data-key="elemento_materiales"></p>
           </div>
           <div class="element-card" style="--element-color:#2d4fa3">
-            <h4><span class="element-card__icon" aria-hidden="true">🎬</span> Video embebido</h4>
-            <p data-key="elemento_video"></p>
+            <h4><span class="element-card__icon" aria-hidden="true">⚡</span> Retroalimentación inmediata</h4>
+            <p data-key="elemento_retroalimentacion"></p>
           </div>
           <div class="element-card" style="--element-color:#7a1830">
-            <h4><span class="element-card__icon" aria-hidden="true">💬</span> Cajas de texto destacadas</h4>
-            <p data-key="elemento_cajas"></p>
+            <h4><span class="element-card__icon" aria-hidden="true">🎛️</span> Parámetros ajustables</h4>
+            <p data-key="elemento_parametros"></p>
           </div>
           <div class="element-card" style="--element-color:#1f3a7a">
-            <h4><span class="element-card__icon" aria-hidden="true">🔘</span> Botones</h4>
-            <p data-key="elemento_botones"></p>
+            <h4><span class="element-card__icon" aria-hidden="true">✋</span> Arrastrar y soltar</h4>
+            <p data-key="elemento_arrastrar"></p>
           </div>
           <div class="element-card" style="--element-color:#c23a52">
-            <h4><span class="element-card__icon" aria-hidden="true">🧭</span> Menú de navegación</h4>
-            <p data-key="elemento_menu"></p>
+            <h4><span class="element-card__icon" aria-hidden="true">🏆</span> Puntaje y reinicio</h4>
+            <p data-key="elemento_puntaje"></p>
           </div>
           <div class="element-card" style="--element-color:#4a6cc2">
-            <h4><span class="element-card__icon" aria-hidden="true">🎨</span> Banners y recursos gráficos</h4>
-            <p data-key="elemento_banners"></p>
+            <h4><span class="element-card__icon" aria-hidden="true">🔊</span> Sonido</h4>
+            <p data-key="elemento_sonido"></p>
           </div>
           <div class="element-card" style="--element-color:#a8203f">
-            <h4><span class="element-card__icon" aria-hidden="true">🔽</span> Elementos plegables</h4>
-            <p data-key="elemento_plegables"></p>
+            <h4><span class="element-card__icon" aria-hidden="true">🔍</span> Exploración y zoom</h4>
+            <p data-key="elemento_exploracion"></p>
           </div>
           <div class="element-card" style="--element-color:#2d4fa3">
-            <h4><span class="element-card__icon" aria-hidden="true">💊</span> Pastillas interactivas</h4>
-            <p data-key="elemento_pastillas"></p>
+            <h4><span class="element-card__icon" aria-hidden="true">📍</span> Hotspots</h4>
+            <p data-key="elemento_hotspots"></p>
           </div>
         </div>
-      </section>
-
-      <!-- =================================================================
-           BLOQUE B
-           ================================================================= -->
-      <section class="block" id="bloque-b">
-        <h2>Bloque B — Creación de un HTML simple</h2>
-
-        <div class="content-block" data-key="bloque_b_intro"></div>
 
         <h3 id="gramatica-prompt-b">Gramática del prompt</h3>
         <p data-key="bloque_b_gramatica_intro"></p>
         <p class="prompt-formula" data-key="bloque_b_gramatica_formula"></p>
+        <p data-key="bloque_b_gramatica_desglose"></p>
 
         <hr class="section-divider">
 
-        <h3 id="ejemplo-html-simple">Ejemplo del HTML simple</h3>
+        <h3 id="ejemplos-simples">Ejemplos</h3>
+        <p data-key="bloque_b_simple_intro"></p>
 
-        <h4 id="insumos-bloque-b">Antes de arrancar: los insumos</h4>
+        <!-- Ejemplo simple 1: Tarjetas de memoria -->
+        <div class="device-example">
+          <h4>🧠 Tarjetas de memoria</h4>
+          <p data-key="ejemplo_tarjetas_memoria"></p>
+          <div class="prompt-example">
+            <p class="prompt-example__label">Prompt completo</p>
+            <div class="content-block" data-key="prompt_tarjetas_memoria"></div>
+          </div>
+          <div class="demo-embed">
+            <iframe src="demos/tarjetas-de-memoria.html" title="Tarjetas de memoria" loading="lazy"></iframe>
+          </div>
+          <p class="demo-embed__link"><a href="demos/tarjetas-de-memoria.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+        </div>
+
+        <!-- Ejemplo simple 2: Línea de tiempo -->
+        <div class="device-example">
+          <h4>⏳ Línea de tiempo</h4>
+          <p data-key="ejemplo_linea_tiempo"></p>
+          <div class="prompt-example">
+            <p class="prompt-example__label">Prompt completo</p>
+            <div class="content-block" data-key="prompt_linea_tiempo"></div>
+          </div>
+          <div class="demo-embed">
+            <iframe src="demos/linea-de-tiempo.html" title="Línea de tiempo — IA generativa" loading="lazy"></iframe>
+          </div>
+          <p class="demo-embed__link"><a href="demos/linea-de-tiempo.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+        </div>
+
+        <p data-key="bloque_b_complejo_intro"></p>
+
+        <!-- Ejemplo complejo 1: Laboratorio de química -->
+        <div class="device-example">
+          <h4>🔥🧪 Laboratorio de química</h4>
+          <p data-key="ejemplo_laboratorio_quimica"></p>
+          <div class="prompt-example">
+            <p class="prompt-example__label">Prompt completo</p>
+            <div class="content-block" data-key="prompt_laboratorio_quimica"></div>
+          </div>
+          <div class="demo-embed">
+            <iframe src="demos/laboratorio-quimica.html" title="Laboratorio: fuego y reacciones" loading="lazy"></iframe>
+          </div>
+          <p class="demo-embed__link"><a href="demos/laboratorio-quimica.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+        </div>
+
+        <!-- Ejemplo complejo 2: Diafragma de cámara -->
+        <div class="device-example">
+          <h4>📷 El diafragma de la cámara</h4>
+          <p data-key="ejemplo_diafragma_camara"></p>
+          <div class="prompt-example">
+            <p class="prompt-example__label">Prompt completo</p>
+            <div class="content-block" data-key="prompt_diafragma_camara"></div>
+          </div>
+          <div class="demo-embed">
+            <iframe src="demos/diafragma-camara.html" title="El diafragma de la cámara" loading="lazy"></iframe>
+          </div>
+          <p class="demo-embed__link"><a href="demos/diafragma-camara.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE C — nuevo (antes "Mejorando el estilo visual")
+           ================================================================= -->
+      <section class="block" id="bloque-c">
+        <h2>Bloque C — Usos e incorporación al aula</h2>
+        <p data-key="bloque_c_intro"></p>
+
+        <!-- Ejemplo 1: Pasos del proceso -->
+        <div class="device-example">
+          <h4>🔢 Ordená los pasos</h4>
+          <p data-key="ejemplo_pasos_proceso"></p>
+          <div class="demo-embed">
+            <iframe src="demos/pasos-del-proceso.html" title="Ordená los pasos" loading="lazy"></iframe>
+          </div>
+          <p class="demo-embed__link"><a href="demos/pasos-del-proceso.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
+          <div class="img-caption" hidden>
+            <strong>Modelo:</strong> Claude (Sonnet 5)
+            <span class="caption-rule"></span>
+            Dispositivo de tipo "ordenar pasos": tarjetas arrastrables (con botones de subir/bajar como alternativa) que arman la secuencia correcta de un procedimiento, con verificación al tocar un botón y reinicio con un nuevo orden al azar.
+          </div>
+        </div>
+
+        <!-- Ejemplo 2: Emparejar y clasificar -->
+        <div class="device-example">
+          <h4>🗂️ Clasificá las herramientas</h4>
+          <p data-key="ejemplo_emparejar_clasificar"></p>
+          <div class="demo-embed">
+            <iframe src="demos/emparejar-clasificar.html" title="Clasificá las herramientas" loading="lazy"></iframe>
+          </div>
+          <p class="demo-embed__link"><a href="demos/emparejar-clasificar.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
+          <div class="img-caption" hidden>
+            <strong>Modelo:</strong> Claude (Sonnet 5)
+            <span class="caption-rule"></span>
+            Dispositivo de tipo "emparejar/clasificar": una lista de elementos (herramientas de IA) que hay que asignar, tocando o arrastrando, a la categoría correcta entre dos o más posibles, con marca de correcto/incorrecto al momento.
+          </div>
+        </div>
+
+        <!-- Ejemplo 3: Diagrama hotspots -->
+        <div class="device-example">
+          <h4>📍 Las partes de un prompt</h4>
+          <p data-key="ejemplo_diagrama_hotspots"></p>
+          <div class="demo-embed">
+            <iframe src="demos/diagrama-hotspots.html" title="Las partes de un prompt" loading="lazy"></iframe>
+          </div>
+          <p class="demo-embed__link"><a href="demos/diagrama-hotspots.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
+          <div class="img-caption" hidden>
+            <strong>Modelo:</strong> Claude (Sonnet 5)
+            <span class="caption-rule"></span>
+            Dispositivo de tipo "diagrama con hotspots": un texto (en este caso, un prompt de ejemplo) con partes resaltadas en distintos colores según su función; al tocar una parte, o su categoría en la referencia, se despliega la explicación correspondiente.
+          </div>
+        </div>
+
+        <!-- Ejemplo 4: Explorador de átomos -->
+        <div class="device-example">
+          <h4>⚛️ Explorador de átomos</h4>
+          <p data-key="ejemplo_explorador_atomos"></p>
+          <div class="demo-embed">
+            <iframe src="demos/explorador-atomos.html" title="Explorador de átomos" loading="lazy"></iframe>
+          </div>
+          <p class="demo-embed__link"><a href="demos/explorador-atomos.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
+          <div class="img-caption" hidden>
+            <strong>Modelo:</strong> Claude (Sonnet 5)
+            <span class="caption-rule"></span>
+            Simulación de átomo: se elige un elemento de una tira de la tabla periódica y se muestra el núcleo con sus electrones girando en capas, junto con sus datos (número atómico, masa, configuración electrónica) y un dato curioso de cada uno.
+          </div>
+        </div>
+
+        <div class="content-block" data-key="bloque_c_otras_ideas"></div>
+      </section>
+
+      <!-- =================================================================
+           BLOQUE D — antes era el Bloque B (creación de un HTML simple)
+           ================================================================= -->
+      <section class="block" id="bloque-d">
+        <h2>Bloque D — Formato web y aula virtual</h2>
+
+        <div class="content-block" data-key="bloque_d_terminologia"></div>
+        <p data-key="bloque_d_porque"></p>
+
+        <h3 id="ejemplo-html-simple">Ejemplo del HTML simple</h3>
+        <p data-key="bloque_d_gramatica_intro"></p>
+        <p class="prompt-formula" data-key="bloque_d_gramatica_formula"></p>
+
+        <hr class="section-divider">
+
+        <h4 id="insumos-bloque-d">Antes de arrancar: los insumos</h4>
         <!-- Los "insumos" (ingredientes) de este ejemplo: el PDF con el
              texto y los links, y las tres imágenes juntas en un solo
-             archivo (el que mandó Diego, tal cual, sin separar) — pedido
-             explícito: mostrar los materiales de partida ANTES del
-             prompt/resultado, como ingredientes antes de cocinar. -->
-        <div class="content-block" data-key="bloque_b_insumos_intro"></div>
+             archivo — pedido explícito: mostrar los materiales de
+             partida ANTES del prompt/resultado, como ingredientes antes
+             de cocinar. -->
+        <div class="content-block" data-key="bloque_d_insumos_intro"></div>
 
-        <!-- Los dos insumos van lado a lado (pedido explícito de Diego,
-             antes ocupaban mucho espacio apilados) con el mismo efecto
-             "post-it" (sombra + inclinación + movimiento al pasar el
-             mouse) que @pdfpreview, reusando sus clases .pdf-preview__*
-             aunque acá no se use el marcador @pdfpreview en sí (es HTML
-             hardcodeado, no pasa por contenido.txt). -->
         <div class="insumos-grid">
           <div class="insumo-item">
             <a class="pdf-preview__before" href="pdfs/doc1-ia-generativa.pdf" target="_blank" rel="noopener">
@@ -223,12 +421,9 @@
                 </div>
               </div>
             </a>
-            <p class="pdf-preview__caption" data-key="bloque_b_insumo_pdf_caption"></p>
+            <p class="pdf-preview__caption" data-key="bloque_d_insumo_pdf_caption"></p>
           </div>
           <div class="insumo-item">
-            <!-- Sin link a ningún lado (no hay "PDF real" que abrir acá):
-                 el <img class="content-img"> sí dispara el lightbox normal
-                 de la página al hacer clic, para verla agrandada. -->
             <div class="pdf-preview__before">
               <div class="pdf-preview__doc-mock">
                 <span class="pdf-preview__tag">FOTOS</span>
@@ -237,39 +432,29 @@
                 </div>
               </div>
             </div>
-            <p class="pdf-preview__caption" data-key="bloque_b_insumo_imagenes_caption"></p>
+            <p class="pdf-preview__caption" data-key="bloque_d_insumo_imagenes_caption"></p>
           </div>
         </div>
 
         <div class="callout">
           <p class="callout__label">Recomendación práctica</p>
-          <div class="content-block" data-key="bloque_b_recomendacion"></div>
+          <div class="content-block" data-key="bloque_d_recomendacion"></div>
         </div>
 
-        <p data-key="bloque_b_que_quiero_hacer"></p>
+        <p data-key="bloque_d_que_quiero_hacer"></p>
 
-        <p data-key="bloque_b_metodo"></p>
-        <!-- El prompt de este ejemplo va DESTACADO y SIEMPRE VISIBLE
-             (componente .prompt-example, igual que en el resto del
-             curso para un prompt de ejemplo) — acá no corresponde el
-             botón "Ver prompt y modelo" oculto: es un ejemplo didáctico,
-             va arriba, antes del resultado, no como epígrafe de una
-             imagen/demo ya armada. -->
+        <p data-key="bloque_d_metodo"></p>
         <div class="prompt-example">
           <p class="prompt-example__label">Prompt completo</p>
-          <div class="content-block" data-key="bloque_b_prompt"></div>
+          <div class="content-block" data-key="bloque_d_prompt"></div>
         </div>
 
-        <h4 id="resultado-bloque-b">Resultado</h4>
-        <p data-key="bloque_b_resultado_intro"></p>
-        <!-- Demo real embebida: el HTML que generaría el modelo a partir
-             del prompt de arriba, armado con el texto, las imágenes y los
-             links reales de este ejemplo. Vive en demos/, no pasa por
-             contenido.txt (es un archivo HTML aparte, no texto). -->
+        <h4 id="resultado-bloque-d">Resultado</h4>
+        <p data-key="bloque_d_resultado_intro"></p>
         <div class="demo-embed">
-          <iframe src="demos/bloque-b-resultado.html" title="Resultado: De qué hablamos cuando hablamos de IA generativa" loading="lazy"></iframe>
+          <iframe src="demos/bloque-d-resultado.html" title="Resultado: De qué hablamos cuando hablamos de IA generativa" loading="lazy"></iframe>
         </div>
-        <p class="demo-embed__link"><a href="demos/bloque-b-resultado.html" target="_blank" rel="noopener">Abrir el resultado en pantalla completa ↗</a></p>
+        <p class="demo-embed__link"><a href="demos/bloque-d-resultado.html" target="_blank" rel="noopener">Abrir el resultado en pantalla completa ↗</a></p>
 
         <details class="expandable">
           <summary>
@@ -281,56 +466,20 @@
             <span class="expandable__chevron" aria-hidden="true">▸</span>
           </summary>
           <div class="expandable__body">
-            <p data-key="bloque_b_codigo_intro"></p>
-            <!-- Carga el código real de demos/bloque-b-resultado.html con
-                 fetch() y agrega el botón de copiar — ver initCodeEmbeds()
-                 en script.js. -->
-            <div class="code-embed" data-src="demos/bloque-b-resultado.html">
+            <p data-key="bloque_d_codigo_intro"></p>
+            <div class="code-embed" data-src="demos/bloque-d-resultado.html">
               <button type="button" class="code-embed__copy">📋 Copiar código</button>
               <pre class="code-embed__pre"><code class="code-embed__code">Cargando…</code></pre>
             </div>
           </div>
         </details>
-      </section>
 
-      <!-- =================================================================
-           BLOQUE C
-           ================================================================= -->
-      <section class="block" id="bloque-c">
-        <h2>Bloque C — Mejorando el estilo visual</h2>
-        <p data-key="bloque_c_intro"></p>
+        <hr class="section-divider">
 
-        <!-- PENDIENTE: falta el segundo PDF (más complejo) que Diego va a
-             mandar — por ahora va solo la explicación de qué vamos a
-             hacer, sin el @pdfpreview real ni el prompt/resultado. -->
-        <p data-key="bloque_c_que_quiero_hacer"></p>
-
-        <div class="callout">
-          <p class="callout__label">Un truco: el boceto a mano</p>
-          <p data-key="bloque_c_boceto"></p>
-        </div>
-      </section>
-
-      <!-- =================================================================
-           BLOQUE D
-           ================================================================= -->
-      <section class="block" id="bloque-d">
-        <h2>Bloque D — Customizando el aula virtual</h2>
-        <p data-key="bloque_d_intro"></p>
-      </section>
-
-      <!-- =================================================================
-           BLOQUE E
-           ================================================================= -->
-      <section class="block" id="bloque-e">
-        <h2>Bloque E — Usos: aprendiendo a aprender</h2>
-        <p data-key="bloque_e_intro"></p>
-
-        <h3>Probemos con un test de autoevaluación</h3>
-        <p data-key="bloque_e_autoevaluacion"></p>
-        <!-- PENDIENTE: falta el prompt y el resultado en vivo del test,
-             mismo criterio que en Bloque B (prompt visible + demo
-             embebida), una vez que definamos las 5 preguntas reales. -->
+        <h3 id="customizar-aula">Customizando el diseño del aula virtual</h3>
+        <p data-key="bloque_d_aula_intro"></p>
+        <div class="content-block" data-key="bloque_d_aula_ejemplo"></div>
+        <div class="content-block" data-key="bloque_d_aula_metodo"></div>
       </section>
 
       <!-- =================================================================

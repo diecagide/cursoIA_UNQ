@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laboratorio: fuego y reacciones</title>
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  body{
+    display:flex;align-items:center;justify-content:center;padding:20px;
+    background:
+      radial-gradient(circle at 10% 15%, rgba(56,170,214,.55), transparent 42%),
+      radial-gradient(circle at 90% 10%, rgba(185,100,230,.45), transparent 46%),
+      radial-gradient(circle at 75% 92%, rgba(255,140,70,.4), transparent 50%),
+      radial-gradient(circle at 15% 90%, rgba(90,210,170,.35), transparent 46%),
+      linear-gradient(160deg, #130b22 0%, #1a1030 50%, #220f24 100%);
+  }
+
+  .frame{
+    position:relative;
+    width:min(100%,860px);
+    border-radius:22px;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 14% 115%, rgba(255,150,70,.32), transparent 48%),
+      radial-gradient(circle at 88% -12%, rgba(150,100,235,.38), transparent 52%),
+      radial-gradient(circle at 92% 95%, rgba(60,200,190,.22), transparent 48%),
+      radial-gradient(circle at 8% -10%, rgba(230,90,150,.2), transparent 45%),
+      linear-gradient(155deg, #1c2236 0%, #241a38 45%, #2c1830 100%);
+    box-shadow:0 30px 70px rgba(0,0,0,.55);
+    display:flex; flex-direction:column;
+    color:#fff;
+  }
+
+  .hud{ text-align:center; padding:24px 20px 2px; }
+  .hud h1{ margin:0 0 4px; font-size:clamp(1.1rem,3vw,1.4rem); font-weight:800; }
+  .hud p{ margin:0; font-size:.82rem; color:rgba(255,255,255,.55); }
+
+  .tabs{ display:flex; justify-content:center; gap:8px; padding:12px 20px 0; flex-wrap:wrap; }
+  .tab-btn{
+    appearance:none; cursor:pointer; border:2px solid transparent; border-radius:10px;
+    background:rgba(255,255,255,.07); color:rgba(255,255,255,.75); font-weight:800; font-size:.82rem;
+    padding:8px 16px; transition:transform .15s ease, border-color .15s ease, background .15s ease, color .15s ease;
+  }
+  .tab-btn:hover{ background:rgba(255,255,255,.14); }
+  .tab-btn.active{ border-color:#f0a63d; background:rgba(240,166,61,.16); color:#fff; }
+
+  .panel{ display:none; }
+  .panel.active{ display:block; }
+
+  /* ---- two-column 16:9-ish layout ---- */
+  .layout{ display:flex; gap:22px; padding:26px 22px 34px; align-items:flex-start; }
+  .visual-pane{ flex:0 0 300px; }
+  .side-pane{ flex:1 1 360px; min-width:0; }
+
+  .stage{
+    display:flex; align-items:center; justify-content:center; gap:14px;
+  }
+  .bench-wrap{ width:238px; flex:0 0 auto; }
+  .bench-wrap svg{ width:100%; height:auto; display:block; }
+
+  .therm-col{ flex:0 0 auto; display:flex; flex-direction:column; align-items:center; gap:6px; }
+  .therm-col svg{ width:52px; height:auto; display:block; }
+  .therm-readout{ font-size:1.3rem; font-weight:800; }
+  .therm-state{ font-size:.7rem; font-weight:700; color:rgba(255,255,255,.6); text-align:center; max-width:130px; }
+
+  .atom-col{ flex:0 0 auto; display:flex; flex-direction:column; align-items:center; gap:6px; width:140px; }
+  .atom-col svg{ width:110px; height:110px; display:block; }
+  .atom-caption{ font-size:.7rem; color:rgba(255,255,255,.55); text-align:center; line-height:1.4; }
+
+  /* flame flicker layers */
+  .flame-layer{ transform-origin:50% 100%; }
+  .flame-outer{ animation:flicker-a 1.3s ease-in-out infinite; }
+  .flame-mid{ animation:flicker-b 0.9s ease-in-out infinite; animation-delay:.15s; }
+  .flame-inner{ animation:flicker-c 0.6s ease-in-out infinite; animation-delay:.3s; }
+  @keyframes flicker-a{ 0%{transform:scaleY(1) skewX(0deg);} 30%{transform:scaleY(1.05) skewX(-2deg);} 60%{transform:scaleY(.96) skewX(1.5deg);} 100%{transform:scaleY(1) skewX(0deg);} }
+  @keyframes flicker-b{ 0%{transform:scaleY(1) skewX(0deg);} 35%{transform:scaleY(.94) skewX(2deg);} 70%{transform:scaleY(1.07) skewX(-1.5deg);} 100%{transform:scaleY(1) skewX(0deg);} }
+  @keyframes flicker-c{ 0%{transform:scaleY(1);} 50%{transform:scaleY(1.1);} 100%{transform:scaleY(1);} }
+
+  .steam-wisp{ animation:steam-rise 2.6s ease-in infinite; }
+  .steam-wisp:nth-child(2){ animation-delay:.7s; }
+  .steam-wisp:nth-child(3){ animation-delay:1.5s; }
+  @keyframes steam-rise{
+    0%{ transform:translateY(0) scale(.6); opacity:0; }
+    15%{ opacity:var(--steam-o,0); }
+    80%{ opacity:calc(var(--steam-o,0) * .4); }
+    100%{ transform:translateY(-55px) scale(1.5); opacity:0; }
+  }
+
+  .controls{ position:relative; z-index:3; margin-bottom:12px; }
+  .ctrl-label{ font-size:.7rem; font-weight:800; color:rgba(255,255,255,.7); text-transform:uppercase; letter-spacing:.05em; margin-bottom:7px; }
+
+  input[type=range]{
+    -webkit-appearance:none; appearance:none;
+    width:100%; height:6px; border-radius:999px;
+    background:linear-gradient(90deg,#3a3f46,#e8762f);
+    outline:none; margin:0 0 12px;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; appearance:none;
+    width:22px; height:22px; border-radius:50%;
+    background:#fff; border:4px solid #e8b84b;
+    cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.4);
+  }
+  input[type=range]::-moz-range-thumb{
+    width:22px; height:22px; border-radius:50%;
+    background:#fff; border:4px solid #e8b84b;
+    cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.4);
+  }
+
+  .presets{ display:flex; gap:6px; flex-wrap:wrap; }
+  .preset-btn{
+    appearance:none; cursor:pointer; border:2px solid transparent; border-radius:8px;
+    background:rgba(255,255,255,.08); color:#fff; font-weight:700; font-size:.72rem;
+    padding:6px 10px; transition:transform .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .preset-btn:hover{ background:rgba(255,255,255,.16); transform:translateY(-1px); }
+  .preset-btn.active{ border-color:var(--accent,#e8b84b); background:var(--accent-bg,rgba(232,184,75,.18)); }
+
+  .info-bar{
+    position:relative; z-index:3;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:14px;
+    padding:14px 16px;
+    display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start;
+  }
+  .stat{ min-width:92px; }
+  .stat .k{ font-size:.63rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color:rgba(255,255,255,.5); margin-bottom:3px; }
+  .stat .v{ font-size:1.1rem; font-weight:800; color:#fff; }
+  .explain{ flex:1 1 220px; font-size:.82rem; line-height:1.48; color:rgba(255,255,255,.85); }
+  .explain p{ margin:0 0 7px; }
+  .explain p:last-child{ margin-bottom:0; }
+  .explain b{ color:#f3cf7e; }
+
+  @media (max-width:720px){
+    .layout{ flex-direction:column; padding:12px 18px 16px; gap:14px; }
+    .visual-pane{ flex:0 0 auto; width:100%; display:flex; justify-content:center; }
+    .side-pane{ width:100%; }
+  }
+  @media (max-width:420px){
+    .bench-wrap{ width:190px; }
+    .info-bar{ flex-direction:column; gap:12px; }
+  }
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <header class="hud">
+    <h1>🔥🧪 Laboratorio: fuego y reacciones</h1>
+    <p>Prendé el mechero, agregá cosas al agua y mirá qué pasa</p>
+  </header>
+
+  <nav class="tabs">
+    <button type="button" class="tab-btn active" data-tab="boil">💧 Punto de ebullición</button>
+    <button type="button" class="tab-btn" data-tab="flame">🎨 Color de llama</button>
+  </nav>
+
+  <!-- ===================== TAB 1: BOILING ===================== -->
+  <section class="panel active" id="panel-boil">
+    <div class="layout">
+      <div class="visual-pane">
+        <div class="stage">
+          <div class="bench-wrap">
+            <svg viewBox="0 0 260 320" id="boilSvg">
+              <defs>
+                <clipPath id="flaskClip">
+                  <path d="M110,10 L110,52 C72,64.6 50,87 50,111.5 C50,139.5 79,162.6 118,162.6 L142,162.6 C181,162.6 210,139.5 210,111.5 C210,87 188,64.6 150,52 L150,10 Z"/>
+                </clipPath>
+                <linearGradient id="liquidGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop id="liquidStop0" offset="0%" stop-color="#bfe4ff" stop-opacity="1"/>
+                  <stop id="liquidStop1" offset="100%" stop-color="#6fb6e8" stop-opacity="1"/>
+                </linearGradient>
+              </defs>
+
+              <!-- bench surface -->
+              <rect x="0" y="300" width="260" height="20" fill="#2c2142"/>
+
+              <!-- burner + flame, drawn first with a clear gap below the flask so the flame is always visible -->
+              <g id="burner">
+                <rect x="100" y="254" width="60" height="16" rx="4" fill="#2a2d32"/>
+                <rect x="122" y="220" width="16" height="34" fill="#3a3f46"/>
+                <ellipse cx="130" cy="220" rx="90" ry="9" fill="none" stroke="#50545c" stroke-width="5"/>
+
+                <g id="flame" transform="translate(130,220)">
+                  <g class="flame-layer flame-outer">
+                    <path transform="translate(-20,-62) scale(.62)" d="M32 4 C18 20 10 33 10 44 C10 57.2 19.7 67 32 67 C44.3 67 54 57.2 54 44 C54 36 50 28 44 21 C45.5 29 42 35 37 35 C31 35 29 29 31.5 21 C33 14 33 9 32 4 Z" fill="#2c6bff" fill-opacity=".6"/>
+                  </g>
+                  <g class="flame-layer flame-mid">
+                    <path transform="translate(-15,-50) scale(.46)" d="M32 4 C18 20 10 33 10 44 C10 57.2 19.7 67 32 67 C44.3 67 54 57.2 54 44 C54 36 50 28 44 21 C45.5 29 42 35 37 35 C31 35 29 29 31.5 21 C33 14 33 9 32 4 Z" fill="#5a9dff"/>
+                  </g>
+                  <g class="flame-layer flame-inner">
+                    <path transform="translate(-9,-34) scale(.26)" d="M32 4 C18 20 10 33 10 44 C10 57.2 19.7 67 32 67 C44.3 67 54 57.2 54 44 C54 36 50 28 44 21 C45.5 29 42 35 37 35 C31 35 29 29 31.5 21 C33 14 33 9 32 4 Z" fill="#dff1ff"/>
+                  </g>
+                </g>
+              </g>
+
+              <!-- flask, drawn on top: at low/medium flame it sits fully above the flame with a visible gap -->
+              <g>
+                <g clip-path="url(#flaskClip)">
+                  <rect id="liquidRect" x="48" y="92" width="164" height="72" fill="url(#liquidGrad)"/>
+                  <g id="bubbles"></g>
+                </g>
+                <path d="M110,10 L110,52 C72,64.6 50,87 50,111.5 C50,139.5 79,162.6 118,162.6 L142,162.6 C181,162.6 210,139.5 210,111.5 C210,87 188,64.6 150,52 L150,10 Z"
+                      fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2.5"/>
+                <rect x="108" y="6" width="44" height="10" rx="2" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2.5"/>
+              </g>
+
+              <!-- steam -->
+              <g transform="translate(130,4)" fill="#eef4f8">
+                <ellipse class="steam-wisp" cx="-6" cy="0" rx="7" ry="10"/>
+                <ellipse class="steam-wisp" cx="4" cy="4" rx="6" ry="9"/>
+                <ellipse class="steam-wisp" cx="0" cy="-4" rx="5" ry="8"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="therm-col">
+            <svg viewBox="0 0 50 220">
+              <rect x="17" y="8" width="16" height="170" rx="8" fill="#15171a" stroke="rgba(255,255,255,.25)" stroke-width="1.5"/>
+              <circle cx="25" cy="196" r="19" fill="#15171a" stroke="rgba(255,255,255,.25)" stroke-width="1.5"/>
+              <rect id="mercuryCol" x="21" y="151" width="8" height="45" rx="4" fill="#ff5a4e"/>
+              <circle id="mercuryBulb" cx="25" cy="196" r="14" fill="#ff5a4e"/>
+              <g font-size="9" fill="rgba(255,255,255,.45)" font-family="inherit">
+                <text x="37" y="44">100°</text>
+                <line x1="33" y1="41" x2="29" y2="41" stroke="rgba(255,255,255,.3)"/>
+                <text x="37" y="99">60°</text>
+                <line x1="33" y1="96" x2="29" y2="96" stroke="rgba(255,255,255,.3)"/>
+                <text x="37" y="154">20°</text>
+                <line x1="33" y1="151" x2="29" y2="151" stroke="rgba(255,255,255,.3)"/>
+              </g>
+            </svg>
+            <div class="therm-readout" id="tempReadout">20°C</div>
+            <div class="therm-state" id="tempState">Apagado</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-pane">
+        <div class="controls">
+          <div class="ctrl-label">Intensidad del mechero</div>
+          <input type="range" id="flameSlider" min="0" max="100" value="0" step="1">
+          <div class="ctrl-label" style="margin-top:4px;">¿Qué le agregamos al agua?</div>
+          <div class="presets" id="substancePresets"></div>
+        </div>
+
+        <div class="info-bar">
+          <div class="stat"><div class="k">Temperatura</div><div class="v" id="statTemp">20°C</div></div>
+          <div class="stat"><div class="k">Hierve a</div><div class="v" id="statBP">100°C</div></div>
+          <div class="stat"><div class="k">Estado</div><div class="v" id="statState">Apagado</div></div>
+          <div class="explain" id="boilExplain"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TAB 2: FLAME TEST ===================== -->
+  <section class="panel" id="panel-flame">
+    <div class="layout">
+      <div class="visual-pane">
+        <div class="stage">
+          <div class="bench-wrap">
+            <svg viewBox="0 0 260 320" id="flameTestSvg">
+              <rect x="0" y="300" width="260" height="20" fill="#2c2142"/>
+              <g id="burner2">
+                <rect x="112" y="250" width="36" height="14" rx="3" fill="#2a2d32"/>
+                <rect x="122" y="150" width="16" height="102" fill="#3a3f46"/>
+                <rect x="104" y="196" width="52" height="14" rx="4" fill="#2a2d32"/>
+
+                <g id="flame2" transform="translate(130,150)">
+                  <g class="flame-layer flame-outer">
+                    <path id="f2outer" transform="translate(-26,-82) scale(.82)" d="M32 4 C18 20 10 33 10 44 C10 57.2 19.7 67 32 67 C44.3 67 54 57.2 54 44 C54 36 50 28 44 21 C45.5 29 42 35 37 35 C31 35 29 29 31.5 21 C33 14 33 9 32 4 Z" fill="#5a9dff" fill-opacity=".6"/>
+                  </g>
+                  <g class="flame-layer flame-mid">
+                    <path id="f2mid" transform="translate(-19,-62) scale(.6)" d="M32 4 C18 20 10 33 10 44 C10 57.2 19.7 67 32 67 C44.3 67 54 57.2 54 44 C54 36 50 28 44 21 C45.5 29 42 35 37 35 C31 35 29 29 31.5 21 C33 14 33 9 32 4 Z" fill="#8ec2ff"/>
+                  </g>
+                  <g class="flame-layer flame-inner">
+                    <path transform="translate(-9,-34) scale(.26)" d="M32 4 C18 20 10 33 10 44 C10 57.2 19.7 67 32 67 C44.3 67 54 57.2 54 44 C54 36 50 28 44 21 C45.5 29 42 35 37 35 C31 35 29 29 31.5 21 C33 14 33 9 32 4 Z" fill="#eef7ff"/>
+                  </g>
+                </g>
+
+                <!-- sample wire -->
+                <g id="wireLoop" transform="translate(185,60)" opacity="0">
+                  <line x1="0" y1="0" x2="-30" y2="90" stroke="#9aa0a8" stroke-width="2.5"/>
+                  <circle cx="-34" cy="96" r="7" fill="none" stroke="#9aa0a8" stroke-width="2.5"/>
+                  <circle id="sampleBead" cx="-34" cy="96" r="3.5" fill="#fff"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <div class="atom-col">
+            <svg viewBox="0 0 120 120">
+              <circle id="atomNucleus" cx="60" cy="60" r="7" fill="#dfe6ee"/>
+              <ellipse cx="60" cy="60" rx="42" ry="42" fill="none" stroke="rgba(255,255,255,.18)"/>
+              <circle id="atomElectron" cx="102" cy="60" r="4.5" fill="#fff"/>
+              <circle id="atomFlash" cx="60" cy="60" r="4" fill="none" stroke="#fff" stroke-width="2" opacity="0"/>
+            </svg>
+            <div class="atom-caption">El electrón salta de nivel con el calor y, al volver, emite luz de un color propio de cada elemento.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-pane">
+        <div class="controls">
+          <div class="ctrl-label">Acercá una muestra a la llama</div>
+          <div class="presets" id="samplePresets"></div>
+        </div>
+
+        <div class="info-bar">
+          <div class="stat"><div class="k">Muestra</div><div class="v" id="statSample">Ninguna</div></div>
+          <div class="stat"><div class="k">Color de la llama</div><div class="v" id="statColor">Azul tenue</div></div>
+          <div class="explain" id="flameExplain"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  /* ---------- tabs ---------- */
+  const tabBtns = [...document.querySelectorAll(".tab-btn")];
+  const panels = { boil: document.getElementById("panel-boil"), flame: document.getElementById("panel-flame") };
+  tabBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      tabBtns.forEach(b => b.classList.toggle("active", b === btn));
+      Object.entries(panels).forEach(([k, el]) => el.classList.toggle("active", k === btn.dataset.tab));
+    });
+  });
+
+  /* ======================================================
+     TAB 1 — PUNTO DE EBULLICIÓN
+  ====================================================== */
+  const AMBIENT = 20;
+  const TEMP_SCALE_MAX = 120;   // ° mapped to the very top of the thermometer tube
+  const TUBE_BOTTOM_Y = 178;    // y of the tube/column baseline (feeds into the bulb)
+  const TUBE_TOP_Y = 14;        // y at TEMP_SCALE_MAX
+  const COL_BOTTOM_Y = 196;     // rect bottom always reaches into the bulb, no visual gap
+
+  const SUBSTANCES = [
+    { key:"agua", label:"Agua pura", bp:100, liquid:["#bfe4ff","#6fb6e8"], accent:"#6fb6e8",
+      note:"El agua pura hierve a <b>100 °C</b> a nivel del mar: es el punto de referencia clásico." },
+    { key:"sal", label:"+ Sal", bp:104, liquid:["#d7ecff","#8fc2ea"], accent:"#8fc2ea",
+      note:"La sal se disuelve en iones que estorban a las moléculas de agua para escapar como vapor, así que hace falta <b>más temperatura</b> para hervir. Por la misma razón se tira sal en las rutas, para que el hielo cueste más en formarse." },
+    { key:"azucar", label:"+ Azúcar", bp:101.5, liquid:["#ffe9c9","#f0c27a"], accent:"#f0c27a",
+      note:"El azúcar también agrega partículas que estorban la evaporación y sube el punto de ebullición, aunque un poco menos que la sal." },
+    { key:"alcohol", label:"+ Alcohol", bp:82, liquid:["#dff3ff","#9fd3f0"], accent:"#9fd3f0",
+      note:"El alcohol se evapora mucho más fácil que el agua (por eso se siente frío en la piel): una mezcla con alcohol empieza a hervir <b>antes</b>, a menor temperatura." },
+    { key:"anticongelante", label:"+ Anticongelante", bp:111, liquid:["#d8ffe9","#7fe0ac"], accent:"#7fe0ac",
+      note:"El anticongelante (etilenglicol) tiene un punto de ebullición naturalmente mucho más alto. Por eso se usa en los autos: evita que el líquido del radiador hierva aunque el motor esté muy caliente." },
+  ];
+
+  const flameSlider = document.getElementById("flameSlider");
+  const substancePresets = document.getElementById("substancePresets");
+  const mercuryCol = document.getElementById("mercuryCol");
+  const mercuryBulb = document.getElementById("mercuryBulb");
+  const tempReadout = document.getElementById("tempReadout");
+  const tempState = document.getElementById("tempState");
+  const statTemp = document.getElementById("statTemp");
+  const statBP = document.getElementById("statBP");
+  const statState = document.getElementById("statState");
+  const boilExplain = document.getElementById("boilExplain");
+  const bubblesG = document.getElementById("bubbles");
+  const boilSvg = document.getElementById("boilSvg");
+  const flameG = document.getElementById("flame");
+  const liquidStop0 = document.getElementById("liquidStop0");
+  const liquidStop1 = document.getElementById("liquidStop1");
+
+  let currentSubstance = SUBSTANCES[0];
+  let temp = AMBIENT;
+  let bubbles = [];
+
+  substancePresets.innerHTML = "";
+  SUBSTANCES.forEach((s, i) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "preset-btn";
+    btn.style.setProperty("--accent", s.accent);
+    btn.style.setProperty("--accent-bg", s.accent + "30");
+    btn.textContent = s.label;
+    btn.addEventListener("click", () => {
+      currentSubstance = s;
+      liquidStop0.setAttribute("stop-color", s.liquid[0]);
+      liquidStop1.setAttribute("stop-color", s.liquid[1]);
+      [...substancePresets.children].forEach((b, j) => b.classList.toggle("active", j === i));
+    });
+    substancePresets.appendChild(btn);
+  });
+  substancePresets.children[0].classList.add("active");
+
+  function tempColor(t) {
+    const frac = Math.max(0, Math.min(1, (t - AMBIENT) / 90));
+    const r = Math.round(80 + frac * 175);
+    const g = Math.round(110 - frac * 70);
+    const b = Math.round(230 - frac * 190);
+    return `rgb(${r},${g},${b})`;
+  }
+
+  function spawnBubble() {
+    const x = 68 + Math.random() * 124;
+    const el = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    const r = 2 + Math.random() * 3;
+    el.setAttribute("cx", x);
+    el.setAttribute("cy", 158);
+    el.setAttribute("r", r);
+    el.setAttribute("fill", "rgba(255,255,255,.55)");
+    bubblesG.appendChild(el);
+    bubbles.push({ el, x, y: 158, r, speed: 16 + Math.random() * 20 });
+  }
+
+  let lastTs = null;
+  function loopBoil(ts) {
+    if (lastTs === null) lastTs = ts;
+    const dt = Math.min(.08, (ts - lastTs) / 1000);
+    lastTs = ts;
+
+    const intensity = +flameSlider.value;
+    const bp = currentSubstance.bp;
+    const flameOn = intensity > 0;
+
+    if (flameOn) {
+      if (temp < bp) {
+        const remaining = bp - temp;
+        const rate = (intensity / 100) * 9 * Math.min(1, remaining / 10 + .12);
+        temp = Math.min(bp, temp + rate * dt);
+      } else if (temp > bp) {
+        temp = Math.max(bp, temp - 14 * dt);
+      }
+    } else {
+      if (temp > AMBIENT) temp = Math.max(AMBIENT, temp - 3 * dt);
+    }
+
+    flameG.style.opacity = flameOn ? Math.max(.35, intensity / 100) : 0;
+    flameG.style.transform = `translate(130px,220px) scale(${0.45 + (intensity / 100) * 1.05})`;
+
+    const boiling = flameOn && temp >= bp - 0.15;
+    const nearBoil = temp >= bp - 12;
+    const boilProgress = Math.max(0, Math.min(1, (temp - (bp - 15)) / 15));
+
+    if (boilProgress > 0 && Math.random() < boilProgress * 0.55) spawnBubble();
+    bubbles.forEach(b => { b.y -= b.speed * dt; b.el.setAttribute("cy", b.y); b.el.setAttribute("opacity", Math.max(0, (b.y - 90) / 70)); });
+    bubbles = bubbles.filter(b => {
+      if (b.y < 95) { b.el.remove(); return false; }
+      return true;
+    });
+
+    boilSvg.style.setProperty("--steam-o", boiling ? .75 : (nearBoil ? .25 : 0));
+
+    const col = tempColor(temp);
+    const clampedTemp = Math.max(0, Math.min(TEMP_SCALE_MAX, temp));
+    const colTop = Math.max(TUBE_TOP_Y, Math.min(TUBE_BOTTOM_Y, TUBE_BOTTOM_Y - (clampedTemp / TEMP_SCALE_MAX) * (TUBE_BOTTOM_Y - TUBE_TOP_Y)));
+    mercuryCol.setAttribute("y", colTop);
+    mercuryCol.setAttribute("height", COL_BOTTOM_Y - colTop);
+    mercuryCol.setAttribute("fill", col);
+    mercuryBulb.setAttribute("fill", col);
+
+    tempReadout.textContent = Math.round(temp) + "°C";
+    statTemp.textContent = Math.round(temp) + "°C";
+    statBP.textContent = bp.toFixed(bp % 1 === 0 ? 0 : 1) + "°C";
+
+    let stateLabel;
+    if (!flameOn && temp <= AMBIENT + 0.5) stateLabel = "Apagado";
+    else if (!flameOn) stateLabel = "Enfriándose";
+    else if (boiling) stateLabel = "¡Hirviendo!";
+    else if (nearBoil) stateLabel = "Casi hierve";
+    else stateLabel = "Calentando";
+    tempState.textContent = stateLabel;
+    statState.textContent = stateLabel;
+
+    let expl;
+    if (!flameOn && temp <= AMBIENT + 0.5) {
+      expl = "El mechero está apagado. Subí la intensidad para empezar a calentar.";
+    } else if (!flameOn) {
+      expl = "Apagaste el mechero: la temperatura empieza a bajar de nuevo hacia la temperatura ambiente.";
+    } else if (boiling) {
+      expl = `¡Está hirviendo a ${bp.toFixed(bp % 1 === 0 ? 0 : 1)}°C! Por más que sigas calentando, la temperatura no sube más: toda la energía extra se usa para convertir el líquido en vapor, no para subir la temperatura.`;
+    } else if (nearBoil) {
+      expl = `Ya casi llega a los ${bp.toFixed(bp % 1 === 0 ? 0 : 1)}°C: empiezan a verse las primeras burbujas.`;
+    } else {
+      expl = "El mechero está calentando el líquido: a medida que sube la temperatura, las moléculas se mueven cada vez más rápido.";
+    }
+    boilExplain.innerHTML = `<p>${expl}</p><p>${currentSubstance.note}</p>`;
+
+    requestAnimationFrame(loopBoil);
+  }
+  requestAnimationFrame(loopBoil);
+
+  /* ======================================================
+     TAB 2 — ENSAYO A LA LLAMA
+  ====================================================== */
+  const SAMPLES = [
+    { key:"ninguna", label:"Ninguna", color:"#8ec2ff", colorLabel:"Azul tenue",
+      note:"Esta es la llama normal del mechero: casi no tiene color propio porque se quema de forma muy completa y poco luminosa. Elegí una muestra para ver qué pasa." },
+    { key:"sodio", label:"Sodio (Na)", color:"#ffcc33", colorLabel:"Amarillo-naranja intenso",
+      note:"El sodio tiñe la llama de un amarillo-naranja muy intenso — el mismo color que tenían las viejas luces de alumbrado público (lámparas de vapor de sodio)." },
+    { key:"cobre", label:"Cobre (Cu)", color:"#19d68f", colorLabel:"Verde azulado",
+      note:"El cobre (y sus sales) dan un verde azulado bien característico. Por eso los fuegos artificiales verdes casi siempre llevan cobre." },
+    { key:"potasio", label:"Potasio (K)", color:"#caa0ff", colorLabel:"Lila pálido",
+      note:"El potasio da un lila pálido, bastante más difícil de ver si hay sodio mezclado: el amarillo del sodio lo tapa (por eso a veces se mira a través de un vidrio azul)." },
+    { key:"litio", label:"Litio (Li)", color:"#ff3f6b", colorLabel:"Rojo carmín",
+      note:"El litio produce un rojo carmín intenso, muy usado en pirotecnia — y el mismo elemento que lleva, en otra forma química, la batería de litio de tu celular." },
+    { key:"calcio", label:"Calcio (Ca)", color:"#ff8a3d", colorLabel:"Naranja ladrillo",
+      note:"El calcio tiñe la llama de un naranja-rojizo ladrillo." },
+    { key:"estroncio", label:"Estroncio (Sr)", color:"#ff3b1f", colorLabel:"Rojo brillante",
+      note:"El estroncio da un rojo muy puro y brillante: es la sal que más se usa para lograr el color rojo en los fuegos artificiales." },
+    { key:"bario", label:"Bario (Ba)", color:"#c3e832", colorLabel:"Verde lima",
+      note:"El bario produce un verde amarillento (verde lima), otro color clásico de la pirotecnia." },
+  ];
+
+  const samplePresets = document.getElementById("samplePresets");
+  const f2outer = document.getElementById("f2outer");
+  const f2mid = document.getElementById("f2mid");
+  const wireLoop = document.getElementById("wireLoop");
+  const sampleBead = document.getElementById("sampleBead");
+  const statSample = document.getElementById("statSample");
+  const statColor = document.getElementById("statColor");
+  const flameExplain = document.getElementById("flameExplain");
+  const atomElectron = document.getElementById("atomElectron");
+  const atomFlash = document.getElementById("atomFlash");
+
+  const DEFAULT_FLAME = { outer:"#5a9dff", mid:"#8ec2ff" };
+
+  function selectSample(s, idx) {
+    statSample.textContent = s.label;
+    statColor.textContent = s.key === "ninguna" ? "Azul tenue" : s.colorLabel;
+    flameExplain.innerHTML = `<p>${s.note}</p>`;
+    [...samplePresets.children].forEach((b, j) => b.classList.toggle("active", j === idx));
+
+    if (s.key === "ninguna") {
+      wireLoop.style.opacity = 0;
+      f2outer.setAttribute("fill", DEFAULT_FLAME.outer);
+      f2outer.setAttribute("fill-opacity", ".6");
+      f2mid.setAttribute("fill", DEFAULT_FLAME.mid);
+    } else {
+      wireLoop.style.opacity = 1;
+      sampleBead.setAttribute("fill", s.color);
+      f2outer.setAttribute("fill", s.color);
+      f2outer.setAttribute("fill-opacity", ".85");
+      f2mid.setAttribute("fill", s.color);
+      atomFlash.setAttribute("stroke", s.color);
+      atomFlash.style.animation = "none";
+      void atomFlash.offsetWidth;
+      atomFlash.style.animation = "atomFlash .6s ease-out";
+    }
+  }
+
+  samplePresets.innerHTML = "";
+  SAMPLES.forEach((s, i) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "preset-btn";
+    btn.style.setProperty("--accent", s.color);
+    btn.style.setProperty("--accent-bg", s.color + "30");
+    btn.textContent = s.label;
+    btn.addEventListener("click", () => selectSample(s, i));
+    samplePresets.appendChild(btn);
+  });
+  selectSample(SAMPLES[0], 0);
+
+  const styleTag = document.createElement("style");
+  styleTag.textContent = `@keyframes atomFlash{0%{r:4;opacity:1;stroke-width:3;}100%{r:34;opacity:0;stroke-width:0;}}`;
+  document.head.appendChild(styleTag);
+
+  let atomAngle = 0, lastAtomTs = null;
+  function loopAtom(ts) {
+    if (lastAtomTs === null) lastAtomTs = ts;
+    const dt = (ts - lastAtomTs) / 1000;
+    lastAtomTs = ts;
+    atomAngle += dt * 1.4;
+    atomElectron.setAttribute("cx", 60 + 42 * Math.cos(atomAngle));
+    atomElectron.setAttribute("cy", 60 + 42 * Math.sin(atomAngle));
+    requestAnimationFrame(loopAtom);
+  }
+  requestAnimationFrame(loopAtom);
+</script>
+</body>
+</html>

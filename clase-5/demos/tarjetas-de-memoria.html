@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarjetas de memoria</title>
+<style>
+  :root{
+    --purple-dark:#581c87;
+    --purple:#a21caf;
+    --pink:#ec4899;
+    --gold:#ffd93d;
+    --navy:#0f172a;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#f3eef7;}
+  body{display:flex;align-items:center;justify-content:center;padding:24px;}
+  .frame{
+    width:min(100%,760px);
+    border-radius:22px;
+    padding:clamp(26px,4vw,40px);
+    background:linear-gradient(150deg,var(--purple-dark) 0%,var(--purple) 55%,var(--pink) 100%);
+    box-shadow:0 24px 60px rgba(88,28,135,.3),0 4px 14px rgba(88,28,135,.2);
+    color:#fff;
+  }
+  header{text-align:center;margin-bottom:22px;}
+  h1{font-size:clamp(1.3rem,3.6vw,1.7rem);font-weight:800;margin:0 0 8px;}
+  .subtitle{font-size:.92rem;color:rgba(255,255,255,.85);line-height:1.5;margin:0 auto;max-width:480px;}
+
+  .cards-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-bottom:22px;
+  }
+  @media (max-width:640px){ .cards-grid{ grid-template-columns:repeat(2,1fr);} }
+
+  .card{
+    perspective:1000px;
+    height:150px;
+    cursor:pointer;
+  }
+  .card-inner{
+    position:relative;width:100%;height:100%;
+    transition:transform .5s cubic-bezier(.4,.2,.2,1);
+    transform-style:preserve-3d;
+  }
+  .card.flipped .card-inner{ transform:rotateY(180deg); }
+  .card-face{
+    position:absolute;inset:0;
+    border-radius:14px;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:14px;
+    backface-visibility:hidden;
+    box-shadow:0 6px 16px rgba(0,0,0,.18);
+  }
+  .card-front{
+    background:#fff;color:var(--navy);
+    font-weight:800;font-size:1.05rem;
+  }
+  .card-back{
+    background:linear-gradient(135deg,var(--gold) 0%,#ffcf2e 100%);
+    color:#2a2000;
+    transform:rotateY(180deg);
+    font-size:.82rem;line-height:1.4;font-weight:600;
+  }
+
+  .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  button.btn-main{
+    appearance:none;border:none;cursor:pointer;
+    background:rgba(255,255,255,.14);color:#fff;border:2px solid rgba(255,255,255,.4);
+    font-weight:800;font-size:.9rem;padding:11px 24px;border-radius:999px;
+    transition:transform .15s ease;
+  }
+  button.btn-main:hover{transform:translateY(-2px);}
+</style>
+</head>
+<body>
+<div class="frame">
+  <header>
+    <h1>Tarjetas de memoria</h1>
+    <p class="subtitle">Tocá cada tarjeta para ver su definición. Términos básicos de IA generativa.</p>
+  </header>
+
+  <div class="cards-grid" id="cardsGrid"></div>
+
+  <div class="actions">
+    <button class="btn-main" id="btnFlipAll">Dar vuelta todas</button>
+    <button class="btn-main" id="btnShuffle">Mezclar ↻</button>
+  </div>
+</div>
+
+<script>
+  const TERMS = [
+    { term: "Prompt", def: "La instrucción que le das a un modelo de IA para que genere algo." },
+    { term: "Alucinación", def: "Cuando un modelo genera información que suena creíble pero es falsa o inventada." },
+    { term: "Modelo multimodal", def: "Un modelo que entiende o genera más de un tipo de contenido (texto, imagen, audio, video) a la vez." },
+    { term: "Fine-tuning", def: "Ajustar un modelo ya entrenado con datos propios para que se especialice en una tarea puntual." },
+    { term: "Token", def: "La unidad mínima de texto que procesa un modelo de lenguaje: una palabra, parte de una palabra, o un signo." },
+    { term: "Contexto", def: "La información previa que el modelo tiene disponible al momento de generar una respuesta." },
+  ];
+
+  const grid = document.getElementById("cardsGrid");
+
+  function render(order) {
+    grid.innerHTML = "";
+    order.forEach((idx) => {
+      const item = TERMS[idx];
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <div class="card-inner">
+          <div class="card-face card-front">${item.term}</div>
+          <div class="card-face card-back">${item.def}</div>
+        </div>
+      `;
+      card.addEventListener("click", () => card.classList.toggle("flipped"));
+      grid.appendChild(card);
+    });
+  }
+
+  function shuffledIndexes(n) {
+    const arr = [...Array(n).keys()];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  document.getElementById("btnFlipAll").addEventListener("click", () => {
+    const cards = [...grid.children];
+    const allFlipped = cards.every(c => c.classList.contains("flipped"));
+    cards.forEach(c => c.classList.toggle("flipped", !allFlipped));
+  });
+
+  document.getElementById("btnShuffle").addEventListener("click", () => {
+    render(shuffledIndexes(TERMS.length));
+  });
+
+  render(shuffledIndexes(TERMS.length));
+</script>
+</body>
+</html>

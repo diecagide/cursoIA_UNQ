@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explorador de átomos</title>
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#030708;}
+  body{display:flex;align-items:center;justify-content:center;padding:24px;}
+
+  .frame{
+    position:relative;
+    width:min(100%,940px);
+    height:min(82vh,660px);
+    border-radius:22px;
+    overflow:hidden;
+    background:radial-gradient(ellipse at 50% 20%, #06201d 0%, #04100f 55%, #020807 100%);
+    box-shadow:0 30px 70px rgba(0,0,0,.55);
+    display:flex; flex-direction:column;
+    color:#fff;
+  }
+
+  .bokeh{ position:absolute; inset:0; pointer-events:none; }
+  .bokeh span{
+    position:absolute; border-radius:50%; filter:blur(1px);
+    background:radial-gradient(circle, rgba(45,212,191,.18), transparent 70%);
+  }
+
+  .hud{ position:relative; z-index:3; text-align:center; padding:20px 20px 0; }
+  .hud h1{ margin:0 0 4px; font-size:clamp(1.15rem,3vw,1.45rem); font-weight:800; }
+  .hud p{ margin:0; font-size:.82rem; color:rgba(255,255,255,.6); }
+
+  .stage{
+    position:relative; flex:1 1 auto; z-index:2;
+    display:flex; align-items:center; justify-content:center;
+    min-height:0;
+  }
+  .atom{
+    position:relative; width:360px; height:360px;
+    transition:opacity .28s ease;
+  }
+  .atom.hidden{ opacity:0; }
+
+  .shell{
+    position:absolute; left:50%; top:50%;
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+  }
+
+  .electron{
+    position:absolute; left:0; top:0;
+    width:7px; height:7px; border-radius:50%;
+    background:#fff;
+    box-shadow:0 0 8px 2px rgba(255,255,255,.75);
+  }
+
+  .nucleus{
+    position:absolute; left:50%; top:50%;
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+    transition:width .35s ease, height .35s ease, background .35s ease, box-shadow .35s ease;
+  }
+  @keyframes nucleusPulse{
+    0%,100%{ filter:brightness(1); }
+    50%{ filter:brightness(1.18); }
+  }
+
+  .periodic-strip{
+    position:relative; z-index:3;
+    display:flex; gap:8px; justify-content:center; flex-wrap:wrap;
+    padding:4px 16px 14px;
+  }
+  .el-badge{
+    appearance:none; cursor:pointer; text-align:center;
+    width:50px; padding:6px 0 7px;
+    border-radius:10px; border:2px solid transparent;
+    background:rgba(255,255,255,.08);
+    color:#fff;
+    transition:transform .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .el-badge:hover{ background:rgba(255,255,255,.16); transform:translateY(-2px); }
+  .el-badge.active{ border-color:#fff; background:rgba(255,255,255,.2); }
+  .el-badge .sym{ font-size:1rem; font-weight:800; display:block; }
+  .el-badge .z{ font-size:.6rem; color:rgba(255,255,255,.65); display:block; }
+
+  .info-bar{
+    position:relative; z-index:3;
+    background:rgba(5,15,14,.6);
+    backdrop-filter:blur(10px);
+    border-top:1px solid rgba(255,255,255,.1);
+    padding:16px 22px 20px;
+  }
+  .info-head{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:8px; }
+  .info-head h2{ margin:0; font-size:1.15rem; font-weight:800; }
+  .info-head .cat{ font-size:.72rem; font-weight:700; padding:3px 10px; border-radius:999px; background:rgba(255,255,255,.12); color:rgba(255,255,255,.85); }
+  .info-stats{ display:flex; gap:18px; flex-wrap:wrap; margin-bottom:8px; }
+  .info-stats span{ font-size:.68rem; color:rgba(255,255,255,.55); font-weight:700; text-transform:uppercase; letter-spacing:.03em; }
+  .info-stats b{ display:block; color:#fff; font-size:.88rem; font-weight:800; text-transform:none; letter-spacing:0; margin-top:2px; }
+  .info-bar p.fact{ margin:0; font-size:.85rem; line-height:1.5; color:rgba(255,255,255,.85); max-width:640px; }
+
+  @media (max-width:640px){
+    .atom{ width:280px; height:280px; }
+  }
+</style>
+</head>
+<body>
+<div class="frame" id="frame">
+  <div class="bokeh" id="bokeh"></div>
+
+  <header class="hud">
+    <h1>⚛️ Explorador de átomos</h1>
+    <p>Elegí un elemento y mirá cómo se organizan sus electrones</p>
+  </header>
+
+  <div class="stage">
+    <div class="atom" id="atom">
+      <div class="nucleus" id="nucleus"></div>
+    </div>
+  </div>
+
+  <nav class="periodic-strip" id="strip"></nav>
+
+  <div class="info-bar">
+    <div class="info-head">
+      <h2 id="infoName"></h2>
+      <span class="cat" id="infoCat"></span>
+    </div>
+    <div class="info-stats" id="infoStats"></div>
+    <p class="fact" id="infoFact"></p>
+  </div>
+</div>
+
+<script>
+  const ELEMENTS = [
+    { sym:"H",  name:"Hidrógeno", z:1,  mass:1,   cat:"No metal",         color:["#eaf6ff","#4fa8e8"], shells:[1],
+      fact:"El elemento más simple y abundante del universo: compone más del 90% de todos los átomos que existen. Solo tiene un electrón." },
+    { sym:"He", name:"Helio", z:2,  mass:4,   cat:"Gas noble",        color:["#f3e8ff","#a855f7"], shells:[2],
+      fact:"Tan liviano que escapa lentamente de la atmósfera terrestre hacia el espacio. Fue descubierto primero en el Sol, de donde toma su nombre (Helios)." },
+    { sym:"C",  name:"Carbono", z:6,  mass:12,  cat:"No metal",         color:["#9ca3af","#111827"], shells:[2,4],
+      fact:"La base de toda la vida conocida: puede formar más compuestos que casi cualquier otro elemento, incluyendo las cadenas que arman el ADN." },
+    { sym:"O",  name:"Oxígeno", z:8,  mass:16,  cat:"No metal",         color:["#e0f6ff","#0ea5e9"], shells:[2,6],
+      fact:"El elemento más abundante en la corteza terrestre. Dos átomos forman el aire que respirás; tres forman el ozono que nos protege de la radiación UV." },
+    { sym:"Na", name:"Sodio", z:11, mass:23,  cat:"Metal alcalino",   color:["#ffe8cc","#f97316"], shells:[2,8,1],
+      fact:"Un metal tan reactivo que explota en contacto con el agua. Combinado con cloro, otro elemento peligroso en estado puro, forma la sal de mesa." },
+    { sym:"Cl", name:"Cloro", z:17, mass:35,  cat:"Halógeno",         color:["#eefcd0","#84cc16"], shells:[2,8,7],
+      fact:"Un gas tóxico en estado puro, usado incluso como arma química. Pero combinado con sodio es la sal que tenés en la cocina." },
+    { sym:"Fe", name:"Hierro", z:26, mass:56,  cat:"Metal de transición", color:["#f3e8d8","#92400e"], shells:[2,8,14,2],
+      fact:"El elemento más pesado que una estrella puede formar por fusión nuclear liberando energía. También es el metal más usado por la humanidad." },
+    { sym:"Au", name:"Oro", z:79, mass:197, cat:"Metal de transición", color:["#fff3b0","#b8860b"], shells:[2,8,18,32,18,1],
+      fact:"Tan poco reactivo que se encuentra puro en la naturaleza. Se cree que todo el oro del universo se formó en colisiones de estrellas de neutrones." },
+  ];
+
+  const SHELL_RADII = [42, 66, 90, 114, 138, 162];
+
+  const stripEl = document.getElementById("strip");
+  const atomEl = document.getElementById("atom");
+  const nucleusEl = document.getElementById("nucleus");
+  const infoName = document.getElementById("infoName");
+  const infoCat = document.getElementById("infoCat");
+  const infoStats = document.getElementById("infoStats");
+  const infoFact = document.getElementById("infoFact");
+  const bokehLayer = document.getElementById("bokeh");
+
+  // bokeh decorativo
+  for (let i = 0; i < 10; i++) {
+    const b = document.createElement("span");
+    const size = 60 + Math.random() * 120;
+    b.style.width = size + "px";
+    b.style.height = size + "px";
+    b.style.left = (Math.random() * 100) + "%";
+    b.style.top = (Math.random() * 100) + "%";
+    bokehLayer.appendChild(b);
+  }
+
+  // tiras de elementos
+  ELEMENTS.forEach((el, i) => {
+    const badge = document.createElement("button");
+    badge.type = "button";
+    badge.className = "el-badge";
+    badge.innerHTML = `<span class="sym">${el.sym}</span><span class="z">${el.z}</span>`;
+    badge.addEventListener("click", () => selectElement(i));
+    stripEl.appendChild(badge);
+  });
+
+  let electrons = []; // {el, radius, angle, speed}
+  let current = null;
+
+  function buildAtom(el) {
+    // limpiar
+    atomEl.querySelectorAll(".shell, .electron").forEach(n => n.remove());
+    electrons = [];
+
+    const size = Math.round(26 + Math.sqrt(el.z) * 4.2);
+    nucleusEl.style.width = size + "px";
+    nucleusEl.style.height = size + "px";
+    nucleusEl.style.background = `radial-gradient(circle at 35% 32%, ${el.color[0]}, ${el.color[1]} 75%)`;
+    nucleusEl.style.boxShadow = `0 0 30px 8px ${el.color[1]}55`;
+    nucleusEl.style.animation = "nucleusPulse 3.4s ease-in-out infinite";
+
+    el.shells.forEach((count, shellIdx) => {
+      const radius = SHELL_RADII[shellIdx];
+      const ring = document.createElement("div");
+      ring.className = "shell";
+      ring.style.width = (radius * 2) + "px";
+      ring.style.height = (radius * 2) + "px";
+      atomEl.appendChild(ring);
+
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement("div");
+        dot.className = "electron";
+        atomEl.appendChild(dot);
+        electrons.push({
+          el: dot,
+          radius,
+          angle: (Math.PI * 2 * i) / count,
+          speed: 1.1 / (shellIdx + 1),
+        });
+      }
+    });
+
+    current = el;
+  }
+
+  function updateInfo(el) {
+    infoName.textContent = `${el.name} (${el.sym})`;
+    infoCat.textContent = el.cat;
+    infoStats.innerHTML = `
+      <span>Número atómico<b>${el.z}</b></span>
+      <span>Masa aprox.<b>${el.mass}</b></span>
+      <span>Configuración<b>${el.shells.join("-")}</b></span>
+    `;
+    infoFact.textContent = el.fact;
+  }
+
+  function setActiveBadge(idx) {
+    [...stripEl.children].forEach((b, i) => b.classList.toggle("active", i === idx));
+  }
+
+  function selectElement(idx) {
+    const el = ELEMENTS[idx];
+    atomEl.classList.add("hidden");
+    setTimeout(() => {
+      buildAtom(el);
+      atomEl.classList.remove("hidden");
+    }, 260);
+    updateInfo(el);
+    setActiveBadge(idx);
+  }
+
+  // loop de animación
+  let lastT = null;
+  function tick(t) {
+    if (lastT === null) lastT = t;
+    const dt = (t - lastT) / 1000;
+    lastT = t;
+    const centerX = atomEl.clientWidth / 2;
+    const centerY = atomEl.clientHeight / 2;
+    electrons.forEach(e => {
+      e.angle += e.speed * dt;
+      const x = centerX + e.radius * Math.cos(e.angle) - 3.5;
+      const y = centerY + e.radius * Math.sin(e.angle) - 3.5;
+      e.el.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  buildAtom(ELEMENTS[0]);
+  updateInfo(ELEMENTS[0]);
+  setActiveBadge(0);
+</script>
+</body>
+</html>

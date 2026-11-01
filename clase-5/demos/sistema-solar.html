@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuestro Sistema Solar</title>
+<style>
+  :root{
+    --gold:#ffd93d;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#05070f;}
+  body{display:flex;align-items:center;justify-content:center;padding:24px;}
+
+  .frame{
+    position:relative;
+    width:min(100%,940px);
+    height:min(78vh,620px);
+    border-radius:22px;
+    overflow:hidden;
+    background:radial-gradient(ellipse at 50% 28%, #141a3d 0%, #060814 62%, #020309 100%);
+    box-shadow:0 30px 70px rgba(0,0,0,.55);
+  }
+
+  .nebula{
+    position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(circle at 15% 85%, rgba(109,40,217,.28), transparent 45%),
+      radial-gradient(circle at 85% 15%, rgba(37,99,235,.22), transparent 45%),
+      radial-gradient(circle at 50% 100%, rgba(236,72,153,.14), transparent 55%);
+    mix-blend-mode:screen;
+  }
+
+  .stars{ position:absolute; inset:0; }
+  .star{
+    position:absolute; border-radius:50%; background:#fff;
+    animation:twinkle ease-in-out infinite;
+  }
+  @keyframes twinkle{
+    0%,100%{ opacity:.25; }
+    50%{ opacity:1; }
+  }
+
+  .shooting-star{
+    position:absolute; width:2px; height:2px; border-radius:50%;
+    background:#fff;
+    box-shadow:0 0 6px 1px #fff;
+    animation:shoot 1.1s linear forwards;
+    pointer-events:none;
+  }
+  .shooting-star::before{
+    content:"";
+    position:absolute; top:0; left:0;
+    width:90px; height:1px;
+    background:linear-gradient(90deg, rgba(255,255,255,.9), transparent);
+    transform-origin:left center;
+    transform:translateY(-50%) rotate(180deg);
+  }
+  @keyframes shoot{
+    0%{ transform:translate(0,0); opacity:1; }
+    85%{ opacity:1; }
+    100%{ transform:translate(-260px,170px); opacity:0; }
+  }
+
+  .hud{
+    position:absolute; top:0; left:0; right:0; z-index:5;
+    text-align:center; padding-top:22px;
+    pointer-events:none;
+    transition:opacity .4s ease, transform .4s ease;
+  }
+  .frame.zoomed .hud{ opacity:0; transform:translateY(-10px); }
+  .hud h1{ color:#fff; font-size:clamp(1.2rem,3.2vw,1.55rem); font-weight:800; margin:0 0 6px; letter-spacing:.01em;}
+  .hud p{ color:rgba(255,255,255,.68); font-size:.85rem; margin:0; }
+
+  .universe{
+    position:absolute; inset:0;
+    transform-origin:0 0;
+    transition:transform .9s cubic-bezier(.22,.9,.28,1);
+  }
+
+  .sun{
+    position:absolute; left:50%; top:50%; width:46px; height:46px; margin:-23px 0 0 -23px;
+    border-radius:50%; cursor:pointer; z-index:3;
+    background:radial-gradient(circle at 35% 32%, #fff7cc 0%, #ffd93d 42%, #ff9d1f 75%, #c2410c 100%);
+    box-shadow:0 0 44px 16px rgba(255,180,50,.5);
+    animation:pulse 4.5s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ transform:scale(1); }
+    50%{ transform:scale(1.06); }
+  }
+
+  .orbit-ring{
+    position:absolute; left:50%; top:50%;
+    border:1px dashed rgba(255,255,255,.15);
+    border-radius:50%;
+    transition:opacity .5s ease;
+  }
+  .frame.zoomed .orbit-ring{ opacity:0; }
+
+  .planet{
+    position:absolute; left:0; top:0;
+    border-radius:50%; cursor:pointer; z-index:2;
+    transition:box-shadow .25s ease;
+  }
+  .planet.focused{ z-index:4; }
+  .planet-label{
+    position:absolute; left:50%; top:100%;
+    transform:translateX(-50%);
+    margin-top:5px;
+    font-size:.64rem; font-weight:700; color:rgba(255,255,255,.75);
+    white-space:nowrap; pointer-events:none;
+    transition:opacity .3s ease;
+  }
+  .frame.zoomed .planet-label{ opacity:0; }
+
+  .ring-decor{
+    position:absolute; left:50%; top:50%;
+    border:2px solid rgba(227,193,111,.55);
+    border-radius:50%;
+    transform:translate(-50%,-50%) rotateX(72deg);
+    pointer-events:none;
+  }
+
+  .info-panel{
+    position:absolute; left:20px; right:20px; bottom:20px; z-index:6;
+    background:rgba(10,14,32,.72);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:18px;
+    padding:18px 22px;
+    color:#fff;
+    opacity:0; transform:translateY(16px);
+    pointer-events:none;
+    transition:opacity .35s ease, transform .35s ease;
+    max-width:460px;
+  }
+  .info-panel.visible{ opacity:1; transform:translateY(0); pointer-events:auto; }
+  .info-panel h2{ margin:0 0 6px; font-size:1.2rem; font-weight:800; }
+  .info-stats{ display:flex; gap:14px; margin-bottom:10px; flex-wrap:wrap; }
+  .info-stats span{ font-size:.72rem; color:rgba(255,255,255,.65); font-weight:700; text-transform:uppercase; letter-spacing:.03em; }
+  .info-stats b{ display:block; color:#fff; font-size:.92rem; font-weight:800; text-transform:none; letter-spacing:0; margin-top:2px; }
+  .info-panel p{ margin:0; font-size:.86rem; line-height:1.5; color:rgba(255,255,255,.88); }
+  .btn-back{
+    appearance:none; border:none; cursor:pointer;
+    background:rgba(255,255,255,.12); color:#fff; font-weight:700; font-size:.78rem;
+    padding:7px 14px; border-radius:999px; margin-bottom:12px;
+    border:1px solid rgba(255,255,255,.25);
+  }
+  .btn-back:hover{ background:rgba(255,255,255,.2); }
+</style>
+</head>
+<body>
+<div class="frame" id="frame">
+  <div class="nebula"></div>
+  <div class="stars" id="stars"></div>
+
+  <header class="hud">
+    <h1>🌌 Nuestro Sistema Solar</h1>
+    <p>Tocá cualquier planeta para explorarlo</p>
+  </header>
+
+  <div class="universe" id="universe">
+    <div class="sun" id="sun" title="El Sol"></div>
+  </div>
+
+  <div class="info-panel" id="infoPanel">
+    <button class="btn-back" id="btnBack">← Volver a la vista general</button>
+    <h2 id="infoName"></h2>
+    <div class="info-stats" id="infoStats"></div>
+    <p id="infoFact"></p>
+  </div>
+</div>
+
+<script>
+  const frame = document.getElementById("frame");
+  const universe = document.getElementById("universe");
+  const starsLayer = document.getElementById("stars");
+  const infoPanel = document.getElementById("infoPanel");
+  const infoName = document.getElementById("infoName");
+  const infoStats = document.getElementById("infoStats");
+  const infoFact = document.getElementById("infoFact");
+
+  const PLANETS = [
+    { key:"mercurio", name:"Mercurio", color:"#b7afa6", size:8,  orbit:55,  speed:0.55, moons:"0", dist:"58 millones de km",
+      fact:"Es el planeta más pequeño y el más cercano al Sol. Un día en Mercurio dura más que su año: tarda 59 días en rotar sobre su eje, pero solo 88 en completar una vuelta al Sol." },
+    { key:"venus", name:"Venus", color:"#e8c27e", size:11, orbit:78,  speed:0.38, moons:"0", dist:"108 millones de km",
+      fact:"Es el planeta más caliente del sistema solar, incluso más que Mercurio, por su densísima atmósfera de dióxido de carbono. Además, gira al revés que casi todos los demás planetas." },
+    { key:"tierra", name:"Tierra", color:"#3b82f6", size:12, orbit:102, speed:0.28, moons:"1", dist:"150 millones de km",
+      fact:"El único planeta conocido con vida. Alrededor del 71% de su superficie está cubierta de agua, y su atmósfera es la razón por la que la vida tal como la conocemos es posible." },
+    { key:"marte", name:"Marte", color:"#c1440e", size:10, orbit:128, speed:0.20, moons:"2", dist:"228 millones de km",
+      fact:"Tiene el volcán más grande de todo el sistema solar, el Monte Olimpo: casi tres veces más alto que el Everest. Su color rojizo se debe al óxido de hierro en su superficie." },
+    { key:"jupiter", name:"Júpiter", color:"#d8a46b", size:26, orbit:165, speed:0.11, moons:"95 conocidas", dist:"778 millones de km",
+      fact:"El planeta más grande del sistema solar: podrían caber más de 1.300 planetas Tierra en su interior. Su Gran Mancha Roja es una tormenta más grande que la Tierra, activa desde hace siglos." },
+    { key:"saturno", name:"Saturno", color:"#e3c16f", size:22, orbit:200, speed:0.08, moons:"146 conocidas", dist:"1.430 millones de km", rings:true,
+      fact:"Famoso por sus anillos, hechos de hielo y roca. Es tan poco denso que, si existiera un océano lo bastante grande, Saturno flotaría en él." },
+    { key:"urano", name:"Urano", color:"#9fe3d6", size:16, orbit:228, speed:0.055, moons:"27", dist:"2.870 millones de km",
+      fact:"Gira de costado: su eje de rotación está inclinado casi 98 grados, probablemente por un impacto gigante en su pasado. Es un gigante de hielo, no de gas." },
+    { key:"neptuno", name:"Neptuno", color:"#4c6ef5", size:16, orbit:250, speed:0.04, moons:"14", dist:"4.500 millones de km",
+      fact:"Tiene los vientos más rápidos del sistema solar, de hasta 2.100 km/h. Tarda 165 años terrestres en completar una sola vuelta alrededor del Sol." },
+  ];
+
+  const SUN_FACT = {
+    name: "El Sol",
+    moons: "—",
+    dist: "centro del sistema",
+    fact: "Concentra el 99,8% de toda la masa del sistema solar. Es una estrella de tipo G, y su luz tarda unos 8 minutos en llegar hasta la Tierra."
+  };
+
+  // --- Estrellas de fondo ---
+  const N_STARS = 130;
+  for (let i = 0; i < N_STARS; i++) {
+    const s = document.createElement("div");
+    s.className = "star";
+    const size = (Math.random() * 1.8 + 0.6).toFixed(2);
+    s.style.width = size + "px";
+    s.style.height = size + "px";
+    s.style.left = (Math.random() * 100) + "%";
+    s.style.top = (Math.random() * 100) + "%";
+    s.style.animationDuration = (Math.random() * 3 + 1.8) + "s";
+    s.style.animationDelay = (Math.random() * 4) + "s";
+    starsLayer.appendChild(s);
+  }
+
+  // --- Estrella fugaz ocasional ---
+  function spawnShootingStar() {
+    const s = document.createElement("div");
+    s.className = "shooting-star";
+    s.style.left = (20 + Math.random() * 50) + "%";
+    s.style.top = (10 + Math.random() * 25) + "%";
+    starsLayer.appendChild(s);
+    s.addEventListener("animationend", () => s.remove());
+    setTimeout(spawnShootingStar, 5000 + Math.random() * 6000);
+  }
+  setTimeout(spawnShootingStar, 2500);
+
+  // --- Órbitas (anillos estáticos) ---
+  PLANETS.forEach(p => {
+    const ring = document.createElement("div");
+    ring.className = "orbit-ring";
+    const d = p.orbit * 2;
+    ring.style.width = d + "px";
+    ring.style.height = d + "px";
+    ring.style.marginLeft = -p.orbit + "px";
+    ring.style.marginTop = -p.orbit + "px";
+    universe.appendChild(ring);
+  });
+
+  // --- Planetas ---
+  PLANETS.forEach(p => {
+    const el = document.createElement("div");
+    el.className = "planet";
+    el.dataset.key = p.key;
+    el.style.width = p.size + "px";
+    el.style.height = p.size + "px";
+    el.style.background = `radial-gradient(circle at 35% 32%, ${p.color}, ${p.color} 40%, rgba(0,0,0,.35))`;
+    el.style.boxShadow = `0 0 10px 1px ${p.color}66`;
+
+    if (p.rings) {
+      const ringDecor = document.createElement("div");
+      ringDecor.className = "ring-decor";
+      ringDecor.style.width = (p.size * 2.1) + "px";
+      ringDecor.style.height = (p.size * 2.1) + "px";
+      el.appendChild(ringDecor);
+    }
+
+    const label = document.createElement("span");
+    label.className = "planet-label";
+    label.textContent = p.name;
+    el.appendChild(label);
+
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      focusPlanet(p);
+    });
+
+    universe.appendChild(el);
+    p.el = el;
+    p.angle = Math.random() * Math.PI * 2;
+  });
+
+  const sunEl = document.getElementById("sun");
+  sunEl.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (frame.classList.contains("zoomed")) {
+      resetView();
+    } else {
+      running = false;
+      zoomTo(cx(), cy(), 6);
+      showInfo(SUN_FACT, {x: cx(), y: cy()});
+    }
+  });
+
+  document.getElementById("btnBack").addEventListener("click", resetView);
+
+  // --- Animación ---
+  let running = true;
+  let lastT = null;
+
+  function cx() { return universe.clientWidth / 2; }
+  function cy() { return universe.clientHeight / 2; }
+
+  function tick(t) {
+    if (lastT === null) lastT = t;
+    const dt = (t - lastT) / 1000;
+    lastT = t;
+
+    if (running) {
+      const centerX = cx(), centerY = cy();
+      PLANETS.forEach(p => {
+        p.angle += p.speed * dt;
+        const x = centerX + p.orbit * Math.cos(p.angle) - p.size / 2;
+        const y = centerY + p.orbit * Math.sin(p.angle) - p.size / 2;
+        p.el.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  // --- Zoom a un planeta ---
+  function focusPlanet(p) {
+    running = false;
+    const centerX = cx(), centerY = cy();
+    const px = centerX + p.orbit * Math.cos(p.angle);
+    const py = centerY + p.orbit * Math.sin(p.angle);
+    const DESIRED_PX = 230;
+    const S = Math.min(38, Math.max(4, DESIRED_PX / p.size));
+    zoomTo(px, py, S);
+    document.querySelectorAll(".planet").forEach(el => el.classList.remove("focused"));
+    p.el.classList.add("focused");
+    showInfo(p, {x: px, y: py});
+  }
+
+  function zoomTo(px, py, S) {
+    const frameW = frame.clientWidth, frameH = frame.clientHeight;
+    const tx = frameW / 2 - S * px;
+    const ty = frameH / 2 - S * py;
+    universe.style.transform = `translate(${tx}px, ${ty}px) scale(${S})`;
+    frame.classList.add("zoomed");
+  }
+
+  function showInfo(p, pos) {
+    infoName.textContent = p.name;
+    infoStats.innerHTML = `
+      <span>Distancia al Sol<b>${p.dist}</b></span>
+      <span>Lunas<b>${p.moons}</b></span>
+    `;
+    infoFact.textContent = p.fact;
+    infoPanel.classList.add("visible");
+  }
+
+  function resetView() {
+    running = true;
+    universe.style.transform = "";
+    frame.classList.remove("zoomed");
+    document.querySelectorAll(".planet").forEach(el => el.classList.remove("focused"));
+    infoPanel.classList.remove("visible");
+  }
+</script>
+</body>
+</html>

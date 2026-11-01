@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Las partes de un prompt</title>
+<style>
+  :root{
+    --navy:#0f172a;
+    --muted:#64748b;
+    --card:#ffffff;
+    --rol:#2563eb;
+    --rol-bg:#dbeafe;
+    --tarea:#16a34a;
+    --tarea-bg:#dcfce7;
+    --tema:#d97706;
+    --tema-bg:#fef3c7;
+    --formato:#7c3aed;
+    --formato-bg:#ede9fe;
+    --restriccion:#dc2626;
+    --restriccion-bg:#fee2e2;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#eef2f6;}
+  body{display:flex;align-items:center;justify-content:center;padding:24px;}
+  .frame{
+    width:min(100%,760px);
+    background:var(--card);
+    border-radius:22px;
+    padding:clamp(26px,4vw,40px);
+    box-shadow:0 24px 60px rgba(15,23,42,.14),0 4px 14px rgba(15,23,42,.08);
+    color:var(--navy);
+  }
+  header{text-align:center;margin-bottom:22px;}
+  h1{font-size:clamp(1.25rem,3.4vw,1.6rem);font-weight:800;margin:0 0 8px;}
+  .subtitle{color:var(--muted);font-size:.9rem;margin:0;}
+
+  .prompt-box{
+    background:#f8fafc;border-radius:16px;padding:22px 24px;
+    font-size:clamp(1rem,2.6vw,1.2rem);line-height:2;
+    margin:22px 0 18px;
+  }
+
+  .hotspot{
+    cursor:pointer;border-radius:6px;padding:2px 4px;
+    transition:filter .15s ease, box-shadow .15s ease;
+  }
+  .hotspot.active{ box-shadow:0 0 0 2px currentColor inset; font-weight:800; }
+  .hotspot[data-cat="rol"]{ background:var(--rol-bg); color:var(--rol); }
+  .hotspot[data-cat="tarea"]{ background:var(--tarea-bg); color:var(--tarea); }
+  .hotspot[data-cat="tema"]{ background:var(--tema-bg); color:var(--tema); }
+  .hotspot[data-cat="formato"]{ background:var(--formato-bg); color:var(--formato); }
+  .hotspot[data-cat="restriccion"]{ background:var(--restriccion-bg); color:var(--restriccion); }
+
+  .legend{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:20px;
+  }
+  .legend-item{
+    appearance:none;cursor:pointer;
+    display:flex;align-items:center;gap:6px;font-size:.8rem;font-weight:700;
+    padding:6px 12px;border-radius:999px;
+    border:2px solid transparent;
+  }
+  .legend-dot{width:10px;height:10px;border-radius:50%;}
+  .legend-item[data-cat="rol"]{ color:var(--rol); background:var(--rol-bg); }
+  .legend-item[data-cat="rol"] .legend-dot{ background:var(--rol); }
+  .legend-item[data-cat="tarea"]{ color:var(--tarea); background:var(--tarea-bg); }
+  .legend-item[data-cat="tarea"] .legend-dot{ background:var(--tarea); }
+  .legend-item[data-cat="tema"]{ color:var(--tema); background:var(--tema-bg); }
+  .legend-item[data-cat="tema"] .legend-dot{ background:var(--tema); }
+  .legend-item[data-cat="formato"]{ color:var(--formato); background:var(--formato-bg); }
+  .legend-item[data-cat="formato"] .legend-dot{ background:var(--formato); }
+  .legend-item[data-cat="restriccion"]{ color:var(--restriccion); background:var(--restriccion-bg); }
+  .legend-item[data-cat="restriccion"] .legend-dot{ background:var(--restriccion); }
+  .legend-item.active{ border-color:currentColor; }
+
+  .detail{
+    background:#f1f5fb;border-radius:14px;padding:18px 20px;min-height:84px;
+  }
+  .detail .d-cat{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;}
+  .detail p{margin:0;color:#334155;font-size:.92rem;line-height:1.5;}
+</style>
+</head>
+<body>
+<div class="frame">
+  <header>
+    <h1>Las partes de un prompt</h1>
+    <p class="subtitle">Tocá cada parte resaltada del prompt (o la categoría de abajo) para entender qué función cumple.</p>
+  </header>
+
+  <div class="prompt-box" id="promptBox"></div>
+
+  <div class="legend" id="legend"></div>
+
+  <div class="detail" id="detail">
+    <p>Elegí una parte del prompt para ver su explicación acá.</p>
+  </div>
+</div>
+
+<script>
+  const PARTS = [
+    { cat: "rol", label: "Rol", text: "Actuás como un profesor universitario de biología", explain: "Le indica al modelo qué papel debe adoptar — eso ajusta su tono y su nivel de conocimiento experto." },
+    { cat: "tarea", label: "Tarea", text: "necesito que generes un cuestionario de 5 preguntas", explain: "La acción concreta que el modelo tiene que realizar." },
+    { cat: "tema", label: "Tema / contexto", text: "sobre el proceso de fotosíntesis", explain: "De qué tema específico tiene que tratar el contenido generado." },
+    { cat: "formato", label: "Formato", text: "en formato de tabla", explain: "Cómo tiene que presentarse el resultado." },
+    { cat: "restriccion", label: "Restricción", text: "sin usar vocabulario técnico complejo", explain: "Qué cosas el modelo debe evitar al generar la respuesta." },
+  ];
+
+  const promptBox = document.getElementById("promptBox");
+  const legend = document.getElementById("legend");
+  const detail = document.getElementById("detail");
+
+  PARTS.forEach((p, i) => {
+    const span = document.createElement("span");
+    span.className = "hotspot";
+    span.dataset.cat = p.cat;
+    span.dataset.idx = i;
+    span.textContent = p.text;
+    promptBox.appendChild(span);
+    if (i < PARTS.length - 1) promptBox.appendChild(document.createTextNode(" "));
+
+    const legendItem = document.createElement("button");
+    legendItem.type = "button";
+    legendItem.className = "legend-item";
+    legendItem.dataset.cat = p.cat;
+    legendItem.dataset.idx = i;
+    legendItem.innerHTML = `<span class="legend-dot"></span>${p.label}`;
+    legend.appendChild(legendItem);
+  });
+
+  function select(idx) {
+    const p = PARTS[idx];
+    document.querySelectorAll(".hotspot, .legend-item").forEach(el => {
+      el.classList.toggle("active", Number(el.dataset.idx) === idx);
+    });
+    detail.innerHTML = `<div class="d-cat" style="color:var(--${p.cat})">${p.label}</div><p>${p.explain}</p>`;
+  }
+
+  document.querySelectorAll(".hotspot, .legend-item").forEach(el => {
+    el.addEventListener("click", () => select(Number(el.dataset.idx)));
+  });
+</script>
+</body>
+</html>

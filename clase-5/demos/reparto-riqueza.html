@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Si el mundo fuera 100 personas</title>
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#020403;}
+  body{display:flex;align-items:center;justify-content:center;padding:clamp(10px,4vw,24px);}
+
+  .frame{
+    position:relative;
+    width:min(100%,940px);
+    border-radius:22px;
+    overflow:hidden;
+    background:radial-gradient(ellipse at 50% 0%, #241b05 0%, #0e0c05 38%, #07080a 70%, #040505 100%);
+    box-shadow:0 30px 70px rgba(0,0,0,.55);
+    color:#fff;
+    padding:22px clamp(14px,4vw,40px) 20px;
+  }
+
+  header{ text-align:center; margin-bottom:6px; }
+  h1{ margin:0 0 6px; font-size:clamp(1.2rem,3.2vw,1.5rem); font-weight:800; }
+  header p{ margin:0; font-size:.86rem; color:rgba(255,255,255,.68); max-width:560px; margin:0 auto; line-height:1.45; }
+
+  .axis-caption{ text-align:center; font-size:.78rem; color:rgba(255,255,255,.55); max-width:600px; margin:14px auto 0; line-height:1.45; }
+
+  .stage{ display:flex; gap:26px; align-items:flex-end; margin:16px 0 6px; }
+  .chart-area{ flex:1 1 auto; min-width:0; }
+
+  .axis{ display:flex; }
+  .axis-labels{
+    display:flex; flex-direction:column; justify-content:space-between;
+    height:190px; font-size:.64rem; color:rgba(255,255,255,.4); padding-right:8px; text-align:right;
+  }
+
+  .groups{ display:flex; gap:28px; height:190px; align-items:flex-end; border-bottom:1px solid rgba(255,255,255,.2); }
+  .group{ flex:1 1 0; display:flex; flex-direction:column; align-items:center; height:100%; }
+
+  .bars{ flex:1 1 auto; display:flex; gap:7px; align-items:flex-end; justify-content:center; width:100%; }
+  .bar-slot{ width:32px; height:100%; }
+  .bar-track{ position:relative; width:100%; height:100%; background:rgba(255,255,255,.05); border-radius:4px 4px 0 0; --pct:0; }
+  .bar{
+    position:absolute; left:0; right:0; bottom:0;
+    height:calc(var(--pct) * 1.9px);
+    border-radius:4px 4px 0 0;
+    transition:height .6s cubic-bezier(.2,.9,.25,1), box-shadow .4s ease;
+  }
+  .bar-guess{ background:#475569; }
+  .bar-real{ height:0; }
+  .bar-real.g-bottom50{ background:#64748b; }
+  .bar-real.g-middle40{ background:#14b8a6; }
+  .bar-real.g-top9{ background:#f59e0b; }
+  .bar-real.g-top1{
+    background:linear-gradient(180deg,#fff3b0,#f59e0b 35%,#dc2626 100%);
+    box-shadow:0 0 18px 3px rgba(239,68,68,.55);
+  }
+  .bar-value{
+    position:absolute; left:50%; bottom:calc(var(--pct) * 1.9px + 6px); transform:translateX(-50%);
+    font-size:.68rem; font-weight:800; white-space:nowrap;
+  }
+  .guess-value{ color:rgba(255,255,255,.75); }
+  .real-value{ color:#fca5a5; }
+
+  .group-label{ text-align:center; font-size:.72rem; color:rgba(255,255,255,.6); margin-top:10px; line-height:1.3; }
+  .group-label b{ color:#fff; display:block; font-size:.82rem; }
+
+  .slider-row{
+    display:flex; align-items:center; gap:12px; margin-bottom:10px;
+    font-size:.8rem;
+  }
+  .slider-row .sr-label{ width:210px; flex:0 0 auto; color:rgba(255,255,255,.85); }
+  .slider-row .sr-label b{ color:#fff; }
+  .slider-row input[type=range]{
+    flex:1 1 auto; min-width:0; accent-color:#f59e0b; cursor:pointer;
+  }
+  .slider-row .sr-val{ width:46px; flex:0 0 auto; text-align:right; font-weight:800; color:#ffd93d; }
+
+  .sliders{ max-width:620px; margin:20px auto 4px; }
+
+  .legend-mini{ display:flex; flex-wrap:wrap; gap:12px 18px; justify-content:center; font-size:.72rem; color:rgba(255,255,255,.6); margin:14px 0 2px; }
+  .legend-mini span{ display:inline-flex; align-items:center; gap:6px; }
+  .legend-mini i{ width:10px; height:10px; border-radius:3px; display:inline-block; }
+
+  .callout{
+    text-align:center; font-size:.9rem; line-height:1.55;
+    min-height:2.6em;
+    color:rgba(255,255,255,.92); max-width:640px; margin:16px auto 14px;
+    transition:opacity .2s ease;
+  }
+  .callout b{ color:#fca5a5; }
+
+  .actions{ display:flex; justify-content:center; gap:12px; margin-bottom:10px; }
+  button.btn{
+    appearance:none; border:none; cursor:pointer;
+    font-weight:800; font-size:.9rem; padding:12px 28px; border-radius:999px;
+    transition:transform .15s ease;
+  }
+  button.btn:hover{ transform:translateY(-2px); }
+  #btnCompare{ background:linear-gradient(135deg,#ffd93d,#f59e0b); color:#2a2000; box-shadow:0 8px 20px rgba(245,158,11,.35); }
+  #btnReset{ background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.3); display:none; }
+
+  .source{ text-align:center; font-size:.68rem; color:rgba(255,255,255,.38); margin:4px 0 0; }
+
+  @media (max-width:680px){
+    .slider-row .sr-label{ width:140px; font-size:.74rem; }
+
+    .axis{ display:none; }
+    .stage{ display:block; margin:16px 0 6px; }
+    .chart-area{ width:100%; }
+    .groups{ display:block; height:auto; border-bottom:none; }
+    .group{ display:block; width:100%; height:auto; }
+    .group + .group{ margin-top:20px; }
+    .bars{ display:block; width:100%; }
+    .bar-slot{ display:block; width:100%; height:24px; }
+    .bar-slot + .bar-slot{ margin-top:10px; }
+    .bar-track{ width:calc(100% - 50px); height:100%; border-radius:4px; }
+    .bar{
+      left:0; right:auto; top:0; bottom:auto;
+      height:100%; width:calc(var(--pct) * 1%);
+      border-radius:4px;
+      transition:width .6s cubic-bezier(.2,.9,.25,1), box-shadow .4s ease;
+    }
+    .bar-value{
+      left:calc(var(--pct) * 1%); bottom:auto; top:50%;
+      transform:translate(8px,-50%);
+    }
+    .group-label{ display:block; width:100%; text-align:left; margin-top:10px; }
+  }
+</style>
+</head>
+<body>
+<div class="frame">
+  <header>
+    <h1>💰 Si el mundo fuera 100 personas...</h1>
+    <p>Antes de ver la respuesta real, arrastrá para armar <b>tu propia estimación</b> de cómo creés que se reparte la riqueza del planeta entre estos 4 grupos.</p>
+  </header>
+
+  <p class="axis-caption">La altura (o el largo, en el celular) de cada barra muestra qué porcentaje tiene ese grupo del total de la riqueza mundial — de 0% a 100%.</p>
+
+  <div class="stage">
+    <div class="axis">
+      <div class="axis-labels"><span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span></div>
+    </div>
+    <div class="chart-area">
+      <div class="groups" id="groups"></div>
+    </div>
+  </div>
+
+  <div class="legend-mini">
+    <span><i style="background:#475569"></i>Tu estimación</span>
+    <span><i style="background:linear-gradient(135deg,#fff3b0,#dc2626)"></i>Realidad (revelada al comparar)</span>
+  </div>
+
+  <div class="sliders" id="sliders"></div>
+
+  <p class="callout" id="callout">Movés los 4 sliders de abajo con tu intuición y después tocás "Comparar con la realidad".</p>
+
+  <div class="actions">
+    <button class="btn" id="btnCompare">Comparar con la realidad</button>
+    <button class="btn" id="btnReset">Intentar de nuevo</button>
+  </div>
+
+  <p class="source">Fuente: World Inequality Report 2026 (wir2026.wid.world) — cifras de 2025.</p>
+</div>
+
+<script>
+  const GROUPS = [
+    { key:"bottom50", label:"Mitad más pobre", sub:"50 personas", real:2,  color:"#64748b" },
+    { key:"middle40", label:"Clase media global", sub:"40 personas", real:23, color:"#14b8a6" },
+    { key:"top9",     label:"Siguiente 9% más rico", sub:"9 personas", real:38, color:"#f59e0b" },
+    { key:"top1",     label:"1 sola persona", sub:"el 1% más rico", real:37, color:"#ef4444" },
+  ];
+
+  const groupsEl = document.getElementById("groups");
+  const slidersEl = document.getElementById("sliders");
+  const callout = document.getElementById("callout");
+  const btnCompare = document.getElementById("btnCompare");
+  const btnReset = document.getElementById("btnReset");
+
+  let compared = false;
+
+  function setPct(trackEl, v){ trackEl.style.setProperty("--pct", v); }
+
+  GROUPS.forEach(g => {
+    const group = document.createElement("div");
+    group.className = "group";
+    group.innerHTML = `
+      <div class="bars">
+        <div class="bar-slot">
+          <div class="bar-track" id="trackGuess-${g.key}">
+            <div class="bar bar-guess"></div>
+            <span class="bar-value guess-value" id="guessVal-${g.key}">25%</span>
+          </div>
+        </div>
+        <div class="bar-slot">
+          <div class="bar-track" id="trackReal-${g.key}">
+            <div class="bar bar-real" id="real-${g.key}"></div>
+            <span class="bar-value real-value" id="realVal-${g.key}" style="display:none;">${g.real}%</span>
+          </div>
+        </div>
+      </div>
+      <div class="group-label"><b>${g.label}</b>${g.sub}</div>
+    `;
+    groupsEl.appendChild(group);
+    setPct(document.getElementById(`trackGuess-${g.key}`), 25);
+
+    const row = document.createElement("div");
+    row.className = "slider-row";
+    row.innerHTML = `
+      <div class="sr-label"><b>${g.label}</b> (${g.sub})</div>
+      <input type="range" min="0" max="100" value="25" id="slider-${g.key}">
+      <div class="sr-val" id="sliderVal-${g.key}">25%</div>
+    `;
+    slidersEl.appendChild(row);
+
+    const slider = row.querySelector("input");
+    slider.addEventListener("input", () => {
+      const v = Number(slider.value);
+      document.getElementById(`sliderVal-${g.key}`).textContent = v + "%";
+      setPct(document.getElementById(`trackGuess-${g.key}`), v);
+      document.getElementById(`guessVal-${g.key}`).textContent = v + "%";
+    });
+  });
+
+  btnCompare.addEventListener("click", () => {
+    if (compared) return;
+    compared = true;
+
+    let worstGap = null;
+
+    GROUPS.forEach(g => {
+      const slider = document.getElementById(`slider-${g.key}`);
+      const guessVal = Number(slider.value);
+      const realTrack = document.getElementById(`trackReal-${g.key}`);
+      const realBar = document.getElementById(`real-${g.key}`);
+      const realValEl = document.getElementById(`realVal-${g.key}`);
+
+      realBar.classList.add("g-" + g.key);
+      setPct(realTrack, g.real);
+      realValEl.style.display = "block";
+
+      slider.disabled = true;
+
+      const gap = g.real - guessVal;
+      if (worstGap === null || Math.abs(gap) > Math.abs(worstGap.gap)) {
+        worstGap = { group: g, gap, guessVal };
+      }
+    });
+
+    const g = worstGap.group;
+    const gap = worstGap.gap;
+    const direction = gap > 0 ? "subestimaste" : "sobreestimaste";
+    const diff = Math.abs(gap);
+
+    callout.innerHTML = `En <b>"${g.label}"</b> fue donde más te alejaste: vos dijiste <b>${worstGap.guessVal}%</b> y la realidad es <b>${g.real}%</b> — ${direction} por <b>${diff}</b> puntos. La persona número 100, ella sola, tiene más riqueza que <b>las 50 personas más pobres juntas</b>.`;
+
+    btnCompare.style.display = "none";
+    btnReset.style.display = "inline-block";
+  });
+
+  btnReset.addEventListener("click", () => {
+    compared = false;
+    GROUPS.forEach(g => {
+      const slider = document.getElementById(`slider-${g.key}`);
+      slider.disabled = false;
+      slider.value = 25;
+      document.getElementById(`sliderVal-${g.key}`).textContent = "25%";
+      setPct(document.getElementById(`trackGuess-${g.key}`), 25);
+      document.getElementById(`guessVal-${g.key}`).textContent = "25%";
+
+      const realBar = document.getElementById(`real-${g.key}`);
+      realBar.classList.remove("g-" + g.key);
+      setPct(document.getElementById(`trackReal-${g.key}`), 0);
+      document.getElementById(`realVal-${g.key}`).style.display = "none";
+    });
+    callout.textContent = 'Movés los 4 sliders de abajo con tu intuición y después tocás "Comparar con la realidad".';
+    btnCompare.style.display = "inline-block";
+    btnReset.style.display = "none";
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>Traductor Matemático</title>
+<style>
+  :root{
+    --ink:#4a1c12;
+    --sub:#9a4a2e;
+    --good:#3ba84f;
+    --bad:#e8415a;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    min-height:100vh;
+    font-family:"Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    color:var(--ink);
+    overflow-x:hidden;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(255,214,102,.75), transparent 46%),
+      radial-gradient(circle at 88% 12%, rgba(255,99,99,.65), transparent 48%),
+      radial-gradient(circle at 82% 88%, rgba(255,99,163,.6), transparent 50%),
+      radial-gradient(circle at 12% 88%, rgba(255,159,67,.55), transparent 48%),
+      linear-gradient(160deg, #ff9a56 0%, #ff6f91 50%, #ffc857 100%);
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:22px 14px 40px;
+    position:relative;
+  }
+
+  /* ---------- glifos flotantes de fondo ---------- */
+  #bgGlyphs{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+  }
+  .glyph{
+    position:absolute;
+    bottom:-12%;
+    color:#fff6e4;
+    text-shadow:0 1px 3px rgba(130,40,20,.25);
+    font-weight:700;
+    font-family:Georgia, "Times New Roman", serif;
+    animation-name:floatUp;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+    user-select:none;
+  }
+  @keyframes floatUp{
+    0%{ transform:translateY(0) rotate(0deg); opacity:0; }
+    8%{ opacity:1; }
+    92%{ opacity:1; }
+    100%{ transform:translateY(-128vh) rotate(340deg); opacity:0; }
+  }
+
+  .frame{
+    position:relative;
+    z-index:1;
+    width:min(100%, 760px);
+    border-radius:26px;
+    padding:28px 30px 32px;
+    background:
+      radial-gradient(circle at 8% 6%, rgba(255,183,77,.45), transparent 42%),
+      radial-gradient(circle at 96% 8%, rgba(255,99,163,.35), transparent 46%),
+      radial-gradient(circle at 88% 96%, rgba(255,107,107,.3), transparent 48%),
+      radial-gradient(circle at 6% 94%, rgba(255,214,102,.4), transparent 46%),
+      linear-gradient(165deg, #fff7ea 0%, #ffe9d2 45%, #ffdce6 100%);
+    box-shadow:0 30px 70px -20px rgba(140,45,20,.45), 0 0 0 1px rgba(255,255,255,.6) inset;
+    min-height:520px;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .screen{ display:none; flex-direction:column; flex:1; }
+  .screen.active{ display:flex; }
+
+  /* ---------- pantalla de inicio ---------- */
+  #screenStart{ align-items:center; justify-content:center; text-align:center; gap:16px; padding:20px 6px; }
+  .start-badge{
+    font-size:52px;
+    width:96px; height:96px;
+    display:flex; align-items:center; justify-content:center;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, rgba(255,255,255,.55), rgba(255,255,255,.08));
+    border:1px solid rgba(255,255,255,.6);
+    box-shadow:0 0 40px -4px rgba(255,120,60,.55);
+    animation:badgeFloat 3.2s ease-in-out infinite;
+  }
+  @keyframes badgeFloat{
+    0%,100%{ transform:translateY(0) rotate(-2deg); }
+    50%{ transform:translateY(-8px) rotate(2deg); }
+  }
+  #screenStart h1{
+    font-size:28px;
+    margin:4px 0 0;
+    background:linear-gradient(90deg,#ff6b6b,#ff9f43,#ff6fa8);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .subtitle{
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--sub);
+    max-width:460px;
+    margin:0;
+    font-weight:500;
+  }
+  .start-meta{ display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:4px; }
+  .meta-chip{
+    font-size:11.5px;
+    font-weight:700;
+    padding:6px 13px;
+    border-radius:999px;
+    background:rgba(255,255,255,.55);
+    border:1px solid rgba(255,159,67,.4);
+    color:#c0501a;
+  }
+  .btn-start{
+    margin-top:10px;
+    appearance:none;
+    border:none;
+    border-radius:14px;
+    padding:15px 32px;
+    font-size:15.5px;
+    font-weight:800;
+    cursor:pointer;
+    color:#fff;
+    text-shadow:0 1px 3px rgba(130,30,10,.3);
+    background:linear-gradient(135deg,#ff9f43,#ff6b6b 55%,#ff6fa8);
+    box-shadow:0 12px 26px -8px rgba(255,90,90,.6);
+    transition:transform .12s, filter .15s, box-shadow .15s;
+  }
+  .btn-start:hover{ filter:brightness(1.07); transform:translateY(-2px); box-shadow:0 16px 30px -8px rgba(255,90,90,.7); }
+  .btn-start:active{ transform:scale(.96); }
+
+  /* ---------- pantalla de juego ---------- */
+  #screenGame{ gap:18px; }
+
+  .progress-path{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:4px 0 2px;
+  }
+  .node{
+    width:30px; height:30px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:800;
+    background:rgba(255,255,255,.55);
+    border:2px solid rgba(255,159,67,.4);
+    color:var(--sub);
+    flex:0 0 auto;
+    transition:all .25s ease;
+    position:relative;
+  }
+  .node-line{
+    width:26px; height:2px;
+    background:rgba(255,140,80,.3);
+    flex:0 0 auto;
+  }
+  .node.current{
+    border-color:#ff7a3d;
+    box-shadow:0 0 0 4px rgba(255,159,67,.22), 0 0 18px rgba(255,122,61,.5);
+    color:#c0401a;
+    background:#fff;
+    animation:nodePulse 1.4s ease-in-out infinite;
+  }
+  @keyframes nodePulse{
+    0%,100%{ box-shadow:0 0 0 4px rgba(255,159,67,.22), 0 0 14px rgba(255,122,61,.4); }
+    50%{ box-shadow:0 0 0 7px rgba(255,159,67,.12), 0 0 22px rgba(255,122,61,.6); }
+  }
+  .node.correct{ background:linear-gradient(135deg,#6fd98a,#2e9e4c); border-color:#3ba84f; color:#06281c; }
+  .node.incorrect{ background:linear-gradient(135deg,#ff8b9c,#e8415a); border-color:#e8415a; color:#3a0810; }
+
+  .streak-badge{
+    align-self:center;
+    font-size:12.5px;
+    font-weight:800;
+    padding:5px 13px;
+    border-radius:999px;
+    background:linear-gradient(135deg, rgba(255,214,102,.5), rgba(255,159,67,.4));
+    border:1px solid rgba(255,159,67,.55);
+    color:#a84a0a;
+    display:flex;
+    align-items:center;
+    gap:5px;
+  }
+  .streak-badge.pulse{ animation:streakPulse .4s ease; }
+  @keyframes streakPulse{
+    0%{ transform:scale(1); }
+    40%{ transform:scale(1.18); }
+    100%{ transform:scale(1); }
+  }
+
+  .question-card{
+    background:rgba(255,255,255,.55);
+    border:1px solid rgba(255,255,255,.75);
+    border-radius:20px;
+    padding:28px 26px;
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+    box-shadow:0 18px 40px -22px rgba(140,45,20,.35);
+  }
+  .question-card.enter{ animation:cardEnter .42s cubic-bezier(.2,.8,.3,1) forwards; }
+  @keyframes cardEnter{
+    0%{ opacity:0; transform:translateY(14px) scale(.985); }
+    100%{ opacity:1; transform:translateY(0) scale(1); }
+  }
+  .question-card.shake{ animation:cardShake .42s ease; }
+  @keyframes cardShake{
+    10%,90%{ transform:translateX(-1px); }
+    20%,80%{ transform:translateX(4px); }
+    30%,50%,70%{ transform:translateX(-8px); }
+    40%,60%{ transform:translateX(8px); }
+  }
+
+  .q-index{
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    color:var(--sub);
+    opacity:.85;
+    font-weight:700;
+    text-align:center;
+  }
+  .q-stem-wrap{
+    position:relative;
+    padding:6px 10px 14px;
+    text-align:center;
+  }
+  .q-stem-wrap::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    width:64px;
+    height:4px;
+    border-radius:999px;
+    background:linear-gradient(90deg,#ff6b6b,#ff9f43,#ff6fa8);
+  }
+  .q-stem{
+    font-size:clamp(19px, 2.6vw, 25px);
+    line-height:1.45;
+    color:#5a1f10;
+    font-weight:800;
+    max-width:560px;
+    margin:0 auto;
+  }
+
+  .options{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:14px;
+    align-items:stretch;
+  }
+  .option-btn{
+    appearance:none;
+    text-align:center;
+    border-radius:16px;
+    padding:18px 12px 16px;
+    font-size:16.5px;
+    font-family:Georgia, "Times New Roman", serif;
+    color:#fff;
+    text-shadow:0 1px 3px rgba(80,20,10,.25);
+    border:none;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    min-height:104px;
+    transition:transform .14s, box-shadow .18s, filter .15s;
+  }
+  .option-btn.opt-a{ background:linear-gradient(145deg,#ff9a66,#ff5e62); box-shadow:0 12px 24px -10px rgba(255,80,60,.6); }
+  .option-btn.opt-b{ background:linear-gradient(145deg,#ffd166,#ff9f43); box-shadow:0 12px 24px -10px rgba(255,159,67,.6); }
+  .option-btn.opt-c{ background:linear-gradient(145deg,#ff8fc6,#c84fd1); box-shadow:0 12px 24px -10px rgba(220,80,200,.55); }
+  .option-btn::before{
+    content:attr(data-letter);
+    flex:0 0 auto;
+    width:26px; height:26px;
+    border-radius:50%;
+    background:rgba(255,255,255,.3);
+    border:1.5px solid rgba(255,255,255,.65);
+    display:flex; align-items:center; justify-content:center;
+    font-family:"Segoe UI", system-ui, sans-serif;
+    font-size:12px;
+    font-weight:800;
+    color:#fff;
+  }
+  .option-btn:not(.locked):hover{
+    transform:translateY(-4px) scale(1.015);
+    filter:brightness(1.05);
+  }
+  .option-btn.locked{ cursor:default; }
+  .option-btn.locked:not(.correct):not(.incorrect):not(.reveal-correct){ opacity:.55; filter:saturate(.5); }
+  .option-btn.correct{
+    background:linear-gradient(145deg,#79e08f,#2e9e4c) !important;
+    box-shadow:0 0 0 3px rgba(59,168,79,.35), 0 16px 30px -10px rgba(46,158,76,.65) !important;
+    transform:translateY(-3px) scale(1.02);
+  }
+  .option-btn.correct::before{ content:"✓"; background:#fff; color:#2e9e4c; border-color:#fff; }
+  .option-btn.incorrect{
+    background:linear-gradient(145deg,#ff8b9c,#d32e48) !important;
+    box-shadow:0 0 0 3px rgba(232,65,90,.3) !important;
+  }
+  .option-btn.incorrect::before{ content:"✕"; background:#fff; color:#d32e48; border-color:#fff; }
+  .option-btn.reveal-correct{
+    background:linear-gradient(145deg,#79e08f,#2e9e4c) !important;
+    box-shadow:0 0 0 3px rgba(59,168,79,.3) !important;
+    opacity:1 !important;
+    filter:none !important;
+  }
+  .option-btn.reveal-correct::before{ content:"✓"; background:#fff; color:#2e9e4c; border-color:#fff; }
+
+  .expr{ display:inline-flex; align-items:center; justify-content:center; flex-wrap:wrap; }
+  .frac{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    vertical-align:middle;
+    margin:0 3px;
+    font-size:.86em;
+    line-height:1.1;
+  }
+  .frac-num{ padding:0 3px 1px; border-bottom:1.5px solid currentColor; }
+  .frac-den{ padding:1px 3px 0; }
+
+  @media (max-width:640px){
+    .options{ grid-template-columns:1fr; }
+    .option-btn{ flex-direction:row; justify-content:flex-start; text-align:left; min-height:0; padding:14px 16px; }
+  }
+
+  /* ---------- pantalla final ---------- */
+  #screenEnd{ align-items:center; justify-content:center; text-align:center; gap:14px; position:relative; padding:10px 6px; }
+  #confettiCanvas{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+  }
+  .score-ring-wrap{ position:relative; width:160px; height:160px; }
+  .score-ring{ width:160px; height:160px; transform:rotate(-90deg); }
+  .ring-bg{ fill:none; stroke:rgba(200,90,50,.18); stroke-width:11; }
+  .ring-fg{ fill:none; stroke:url(#ringGrad); stroke-width:11; stroke-linecap:round; }
+  .score-ring-label{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    font-size:30px; font-weight:800;
+    color:var(--ink);
+  }
+  .end-message{
+    font-size:15px;
+    line-height:1.5;
+    color:var(--sub);
+    max-width:400px;
+  }
+
+  @media (max-width:480px){
+    .frame{ padding:20px 16px 24px; min-height:460px; }
+    .option-btn{ font-size:15.5px; }
+    .node{ width:26px; height:26px; font-size:11px; }
+    .node-line{ width:16px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="bgGlyphs"></div>
+
+<div class="frame">
+
+  <div id="screenStart" class="screen active">
+    <div class="start-badge">🧮</div>
+    <h1>Traductor Matemático</h1>
+    <p class="subtitle">Cada enunciado esconde una expresión simbólica. Leé con atención, elegí la traducción correcta y descubrí qué tan buen traductor matemático sos.</p>
+    <div class="start-meta">
+      <span class="meta-chip">5 preguntas</span>
+      <span class="meta-chip">Opción múltiple</span>
+      <span class="meta-chip">Podés usar las teclas 1·2·3</span>
+    </div>
+    <button id="startBtn" class="btn-start">Comenzar ▶</button>
+  </div>
+
+  <div id="screenGame" class="screen">
+    <div class="progress-path" id="progressPath"></div>
+    <div class="streak-badge" id="streakBadge" style="visibility:hidden;">🔥 Racha × <span id="streakCount">0</span></div>
+    <div class="question-card" id="questionCard">
+      <div class="q-index" id="qIndex">Pregunta 1 de 5</div>
+      <div class="q-stem-wrap">
+        <div class="q-stem" id="qStem"></div>
+      </div>
+      <div class="options" id="optionsWrap"></div>
+    </div>
+  </div>
+
+  <div id="screenEnd" class="screen">
+    <canvas id="confettiCanvas"></canvas>
+    <div class="score-ring-wrap">
+      <svg class="score-ring" viewBox="0 0 160 160">
+        <defs>
+          <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ff6b6b"/>
+            <stop offset="55%" stop-color="#ff9f43"/>
+            <stop offset="100%" stop-color="#ff6fa8"/>
+          </linearGradient>
+        </defs>
+        <circle class="ring-bg" cx="80" cy="80" r="70"/>
+        <circle class="ring-fg" id="ringFg" cx="80" cy="80" r="70"/>
+      </svg>
+      <div class="score-ring-label"><span id="scoreNum">0</span>/5</div>
+    </div>
+    <div class="end-message" id="endMessage"></div>
+    <button id="restartBtn" class="btn-start">↺ Reintentar</button>
+  </div>
+
+</div>
+
+<script>
+/* ====================== CONTENIDO ======================
+   Cada opción se define como una lista de "tokens": un string se
+   muestra como texto, y {frac:[numerador,denominador]} se dibuja
+   como una fracción apilada (como en un libro de texto). */
+const QUESTIONS_SRC = [
+  {
+    stem: "El triple de la diferencia entre un número x y cinco.",
+    options: [
+      ["3(x − 5)"],
+      ["3x − 5"],
+      ["3(5 − x)"],
+    ],
+    correctIndex: 0,
+  },
+  {
+    stem: "La mitad del cuadrado de un número a, aumentada en cuatro.",
+    options: [
+      [{frac:["a²","2"]}, " + 4"],
+      ["(", {frac:["a","2"]}, ")² + 4"],
+      [{frac:["a²","2 + 4"]}],
+    ],
+    correctIndex: 0,
+  },
+  {
+    stem: "El doble de un número y, disminuido en el triple de otro número z.",
+    options: [
+      ["2y − 3z"],
+      ["2y + 3z"],
+      ["2(y − 3z)"],
+    ],
+    correctIndex: 0,
+  },
+  {
+    stem: "La raíz cuadrada de la suma entre nueve y un número p, todo dividido tres.",
+    options: [
+      [{frac:["√(9 + p)","3"]}],
+      ["√9 + ", {frac:["p","3"]}],
+      ["√(", {frac:["9 + p","3"]}, ")"],
+    ],
+    correctIndex: 0,
+  },
+  {
+    stem: "El cuadrado de la resta entre el doble de m y siete.",
+    options: [
+      ["(2m − 7)²"],
+      ["2m² − 7"],
+      ["2m − 7²"],
+    ],
+    correctIndex: 0,
+  },
+];
+
+/* ====================== UTILIDADES ====================== */
+function shuffle(arr){
+  const a=[...arr];
+  for (let i=a.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+function renderExpr(tokens, container){
+  container.innerHTML = "";
+  tokens.forEach(t=>{
+    if (typeof t === "string"){
+      container.appendChild(document.createTextNode(t));
+    } else if (t && t.frac){
+      const wrap = document.createElement("span");
+      wrap.className = "frac";
+      const num = document.createElement("span"); num.className="frac-num"; num.textContent=t.frac[0];
+      const den = document.createElement("span"); den.className="frac-den"; den.textContent=t.frac[1];
+      wrap.appendChild(num); wrap.appendChild(den);
+      container.appendChild(wrap);
+    }
+  });
+}
+
+/* ====================== FONDO: GLIFOS FLOTANTES ====================== */
+const GLYPHS = ["+","−","×","÷","=","√","π","Σ","∞","%","x²","∫"];
+function spawnGlyphs(n){
+  const wrap = document.getElementById("bgGlyphs");
+  for (let i=0;i<n;i++){
+    const el = document.createElement("div");
+    el.className = "glyph";
+    el.textContent = GLYPHS[Math.floor(Math.random()*GLYPHS.length)];
+    const left = Math.random()*100;
+    const size = 14 + Math.random()*32;
+    const dur = 13 + Math.random()*17;
+    const delay = -Math.random()*dur;
+    el.style.left = left+"%";
+    el.style.fontSize = size+"px";
+    el.style.animationDuration = dur+"s";
+    el.style.animationDelay = delay+"s";
+    el.style.opacity = (0.05+Math.random()*0.10).toFixed(2);
+    wrap.appendChild(el);
+  }
+}
+spawnGlyphs(26);
+
+/* ====================== AUDIO ====================== */
+let actx = null;
+function ensureCtx(){
+  if (!actx) actx = new (window.AudioContext||window.webkitAudioContext)();
+  if (actx.state === "suspended") actx.resume();
+  return actx;
+}
+function tone(freq, startTime, duration, type, peak){
+  const ctx = ensureCtx();
+  const osc = ctx.createOscillator();
+  osc.type = type || "triangle";
+  osc.frequency.value = freq;
+  const gain = ctx.createGain();
+  gain.gain.setValueAtTime(0.0001, startTime);
+  gain.gain.linearRampToValueAtTime(peak!=null?peak:0.22, startTime+0.015);
+  gain.gain.exponentialRampToValueAtTime(0.0001, startTime+duration);
+  osc.connect(gain); gain.connect(ctx.destination);
+  osc.start(startTime); osc.stop(startTime+duration+0.05);
+}
+function playCorrectSound(){
+  const t0 = ensureCtx().currentTime;
+  tone(523.25, t0, 0.14, "triangle", 0.22);
+  tone(659.25, t0+0.09, 0.22, "triangle", 0.22);
+}
+function playWrongSound(){
+  const t0 = ensureCtx().currentTime;
+  tone(196, t0, 0.18, "sawtooth", 0.14);
+  tone(146.8, t0+0.1, 0.26, "sawtooth", 0.14);
+}
+function playFanfare(){
+  const t0 = ensureCtx().currentTime;
+  tone(523.25, t0, 0.16, "triangle", 0.2);
+  tone(659.25, t0+0.14, 0.16, "triangle", 0.2);
+  tone(783.99, t0+0.28, 0.32, "triangle", 0.22);
+}
+function playEndNeutral(){
+  const t0 = ensureCtx().currentTime;
+  tone(392, t0, 0.18, "triangle", 0.16);
+  tone(329.6, t0+0.14, 0.26, "triangle", 0.16);
+}
+
+/* ====================== ESTADO DEL JUEGO ====================== */
+let gameQuestions = [];
+let currentIndex = 0;
+let score = 0;
+let streak = 0;
+let answered = false;
+let progressNodes = [];
+let confettiHandle = null;
+
+function showScreen(name){
+  ["start","game","end"].forEach(n=>{
+    document.getElementById("screen"+n[0].toUpperCase()+n.slice(1)).classList.toggle("active", n===name);
+  });
+}
+
+function buildProgressPath(){
+  const wrap = document.getElementById("progressPath");
+  wrap.innerHTML = "";
+  progressNodes = [];
+  gameQuestions.forEach((_, i)=>{
+    if (i>0){
+      const line = document.createElement("div");
+      line.className = "node-line";
+      wrap.appendChild(line);
+    }
+    const node = document.createElement("div");
+    node.className = "node";
+    node.textContent = (i+1);
+    wrap.appendChild(node);
+    progressNodes.push(node);
+  });
+}
+function markNode(idx, state){
+  progressNodes[idx].className = "node " + state;
+  progressNodes[idx].textContent = state==="correct" ? "✓" : "✕";
+}
+function updateProgressCurrent(){
+  progressNodes.forEach((n,i)=>{
+    if (i===currentIndex) n.classList.add("current");
+    else n.classList.remove("current");
+  });
+}
+
+function updateStreakBadge(){
+  const badge = document.getElementById("streakBadge");
+  const countEl = document.getElementById("streakCount");
+  if (streak >= 2){
+    badge.style.visibility = "visible";
+    countEl.textContent = streak;
+    badge.classList.remove("pulse");
+    void badge.offsetWidth;
+    badge.classList.add("pulse");
+  } else {
+    badge.style.visibility = "hidden";
+  }
+}
+
+function prepareGame(){
+  gameQuestions = shuffle(QUESTIONS_SRC).map(q=>{
+    const order = shuffle([0,1,2]);
+    const options = order.map(i=>q.options[i]);
+    const correctIndex = order.indexOf(q.correctIndex);
+    return {stem:q.stem, options, correctIndex};
+  });
+  currentIndex = 0;
+  score = 0;
+  streak = 0;
+  buildProgressPath();
+  document.getElementById("streakBadge").style.visibility = "hidden";
+}
+
+function renderQuestion(){
+  answered = false;
+  const q = gameQuestions[currentIndex];
+  document.getElementById("qIndex").textContent = `Pregunta ${currentIndex+1} de ${gameQuestions.length}`;
+  document.getElementById("qStem").textContent = q.stem;
+  const wrap = document.getElementById("optionsWrap");
+  wrap.innerHTML = "";
+  const letters = ["A","B","C"];
+  const colorClasses = ["opt-a","opt-b","opt-c"];
+  q.options.forEach((tokens, i)=>{
+    const btn = document.createElement("button");
+    btn.className = "option-btn " + colorClasses[i];
+    btn.dataset.index = i;
+    btn.setAttribute("data-letter", letters[i]);
+    const exprSpan = document.createElement("span");
+    exprSpan.className = "expr";
+    renderExpr(tokens, exprSpan);
+    btn.appendChild(exprSpan);
+    btn.addEventListener("click", ()=>selectOption(i));
+    wrap.appendChild(btn);
+  });
+  updateProgressCurrent();
+  const card = document.getElementById("questionCard");
+  card.classList.remove("enter");
+  void card.offsetWidth;
+  card.classList.add("enter");
+}
+
+function selectOption(i){
+  if (answered) return;
+  answered = true;
+  const q = gameQuestions[currentIndex];
+  const correct = (i === q.correctIndex);
+  const buttons = [...document.querySelectorAll(".option-btn")];
+  buttons.forEach(b=>b.classList.add("locked"));
+  buttons[i].classList.add(correct ? "correct" : "incorrect");
+  if (!correct) buttons[q.correctIndex].classList.add("reveal-correct");
+
+  if (correct){
+    score++;
+    streak++;
+    playCorrectSound();
+    markNode(currentIndex, "correct");
+  } else {
+    streak = 0;
+    playWrongSound();
+    const card = document.getElementById("questionCard");
+    card.classList.remove("shake");
+    void card.offsetWidth;
+    card.classList.add("shake");
+    markNode(currentIndex, "incorrect");
+  }
+  updateStreakBadge();
+
+  setTimeout(()=>{
+    currentIndex++;
+    if (currentIndex < gameQuestions.length) renderQuestion();
+    else endGame();
+  }, 1250);
+}
+
+function scoreMessage(s, total){
+  if (s===total) return "¡Perfecto! Traducís matemática como un libro abierto. 🏆";
+  if (s>=total-1) return "¡Muy bien! Estás a un paso de la traducción perfecta. ✨";
+  if (s>=Math.ceil(total/2)) return "Vas por buen camino. Repasá los que fallaste y volvé a intentar. 💪";
+  return "Todavía hay mucho para practicar — ¡dale una vuelta más! 🔁";
+}
+
+function endGame(){
+  showScreen("end");
+  document.getElementById("scoreNum").textContent = score;
+  document.getElementById("endMessage").textContent = scoreMessage(score, gameQuestions.length);
+
+  const C = 2*Math.PI*70;
+  const ring = document.getElementById("ringFg");
+  ring.style.transition = "none";
+  ring.style.strokeDasharray = C;
+  ring.style.strokeDashoffset = C;
+  requestAnimationFrame(()=>{
+    requestAnimationFrame(()=>{
+      ring.style.transition = "stroke-dashoffset 1.1s cubic-bezier(.22,.9,.3,1)";
+      ring.style.strokeDashoffset = C*(1-score/gameQuestions.length);
+    });
+  });
+
+  if (score >= gameQuestions.length-1){
+    launchConfetti();
+    playFanfare();
+  } else {
+    playEndNeutral();
+  }
+}
+
+/* ====================== CONFETI ====================== */
+function launchConfetti(){
+  const canvas = document.getElementById("confettiCanvas");
+  const frame = document.querySelector(".frame");
+  const rect = frame.getBoundingClientRect();
+  canvas.width = rect.width;
+  canvas.height = rect.height;
+  const ctx = canvas.getContext("2d");
+  const colors = ["#ff6b6b","#ffd166","#ff9f43","#ff6fa8","#4ecdc4"];
+  const particles = [];
+  for (let i=0;i<90;i++){
+    particles.push({
+      x: Math.random()*canvas.width,
+      y: -20 - Math.random()*canvas.height*0.4,
+      vx: (Math.random()-0.5)*2.2,
+      vy: 2 + Math.random()*2.6,
+      size: 5 + Math.random()*6,
+      color: colors[Math.floor(Math.random()*colors.length)],
+      rot: Math.random()*Math.PI*2,
+      vrot: (Math.random()-0.5)*0.3,
+    });
+  }
+  if (confettiHandle) cancelAnimationFrame(confettiHandle);
+  const start = performance.now();
+  function step(now){
+    const elapsed = now - start;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p=>{
+      p.x += p.vx; p.y += p.vy; p.vy += 0.045; p.rot += p.vrot;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.size/2, -p.size/2*0.6, p.size, p.size*0.6);
+      ctx.restore();
+    });
+    if (elapsed < 2600){
+      confettiHandle = requestAnimationFrame(step);
+    } else {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      confettiHandle = null;
+    }
+  }
+  confettiHandle = requestAnimationFrame(step);
+}
+
+/* ====================== CONTROLES ====================== */
+document.getElementById("startBtn").addEventListener("click", ()=>{
+  prepareGame();
+  showScreen("game");
+  renderQuestion();
+});
+document.getElementById("restartBtn").addEventListener("click", ()=>{
+  prepareGame();
+  showScreen("game");
+  renderQuestion();
+});
+
+window.addEventListener("keydown", (e)=>{
+  const gameActive = document.getElementById("screenGame").classList.contains("active");
+  if (!gameActive || answered) return;
+  if (["1","2","3"].includes(e.key)){
+    const idx = Number(e.key)-1;
+    const btn = document.querySelector(`.option-btn[data-index="${idx}"]`);
+    if (btn) selectOption(idx);
+  }
+});
+
+/* Exponer estado para pruebas */
+window.__quiz = {
+  prepareGame, renderQuestion, selectOption, endGame,
+  getState: ()=>({currentIndex, score, streak, questions: gameQuestions}),
+};
+</script>
+</body>
+</html>

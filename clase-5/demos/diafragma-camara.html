@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El diafragma de la cámara</title>
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#050607;}
+  body{display:flex;align-items:center;justify-content:center;padding:20px;}
+
+  .frame{
+    position:relative;
+    width:min(100%,760px);
+    border-radius:22px;
+    overflow:hidden;
+    background:radial-gradient(ellipse at 50% 0%, #15181c 0%, #0b0d0f 55%, #050607 100%);
+    box-shadow:0 30px 70px rgba(0,0,0,.6);
+    display:flex; flex-direction:column;
+    color:#fff;
+  }
+
+  .hud{ text-align:center; padding:20px 20px 4px; }
+  .hud h1{ margin:0 0 4px; font-size:clamp(1.1rem,3vw,1.4rem); font-weight:800; }
+  .hud p{ margin:0; font-size:.82rem; color:rgba(255,255,255,.55); }
+
+  .stage{
+    display:flex; align-items:center; justify-content:center; gap:28px;
+    flex-wrap:wrap;
+    padding:18px 20px 6px;
+  }
+
+  .iris-wrap{ position:relative; width:280px; height:280px; flex:0 0 auto; }
+  .iris-wrap svg{ width:100%; height:100%; display:block; }
+
+  .result-col{ flex:0 0 auto; display:flex; flex-direction:column; align-items:center; gap:8px; width:170px; }
+  .result-label{ font-size:.68rem; font-weight:700; color:rgba(255,255,255,.55); text-transform:uppercase; letter-spacing:.04em; text-align:center; }
+  .result-photo{
+    position:relative; width:170px; height:116px; border-radius:10px; overflow:hidden;
+    border:3px solid #1c1f23; box-shadow:0 10px 24px rgba(0,0,0,.5);
+    background:#000;
+  }
+  .result-photo svg{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+  .result-overlay{
+    position:absolute; inset:0; background:#000; pointer-events:none;
+    transition:opacity .15s linear;
+  }
+  .result-caption{ font-size:.72rem; color:rgba(255,255,255,.75); text-align:center; min-height:2.6em; line-height:1.35; }
+
+  .controls{
+    position:relative; z-index:3;
+    padding:4px 22px 18px;
+  }
+
+  .ctrl-block{ margin-bottom:20px; }
+  .ctrl-block:last-child{ margin-bottom:0; }
+  .ctrl-label{
+    font-size:.72rem; font-weight:800; color:rgba(255,255,255,.7);
+    text-transform:uppercase; letter-spacing:.05em; margin-bottom:8px;
+  }
+  .ctrl-label small{ font-weight:600; color:rgba(255,255,255,.45); text-transform:none; letter-spacing:0; }
+
+  .fstop-scale{
+    display:flex; justify-content:space-between; margin:0 2px 6px;
+    font-size:.68rem; font-weight:700; color:rgba(255,255,255,.4);
+  }
+  .fstop-scale span{ width:14px; text-align:center; }
+  .fstop-scale span.active{ color:#fff; }
+
+  input[type=range]{
+    -webkit-appearance:none; appearance:none;
+    width:100%; height:6px; border-radius:999px;
+    background:linear-gradient(90deg,#3a3f46,#6b7280);
+    outline:none; margin:0 0 14px;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; appearance:none;
+    width:24px; height:24px; border-radius:50%;
+    background:#fff; border:4px solid #e8b84b;
+    cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.4);
+  }
+  input[type=range]::-moz-range-thumb{
+    width:24px; height:24px; border-radius:50%;
+    background:#fff; border:4px solid #e8b84b;
+    cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.4);
+  }
+
+  .presets{ display:flex; gap:6px; justify-content:center; flex-wrap:wrap; margin-bottom:16px; }
+  .preset-btn{
+    appearance:none; cursor:pointer; border:2px solid transparent; border-radius:8px;
+    background:rgba(255,255,255,.08); color:#fff; font-weight:700; font-size:.72rem;
+    padding:7px 10px; transition:transform .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .preset-btn:hover{ background:rgba(255,255,255,.16); transform:translateY(-1px); }
+  .preset-btn.active{ border-color:#e8b84b; background:rgba(232,184,75,.18); }
+
+  .info-bar{
+    position:relative; z-index:3;
+    background:rgba(10,12,13,.65);
+    backdrop-filter:blur(10px);
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:16px 22px 20px;
+    display:flex; gap:22px; flex-wrap:wrap; align-items:flex-start;
+  }
+  .stat{ min-width:120px; }
+  .stat .k{ font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color:rgba(255,255,255,.5); margin-bottom:3px; }
+  .stat .v{ font-size:1.3rem; font-weight:800; color:#fff; }
+  .stat .v small{ font-size:.7rem; font-weight:700; color:rgba(255,255,255,.55); }
+  .explain{ flex:1 1 220px; font-size:.85rem; line-height:1.5; color:rgba(255,255,255,.85); }
+  .explain b{ color:#f3cf7e; }
+  .explain p{ margin:0 0 8px; }
+  .explain p:last-child{ margin-bottom:0; }
+
+  @media (max-width:560px){
+    .stage{ gap:16px; }
+    .iris-wrap{ width:220px; height:220px; }
+    .result-col{ width:150px; }
+    .result-photo{ width:150px; height:102px; }
+    .info-bar{ flex-direction:column; gap:14px; }
+  }
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <header class="hud">
+    <h1>📷 El diafragma: cómo la cámara controla la luz</h1>
+    <p>Movés el control y mirá qué pasa con la luz y el enfoque</p>
+  </header>
+
+  <div class="stage">
+    <div class="iris-wrap">
+      <svg viewBox="0 0 240 240" id="irisSvg">
+        <defs>
+          <mask id="holeMask">
+            <rect x="0" y="0" width="240" height="240" fill="#fff"/>
+            <polygon id="holePoly" points="" fill="#000"/>
+          </mask>
+          <radialGradient id="sceneSky" cx="50%" cy="28%" r="85%">
+            <stop offset="0%" stop-color="#fff6d8"/>
+            <stop offset="35%" stop-color="#ffd27a"/>
+            <stop offset="70%" stop-color="#ff9b5c"/>
+            <stop offset="100%" stop-color="#2b3550"/>
+          </radialGradient>
+        </defs>
+
+        <g id="sceneGroup">
+          <rect x="0" y="0" width="240" height="240" fill="url(#sceneSky)"/>
+          <circle id="sun" cx="120" cy="86" r="24" fill="#fffdf2"/>
+          <path id="mountains" d="M0,170 L40,120 L75,150 L115,95 L150,145 L190,110 L240,165 L240,240 L0,240 Z" fill="#3a3f63"/>
+          <rect x="0" y="195" width="240" height="45" fill="#20243a"/>
+          <path id="treeSubject" d="M120,205 L132,165 L142,165 L125,195 L133,195 L116,225 L106,225 L120,205 Z" fill="#141522"/>
+        </g>
+
+        <!-- outer bezel -->
+        <circle cx="120" cy="120" r="118" fill="none" stroke="#2a2d32" stroke-width="10"/>
+        <circle cx="120" cy="120" r="112" fill="none" stroke="#45494f" stroke-width="2"/>
+
+        <!-- blades (dark, masked with the hole) -->
+        <circle cx="120" cy="120" r="109" fill="#0a0a0b" mask="url(#holeMask)"/>
+
+        <!-- blade seams -->
+        <g id="seams" stroke="#000" stroke-opacity=".55" stroke-width="1.4"></g>
+
+        <circle cx="120" cy="120" r="118" fill="none" stroke="#1c1e21" stroke-width="2"/>
+      </svg>
+    </div>
+
+    <div class="result-col">
+      <div class="result-label">Así saldría la foto</div>
+      <div class="result-photo">
+        <svg viewBox="0 0 240 240" preserveAspectRatio="xMidYMid slice">
+          <rect x="0" y="0" width="240" height="240" fill="url(#sceneSky)"/>
+          <circle cx="120" cy="86" r="24" fill="#fffdf2"/>
+          <path d="M0,170 L40,120 L75,150 L115,95 L150,145 L190,110 L240,165 L240,240 L0,240 Z" fill="#3a3f63" id="mountainsClone"/>
+          <rect x="0" y="195" width="240" height="45" fill="#20243a"/>
+          <path d="M120,205 L132,165 L142,165 L125,195 L133,195 L116,225 L106,225 L120,205 Z" fill="#141522"/>
+        </svg>
+        <div class="result-overlay" id="resultOverlay"></div>
+      </div>
+      <div class="result-caption" id="resultCaption"></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="ctrl-block">
+      <div class="ctrl-label">Diafragma <small>— tamaño de la abertura</small></div>
+      <div class="fstop-scale" id="fScale"></div>
+      <input type="range" id="slider" min="0" max="1000" value="0" step="1">
+      <div class="presets" id="presets"></div>
+    </div>
+    <div class="ctrl-block">
+      <div class="ctrl-label">Obturador <small>— tiempo que entra luz</small></div>
+      <div class="fstop-scale" id="sScale"></div>
+      <input type="range" id="shutterSlider" min="0" max="1000" value="301" step="1">
+      <div class="presets" id="sPresets"></div>
+    </div>
+  </div>
+
+  <div class="info-bar">
+    <div class="stat">
+      <div class="k">Abertura</div>
+      <div class="v" id="statF">f/1.4</div>
+    </div>
+    <div class="stat">
+      <div class="k">Obturador</div>
+      <div class="v" id="statShutter">1/125 s</div>
+    </div>
+    <div class="stat">
+      <div class="k">Exposición</div>
+      <div class="v" id="statExposure">Correcta</div>
+    </div>
+    <div class="stat">
+      <div class="k">Profundidad de campo</div>
+      <div class="v" id="statDof">Poca</div>
+    </div>
+    <div class="explain" id="explainText"></div>
+  </div>
+
+</div>
+
+<script>
+  const FSTOPS = [1.4, 2, 2.8, 4, 5.6, 8, 11, 16, 22];
+  const SHUTTERS = [1/1000, 1/500, 1/250, 1/125, 1/60, 1/30, 1/15, 1/8, 1/4, 1/2, 1];
+  const N_BLADES = 8;
+  const CX = 120, CY = 120;
+  const MAX_R = 95;         // hole radius fully open (t=0)
+  const RIM_R = 108;        // seam outer reach
+  const MAX_BLUR = 6.5;     // px, background blur fully open
+  const REF_SHUTTER_S = 1 / 125;   // baseline: diafragma f/1.4 + 1/125s = exposición "correcta"
+  const E_REF = 1 * REF_SHUTTER_S;
+
+  const holePoly = document.getElementById("holePoly");
+  const seamsG = document.getElementById("seams");
+  const sliderEl = document.getElementById("slider");
+  const fScaleEl = document.getElementById("fScale");
+  const presetsEl = document.getElementById("presets");
+  const shutterSliderEl = document.getElementById("shutterSlider");
+  const sScaleEl = document.getElementById("sScale");
+  const sPresetsEl = document.getElementById("sPresets");
+  const statF = document.getElementById("statF");
+  const statShutter = document.getElementById("statShutter");
+  const statExposure = document.getElementById("statExposure");
+  const statDof = document.getElementById("statDof");
+  const explainText = document.getElementById("explainText");
+  const mountainsEl = document.getElementById("mountains");
+  const mountainsClone = document.getElementById("mountainsClone");
+  const resultOverlay = document.getElementById("resultOverlay");
+  const resultCaption = document.getElementById("resultCaption");
+
+  // build seam lines (one per blade) once
+  for (let i = 0; i < N_BLADES; i++) {
+    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    line.setAttribute("id", "seam" + i);
+    seamsG.appendChild(line);
+  }
+
+  function shutterLabel(s) {
+    return s >= 1 ? s.toFixed(0) + '"' : "1/" + Math.round(1 / s);
+  }
+
+  // f-stop scale ticks (under the aperture slider)
+  FSTOPS.forEach((f, i) => {
+    const span = document.createElement("span");
+    span.textContent = i % 2 === 0 ? f : "·";
+    fScaleEl.appendChild(span);
+  });
+  // aperture preset buttons
+  FSTOPS.forEach((f) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "preset-btn";
+    btn.textContent = "f/" + f;
+    btn.addEventListener("click", () => {
+      sliderEl.value = Math.round(fToT(f) * 1000);
+      update();
+    });
+    presetsEl.appendChild(btn);
+  });
+
+  // shutter scale ticks
+  SHUTTERS.forEach((s, i) => {
+    const span = document.createElement("span");
+    span.textContent = i % 2 === 0 ? shutterLabel(s) : "·";
+    sScaleEl.appendChild(span);
+  });
+  // shutter preset buttons
+  SHUTTERS.forEach((s) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "preset-btn";
+    btn.textContent = shutterLabel(s);
+    btn.addEventListener("click", () => {
+      shutterSliderEl.value = Math.round(shutterToT(s) * 1000);
+      update();
+    });
+    sPresetsEl.appendChild(btn);
+  });
+
+  function tToF(t) {
+    return 1.4 * Math.pow(22 / 1.4, t);
+  }
+  function fToT(f) {
+    return Math.log(f / 1.4) / Math.log(22 / 1.4);
+  }
+  function tToShutter(t) {
+    return (1 / 1000) * Math.pow(1000, t);
+  }
+  function shutterToT(s) {
+    return Math.log(s * 1000) / Math.log(1000);
+  }
+
+  function explainAperture(t, f) {
+    if (t < 0.12) {
+      return `Diafragma muy <b>abierto</b> (f/${f.toFixed(1)}): el agujero es grande, entra mucha luz. A cambio, el fondo queda muy desenfocado — foco selectivo, solo lo que está a la distancia enfocada se ve nítido.`;
+    } else if (t < 0.4) {
+      return `Diafragma bastante <b>abierto</b> (f/${f.toFixed(1)}): entra mucha luz y el fondo todavía se desenfoca de forma notoria, como en una foto de retrato.`;
+    } else if (t < 0.65) {
+      return `Diafragma en punto <b>intermedio</b> (f/${f.toFixed(1)}): balance razonable entre luz y nitidez del fondo.`;
+    } else if (t < 0.88) {
+      return `Diafragma bastante <b>cerrado</b> (f/${f.toFixed(1)}): entra poca luz, pero casi toda la escena —fondo incluido— se ve nítida.`;
+    } else {
+      return `Diafragma muy <b>cerrado</b> (f/${f.toFixed(1)}): el agujero es casi un punto, entra muy poca luz, pero la profundidad de campo es máxima — todo, de adelante hacia atrás, en foco.`;
+    }
+  }
+
+  function explainShutter(t, s) {
+    const label = shutterLabel(s);
+    if (t < 0.15) {
+      return `Obturador muy <b>rápido</b> (${label}s): el sensor recibe luz por muy poco tiempo — congela el movimiento, pero necesita compensar con más diafragma o más luz ambiente. No cambia el enfoque, solo la cantidad de luz y el movimiento.`;
+    } else if (t < 0.4) {
+      return `Obturador <b>rápido</b> (${label}s): deja pasar poca luz por el tiempo corto; sirve para escenas con movimiento.`;
+    } else if (t < 0.65) {
+      return `Velocidad <b>intermedia</b> (${label}s): tiempo típico de uso cotidiano, cámara en mano.`;
+    } else if (t < 0.88) {
+      return `Obturador <b>lento</b> (${label}s): entra bastante más luz, pero si algo se mueve en la escena puede verse borroso.`;
+    } else {
+      return `Obturador muy <b>lento</b> (${label}s): entra muchísima luz, ideal de noche — pero cualquier movimiento queda arrastrado como una estela.`;
+    }
+  }
+
+  function update() {
+    const t = +sliderEl.value / 1000;
+    const f = tToF(t);
+    const apertureLightFrac = Math.pow(1.4 / 22, 2 * t); // relative to f/1.4 = 1
+    const blur = MAX_BLUR * (1 - t);
+    const swirl = 24 * t; // degrees, decorative mechanical swirl as it closes
+    const r = MAX_R * Math.pow(1.4 / 22, t);
+
+    const st = +shutterSliderEl.value / 1000;
+    const sSeconds = tToShutter(st);
+
+    // combined exposure
+    const E = apertureLightFrac * sSeconds;
+    const evDiff = Math.log2(E / E_REF);
+    const evClamped = Math.max(-6, Math.min(6, evDiff));
+    const overlayOpacity = Math.min(.92, Math.abs(evClamped) / 6 * .92);
+
+    // polygon + seams
+    const pts = [];
+    for (let i = 0; i < N_BLADES; i++) {
+      const ang = (i * 360 / N_BLADES + swirl) * Math.PI / 180;
+      const vx = CX + r * Math.cos(ang);
+      const vy = CY + r * Math.sin(ang);
+      pts.push(vx.toFixed(2) + "," + vy.toFixed(2));
+      const seam = document.getElementById("seam" + i);
+      seam.setAttribute("x1", vx.toFixed(2));
+      seam.setAttribute("y1", vy.toFixed(2));
+      seam.setAttribute("x2", (CX + RIM_R * Math.cos(ang)).toFixed(2));
+      seam.setAttribute("y2", (CY + RIM_R * Math.sin(ang)).toFixed(2));
+    }
+    holePoly.setAttribute("points", pts.join(" "));
+
+    // depth of field: blur background (depends ONLY on aperture), keep subject sharp
+    mountainsEl.style.filter = `blur(${blur.toFixed(2)}px)`;
+    mountainsClone.style.filter = `blur(${blur.toFixed(2)}px)`;
+
+    // exposure result preview (depends on aperture + shutter combined)
+    resultOverlay.style.background = evDiff < 0 ? "#000" : "#fff";
+    resultOverlay.style.opacity = overlayOpacity.toFixed(3);
+
+    // readouts
+    statF.textContent = "f/" + (f < 10 ? f.toFixed(1) : f.toFixed(0));
+    statShutter.textContent = shutterLabel(sSeconds) + " s";
+    statDof.textContent = t < 0.4 ? "Poca" : (t < 0.7 ? "Media" : "Mucha");
+
+    if (Math.abs(evDiff) < 0.35) {
+      statExposure.textContent = "Correcta";
+    } else {
+      statExposure.textContent = (evDiff > 0 ? "+" : "") + evDiff.toFixed(1) + " pasos";
+    }
+
+    explainText.innerHTML = `<p>${explainAperture(t, f)}</p><p>${explainShutter(st, sSeconds)}</p>`;
+
+    resultCaption.textContent = Math.abs(evDiff) < 0.35
+      ? "Exposición correcta."
+      : (evDiff > 0 ? "Demasiada luz: se ve sobreexpuesta." : "Poca luz: se ve subexpuesta.");
+
+    // highlight nearest aperture preset / scale tick
+    let nearestIdx = 0, nearestDiff = Infinity;
+    FSTOPS.forEach((fs, i) => {
+      const d = Math.abs(fToT(fs) - t);
+      if (d < nearestDiff) { nearestDiff = d; nearestIdx = i; }
+    });
+    [...presetsEl.children].forEach((b, i) => b.classList.toggle("active", i === nearestIdx));
+    [...fScaleEl.children].forEach((s, i) => s.classList.toggle("active", i === nearestIdx));
+
+    // highlight nearest shutter preset / scale tick
+    let nearestSIdx = 0, nearestSDiff = Infinity;
+    SHUTTERS.forEach((ss, i) => {
+      const d = Math.abs(shutterToT(ss) - st);
+      if (d < nearestSDiff) { nearestSDiff = d; nearestSIdx = i; }
+    });
+    [...sPresetsEl.children].forEach((b, i) => b.classList.toggle("active", i === nearestSIdx));
+    [...sScaleEl.children].forEach((s, i) => s.classList.toggle("active", i === nearestSIdx));
+  }
+
+  sliderEl.addEventListener("input", update);
+  shutterSliderEl.addEventListener("input", update);
+  update();
+</script>
+</body>
+</html>

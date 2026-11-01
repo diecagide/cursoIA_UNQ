@@ -647,6 +647,27 @@ section.block:first-of-type {
 .pdf-preview__text a { color: #fff; text-decoration: underline; }
 .pdf-preview__text strong { color: #fff; }
 
+/* Tarjeta que agrupa un ejemplo de dispositivo completo: título corto,
+   descripción (contenido.txt), demo embebida y botón de prompt/modelo o
+   prompt-example — usada en los Bloques A, B y C de la Clase 5 para no
+   repetir el mismo bloque de margin/spacing en cada ejemplo. */
+.device-example {
+  margin: 30px 0 38px;
+  padding: 22px 24px 26px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: rgba(255,255,255,.5);
+}
+
+.device-example h4 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+.device-example > p:first-of-type { margin-top: 0; }
+
+.device-example .demo-embed { margin-top: 16px; }
+
 /* Demo embebida: el HTML real que generaría el modelo a partir de un
    prompt, mostrado en vivo dentro de un iframe (ver demos/ en Clase 5).
    Hardcodeado en index.html, no pasa por contenido.txt. */

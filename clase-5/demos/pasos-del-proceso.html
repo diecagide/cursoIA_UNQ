@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ordená los pasos</title>
+<style>
+  :root{
+    --teal-dark:#064e3b;
+    --teal:#0d9488;
+    --teal-light:#2dd4bf;
+    --gold:#ffd93d;
+    --green:#22c55e;
+    --red:#ef4444;
+    --navy:#0f172a;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#eef2f3;}
+  body{display:flex;align-items:center;justify-content:center;padding:24px;}
+  .frame{
+    width:min(100%,640px);
+    border-radius:22px;
+    padding:clamp(28px,5vw,44px);
+    background:linear-gradient(160deg,var(--teal-dark) 0%,var(--teal) 55%,var(--teal-light) 100%);
+    box-shadow:0 24px 60px rgba(6,78,59,.3),0 4px 14px rgba(6,78,59,.2);
+    color:#fff;
+  }
+  header{text-align:center;margin-bottom:22px;}
+  h1{font-size:clamp(1.3rem,3.6vw,1.7rem);font-weight:800;margin:0 0 8px;}
+  .subtitle{font-size:.92rem;color:rgba(255,255,255,.85);line-height:1.5;margin:0 auto;max-width:480px;}
+  .steps-list{list-style:none;margin:26px 0 20px;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .step{
+    background:#fff;color:var(--navy);
+    border-radius:14px;padding:12px 14px;
+    display:flex;align-items:center;gap:12px;
+    box-shadow:0 6px 16px rgba(0,0,0,.18);
+    border:3px solid transparent;
+    cursor:grab;
+    transition:transform .15s ease, box-shadow .15s ease, border-color .2s ease, background .2s ease;
+  }
+  .step:active{cursor:grabbing;}
+  .step.dragging{opacity:.5;}
+  .step .handle{font-size:1.1rem;color:#94a3b8;flex:0 0 auto;}
+  .step .step-text{flex:1 1 auto;font-weight:600;font-size:.95rem;line-height:1.35;}
+  .step .arrows{display:flex;flex-direction:column;gap:2px;flex:0 0 auto;}
+  .step .arrows button{
+    appearance:none;border:none;background:#eef2f7;color:var(--navy);
+    width:26px;height:22px;border-radius:6px;cursor:pointer;font-size:.75rem;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .step .arrows button:hover{background:#dbe4ee;}
+  .step .arrows button:disabled{opacity:.3;cursor:default;}
+  .step.is-correct{border-color:var(--green);}
+  .step.is-wrong{border-color:var(--red);}
+  .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:8px;}
+  button.btn-main{
+    appearance:none;border:none;cursor:pointer;
+    font-weight:800;font-size:.95rem;padding:12px 26px;border-radius:999px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  #btnCheck{background:linear-gradient(135deg,var(--gold) 0%,#ffcf2e 100%);color:#2a2000;box-shadow:0 8px 20px rgba(255,217,61,.35);}
+  #btnReset{background:rgba(255,255,255,.14);color:#fff;border:2px solid rgba(255,255,255,.4) !important;box-shadow:none;}
+  button.btn-main:hover{transform:translateY(-2px);}
+  .feedback{text-align:center;margin-top:16px;font-size:.92rem;font-weight:700;min-height:1.3em;}
+</style>
+</head>
+<body>
+<div class="frame">
+  <header>
+    <h1>Ordená los pasos</h1>
+    <p class="subtitle">Arrastrá las tarjetas (o usá las flechas) hasta dejarlas en el orden correcto para armar un buen prompt.</p>
+  </header>
+
+  <ol class="steps-list" id="stepsList"></ol>
+
+  <div class="actions">
+    <button class="btn-main" id="btnCheck">Verificar orden</button>
+    <button class="btn-main" id="btnReset">Reiniciar</button>
+  </div>
+  <p class="feedback" id="feedbackMsg"></p>
+</div>
+
+<script>
+  const STEPS = [
+    "Definí el objetivo: qué querés que la IA genere exactamente.",
+    "Dale contexto: contale a la IA quién sos y para qué lo vas a usar.",
+    "Especificá el formato de salida: lista, tabla, código, una extensión determinada.",
+    "Agregá restricciones o ejemplos de lo que sí (o no) querés.",
+    "Revisá el resultado y ajustá el prompt si hace falta.",
+  ];
+
+  const listEl = document.getElementById("stepsList");
+  const feedbackEl = document.getElementById("feedbackMsg");
+
+  function shuffledIndexes(n) {
+    const arr = [...Array(n).keys()];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    if (arr.every((v, i) => v === i)) return shuffledIndexes(n);
+    return arr;
+  }
+
+  function render(order) {
+    listEl.innerHTML = "";
+    order.forEach((correctIdx) => {
+      const li = document.createElement("li");
+      li.className = "step";
+      li.draggable = true;
+      li.dataset.correct = correctIdx;
+      li.innerHTML = `
+        <span class="handle">⠿</span>
+        <span class="step-text">${STEPS[correctIdx]}</span>
+        <span class="arrows">
+          <button type="button" class="up" aria-label="Subir">▲</button>
+          <button type="button" class="down" aria-label="Bajar">▼</button>
+        </span>
+      `;
+      listEl.appendChild(li);
+    });
+    wireItems();
+    feedbackEl.textContent = "";
+  }
+
+  function wireItems() {
+    const items = [...listEl.children];
+    items.forEach((li, i) => {
+      li.querySelector(".up").disabled = i === 0;
+      li.querySelector(".down").disabled = i === items.length - 1;
+
+      li.querySelector(".up").onclick = () => {
+        const prev = li.previousElementSibling;
+        if (prev) listEl.insertBefore(li, prev);
+        clearFeedback();
+        wireItems();
+      };
+      li.querySelector(".down").onclick = () => {
+        const next = li.nextElementSibling;
+        if (next) listEl.insertBefore(next, li);
+        clearFeedback();
+        wireItems();
+      };
+
+      li.addEventListener("dragstart", (e) => {
+        li.classList.add("dragging");
+        e.dataTransfer.effectAllowed = "move";
+      });
+      li.addEventListener("dragend", () => {
+        li.classList.remove("dragging");
+      });
+      li.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        const dragging = listEl.querySelector(".dragging");
+        if (!dragging || dragging === li) return;
+        const rect = li.getBoundingClientRect();
+        const before = (e.clientY - rect.top) < rect.height / 2;
+        listEl.insertBefore(dragging, before ? li : li.nextSibling);
+      });
+      li.addEventListener("drop", () => {
+        clearFeedback();
+        wireItems();
+      });
+    });
+  }
+
+  function clearFeedback() {
+    feedbackEl.textContent = "";
+    [...listEl.children].forEach(li => li.classList.remove("is-correct", "is-wrong"));
+  }
+
+  document.getElementById("btnCheck").addEventListener("click", () => {
+    const items = [...listEl.children];
+    let correctCount = 0;
+    items.forEach((li, pos) => {
+      const correctIdx = Number(li.dataset.correct);
+      if (correctIdx === pos) {
+        li.classList.add("is-correct");
+        li.classList.remove("is-wrong");
+        correctCount++;
+      } else {
+        li.classList.add("is-wrong");
+        li.classList.remove("is-correct");
+      }
+    });
+    feedbackEl.textContent = correctCount === items.length
+      ? "¡Perfecto! Ese es el orden."
+      : `Tenés ${correctCount} de ${items.length} en el lugar correcto. Seguí ajustando.`;
+  });
+
+  document.getElementById("btnReset").addEventListener("click", () => {
+    render(shuffledIndexes(STEPS.length));
+  });
+
+  render(shuffledIndexes(STEPS.length));
+</script>
+</body>
+</html>
