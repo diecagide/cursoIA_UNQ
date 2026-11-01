@@ -1095,6 +1095,45 @@ function initCodeEmbeds() {
   });
 }
 
+// ---------- Autoajuste de alto de los dispositivos embebidos ----------
+// Cada demo (ver demos/*.html) le avisa a esta página, por postMessage,
+// cuánto mide realmente su contenido (su "device-resize"). Acá se busca
+// el <iframe> correspondiente (comparando contentWindow) y se ajusta su
+// alto para que entre todo sin necesidad de scrollear dentro del recuadro.
+// Si se agrega un nuevo dispositivo en demos/, con copiar el mismo bloque
+// <script> del final de cualquier demo existente ya funciona solo: no hace
+// falta tocar este archivo.
+//
+// A propósito, el alto SOLO CRECE, nunca achica por debajo del que ya
+// tiene (ver nuevoAlto = Math.max(altoActual, ...)). Algunos dispositivos
+// miden parte de su contenido en "vh" (porcentaje de la altura visible),
+// típicamente para no pasarse de una altura razonable en pantallas
+// grandes. El iframe arranca con un alto por default (ver .demo-embed
+// iframe en styles.css) que todavía no sabe cuál es el alto final: si
+// dejáramos que el alto también BAJE según lo que miden esos "vh" en ese
+// momento, se arma un círculo vicioso (el contenido en vh se mide más
+// chico porque el iframe todavía es chico, achica el iframe, que hace que
+// el próximo "vh" sea aún más chico, y así indefinidamente) hasta quedar
+// mucho más bajo de lo que el dispositivo necesita en realidad.
+function initDeviceAutoResize() {
+  window.addEventListener('message', function (ev) {
+    if (!ev.data || ev.data.type !== 'device-resize') return;
+    var h = Number(ev.data.height);
+    if (!h || h < 0) return;
+    var iframes = document.querySelectorAll('.demo-embed iframe');
+    for (var i = 0; i < iframes.length; i++) {
+      if (iframes[i].contentWindow === ev.source) {
+        var altoActual = parseInt(iframes[i].style.height, 10) || 0;
+        var nuevoAlto = Math.max(altoActual, 260, Math.ceil(h) + 4);
+        if (nuevoAlto - altoActual > 2) {
+          iframes[i].style.height = nuevoAlto + 'px';
+        }
+        break;
+      }
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   loadContent();
   initLightbox();
@@ -1102,6 +1141,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initCodeEmbeds();
   initNotePopovers();
   initExclusiveMediaPlayback();
+  initDeviceAutoResize();
 
   var nav = document.getElementById('siteNav');
   var toggle = document.getElementById('navToggle');

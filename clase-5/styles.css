@@ -34,6 +34,12 @@
 
   --nav-width: 280px;
   --max-content-width: 680px;
+
+  /* Usadas por .demo-embed para calcular cuánto puede "escaparse" del
+     ancho de columna de texto — ver comentario junto a .demo-embed. */
+  --content-pad: 32px;
+  --nav-eff: var(--nav-width);
+  --device-max-width: 1040px;
 }
 
 * { box-sizing: border-box; }
@@ -647,16 +653,19 @@ section.block:first-of-type {
 .pdf-preview__text a { color: #fff; text-decoration: underline; }
 .pdf-preview__text strong { color: #fff; }
 
-/* Tarjeta que agrupa un ejemplo de dispositivo completo: título corto,
-   descripción (contenido.txt), demo embebida y botón de prompt/modelo o
-   prompt-example — usada en los Bloques A, B y C de la Clase 5 para no
-   repetir el mismo bloque de margin/spacing en cada ejemplo. */
+/* Agrupa un ejemplo de dispositivo completo: título corto, descripción
+   (contenido.txt), demo embebida y botón de prompt/modelo o prompt-example
+   — usada en los Bloques A, B y C de la Clase 5. No lleva caja/borde propio
+   (el texto queda en la columna de lectura normal); el recuadro visible es
+   el de la demo en sí (.demo-embed, más abajo), que es más ancho. Entre un
+   ejemplo y el siguiente, una línea fina hace de separador. */
 .device-example {
-  margin: 30px 0 38px;
-  padding: 22px 24px 26px;
-  border: 1px solid var(--color-border);
-  border-radius: 14px;
-  background: rgba(255,255,255,.5);
+  margin: 36px 0;
+}
+
+.device-example + .device-example {
+  border-top: 1px solid var(--color-border);
+  padding-top: 32px;
 }
 
 .device-example h4 {
@@ -670,9 +679,33 @@ section.block:first-of-type {
 
 /* Demo embebida: el HTML real que generaría el modelo a partir de un
    prompt, mostrado en vivo dentro de un iframe (ver demos/ en Clase 5).
-   Hardcodeado en index.html, no pasa por contenido.txt. */
+   Hardcodeado en index.html, no pasa por contenido.txt.
+
+   Ancho: se le permite "escaparse" del ancho de columna de texto
+   (--max-content-width, 680px) hasta --device-max-width (1040px), según
+   cuánto espacio real haya entre el menú lateral y el borde de la
+   ventana — así no queda ahorcada en 680px con mucho blanco al costado,
+   y los dispositivos que arman su propio layout en 2 o 3 columnas (ej.
+   los "cómo se usa" de Música 3D, o una línea de tiempo horizontal)
+   tienen ancho de sobra para mostrarse como corresponde y no caer en su
+   propio modo "mobile apilado". En pantallas angostas (celular, con el
+   menú oculto) el cálculo da 0 y el ancho queda igual al del texto, sin
+   generar scroll horizontal.
+   Alto: NO es fijo. Cada demo le avisa su alto real a esta página por
+   postMessage apenas carga (ver el <script> al final de cada archivo en
+   demos/, y initDeviceAutoResize() en script.js) y el <iframe> se ajusta
+   para mostrar todo el contenido sin scroll interno. El valor de acá
+   abajo es solo el alto inicial, antes de que llegue ese mensaje. */
 .demo-embed {
-  margin: 20px 0 6px;
+  --available: calc(100vw - var(--nav-eff) - (var(--content-pad) * 2));
+  --device-w: min(var(--device-max-width), var(--available));
+  --text-w: min(var(--max-content-width), var(--available));
+  width: var(--device-w);
+  max-width: var(--device-w);
+  margin-top: 20px;
+  margin-bottom: 6px;
+  margin-left: calc((var(--text-w) - var(--device-w)) / 2);
+  margin-right: calc((var(--text-w) - var(--device-w)) / 2);
   border: 1px solid var(--color-border);
   border-radius: 12px;
   overflow: hidden;
@@ -681,15 +714,30 @@ section.block:first-of-type {
 
 .demo-embed iframe {
   width: 100%;
-  height: 640px;
+  height: 560px;
   border: none;
   display: block;
+  transition: height .18s ease;
 }
 
-.demo-embed__link {
+/* Mismo ancho que la demo de arriba, para que el link quede alineado
+   bajo su borde derecho en vez de bajo el de la columna de texto.
+   Selector reforzado a propósito (.block .demo-embed__link en vez de
+   .demo-embed__link solo): ".block p" más abajo trae un margin
+   shorthand que, con la misma especificidad, pisaría el margin-left/
+   right de acá y rompería el ancho (el link quedaba pegado a la
+   izquierda y se iba de ancho por la derecha). */
+.block .demo-embed__link {
+  --available: calc(100vw - var(--nav-eff) - (var(--content-pad) * 2));
+  --device-w: min(var(--device-max-width), var(--available));
+  --text-w: min(var(--max-content-width), var(--available));
+  width: var(--device-w);
+  margin-left: calc((var(--text-w) - var(--device-w)) / 2);
+  margin-right: calc((var(--text-w) - var(--device-w)) / 2);
   text-align: right;
   font-size: .85rem;
-  margin: 8px 0 28px;
+  margin-top: 8px;
+  margin-bottom: 28px;
 }
 
 /* ---------- Código generado: bloque con botón de copiar ----------
@@ -1745,6 +1793,14 @@ section.block:first-of-type {
 }
 
 @media (max-width: 720px) {
+  /* El menú pasa a ser off-canvas (no ocupa ancho real) y el padding
+     lateral del contenido baja a 20px — ver .content más abajo. Estos
+     dos valores alimentan el cálculo de ancho de .demo-embed. */
+  :root {
+    --content-pad: 20px;
+    --nav-eff: 0px;
+  }
+
   .nav-toggle { display: block; }
 
   .site-nav {

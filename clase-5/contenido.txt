@@ -187,7 +187,7 @@ Necesito una simulación que explique cómo el diafragma y el obturador de una c
 Veamos otros usos posibles que pueden tener los recursos didácticos interactivos en el aula.
 
 ## ejemplo_pasos_proceso
-Ordená los pasos: tarjetas para ordenar, arrastrando o con flechas, hasta armar la secuencia correcta de un procedimiento — en este caso, los pasos para armar un buen prompt.
+Ordenar una secuencia: tarjetas para ordenar, arrastrando o con flechas, hasta armar el orden correcto de un procedimiento — en este caso, los pasos para armar un buen prompt.
 
 ## ejemplo_emparejar_clasificar
 Emparejar y clasificar: tocás un elemento y después la categoría que le corresponde, para practicar una clasificación — en este caso, distinguir qué herramientas de IA generan texto y cuáles generan imagen.
@@ -272,4 +272,13 @@ Ese código generado lo copiás y pegás en la sección correspondiente de tu au
 @video[]()
 
 ## cierre_1
-*Este bloque todavía no tiene contenido — acá va la síntesis de las cinco clases del curso completo (no el aviso de "próxima clase" que tienen las demás, porque esta es la última). Falta que Diego comparta el contenido final de las Clases 1 a 4 para poder escribirla.*
+Llegamos al final del curso. Arrancamos sin saber bien qué esperar de estos modelos y terminamos generando texto, imágenes, audio, video y hasta pequeños programas interactivos, siempre repitiendo la misma base, que es un prompt bien armado y la paciencia de ajustarlo las veces que haga falta.
+
+Debajo de las cinco clases hay algo más que técnica. A la IA generativa la usamos siempre como una asistente que ejecuta lo que nosotros le indicamos, con el conocimiento de tus estudiantes y de tu materia puesto por vos en cada paso. En ningún momento le entregamos una tarea completa a un modelo para darla por terminada tal cual salió. Revisamos, corregimos, volvimos a pedir, probamos con otro enfoque. Esa revisión no es un paso opcional ni un trámite burocrático, es la parte del trabajo que un modelo no puede hacer por vos, porque no conoce a tus estudiantes ni sabe qué necesitan aprender esta semana puntual, y puede estar sencillamente equivocado sin que nada en su respuesta lo delate. Validar lo que genera un modelo, con la misma mirada crítica con la que revisarías cualquier material antes de llevarlo al aula, es lo que separa un buen uso de la IA de uno automático.
+
+La otra idea que atravesó todo el curso es que estas herramientas rinden más cuando les pedís algo que no es obvio. Cualquiera puede pedirle a un modelo un resumen o una lista de preguntas de examen. Lo más interesante pasó cuando le pedimos algo específico de tu materia, un recurso pensado para un contenido puntual, con el tono y el nivel que vos necesitabas, en lugar de una versión genérica bajada de internet. La imaginación estuvo puesta en decidir qué pedirle al modelo para ese contenido puntual, antes de que escribiera una sola línea de código o generara una sola imagen.
+
+Con esto no se termina el aprendizaje, apenas empieza la parte en la que lo llevás a tu propia práctica. Estas son algunas ideas concretas para arrancar.
+
+## cierre_2
+Quedo abierto a conversar sobre cómo te fue llevando esto a tus propias clases, y a sumar nuevos ejemplos si te cruzás con una idea que quieras compartir.

@@ -42,7 +42,7 @@
         <a class="nav-group__link" href="#bloque-a"><span class="nav-bullet"></span>Bloque A · La IA en el mundo de la interactividad</a>
         <ul class="nav-subgroup">
           <li><a href="#que-es-codigo">HTML, CSS y JavaScript</a></li>
-          <li><a href="#ejemplos-bloque-a">Ejemplos</a></li>
+          <li><a href="#ejemplos-bloque-a">¿Qué recursos didácticos podemos crear?</a></li>
         </ul>
       </li>
 
@@ -119,7 +119,7 @@
           <div class="content-block" data-key="bloque_a_claude_pago"></div>
         </div>
 
-        <h3 id="ejemplos-bloque-a">Ejemplos</h3>
+        <h3 id="ejemplos-bloque-a">¿Qué recursos didácticos podemos crear?</h3>
         <div class="content-block" data-key="bloque_a_ejemplos_intro"></div>
 
         <!-- Ejemplo 1: Sistema solar -->
@@ -127,7 +127,10 @@
           <h4>🌌 Sistema solar interactivo</h4>
           <p data-key="ejemplo_sistema_solar"></p>
           <div class="demo-embed">
-            <iframe src="demos/sistema-solar.html" title="Sistema solar interactivo" loading="lazy"></iframe>
+            <!-- height inicial más alto a propósito: este dispositivo mide su propio
+                 tamaño en "vh" (porcentaje de lo que mida el iframe), así que si arranca
+                 muy bajo, las órbitas más lejanas (Neptuno, Saturno) quedan recortadas. -->
+            <iframe src="demos/sistema-solar.html" title="Sistema solar interactivo" loading="lazy" style="height:820px"></iframe>
           </div>
           <p class="demo-embed__link"><a href="demos/sistema-solar.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
           <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
@@ -323,7 +326,7 @@
 
         <!-- Ejemplo 1: Pasos del proceso -->
         <div class="device-example">
-          <h4>🔢 Ordená los pasos</h4>
+          <h4>🔢 Ordenar una secuencia</h4>
           <p data-key="ejemplo_pasos_proceso"></p>
           <div class="demo-embed">
             <iframe src="demos/pasos-del-proceso.html" title="Ordená los pasos" loading="lazy"></iframe>
@@ -339,7 +342,7 @@
 
         <!-- Ejemplo 2: Emparejar y clasificar -->
         <div class="device-example">
-          <h4>🗂️ Clasificá las herramientas</h4>
+          <h4>🗂️ Emparejar y clasificar</h4>
           <p data-key="ejemplo_emparejar_clasificar"></p>
           <div class="demo-embed">
             <iframe src="demos/emparejar-clasificar.html" title="Clasificá las herramientas" loading="lazy"></iframe>
@@ -355,7 +358,7 @@
 
         <!-- Ejemplo 3: Diagrama hotspots -->
         <div class="device-example">
-          <h4>📍 Las partes de un prompt</h4>
+          <h4>📍 Diagrama con hotspots</h4>
           <p data-key="ejemplo_diagrama_hotspots"></p>
           <div class="demo-embed">
             <iframe src="demos/diagrama-hotspots.html" title="Las partes de un prompt" loading="lazy"></iframe>
@@ -371,10 +374,12 @@
 
         <!-- Ejemplo 4: Explorador de átomos -->
         <div class="device-example">
-          <h4>⚛️ Explorador de átomos</h4>
+          <h4>🔭 Exploración guiada</h4>
           <p data-key="ejemplo_explorador_atomos"></p>
           <div class="demo-embed">
-            <iframe src="demos/explorador-atomos.html" title="Explorador de átomos" loading="lazy"></iframe>
+            <!-- mismo motivo que en Sistema solar: este dispositivo también mide su
+                 propio tamaño en "vh", necesita arrancar más alto para no recortarse. -->
+            <iframe src="demos/explorador-atomos.html" title="Explorador de átomos" loading="lazy" style="height:820px"></iframe>
           </div>
           <p class="demo-embed__link"><a href="demos/explorador-atomos.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
           <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
@@ -492,6 +497,17 @@
              clases, no el bloque .next-class de "próxima clase" que
              tienen las demás. -->
         <div class="content-block" data-key="cierre_1"></div>
+
+        <h3>Para llevar al aula</h3>
+        <ul class="practice-list">
+          <li><strong>Arrancá con un contenido puntual.</strong> Elegí un solo tema de tu materia y generá con un modelo un recurso interactivo para esa clase, siguiendo el método que vimos en el Bloque B.</li>
+          <li><strong>Revisá cada dato.</strong> Antes de usar cualquier resultado con tus estudiantes, revisalo con la misma atención que le pondrías al material de cualquier otra fuente.</li>
+          <li><strong>Guardá lo que funciona.</strong> Los prompts que te dieron buenos resultados son reutilizables y te van a ahorrar tiempo la próxima vez que necesites algo parecido.</li>
+          <li><strong>No abandones al primer intento.</strong> Si algo no sale como esperás, ajustá el prompt, agregá un ejemplo, o pedile al modelo que te explique por qué llegó a ese resultado.</li>
+          <li><strong>Pedí algo específico tuyo.</strong> Un pedido pensado para tu materia y tu forma de enseñar se nota mucho más que uno genérico.</li>
+        </ul>
+
+        <p data-key="cierre_2"></p>
       </section>
 
     </div>
