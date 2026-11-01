@@ -35,11 +35,24 @@
   --nav-width: 280px;
   --max-content-width: 680px;
 
-  /* Usadas por .demo-embed para calcular cuánto puede "escaparse" del
-     ancho de columna de texto — ver comentario junto a .demo-embed. */
-  --content-pad: 32px;
-  --nav-eff: var(--nav-width);
-  --device-max-width: 1040px;
+  /* Alto de cada iframe de .demo-embed en Clase 5 (ver sección de
+     ".demo-embed" más abajo) — un valor por dispositivo, medido a mano.
+     Acá van los valores de escritorio/tablet; el media query de 720px,
+     más abajo, redefine los que necesitan más alto en mobile (el texto
+     se envuelve más y las grillas caen a 1 columna, así que a veces
+     necesitan más lugar que en pantallas anchas). */
+  --h-sistema-solar: 700px;
+  --h-traductor-matematico: 600px;
+  --h-musica-3d: 1390px;
+  --h-tarjetas-memoria: 600px;
+  --h-linea-tiempo: 410px;
+  --h-laboratorio-quimica: 870px;
+  --h-diafragma-camara: 900px;
+  --h-pasos-proceso: 775px;
+  --h-emparejar-clasificar: 570px;
+  --h-diagrama-hotspots: 550px;
+  --h-explorador-atomos: 700px;
+  --h-bloque-d-resultado: 1490px;
 }
 
 * { box-sizing: border-box; }
@@ -681,31 +694,23 @@ section.block:first-of-type {
    prompt, mostrado en vivo dentro de un iframe (ver demos/ en Clase 5).
    Hardcodeado en index.html, no pasa por contenido.txt.
 
-   Ancho: se le permite "escaparse" del ancho de columna de texto
-   (--max-content-width, 680px) hasta --device-max-width (1040px), según
-   cuánto espacio real haya entre el menú lateral y el borde de la
-   ventana — así no queda ahorcada en 680px con mucho blanco al costado,
-   y los dispositivos que arman su propio layout en 2 o 3 columnas (ej.
-   los "cómo se usa" de Música 3D, o una línea de tiempo horizontal)
-   tienen ancho de sobra para mostrarse como corresponde y no caer en su
-   propio modo "mobile apilado". En pantallas angostas (celular, con el
-   menú oculto) el cálculo da 0 y el ancho queda igual al del texto, sin
-   generar scroll horizontal.
-   Alto: NO es fijo. Cada demo le avisa su alto real a esta página por
-   postMessage apenas carga (ver el <script> al final de cada archivo en
-   demos/, y initDeviceAutoResize() en script.js) y el <iframe> se ajusta
-   para mostrar todo el contenido sin scroll interno. El valor de acá
-   abajo es solo el alto inicial, antes de que llegue ese mensaje. */
+   Ancho: ocupa el ancho de la columna de texto (100% de su contenedor,
+   el mismo que el resto del contenido) — Diego probó una versión que la
+   ensanchaba más allá de la columna y no le gustó, así que se volvió a
+   esto, más simple.
+   Alto: FIJO, en px, puesto a mano en el style="" de cada <iframe> en
+   index.html (no hay ningún mecanismo automático). Se midió una vez el
+   alto real de cada demo a este mismo ancho (680px) y se cargó ese
+   número con un pequeño margen. Una versión anterior probó ajustar el
+   alto automáticamente con JavaScript (el iframe le avisaba a esta
+   página cuánto medía su contenido), pero en la práctica generaba
+   parpadeo/temblor visible en el texto de la página y, en algunos
+   dispositivos, crecía sin parar — por eso se volvió a un alto fijo,
+   más work predecible. Si el contenido de una demo cambia lo suficiente
+   como para que el alto ya no alcance, hay que volver a medirlo a mano
+   y actualizar ese style="height:...px" en index.html. */
 .demo-embed {
-  --available: calc(100vw - var(--nav-eff) - (var(--content-pad) * 2));
-  --device-w: min(var(--device-max-width), var(--available));
-  --text-w: min(var(--max-content-width), var(--available));
-  width: var(--device-w);
-  max-width: var(--device-w);
-  margin-top: 20px;
-  margin-bottom: 6px;
-  margin-left: calc((var(--text-w) - var(--device-w)) / 2);
-  margin-right: calc((var(--text-w) - var(--device-w)) / 2);
+  margin: 20px 0 6px;
   border: 1px solid var(--color-border);
   border-radius: 12px;
   overflow: hidden;
@@ -714,30 +719,15 @@ section.block:first-of-type {
 
 .demo-embed iframe {
   width: 100%;
-  height: 560px;
+  height: 460px;
   border: none;
   display: block;
-  transition: height .18s ease;
 }
 
-/* Mismo ancho que la demo de arriba, para que el link quede alineado
-   bajo su borde derecho en vez de bajo el de la columna de texto.
-   Selector reforzado a propósito (.block .demo-embed__link en vez de
-   .demo-embed__link solo): ".block p" más abajo trae un margin
-   shorthand que, con la misma especificidad, pisaría el margin-left/
-   right de acá y rompería el ancho (el link quedaba pegado a la
-   izquierda y se iba de ancho por la derecha). */
-.block .demo-embed__link {
-  --available: calc(100vw - var(--nav-eff) - (var(--content-pad) * 2));
-  --device-w: min(var(--device-max-width), var(--available));
-  --text-w: min(var(--max-content-width), var(--available));
-  width: var(--device-w);
-  margin-left: calc((var(--text-w) - var(--device-w)) / 2);
-  margin-right: calc((var(--text-w) - var(--device-w)) / 2);
+.demo-embed__link {
   text-align: right;
   font-size: .85rem;
-  margin-top: 8px;
-  margin-bottom: 28px;
+  margin: 8px 0 28px;
 }
 
 /* ---------- Código generado: bloque con botón de copiar ----------
@@ -1793,12 +1783,24 @@ section.block:first-of-type {
 }
 
 @media (max-width: 720px) {
-  /* El menú pasa a ser off-canvas (no ocupa ancho real) y el padding
-     lateral del contenido baja a 20px — ver .content más abajo. Estos
-     dos valores alimentan el cálculo de ancho de .demo-embed. */
+  /* En mobile el texto se envuelve más y varias grillas caen a 1
+     columna, así que varios dispositivos necesitan más alto que en
+     escritorio para que entre todo sin recortarse. Sistema solar y
+     Explorador de átomos quedan con el mismo valor (no hace falta
+     redefinirlos acá): a este ancho tan angosto esos dos igual recortan
+     un poco por los costados (orbitan/dibujan a un tamaño fijo en
+     píxeles, no se achican con el ancho) — es una limitación de esos
+     dos archivos tal como los armó Diego, no de este alto.  */
   :root {
-    --content-pad: 20px;
-    --nav-eff: 0px;
+    --h-musica-3d: 1545px;
+    --h-tarjetas-memoria: 850px;
+    --h-linea-tiempo: 745px;
+    --h-laboratorio-quimica: 1125px;
+    --h-diafragma-camara: 1440px;
+    --h-pasos-proceso: 1045px;
+    --h-emparejar-clasificar: 845px;
+    --h-diagrama-hotspots: 800px;
+    --h-bloque-d-resultado: 2110px;
   }
 
   .nav-toggle { display: block; }

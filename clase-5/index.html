@@ -127,10 +127,11 @@
           <h4>🌌 Sistema solar interactivo</h4>
           <p data-key="ejemplo_sistema_solar"></p>
           <div class="demo-embed">
-            <!-- height inicial más alto a propósito: este dispositivo mide su propio
-                 tamaño en "vh" (porcentaje de lo que mida el iframe), así que si arranca
-                 muy bajo, las órbitas más lejanas (Neptuno, Saturno) quedan recortadas. -->
-            <iframe src="demos/sistema-solar.html" title="Sistema solar interactivo" loading="lazy" style="height:820px"></iframe>
+            <!-- height medido a mano a este mismo ancho (columna de texto, ~680px):
+                 este dispositivo mide su propio tamaño en "vh" (porcentaje de lo que
+                 mida el iframe) así que, si el número de acá baja mucho, las órbitas
+                 más lejanas (Neptuno, Saturno) quedan recortadas por el marco. -->
+            <iframe src="demos/sistema-solar.html" title="Sistema solar interactivo" loading="lazy" style="height:var(--h-sistema-solar)"></iframe>
           </div>
           <p class="demo-embed__link"><a href="demos/sistema-solar.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
           <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
@@ -146,7 +147,7 @@
           <h4>🔢 Traductor matemático</h4>
           <p data-key="ejemplo_traductor_matematico"></p>
           <div class="demo-embed">
-            <iframe src="demos/traductor-matematico.html" title="Traductor matemático" loading="lazy"></iframe>
+            <iframe src="demos/traductor-matematico.html" title="Traductor matemático" loading="lazy" style="height:var(--h-traductor-matematico)"></iframe>
           </div>
           <p class="demo-embed__link"><a href="demos/traductor-matematico.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
           <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
@@ -162,7 +163,11 @@
           <h4>🎵 Música 3D</h4>
           <p data-key="ejemplo_musica_3d"></p>
           <div class="demo-embed">
-            <iframe src="demos/cubo-color-sonido-3d.html" title="Música 3D" loading="lazy"></iframe>
+            <!-- height medido a mano: a este ancho (columna de texto) el panel de
+                 controles cae DEBAJO de la escena 3D (este dispositivo arma 2 columnas
+                 lado a lado solo con más ancho disponible), así que necesita bastante
+                 alto para que entre todo sin recortarse. -->
+            <iframe src="demos/cubo-color-sonido-3d.html" title="Música 3D" loading="lazy" style="height:var(--h-musica-3d)"></iframe>
           </div>
           <p class="demo-embed__link"><a href="demos/cubo-color-sonido-3d.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
           <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
@@ -267,7 +272,7 @@
             <div class="content-block" data-key="prompt_tarjetas_memoria"></div>
           </div>
           <div class="demo-embed">
-            <iframe src="demos/tarjetas-de-memoria.html" title="Tarjetas de memoria" loading="lazy"></iframe>
+            <iframe src="demos/tarjetas-de-memoria.html" title="Tarjetas de memoria" loading="lazy" style="height:var(--h-tarjetas-memoria)"></iframe>
           </div>
           <p class="demo-embed__link"><a href="demos/tarjetas-de-memoria.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
         </div>
@@ -281,7 +286,7 @@
             <div class="content-block" data-key="prompt_linea_tiempo"></div>
           </div>
           <div class="demo-embed">
-            <iframe src="demos/linea-de-tiempo.html" title="Línea de tiempo — IA generativa" loading="lazy"></iframe>
+            <iframe src="demos/linea-de-tiempo.html" title="Línea de tiempo — IA generativa" loading="lazy" style="height:var(--h-linea-tiempo)"></iframe>
           </div>
           <p class="demo-embed__link"><a href="demos/linea-de-tiempo.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
         </div>
@@ -297,7 +302,7 @@
             <div class="content-block" data-key="prompt_laboratorio_quimica"></div>
           </div>
           <div class="demo-embed">
-            <iframe src="demos/laboratorio-quimica.html" title="Laboratorio: fuego y reacciones" loading="lazy"></iframe>
+            <iframe src="demos/laboratorio-quimica.html" title="Laboratorio: fuego y reacciones" loading="lazy" style="height:var(--h-laboratorio-quimica)"></iframe>
           </div>
           <p class="demo-embed__link"><a href="demos/laboratorio-quimica.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
         </div>
@@ -311,7 +316,7 @@
             <div class="content-block" data-key="prompt_diafragma_camara"></div>
           </div>
           <div class="demo-embed">
-            <iframe src="demos/diafragma-camara.html" title="El diafragma de la cámara" loading="lazy"></iframe>
+            <iframe src="demos/diafragma-camara.html" title="El diafragma de la cámara" loading="lazy" style="height:var(--h-diafragma-camara)"></iframe>
           </div>
           <p class="demo-embed__link"><a href="demos/diafragma-camara.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
         </div>
@@ -329,7 +334,7 @@
           <h4>🔢 Ordenar una secuencia</h4>
           <p data-key="ejemplo_pasos_proceso"></p>
           <div class="demo-embed">
-            <iframe src="demos/pasos-del-proceso.html" title="Ordená los pasos" loading="lazy"></iframe>
+            <iframe src="demos/pasos-del-proceso.html" title="Ordená los pasos" loading="lazy" style="height:var(--h-pasos-proceso)"></iframe>
           </div>
           <p class="demo-embed__link"><a href="demos/pasos-del-proceso.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
           <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
@@ -345,7 +350,7 @@
           <h4>🗂️ Emparejar y clasificar</h4>
           <p data-key="ejemplo_emparejar_clasificar"></p>
           <div class="demo-embed">
-            <iframe src="demos/emparejar-clasificar.html" title="Clasificá las herramientas" loading="lazy"></iframe>
+            <iframe src="demos/emparejar-clasificar.html" title="Clasificá las herramientas" loading="lazy" style="height:var(--h-emparejar-clasificar)"></iframe>
           </div>
           <p class="demo-embed__link"><a href="demos/emparejar-clasificar.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
           <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
@@ -361,7 +366,7 @@
           <h4>📍 Diagrama con hotspots</h4>
           <p data-key="ejemplo_diagrama_hotspots"></p>
           <div class="demo-embed">
-            <iframe src="demos/diagrama-hotspots.html" title="Las partes de un prompt" loading="lazy"></iframe>
+            <iframe src="demos/diagrama-hotspots.html" title="Las partes de un prompt" loading="lazy" style="height:var(--h-diagrama-hotspots)"></iframe>
           </div>
           <p class="demo-embed__link"><a href="demos/diagrama-hotspots.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
           <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
@@ -377,9 +382,9 @@
           <h4>🔭 Exploración guiada</h4>
           <p data-key="ejemplo_explorador_atomos"></p>
           <div class="demo-embed">
-            <!-- mismo motivo que en Sistema solar: este dispositivo también mide su
-                 propio tamaño en "vh", necesita arrancar más alto para no recortarse. -->
-            <iframe src="demos/explorador-atomos.html" title="Explorador de átomos" loading="lazy" style="height:820px"></iframe>
+            <!-- mismo motivo que en Sistema solar (ver comentario ahí): este dispositivo
+                 también mide su propio tamaño en "vh". -->
+            <iframe src="demos/explorador-atomos.html" title="Explorador de átomos" loading="lazy" style="height:var(--h-explorador-atomos)"></iframe>
           </div>
           <p class="demo-embed__link"><a href="demos/explorador-atomos.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
           <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
@@ -457,7 +462,7 @@
         <h4 id="resultado-bloque-d">Resultado</h4>
         <p data-key="bloque_d_resultado_intro"></p>
         <div class="demo-embed">
-          <iframe src="demos/bloque-d-resultado.html" title="Resultado: De qué hablamos cuando hablamos de IA generativa" loading="lazy"></iframe>
+          <iframe src="demos/bloque-d-resultado.html" title="Resultado: De qué hablamos cuando hablamos de IA generativa" loading="lazy" style="height:var(--h-bloque-d-resultado)"></iframe>
         </div>
         <p class="demo-embed__link"><a href="demos/bloque-d-resultado.html" target="_blank" rel="noopener">Abrir el resultado en pantalla completa ↗</a></p>
 
