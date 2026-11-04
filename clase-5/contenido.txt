@@ -30,13 +30,13 @@ Algunos recursos más avanzados, como el cubo musical 3D que vas a ver más adel
 *Nota: esta información me la proporcionó Claude cuando le pedí que me detallara qué arquitectura había detrás de ese dispositivo.*
 
 ## bloque_a_tokens
-Todos los ejemplos que vas a ver los creé específicamente para esta clase con Claude. Si tu intención es crear algo similar, tené en cuenta que los resultados pueden variar según qué modelo uses y si es la versión paga o la gratuita. Esto tiene que ver con la cantidad de tokens que puede llegar a consumir cada dispositivo que queramos crear.
+Todos los ejemplos que vas a ver los creé específicamente para esta clase con Claude (Sonnet 5). Si tu intención es crear algo similar, tené en cuenta que los resultados pueden variar según qué modelo uses y si es la versión paga o la gratuita. Esto tiene que ver con la cantidad de tokens que puede llegar a consumir cada dispositivo que queramos crear (cuanto más complejo el dispositivo, más tokens consume).
 
 ## bloque_a_ejemplos_intro
-Como comenté antes, con estos modelos podemos crear una gran diversidad de recursos que sirvan como material educativo. Te sugiero que tomes los que muestro en esta clase como referencia para pensar qué podrías adaptar a tu materia. Los generé todos con Claude (Sonnet 5), y podés ver el prompt completo de cada uno con el botón que aparece debajo.
+Como comenté antes, con los modelos de lenguaje (LLM) podemos crear una gran diversidad de recursos que sirvan como material educativo. Como sugerencia, podés tomar de referencia los ejemplos que comparto en esta clase para pensar qué podrías adaptar a tu materia, y seguramente se te ocurran otras posibilidades más copadas que no estén presentadas aquí.
 
 ## ejemplo_sistema_solar
-En este recurso quise representar, en una visualización esquemática y animada, las posiciones, los desplazamientos y las velocidades relativas con las que giran los planetas alrededor del Sol. Además, le pedí al modelo que se pudiera hacer clic en cada planeta para acceder a su información (la distancia al Sol y otros datos).
+En este recurso quise representar, en una visualización esquemática y animada, las posiciones, los desplazamientos y las velocidades relativas con las que giran los planetas alrededor del Sol. Además, le pedí al modelo que incluyera la posibilidad de hacer clic en cada planeta para acceder a su información (la distancia al Sol y otros datos).
 
 ## prompt_sistema_solar
 Necesito un dispositivo que muestre el sistema solar, con los planetas girando alrededor del Sol a sus velocidades relativas reales (los más cercanos giran más rápido).
@@ -48,7 +48,7 @@ Necesito un dispositivo que muestre el sistema solar, con los planetas girando a
 - Estilo visual: fondo oscuro tipo espacio, con nebulosas de color sutiles de fondo.
 
 ## ejemplo_traductor_matematico
-Es un dispositivo de autoevaluación de matemática que propone cinco preguntas de opción múltiple, del mismo estilo que un ejercicio de traducción de lenguaje verbal a simbólico. Al reiniciar vuelve a las mismas preguntas, aunque también podríamos pedirle al modelo que genere variaciones. Además, le pedí al modelo que se pudiera responder con las teclas.
+Es un dispositivo de autoevaluación de matemática que propone cinco preguntas de opción múltiple, del mismo estilo que un ejercicio de traducción de lenguaje verbal a simbólico (se me ocurrió crearlo porque mi hijo de 12 años está haciendo ejercicios de este tipo). Al reiniciar vuelve a las mismas preguntas, aunque también podríamos pedirle al modelo que genere variaciones. Además, le pedí al modelo que se pudiera responder con las teclas.
 
 ## prompt_traductor_matematico
 Necesito un dispositivo de autoevaluación de matemática, con el mismo formato que un ejercicio de traducción de lenguaje verbal a simbólico (por ejemplo: "El triple de la diferencia entre un número x y cinco" → 3(x − 5)).
@@ -61,7 +61,7 @@ Necesito un dispositivo de autoevaluación de matemática, con el mismo formato 
 - Estilo visual: colores cálidos y vibrantes, nada de paletas oscuras, con un gradiente y una sombra distinta para cada botón de opción, y algún detalle de celebración si el puntaje es alto.
 
 ## ejemplo_musica_3d
-El objetivo de este dispositivo fue crear un prototipo de sintetizador virtual 3D para "pintar sonidos". Se trata de un cubo dividido en mil cubitos (una grilla de 10 × 10 × 10), y cada uno, al pintarse, genera una nota distinta según su posición. Acá el módulo se complejiza, porque suma mecánicas para rotar el cubo y acercarse. Arriba están las instrucciones de uso y, debajo del cubo, una explicación de cómo se construyen los sonidos. Además, con el botón Play se puede reproducir la música que pintaste. La idea surgió de ver otros ejemplos parecidos en la web y querer armar algo similar.
+El objetivo de este dispositivo fue crear un prototipo de sintetizador virtual 3D para "pintar sonidos". Se trata de un cubo dividido en mil cubitos (una grilla de 10 × 10 × 10), y cada uno, al pintarse, genera una nota distinta según su posición. Acá el módulo se complejiza, porque suma mecánicas para rotar el cubo y acercarse. Arriba están las instrucciones de uso y, debajo del cubo, una explicación de cómo se construyen los sonidos. Además, con el botón Play se puede reproducir la música que pintaste. Esta idea se me ocurrió cuando vi un posteo de Instagram de un usuario que había hecho algo similar con una superficie plana cuadrada.
 
 ## prompt_musica_3d
 Necesito un dispositivo tipo sintetizador: un cubo dividido en una grilla de 10x10x10 mini cubos, donde cada uno se puede "pintar" y, al pintarse, suena una nota distinta según su posición.
@@ -73,7 +73,7 @@ Necesito un dispositivo tipo sintetizador: un cubo dividido en una grilla de 10x
 - Estilo visual: el cubo en semitransparencia, con los cubitos pintados bien visibles.
 
 ## bloque_a_cierre
-Si bien los ejemplos que te muestro aquí son muy específicos, podés pensar en casos similares, adaptados a tu propia área disciplinar.
+Si bien los ejemplos que te muestro aquí son muy específicos, como mencioné anteriormente, podés tomarlos como punto de partida para adaptarlos a los contenidos de tu área disciplinar.
 
 ## bloque_b_tener_claro
 Como venimos viendo a lo largo del curso, el aspecto central del proceso creativo es tener claro qué queremos crear (en este caso, un recurso interactivo), para luego poder traducir ese deseo en un prompt y obtener un resultado lo más cercano posible a lo que imaginamos. En el caso de los dispositivos, eso implica definir dos niveles:
@@ -100,7 +100,7 @@ Un fenómeno que se puede explorar moviendo variables: el sistema solar, un áto
 Información organizada para explicar o repasar un tema: tarjetas de memoria, glosarios, diagramas.
 
 ## bloque_b_elementos_intro
-Una vez elegido el tipo de recurso, el segundo nivel es definir qué elementos, qué diseño y qué comportamientos interactivos va a tener.
+Una vez elegido el tipo de recurso, el segundo nivel es definir qué materiales, qué elementos, qué diseño y qué comportamientos interactivos va a tener.
 
 ## elemento_materiales
 Podés subir tu propio contenido, tus preguntas o tus datos, para que el dispositivo los use en lugar de un ejemplo genérico.
@@ -152,7 +152,7 @@ Veamos dos ejemplos simples para crear recursos con esta misma lógica.
 La idea es crear un conjunto de tarjetas que se dan vuelta haciendo clic. En el frente, las tarjetas tienen escrito el término y, en el dorso, la definición. Sirve para repasar vocabulario o conceptos clave de cualquier tema.
 
 ## prompt_tarjetas_memoria
-Creá un recurso interactivo de tarjetas de memoria sobre vocabulario básico de IA generativa. Entregámelo como un único archivo HTML descargable, con el CSS y el JavaScript incluidos.
+Creá un recurso interactivo de tarjetas de memoria sobre vocabulario básico de IA generativa. Entregámelo como un único archivo HTML descargable.
 
 Son seis tarjetas, cada una con el término al frente y su definición al dorso:
 
@@ -171,7 +171,7 @@ Son seis tarjetas, cada una con el término al frente y su definición al dorso:
 La idea es crear una serie de "hitos clickeables" sobre una línea cronológica; al seleccionar uno, se abre el detalle debajo. Sirve para ordenar cualquier proceso en el tiempo.
 
 ## prompt_linea_tiempo
-Creá una línea de tiempo interactiva sobre la evolución de la IA generativa. Entregámela como un único archivo HTML descargable, con el CSS y el JavaScript incluidos.
+Creá una línea de tiempo interactiva sobre la evolución de la IA generativa. Entregámela como un único archivo HTML descargable.
 
 Son seis hitos, cada uno con año, título y una descripción breve:
 
@@ -194,7 +194,7 @@ Los siguientes ejemplos muestran una mecánica más compleja, con varios control
 La idea de este recurso fue crear una simulación con dos pestañas, Punto de ebullición y Color de llama. En una se calienta agua con distintas sustancias disueltas y se ve cómo cambia el punto de ebullición; en la otra se acerca una muestra a la llama y esta cambia de color según el elemento. También cuenta con un slider que controla la intensidad del mechero.
 
 ## prompt_laboratorio_quimica
-Creá una simulación interactiva de un laboratorio de química, con dos pestañas. Entregámela como un único archivo HTML descargable, con el CSS y el JavaScript incluidos.
+Creá una simulación interactiva de un laboratorio de química, con dos pestañas. Entregámela como un único archivo HTML descargable.
 
 Pestaña 1, Punto de ebullición: un mechero con un control deslizante de intensidad, un vaso con agua y un termómetro. Al agregar distintas sustancias al agua (sal, azúcar, alcohol, anticongelante) cambia el punto de ebullición, con burbujas y vapor al hervir, y una explicación de por qué cambia en cada caso.
 
@@ -207,7 +207,7 @@ Pestaña 2, Color de llama: acercar distintas muestras (sodio, cobre, potasio, l
 Este recurso propone una simulación de cómo el diafragma y el obturador de una cámara fotográfica controlan la luz y el enfoque de una foto. Tiene dos sliders, uno para controlar la apertura del diafragma y otro para la velocidad del obturador.
 
 ## prompt_diafragma_camara
-Creá una simulación interactiva que explique cómo el diafragma y el obturador de una cámara fotográfica controlan la luz y el enfoque de una foto. Entregámela como un único archivo HTML descargable, con el CSS y el JavaScript incluidos.
+Creá una simulación interactiva que explique cómo el diafragma y el obturador de una cámara fotográfica controlan la luz y el enfoque de una foto. Entregámela como un único archivo HTML descargable.
 
 - Dos controles deslizantes: uno de diafragma (de f/1.4, muy abierto, a f/22, muy cerrado) y otro de velocidad de obturación (de 1/1000 de segundo a 1 segundo).
 - Un dibujo del diafragma (el iris) que se abre y se cierra en tiempo real según el control.
@@ -244,16 +244,16 @@ En el siguiente video te cuento cómo incorporar estos recursos en tu aula.
 @video[]()
 
 ## bloque_d_terminologia
-Como ya comenté, los recursos que compartí como ejemplos fueron generados con Claude, que me entregó cada uno como un archivo único y descargable en formato HTML. Ahora vamos a ver cómo generar otro tipo de recurso, al que voy a llamar "web", que nos permite convertir un documento que ya tenés escrito (un PDF, un Word) en una página navegable, con mejor diseño e imágenes organizadas. Los dos son archivos HTML, pero son recursos diferentes.
+Como ya comenté, los recursos que compartí como ejemplos fueron generados con Claude, que me entregó cada uno como un archivo único y descargable en formato HTML. Ahora vamos a ver cómo generar otro tipo de recurso, al que voy a llamar "web", que nos permite convertir un documento que ya tenés escrito (un PDF, un Word) en una página navegable, con mejor diseño e imágenes organizadas. Ambos casos, el recurso interactivo y la web, son archivos HTML, pero con funciones diferentes.
 
 ## bloque_d_porque
 A continuación voy a contarte y mostrarte cómo convertir un documento estático en PDF en una página web que le sume dinamismo. Es el mismo procedimiento que utilicé para crear la página que estás leyendo ahora.
 
 ## bloque_d_gramatica_intro
-Para pedirle este tipo de recurso a un modelo, conviene seguir siempre la misma lógica: qué tipo de recurso querés, a partir de qué materiales, con qué elementos interactivos, y con qué estilo visual.
+En este caso vamos a mantener la lógica que venimos abordando: establecer el tipo de página web, proporcionar los materiales, definir qué elementos interactivos van a estar involucrados y cómo va a ser el estilo visual.
 
 ## bloque_d_gramatica_formula
-[Tipo de recurso] + [materiales que adjuntás] + [elementos interactivos que elegiste] + [estilo visual]
+[Tipo de página web] + [materiales que adjuntás] + [elementos interactivos que elegiste] + [estilo visual]
 
 ## bloque_d_insumos_intro
 Antes de arrancar, estos son los materiales con los que vamos a trabajar:
@@ -268,11 +268,11 @@ El documento original. Hacé clic para ver el PDF completo.
 Las tres imágenes que vamos a usar, juntas en un solo archivo.
 
 ## bloque_d_recomendacion
-- No importa si le adjuntás los archivos sueltos o todos juntos en una carpeta comprimida: el resultado es el mismo. Lo que sí conviene pedirle al modelo es que, si generó varios archivos (el HTML más las imágenes, por ejemplo), te los entregue todos juntos en una carpeta comprimida y ya organizados, para poder subirlos sin problemas.
-- Trabajar con varias imágenes o archivos adjuntos puede consumir bastantes interacciones de un plan gratuito (en ChatGPT, por ejemplo). Como alternativa gratuita, podés usar Gemini.
+- No importa si le adjuntás los archivos sueltos o todos juntos en una carpeta comprimida: el resultado es el mismo. Lo que sí conviene pedirle al modelo es que, si generó varios archivos (el HTML más las imágenes, por ejemplo), te los entregue todos juntos en una carpeta comprimida y ya organizados, para poder subirlos luego (a un hosting o a una plataforma para su publicación online) sin problemas.
+- Trabajar con varias imágenes o archivos adjuntos puede consumir bastantes interacciones de un plan gratuito (en ChatGPT, por ejemplo).
 
 ## bloque_d_que_quiero_hacer
-¿Qué quiero hacer? Quiero que el título quede bien destacado arriba, como encabezado principal. La primera parte del texto troncal, desde "La inteligencia artificial no es una novedad…" hasta "…serie o canción nos va a aparecer a continuación", va seguida de un carrusel con las tres imágenes, con flechas para pasar de una a otra. Después sigue el resto del texto, desde "El término inteligencia artificial tampoco…" hasta el final — y ese párrafo en particular, donde se explica el test de Turing, lo quiero en una caja destacada, con un color de gradiente vibrante y el texto en blanco. Y abajo, dos botones alineados a la izquierda, uno al lado del otro, para el tráiler y la crítica.
+**¿Qué quiero hacer?** Quiero que el título quede bien **destacado arriba**, como encabezado principal. La primera parte del texto troncal, desde "La inteligencia artificial no es una novedad…" hasta "…serie o canción nos va a aparecer a continuación", va seguida de un **carrusel con las tres imágenes**, con **flechas** para pasar de una a otra. Después sigue el resto del texto, desde "El término inteligencia artificial tampoco…" hasta el final — y ese párrafo en particular, donde se explica el test de Turing, lo quiero en una **caja destacada, con un color de gradiente vibrante y el texto en blanco**. Y abajo, **dos botones alineados a la izquierda**, uno al lado del otro, para el tráiler y la crítica.
 
 ## bloque_d_metodo
 Vamos a crear la página pidiéndole a un modelo de lenguaje que genere el código, con un prompt como este:
@@ -311,7 +311,7 @@ Ese código generado lo copiás y pegás en la sección correspondiente de tu au
 ## bloque_d_aprendiendo
 Lo que vimos a lo largo de las cinco clases no son únicamente ejemplos de lo que se puede hacer y de las instrucciones para lograrlo. Es también la posibilidad de comprender que, cuando le damos instrucciones a un modelo (el prompt), estamos redactando algo muy parecido a un algoritmo, es decir, un conjunto de instrucciones para obtener algo. Y ese algo no se reduce únicamente a lo que vimos en el curso: puede ser cualquier otra cosa, desde aprender las funciones de un software o a resolver otros problemas, hasta aprender a desarrollar algo que no sabemos cómo hacer.
 
-Por ejemplo, si quisiera crear una app para celular, podría adaptar las lógicas de construcción de prompts para que el modelo me guíe en su desarrollo. Lo mismo si quiero publicar online una página web en HTML como la que vimos anteriormente: le puedo pedir a un modelo de lenguaje que me enumere hostings gratuitos donde subirla, o que me presente alternativas usadas en la actualidad, como la plataforma ^[GitHub](GitHub es una plataforma para guardar, compartir y llevar el registro de versiones de proyectos de código. Con su servicio GitHub Pages se pueden publicar páginas web en HTML de forma gratuita, con un link propio, como el de estas clases.), que es la que estoy usando para publicar estas clases.
+Por ejemplo, si quisiera crear una app para celular, podría adaptar las lógicas de construcción de prompts para que el modelo me guíe en su desarrollo. Lo mismo si quiero publicar online una página web en HTML como la que creamos anteriormente: le puedo pedir a un modelo de lenguaje que me enumere hostings gratuitos donde subirla, o que me presente alternativas usadas en la actualidad, como la plataforma ^[GitHub](GitHub es una plataforma para guardar, compartir y llevar el registro de versiones de proyectos de código. Con su servicio GitHub Pages se pueden publicar páginas web en HTML de forma gratuita, con un link propio, como el de estas clases.), que es la que estoy usando para publicar estas clases.
 
 ## cierre_cita
 (Patricio Rey y sus Redonditos de Ricota, *Último bondi a Finisterre*, 1998)
@@ -323,6 +323,7 @@ Por otro lado, el curso buscaba que nos vinculáramos con estas tecnologías des
 
 Y aquí vuelvo al inicio del curso, a su título, y al rol central que quise darle a la imaginación. La imaginación no solo como capacidad de pensar y diseñar cosas que no existen, sino como una energía capaz de proponernos caminos posibles en el marco de escenarios muy diversos.
 
+## cierre_final
 Ahora sí, es tiempo de apagar la máquina. Gracias por haberte sumado y por coparte con las actividades. Espero que te hayas llevado algo de este mundo complejo, inquietante y en expansión, tanto para usarlo como para guardarlo en un cajón.
 
 Un abrazo y ¡nos vemos!

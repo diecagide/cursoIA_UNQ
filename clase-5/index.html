@@ -66,8 +66,8 @@
       <li class="nav-group">
         <a class="nav-group__link" href="#bloque-d"><span class="nav-bullet"></span>Bloque D · Formato web y aula virtual</a>
         <ul class="nav-subgroup">
-          <li><a href="#ejemplo-html-simple">Ejemplo del HTML simple</a></li>
-          <li><a href="#customizar-aula">Customizar el aula virtual</a></li>
+          <li><a href="#ejemplo-html-simple">Ejemplo: de un PDF a una web</a></li>
+          <li><a href="#customizar-aula">Anexo: Customizando el aula virtual</a></li>
           <li><a href="#aprendiendo-a-aprender">Aprendiendo a aprender</a></li>
         </ul>
       </li>
@@ -113,11 +113,19 @@
         <div class="content-block" data-key="bloque_a_intro"></div>
         <div class="content-block" data-key="bloque_a_modelos_llm"></div>
 
-        <h3 id="que-es-codigo">¿Qué hay detrás de un recurso interactivo?</h3>
-        <div class="callout">
-          <p class="callout__label">HTML, CSS y JavaScript</p>
-          <div class="content-block" data-key="bloque_a_que_es_codigo"></div>
-        </div>
+        <details class="expandable" id="que-es-codigo">
+          <summary>
+            <span class="expandable__icon" aria-hidden="true">🧩</span>
+            <span class="expandable__text">
+              <span class="expandable__eyebrow">Para ampliar</span>
+              <span class="expandable__title">¿Qué hay detrás de un recurso interactivo? HTML, CSS y JavaScript</span>
+            </span>
+            <span class="expandable__chevron" aria-hidden="true">▸</span>
+          </summary>
+          <div class="expandable__body">
+            <div class="content-block" data-key="bloque_a_que_es_codigo"></div>
+          </div>
+        </details>
 
         <div class="highlight-box">
           <h3>💡 Ejemplos de esta clase</h3>
@@ -217,7 +225,7 @@
             <p data-key="tipo_recurso_simulaciones"></p>
           </div>
           <div class="element-card" style="--element-color:#c23a52">
-            <h4><span class="element-card__icon" aria-hidden="true">📚</span> Contenidos educativos</h4>
+            <h4><span class="element-card__icon" aria-hidden="true">📚</span> Módulos explicativos</h4>
             <p data-key="tipo_recurso_contenidos"></p>
           </div>
         </div>
@@ -424,7 +432,7 @@
         <div class="content-block" data-key="bloque_d_terminologia"></div>
         <p data-key="bloque_d_porque"></p>
 
-        <h3 id="ejemplo-html-simple">Ejemplo del HTML simple</h3>
+        <h3 id="ejemplo-html-simple">Ejemplo: de un PDF a una web</h3>
         <p data-key="bloque_d_gramatica_intro"></p>
         <p class="prompt-formula" data-key="bloque_d_gramatica_formula"></p>
 
@@ -503,7 +511,7 @@
 
         <hr class="section-divider">
 
-        <h3 id="customizar-aula">Customizando el diseño del aula virtual</h3>
+        <h3 id="customizar-aula">Anexo: Customizando el diseño del aula virtual</h3>
         <p data-key="bloque_d_aula_intro"></p>
         <div class="content-block" data-key="bloque_d_aula_ejemplo"></div>
         <div class="content-block" data-key="bloque_d_aula_metodo"></div>
@@ -525,6 +533,10 @@
              clases, no el bloque .next-class de "próxima clase" que
              tienen las demás. -->
         <div class="content-block" data-key="cierre_1"></div>
+
+        <div class="highlight-box">
+          <div class="content-block" data-key="cierre_final"></div>
+        </div>
       </section>
 
     </div>
