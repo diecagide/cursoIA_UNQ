@@ -1,37 +1,39 @@
 ## bienvenida_1
-Bienvenidas y bienvenidos a la última clase del curso. Si llegaste hasta acá, significa que recorriste el ciclo completo de la IA generativa propuesto por este curso, y eso te convierte en Gurú interestelar de la inteligencia artificial. ¡Amplias congratulaciones!
+Bienvenidas y bienvenidos a la última clase del curso. Si llegaste hasta acá, significa que recorriste el ciclo completo de la IA generativa propuesto por este curso, y eso te convierte en Gurú interestelar de la inteligencia artificial. ¡Felicitaciones! 🍾
 
-En esta clase no vamos a sumar modelos ni plataformas nuevas. Vamos a usar lo que ya conocemos y lo vamos a aplicar en la generación de recursos interactivos que puedan serte útiles para el aula, ya sea para usarlos como dispositivos didácticos dentro de tus clases o para que tus estudiantes puedan aplicarlos en sus entregas. Mayormente vamos a trabajar con los mismos modelos de lenguaje que usamos desde la Clase 2.
+En esta clase no vamos a sumar modelos ni plataformas nuevas. Vamos a usar lo que ya conocemos y lo vamos a aplicar en la generación de recursos interactivos que puedan ser útiles para el aula, ya sea para usarlos como dispositivos didácticos dentro de tus clases o para que los y las estudiantes puedan aplicarlos en sus entregas. Mayormente vamos a trabajar con los mismos modelos de lenguaje que usamos desde la Clase 2.
 
 ## objetivos_clase5
-- Generar dispositivos didácticos interactivos con los modelos de lenguaje (LLM) que ya conocemos.
+- Generar dispositivos didácticos interactivos con los modelos de lenguaje (LLM) que vimos en las primeras clases.
 - Conocer las diversas posibilidades de recursos que pueden generarse y que pueden aplicarse a tu área disciplinar.
 - Incorporar esos módulos en tu aula virtual.
 
 ## bloque_a_intro
-Los recursos didácticos interactivos son módulos autónomos que se articulan con los contenidos de la materia y que podés sumar al aula: una actividad, un juego, una simulación, un test de autoevaluación. La idea de incorporarlos es que le aporten dinamismo y práctica a una clase. Históricamente, estos módulos se crearon escribiendo código en lenguajes como HTML, CSS o JavaScript, y durante mucho tiempo hizo falta saber programar para poder diseñarlos e implementarlos.
+Los recursos didácticos interactivos son módulos autónomos que se articulan con los contenidos de la materia y que podés sumar al aula: una actividad, un juego, una simulación, un test de autoevaluación. La idea de incorporarlos es que le aporten dinamismo y práctica a una clase. Históricamente, estos módulos se creaban escribiendo código en lenguajes como HTML, CSS o JavaScript, y durante mucho tiempo fue condición necesaria saber programar para poder diseñarlos e implementarlos.
 
 ## bloque_a_modelos_llm
-Si bien tener conocimientos de programación te permite ampliar las posibilidades de diseño de estos recursos, hoy no es necesario saber programar (como es mi caso), porque podés usar un modelo de lenguaje (Claude, ChatGPT, Gemini) para crearlos. Le pedís al modelo lo que estás buscando y te devuelve el archivo HTML para descargar, o el código para copiar y pegar donde lo necesites. La idea de esta clase es justamente esa, generar algunos dispositivos útiles en HTML que puedas descargar e incorporar directamente en tu aula virtual.
+Si bien tener conocimientos de programación nos permitiría ampliar las posibilidades de diseño de estos recursos, hoy no es necesario exclusivamente ser programadora o programador (como es mi caso), porque podemos usar modelos de lenguaje (Claude, ChatGPT, Gemini) para crearlos. El procedimiento generativo es similar a los casos que vimos en las clases anteriores: le pedimos al modelo lo que queremos desarrollar y el modelo nos devuelve, en este caso, un archivo HTML para descargar, o un código para copiar y pegar en nuestra aula.
 
 ## bloque_a_que_es_codigo
 Detrás de estos recursos hay lenguajes de programación y códigos escritos en esos lenguajes.
 
-El HTML (HyperText Markup Language) es el lenguaje con el que está escrita casi cualquier página que ves en internet, incluida esta misma clase. Define el contenido y la estructura: qué texto, qué imagen, qué botón va en cada lugar.
+El **HTML** (HyperText Markup Language) es el lenguaje con el que está escrita casi cualquier página que ves en internet, incluida esta misma clase. Define el contenido y la estructura: qué texto, qué imagen, qué botón va en cada lugar.
 
-El CSS es la parte del código que define el diseño visual: colores, tipografías, espacios, cómo se acomoda todo en la pantalla.
+El **CSS** es la parte del código que define el diseño visual: colores, tipografías, espacios, cómo se acomoda todo en la pantalla.
 
-El JavaScript es el que le da comportamiento e interactividad a la página: lo que hace que un botón reaccione al tocarlo, que una tarjeta se dé vuelta, que un juego lleve la cuenta de los puntos.
+El **JavaScript** es el que le da comportamiento e interactividad a la página: lo que hace que un botón reaccione al tocarlo, que una tarjeta se dé vuelta, que un juego lleve la cuenta de los puntos.
 
-Los tres pueden combinarse en un mismo archivo o funcionar en archivos separados, y no hace falta nombrarlos ni entenderlos en profundidad para pedirle un recurso a un modelo. Alcanza con describir qué contenido querés, cómo querés que se vea y qué querés que haga, y el modelo se encarga de escribir el código que haga falta.
+Los tres pueden combinarse en un mismo archivo o funcionar en archivos separados, y no hace falta nombrarlos ni entenderlos en profundidad para pedirle un recurso a un modelo. Alcanza con describir qué contenido deseamos, cómo queremos que se vea y qué queremos que haga, y el modelo se encarga de escribir el código necesario para que se cumplan las condiciones que hayamos precisado en el prompt.
 
-Algunos recursos más avanzados, como el cubo musical 3D que vas a ver más adelante en este mismo bloque, usan además alguna librería de JavaScript ya armada, pensada para una tarea específica, como los gráficos en 3D (esto me lo detalló Claude cuando le pedí que me explicara qué arquitectura había detrás de ese dispositivo).
+Algunos recursos más avanzados, como el cubo musical 3D que vas a ver más adelante en este mismo bloque, usan además alguna librería de JavaScript ya armada, pensada para una tarea específica, como los gráficos en 3D.
+
+*Nota: esta información me la proporcionó Claude cuando le pedí que me detallara qué arquitectura había detrás de ese dispositivo.*
 
 ## bloque_a_tokens
-💡 Todos los ejemplos que vas a ver los creé específicamente para esta clase con Claude. Tené en cuenta que los resultados pueden variar según uses la versión paga o la gratuita de un modelo, por la cantidad de tokens (las unidades de texto que el modelo procesa y genera) que consume cada proyecto. Un dispositivo muy complejo puede consumir muchos tokens, y tal vez en una versión gratuita no puedas generarlo.
+Todos los ejemplos que vas a ver los creé específicamente para esta clase con Claude. Si tu intención es crear algo similar, tené en cuenta que los resultados pueden variar según qué modelo uses y si es la versión paga o la gratuita. Esto tiene que ver con la cantidad de tokens que puede llegar a consumir cada dispositivo que queramos crear.
 
 ## bloque_a_ejemplos_intro
-Como comenté anteriormente, podemos crear una gran diversidad de recursos. La idea es que tomes los que muestro en esta clase como posibilidades para adaptar a tu materia. A continuación te comparto algunos ejemplos de lo que podemos generar. En todos los casos el modelo que usé fue Claude (Sonnet 5), y podés ver el prompt completo con el botón debajo de cada uno.
+Como comenté antes, con estos modelos podemos crear una gran diversidad de recursos que sirvan como material educativo. Te sugiero que tomes los que muestro en esta clase como referencia para pensar qué podrías adaptar a tu materia. Los generé todos con Claude (Sonnet 5), y podés ver el prompt completo de cada uno con el botón que aparece debajo.
 
 ## ejemplo_sistema_solar
 En este recurso quise representar, en una visualización esquemática y animada, las posiciones, los desplazamientos y las velocidades relativas con las que giran los planetas alrededor del Sol. Además, le pedí al modelo que se pudiera hacer clic en cada planeta para acceder a su información (la distancia al Sol y otros datos).
@@ -134,7 +136,14 @@ El aspecto visual del dispositivo: la paleta de colores, la tipografía, los íc
 [Tipo de dispositivo] + [Tema o contenido] + [Estructura y reglas de funcionamiento] + [Materiales o preguntas que adjuntás] + [Elementos y comportamientos interactivos] + [Estilo visual]
 
 ## bloque_b_gramatica_desglose
-El tipo de dispositivo es la categoría general que elegiste más arriba: un juego, una simulación, una línea de tiempo. El tema o contenido es sobre qué trata: qué información, qué proceso, qué pregunta. La estructura y reglas de funcionamiento son los detalles concretos de cómo funciona: cuántas preguntas, cuántas opciones, qué pasa al acertar o al fallar, qué rango tiene un control. Los materiales o preguntas que adjuntás son tu propio contenido, cuando lo tenés. Los elementos y comportamientos interactivos son los que elegiste en la sección anterior. Y el estilo visual es el diseño, cómo querés que se vea: colores, tipografía, nivel de sobriedad o de efectos.
+Cada parte de la fórmula define un aspecto distinto del recurso:
+
+- El **tipo de dispositivo** es la categoría general del recurso, como un juego o una simulación (las que vimos más arriba, en "Tipos de recurso").
+- En el **tema o contenido** definimos de qué se trata: qué información tiene que mostrar o qué proceso tiene que explicar.
+- La **estructura y las reglas de funcionamiento** son los detalles concretos de cómo funciona: cuántas preguntas tiene, cuántas opciones, qué pasa al acertar o al fallar.
+- Los **materiales o preguntas que adjuntás** son tu propio contenido, que podés tener, por ejemplo, en un Word o en un PDF.
+- Los **elementos y comportamientos interactivos** son los botones y controles que va a tener el recurso, y lo que pasa al usar cada uno; por ejemplo, un botón que reinicia la actividad o un slider que cambia un valor.
+- El **estilo visual** es el diseño, cómo querés que se vea: colores, formas, tipografías y elementos gráficos.
 
 ## bloque_b_simple_intro
 Veamos dos ejemplos simples para crear recursos con esta misma lógica.
@@ -143,24 +152,39 @@ Veamos dos ejemplos simples para crear recursos con esta misma lógica.
 La idea es crear un conjunto de tarjetas que se dan vuelta haciendo clic. En el frente, las tarjetas tienen escrito el término y, en el dorso, la definición. Sirve para repasar vocabulario o conceptos clave de cualquier tema.
 
 ## prompt_tarjetas_memoria
-Necesito un dispositivo de tarjetas de memoria sobre vocabulario básico de IA generativa.
+Creá un recurso interactivo de tarjetas de memoria sobre vocabulario básico de IA generativa. Entregámelo como un único archivo HTML descargable, con el CSS y el JavaScript incluidos.
 
-- Seis tarjetas, cada una con un término de un lado y su definición del otro.
-- Los términos: Prompt, Alucinación, Modelo multimodal, Fine-tuning, Token y Contexto [te paso la definición de cada uno].
-- Al tocar una tarjeta, se da vuelta con una animación suave para mostrar la definición.
-- Dos botones: uno que da vuelta todas las tarjetas a la vez, y otro que mezcla el orden.
-- Estilo visual: fondo con gradiente vibrante en tonos violeta y rosa, tarjetas blancas con el término al frente y un dorado cálido al dar vuelta.
+Son seis tarjetas, cada una con el término al frente y su definición al dorso:
+
+- Prompt: la instrucción que le das a un modelo de IA para que genere algo.
+- Alucinación: cuando un modelo genera información que suena creíble pero es falsa o inventada.
+- Modelo multimodal: un modelo que entiende o genera más de un tipo de contenido (texto, imagen, audio, video) a la vez.
+- Fine-tuning: ajustar un modelo ya entrenado con datos propios para que se especialice en una tarea puntual.
+- Token: la unidad mínima de texto que procesa un modelo de lenguaje, que puede ser una palabra, parte de una palabra o un signo.
+- Contexto: la información previa que el modelo tiene disponible al momento de generar una respuesta.
+
+- Al hacer clic en una tarjeta, se da vuelta con una animación suave y muestra la definición.
+- Dos botones: uno que da vuelta todas las tarjetas a la vez y otro que mezcla el orden.
+- Estilo visual: fondo con gradiente vibrante en tonos violeta y rosa, tarjetas blancas con el término al frente y un dorado cálido al darlas vuelta.
 
 ## ejemplo_linea_tiempo
 La idea es crear una serie de "hitos clickeables" sobre una línea cronológica; al seleccionar uno, se abre el detalle debajo. Sirve para ordenar cualquier proceso en el tiempo.
 
 ## prompt_linea_tiempo
-Necesito una línea de tiempo interactiva sobre la evolución de la IA generativa.
+Creá una línea de tiempo interactiva sobre la evolución de la IA generativa. Entregámela como un único archivo HTML descargable, con el CSS y el JavaScript incluidos.
 
-- Seis hitos, cada uno con año, título y una descripción breve [te paso los datos de cada hito].
+Son seis hitos, cada uno con año, título y una descripción breve:
+
+- 2014, Redes generativas antagónicas (GANs): aparecen los primeros modelos capaces de generar imágenes sintéticas realistas, entrenando dos redes neuronales que compiten entre sí.
+- 2017, La arquitectura Transformer: un paper de Google ("Attention is all you need") presenta la arquitectura que, años después, haría posibles a los grandes modelos de lenguaje.
+- 2020, GPT-3: OpenAI lanza un modelo de lenguaje capaz de generar textos coherentes y versátiles a partir de un simple prompt, marcando un salto de escala.
+- 2022, ChatGPT y Stable Diffusion: la IA generativa llega al público masivo, con una interfaz conversacional simple y modelos de imagen accesibles para cualquiera.
+- 2023–24, Modelos multimodales: los modelos empiezan a combinar texto, imagen, audio y video en una misma herramienta, entendiendo y generando distintos formatos a la vez.
+- 2025–26, Agentes y herramientas integradas: la IA pasa de responder preguntas a ejecutar tareas completas, combinando varios modelos y herramientas, como vimos con Google Flow en la Clase 4.
+
 - Los hitos se muestran como puntos sobre una línea horizontal, con el año debajo de cada uno.
-- Al tocar un hito se resalta su punto y aparece el detalle (título y descripción) en un recuadro debajo.
-- Que en el celular la línea se acomode en vertical, sin que se encime el contenido.
+- Al hacer clic en un hito se resalta su punto y aparece el detalle (título y descripción) en un recuadro debajo.
+- En el celular, la línea se acomoda en vertical, sin que se encime el contenido.
 - Estilo visual: fondo blanco, acento en azul, tipografía clara, diseño simple tipo informe.
 
 ## bloque_b_complejo_intro
@@ -170,11 +194,11 @@ Los siguientes ejemplos muestran una mecánica más compleja, con varios control
 La idea de este recurso fue crear una simulación con dos pestañas, Punto de ebullición y Color de llama. En una se calienta agua con distintas sustancias disueltas y se ve cómo cambia el punto de ebullición; en la otra se acerca una muestra a la llama y esta cambia de color según el elemento. También cuenta con un slider que controla la intensidad del mechero.
 
 ## prompt_laboratorio_quimica
-Necesito una simulación de laboratorio de química con dos pestañas.
+Creá una simulación interactiva de un laboratorio de química, con dos pestañas. Entregámela como un único archivo HTML descargable, con el CSS y el JavaScript incluidos.
 
-Pestaña 1 — Punto de ebullición: un mechero con un control deslizante de intensidad, un vaso con agua y un termómetro. Agregando distintas sustancias (sal, azúcar, alcohol, anticongelante) cambia el punto de ebullición, con burbujas y vapor al hervir, y una explicación de por qué cambia en cada caso.
+Pestaña 1, Punto de ebullición: un mechero con un control deslizante de intensidad, un vaso con agua y un termómetro. Al agregar distintas sustancias al agua (sal, azúcar, alcohol, anticongelante) cambia el punto de ebullición, con burbujas y vapor al hervir, y una explicación de por qué cambia en cada caso.
 
-Pestaña 2 — Ensayo a la llama: acercar distintas muestras (sodio, cobre, potasio, litio, calcio, estroncio, bario) a la llama del mechero, que cambia de color según el elemento, con una explicación breve de por qué pasa eso a nivel atómico.
+Pestaña 2, Color de llama: acercar distintas muestras (sodio, cobre, potasio, litio, calcio, estroncio, bario) a la llama del mechero, que cambia de color según el elemento, con una explicación breve de por qué pasa eso a nivel atómico.
 
 - Que se vea con la estética de un laboratorio: mechero con llama animada, termómetro con mercurio que sube y baja, vaso de vidrio.
 - Estilo visual: fondo oscuro con tonos violeta y azulado, acentos dorados en los controles.
@@ -183,13 +207,13 @@ Pestaña 2 — Ensayo a la llama: acercar distintas muestras (sodio, cobre, pota
 Este recurso propone una simulación de cómo el diafragma y el obturador de una cámara fotográfica controlan la luz y el enfoque de una foto. Tiene dos sliders, uno para controlar la apertura del diafragma y otro para la velocidad del obturador.
 
 ## prompt_diafragma_camara
-Necesito una simulación que explique cómo el diafragma y el obturador de una cámara controlan la luz y el enfoque de una foto.
+Creá una simulación interactiva que explique cómo el diafragma y el obturador de una cámara fotográfica controlan la luz y el enfoque de una foto. Entregámela como un único archivo HTML descargable, con el CSS y el JavaScript incluidos.
 
-- Dos controles deslizantes: uno de diafragma (de f/1.4, muy abierto, a f/22, muy cerrado) y otro de velocidad de obturación.
+- Dos controles deslizantes: uno de diafragma (de f/1.4, muy abierto, a f/22, muy cerrado) y otro de velocidad de obturación (de 1/1000 de segundo a 1 segundo).
 - Un dibujo del diafragma (el iris) que se abre y se cierra en tiempo real según el control.
 - Una vista previa del resultado: una foto de ejemplo donde el fondo se desenfoca más o menos según cuán abierto esté el diafragma.
-- Dos datos siempre visibles: el valor de f y la velocidad de obturación.
-- Un texto que se actualiza según la posición de ambos controles, explicando qué efecto tiene cada uno sobre la luz, el desenfoque de fondo y el movimiento.
+- Datos siempre visibles: el valor de f, la velocidad de obturación, si la exposición es correcta y cuánta profundidad de campo hay.
+- Un texto que se actualiza según la posición de ambos controles, explicando qué efecto tiene cada uno sobre la luz, el desenfoque del fondo y el movimiento.
 - Estilo visual: fondo oscuro tipo estudio fotográfico, con un acento cálido.
 
 ## bloque_c_intro
@@ -210,8 +234,8 @@ Este ejemplo permite elegir un elemento (en este caso, de la tabla periódica) y
 ## bloque_c_otras_ideas
 Y algunas ideas más para seguir explorando:
 
-- Un mapa interactivo con zonas tocables, para geografía o para marcar los hitos de un recorrido.
-- Un árbol de decisión, donde cada elección lleva a una rama distinta, útil para trabajar casos o dilemas.
+- Un mapa interactivo con zonas clickeables, para geografía o para marcar los hitos de un recorrido.
+- Un árbol de decisión, en el que cada elección abre un camino distinto, por ejemplo para resolver un caso práctico paso a paso.
 - Un generador de preguntas al azar a partir de una lista de contenidos, para repasar antes de un examen.
 
 ## bloque_c_incorporacion
@@ -220,10 +244,10 @@ En el siguiente video te cuento cómo incorporar estos recursos en tu aula.
 @video[]()
 
 ## bloque_d_terminologia
-Antes de seguir, una aclaración de vocabulario. A los recursos que vimos hasta acá los llamamos "dispositivos", aunque también estén hechos en HTML. De ahora en más vamos a usar la palabra "web" para otra cosa: convertir un documento que ya tenés escrito (un PDF, un Word) en una página navegable, con mejor diseño e imágenes mejor organizadas. Las dos cosas usan HTML por debajo, pero cumplen un propósito distinto.
+Como ya comenté, los recursos que compartí como ejemplos fueron generados con Claude, que me entregó cada uno como un archivo único y descargable en formato HTML. Ahora vamos a ver cómo generar otro tipo de recurso, al que voy a llamar "web", que nos permite convertir un documento que ya tenés escrito (un PDF, un Word) en una página navegable, con mejor diseño e imágenes organizadas. Los dos son archivos HTML, pero son recursos diferentes.
 
 ## bloque_d_porque
-Un documento en PDF es estático: todo el texto queda uno detrás del otro, de punta a punta. Convertirlo en una página web le suma dinamismo y una mejora gráfica, sin que tengas que cambiar una sola palabra del contenido original.
+A continuación voy a contarte y mostrarte cómo convertir un documento estático en PDF en una página web que le sume dinamismo. Es el mismo procedimiento que utilicé para crear la página que estás leyendo ahora.
 
 ## bloque_d_gramatica_intro
 Para pedirle este tipo de recurso a un modelo, conviene seguir siempre la misma lógica: qué tipo de recurso querés, a partir de qué materiales, con qué elementos interactivos, y con qué estilo visual.
@@ -293,12 +317,12 @@ Por ejemplo, si quisiera crear una app para celular, podría adaptar las lógica
 (Patricio Rey y sus Redonditos de Ricota, *Último bondi a Finisterre*, 1998)
 
 ## cierre_1
-Este curso de capacitación sobre inteligencia artificial generativa tenía dos propósitos. Por un lado, construir un espacio de divulgación de un conjunto de tecnologías que cada día se hacen más presentes en nuestra vida cotidiana, tanto en lo académico y profesional como en lo personal. En ese espacio confluyen diversas aristas: los modelos más populares, sus funciones principales y sus características generativas; los usos y posibilidades que ofrecen en el ámbito académico y profesional; y las estrategias para validar una información que, aun siendo verosímil, puede estar atravesada por alucinaciones y sesgos.
+Y llegamos al final. Este curso de capacitación sobre inteligencia artificial generativa tenía dos propósitos. Por un lado, construir un espacio de divulgación de un conjunto de tecnologías que cada día se hacen más presentes en nuestra vida cotidiana, tanto en lo académico y profesional como en lo personal. En ese espacio confluyen diversas aristas: los modelos más populares, sus funciones principales y sus características generativas; los usos y posibilidades que ofrecen en el ámbito académico y profesional; y las estrategias para validar una información que, aun siendo verosímil, puede estar atravesada por alucinaciones y sesgos.
 
 Por otro lado, el curso buscaba que nos vinculáramos con estas tecnologías desde un lugar crítico, activo y creativo, aprovechando lo que estos modelos pueden brindarnos sin perder el protagonismo en la conducción de los procesos y sin perder esa "voz propia", esa mirada personal que debe estar plasmada en nuestras producciones. Esto conlleva cierta complejidad, ya que los modelos están entrenados con datos (textos, imágenes, videos, etc.) que ya existen. Entonces, si lo que buscamos es una producción original, ¿estamos creando realmente con IA o simplemente combinando elementos que salen de un repositorio enorme, pero limitado, de posibilidades? Pero también es cierto que nuestra manera de mirar y de crear tiene que ver con nuestro propio repositorio, compuesto por nuestra historia, por nuestros lenguajes (texto, imagen, audiovisual), por lo que leímos, vimos, olimos, escuchamos y sentimos. Y principalmente, pienso, por lo que imaginamos.
 
 Y aquí vuelvo al inicio del curso, a su título, y al rol central que quise darle a la imaginación. La imaginación no solo como capacidad de pensar y diseñar cosas que no existen, sino como una energía capaz de proponernos caminos posibles en el marco de escenarios muy diversos.
 
-Bueno, es hora de apagar la máquina. Gracias por haberte sumado al curso y haber hecho las actividades. Espero que te hayas llevado algo de este mundo en expansión, tanto para usarlo como para no usarlo.
+Ahora sí, es tiempo de apagar la máquina. Gracias por haberte sumado y por coparte con las actividades. Espero que te hayas llevado algo de este mundo complejo, inquietante y en expansión, tanto para usarlo como para guardarlo en un cajón.
 
 Un abrazo y ¡nos vemos!

@@ -120,6 +120,7 @@
         </div>
 
         <div class="highlight-box">
+          <h3>💡 Ejemplos de esta clase</h3>
           <div class="content-block" data-key="bloque_a_tokens"></div>
         </div>
 
@@ -266,7 +267,7 @@
         <h3 id="gramatica-prompt-b">Gramática del prompt</h3>
         <p data-key="bloque_b_gramatica_intro"></p>
         <p class="prompt-formula" data-key="bloque_b_gramatica_formula"></p>
-        <p data-key="bloque_b_gramatica_desglose"></p>
+        <div class="content-block" data-key="bloque_b_gramatica_desglose"></div>
 
         <hr class="section-divider">
 
@@ -356,6 +357,24 @@
           </div>
         </div>
 
+        <!-- Ejemplo 4: Explorador de átomos -->
+        <div class="device-example">
+          <h4>🔭 Exploración guiada</h4>
+          <p data-key="ejemplo_explorador_atomos"></p>
+          <div class="demo-embed">
+            <!-- mismo motivo que en Sistema solar (ver comentario ahí): este dispositivo
+                 también mide su propio tamaño en "vh". -->
+            <iframe src="demos/explorador-atomos.html" title="Explorador de átomos" loading="lazy" style="height:var(--h-explorador-atomos)"></iframe>
+          </div>
+          <p class="demo-embed__link"><a href="demos/explorador-atomos.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a><span class="demo-embed__sep" aria-hidden="true">·</span><a href="demos/explorador-atomos.html" download>Descargar HTML ↓</a></p>
+          <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
+          <div class="img-caption" hidden>
+            <strong>Modelo:</strong> Claude (Sonnet 5)
+            <span class="caption-rule"></span>
+            Simulación de átomo: se elige un elemento de una tira de la tabla periódica y se muestra el núcleo con sus electrones girando en capas, junto con sus datos (número atómico, masa, configuración electrónica) y un dato curioso de cada uno.
+          </div>
+        </div>
+
         <!-- Ejemplo 2: Emparejar y clasificar -->
         <div class="device-example">
           <h4>🗂️ Emparejar y clasificar</h4>
@@ -385,24 +404,6 @@
             <strong>Modelo:</strong> Claude (Sonnet 5)
             <span class="caption-rule"></span>
             Dispositivo de tipo "diagrama con hotspots": un texto (en este caso, un prompt de ejemplo) con partes resaltadas en distintos colores según su función; al tocar una parte, o su categoría en la referencia, se despliega la explicación correspondiente.
-          </div>
-        </div>
-
-        <!-- Ejemplo 4: Explorador de átomos -->
-        <div class="device-example">
-          <h4>🔭 Exploración guiada</h4>
-          <p data-key="ejemplo_explorador_atomos"></p>
-          <div class="demo-embed">
-            <!-- mismo motivo que en Sistema solar (ver comentario ahí): este dispositivo
-                 también mide su propio tamaño en "vh". -->
-            <iframe src="demos/explorador-atomos.html" title="Explorador de átomos" loading="lazy" style="height:var(--h-explorador-atomos)"></iframe>
-          </div>
-          <p class="demo-embed__link"><a href="demos/explorador-atomos.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a><span class="demo-embed__sep" aria-hidden="true">·</span><a href="demos/explorador-atomos.html" download>Descargar HTML ↓</a></p>
-          <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
-          <div class="img-caption" hidden>
-            <strong>Modelo:</strong> Claude (Sonnet 5)
-            <span class="caption-rule"></span>
-            Simulación de átomo: se elige un elemento de una tira de la tabla periódica y se muestra el núcleo con sus electrones girando en capas, junto con sus datos (número atómico, masa, configuración electrónica) y un dato curioso de cada uno.
           </div>
         </div>
 
