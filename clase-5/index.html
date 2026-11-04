@@ -41,7 +41,7 @@
       <li class="nav-group">
         <a class="nav-group__link" href="#bloque-a"><span class="nav-bullet"></span>Bloque A · La IA en el mundo de la interactividad</a>
         <ul class="nav-subgroup">
-          <li><a href="#que-es-codigo">HTML, CSS y JavaScript</a></li>
+          <li><a href="#que-es-codigo">¿Qué hay detrás de un recurso interactivo?</a></li>
           <li><a href="#ejemplos-bloque-a">¿Qué recursos didácticos podemos crear?</a></li>
         </ul>
       </li>
@@ -51,12 +51,16 @@
         <ul class="nav-subgroup">
           <li><a href="#tipos-de-recurso">Tipos de recurso y elementos</a></li>
           <li><a href="#gramatica-prompt-b">Gramática del prompt</a></li>
-          <li><a href="#ejemplos-simples">Ejemplos</a></li>
+          <li><a href="#ejemplos-simples">Ejemplos simples</a></li>
+          <li><a href="#ejemplos-complejos">Ejemplos (un poco más) complejos</a></li>
         </ul>
       </li>
 
       <li class="nav-group">
-        <a class="nav-group__link" href="#bloque-c"><span class="nav-bullet"></span>Bloque C · Usos e incorporación al aula</a>
+        <a class="nav-group__link" href="#bloque-c"><span class="nav-bullet"></span>Bloque C · Otros recursos e incorporación al aula</a>
+        <ul class="nav-subgroup">
+          <li><a href="#incorporacion-aula">Incorporación de un recurso en el aula</a></li>
+        </ul>
       </li>
 
       <li class="nav-group">
@@ -64,6 +68,7 @@
         <ul class="nav-subgroup">
           <li><a href="#ejemplo-html-simple">Ejemplo del HTML simple</a></li>
           <li><a href="#customizar-aula">Customizar el aula virtual</a></li>
+          <li><a href="#aprendiendo-a-aprender">Aprendiendo a aprender</a></li>
         </ul>
       </li>
     </ul>
@@ -71,7 +76,7 @@
     <div class="site-nav__divider"></div>
 
     <ul class="nav-list">
-      <li><a href="#cierre">Cierre del curso</a></li>
+      <li><a href="#cierre">¡Esto es to-to-todo amigos!</a></li>
     </ul>
   </nav>
 
@@ -108,23 +113,24 @@
         <div class="content-block" data-key="bloque_a_intro"></div>
         <div class="content-block" data-key="bloque_a_modelos_llm"></div>
 
-        <h3 id="que-es-codigo">HTML, CSS y JavaScript</h3>
+        <h3 id="que-es-codigo">¿Qué hay detrás de un recurso interactivo?</h3>
         <div class="callout">
-          <p class="callout__label">¿Qué hay detrás de un recurso interactivo?</p>
+          <p class="callout__label">HTML, CSS y JavaScript</p>
           <div class="content-block" data-key="bloque_a_que_es_codigo"></div>
         </div>
 
-        <div class="callout">
-          <p class="callout__label">Claude pago vs. gratuito</p>
-          <div class="content-block" data-key="bloque_a_claude_pago"></div>
+        <div class="highlight-box">
+          <div class="content-block" data-key="bloque_a_tokens"></div>
         </div>
+
+        <hr class="section-divider">
 
         <h3 id="ejemplos-bloque-a">¿Qué recursos didácticos podemos crear?</h3>
         <div class="content-block" data-key="bloque_a_ejemplos_intro"></div>
 
         <!-- Ejemplo 1: Sistema solar -->
         <div class="device-example">
-          <h4>🌌 Sistema solar interactivo</h4>
+          <h4>🌌 Simulación explicativa: Sistema solar interactivo</h4>
           <p data-key="ejemplo_sistema_solar"></p>
           <div class="demo-embed">
             <!-- height medido a mano a este mismo ancho (columna de texto, ~680px):
@@ -133,7 +139,7 @@
                  más lejanas (Neptuno, Saturno) quedan recortadas por el marco. -->
             <iframe src="demos/sistema-solar.html" title="Sistema solar interactivo" loading="lazy" style="height:var(--h-sistema-solar)"></iframe>
           </div>
-          <p class="demo-embed__link"><a href="demos/sistema-solar.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <p class="demo-embed__link"><a href="demos/sistema-solar.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a><span class="demo-embed__sep" aria-hidden="true">·</span><a href="demos/sistema-solar.html" download>Descargar HTML ↓</a></p>
           <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
           <div class="img-caption" hidden>
             <strong>Modelo:</strong> Claude (Sonnet 5)
@@ -144,12 +150,12 @@
 
         <!-- Ejemplo 2: Traductor matemático -->
         <div class="device-example">
-          <h4>🔢 Traductor matemático</h4>
+          <h4>🔢 Módulo de autoevaluación: Traductor matemático</h4>
           <p data-key="ejemplo_traductor_matematico"></p>
           <div class="demo-embed">
             <iframe src="demos/traductor-matematico.html" title="Traductor matemático" loading="lazy" style="height:var(--h-traductor-matematico)"></iframe>
           </div>
-          <p class="demo-embed__link"><a href="demos/traductor-matematico.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <p class="demo-embed__link"><a href="demos/traductor-matematico.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a><span class="demo-embed__sep" aria-hidden="true">·</span><a href="demos/traductor-matematico.html" download>Descargar HTML ↓</a></p>
           <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
           <div class="img-caption" hidden>
             <strong>Modelo:</strong> Claude (Sonnet 5)
@@ -160,7 +166,7 @@
 
         <!-- Ejemplo 3: Música 3D -->
         <div class="device-example">
-          <h4>🎵 Música 3D</h4>
+          <h4>🎵 Prototipo de sintetizador: Música 3D</h4>
           <p data-key="ejemplo_musica_3d"></p>
           <div class="demo-embed">
             <!-- height medido a mano: a este ancho (columna de texto) el panel de
@@ -169,7 +175,7 @@
                  alto para que entre todo sin recortarse. -->
             <iframe src="demos/cubo-color-sonido-3d.html" title="Música 3D" loading="lazy" style="height:var(--h-musica-3d)"></iframe>
           </div>
-          <p class="demo-embed__link"><a href="demos/cubo-color-sonido-3d.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <p class="demo-embed__link"><a href="demos/cubo-color-sonido-3d.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a><span class="demo-embed__sep" aria-hidden="true">·</span><a href="demos/cubo-color-sonido-3d.html" download>Descargar HTML ↓</a></p>
           <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
           <div class="img-caption" hidden>
             <strong>Modelo:</strong> Claude (Sonnet 5)
@@ -187,7 +193,7 @@
       <section class="block" id="bloque-b">
         <h2>Bloque B — Crear dispositivos: estructura y metodología</h2>
 
-        <p data-key="bloque_b_tener_claro"></p>
+        <div class="content-block" data-key="bloque_b_tener_claro"></div>
 
         <h3 id="tipos-de-recurso">Tipos de recurso</h3>
         <p data-key="bloque_b_tipos_recurso_intro"></p>
@@ -215,7 +221,7 @@
           </div>
         </div>
 
-        <p class="mini-heading">Elementos y comportamientos interactivos</p>
+        <p class="mini-heading">Elementos, diseño y comportamientos interactivos</p>
         <div class="content-block" data-key="bloque_b_elementos_intro"></div>
 
         <div class="elements-grid">
@@ -251,6 +257,10 @@
             <h4><span class="element-card__icon" aria-hidden="true">📍</span> Hotspots</h4>
             <p data-key="elemento_hotspots"></p>
           </div>
+          <div class="element-card element-card--wide" style="--element-color:#7a1830">
+            <h4><span class="element-card__icon" aria-hidden="true">🎨</span> Diseño</h4>
+            <p data-key="elemento_diseno"></p>
+          </div>
         </div>
 
         <h3 id="gramatica-prompt-b">Gramática del prompt</h3>
@@ -260,7 +270,7 @@
 
         <hr class="section-divider">
 
-        <h3 id="ejemplos-simples">Ejemplos</h3>
+        <h3 id="ejemplos-simples">Ejemplos simples</h3>
         <p data-key="bloque_b_simple_intro"></p>
 
         <!-- Ejemplo simple 1: Tarjetas de memoria -->
@@ -268,13 +278,13 @@
           <h4>🧠 Tarjetas de memoria</h4>
           <p data-key="ejemplo_tarjetas_memoria"></p>
           <div class="prompt-example">
-            <p class="prompt-example__label">Prompt completo</p>
+            <p class="prompt-example__label">Prompt</p>
             <div class="content-block" data-key="prompt_tarjetas_memoria"></div>
           </div>
           <div class="demo-embed">
             <iframe src="demos/tarjetas-de-memoria.html" title="Tarjetas de memoria" loading="lazy" style="height:var(--h-tarjetas-memoria)"></iframe>
           </div>
-          <p class="demo-embed__link"><a href="demos/tarjetas-de-memoria.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <p class="demo-embed__link"><a href="demos/tarjetas-de-memoria.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a><span class="demo-embed__sep" aria-hidden="true">·</span><a href="demos/tarjetas-de-memoria.html" download>Descargar HTML ↓</a></p>
         </div>
 
         <!-- Ejemplo simple 2: Línea de tiempo -->
@@ -282,15 +292,16 @@
           <h4>⏳ Línea de tiempo</h4>
           <p data-key="ejemplo_linea_tiempo"></p>
           <div class="prompt-example">
-            <p class="prompt-example__label">Prompt completo</p>
+            <p class="prompt-example__label">Prompt</p>
             <div class="content-block" data-key="prompt_linea_tiempo"></div>
           </div>
           <div class="demo-embed">
             <iframe src="demos/linea-de-tiempo.html" title="Línea de tiempo — IA generativa" loading="lazy" style="height:var(--h-linea-tiempo)"></iframe>
           </div>
-          <p class="demo-embed__link"><a href="demos/linea-de-tiempo.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <p class="demo-embed__link"><a href="demos/linea-de-tiempo.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a><span class="demo-embed__sep" aria-hidden="true">·</span><a href="demos/linea-de-tiempo.html" download>Descargar HTML ↓</a></p>
         </div>
 
+        <h3 id="ejemplos-complejos">Ejemplos (un poco más) complejos</h3>
         <p data-key="bloque_b_complejo_intro"></p>
 
         <!-- Ejemplo complejo 1: Laboratorio de química -->
@@ -298,27 +309,27 @@
           <h4>🔥🧪 Laboratorio de química</h4>
           <p data-key="ejemplo_laboratorio_quimica"></p>
           <div class="prompt-example">
-            <p class="prompt-example__label">Prompt completo</p>
+            <p class="prompt-example__label">Prompt</p>
             <div class="content-block" data-key="prompt_laboratorio_quimica"></div>
           </div>
           <div class="demo-embed">
             <iframe src="demos/laboratorio-quimica.html" title="Laboratorio: fuego y reacciones" loading="lazy" style="height:var(--h-laboratorio-quimica)"></iframe>
           </div>
-          <p class="demo-embed__link"><a href="demos/laboratorio-quimica.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <p class="demo-embed__link"><a href="demos/laboratorio-quimica.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a><span class="demo-embed__sep" aria-hidden="true">·</span><a href="demos/laboratorio-quimica.html" download>Descargar HTML ↓</a></p>
         </div>
 
         <!-- Ejemplo complejo 2: Diafragma de cámara -->
         <div class="device-example">
-          <h4>📷 El diafragma de la cámara</h4>
+          <h4>📷 La luz y la cámara</h4>
           <p data-key="ejemplo_diafragma_camara"></p>
           <div class="prompt-example">
-            <p class="prompt-example__label">Prompt completo</p>
+            <p class="prompt-example__label">Prompt</p>
             <div class="content-block" data-key="prompt_diafragma_camara"></div>
           </div>
           <div class="demo-embed">
             <iframe src="demos/diafragma-camara.html" title="El diafragma de la cámara" loading="lazy" style="height:var(--h-diafragma-camara)"></iframe>
           </div>
-          <p class="demo-embed__link"><a href="demos/diafragma-camara.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <p class="demo-embed__link"><a href="demos/diafragma-camara.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a><span class="demo-embed__sep" aria-hidden="true">·</span><a href="demos/diafragma-camara.html" download>Descargar HTML ↓</a></p>
         </div>
       </section>
 
@@ -326,7 +337,7 @@
            BLOQUE C — nuevo (antes "Mejorando el estilo visual")
            ================================================================= -->
       <section class="block" id="bloque-c">
-        <h2>Bloque C — Usos e incorporación al aula</h2>
+        <h2>Bloque C — Otros recursos e incorporación al aula</h2>
         <p data-key="bloque_c_intro"></p>
 
         <!-- Ejemplo 1: Pasos del proceso -->
@@ -336,7 +347,7 @@
           <div class="demo-embed">
             <iframe src="demos/pasos-del-proceso.html" title="Ordená los pasos" loading="lazy" style="height:var(--h-pasos-proceso)"></iframe>
           </div>
-          <p class="demo-embed__link"><a href="demos/pasos-del-proceso.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <p class="demo-embed__link"><a href="demos/pasos-del-proceso.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a><span class="demo-embed__sep" aria-hidden="true">·</span><a href="demos/pasos-del-proceso.html" download>Descargar HTML ↓</a></p>
           <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
           <div class="img-caption" hidden>
             <strong>Modelo:</strong> Claude (Sonnet 5)
@@ -352,7 +363,7 @@
           <div class="demo-embed">
             <iframe src="demos/emparejar-clasificar.html" title="Clasificá las herramientas" loading="lazy" style="height:var(--h-emparejar-clasificar)"></iframe>
           </div>
-          <p class="demo-embed__link"><a href="demos/emparejar-clasificar.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <p class="demo-embed__link"><a href="demos/emparejar-clasificar.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a><span class="demo-embed__sep" aria-hidden="true">·</span><a href="demos/emparejar-clasificar.html" download>Descargar HTML ↓</a></p>
           <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
           <div class="img-caption" hidden>
             <strong>Modelo:</strong> Claude (Sonnet 5)
@@ -368,7 +379,7 @@
           <div class="demo-embed">
             <iframe src="demos/diagrama-hotspots.html" title="Las partes de un prompt" loading="lazy" style="height:var(--h-diagrama-hotspots)"></iframe>
           </div>
-          <p class="demo-embed__link"><a href="demos/diagrama-hotspots.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <p class="demo-embed__link"><a href="demos/diagrama-hotspots.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a><span class="demo-embed__sep" aria-hidden="true">·</span><a href="demos/diagrama-hotspots.html" download>Descargar HTML ↓</a></p>
           <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
           <div class="img-caption" hidden>
             <strong>Modelo:</strong> Claude (Sonnet 5)
@@ -386,7 +397,7 @@
                  también mide su propio tamaño en "vh". -->
             <iframe src="demos/explorador-atomos.html" title="Explorador de átomos" loading="lazy" style="height:var(--h-explorador-atomos)"></iframe>
           </div>
-          <p class="demo-embed__link"><a href="demos/explorador-atomos.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></p>
+          <p class="demo-embed__link"><a href="demos/explorador-atomos.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a><span class="demo-embed__sep" aria-hidden="true">·</span><a href="demos/explorador-atomos.html" download>Descargar HTML ↓</a></p>
           <button type="button" class="caption-toggle-inline" aria-expanded="false">Ver prompt y modelo</button>
           <div class="img-caption" hidden>
             <strong>Modelo:</strong> Claude (Sonnet 5)
@@ -396,6 +407,11 @@
         </div>
 
         <div class="content-block" data-key="bloque_c_otras_ideas"></div>
+
+        <hr class="section-divider">
+
+        <h3 id="incorporacion-aula">Incorporación de un recurso en el aula</h3>
+        <div class="content-block" data-key="bloque_c_incorporacion"></div>
       </section>
 
       <!-- =================================================================
@@ -455,7 +471,7 @@
 
         <p data-key="bloque_d_metodo"></p>
         <div class="prompt-example">
-          <p class="prompt-example__label">Prompt completo</p>
+          <p class="prompt-example__label">Prompt</p>
           <div class="content-block" data-key="bloque_d_prompt"></div>
         </div>
 
@@ -464,7 +480,7 @@
         <div class="demo-embed">
           <iframe src="demos/bloque-d-resultado.html" title="Resultado: De qué hablamos cuando hablamos de IA generativa" loading="lazy" style="height:var(--h-bloque-d-resultado)"></iframe>
         </div>
-        <p class="demo-embed__link"><a href="demos/bloque-d-resultado.html" target="_blank" rel="noopener">Abrir el resultado en pantalla completa ↗</a></p>
+        <p class="demo-embed__link"><a href="demos/bloque-d-resultado.html" target="_blank" rel="noopener">Abrir el resultado en pantalla completa ↗</a><span class="demo-embed__sep" aria-hidden="true">·</span><a href="demos/bloque-d-resultado.html" download>Descargar HTML ↓</a></p>
 
         <details class="expandable">
           <summary>
@@ -490,29 +506,24 @@
         <p data-key="bloque_d_aula_intro"></p>
         <div class="content-block" data-key="bloque_d_aula_ejemplo"></div>
         <div class="content-block" data-key="bloque_d_aula_metodo"></div>
+
+        <hr class="section-divider">
+
+        <h3 id="aprendiendo-a-aprender">Aprendiendo a aprender</h3>
+        <div class="content-block" data-key="bloque_d_aprendiendo"></div>
       </section>
 
       <!-- =================================================================
            CIERRE
            ================================================================= -->
       <section class="block" id="cierre">
-        <h2>Cierre del curso</h2>
+        <h2>¡Esto es to-to-todo amigos!</h2>
+        <p class="cierre-cita" data-key="cierre_cita"></p>
 
-        <!-- Última clase del curso: acá va la conclusión de las CINCO
+        <!-- Última clase del curso: acá va el texto de cierre de las CINCO
              clases, no el bloque .next-class de "próxima clase" que
              tienen las demás. -->
         <div class="content-block" data-key="cierre_1"></div>
-
-        <h3>Para llevar al aula</h3>
-        <ul class="practice-list">
-          <li><strong>Arrancá con un contenido puntual.</strong> Elegí un solo tema de tu materia y generá con un modelo un recurso interactivo para esa clase, siguiendo el método que vimos en el Bloque B.</li>
-          <li><strong>Revisá cada dato.</strong> Antes de usar cualquier resultado con tus estudiantes, revisalo con la misma atención que le pondrías al material de cualquier otra fuente.</li>
-          <li><strong>Guardá lo que funciona.</strong> Los prompts que te dieron buenos resultados son reutilizables y te van a ahorrar tiempo la próxima vez que necesites algo parecido.</li>
-          <li><strong>No abandones al primer intento.</strong> Si algo no sale como esperás, ajustá el prompt, agregá un ejemplo, o pedile al modelo que te explique por qué llegó a ese resultado.</li>
-          <li><strong>Pedí algo específico tuyo.</strong> Un pedido pensado para tu materia y tu forma de enseñar se nota mucho más que uno genérico.</li>
-        </ul>
-
-        <p data-key="cierre_2"></p>
       </section>
 
     </div>

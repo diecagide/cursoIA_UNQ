@@ -730,6 +730,19 @@ section.block:first-of-type {
   margin: 8px 0 28px;
 }
 
+/* Separador entre "Abrir en pantalla completa" y "Descargar HTML" */
+.demo-embed__sep {
+  margin: 0 10px;
+  color: var(--color-text-muted);
+}
+
+/* Cita del tema de los Redondos debajo del título del cierre */
+.cierre-cita {
+  margin: -6px 0 24px;
+  font-size: .92rem;
+  color: var(--color-text-muted);
+}
+
 /* ---------- Código generado: bloque con botón de copiar ----------
    Ver .code-embed en script.js (initCodeEmbeds): carga el código fuente
    de un archivo real (por ejemplo, el HTML de una demo embebida) y lo

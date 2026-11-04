@@ -326,16 +326,16 @@
 
   function explainShutter(t, s) {
     const label = shutterLabel(s);
-    if (t < 0.15) {
+    if (t < 0.2) {
       return `Obturador muy <b>rápido</b> (${label}s): el sensor recibe luz por muy poco tiempo — congela el movimiento, pero necesita compensar con más diafragma o más luz ambiente. No cambia el enfoque, solo la cantidad de luz y el movimiento.`;
-    } else if (t < 0.4) {
-      return `Obturador <b>rápido</b> (${label}s): deja pasar poca luz por el tiempo corto; sirve para escenas con movimiento.`;
-    } else if (t < 0.65) {
+    } else if (t < 0.32) {
+      return `Obturador <b>rápido</b> (${label}s): deja pasar poca luz por el tiempo corto; alcanza para congelar movimientos moderados, como una persona caminando.`;
+    } else if (t < 0.51) {
       return `Velocidad <b>intermedia</b> (${label}s): tiempo típico de uso cotidiano, cámara en mano.`;
-    } else if (t < 0.88) {
-      return `Obturador <b>lento</b> (${label}s): entra bastante más luz, pero si algo se mueve en la escena puede verse borroso.`;
+    } else if (t < 0.8) {
+      return `Obturador <b>lento</b> (${label}s): entra bastante más luz, pero si algo se mueve en la escena, o si se mueve la cámara, puede verse borroso.`;
     } else {
-      return `Obturador muy <b>lento</b> (${label}s): entra muchísima luz, ideal de noche — pero cualquier movimiento queda arrastrado como una estela.`;
+      return `Obturador muy <b>lento</b> (${label}s): entra muchísima luz, ideal de noche con trípode — pero cualquier movimiento queda arrastrado como una estela.`;
     }
   }
 
