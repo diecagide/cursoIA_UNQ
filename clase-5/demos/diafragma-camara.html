@@ -5,39 +5,86 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El diafragma de la cámara</title>
 <style>
+  :root{
+    --navy:#1a2140;
+    --muted:#64748b;
+    --cherry:#a8203f;
+    --cherry-dark:#7a1830;
+    --royal:#2d4fa3;
+    --gold:#f5b942;
+    --teal:#12a37f;
+    --teal-dark:#0c7a60;
+    --violet:#7a4fd9;
+    --violet-dark:#5c35ad;
+    --orange:#e8863f;
+    --card:#ffffff;
+  }
   *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#050607;}
-  body{display:flex;align-items:center;justify-content:center;padding:20px;}
+  html,body{margin:0;padding:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  body{
+    display:flex;align-items:center;justify-content:center;padding:24px;
+    min-height:100vh;
+    background:#ffffff;
+  }
 
   .frame{
     position:relative;
-    width:min(100%,760px);
-    border-radius:22px;
+    width:min(100%,820px);
+    border-radius:26px;
     overflow:hidden;
-    background:radial-gradient(ellipse at 50% 0%, #15181c 0%, #0b0d0f 55%, #050607 100%);
-    box-shadow:0 30px 70px rgba(0,0,0,.6);
+    background:linear-gradient(170deg,#ffe3a3 0%,#8fe0c2 35%,#7ec8f2 68%,#a98cf0 100%);
+    box-shadow:0 24px 56px rgba(40,30,70,.18),0 4px 14px rgba(40,30,70,.1);
     display:flex; flex-direction:column;
-    color:#fff;
+    color:var(--navy);
   }
 
-  .hud{ text-align:center; padding:20px 20px 4px; }
-  .hud h1{ margin:0 0 4px; font-size:clamp(1.1rem,3vw,1.4rem); font-weight:800; }
-  .hud p{ margin:0; font-size:.82rem; color:rgba(255,255,255,.55); }
+  header.hud{
+    text-align:center; padding:clamp(22px,4vw,32px) clamp(20px,4vw,34px) clamp(20px,3.4vw,28px);
+    position:relative; z-index:1;
+    background:linear-gradient(120deg,var(--cherry) 0%,var(--royal) 100%);
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--cherry);background:#ffffff;padding:5px 14px;border-radius:999px;margin-bottom:10px;
+  }
+  header.hud h1{
+    margin:0 0 8px; font-size:clamp(1.15rem,3.4vw,1.55rem); font-weight:800;
+    color:#ffffff;
+  }
+  header.hud .subtitle{ margin:0 auto; max-width:540px; font-size:.9rem; color:rgba(255,255,255,.92); line-height:1.55; }
+  header.hud .subtitle b{ color:var(--gold); }
 
   .stage{
-    display:flex; align-items:center; justify-content:center; gap:28px;
+    display:flex; align-items:center; justify-content:center; gap:30px;
     flex-wrap:wrap;
-    padding:18px 20px 6px;
+    padding:18px clamp(18px,4vw,32px) 8px;
+    position:relative; z-index:1;
   }
 
-  .iris-wrap{ position:relative; width:280px; height:280px; flex:0 0 auto; }
-  .iris-wrap svg{ width:100%; height:100%; display:block; }
+  .iris-col{ flex:0 0 auto; display:flex; flex-direction:column; align-items:center; gap:10px; }
+  .iris-wrap{ position:relative; width:260px; height:260px; flex:0 0 auto; }
+  .iris-glow{
+    position:absolute; inset:-18px; border-radius:50%; filter:blur(18px); opacity:.55;
+    background:radial-gradient(circle, var(--glow-color,#f5b942), transparent 70%);
+    transition:background 0.25s ease;
+    z-index:0;
+  }
+  .iris-wrap svg{ position:relative; width:100%; height:100%; display:block; z-index:1; }
 
-  .result-col{ flex:0 0 auto; display:flex; flex-direction:column; align-items:center; gap:8px; width:170px; }
-  .result-label{ font-size:.68rem; font-weight:700; color:rgba(255,255,255,.55); text-transform:uppercase; letter-spacing:.04em; text-align:center; }
+  .result-col{ flex:0 0 auto; display:flex; flex-direction:column; align-items:center; gap:10px; width:220px; }
+  .result-chip{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:.72rem; font-weight:800; color:#fff;
+    background:linear-gradient(90deg,var(--cherry),var(--royal));
+    padding:5px 12px; border-radius:999px;
+  }
+  .result-frame{
+    position:relative; padding:10px 10px 30px; background:#fff; border-radius:12px;
+    box-shadow:0 14px 30px rgba(20,20,40,.22), 0 0 0 1px #eef1f8;
+  }
   .result-photo{
-    position:relative; width:170px; height:116px; border-radius:10px; overflow:hidden;
-    border:3px solid #1c1f23; box-shadow:0 10px 24px rgba(0,0,0,.5);
+    position:relative; width:198px; height:134px; border-radius:6px; overflow:hidden;
     background:#000;
   }
   .result-photo svg{ position:absolute; inset:0; width:100%; height:100%; display:block; }
@@ -45,78 +92,99 @@
     position:absolute; inset:0; background:#000; pointer-events:none;
     transition:opacity .15s linear;
   }
-  .result-caption{ font-size:.72rem; color:rgba(255,255,255,.75); text-align:center; min-height:2.6em; line-height:1.35; }
+  .result-vignette{
+    position:absolute; inset:0; pointer-events:none;
+    box-shadow:inset 0 0 26px rgba(0,0,0,.35);
+  }
+  .result-caption{
+    position:absolute; left:10px; right:10px; bottom:8px; text-align:center;
+    font-size:.68rem; font-weight:700; color:var(--muted);
+  }
 
   .controls{
-    position:relative; z-index:3;
-    padding:4px 22px 18px;
+    position:relative; z-index:1;
+    padding:6px clamp(18px,4vw,32px) 4px;
   }
 
-  .ctrl-block{ margin-bottom:20px; }
+  .ctrl-block{
+    margin-bottom:18px; padding:14px 16px; border-radius:14px;
+    background:var(--tint,#f4f6fb); border:1.5px solid var(--tint-border,#e4e8f3);
+  }
   .ctrl-block:last-child{ margin-bottom:0; }
   .ctrl-label{
-    font-size:.72rem; font-weight:800; color:rgba(255,255,255,.7);
-    text-transform:uppercase; letter-spacing:.05em; margin-bottom:8px;
+    display:flex; align-items:center; gap:8px;
+    font-size:.82rem; font-weight:800; color:var(--accent,#334);
+    margin-bottom:10px;
   }
-  .ctrl-label small{ font-weight:600; color:rgba(255,255,255,.45); text-transform:none; letter-spacing:0; }
+  .ctrl-label .dot{ width:10px;height:10px;border-radius:50%; background:var(--accent,#999); flex:0 0 auto; }
+  .ctrl-label small{ font-weight:600; color:var(--muted); }
 
   .fstop-scale{
     display:flex; justify-content:space-between; margin:0 2px 6px;
-    font-size:.68rem; font-weight:700; color:rgba(255,255,255,.4);
+    font-size:.66rem; font-weight:700; color:#aab2c3;
   }
-  .fstop-scale span{ width:14px; text-align:center; }
-  .fstop-scale span.active{ color:#fff; }
+  .fstop-scale span{ width:16px; text-align:center; }
+  .fstop-scale span.active{ color:var(--accent,#334); }
 
   input[type=range]{
     -webkit-appearance:none; appearance:none;
-    width:100%; height:6px; border-radius:999px;
-    background:linear-gradient(90deg,#3a3f46,#6b7280);
-    outline:none; margin:0 0 14px;
+    width:100%; height:8px; border-radius:999px;
+    background:#e2e8f0;
+    outline:none; margin:0 0 12px;
   }
   input[type=range]::-webkit-slider-thumb{
     -webkit-appearance:none; appearance:none;
     width:24px; height:24px; border-radius:50%;
-    background:#fff; border:4px solid #e8b84b;
-    cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.4);
+    background:#fff; border:5px solid var(--accent,#999);
+    cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.25);
   }
   input[type=range]::-moz-range-thumb{
     width:24px; height:24px; border-radius:50%;
-    background:#fff; border:4px solid #e8b84b;
-    cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.4);
+    background:#fff; border:5px solid var(--accent,#999);
+    cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.25);
   }
 
-  .presets{ display:flex; gap:6px; justify-content:center; flex-wrap:wrap; margin-bottom:16px; }
+  .presets{ display:flex; gap:6px; justify-content:center; flex-wrap:wrap; }
   .preset-btn{
-    appearance:none; cursor:pointer; border:2px solid transparent; border-radius:8px;
-    background:rgba(255,255,255,.08); color:#fff; font-weight:700; font-size:.72rem;
-    padding:7px 10px; transition:transform .15s ease, border-color .15s ease, background .15s ease;
+    appearance:none; cursor:pointer; border:2px solid #e2e8f0; border-radius:8px;
+    background:#fff; color:var(--navy); font-weight:700; font-size:.72rem;
+    padding:6px 10px; transition:transform .15s ease, border-color .15s ease, background .15s ease, color .15s ease;
   }
-  .preset-btn:hover{ background:rgba(255,255,255,.16); transform:translateY(-1px); }
-  .preset-btn.active{ border-color:#e8b84b; background:rgba(232,184,75,.18); }
+  .preset-btn:hover{ transform:translateY(-1px); }
+  .preset-btn.active{ border-color:var(--accent,#999); background:var(--accent,#999); color:#fff; }
 
   .info-bar{
-    position:relative; z-index:3;
-    background:rgba(10,12,13,.65);
-    backdrop-filter:blur(10px);
-    border-top:1px solid rgba(255,255,255,.08);
-    padding:16px 22px 20px;
-    display:flex; gap:22px; flex-wrap:wrap; align-items:flex-start;
+    position:relative; z-index:1;
+    padding:14px clamp(18px,4vw,32px) clamp(22px,4vw,30px);
+    display:flex; gap:12px; flex-wrap:wrap;
   }
-  .stat{ min-width:120px; }
-  .stat .k{ font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color:rgba(255,255,255,.5); margin-bottom:3px; }
-  .stat .v{ font-size:1.3rem; font-weight:800; color:#fff; }
-  .stat .v small{ font-size:.7rem; font-weight:700; color:rgba(255,255,255,.55); }
-  .explain{ flex:1 1 220px; font-size:.85rem; line-height:1.5; color:rgba(255,255,255,.85); }
-  .explain b{ color:#f3cf7e; }
+  .stat{
+    flex:1 1 118px; min-width:110px; border-radius:12px; padding:10px 12px;
+    background:var(--tint,#f4f6fb); border:1.5px solid var(--tint-border,#e4e8f3);
+  }
+  .stat .k{ font-size:.64rem; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin-bottom:3px; }
+  .stat .v{ font-size:1.18rem; font-weight:800; color:var(--accent,#334); }
+  .stat .v small{ font-size:.66rem; font-weight:700; color:var(--muted); }
+  .explain{
+    flex:1 1 100%; margin-top:4px; font-size:.85rem; line-height:1.55; color:#334;
+    background:rgba(255,255,255,.85); border:1.5px solid rgba(255,255,255,.95); border-radius:12px; padding:12px 14px;
+  }
+  .explain b{ color:var(--cherry); }
   .explain p{ margin:0 0 8px; }
   .explain p:last-child{ margin-bottom:0; }
 
-  @media (max-width:560px){
-    .stage{ gap:16px; }
-    .iris-wrap{ width:220px; height:220px; }
-    .result-col{ width:150px; }
-    .result-photo{ width:150px; height:102px; }
-    .info-bar{ flex-direction:column; gap:14px; }
+  .confetti{
+    position:fixed;top:-10px;left:0;width:9px;height:9px;border-radius:2px;pointer-events:none;z-index:50;
+    animation:fall linear forwards;
+  }
+  @keyframes fall{ to{ transform:translateY(110vh) rotate(540deg); opacity:0; } }
+
+  @media (max-width:620px){
+    .stage{ gap:18px; }
+    .iris-wrap{ width:210px; height:210px; }
+    .result-col{ width:190px; }
+    .result-photo{ width:170px; height:114px; }
+    .stat{ flex:1 1 44%; }
   }
 </style>
 </head>
@@ -124,12 +192,16 @@
 <div class="frame">
 
   <header class="hud">
-    <h1>📷 El diafragma: cómo la cámara controla la luz</h1>
-    <p>Movés el control y mirá qué pasa con la luz y el enfoque</p>
+    <span class="eyebrow">📷 Simulador interactivo</span>
+    <h1>El diafragma y el obturador</h1>
+    <p class="subtitle">Un simulador de cámara réflex: hay <b>dos controles</b> que determinan cuánta luz entra y cómo se ve la foto final — la <b>apertura del diafragma</b> y el <b>tiempo de exposición</b> del obturador. Movés cada uno por separado y mirás qué le pasa a la foto.</p>
   </header>
 
   <div class="stage">
-    <div class="iris-wrap">
+    <div class="iris-col">
+      <span class="result-chip">🔘 Diafragma</span>
+      <div class="iris-wrap">
+      <div class="iris-glow" id="irisGlow"></div>
       <svg viewBox="0 0 240 240" id="irisSvg">
         <defs>
           <mask id="holeMask">
@@ -142,14 +214,25 @@
             <stop offset="70%" stop-color="#ff9b5c"/>
             <stop offset="100%" stop-color="#2b3550"/>
           </radialGradient>
+          <!-- desenfoque de profundidad de campo como filtro SVG nativo (feGaussianBlur),
+               no como CSS filter: más confiable entre navegadores para contenido SVG -->
+          <filter id="dofBlurMain" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="0"/>
+          </filter>
         </defs>
 
         <g id="sceneGroup">
-          <rect x="0" y="0" width="240" height="240" fill="url(#sceneSky)"/>
-          <circle id="sun" cx="120" cy="86" r="24" fill="#fffdf2"/>
+          <g id="bgGroup" filter="url(#dofBlurMain)">
+            <rect x="0" y="0" width="240" height="240" fill="url(#sceneSky)"/>
+            <circle id="sunHalo" cx="120" cy="86" r="24" fill="#fff6d8"/>
+            <circle id="sun" cx="120" cy="86" r="24" fill="#fffdf2"/>
+          </g>
+          <!-- el plano de foco: las montañas, SIEMPRE nítidas, cualquiera sea el diafragma -->
           <path id="mountains" d="M0,170 L40,120 L75,150 L115,95 L150,145 L190,110 L240,165 L240,240 L0,240 Z" fill="#3a3f63"/>
-          <rect x="0" y="195" width="240" height="45" fill="#20243a"/>
-          <path id="treeSubject" d="M120,205 L132,165 L142,165 L125,195 L133,195 L116,225 L106,225 L120,205 Z" fill="#141522"/>
+          <g id="fgGroup" filter="url(#dofBlurMain)">
+            <rect x="0" y="195" width="240" height="45" fill="#20243a"/>
+            <path id="treeSubject" d="M120,205 L132,165 L142,165 L125,195 L133,195 L116,225 L106,225 L120,205 Z" fill="#141522"/>
+          </g>
         </g>
 
         <!-- outer bezel -->
@@ -164,53 +247,72 @@
 
         <circle cx="120" cy="120" r="118" fill="none" stroke="#1c1e21" stroke-width="2"/>
       </svg>
+      </div>
     </div>
 
     <div class="result-col">
-      <div class="result-label">Así saldría la foto</div>
-      <div class="result-photo">
-        <svg viewBox="0 0 240 240" preserveAspectRatio="xMidYMid slice">
-          <rect x="0" y="0" width="240" height="240" fill="url(#sceneSky)"/>
-          <circle cx="120" cy="86" r="24" fill="#fffdf2"/>
-          <path d="M0,170 L40,120 L75,150 L115,95 L150,145 L190,110 L240,165 L240,240 L0,240 Z" fill="#3a3f63" id="mountainsClone"/>
-          <rect x="0" y="195" width="240" height="45" fill="#20243a"/>
-          <path d="M120,205 L132,165 L142,165 L125,195 L133,195 L116,225 L106,225 L120,205 Z" fill="#141522"/>
-        </svg>
-        <div class="result-overlay" id="resultOverlay"></div>
+      <span class="result-chip">📸 Así saldría la foto</span>
+      <div class="result-frame">
+        <div class="result-photo">
+          <svg viewBox="0 0 240 240" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <!-- misma lógica que dofBlurMain, nativo SVG, para la foto resultado.
+                   El obturador NO tiene ningún filtro acá: nunca toca el enfoque,
+                   solo cambia el brillo (resultOverlay) más abajo. -->
+              <filter id="dofBlurResult" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="0"/>
+              </filter>
+            </defs>
+            <g id="resultSceneGroup">
+              <g id="resultBgGroup" filter="url(#dofBlurResult)">
+                <rect x="0" y="0" width="240" height="240" fill="url(#sceneSky)"/>
+                <circle id="sunHaloClone" cx="120" cy="86" r="24" fill="#fff6d8"/>
+                <circle cx="120" cy="86" r="24" fill="#fffdf2"/>
+              </g>
+              <path d="M0,170 L40,120 L75,150 L115,95 L150,145 L190,110 L240,165 L240,240 L0,240 Z" fill="#3a3f63" id="mountainsClone"/>
+              <g id="resultFgGroup" filter="url(#dofBlurResult)">
+                <rect x="0" y="195" width="240" height="45" fill="#20243a"/>
+                <path d="M120,205 L132,165 L142,165 L125,195 L133,195 L116,225 L106,225 L120,205 Z" fill="#141522"/>
+              </g>
+            </g>
+          </svg>
+          <div class="result-overlay" id="resultOverlay"></div>
+          <div class="result-vignette"></div>
+        </div>
       </div>
-      <div class="result-caption" id="resultCaption"></div>
+      <div class="result-caption" id="resultCaption" style="position:static;"></div>
     </div>
   </div>
 
   <div class="controls">
-    <div class="ctrl-block">
-      <div class="ctrl-label">Diafragma <small>— tamaño de la abertura</small></div>
+    <div class="ctrl-block" style="--accent:var(--teal);--tint:#eafbf5;--tint-border:#c9f0e2;">
+      <div class="ctrl-label"><span class="dot"></span>Diafragma <small>— tamaño de la abertura</small></div>
       <div class="fstop-scale" id="fScale"></div>
-      <input type="range" id="slider" min="0" max="1000" value="0" step="1">
+      <input type="range" id="slider" min="0" max="1000" value="0" step="1" style="--accent:var(--teal);">
       <div class="presets" id="presets"></div>
     </div>
-    <div class="ctrl-block">
-      <div class="ctrl-label">Obturador <small>— tiempo que entra luz</small></div>
+    <div class="ctrl-block" style="--accent:var(--violet);--tint:#f2eefc;--tint-border:#ddd0f7;">
+      <div class="ctrl-label"><span class="dot"></span>Obturador <small>— tiempo que entra luz</small></div>
       <div class="fstop-scale" id="sScale"></div>
-      <input type="range" id="shutterSlider" min="0" max="1000" value="301" step="1">
+      <input type="range" id="shutterSlider" min="0" max="1000" value="251" step="1" style="--accent:var(--violet);">
       <div class="presets" id="sPresets"></div>
     </div>
   </div>
 
   <div class="info-bar">
-    <div class="stat">
+    <div class="stat" style="--accent:var(--teal);--tint:#eafbf5;--tint-border:#c9f0e2;">
       <div class="k">Abertura</div>
       <div class="v" id="statF">f/1.4</div>
     </div>
-    <div class="stat">
+    <div class="stat" style="--accent:var(--violet);--tint:#f2eefc;--tint-border:#ddd0f7;">
       <div class="k">Obturador</div>
       <div class="v" id="statShutter">1/125 s</div>
     </div>
-    <div class="stat">
+    <div class="stat" id="statExposureWrap" style="--accent:#16a34a;--tint:#eafbf0;--tint-border:#c9f0da;">
       <div class="k">Exposición</div>
       <div class="v" id="statExposure">Correcta</div>
     </div>
-    <div class="stat">
+    <div class="stat" style="--accent:var(--teal-dark);--tint:#eafbf5;--tint-border:#c9f0e2;">
       <div class="k">Profundidad de campo</div>
       <div class="v" id="statDof">Poca</div>
     </div>
@@ -221,12 +323,13 @@
 
 <script>
   const FSTOPS = [1.4, 2, 2.8, 4, 5.6, 8, 11, 16, 22];
-  const SHUTTERS = [1/1000, 1/500, 1/250, 1/125, 1/60, 1/30, 1/15, 1/8, 1/4, 1/2, 1];
+  const SHUTTERS = [1/1000, 1/500, 1/250, 1/125, 1/60, 1/30, 1/15, 1/8, 1/4, 1/2, 1, 2, 4];
   const N_BLADES = 8;
   const CX = 120, CY = 120;
   const MAX_R = 95;         // hole radius fully open (t=0)
   const RIM_R = 108;        // seam outer reach
-  const MAX_BLUR = 6.5;     // px, background blur fully open
+  const MAX_BLUR = 15;      // px, background blur fully open (depth of field)
+  const MAX_HALO_R = 46;    // px, extra radius the sun's glow grows to wide open (bokeh look)
   const REF_SHUTTER_S = 1 / 125;   // baseline: diafragma f/1.4 + 1/125s = exposición "correcta"
   const E_REF = 1 * REF_SHUTTER_S;
 
@@ -241,12 +344,19 @@
   const statF = document.getElementById("statF");
   const statShutter = document.getElementById("statShutter");
   const statExposure = document.getElementById("statExposure");
+  const statExposureWrap = document.getElementById("statExposureWrap");
   const statDof = document.getElementById("statDof");
   const explainText = document.getElementById("explainText");
-  const mountainsEl = document.getElementById("mountains");
-  const mountainsClone = document.getElementById("mountainsClone");
+  const dofBlurMainFilter = document.querySelector("#dofBlurMain feGaussianBlur");
+  const dofBlurResultFilter = document.querySelector("#dofBlurResult feGaussianBlur");
+  const sunHaloEl = document.getElementById("sunHalo");
+  const sunHaloCloneEl = document.getElementById("sunHaloClone");
   const resultOverlay = document.getElementById("resultOverlay");
   const resultCaption = document.getElementById("resultCaption");
+  const irisGlow = document.getElementById("irisGlow");
+
+  let bestExposureSeen = false;
+  let hasInteracted = false;
 
   // build seam lines (one per blade) once
   for (let i = 0; i < N_BLADES; i++) {
@@ -256,7 +366,10 @@
   }
 
   function shutterLabel(s) {
-    return s >= 1 ? s.toFixed(0) + '"' : "1/" + Math.round(1 / s);
+    return s >= 1 ? s.toFixed(0) + " s" : "1/" + Math.round(1 / s) + " s";
+  }
+  function shutterLabelShort(s) {
+    return s >= 1 ? s.toFixed(0) + "s" : "1/" + Math.round(1 / s);
   }
 
   // f-stop scale ticks (under the aperture slider)
@@ -281,7 +394,7 @@
   // shutter scale ticks
   SHUTTERS.forEach((s, i) => {
     const span = document.createElement("span");
-    span.textContent = i % 2 === 0 ? shutterLabel(s) : "·";
+    span.textContent = i % 2 === 0 ? shutterLabelShort(s) : "·";
     sScaleEl.appendChild(span);
   });
   // shutter preset buttons
@@ -289,7 +402,7 @@
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "preset-btn";
-    btn.textContent = shutterLabel(s);
+    btn.textContent = shutterLabelShort(s);
     btn.addEventListener("click", () => {
       shutterSliderEl.value = Math.round(shutterToT(s) * 1000);
       update();
@@ -303,39 +416,54 @@
   function fToT(f) {
     return Math.log(f / 1.4) / Math.log(22 / 1.4);
   }
+  // rango 1/1000s a 4s: a f/22 (el diafragma más cerrado) hace falta ~2s de obturador
+  // para llegar a exposición correcta, así que el rango tiene que llegar más allá de eso.
   function tToShutter(t) {
-    return (1 / 1000) * Math.pow(1000, t);
+    return (1 / 1000) * Math.pow(4000, t);
   }
   function shutterToT(s) {
-    return Math.log(s * 1000) / Math.log(1000);
+    return Math.log(s * 1000) / Math.log(4000);
   }
 
   function explainAperture(t, f) {
     if (t < 0.12) {
-      return `Diafragma muy <b>abierto</b> (f/${f.toFixed(1)}): el agujero es grande, entra mucha luz. A cambio, el fondo queda muy desenfocado — foco selectivo, solo lo que está a la distancia enfocada se ve nítido.`;
+      return `Diafragma muy <b>abierto</b> (f/${f.toFixed(1)}): el agujero es grande, entra mucha luz. A cambio, el foco es muy <b>selectivo</b> — las montañas (el plano enfocado) se ven nítidas, pero el cielo de fondo y el árbol de primer plano quedan bien desenfocados.`;
     } else if (t < 0.4) {
-      return `Diafragma bastante <b>abierto</b> (f/${f.toFixed(1)}): entra mucha luz y el fondo todavía se desenfoca de forma notoria, como en una foto de retrato.`;
+      return `Diafragma bastante <b>abierto</b> (f/${f.toFixed(1)}): entra mucha luz y, fuera de las montañas, el resto de la escena todavía se desenfoca de forma notoria, como en una foto de retrato.`;
     } else if (t < 0.65) {
-      return `Diafragma en punto <b>intermedio</b> (f/${f.toFixed(1)}): balance razonable entre luz y nitidez del fondo.`;
+      return `Diafragma en punto <b>intermedio</b> (f/${f.toFixed(1)}): balance razonable entre luz y nitidez del resto de la escena.`;
     } else if (t < 0.88) {
-      return `Diafragma bastante <b>cerrado</b> (f/${f.toFixed(1)}): entra poca luz, pero casi toda la escena —fondo incluido— se ve nítida.`;
+      return `Diafragma bastante <b>cerrado</b> (f/${f.toFixed(1)}): entra poca luz, pero casi toda la escena se ve nítida, no solo las montañas.`;
     } else {
-      return `Diafragma muy <b>cerrado</b> (f/${f.toFixed(1)}): el agujero es casi un punto, entra muy poca luz, pero la profundidad de campo es máxima — todo, de adelante hacia atrás, en foco.`;
+      return `Diafragma muy <b>cerrado</b> (f/${f.toFixed(1)}): el agujero es casi un punto, entra muy poca luz, pero la profundidad de campo es máxima — toda la imagen, de adelante hacia atrás, en foco.`;
     }
   }
 
   function explainShutter(t, s) {
     const label = shutterLabel(s);
-    if (t < 0.2) {
-      return `Obturador muy <b>rápido</b> (${label}s): el sensor recibe luz por muy poco tiempo — congela el movimiento, pero necesita compensar con más diafragma o más luz ambiente. No cambia el enfoque, solo la cantidad de luz y el movimiento.`;
-    } else if (t < 0.32) {
-      return `Obturador <b>rápido</b> (${label}s): deja pasar poca luz por el tiempo corto; alcanza para congelar movimientos moderados, como una persona caminando.`;
-    } else if (t < 0.51) {
-      return `Velocidad <b>intermedia</b> (${label}s): tiempo típico de uso cotidiano, cámara en mano.`;
-    } else if (t < 0.8) {
-      return `Obturador <b>lento</b> (${label}s): entra bastante más luz, pero si algo se mueve en la escena, o si se mueve la cámara, puede verse borroso.`;
+    if (t < 0.15) {
+      return `Obturador muy <b>rápido</b> (${label}): el sensor recibe luz por muy poco tiempo — congela el movimiento, pero necesita compensar con más diafragma o más luz ambiente. No cambia el enfoque, solo la cantidad de luz y si algo se ve movido.`;
+    } else if (t < 0.4) {
+      return `Obturador <b>rápido</b> (${label}): deja pasar poca luz por el tiempo corto; sirve para escenas con movimiento.`;
+    } else if (t < 0.65) {
+      return `Velocidad <b>intermedia</b> (${label}): tiempo típico de uso cotidiano, cámara en mano.`;
+    } else if (t < 0.88) {
+      return `Obturador <b>lento</b> (${label}): entra bastante más luz, pero si algo se mueve en la escena puede verse borroso.`;
     } else {
-      return `Obturador muy <b>lento</b> (${label}s): entra muchísima luz, ideal de noche con trípode — pero cualquier movimiento queda arrastrado como una estela.`;
+      return `Obturador muy <b>lento</b> (${label}): entra muchísima luz, ideal de noche — pero cualquier movimiento queda arrastrado como una estela.`;
+    }
+  }
+
+  function launchConfetti() {
+    const colors = ["#a8203f", "#2d4fa3", "#f5b942", "#12a37f", "#7a4fd9"];
+    for (let i = 0; i < 40; i++) {
+      const el = document.createElement("div");
+      el.className = "confetti";
+      el.style.left = Math.random() * 100 + "vw";
+      el.style.background = colors[Math.floor(Math.random() * colors.length)];
+      el.style.animationDuration = (2 + Math.random() * 1.5) + "s";
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 4000);
     }
   }
 
@@ -371,30 +499,63 @@
     }
     holePoly.setAttribute("points", pts.join(" "));
 
-    // depth of field: blur background (depends ONLY on aperture), keep subject sharp
-    mountainsEl.style.filter = `blur(${blur.toFixed(2)}px)`;
-    mountainsClone.style.filter = `blur(${blur.toFixed(2)}px)`;
+    // depth of field: foco SELECTIVO en las montañas (el plano de foco, siempre nítido).
+    // Todo lo que NO está en ese plano —el cielo/sol de fondo y el árbol/suelo de
+    // primer plano— se desenfoca por igual a medida que el diafragma se abre.
+    // Con el diafragma del todo cerrado (t=1) el blur da 0 y toda la imagen queda en foco.
+    dofBlurMainFilter.setAttribute("stdDeviation", blur.toFixed(2));
+    dofBlurResultFilter.setAttribute("stdDeviation", blur.toFixed(2));
+
+    // bokeh halo around the sun: grows and fades in as the diaphragm opens (t→0),
+    // shrinks away as it closes (t→1) — makes "poca profundidad de campo" unmistakable.
+    const haloR = 24 + MAX_HALO_R * (1 - t);
+    const haloOpacity = (0.85 * (1 - t)).toFixed(2);
+    sunHaloEl.setAttribute("r", haloR.toFixed(1));
+    sunHaloEl.style.opacity = haloOpacity;
+    sunHaloCloneEl.setAttribute("r", haloR.toFixed(1));
+    sunHaloCloneEl.style.opacity = haloOpacity;
+
+    // el obturador NO toca el enfoque en absoluto — solo afecta el brillo de la foto,
+    // igual que en la versión original que ya funcionaba bien.
 
     // exposure result preview (depends on aperture + shutter combined)
     resultOverlay.style.background = evDiff < 0 ? "#000" : "#fff";
     resultOverlay.style.opacity = overlayOpacity.toFixed(3);
 
+    // lens glow: warmer & brighter wide open, cooler & dimmer stopped down
+    const glowColor = t < 0.5 ? "#f5b942" : "#4a6cc2";
+    irisGlow.style.setProperty("--glow-color", glowColor);
+    irisGlow.style.opacity = (0.75 - t * 0.35).toFixed(2);
+
     // readouts
     statF.textContent = "f/" + (f < 10 ? f.toFixed(1) : f.toFixed(0));
-    statShutter.textContent = shutterLabel(sSeconds) + " s";
+    statShutter.textContent = shutterLabel(sSeconds);
     statDof.textContent = t < 0.4 ? "Poca" : (t < 0.7 ? "Media" : "Mucha");
 
+    let isCorrect = false;
     if (Math.abs(evDiff) < 0.35) {
       statExposure.textContent = "Correcta";
+      statExposureWrap.style.setProperty("--accent", "#16a34a");
+      statExposureWrap.style.setProperty("--tint", "#eafbf0");
+      statExposureWrap.style.setProperty("--tint-border", "#c9f0da");
+      isCorrect = true;
     } else {
       statExposure.textContent = (evDiff > 0 ? "+" : "") + evDiff.toFixed(1) + " pasos";
+      statExposureWrap.style.setProperty("--accent", evDiff > 0 ? "#e8863f" : "#2d4fa3");
+      statExposureWrap.style.setProperty("--tint", evDiff > 0 ? "#fdf1e6" : "#eaf0fb");
+      statExposureWrap.style.setProperty("--tint-border", evDiff > 0 ? "#f6dcc0" : "#cedbf4");
     }
 
     explainText.innerHTML = `<p>${explainAperture(t, f)}</p><p>${explainShutter(st, sSeconds)}</p>`;
 
-    resultCaption.textContent = Math.abs(evDiff) < 0.35
+    resultCaption.textContent = isCorrect
       ? "Exposición correcta."
       : (evDiff > 0 ? "Demasiada luz: se ve sobreexpuesta." : "Poca luz: se ve subexpuesta.");
+
+    if (isCorrect && !bestExposureSeen && hasInteracted) {
+      bestExposureSeen = true;
+      launchConfetti();
+    }
 
     // highlight nearest aperture preset / scale tick
     let nearestIdx = 0, nearestDiff = Infinity;
@@ -415,8 +576,8 @@
     [...sScaleEl.children].forEach((s, i) => s.classList.toggle("active", i === nearestSIdx));
   }
 
-  sliderEl.addEventListener("input", update);
-  shutterSliderEl.addEventListener("input", update);
+  sliderEl.addEventListener("input", () => { hasInteracted = true; update(); });
+  shutterSliderEl.addEventListener("input", () => { hasInteracted = true; update(); });
   update();
 </script>
 </body>

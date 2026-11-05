@@ -61,7 +61,7 @@ Necesito un dispositivo de autoevaluación de matemática, con el mismo formato 
 - Estilo visual: colores cálidos y vibrantes, nada de paletas oscuras, con un gradiente y una sombra distinta para cada botón de opción, y algún detalle de celebración si el puntaje es alto.
 
 ## ejemplo_musica_3d
-El objetivo de este dispositivo fue crear un prototipo de sintetizador virtual 3D para "pintar sonidos". Se trata de un cubo dividido en mil cubitos (una grilla de 10 × 10 × 10), y cada uno, al pintarse, genera una nota distinta según su posición. Acá el módulo se complejiza, porque suma mecánicas para rotar el cubo y acercarse. Arriba están las instrucciones de uso y, debajo del cubo, una explicación de cómo se construyen los sonidos. Además, con el botón Play se puede reproducir la música que pintaste. Esta idea se me ocurrió cuando vi un posteo de Instagram de un usuario que había hecho algo similar con una superficie plana cuadrada.
+Este ejemplo no es un recurso didáctico, sino un ejemplo de prototipo que podrían crear tus estudiantes utilizando IA, como parte de su proceso creativo: lo comparto porque es un dispositivo bastante complejo, que propone un cruce entre artes digitales y música. El objetivo fue crear un sintetizador virtual 3D para "pintar sonidos": un cubo dividido en mil cubitos (una grilla de 10 × 10 × 10) que, al pintarse, genera una nota distinta según su posición. Acá el módulo se complejiza, porque suma mecánicas para rotar el cubo y acercarse. Arriba están las instrucciones de uso y, debajo del cubo, una explicación de cómo se construyen los sonidos. Además, con el botón Play se puede reproducir la música que pintaste. Esta idea se me ocurrió cuando vi un posteo de Instagram de un usuario que había hecho algo similar con una superficie plana cuadrada.
 
 ## prompt_musica_3d
 Necesito un dispositivo tipo sintetizador: un cubo dividido en una grilla de 10x10x10 mini cubos, donde cada uno se puede "pintar" y, al pintarse, suena una nota distinta según su posición.
@@ -231,6 +231,9 @@ Los diagramas con hotspots tienen zonas tocables sobre un texto que revelan info
 ## ejemplo_explorador_atomos
 Este ejemplo permite elegir un elemento (en este caso, de la tabla periódica) y ver cómo se organizan y giran sus electrones alrededor del núcleo, junto con un dato curioso de cada uno.
 
+## ejemplo_reparto_riqueza
+Este ejemplo permite estimar, con sliders, qué porcentaje de la riqueza mundial le corresponde a cada grupo socioeconómico y después comparar esa estimación con los datos reales, según el *World Inequality Report* 2026.
+
 ## bloque_c_otras_ideas
 Y algunas ideas más para seguir explorando:
 
@@ -309,9 +312,15 @@ Ese código generado lo copiás y pegás en la sección correspondiente de tu au
 @video[]()
 
 ## bloque_d_aprendiendo
-Lo que vimos a lo largo de las cinco clases no son únicamente ejemplos de lo que se puede hacer y de las instrucciones para lograrlo. Es también la posibilidad de comprender que, cuando le damos instrucciones a un modelo (el prompt), estamos redactando algo muy parecido a un algoritmo, es decir, un conjunto de instrucciones para obtener algo. Y ese algo no se reduce únicamente a lo que vimos en el curso: puede ser cualquier otra cosa, desde aprender las funciones de un software o a resolver otros problemas, hasta aprender a desarrollar algo que no sabemos cómo hacer.
+Lo que vimos a lo largo de estas cinco clases no es solo un puñado de recursos puntuales: es también la posibilidad de entender que, cuando le damos instrucciones a un modelo (el prompt), estamos escribiendo algo parecido a un algoritmo — un conjunto de pasos para llegar a un resultado. Esa misma lógica sirve para cualquier otro problema, no solo para los que vimos en el curso: desde aprender a usar un software nuevo, hasta empezar a resolver algo que todavía no sabemos cómo hacer.
 
-Por ejemplo, si quisiera crear una app para celular, podría adaptar las lógicas de construcción de prompts para que el modelo me guíe en su desarrollo. Lo mismo si quiero publicar online una página web en HTML como la que creamos anteriormente: le puedo pedir a un modelo de lenguaje que me enumere hostings gratuitos donde subirla, o que me presente alternativas usadas en la actualidad, como la plataforma ^[GitHub](GitHub es una plataforma para guardar, compartir y llevar el registro de versiones de proyectos de código. Con su servicio GitHub Pages se pueden publicar páginas web en HTML de forma gratuita, con un link propio, como el de estas clases.), que es la que estoy usando para publicar estas clases.
+Por ejemplo, si quisiera crear una app para celular sin saber programar, podría usar la misma lógica de construcción de prompts para que un modelo me guíe paso a paso. O, como en este caso, si quiero publicar online una página en HTML, le puedo pedir que me enumere hostings gratuitos, o que me presente alternativas usadas en la actualidad, como ^[GitHub](GitHub es una plataforma para guardar, compartir y llevar el registro de versiones de proyectos de código. Con su servicio GitHub Pages se pueden publicar páginas web en HTML de forma gratuita, con un link propio, como el de estas clases.), que es justamente la que estoy usando para publicar estas clases.
+
+Esto no contradice lo que venimos trabajando desde la Clase 1 sobre la paradoja del conocimiento: para usar la IA con criterio hace falta saber del tema en el que se la está usando. Saber del tema te permite tener un criterio y un saber que permite analizar críticamente lo que la IA nos devuelve, y te hace interactuar mejor con el modelo, en cualquier área. Una fotógrafa o un director de fotografía va a lograr mejores resultados que alguien sin ese oficio, porque sabe qué pedir y qué corregir. Lo mismo pasa buscando información o reponiendo lo que el texto no desarrolla.
+
+Pero, si estás creando algo como una app o un recurso interactivo, podés utilizar la IA para ver cómo crearla y luego lo podés testear: ves si funcionan los botones, si los colores son los correctos, si la funcionalidad se parece a lo que buscabas: esa va a ser tu validación del recurso creado y su funcionamiento.
+
+Pero la información que contenga ese recurso es otra cosa: ahí sí necesitás saber del tema, o al menos identificar fuentes confiables para poder validarla. Si desconocés el tema por completo, no tenés la posibilidad de probarlo, no hay forma de notar un error, así que la falta de saber previo te puede dejar con una alucinación sin que te des cuenta.
 
 ## cierre_cita
 (Patricio Rey y sus Redonditos de Ricota, *Último bondi a Finisterre*, 1998)

@@ -3,140 +3,233 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clasificá las herramientas</title>
+<title>Emparejar y clasificar — ¿Texto o imagen?</title>
 <style>
   :root{
-    --navy:#0f172a;
+    --navy:#1a2140;
     --muted:#64748b;
-    --blue:#2563eb;
-    --blue-bg:#dbeafe;
+    --cherry:#a8203f;
+    --cherry-dark:#7a1830;
+    --royal:#2d4fa3;
+    --royal-dark:#1f3a7a;
+    --gold:#f5b942;
     --green:#16a34a;
-    --green-bg:#dcfce7;
     --red:#ef4444;
     --card:#ffffff;
   }
   *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#eef2f6;}
-  body{display:flex;align-items:center;justify-content:center;padding:24px;}
-  .frame{
-    width:min(100%,760px);
-    background:var(--card);
-    border-radius:22px;
-    padding:clamp(26px,4vw,40px);
-    box-shadow:0 24px 60px rgba(15,23,42,.14),0 4px 14px rgba(15,23,42,.08);
-    color:var(--navy);
+  html,body{margin:0;padding:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  body{
+    display:flex;align-items:center;justify-content:center;padding:28px;
+    min-height:100vh;
+    background:linear-gradient(135deg,#1a2140 0%,var(--cherry) 48%,var(--royal) 100%);
+    background-size:220% 220%;
+    animation:driftBg 16s ease-in-out infinite;
   }
-  header{text-align:center;margin-bottom:20px;}
-  h1{font-size:clamp(1.25rem,3.4vw,1.6rem);font-weight:800;margin:0 0 8px;}
+  @keyframes driftBg{
+    0%,100%{background-position:0% 30%;}
+    50%{background-position:100% 70%;}
+  }
+  .frame{
+    width:min(100%,780px);
+    background:var(--card);
+    border-radius:26px;
+    padding:clamp(26px,4vw,42px);
+    box-shadow:0 30px 70px rgba(10,10,30,.35),0 6px 18px rgba(10,10,30,.2);
+    color:var(--navy);
+    position:relative;
+    overflow:hidden;
+  }
+  .frame::before{
+    content:"";position:absolute;top:-80px;right:-80px;width:220px;height:220px;
+    background:radial-gradient(circle, rgba(245,185,66,.35), transparent 70%);
+    pointer-events:none;
+  }
+
+  header{text-align:center;margin-bottom:16px;position:relative;z-index:1;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--cherry);background:#fdecef;padding:5px 14px;border-radius:999px;margin-bottom:10px;
+  }
+  h1{
+    font-size:clamp(1.3rem,3.6vw,1.75rem);font-weight:800;margin:0 0 8px;
+    background:linear-gradient(90deg,var(--cherry),var(--royal));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
   .subtitle{color:var(--muted);font-size:.9rem;margin:0;}
+
+  .progress-wrap{
+    height:10px;background:#eef1f8;border-radius:999px;overflow:hidden;margin:16px 0 20px;
+    position:relative;z-index:1;
+  }
+  .progress-fill{
+    height:100%;width:0%;border-radius:999px;
+    background:linear-gradient(90deg,var(--cherry),var(--gold),var(--royal));
+    transition:width .35s ease;
+  }
 
   .tray{
     display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
-    padding:16px;margin:18px 0;background:#f8fafc;border-radius:14px;
-    min-height:54px;
+    padding:18px;margin:4px 0 20px;background:#f6f7fb;border-radius:16px;
+    min-height:60px;position:relative;z-index:1;
   }
   .chip{
-    appearance:none;border:none;cursor:pointer;
-    background:#fff;color:var(--navy);font-weight:700;font-size:.88rem;
-    padding:9px 16px;border-radius:999px;border:2px solid #e2e8f0;
-    box-shadow:0 3px 8px rgba(0,0,0,.08);
-    transition:transform .12s ease, border-color .15s ease;
+    appearance:none;border:none;cursor:pointer;position:relative;
+    display:inline-flex;align-items:center;gap:7px;
+    color:#fff;font-weight:700;font-size:.88rem;
+    padding:9px 16px 9px 10px;border-radius:999px;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    transition:transform .15s ease, box-shadow .15s ease;
   }
-  .chip.selected{ border-color:var(--blue); transform:translateY(-2px); }
+  .chip .icon{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.28);font-size:.85rem;
+    flex:0 0 auto;
+  }
+  .chip.selected{ transform:translateY(-3px) scale(1.04); box-shadow:0 8px 18px rgba(0,0,0,.26); outline:3px solid rgba(255,255,255,.75); }
   .chip:active{cursor:grabbing;}
+  .chip:disabled{cursor:default;}
 
-  .bins{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+  .bins{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;position:relative;z-index:1;}
   @media (max-width:560px){ .bins{grid-template-columns:1fr;} }
   .bin{
-    border-radius:14px;padding:16px;min-height:140px;
-    border:2px dashed #cbd5e1;
-    display:flex;flex-direction:column;gap:8px;
+    border-radius:18px;padding:16px;min-height:150px;
+    border:3px dashed transparent;
+    display:flex;flex-direction:column;gap:9px;
+    transition:transform .15s ease, border-color .15s ease;
   }
-  .bin-texto{ background:var(--blue-bg); }
-  .bin-imagen{ background:var(--green-bg); }
-  .bin-title{font-weight:800;font-size:.9rem;text-align:center;margin-bottom:6px;}
-  .bin-texto .bin-title{color:var(--blue);}
-  .bin-imagen .bin-title{color:var(--green);}
-  .bin.drag-over{ outline:3px solid currentColor; }
+  .bin-texto{ background:linear-gradient(160deg,#e7edfb 0%,#d7e3fb 100%); border-color:#c6d4f5; }
+  .bin-imagen{ background:linear-gradient(160deg,#fbe9ed 0%,#f9dde3 100%); border-color:#f3c6cf; }
+  .bin-title{font-weight:800;font-size:.92rem;text-align:center;margin-bottom:4px;display:flex;align-items:center;justify-content:center;gap:6px;}
+  .bin-texto .bin-title{color:var(--royal-dark);}
+  .bin-imagen .bin-title{color:var(--cherry-dark);}
+  .bin.drag-over{ transform:scale(1.02); border-color:currentColor; }
 
   .bin .chip{
     display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;
   }
-  .bin .chip.correct{border-color:var(--green);}
-  .bin .chip.wrong{border-color:var(--red); animation:shake .4s;}
+  .bin .chip.correct{ box-shadow:0 0 0 3px var(--green), 0 4px 12px rgba(0,0,0,.18); }
+  .bin .chip.wrong{ animation:shake .42s; }
+  .bin .chip:disabled{ pointer-events:none; }
+
+  .mark{
+    position:absolute;right:-6px;top:-6px;width:22px;height:22px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:900;color:#fff;
+    transform:scale(0);
+  }
+  .mark.show{ animation:popIn .32s ease forwards; }
+  .mark.ok{ background:var(--green); }
+  .mark.bad{ background:var(--red); }
+  @keyframes popIn{ 0%{transform:scale(0);} 60%{transform:scale(1.25);} 100%{transform:scale(1);} }
 
   @keyframes shake{
     0%,100%{transform:translateX(0);}
-    25%{transform:translateX(-5px);}
-    75%{transform:translateX(5px);}
+    20%{transform:translateX(-6px);}
+    40%{transform:translateX(6px);}
+    60%{transform:translateX(-4px);}
+    80%{transform:translateX(4px);}
   }
 
-  .status{text-align:center;font-weight:700;font-size:.92rem;min-height:1.3em;margin-bottom:12px;color:var(--muted);}
+  .status{text-align:center;font-weight:800;font-size:.95rem;min-height:1.5em;margin-bottom:10px;color:var(--navy);position:relative;z-index:1;}
+  .status.win{ color:var(--green); }
 
-  .actions{display:flex;justify-content:center;}
+  .actions{display:flex;justify-content:center;position:relative;z-index:1;}
   button.btn-reset{
     appearance:none;border:none;cursor:pointer;
-    background:#f1f5f9;color:var(--navy);font-weight:700;font-size:.88rem;
-    padding:10px 22px;border-radius:999px;
+    background:linear-gradient(90deg,var(--cherry),var(--royal));color:#fff;font-weight:800;font-size:.88rem;
+    padding:11px 26px;border-radius:999px;
+    box-shadow:0 8px 18px rgba(0,0,0,.2);
+  }
+
+  .confetti{
+    position:fixed;top:-10px;left:0;width:9px;height:9px;border-radius:2px;pointer-events:none;z-index:50;
+    animation:fall linear forwards;
+  }
+  @keyframes fall{
+    to{ transform:translateY(110vh) rotate(540deg); opacity:0; }
   }
 </style>
 </head>
 <body>
 <div class="frame">
   <header>
+    <span class="eyebrow">🧠 Clasificación</span>
     <h1>¿Texto o imagen?</h1>
     <p class="subtitle">Tocá una herramienta y después tocá la categoría que le corresponde (también podés arrastrarla).</p>
   </header>
+
+  <div class="progress-wrap"><div class="progress-fill" id="progressFill"></div></div>
 
   <div class="tray" id="tray"></div>
 
   <div class="bins">
     <div class="bin bin-texto" id="bin-texto" data-category="texto">
-      <div class="bin-title">Genera principalmente texto</div>
+      <div class="bin-title">📝 Genera principalmente texto</div>
     </div>
     <div class="bin bin-imagen" id="bin-imagen" data-category="imagen">
-      <div class="bin-title">Genera principalmente imagen</div>
+      <div class="bin-title">🖼️ Genera principalmente imagen</div>
     </div>
   </div>
 
   <p class="status" id="status"></p>
 
   <div class="actions">
-    <button class="btn-reset" id="btnReset">Reiniciar</button>
+    <button class="btn-reset" id="btnReset">↺ Reiniciar</button>
   </div>
 </div>
 
 <script>
   const ITEMS = [
-    { name: "ChatGPT", category: "texto" },
-    { name: "Claude", category: "texto" },
-    { name: "Gemini", category: "texto" },
-    { name: "Midjourney", category: "imagen" },
-    { name: "DALL·E", category: "imagen" },
-    { name: "Stable Diffusion", category: "imagen" },
+    { name: "ChatGPT", category: "texto", icon: "🤖", color: "#12a37f" },
+    { name: "Claude", category: "texto", icon: "✦", color: "#d9704f" },
+    { name: "Gemini", category: "texto", icon: "♊", color: "#4a6cc2" },
+    { name: "Midjourney", category: "imagen", icon: "🎨", color: "#7a4fd9" },
+    { name: "DALL·E", category: "imagen", icon: "🖌️", color: "#e0528f" },
+    { name: "Stable Diffusion", category: "imagen", icon: "🌀", color: "#e8863f" },
   ];
 
   const tray = document.getElementById("tray");
   const bins = [...document.querySelectorAll(".bin")];
   const statusEl = document.getElementById("status");
+  const progressFill = document.getElementById("progressFill");
   let selectedChip = null;
   let placedCount = 0;
 
+  function shade(hex, percent) {
+    const num = parseInt(hex.replace("#", ""), 16);
+    let r = (num >> 16) + percent;
+    let g = ((num >> 8) & 0x00FF) + percent;
+    let b = (num & 0x0000FF) + percent;
+    r = Math.min(255, Math.max(0, r));
+    g = Math.min(255, Math.max(0, g));
+    b = Math.min(255, Math.max(0, b));
+    return "#" + (0x1000000 + r * 0x10000 + g * 0x100 + b).toString(16).slice(1);
+  }
+
   function updateStatus() {
-    statusEl.textContent = placedCount === ITEMS.length
-      ? "¡Listo! Clasificaste todas."
-      : `${placedCount} de ${ITEMS.length} clasificadas.`;
+    progressFill.style.width = (placedCount / ITEMS.length * 100) + "%";
+    if (placedCount === ITEMS.length) {
+      statusEl.textContent = "🎉 ¡Listo! Clasificaste todas.";
+      statusEl.classList.add("win");
+      launchConfetti();
+    } else {
+      statusEl.textContent = `${placedCount} de ${ITEMS.length} clasificadas.`;
+      statusEl.classList.remove("win");
+    }
   }
 
   function makeChip(item) {
     const chip = document.createElement("button");
     chip.type = "button";
     chip.className = "chip";
-    chip.textContent = item.name;
-    chip.draggable = true;
+    chip.style.background = `linear-gradient(135deg, ${item.color}, ${shade(item.color, -20)})`;
     chip.dataset.category = item.category;
+    chip.draggable = true;
+    chip.innerHTML = `<span class="icon">${item.icon}</span><span>${item.name}</span>`;
 
     chip.addEventListener("click", () => {
+      if (chip.disabled) return;
       if (selectedChip === chip) {
         chip.classList.remove("selected");
         selectedChip = null;
@@ -156,6 +249,15 @@
     return chip;
   }
 
+  function addMark(chip, ok) {
+    const mark = document.createElement("span");
+    mark.className = "mark " + (ok ? "ok" : "bad");
+    mark.textContent = ok ? "✓" : "✗";
+    chip.appendChild(mark);
+    requestAnimationFrame(() => mark.classList.add("show"));
+    return mark;
+  }
+
   function placeChip(chip, bin) {
     const correct = chip.dataset.category === bin.dataset.category;
     if (correct) {
@@ -163,17 +265,33 @@
       chip.disabled = true;
       chip.draggable = false;
       bin.appendChild(chip);
+      addMark(chip, true);
       placedCount++;
       updateStatus();
     } else {
+      const mark = addMark(chip, false);
       chip.classList.add("wrong");
       setTimeout(() => {
         chip.classList.remove("wrong");
+        mark.remove();
         tray.appendChild(chip);
-      }, 420);
+      }, 500);
     }
     if (selectedChip === chip) selectedChip = null;
     [...document.querySelectorAll(".chip.selected")].forEach(c => c.classList.remove("selected"));
+  }
+
+  function launchConfetti() {
+    const colors = ["#a8203f", "#2d4fa3", "#f5b942", "#16a34a", "#e0528f"];
+    for (let i = 0; i < 46; i++) {
+      const el = document.createElement("div");
+      el.className = "confetti";
+      el.style.left = Math.random() * 100 + "vw";
+      el.style.background = colors[Math.floor(Math.random() * colors.length)];
+      el.style.animationDuration = (2 + Math.random() * 1.5) + "s";
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 4000);
+    }
   }
 
   bins.forEach(bin => {

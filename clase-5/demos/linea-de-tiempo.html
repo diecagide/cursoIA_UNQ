@@ -6,37 +6,75 @@
 <title>Línea de tiempo — IA generativa</title>
 <style>
   :root{
-    --navy:#0f172a;
-    --blue:#2563eb;
+    --navy:#1a2140;
     --muted:#64748b;
+    --cherry:#a8203f;
+    --royal:#2d4fa3;
+    --gold:#f5b942;
     --card:#ffffff;
     --line:#e2e8f0;
   }
   *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#eef2f6;}
-  body{display:flex;align-items:center;justify-content:center;padding:24px;}
-  .frame{
-    width:min(100%,920px);
-    background:var(--card);
-    border-radius:22px;
-    padding:clamp(26px,4vw,40px);
-    box-shadow:0 24px 60px rgba(15,23,42,.14),0 4px 14px rgba(15,23,42,.08);
-    color:var(--navy);
+  html,body{margin:0;padding:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  body{
+    display:flex;align-items:center;justify-content:center;padding:28px;
+    min-height:100vh;
+    background:linear-gradient(135deg,#1a2140 0%,var(--cherry) 48%,var(--royal) 100%);
+    background-size:220% 220%;
+    animation:driftBg 16s ease-in-out infinite;
   }
-  header{text-align:center;margin-bottom:28px;}
-  h1{font-size:clamp(1.3rem,3.4vw,1.7rem);font-weight:800;margin:0 0 8px;}
-  .subtitle{color:var(--muted);font-size:.92rem;margin:0;}
+  @keyframes driftBg{
+    0%,100%{background-position:0% 30%;}
+    50%{background-position:100% 70%;}
+  }
+  .frame{
+    width:min(100%,940px);
+    background:var(--card);
+    border-radius:26px;
+    padding:clamp(26px,4vw,42px);
+    box-shadow:0 30px 70px rgba(10,10,30,.35),0 6px 18px rgba(10,10,30,.2);
+    color:var(--navy);
+    position:relative;
+    overflow:hidden;
+  }
+  .frame::before{
+    content:"";position:absolute;top:-80px;right:-80px;width:220px;height:220px;
+    background:radial-gradient(circle, rgba(245,185,66,.3), transparent 70%);
+    pointer-events:none;
+  }
+
+  header{text-align:center;margin-bottom:20px;position:relative;z-index:1;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--cherry);background:#fdecef;padding:5px 14px;border-radius:999px;margin-bottom:10px;
+  }
+  h1{
+    font-size:clamp(1.3rem,3.6vw,1.75rem);font-weight:800;margin:0 0 8px;
+    background:linear-gradient(90deg,var(--cherry),var(--royal));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .subtitle{color:var(--muted);font-size:.9rem;margin:0 auto;max-width:520px;line-height:1.5;}
 
   .timeline{
+    --progress:0;
     position:relative;
     display:flex;
     justify-content:space-between;
-    padding:0 6px;
-    margin-bottom:28px;
+    padding:0 4px;
+    margin:30px 0 26px;
+    z-index:1;
   }
   .timeline::before{
-    content:"";position:absolute;left:0;right:0;top:17px;height:3px;background:var(--line);
-    border-radius:3px;
+    content:"";position:absolute;left:0;right:0;top:24px;height:4px;background:var(--line);
+    border-radius:4px;
+  }
+  .timeline::after{
+    content:"";position:absolute;left:0;top:24px;height:4px;
+    width:calc(var(--progress) * 100%);
+    background:linear-gradient(90deg,var(--cherry),var(--gold),var(--royal));
+    border-radius:4px;
+    transition:width .5s cubic-bezier(.4,.2,.2,1);
   }
   .milestone{
     position:relative;z-index:1;
@@ -44,81 +82,214 @@
     display:flex;flex-direction:column;align-items:center;gap:8px;
     flex:1 1 0;
     padding:0 2px;
+    font-family:inherit;
   }
   .dot{
-    width:16px;height:16px;border-radius:50%;background:#cbd5e1;border:3px solid #fff;
-    box-shadow:0 0 0 2px var(--line);
-    transition:background .2s ease, transform .2s ease, box-shadow .2s ease;
+    width:34px;height:34px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:1.05rem;
+    background:#fff;border:3px solid var(--line);color:#cbd5e1;
+    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
   }
   .milestone.active .dot{
-    background:var(--blue);
-    box-shadow:0 0 0 2px var(--blue);
-    transform:scale(1.25);
+    background:var(--accent);border-color:var(--accent);color:#fff;
+    transform:scale(1.14);
+    box-shadow:0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent),
+               0 6px 16px color-mix(in srgb, var(--accent) 55%, transparent);
+    animation:dotPulse 1.6s ease-in-out infinite;
   }
-  .year{font-size:.78rem;font-weight:700;color:var(--muted);}
-  .milestone.active .year{color:var(--blue);}
+  @keyframes dotPulse{
+    0%,100%{ box-shadow:0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent), 0 6px 16px color-mix(in srgb, var(--accent) 55%, transparent); }
+    50%{ box-shadow:0 0 0 9px color-mix(in srgb, var(--accent) 12%, transparent), 0 6px 16px color-mix(in srgb, var(--accent) 55%, transparent); }
+  }
+  .year{font-size:.76rem;font-weight:700;color:var(--muted);}
+  .milestone.active .year{color:var(--accent);font-weight:800;}
 
   .detail{
-    background:#f1f5fb;border-radius:16px;padding:22px 24px;
-    min-height:120px;
+    border-radius:18px;padding:22px 24px;
+    min-height:150px;position:relative;z-index:1;
+    background:linear-gradient(160deg,#f6f7fb 0%,#eef1f8 100%);
+    border-left:5px solid var(--accent, var(--royal));
+    opacity:0;transform:translateY(8px);
   }
-  .detail .d-year{font-size:.78rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;}
-  .detail h2{font-size:1.15rem;margin:0 0 8px;font-weight:800;}
-  .detail p{margin:0;color:#334155;line-height:1.55;font-size:.95rem;}
+  .detail.show{ animation:fadeSlideIn .4s ease forwards; }
+  @keyframes fadeSlideIn{ to{ opacity:1; transform:translateY(0); } }
+  .detail .d-era{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:.72rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--accent, var(--royal));margin-bottom:8px;
+  }
+  .detail .d-year{font-size:.78rem;font-weight:700;color:var(--muted);margin-bottom:4px;}
+  .detail h2{font-size:1.18rem;margin:0 0 10px;font-weight:800;}
+  .detail p{margin:0;color:#334155;line-height:1.58;font-size:.95rem;}
+
+  .nav-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:20px;position:relative;z-index:1;flex-wrap:wrap;}
+  button.nav-btn{
+    appearance:none;border:none;cursor:pointer;
+    font-weight:800;font-size:.85rem;padding:10px 18px;border-radius:999px;
+    transition:transform .15s ease, opacity .15s ease;
+    background:#f1f5f9;color:var(--navy);
+  }
+  button.nav-btn:hover:not(:disabled){ transform:translateY(-2px); }
+  button.nav-btn:disabled{ opacity:.4;cursor:default; }
+  button.nav-btn.btn-play{
+    background:linear-gradient(90deg,var(--cherry),var(--royal));color:#fff;
+    box-shadow:0 8px 18px rgba(0,0,0,.2);
+    min-width:190px;
+  }
+
+  .confetti{
+    position:fixed;top:-10px;left:0;width:9px;height:9px;border-radius:2px;pointer-events:none;z-index:50;
+    animation:fall linear forwards;
+  }
+  @keyframes fall{
+    to{ transform:translateY(110vh) rotate(540deg); opacity:0; }
+  }
 
   @media (max-width:640px){
-    .timeline{flex-direction:column;align-items:flex-start;gap:18px;padding-left:10px;}
-    .timeline::before{left:17px;top:0;bottom:0;right:auto;width:3px;height:auto;}
+    .timeline{flex-direction:column;align-items:flex-start;gap:20px;padding-left:4px;margin:24px 0;}
+    .timeline::before{left:17px;top:0;bottom:0;right:auto;width:4px;height:auto;}
+    .timeline::after{left:17px;top:0;width:4px;height:calc(var(--progress) * 100%);}
     .milestone{flex-direction:row;align-items:center;}
-    .year{min-width:56px;text-align:left;}
+    .year{min-width:64px;text-align:left;}
   }
 </style>
 </head>
 <body>
 <div class="frame">
   <header>
+    <span class="eyebrow">⏳ Línea de tiempo</span>
     <h1>La evolución de la IA generativa</h1>
-    <p class="subtitle">Tocá un hito de la línea de tiempo para ver más información.</p>
+    <p class="subtitle">Tocá un hito para ver más información, o dejá que el recorrido automático te lleve del principio al presente.</p>
   </header>
 
   <nav class="timeline" id="timeline"></nav>
 
   <div class="detail" id="detail"></div>
+
+  <div class="nav-row">
+    <button class="nav-btn" id="btnPrev">◀ Anterior</button>
+    <button class="nav-btn btn-play" id="btnPlay">▶ Reproducir recorrido</button>
+    <button class="nav-btn" id="btnNext">Siguiente ▶</button>
+  </div>
 </div>
 
 <script>
   const MILESTONES = [
-    { year: "2014", title: "Redes generativas antagónicas (GANs)", text: "Aparecen los primeros modelos capaces de generar imágenes sintéticas realistas, entrenando dos redes neuronales que compiten entre sí." },
-    { year: "2017", title: "La arquitectura Transformer", text: "Un paper de Google (\"Attention is all you need\") presenta la arquitectura que, años después, haría posibles a los grandes modelos de lenguaje." },
-    { year: "2020", title: "GPT-3", text: "OpenAI lanza un modelo de lenguaje capaz de generar textos coherentes y versátiles a partir de un simple prompt, marcando un salto de escala." },
-    { year: "2022", title: "ChatGPT y Stable Diffusion", text: "La IA generativa llega al público masivo: una interfaz conversacional simple, y modelos de imagen accesibles para cualquiera." },
-    { year: "2023–24", title: "Modelos multimodales", text: "Los modelos empiezan a combinar texto, imagen, audio y video en una misma herramienta, entendiendo y generando distintos formatos a la vez." },
-    { year: "2025–26", title: "Agentes y herramientas integradas", text: "La IA pasa de responder preguntas a ejecutar tareas completas, combinando varios modelos y herramientas — como vimos con Google Flow en la Clase 4." },
+    { year: "2014", era: "Los cimientos", icon: "🥊", color: "#12a37f",
+      title: "Nacen las redes generativas antagónicas (GAN)",
+      text: "Ian Goodfellow presenta un esquema donde dos redes neuronales compiten entre sí: una genera imágenes falsas y la otra intenta detectarlas. De esa competencia nacen los primeros modelos capaces de generar imágenes sintéticas realistas." },
+    { year: "2017", era: "La base técnica", icon: "🧠", color: "#d9704f",
+      title: "La arquitectura Transformer",
+      text: "Un paper de investigadores de Google (\"Attention is all you need\") presenta una arquitectura basada en mecanismos de atención. Es la base técnica que, años después, haría posibles a los grandes modelos de lenguaje actuales." },
+    { year: "2020", era: "El modelo, todavía no el producto", icon: "📐", color: "#4a6cc2",
+      title: "GPT-3",
+      text: "OpenAI entrena GPT-3, un modelo de lenguaje enorme para la época. Todavía no es un producto para el público: se accede por una API limitada. Van a pasar dos años más hasta que esta misma tecnología llegue a cualquiera en forma de producto." },
+    { year: "2022", era: "Llega al público masivo", icon: "🚀", color: "#7a4fd9",
+      title: "ChatGPT y Stable Diffusion",
+      text: "ChatGPT, construido sobre una versión posterior de GPT, ofrece por primera vez una interfaz conversacional simple: cualquiera puede escribirle y obtener una respuesta, sin saber nada de programación. El mismo año, Stable Diffusion hace lo mismo con la generación de imágenes." },
+    { year: "2023–24", era: "Todo junto", icon: "🎭", color: "#e0528f",
+      title: "Modelos multimodales",
+      text: "Modelos como GPT-4 y Gemini empiezan a combinar texto, imagen, audio y video en una misma herramienta: entienden y generan distintos formatos a la vez, en vez de necesitar un modelo separado para cada uno." },
+    { year: "2025–26", era: "El presente", icon: "🤖", color: "#e8863f",
+      title: "Agentes y herramientas integradas",
+      text: "La IA pasa de responder preguntas a ejecutar tareas completas, combinando varios modelos y herramientas entre sí, como vimos con Google Flow en la Clase 4." },
   ];
 
   const timelineEl = document.getElementById("timeline");
   const detailEl = document.getElementById("detail");
+  const btnPrev = document.getElementById("btnPrev");
+  const btnNext = document.getElementById("btnNext");
+  const btnPlay = document.getElementById("btnPlay");
+
+  let current = 0;
+  let playTimer = null;
+  let celebrated = false;
 
   function renderDetail(idx) {
     const m = MILESTONES[idx];
+    detailEl.style.setProperty("--accent", m.color);
     detailEl.innerHTML = `
+      <div class="d-era">${m.icon} ${m.era}</div>
       <div class="d-year">${m.year}</div>
       <h2>${m.title}</h2>
       <p>${m.text}</p>
     `;
+    detailEl.classList.remove("show");
+    void detailEl.offsetWidth;
+    detailEl.classList.add("show");
   }
 
-  function selectMilestone(idx) {
+  function launchConfetti() {
+    const colors = ["#a8203f", "#2d4fa3", "#f5b942", "#16a34a", "#e0528f"];
+    for (let i = 0; i < 46; i++) {
+      const el = document.createElement("div");
+      el.className = "confetti";
+      el.style.left = Math.random() * 100 + "vw";
+      el.style.background = colors[Math.floor(Math.random() * colors.length)];
+      el.style.animationDuration = (2 + Math.random() * 1.5) + "s";
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 4000);
+    }
+  }
+
+  function selectMilestone(idx, { fromPlay = false } = {}) {
+    current = idx;
     [...timelineEl.children].forEach((btn, i) => btn.classList.toggle("active", i === idx));
+    timelineEl.style.setProperty("--progress", idx / (MILESTONES.length - 1));
     renderDetail(idx);
+    btnPrev.disabled = idx === 0;
+    btnNext.disabled = idx === MILESTONES.length - 1;
+    if (idx === MILESTONES.length - 1 && !celebrated) {
+      celebrated = true;
+      launchConfetti();
+    }
+    if (idx !== MILESTONES.length - 1) celebrated = false;
+    if (!fromPlay) stopPlay();
   }
 
   MILESTONES.forEach((m, i) => {
     const btn = document.createElement("button");
     btn.className = "milestone";
-    btn.innerHTML = `<span class="dot"></span><span class="year">${m.year}</span>`;
+    btn.style.setProperty("--accent", m.color);
+    btn.innerHTML = `<span class="dot">${m.icon}</span><span class="year">${m.year}</span>`;
     btn.addEventListener("click", () => selectMilestone(i));
     timelineEl.appendChild(btn);
+  });
+
+  function stopPlay() {
+    if (playTimer) {
+      clearInterval(playTimer);
+      playTimer = null;
+      btnPlay.textContent = "▶ Reproducir recorrido";
+    }
+  }
+
+  function startPlay() {
+    if (current === MILESTONES.length - 1) {
+      selectMilestone(0);
+    }
+    btnPlay.textContent = "⏸ Pausar";
+    playTimer = setInterval(() => {
+      const next = current + 1;
+      selectMilestone(next, { fromPlay: true });
+      if (next >= MILESTONES.length - 1) stopPlay();
+    }, 2200);
+  }
+
+  btnPrev.addEventListener("click", () => {
+    if (current > 0) selectMilestone(current - 1);
+  });
+  btnNext.addEventListener("click", () => {
+    if (current < MILESTONES.length - 1) selectMilestone(current + 1);
+  });
+  btnPlay.addEventListener("click", () => {
+    if (playTimer) stopPlay();
+    else startPlay();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight" && current < MILESTONES.length - 1) selectMilestone(current + 1);
+    if (e.key === "ArrowLeft" && current > 0) selectMilestone(current - 1);
   });
 
   selectMilestone(0);
