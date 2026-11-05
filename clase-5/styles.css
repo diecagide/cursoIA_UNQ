@@ -739,7 +739,7 @@ section.block:first-of-type {
 
 /* Cita del tema de los Redondos debajo del título del cierre */
 .cierre-cita {
-  margin: -6px 0 24px;
+  margin: -14px 0 24px;
   font-size: .92rem;
   color: var(--color-text-muted);
 }

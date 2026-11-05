@@ -264,7 +264,7 @@ Y algunas ideas más para seguir explorando:
 ## bloque_c_incorporacion
 En el siguiente video te cuento cómo incorporar estos recursos en tu aula.
 
-@video[Cómo insertar el recurso en Moodle](https://www.youtube.com/watch?v=Iil4wsXoQpE)
+@video[Cómo insertar el recurso en Moodle](https://www.youtube.com/watch?v=XNU8KBC6tH4)
 
 ## bloque_c_codigo_iframe_intro
 Como mencioné en el video, aquí te comparto el código para copiar y pegar en el aula virtual.
@@ -318,7 +318,7 @@ Generá un archivo HTML con el diseño visual incluido, a partir del PDF y las i
 ## bloque_d_resultado_intro
 Esto es lo que devolvió el modelo (también lo podés abrir en una pestaña aparte):
 
-## bloque_d_aprendiendo
+## final_mas_alla_recursos
 Lo que vimos a lo largo de estas cinco clases no es solo un puñado de recursos puntuales: es también la posibilidad de entender que, cuando le damos instrucciones a un modelo (el prompt), estamos escribiendo algo parecido a un algoritmo — un conjunto de pasos para llegar a un resultado. Esa misma lógica sirve para cualquier otro problema, no solo para los que vimos en el curso: desde aprender a usar un software nuevo, hasta empezar a resolver algo que todavía no sabemos cómo hacer.
 
 Por ejemplo, si quisiera crear una app para celular sin saber programar, podría usar la misma lógica de construcción de prompts para que un modelo me guíe paso a paso. O, como en este caso, si quiero publicar online una página en HTML, le puedo pedir que me enumere hostings gratuitos, o que me presente alternativas usadas en la actualidad, como ^[GitHub](GitHub es una plataforma para guardar, compartir y llevar el registro de versiones de proyectos de código. Con su servicio GitHub Pages se pueden publicar páginas web en HTML de forma gratuita, con un link propio, como el de estas clases.), que es justamente la que estoy usando para publicar estas clases.
@@ -330,7 +330,7 @@ Pero, si estás creando algo como una app o un recurso interactivo, podés utili
 Pero la información que contenga ese recurso es otra cosa: ahí sí necesitás saber del tema, o al menos identificar fuentes confiables para poder validarla. Si desconocés el tema por completo, no tenés la posibilidad de probarlo, no hay forma de notar un error, así que la falta de saber previo te puede dejar con una alucinación sin que te des cuenta.
 
 ## cierre_cita
-(Patricio Rey y sus Redonditos de Ricota, *Último bondi a Finisterre*, 1998)
+— Patricio Rey y sus Redonditos de Ricota, *[Último bondi a Finisterre](https://open.spotify.com/intl-es/track/2FNxYB6vq5C4ERLIDJEY1g?si=afb06edfc84b4284)* (1998)
 
 ## cierre_1
 Y llegamos al final. Este curso de capacitación sobre inteligencia artificial generativa tenía dos propósitos. Por un lado, construir un espacio de divulgación de un conjunto de tecnologías que cada día se hacen más presentes en nuestra vida cotidiana, tanto en lo académico y profesional como en lo personal. En ese espacio confluyen diversas aristas: los modelos más populares, sus funciones principales y sus características generativas; los usos y posibilidades que ofrecen en el ámbito académico y profesional; y las estrategias para validar una información que, aun siendo verosímil, puede estar atravesada por alucinaciones y sesgos.
