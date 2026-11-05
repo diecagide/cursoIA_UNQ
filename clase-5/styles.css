@@ -789,6 +789,24 @@ section.block:first-of-type {
   white-space: pre;
 }
 
+/* Resalta la parte del código que la persona tiene que reemplazar
+   (por ejemplo, la URL del recurso a insertar en el aula virtual):
+   negrita + color distinto del resto del código, sobre el mismo
+   fondo oscuro de .code-embed. */
+.code-embed__placeholder {
+  font-weight: 700;
+  color: #e8955f;
+}
+
+/* Variante para fragmentos cortos de una sola línea (por ejemplo, el
+   <iframe> para pegar en el aula): en vez de requerir scroll horizontal
+   dentro de la caja (pensado para código más largo, de varias líneas),
+   el texto se envuelve para que se lea completo de entrada. */
+.code-embed__code--wrap {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 /* ---------- Tarjetas de razones (bloque "Maldita IA") ---------- */
 
 .reasons {
@@ -908,7 +926,7 @@ section.block:first-of-type {
 .content-inner .highlight-box h3 {
   color: #fff;
   font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-size: 1.15rem;
   margin: 0 0 14px;
 }
 

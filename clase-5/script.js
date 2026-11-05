@@ -1066,15 +1066,17 @@ function initCodeEmbeds() {
     var src = el.getAttribute('data-src');
     var codeEl = el.querySelector('.code-embed__code');
     var copyBtn = el.querySelector('.code-embed__copy');
-    if (!src || !codeEl) return;
+    if (!codeEl) return;
 
-    fetch(src)
-      .then(function (res) {
-        if (!res.ok) throw new Error('No se pudo cargar ' + src);
-        return res.text();
-      })
-      .then(function (text) { codeEl.textContent = text; })
-      .catch(function () { codeEl.textContent = 'No se pudo cargar el código (' + src + ').'; });
+    if (src) {
+      fetch(src)
+        .then(function (res) {
+          if (!res.ok) throw new Error('No se pudo cargar ' + src);
+          return res.text();
+        })
+        .then(function (text) { codeEl.textContent = text; })
+        .catch(function () { codeEl.textContent = 'No se pudo cargar el código (' + src + ').'; });
+    }
 
     if (copyBtn) {
       copyBtn.addEventListener('click', function () {

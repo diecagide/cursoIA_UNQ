@@ -264,7 +264,10 @@ Y algunas ideas más para seguir explorando:
 ## bloque_c_incorporacion
 En el siguiente video te cuento cómo incorporar estos recursos en tu aula.
 
-@video[]()
+@video[Cómo insertar el recurso en Moodle](https://www.youtube.com/watch?v=Iil4wsXoQpE)
+
+## bloque_c_codigo_iframe_intro
+Como mencioné en el video, aquí te comparto el código para copiar y pegar en el aula virtual.
 
 ## bloque_d_terminologia
 Como ya comenté, los recursos que compartí como ejemplos fueron generados con Claude, que me entregó cada uno como un archivo único y descargable en formato HTML. Ahora vamos a ver cómo generar otro tipo de recurso, al que voy a llamar "web", que nos permite convertir un documento que ya tenés escrito (un PDF, un Word) en una página navegable, con mejor diseño e imágenes organizadas. Ambos casos, el recurso interactivo y la web, son archivos HTML, pero con funciones diferentes.
@@ -314,22 +317,6 @@ Generá un archivo HTML con el diseño visual incluido, a partir del PDF y las i
 
 ## bloque_d_resultado_intro
 Esto es lo que devolvió el modelo (también lo podés abrir en una pestaña aparte):
-
-## bloque_d_codigo_intro
-El modelo nos devolvió directamente el archivo HTML para descargar, pero también podemos pedirle el código para copiar y pegar, por ejemplo, en nuestra aula virtual:
-
-## bloque_d_aula_intro
-Nuestra aula virtual de Moodle la podemos mejorar con la misma lógica que venimos usando para el resto de los contenidos.
-
-## bloque_d_aula_ejemplo
-Supongamos que en el bloque inicial de tu aula querés tener una imagen de portada, el título del curso con una breve descripción, y tres botones: uno que lleve al programa de la materia, otro al plan de trabajo, y otro al foro.
-
-Primero definís todos los elementos y sus links correspondientes. Después definís el estilo general: colores, forma de los botones, tipografía. Con eso ya definido, lo traducís en un prompt para que el modelo te genere el código HTML.
-
-## bloque_d_aula_metodo
-Ese código generado lo copiás y pegás en la sección correspondiente de tu aula. En el siguiente video te muestro cómo hacerlo:
-
-@video[]()
 
 ## bloque_d_aprendiendo
 Lo que vimos a lo largo de estas cinco clases no es solo un puñado de recursos puntuales: es también la posibilidad de entender que, cuando le damos instrucciones a un modelo (el prompt), estamos escribiendo algo parecido a un algoritmo — un conjunto de pasos para llegar a un resultado. Esa misma lógica sirve para cualquier otro problema, no solo para los que vimos en el curso: desde aprender a usar un software nuevo, hasta empezar a resolver algo que todavía no sabemos cómo hacer.
