@@ -44,16 +44,16 @@
   --h-sistema-solar: 700px;
   --h-traductor-matematico: 600px;
   --h-musica-3d: 1390px;
-  --h-tarjetas-memoria: 1070px;
-  --h-linea-tiempo: 1010px;
+  --h-tarjetas-memoria: 755px;
+  --h-linea-tiempo: 630px;
   --h-laboratorio-quimica: 870px;
-  --h-diafragma-camara: 1290px;
-  --h-pasos-proceso: 1120px;
-  --h-emparejar-clasificar: 1030px;
-  --h-diagrama-hotspots: 1050px;
+  --h-diafragma-camara: 1185px;
+  --h-pasos-proceso: 850px;
+  --h-emparejar-clasificar: 665px;
+  --h-diagrama-hotspots: 730px;
   --h-explorador-atomos: 700px;
   --h-bloque-d-resultado: 1490px;
-  --h-reparto-riqueza: 1520px;
+  --h-reparto-riqueza: 1375px;
 }
 
 * { box-sizing: border-box; }
@@ -1807,15 +1807,15 @@ section.block:first-of-type {
      dos archivos tal como los armó Diego, no de este alto.  */
   :root {
     --h-musica-3d: 1545px;
-    --h-tarjetas-memoria: 1275px;
-    --h-linea-tiempo: 1280px;
+    --h-tarjetas-memoria: 1155px;
+    --h-linea-tiempo: 1165px;
     --h-laboratorio-quimica: 1125px;
-    --h-diafragma-camara: 1610px;
-    --h-pasos-proceso: 1285px;
-    --h-emparejar-clasificar: 1165px;
-    --h-diagrama-hotspots: 1165px;
+    --h-diafragma-camara: 1615px;
+    --h-pasos-proceso: 1105px;
+    --h-emparejar-clasificar: 940px;
+    --h-diagrama-hotspots: 905px;
     --h-bloque-d-resultado: 2110px;
-    --h-reparto-riqueza: 1840px;
+    --h-reparto-riqueza: 1620px;
   }
 
   .nav-toggle { display: block; }

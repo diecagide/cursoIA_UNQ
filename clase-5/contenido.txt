@@ -39,7 +39,7 @@ Como comenté antes, con los modelos de lenguaje (LLM) podemos crear una gran di
 En este recurso quise representar, en una visualización esquemática y animada, las posiciones, los desplazamientos y las velocidades relativas con las que giran los planetas alrededor del Sol. Además, le pedí al modelo que incluyera la posibilidad de hacer clic en cada planeta para acceder a su información (la distancia al Sol y otros datos).
 
 ## prompt_sistema_solar
-Necesito un dispositivo que muestre el sistema solar, con los planetas girando alrededor del Sol a sus velocidades relativas reales (los más cercanos giran más rápido).
+Un dispositivo que muestre el sistema solar, con los planetas girando alrededor del Sol a sus velocidades relativas reales (los más cercanos giran más rápido).
 
 - Fondo de cielo estrellado, con alguna estrella fugaz de vez en cuando.
 - Al hacer clic en un planeta (o en el Sol), la cámara se acerca a él y aparece un panel con su nombre, distancia al Sol, cantidad de lunas y un dato curioso.
@@ -47,30 +47,39 @@ Necesito un dispositivo que muestre el sistema solar, con los planetas girando a
 - Saturno con sus anillos distinguibles del resto.
 - Estilo visual: fondo oscuro tipo espacio, con nebulosas de color sutiles de fondo.
 
+Entregámelo como un único archivo HTML descargable.
+
 ## ejemplo_traductor_matematico
 Es un dispositivo de autoevaluación de matemática que propone cinco preguntas de opción múltiple, del mismo estilo que un ejercicio de traducción de lenguaje verbal a simbólico (se me ocurrió crearlo porque mi hijo de 12 años está haciendo ejercicios de este tipo). Al reiniciar vuelve a las mismas preguntas, aunque también podríamos pedirle al modelo que genere variaciones. Además, le pedí al modelo que se pudiera responder con las teclas.
 
 ## prompt_traductor_matematico
-Necesito un dispositivo de autoevaluación de matemática, con el mismo formato que un ejercicio de traducción de lenguaje verbal a simbólico (por ejemplo: "El triple de la diferencia entre un número x y cinco" → 3(x − 5)).
+Un quiz interactivo de opción múltiple para practicar cómo traducir enunciados en palabras a expresiones matemáticas.
 
-- Cinco preguntas, cada una con tres opciones de respuesta (incluyendo expresiones con fracciones).
-- Las opciones van una al lado de la otra, no apiladas, y la consigna bien destacada y centrada.
-- Al elegir, el dispositivo marca si es correcto o incorrecto al instante, y pasa sola a la siguiente pregunta.
-- Que también se pueda responder con las teclas 1, 2 y 3 del teclado.
-- Una pantalla de inicio y, al final, un cartel con el puntaje y un botón para reiniciar (las preguntas y las opciones se reordenan al azar cada vez).
-- Estilo visual: colores cálidos y vibrantes, nada de paletas oscuras, con un gradiente y una sombra distinta para cada botón de opción, y algún detalle de celebración si el puntaje es alto.
+- Inventá 5 enunciados de traducción (lenguaje natural → expresión algebraica), de dificultad creciente, que combinen operaciones como sumas, restas, productos, potencias, raíces y fracciones. Cada uno con 3 opciones: la expresión correcta y dos distractoras que representen errores típicos de traducción (por ejemplo, invertir el orden de una resta, ubicar mal un paréntesis, o aplicar una operación a la parte equivocada del enunciado).
+- Las fracciones tienen que verse apiladas (numerador arriba, denominador abajo, como en un libro de texto), no como texto corrido con una barra.
+- Al arrancar, mezclá el orden de las 5 preguntas y, dentro de cada una, el orden de las 3 opciones. Se puede responder con clic o con las teclas 1, 2 y 3.
+- Al elegir una opción, marcá al instante si es correcta o incorrecta (y si falló, mostrá cuál era la correcta), con un sonido distinto para cada caso.
+- Llevá un camino de progreso con 5 nodos (uno por pregunta) que se van marcando correcto/incorrecto, y una racha visible cuando hay 2 o más aciertos seguidos.
+- Al final mostrá el puntaje con un anillo animado y un mensaje distinto según el resultado, con confetti y una melodía si acierta 4 o 5 de 5.
+- Botón para reintentar, que vuelve a mezclar todo.
+- Estilo visual: fondo cálido y vibrante en degradé (coral, naranja y rosa), con símbolos matemáticos (+, −, ×, ÷, √, π, Σ, ∞) flotando lentamente de fondo, y una tarjeta clara centrada con el contenido.
+
+Entregámelo como un único archivo HTML descargable.
 
 ## ejemplo_musica_3d
 Este ejemplo no es un recurso didáctico, sino un ejemplo de prototipo que podrían crear tus estudiantes utilizando IA, como parte de su proceso creativo: lo comparto porque es un dispositivo bastante complejo, que propone un cruce entre artes digitales y música. El objetivo fue crear un sintetizador virtual 3D para "pintar sonidos": un cubo dividido en mil cubitos (una grilla de 10 × 10 × 10) que, al pintarse, genera una nota distinta según su posición. Acá el módulo se complejiza, porque suma mecánicas para rotar el cubo y acercarse. Arriba están las instrucciones de uso y, debajo del cubo, una explicación de cómo se construyen los sonidos. Además, con el botón Play se puede reproducir la música que pintaste. Esta idea se me ocurrió cuando vi un posteo de Instagram de un usuario que había hecho algo similar con una superficie plana cuadrada.
 
 ## prompt_musica_3d
-Necesito un dispositivo tipo sintetizador: un cubo dividido en una grilla de 10x10x10 mini cubos, donde cada uno se puede "pintar" y, al pintarse, suena una nota distinta según su posición.
+Un dispositivo tipo sintetizador: un cubo dividido en una grilla de 10×10×10 mini cubos, donde cada uno se puede "pintar" y, al pintarse, suena una nota distinta según su posición.
 
-- Pintar manteniendo el clic izquierdo apretado y moviendo el mouse (varios cubos a la vez).
+- Pintar manteniendo el clic izquierdo apretado y moviendo el mouse (pinta varios cubos a la vez); clickear repetidas veces en el mismo lugar perfora hacia los cubos más profundos, hasta llegar a los del centro.
 - Rotar la vista con clic derecho, y acercar o alejar con la ruedita (dentro de un rango razonable).
-- Un wireframe suave que marque los bordes de cada mini cubo, sin que se vean las diagonales de las caras.
-- Que las notas sigan siempre una escala musical prolija, sin disonancias al pasar de una fila a otra.
-- Estilo visual: el cubo en semitransparencia, con los cubitos pintados bien visibles.
+- Un wireframe suave que marque los bordes de cada mini cubo, sin que se vean las diagonales de las caras; los que no están pintados quedan invisibles, para ver a través de toda la grilla, y los pintados se destacan bien sólidos.
+- Que las notas sigan siempre una escala musical prolija, sin disonancias al pasar de una fila a otra, y que los cubos pintados en una misma columna suenen juntos, como un acorde.
+- El color de cada cubo también depende de su posición, sin paleta manual.
+- Un botón para reproducir, que recorre el cubo pintado de punta a punta en loop.
+
+Entregámelo como un único archivo HTML descargable.
 
 ## bloque_a_cierre
 Si bien los ejemplos que te muestro aquí son muy específicos, como mencioné anteriormente, podés tomarlos como punto de partida para adaptarlos a los contenidos de tu área disciplinar.
@@ -152,40 +161,45 @@ Veamos dos ejemplos simples para crear recursos con esta misma lógica.
 La idea es crear un conjunto de tarjetas que se dan vuelta haciendo clic. En el frente, las tarjetas tienen escrito el término y, en el dorso, la definición. Sirve para repasar vocabulario o conceptos clave de cualquier tema.
 
 ## prompt_tarjetas_memoria
-Creá un recurso interactivo de tarjetas de memoria sobre vocabulario básico de IA generativa. Entregámelo como un único archivo HTML descargable.
+Tarjetas de memoria con los términos básicos de IA generativa.
 
-Son seis tarjetas, cada una con el término al frente y su definición al dorso:
+Son seis tarjetas que arrancan boca abajo mostrando el término, y al tocarlas se dan vuelta mostrando su definición:
 
 - Prompt: la instrucción que le das a un modelo de IA para que genere algo.
 - Alucinación: cuando un modelo genera información que suena creíble pero es falsa o inventada.
 - Modelo multimodal: un modelo que entiende o genera más de un tipo de contenido (texto, imagen, audio, video) a la vez.
 - Fine-tuning: ajustar un modelo ya entrenado con datos propios para que se especialice en una tarea puntual.
-- Token: la unidad mínima de texto que procesa un modelo de lenguaje, que puede ser una palabra, parte de una palabra o un signo.
+- Token: la unidad mínima de texto que procesa un modelo de lenguaje: una palabra, parte de una palabra, o un signo.
 - Contexto: la información previa que el modelo tiene disponible al momento de generar una respuesta.
 
-- Al hacer clic en una tarjeta, se da vuelta con una animación suave y muestra la definición.
-- Dos botones: uno que da vuelta todas las tarjetas a la vez y otro que mezcla el orden.
-- Estilo visual: fondo con gradiente vibrante en tonos violeta y rosa, tarjetas blancas con el término al frente y un dorado cálido al darlas vuelta.
+- Un botón para dar vuelta todas las tarjetas a la vez, y otro para mezclar el orden (se tapan todas de nuevo y se reordenan al azar).
+- Una barra de progreso que cuente cuántos términos ya se descubrieron (se mantiene aunque la tarjeta se vuelva a tapar, y se reinicia al mezclar), con un mensaje de festejo y un efecto de confetti al descubrir los seis.
+- Estilo visual: nada de fondo blanco liso, quiero que tenga mucho color y que impacte visualmente. Usá como base el degradé de identidad de esta clase (de un azul marino oscuro a un rojo cereza y de ahí a un azul real, el mismo de la barra lateral del sitio) de fondo en toda la página, con una animación lenta y sutil. Cada término con su propio color e ícono, tanto en el frente como en el dorso de la tarjeta, para que se vea variado y no todo igual.
+
+Entregámelo como un único archivo HTML descargable.
 
 ## ejemplo_linea_tiempo
 La idea es crear una serie de "hitos clickeables" sobre una línea cronológica; al seleccionar uno, se abre el detalle debajo. Sirve para ordenar cualquier proceso en el tiempo.
 
 ## prompt_linea_tiempo
-Creá una línea de tiempo interactiva sobre la evolución de la IA generativa. Entregámela como un único archivo HTML descargable.
+Una línea de tiempo interactiva sobre la evolución de la IA generativa, para repasar los hitos principales.
 
-Son seis hitos, cada uno con año, título y una descripción breve:
+Hitos a incluir, en orden cronológico:
 
-- 2014, Redes generativas antagónicas (GANs): aparecen los primeros modelos capaces de generar imágenes sintéticas realistas, entrenando dos redes neuronales que compiten entre sí.
-- 2017, La arquitectura Transformer: un paper de Google ("Attention is all you need") presenta la arquitectura que, años después, haría posibles a los grandes modelos de lenguaje.
-- 2020, GPT-3: OpenAI lanza un modelo de lenguaje capaz de generar textos coherentes y versátiles a partir de un simple prompt, marcando un salto de escala.
-- 2022, ChatGPT y Stable Diffusion: la IA generativa llega al público masivo, con una interfaz conversacional simple y modelos de imagen accesibles para cualquiera.
-- 2023–24, Modelos multimodales: los modelos empiezan a combinar texto, imagen, audio y video en una misma herramienta, entendiendo y generando distintos formatos a la vez.
-- 2025–26, Agentes y herramientas integradas: la IA pasa de responder preguntas a ejecutar tareas completas, combinando varios modelos y herramientas, como vimos con Google Flow en la Clase 4.
+- 2014 — Nacen las redes generativas antagónicas (GAN): Ian Goodfellow presenta un esquema donde dos redes neuronales compiten entre sí: una genera imágenes falsas y la otra intenta detectarlas. De esa competencia nacen los primeros modelos capaces de generar imágenes sintéticas realistas.
+- 2017 — La arquitectura Transformer: un paper de investigadores de Google ("Attention is all you need") presenta una arquitectura basada en mecanismos de atención. Es la base técnica que, años después, haría posibles a los grandes modelos de lenguaje actuales.
+- 2020 — GPT-3: OpenAI entrena GPT-3, un modelo de lenguaje enorme para la época. Todavía no es un producto para el público: se accede por una API limitada. Van a pasar dos años más hasta que esta misma tecnología llegue a cualquiera en forma de producto.
+- 2022 — ChatGPT y Stable Diffusion: ChatGPT, construido sobre una versión posterior de GPT, ofrece por primera vez una interfaz conversacional simple: cualquiera puede escribirle y obtener una respuesta, sin saber nada de programación. El mismo año, Stable Diffusion hace lo mismo con la generación de imágenes.
+- 2023–24 — Modelos multimodales: modelos como GPT-4 y Gemini empiezan a combinar texto, imagen, audio y video en una misma herramienta: entienden y generan distintos formatos a la vez, en vez de necesitar un modelo separado para cada uno.
+- 2025–26 — Agentes y herramientas integradas: la IA pasa de responder preguntas a ejecutar tareas completas, combinando varios modelos y herramientas entre sí, como vimos con Google Flow en la Clase 4.
 
-- Los hitos se muestran como puntos sobre una línea horizontal, con el año debajo de cada uno.
-- Al hacer clic en un hito se resalta su punto y aparece el detalle (título y descripción) en un recuadro debajo.
-- En el celular, la línea se acomoda en vertical, sin que se encime el contenido.
-- Estilo visual: fondo blanco, acento en azul, tipografía clara, diseño simple tipo informe.
+Importante: dejá bien claro que GPT-3 (2020) es el modelo técnico, todavía no accesible para cualquiera, y que ChatGPT (2022) es recién el producto que lo hace accesible al público general — son dos cosas distintas, no generes confusión entre una y otra.
+
+Interacción: fila de puntos sobre una línea (horizontal en computadora, vertical en celular), uno por hito, cada uno con su ícono y color. Al tocar un punto se muestra abajo el detalle: era, año, título y texto. Botones de anterior/siguiente (también con flechas del teclado) y un botón "Reproducir recorrido" que avanza automáticamente cada par de segundos hasta el final.
+
+Estilo visual: fondo de página con un degradé animado (azul marino, rojo cereza, azul real — el de la barra lateral del sitio), con movimiento lento. Panel blanco centrado para el contenido. La línea se va coloreando con un degradé a medida que avanzás. Cada hito con su propio color e ícono. Confetti al llegar al final.
+
+Entregámelo como un único archivo HTML descargable.
 
 ## bloque_b_complejo_intro
 Los siguientes ejemplos muestran una mecánica más compleja, con varios controles y elementos visuales.
@@ -194,27 +208,33 @@ Los siguientes ejemplos muestran una mecánica más compleja, con varios control
 La idea de este recurso fue crear una simulación con dos pestañas, Punto de ebullición y Color de llama. En una se calienta agua con distintas sustancias disueltas y se ve cómo cambia el punto de ebullición; en la otra se acerca una muestra a la llama y esta cambia de color según el elemento. También cuenta con un slider que controla la intensidad del mechero.
 
 ## prompt_laboratorio_quimica
-Creá una simulación interactiva de un laboratorio de química, con dos pestañas. Entregámela como un único archivo HTML descargable.
+Una simulación interactiva de laboratorio de química, con dos pestañas.
 
-Pestaña 1, Punto de ebullición: un mechero con un control deslizante de intensidad, un vaso con agua y un termómetro. Al agregar distintas sustancias al agua (sal, azúcar, alcohol, anticongelante) cambia el punto de ebullición, con burbujas y vapor al hervir, y una explicación de por qué cambia en cada caso.
+Pestaña "Punto de ebullición": un mechero con un control deslizante de intensidad, un vaso con agua y un termómetro con mercurio que sube y baja. Al elegir qué agregarle al agua (sal, azúcar, alcohol, anticongelante, o agua pura como referencia) cambia el punto de ebullición, con burbujas y vapor al hervir, y una explicación de por qué cambia en cada caso.
 
-Pestaña 2, Color de llama: acercar distintas muestras (sodio, cobre, potasio, litio, calcio, estroncio, bario) a la llama del mechero, que cambia de color según el elemento, con una explicación breve de por qué pasa eso a nivel atómico.
+Pestaña "Color de llama": acercar distintas muestras a la llama (sodio, cobre, potasio, litio, calcio, estroncio, bario) la tiñe de un color propio de cada elemento, con una explicación breve de por qué pasa eso a nivel atómico, acompañada de un pequeño diagrama de átomo donde se ve al electrón "saltar".
 
-- Que se vea con la estética de un laboratorio: mechero con llama animada, termómetro con mercurio que sube y baja, vaso de vidrio.
+- Que se vea con estética de laboratorio: mechero con llama animada, termómetro con mercurio que sube y baja, vaso de vidrio.
 - Estilo visual: fondo oscuro con tonos violeta y azulado, acentos dorados en los controles.
+
+Entregámelo como un único archivo HTML descargable.
 
 ## ejemplo_diafragma_camara
 Este recurso propone una simulación de cómo el diafragma y el obturador de una cámara fotográfica controlan la luz y el enfoque de una foto. Tiene dos sliders, uno para controlar la apertura del diafragma y otro para la velocidad del obturador.
 
 ## prompt_diafragma_camara
-Creá una simulación interactiva que explique cómo el diafragma y el obturador de una cámara fotográfica controlan la luz y el enfoque de una foto. Entregámela como un único archivo HTML descargable.
+Un simulador interactivo de cámara réflex sobre el diafragma y el obturador, para mostrar cómo se controla la exposición y la profundidad de campo en fotografía.
 
-- Dos controles deslizantes: uno de diafragma (de f/1.4, muy abierto, a f/22, muy cerrado) y otro de velocidad de obturación (de 1/1000 de segundo a 1 segundo).
-- Un dibujo del diafragma (el iris) que se abre y se cierra en tiempo real según el control.
-- Una vista previa del resultado: una foto de ejemplo donde el fondo se desenfoca más o menos según cuán abierto esté el diafragma.
-- Datos siempre visibles: el valor de f, la velocidad de obturación, si la exposición es correcta y cuánta profundidad de campo hay.
-- Un texto que se actualiza según la posición de ambos controles, explicando qué efecto tiene cada uno sobre la luz, el desenfoque del fondo y el movimiento.
-- Estilo visual: fondo oscuro tipo estudio fotográfico, con un acento cálido.
+- Dos controles independientes, cada uno con su propio slider y botones de valores típicos: diafragma (apertura) de f/1.4 (más abierto) a f/22 (más cerrado), y obturador (velocidad) de 1/1000 s (más rápido) a 4 s (más lento).
+- Mostrá en todo momento, como datos numéricos: la apertura actual, la velocidad de obturador actual, si la exposición resultante es correcta o está sobre/subexpuesta (tomando f/1.4 + 1/125 s como referencia de exposición correcta), y el nivel de profundidad de campo.
+- Con el diafragma: cuanto más abierto, menos profundidad de campo (foco más selectivo) y más luz entra. Cuanto más cerrado, más profundidad de campo (casi toda la escena nítida) y menos luz entra.
+- Con el obturador: cuanto más rápido, menos luz entra. Cuanto más lento, más luz entra.
+- Mostrá una escena de ejemplo (cielo con sol de fondo, una cadena de montañas en el medio, y un árbol/suelo en primer plano) en dos vistas: el diafragma en sí, con sus hojas abriéndose y cerrándose, y una foto de ejemplo con marco, con la leyenda "Así saldría la foto".
+- Importante: las montañas son el plano de foco y tienen que verse SIEMPRE nítidas, sea cual sea el diafragma. El desenfoque depende EXCLUSIVAMENTE del diafragma — el obturador NO tiene que afectar el enfoque bajo ninguna circunstancia, solo cambia el brillo de la foto (si queda sobre o subexpuesta).
+- Sumale un halo tipo "bokeh" alrededor del sol que crece cuando el diafragma está más abierto, y confetti la primera vez que se llega a una exposición correcta.
+- Estilo visual: este recurso va con un esquema de color distinto al resto — fondo de página blanco (no el degradé animado), y la tarjeta central con un degradé de color propio (dorado → verde azulado → celeste → violeta). El header dentro de la tarjeta sí lleva el degradé de identidad del sitio (rojo cereza → azul real), como una franja con texto blanco.
+
+Entregámelo como un único archivo HTML descargable.
 
 ## bloque_c_intro
 Veamos otros recursos posibles que podemos crear a partir de los tipos que describimos anteriormente.
