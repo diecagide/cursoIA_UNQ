@@ -41,7 +41,7 @@
      más abajo, redefine los que necesitan más alto en mobile (el texto
      se envuelve más y las grillas caen a 1 columna, así que a veces
      necesitan más lugar que en pantallas anchas). */
-  --h-sistema-solar: 700px;
+  --h-sistema-solar: 548px;
   --h-traductor-matematico: 600px;
   --h-musica-3d: 1390px;
   --h-tarjetas-memoria: 755px;
@@ -738,8 +738,8 @@ section.block:first-of-type {
 }
 
 /* Cita del tema de los Redondos debajo del título del cierre */
-.cierre-cita {
-  margin: -14px 0 24px;
+.block p.cierre-cita {
+  margin: -18px 0 24px;
   font-size: .92rem;
   color: var(--color-text-muted);
 }
@@ -1631,6 +1631,24 @@ section.block:first-of-type {
 .prompt-example--en {
   border-left-color: var(--color-border);
   margin-top: 10px;
+}
+
+/* Variante compacta, solo para los 4 ejemplos de Bloque B ("Ejemplos
+   simples" y "Ejemplos (un poco más) complejos") — esos prompts son
+   largos y, uno atrás de otro, ocupaban mucho espacio en esa sección.
+   Letra más chica + menos espacio entre párrafos/listas adentro del
+   recuadro. El resto de los .prompt-example del sitio (el de Bloque D)
+   no lleva esta clase y queda con el tamaño de siempre. */
+.prompt-example--compact { padding: 12px 16px; }
+.prompt-example--compact p,
+.prompt-example--compact .content-list {
+  font-size: .85rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.prompt-example--compact p:last-child,
+.prompt-example--compact .content-list:last-child {
+  margin-bottom: 0;
 }
 
 /* ---------- Análisis / desglose de un prompt de ejemplo ---------- */

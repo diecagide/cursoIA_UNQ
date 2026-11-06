@@ -15,7 +15,7 @@
   .frame{
     position:relative;
     width:min(100%,940px);
-    height:min(78vh,620px);
+    height:min(90vh,490px);
     border-radius:22px;
     overflow:hidden;
     background:radial-gradient(ellipse at 50% 28%, #141a3d 0%, #060814 62%, #020309 100%);
@@ -182,21 +182,21 @@
   const infoFact = document.getElementById("infoFact");
 
   const PLANETS = [
-    { key:"mercurio", name:"Mercurio", color:"#b7afa6", size:8,  orbit:55,  speed:0.55, moons:"0", dist:"58 millones de km",
+    { key:"mercurio", name:"Mercurio", color:"#b7afa6", size:8,  orbit:44,  speed:0.55, moons:"0", dist:"58 millones de km",
       fact:"Es el planeta más pequeño y el más cercano al Sol. Un día en Mercurio dura más que su año: tarda 59 días en rotar sobre su eje, pero solo 88 en completar una vuelta al Sol." },
-    { key:"venus", name:"Venus", color:"#e8c27e", size:11, orbit:78,  speed:0.38, moons:"0", dist:"108 millones de km",
+    { key:"venus", name:"Venus", color:"#e8c27e", size:11, orbit:62,  speed:0.38, moons:"0", dist:"108 millones de km",
       fact:"Es el planeta más caliente del sistema solar, incluso más que Mercurio, por su densísima atmósfera de dióxido de carbono. Además, gira al revés que casi todos los demás planetas." },
-    { key:"tierra", name:"Tierra", color:"#3b82f6", size:12, orbit:102, speed:0.28, moons:"1", dist:"150 millones de km",
+    { key:"tierra", name:"Tierra", color:"#3b82f6", size:12, orbit:82, speed:0.28, moons:"1", dist:"150 millones de km",
       fact:"El único planeta conocido con vida. Alrededor del 71% de su superficie está cubierta de agua, y su atmósfera es la razón por la que la vida tal como la conocemos es posible." },
-    { key:"marte", name:"Marte", color:"#c1440e", size:10, orbit:128, speed:0.20, moons:"2", dist:"228 millones de km",
+    { key:"marte", name:"Marte", color:"#c1440e", size:10, orbit:102, speed:0.20, moons:"2", dist:"228 millones de km",
       fact:"Tiene el volcán más grande de todo el sistema solar, el Monte Olimpo: casi tres veces más alto que el Everest. Su color rojizo se debe al óxido de hierro en su superficie." },
-    { key:"jupiter", name:"Júpiter", color:"#d8a46b", size:26, orbit:165, speed:0.11, moons:"95 conocidas", dist:"778 millones de km",
+    { key:"jupiter", name:"Júpiter", color:"#d8a46b", size:26, orbit:132, speed:0.11, moons:"95 conocidas", dist:"778 millones de km",
       fact:"El planeta más grande del sistema solar: podrían caber más de 1.300 planetas Tierra en su interior. Su Gran Mancha Roja es una tormenta más grande que la Tierra, activa desde hace siglos." },
-    { key:"saturno", name:"Saturno", color:"#e3c16f", size:22, orbit:200, speed:0.08, moons:"146 conocidas", dist:"1.430 millones de km", rings:true,
+    { key:"saturno", name:"Saturno", color:"#e3c16f", size:22, orbit:160, speed:0.08, moons:"146 conocidas", dist:"1.430 millones de km", rings:true,
       fact:"Famoso por sus anillos, hechos de hielo y roca. Es tan poco denso que, si existiera un océano lo bastante grande, Saturno flotaría en él." },
-    { key:"urano", name:"Urano", color:"#9fe3d6", size:16, orbit:228, speed:0.055, moons:"27", dist:"2.870 millones de km",
+    { key:"urano", name:"Urano", color:"#9fe3d6", size:16, orbit:182, speed:0.055, moons:"27", dist:"2.870 millones de km",
       fact:"Gira de costado: su eje de rotación está inclinado casi 98 grados, probablemente por un impacto gigante en su pasado. Es un gigante de hielo, no de gas." },
-    { key:"neptuno", name:"Neptuno", color:"#4c6ef5", size:16, orbit:250, speed:0.04, moons:"14", dist:"4.500 millones de km",
+    { key:"neptuno", name:"Neptuno", color:"#4c6ef5", size:16, orbit:200, speed:0.04, moons:"14", dist:"4.500 millones de km",
       fact:"Tiene los vientos más rápidos del sistema solar, de hasta 2.100 km/h. Tarda 165 años terrestres en completar una sola vuelta alrededor del Sol." },
   ];
 

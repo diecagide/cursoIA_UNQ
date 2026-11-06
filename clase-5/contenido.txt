@@ -184,20 +184,13 @@ La idea es crear una serie de "hitos clickeables" sobre una línea cronológica;
 ## prompt_linea_tiempo
 Una línea de tiempo interactiva sobre la evolución de la IA generativa, para repasar los hitos principales.
 
-Hitos a incluir, en orden cronológico:
+Hitos a incluir: se adjunta un archivo con los datos (año, título y texto de cada hito).
 
-- 2014 — Nacen las redes generativas antagónicas (GAN): Ian Goodfellow presenta un esquema donde dos redes neuronales compiten entre sí: una genera imágenes falsas y la otra intenta detectarlas. De esa competencia nacen los primeros modelos capaces de generar imágenes sintéticas realistas.
-- 2017 — La arquitectura Transformer: un paper de investigadores de Google ("Attention is all you need") presenta una arquitectura basada en mecanismos de atención. Es la base técnica que, años después, haría posibles a los grandes modelos de lenguaje actuales.
-- 2020 — GPT-3: OpenAI entrena GPT-3, un modelo de lenguaje enorme para la época. Todavía no es un producto para el público: se accede por una API limitada. Van a pasar dos años más hasta que esta misma tecnología llegue a cualquiera en forma de producto.
-- 2022 — ChatGPT y Stable Diffusion: ChatGPT, construido sobre una versión posterior de GPT, ofrece por primera vez una interfaz conversacional simple: cualquiera puede escribirle y obtener una respuesta, sin saber nada de programación. El mismo año, Stable Diffusion hace lo mismo con la generación de imágenes.
-- 2023–24 — Modelos multimodales: modelos como GPT-4 y Gemini empiezan a combinar texto, imagen, audio y video en una misma herramienta: entienden y generan distintos formatos a la vez, en vez de necesitar un modelo separado para cada uno.
-- 2025–26 — Agentes y herramientas integradas: la IA pasa de responder preguntas a ejecutar tareas completas, combinando varios modelos y herramientas entre sí, como vimos con Google Flow en la Clase 4.
-
-Importante: dejá bien claro que GPT-3 (2020) es el modelo técnico, todavía no accesible para cualquiera, y que ChatGPT (2022) es recién el producto que lo hace accesible al público general — son dos cosas distintas, no generes confusión entre una y otra.
-
-Interacción: fila de puntos sobre una línea (horizontal en computadora, vertical en celular), uno por hito, cada uno con su ícono y color. Al tocar un punto se muestra abajo el detalle: era, año, título y texto. Botones de anterior/siguiente (también con flechas del teclado) y un botón "Reproducir recorrido" que avanza automáticamente cada par de segundos hasta el final.
-
-Estilo visual: fondo de página con un degradé animado (azul marino, rojo cereza, azul real — el de la barra lateral del sitio), con movimiento lento. Panel blanco centrado para el contenido. La línea se va coloreando con un degradé a medida que avanzás. Cada hito con su propio color e ícono. Confetti al llegar al final.
+- Fila de puntos sobre una línea (horizontal en computadora, vertical en celular), uno por hito, cada uno con su ícono y color.
+- Al tocar un punto se muestra abajo el detalle: era, año, título y texto.
+- Botones de anterior/siguiente (también con flechas del teclado) y un botón "Reproducir recorrido" que avanza automáticamente cada par de segundos hasta el final.
+- Importante: entre los hitos hay dos que se confunden fácil — dejá bien claro que GPT-3 (2020) es el modelo técnico, todavía no accesible para cualquiera, y que ChatGPT (2022) es recién el producto que lo hace accesible al público general.
+- Estilo visual: fondo de página con un degradé animado (azul marino, rojo cereza, azul real — el de la barra lateral del sitio), con movimiento lento. Panel blanco centrado para el contenido. La línea se va coloreando con un degradé a medida que avanzás. Cada hito con su propio color e ícono. Confetti al llegar al final.
 
 Entregámelo como un único archivo HTML descargable.
 
@@ -264,7 +257,7 @@ Y algunas ideas más para seguir explorando:
 ## bloque_c_incorporacion
 En el siguiente video te cuento cómo incorporar estos recursos en tu aula.
 
-@video[Cómo insertar el recurso en Moodle](https://www.youtube.com/watch?v=XNU8KBC6tH4)
+@video[](https://www.youtube.com/watch?v=XNU8KBC6tH4)
 
 ## bloque_c_codigo_iframe_intro
 Como mencioné en el video, aquí te comparto el código para copiar y pegar en el aula virtual.
