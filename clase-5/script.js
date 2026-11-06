@@ -690,20 +690,54 @@ function renderVideoBlock(title, url, caption) {
       : '<p class="video-quality-tip">💡 Arriba a la derecha del video están los íconos de subtítulos (CC) y de configuración (⚙️). Si se ve borroso, tocá ⚙️ y elegí 1080p o la calidad más alta disponible; desde CC podés activar o desactivar los subtítulos.</p>');
 }
 
-// Si TODOS los renglones no vacíos de un párrafo empiezan con "- ", se
-// arma una lista con viñetas en vez de un párrafo corrido (ver
-// documentación arriba).
+// Si TODOS los renglones no vacíos de un párrafo empiezan con "- " (al
+// nivel que sea — ver abajo), se arma una lista con viñetas en vez de un
+// párrafo corrido (ver documentación arriba). A diferencia de antes, acá
+// SÍ importa la indentación de cada renglón (no se usa trim()), porque es
+// lo que distingue un ítem de primer nivel de uno anidado.
 function isListChunk(p) {
-  var lines = p.split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
-  return lines.length > 0 && lines.every(function (l) { return /^-[ \t]+/.test(l); });
+  var lines = p.split('\n').filter(function (l) { return l.trim().length > 0; });
+  return lines.length > 0 && lines.every(function (l) { return /^\s*-[ \t]+/.test(l); });
 }
 
+// Soporta UN nivel de anidamiento: un renglón "- " normal es un ítem de
+// primer nivel; un renglón con espacios antes del "-" (p.ej. "  - ") es un
+// sub-ítem, y se anida como <ul class="content-list--nested"> DENTRO del
+// <li> del ítem de primer nivel anterior. Pensado para listas de
+// "materiales" que van un escalón más adentro que el resto de los ítems
+// (p.ej. "Pasos a incluir, en su orden correcto:" con sus 5 pasos debajo,
+// o "...su definición:" con los términos debajo) — a pedido de Diego,
+// Ronda #17: esos sub-ítems no tienen que quedar al mismo nivel visual que
+// el resto de los ítems de la lista (botones, barra de progreso, estilo
+// visual, etc.).
 function renderListBlock(p) {
-  var lines = p.split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
+  var rawLines = p.split('\n').filter(function (l) { return l.trim().length > 0; });
   var html = '<ul class="content-list">';
-  lines.forEach(function (l) {
-    html += '<li>' + renderInline(l.replace(/^-[ \t]+/, '')) + '</li>';
+  var topLiOpen = false;
+  var subOpen = false;
+  rawLines.forEach(function (l) {
+    var nested = /^\s+-[ \t]+/.test(l);
+    var text = renderInline(l.replace(/^\s*-[ \t]+/, ''));
+    if (nested) {
+      if (!subOpen) {
+        html += '<ul class="content-list--nested">';
+        subOpen = true;
+      }
+      html += '<li>' + text + '</li>';
+    } else {
+      if (subOpen) {
+        html += '</ul>';
+        subOpen = false;
+      }
+      if (topLiOpen) {
+        html += '</li>';
+      }
+      html += '<li>' + text;
+      topLiOpen = true;
+    }
   });
+  if (subOpen) html += '</ul>';
+  if (topLiOpen) html += '</li>';
   html += '</ul>';
   return html;
 }

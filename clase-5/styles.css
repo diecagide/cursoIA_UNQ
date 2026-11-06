@@ -1354,6 +1354,52 @@ section.block:first-of-type {
 .prompt-example .content-list li { padding-left: 0; }
 .prompt-example .content-list li::before { content: none; }
 
+/* Sub-lista anidada (un solo nivel), generada por renderListBlock() en
+   script.js cuando un renglón de la lista viene con indentación extra
+   ("  - " en vez de "- ") — Ronda #17, a pedido de Diego: una lista de
+   "materiales" que depende de un ítem más general (p.ej. "Pasos a
+   incluir, en su orden correcto:" o "...su definición:") tiene que verse
+   un escalón más adentro, no al mismo nivel que el resto de los ítems de
+   la lista (botones, barra de progreso, estilo visual, etc.). Queda
+   anidada DENTRO del <li> del ítem de primer nivel, nunca como lista
+   hermana. Caso base (recuadro con viñeta "•"): sin recuadro propio (ya
+   está adentro de uno) y con un guión como viñeta, para distinguirla del
+   nivel de arriba. */
+.content-list--nested {
+  list-style: none;
+  margin: 8px 0 2px 20px;
+  padding: 0;
+}
+.content-list--nested li {
+  padding-left: 16px;
+  position: relative;
+}
+.content-list--nested li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+.content-list--nested:last-child { margin-bottom: 0; }
+
+/* Misma sub-lista, dentro de un .prompt-example (viñetas tipo disco, sin
+   recuadro — ver regla de arriba): usa viñeta "círculo" nativa para
+   diferenciarse del disco del nivel de arriba. Van DESPUÉS en el archivo
+   a propósito, para ganarle en especificidad (mismo conteo de clases) a
+   ".prompt-example .content-list li"/"::before" de más arriba, que si no
+   le pisarían el padding y el "content: none". */
+.prompt-example .content-list--nested {
+  list-style: circle;
+  margin: 4px 0 10px 20px;
+}
+.prompt-example .content-list--nested li {
+  padding-left: 4px;
+}
+.prompt-example .content-list--nested li::before {
+  content: none;
+}
+
 /* ---------- Subtítulo liviano dentro de un bloque ---------- */
 /* Para rótulos cortos que están un escalón por debajo de un <h4>
    ("Archivos de texto", "Lectura lateral", etc.) — texto fijo en
@@ -1641,13 +1687,15 @@ section.block:first-of-type {
    no lleva esta clase y queda con el tamaño de siempre. */
 .prompt-example--compact { padding: 12px 16px; }
 .prompt-example--compact p,
-.prompt-example--compact .content-list {
+.prompt-example--compact .content-list,
+.prompt-example--compact .content-list--nested {
   font-size: .85rem;
   line-height: 1.5;
   margin-bottom: 10px;
 }
 .prompt-example--compact p:last-child,
-.prompt-example--compact .content-list:last-child {
+.prompt-example--compact .content-list:last-child,
+.prompt-example--compact .content-list--nested:last-child {
   margin-bottom: 0;
 }
 

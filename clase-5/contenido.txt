@@ -163,15 +163,13 @@ La idea es crear un conjunto de tarjetas que se dan vuelta haciendo clic. En el 
 ## prompt_tarjetas_memoria
 Tarjetas de memoria con los términos básicos de IA generativa.
 
-Son seis tarjetas que arrancan boca abajo mostrando el término, y al tocarlas se dan vuelta mostrando su definición:
-
-- Prompt: la instrucción que le das a un modelo de IA para que genere algo.
-- Alucinación: cuando un modelo genera información que suena creíble pero es falsa o inventada.
-- Modelo multimodal: un modelo que entiende o genera más de un tipo de contenido (texto, imagen, audio, video) a la vez.
-- Fine-tuning: ajustar un modelo ya entrenado con datos propios para que se especialice en una tarea puntual.
-- Token: la unidad mínima de texto que procesa un modelo de lenguaje: una palabra, parte de una palabra, o un signo.
-- Contexto: la información previa que el modelo tiene disponible al momento de generar una respuesta.
-
+- Son seis tarjetas que arrancan boca abajo mostrando el término, y al tocarlas se dan vuelta mostrando su definición:
+  - Prompt: la instrucción que le das a un modelo de IA para que genere algo.
+  - Alucinación: cuando un modelo genera información que suena creíble pero es falsa o inventada.
+  - Modelo multimodal: un modelo que entiende o genera más de un tipo de contenido (texto, imagen, audio, video) a la vez.
+  - Fine-tuning: ajustar un modelo ya entrenado con datos propios para que se especialice en una tarea puntual.
+  - Token: la unidad mínima de texto que procesa un modelo de lenguaje: una palabra, parte de una palabra, o un signo.
+  - Contexto: la información previa que el modelo tiene disponible al momento de generar una respuesta.
 - Un botón para dar vuelta todas las tarjetas a la vez, y otro para mezclar el orden (se tapan todas de nuevo y se reordenan al azar).
 - Una barra de progreso que cuente cuántos términos ya se descubrieron (se mantiene aunque la tarjeta se vuelva a tapar, y se reinicia al mezclar), con un mensaje de festejo y un efecto de confetti al descubrir los seis.
 - Estilo visual: nada de fondo blanco liso, quiero que tenga mucho color y que impacte visualmente. Usá como base el degradé de identidad de esta clase (de un azul marino oscuro a un rojo cereza y de ahí a un azul real, el mismo de la barra lateral del sitio) de fondo en toda la página, con una animación lenta y sutil. Cada término con su propio color e ícono, tanto en el frente como en el dorso de la tarjeta, para que se vea variado y no todo igual.
@@ -235,8 +233,40 @@ Veamos otros recursos posibles que podemos crear a partir de los tipos que descr
 ## ejemplo_pasos_proceso
 Podemos crear tarjetas para ordenar, utilizando las flechas para posicionarlas hasta armar el orden correcto de un procedimiento. A continuación vemos un ejemplo con los pasos para armar un prompt.
 
+## prompt_pasos_proceso
+Un juego de ordenar pasos sobre cómo armar un buen prompt, para que los alumnos practiquen la secuencia correcta.
+
+- Pasos a incluir, en su orden correcto:
+  - Definí el objetivo: qué querés que la IA genere exactamente.
+  - Dale contexto: contale a la IA quién sos y para qué lo vas a usar.
+  - Especificá el formato de salida: lista, tabla, código, una extensión determinada.
+  - Agregá restricciones o ejemplos de lo que sí (o no) querés.
+  - Revisá el resultado y ajustá el prompt si hace falta.
+- Mostrá los 5 pasos mezclados al azar, como tarjetas que se puedan reordenar arrastrando (que funcione también con el dedo en celular, no solo con mouse) o con flechas de subir/bajar en cada tarjeta.
+- Un botón "Verificar orden" marca cada tarjeta en verde si está en el lugar correcto o en rojo si no, y se puede seguir intentando sin límite.
+- Un botón "Reiniciar" vuelve a mezclar.
+- Sumale una barra de progreso que muestre cuántas tarjetas están en su lugar.
+- Dale a cada paso su propio ícono y color, y confetti cuando se llega al orden perfecto.
+- Estilo visual: fondo de página con un degradé animado lento (azul marino, rojo cereza, azul real — el de la barra lateral del sitio), con una tarjeta blanca centrada para que el contenido se lea bien. Header con una etiqueta tipo pill arriba del título, y el título con ese mismo degradé de color.
+
+Entregámelo como un único archivo HTML descargable.
+
 ## ejemplo_emparejar_clasificar
 Tocás un elemento y lo arrastrás a la categoría que le corresponde, con el objetivo, en este caso, de distinguir qué modelos de IA se usan mayormente para generación de texto y cuáles para imagen.
+
+## prompt_emparejar_clasificar
+Un ejercicio interactivo de clasificación por categorías, con la consigna "¿Texto o imagen?": frente a una lista de herramientas de IA generativa, el usuario tiene que arrastrarlas (o tocarlas y después tocar la categoría) hacia la categoría que les corresponde, "Genera principalmente texto" o "Genera principalmente imagen".
+
+- Herramientas a clasificar, con su categoría correcta: ChatGPT → texto, Claude → texto, Gemini → texto, Midjourney → imagen, DALL·E → imagen, Stable Diffusion → imagen.
+- El usuario puede tocar una herramienta para seleccionarla y después tocar la categoría, o arrastrarla directamente.
+- Si la clasifica bien, la herramienta queda fija en esa categoría con una marca de tilde verde bien visible.
+- Si la clasifica mal, tiene que aparecer una marca de cruz roja bien visible sobre la herramienta (no alcanza con que directamente no se pueda soltar ahí), y después la herramienta vuelve a la bandeja para intentarlo de nuevo.
+- Una barra de progreso que muestre cuántas lleva clasificadas sobre el total.
+- Botón para reiniciar el ejercicio, mezclando las herramientas en un orden distinto cada vez.
+- Cuando clasifica todas, un mensaje de festejo con un efecto de confetti.
+- Estilo visual: nada de fondo blanco liso ni diseño demasiado simple, quiero que tenga mucho color y que impacte visualmente. Usá como base el degradé de identidad de esta clase (de un azul marino oscuro a un rojo cereza y de ahí a un azul real, el mismo de la barra lateral del sitio) de fondo en toda la página, con una animación lenta y sutil. Cada herramienta con su propio color e ícono, para que la bandeja se vea variada y no todo igual. Las dos categorías con su propio fondo en degradé, y la barra de progreso también con degradé de colores.
+
+Entregámelo como un único archivo HTML descargable.
 
 ## ejemplo_diagrama_hotspots
 Los diagramas con hotspots tienen zonas tocables sobre un texto que revelan información puntual. En este ejemplo, las distintas partes que componen un prompt.
@@ -244,8 +274,33 @@ Los diagramas con hotspots tienen zonas tocables sobre un texto que revelan info
 ## ejemplo_explorador_atomos
 Este ejemplo permite elegir un elemento (en este caso, de la tabla periódica) y ver cómo se organizan y giran sus electrones alrededor del núcleo, junto con un dato curioso de cada uno.
 
+## prompt_explorador_atomos
+Una exploración guiada de átomos, para ver cómo se organizan los electrones en distintos elementos.
+
+- Elegí 8 elementos representativos, variando número atómico y categoría (algún no metal liviano, un gas noble, un metal alcalino, un halógeno, algún metal de transición, etc.), para que la complejidad visual del átomo también varíe.
+- Para cada elemento incluí: símbolo, nombre, número atómico, masa aproximada, categoría, su distribución de electrones por capa, y un dato curioso real y verificable.
+- Una tira de botones, uno por elemento (símbolo + número atómico), para elegir cuál explorar.
+- Al elegir uno, mostrá el átomo animado en el centro: núcleo cuyo tamaño y color cambian según el elemento, con anillos concéntricos (uno por capa electrónica) y los electrones orbitando en movimiento continuo, más rápido en las capas internas.
+- Debajo, un panel con el nombre y símbolo del elemento, su categoría, sus datos (número atómico, masa, configuración electrónica) y el dato curioso.
+- Estilo visual: fondo oscuro tipo espacio profundo, con un degradé radial oscuro y círculos difusos tipo "bokeh" flotando de fondo en tono verde azulado. El núcleo y los anillos tienen un brillo suave (glow) propio de cada elemento.
+
+Entregámelo como un único archivo HTML descargable.
+
 ## ejemplo_reparto_riqueza
 Este ejemplo permite estimar, con sliders, qué porcentaje de la riqueza mundial le corresponde a cada grupo socioeconómico y después comparar esa estimación con los datos reales, según el *World Inequality Report* 2026.
+
+## prompt_reparto_riqueza
+Un dispositivo que pone a prueba la intuición sobre cómo se reparte la riqueza mundial, con el título "Si el mundo fuera 100 personas… así se repartiría toda la riqueza del planeta".
+
+- Agrupá a esas 100 personas en 4 grupos según cuánta riqueza real tienen (fuente: World Inequality Report 2026, cifras de 2025): la mitad más pobre (50 personas) tiene el 2%, la clase media global (40 personas) el 23%, el siguiente 9% más rico (9 personas) el 38%, y una sola persona (el 1% más rico) el 37%.
+- Para cada grupo, un control deslizante pegado a su propia barra, para que arme su estimación de qué porcentaje le toca a cada uno; mostrá en todo momento el total que lleva repartido.
+- Un botón "Comparar con la realidad" revela las barras reales junto a las estimadas, y debajo aparece un texto que señala en qué grupo se alejó más de la realidad y por cuántos puntos.
+- Al comparar, mostrá también una tarjeta fija con el dato más fuerte en grande: esa única persona tiene casi 19 veces más riqueza que las 50 personas más pobres juntas. Sumale un leve temblor de la tarjeta al revelar y un resplandor pulsante en la barra de esa persona.
+- Botón para reiniciar y volver a intentar.
+- Nada de confetti acá en el cierre.
+- Estilo visual: fondo de página con un degradé animado lento (azul marino, rojo cereza, azul real), con una tarjeta blanca centrada para que el contenido se lea bien. Cada grupo con su propio color e ícono, bien diferenciado del resto.
+
+Entregámelo como un único archivo HTML descargable.
 
 ## bloque_c_otras_ideas
 Y algunas ideas más para seguir explorando:
