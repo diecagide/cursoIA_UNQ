@@ -1679,12 +1679,14 @@ section.block:first-of-type {
   margin-top: 10px;
 }
 
-/* Variante compacta, solo para los 4 ejemplos de Bloque B ("Ejemplos
-   simples" y "Ejemplos (un poco más) complejos") — esos prompts son
-   largos y, uno atrás de otro, ocupaban mucho espacio en esa sección.
-   Letra más chica + menos espacio entre párrafos/listas adentro del
-   recuadro. El resto de los .prompt-example del sitio (el de Bloque D)
-   no lleva esta clase y queda con el tamaño de siempre. */
+/* Variante compacta: letra más chica + menos espacio entre párrafos/listas
+   adentro del recuadro, para que los prompts de ejemplo (que son largos)
+   no ocupen tanto espacio. Nace en la Ronda #16 para los 4 ejemplos de
+   Bloque B ("Ejemplos simples" y "Ejemplos (un poco más) complejos"); en
+   la Ronda #18, a pedido de Diego, se extendió también al único
+   .prompt-example de Anexo: Formato web (`bloque_d_prompt`), para que
+   tenga el mismo tamaño que el resto — ya no queda ningún .prompt-example
+   del sitio sin esta clase. */
 .prompt-example--compact { padding: 12px 16px; }
 .prompt-example--compact p,
 .prompt-example--compact .content-list,
